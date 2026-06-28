@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Sistema de Pontuação de Segurança e Nutrição",
+  "introPara1": "Este documento explica a base de como o PureScan AI avalia e classifica a segurança, o valor nutricional e a qualidade geral dos produtos verificados. Nosso sistema conta com bancos de dados científicos abrangentes combinados com IA avançada para analisar minuciosamente os ingredientes e aplicar um sistema de pontuação inteligente baseado em penalidades, adaptado ao seu perfil de saúde específico.",
+  "introPara2": "Atenção: Os algoritmos matemáticos exatos e os pesos são propriedade do PureScan AI, mas os princípios básicos e as metodologias são totalmente transparentes e estão descritos abaixo.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Produtos Alimentícios)",
+    "para1": "O Nutri-Score é calculado usando um algoritmo científico padronizado que avalia o valor nutricional geral de um produto alimentício por 100g ou 100ml. Ele equilibra os nutrientes negativos a serem limitados em relação aos nutrientes positivos a serem incentivados, resultando em uma classificação de A (melhor) a E (pior).",
+    "para2": "O PureScan AI calcula isso automaticamente usando os dados inseridos da embalagem do produto:",
+    "negPoints": {
+      "title": "Pontos Negativos (Aumentam a pontuação / pioram a nota):",
+      "desc": "Os pontos são adicionados com base na quantidade de energia (calorias), gordura saturada, açúcares e sódio (sal)."
+    },
+    "posPoints": {
+      "title": "Pontos Positivos (Diminuem a pontuação / melhoram a nota):",
+      "desc": "Os pontos são subtraídos com base na porcentagem de frutas, vegetais, leguminosas, nozes e óleos benéficos específicos (colza, noz, azeite), bem como no teor de fibras e proteínas."
+    },
+    "finalGrade": {
+      "title": "A Nota Final:",
+      "desc": "Os pontos positivos são subtraídos dos pontos negativos para obter uma pontuação numérica final. Esse número é então mapeado para a escala de cores A-E. O PureScan AI usa os valores nutricionais exatos da tabela nutricional e da lista de ingredientes do produto para calcular essa pontuação para milhões de produtos."
+    },
+    "grades": {
+      "a": "Grade A (Verde Escuro):",
+      "aDesc": "Excelente qualidade nutricional. Alimentos que você pode comer regularmente.",
+      "b": "Grade B (Verde Claro):",
+      "bDesc": "Boa qualidade nutricional.",
+      "c": "Grade C (Amarelo):",
+      "cDesc": "Qualidade nutricional moderada. Consuma com moderação.",
+      "d": "Grade D (Laranja):",
+      "dDesc": "Baixa qualidade nutricional. Contém níveis mais altos de nutrientes negativos.",
+      "e": "Grade E (Vermelho):",
+      "eDesc": "Pior qualidade nutricional. Produtos como lanches açucarados, carnes altamente processadas e itens ricos em gordura. Devem ser consumidos ocasionalmente."
+    }
+  },
+  "nova": {
+    "title": "2. Classificação NOVA (Produtos Alimentícios)",
+    "para1": "Ao contrário da fórmula matemática do Nutri-Score, a pontuação NOVA é um sistema de classificação que categoriza os alimentos com base no grau de processamento industrial a que foram submetidos. O PureScan AI usa um algoritmo automatizado para analisar a lista de ingredientes do produto e categorizá-lo em um de quatro grupos:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Não processados / Minimamente processados)",
+        "desc": "Alimentos naturais como frutas frescas, vegetais, ovos ou leite que não sofreram nenhum processamento ou processamento mínimo (como congelamento ou secagem) sem adição de sal, açúcar ou gorduras."
+      },
+      "2": {
+        "title": "NOVA 2 (Ingredientes culinários processados)",
+        "desc": "Substâncias derivadas diretamente da natureza ou dos alimentos do Grupo 1 usadas para cozinhar, como sal, açúcar, manteiga e óleos vegetais."
+      },
+      "3": {
+        "title": "NOVA 3 (Alimentos processados)",
+        "desc": "Alimentos elaborados adicionando ingredientes do Grupo 2 (sal, açúcar, gordura) aos alimentos do Grupo 1. Exemplos incluem vegetais enlatados, pães simples, queijo e nozes salgadas."
+      },
+      "4": {
+        "title": "NOVA 4 (Alimentos ultraprocessados)",
+        "desc": "Formulações industriais tipicamente contendo 5 ou mais ingredientes. Estes contêm substâncias que não são comumente usadas em uma cozinha doméstica (por exemplo, xarope de milho com alto teor de frutose, óleos hidrogenados) e aditivos cosméticos (por exemplo, sabores artificiais, corantes, emulsificantes, conservantes)."
+      }
+    },
+    "howItWorks": {
+      "title": "Como o PureScan AI calcula o NOVA:",
+      "desc": "O PureScan AI usa um algoritmo que varre a lista de ingredientes em busca de \"marcadores\" específicos de ultraprocessamento. Se o algoritmo detectar aditivos industriais, sabores artificiais ou ingredientes altamente processados, ele automaticamente sinaliza o produto como NOVA 4."
+    },
+    "important": {
+      "title": "Distinção Importante:",
+      "desc": "É perfeitamente possível que um produto tenha um \"bom\" Nutri-Score (por exemplo, A ou B) por ter baixo teor de açúcar e gordura, mas ainda assim ser classificado como NOVA 4 (Ultraprocessado) porque utiliza adoçantes artificiais e espessantes para alcançar esse perfil nutricional."
+    }
+  },
+  "safety": {
+    "title": "3. Sistema de Pontuação de Segurança do PureScan AI",
+    "para1": "Embora o Nutri-Score e o NOVA forneçam bases, o PureScan AI calcula uma Nota de Segurança personalizada (variando de A a E). Nosso sistema de notas atua como uma \"pontuação de risco\" — quanto mais pontos de risco acumulados, menor será a nota final em letra (mais próxima de E).",
+    "penalties": {
+      "title": "Como as penalidades e deduções funcionam:",
+      "desc": "Um produto começa com uma nota \"A\" perfeita e recebe penalidades (pontos de risco) com base em várias detecções:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Perfil de Saúde Personalizado (Alergias e Condições)",
+        "desc": "Se um produto contém um ingrediente ao qual o usuário é explicitamente alérgico (por exemplo, amendoim, glúten, laticínios), o produto recebe uma penalidade severa e cai imediatamente para uma nota mais baixa (D ou E), alertando o usuário que é altamente inseguro para ele."
+      },
+      "b": {
+        "title": "B. Aditivos e Ingredientes Nocivos",
+        "desc": "Os ingredientes são verificados com base em nosso banco de dados toxicológico. Carcinógenos conhecidos, desreguladores endócrinos ou irritantes graves penalizam fortemente a pontuação. Aditivos artificiais padrão, corantes artificiais e conservantes acarretam penalidades moderadas."
+      },
+      "c": {
+        "title": "C. Processamento de Alimentos e Nutrição (Apenas Alimentos)",
+        "desc": "Se o produto for um alimento ultraprocessado (NOVA 4) ou tiver baixa densidade nutricional (Nutri-Score D ou E), ele incorrerá em penalidades adicionais. Isso garante que mesmo alimentos \"veganos\" ou \"sem alérgenos\" não recebam automaticamente um 'A' se forem fundamentalmente prejudiciais à saúde."
+      },
+      "d": {
+        "title": "D. Cosméticos e Cuidados Pessoais (Apenas Cosméticos)",
+        "desc": "Para cosméticos, o sistema não analisa a nutrição. Em vez disso, ele examina minuciosamente a composição química. As penalidades são aplicadas para:",
+        "list1": "Neurotoxinas e desreguladores endócrinos (por exemplo, parabenos, ftalatos).",
+        "list2": "Irritantes e alérgenos de pele conhecidos (por exemplo, fragrâncias sintéticas, sulfatos agressivos).",
+        "list3": "Toxinas ambientais (por exemplo, microplásticos, certos filtros UV)."
+      }
+    },
+    "summary": {
+      "title": "Resumo das Notas",
+      "ab": "Grade A/B:",
+      "abDesc": "Limpo, altamente adequado ao seu perfil, sem ou com mínimos aditivos nocivos.",
+      "c": "Grade C:",
+      "cDesc": "Moderado. Pode conter alguns elementos processados ou pequenos irritantes. Proceda com atenção.",
+      "de": "Grade D/E (Alto Risco):",
+      "deDesc": "O produto contém ingredientes que conflitam diretamente com suas alergias, altos níveis de substâncias químicas tóxicas/nocivas ou é extremamente ultraprocessado. Não recomendado para uso."
+    }
+  },
+  "footer": {
+    "grading": "Sistema de Pontuação",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "support": "Suporte",
+    "copyright": "© {{year}} PureScan AI. O Mais Avançado Scanner de Alimentos e Cosméticos."
+  }
+}

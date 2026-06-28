@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Veiligheids- en Voedingswaarderingssysteem",
+  "introPara1": "Dit document legt de basis uit van hoe PureScan AI de veiligheid, voedingswaarde en algehele kwaliteit van gescande producten evalueert en beoordeelt. Ons systeem vertrouwt op uitgebreide wetenschappelijke databases in combinatie met geavanceerde AI om ingrediënten grondig te analyseren en een intelligent, op sancties gebaseerd scoresysteem toe te passen dat is afgestemd op uw specifieke gezondheidsprofiel.",
+  "introPara2": "Let op: De exacte wiskundige algoritmen en wegingen zijn eigendom van PureScan AI, maar de kernprincipes en methodologieën zijn volledig transparant en worden hieronder beschreven.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Voedingsmiddelen)",
+    "para1": "De Nutri-Score wordt berekend met behulp van een gestandaardiseerd, wetenschappelijk algoritme dat de algehele voedingswaarde van een voedingsmiddel per 100g of 100ml beoordeelt. Het balanceert negatieve voedingsstoffen om te beperken met positieve voedingsstoffen om aan te moedigen, wat resulteert in een cijfer van A (beste) tot E (slechtste).",
+    "para2": "PureScan AI berekent dit automatisch aan de hand van de gegevens die zijn ingevoerd vanaf de verpakking van het product:",
+    "negPoints": {
+      "title": "Negatieve punten (Verhogen de score / verslechteren het cijfer):",
+      "desc": "Punten worden toegevoegd op basis van de hoeveelheid energie (calorieën), verzadigd vet, suikers en natrium (zout)."
+    },
+    "posPoints": {
+      "title": "Positieve punten (Verlagen de score / verbeteren het cijfer):",
+      "desc": "Punten worden afgetrokken op basis van het percentage fruit, groenten, peulvruchten, noten en specifieke nuttige oliën (koolzaad-, walnoot-, olijfolie), evenals het vezel- en eiwitgehalte."
+    },
+    "finalGrade": {
+      "title": "Het eindcijfer:",
+      "desc": "De positieve punten worden afgetrokken van de negatieve punten om een uiteindelijke numerieke score te krijgen. Dit getal wordt vervolgens gekoppeld aan de A-E-kleurenschaal. PureScan AI gebruikt de exacte voedingswaarden uit de voedingstabel en de ingrediëntenlijst van het product om deze score voor miljoenen producten te bereken."
+    },
+    "grades": {
+      "a": "Grade A (Donkergroen):",
+      "aDesc": "Uitstekende voedingskwaliteit. Voedingsmiddelen die u regelmatig kunt eten.",
+      "b": "Grade B (Lichtgroen):",
+      "bDesc": "Goede voedingskwaliteit.",
+      "c": "Grade C (Geel):",
+      "cDesc": "Matige voedingskwaliteit. Met mate consumeren.",
+      "d": "Grade D (Oranje):",
+      "dDesc": "Slechte voedingskwaliteit. Bevat hogere niveaus van negatieve voedingsstoffen.",
+      "e": "Grade E (Rood):",
+      "eDesc": "Laagste voedingskwaliteit. Producten zoals suikerhoudende snacks, sterk bewerkt vlees en vetrijke producten. Moet af en toe worden geconsumeerd."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA-classificatie (Voedingsmiddelen)",
+    "para1": "In tegenstelling tot de wiskundige formule van de Nutri-Score, is de NOVA-score een classificatiesysteem dat voedsel categoriseert op basis van de mate waarin het industrieel is bewerkt. PureScan AI gebruikt een geautomatiseerd algoritme om de ingrediëntenlijst van het product te analyseren en het in een van de vier groepen in te delen:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Onbewerkt / Minimaal bewerkt)",
+        "desc": "Natuurlijk voedsel zoals vers fruit, groenten, eieren of melk die geen bewerking of een minimale bewerking (zoals invriezen of drogen) hebben ondergaan zonder toevoeging van zout, suiker of vetten."
+      },
+      "2": {
+        "title": "NOVA 2 (Bewerkte culinaire ingrediënten)",
+        "desc": "Stoffen die direct uit de natuur of uit Groep 1-voedingsmiddelen zijn gewonnen en die worden gebruikt om te koken, zoals zout, suiker, boter en plantaardige oliën."
+      },
+      "3": {
+        "title": "NOVA 3 (Bewerkte voedingsmiddelen)",
+        "desc": "Voedingsmiddelen die zijn gemaakt door Groep 2-ingrediënten (zout, suiker, vet) toe te voegen aan Groep 1-voedingsmiddelen. Voorbeelden zijn groenten in blik, eenvoudig brood, kaas en gezouten noten."
+      },
+      "4": {
+        "title": "NOVA 4 (Ultrabevewerkte voedingsmiddelen)",
+        "desc": "Industriële formuleringen die doorgaans 5 of meer ingrediënten bevatten. Deze bevatten stoffen die niet vaak in een thuiskeuken worden gebruikt (bijv. fructose-glucosestroop, geharde oliën) en cosmetische toevoegingen (bijv. kunstmatige smaakstoffen, kleurstoffen, emulgatoren, conserveermiddelen)."
+      }
+    },
+    "howItWorks": {
+      "title": "Hoe PureScan AI NOVA berekent:",
+      "desc": "PureScan AI gebruikt een algoritme dat de ingrediëntenlijst scant om te zoeken naar specifieke \"markers\" van ultrabewerking. Als het algoritme industriële additieven, kunstmatige smaakstoffen of sterk bewerkte ingrediënten detecteert, markeert het het product automatisch als NOVA 4."
+    },
+    "important": {
+      "title": "Belangrijk onderscheid:",
+      "desc": "Het is heel goed mogelijk dat een product een \"goede\" Nutri-Score heeft (bijv. A of B) omdat het weinig suiker en vet bevat, maar toch geclassificeerd is als NOVA 4 (Ultrabewerkt) omdat het kunstmatige zoetstoffen en verdikkingsmiddelen gebruikt om dat voedingsprofiel te bereiken."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI Veiligheidsscoresysteem",
+    "para1": "Terwijl Nutri-Score en NOVA basislijnen bieden, berekent PureScan AI een gepersonaliseerd veiligheidscijfer (variërend van A tot E). Ons beoordelingssysteem werkt als een \"risicoscore\": hoe meer risicopunten worden verzameld, hoe lager de uiteindelijke letterbeoordeling (dichter bij E).",
+    "penalties": {
+      "title": "Hoe straffen en aftrekkingen werken:",
+      "desc": "Een product begint met een perfecte \"A\"-beoordeling en krijgt straffen (risicopunten) op basis van verschillende detecties:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Gepersonaliseerd gezondheidsprofiel (Allergieën en aandoeningen)",
+        "desc": "Als een product een ingrediënt bevat waarvoor de gebruiker expliciet allergisch is (bijv. pinda's, gluten, zuivel), krijgt het product een zware straf en daalt het onmiddellijk naar een lagere beoordeling (D of E), wat de gebruiker waarschuwt dat het zeer onveilig voor hem is."
+      },
+      "b": {
+        "title": "B. Schadelijke additieven en ingrediënten",
+        "desc": "Ingrediënten worden vergeleken met onze toxicologische database. Bekende kankerverwekkende stoffen, hormoonontregelaars of zware irriterende stoffen bestraffen de score zwaar. Standaard kunstmatige toevoegingen, kunstmatige kleurstoffen en conserveermiddelen brengen matige straffen met zich mee."
+      },
+      "c": {
+        "title": "C. Voedselverwerking en voeding (Alleen voedsel)",
+        "desc": "Als het product een ultrabewerkt voedingsmiddel (NOVA 4) is of een slechte voedingsdichtheid (Nutri-Score D of E) heeft, krijgt het extra straffen. Dit zorgt ervoor dat zelfs \"veganistisch\" of \"allergeenvrij\" voedsel niet automatisch een 'A' krijgt als het fundamenteel ongezond is."
+      },
+      "d": {
+        "title": "D. Cosmetica en persoonlijke verzorging (Alleen cosmetica)",
+        "desc": "Bij cosmetica kijkt het systeem niet naar voeding. In plaats daarvan wordt de chemische samenstelling nauwkeurig onderzocht. Er worden straffen toegepast voor:",
+        "list1": "Neurotoxines en hormoonontregelaars (bijv. parabenen, ftalaten).",
+        "list2": "Bekende huidirriterende stoffen en allergenen (bijv. synthetische geuren, agressieve sulfaten).",
+        "list3": "Milieutoxines (bijv. microplastics, bepaalde UV-filters)."
+      }
+    },
+    "summary": {
+      "title": "Samenvatting van cijfers",
+      "ab": "Grade A/B:",
+      "abDesc": "Schoon, zeer geschikt voor uw profiel, minimale tot geen schadelijke toevoegingen.",
+      "c": "Grade C:",
+      "cDesc": "Matig. Kan enkele bewerkte elementen of kleine irriterende stoffen bevatten. Ga voorzichtig te werk.",
+      "de": "Grade D/E (Hoog risico):",
+      "deDesc": "Het product bevat ingrediënten die direct in strijd zijn met uw allergieën, hoge niveaus van toxische/schadelijke chemicaliën, of is extreem ultrabewerkt. Niet aanbevolen voor gebruik."
+    }
+  },
+  "footer": {
+    "grading": "Beoordelingssysteem",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "support": "Ondersteuning",
+    "copyright": "© {{year}} PureScan AI. De meest geavanceerde voedsel- en cosmeticascanner."
+  }
+}

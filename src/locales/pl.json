@@ -1,0 +1,109 @@
+{
+  "pageTitle": "System Oceny Bezpieczeństwa i Wartości Odżywczych",
+  "introPara1": "Ten dokument wyjaśnia podstawy tego, w jaki sposób PureScan AI ocenia i klasyfikuje bezpieczeństwo, wartość odżywczą oraz ogólną jakość skanowanych produktów. Nasz system opiera się na obszernych bazach danych naukowych połączonych z zaawansowaną sztuczną inteligencją w celu dokładnej analizy składników i zastosowania inteligentnego systemu punktacji opartego na karach, dostosowanego do Twojego profilu zdrowotnego.",
+  "introPara2": "Uwaga: Dokładne algorytmy matematyczne i wagi stanowią własność firmy PureScan AI, ale podstawowe zasady i metodologie są w pełni przejrzyste i opisane poniżej.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Produkty Spożywcze)",
+    "para1": "Nutri-Score obliczany jest za pomocą znormalizowanego, naukowego algorytmu, który ocenia ogólną wartość odżywczą produktu spożywczego na 100g lub 100ml. Bilansuje on negatywne składniki odżywcze, które należy ograniczyć, w stosunku do pozytywnych składników odżywczych, które należy promować, co daje ocenę od A (najlepsza) do E (najgorsza).",
+    "para2": "PureScan AI oblicza to automatycznie na podstawie danych wprowadzonych z opakowania produktu:",
+    "negPoints": {
+      "title": "Punkty Ujemne (Zwiększają wynik / pogarszają ocenę):",
+      "desc": "Punkty są dodawane na podstawie ilości energii (kalorii), tłuszczów nasyconych, cukrów i sodu (soli)."
+    },
+    "posPoints": {
+      "title": "Punkty Dodatnie (Zmniejszają wynik / poprawiają ocenę):",
+      "desc": "Punkty są odejmowane w oparciu o procentową zawartość owoców, warzyw, roślin strączkowych, orzechów i specyficznych korzystnych olejów (rzepakowego, z orzechów włoskich, oliwy z oliwek), a także błonnika i białka."
+    },
+    "finalGrade": {
+      "title": "Ocena Końcowa:",
+      "desc": "Punkty dodatnie są odejmowane od punktów ujemnych, aby uzyskać ostateczny wynik liczbowy. Następnie liczba ta jest mapowana na skalę kolorów A-E. PureScan AI wykorzystuje dokładne wartości odżywcze z tabeli wartości odżywczych produktu oraz listy składników, aby obliczyć ten wynik dla milionów produktów."
+    },
+    "grades": {
+      "a": "Ocena A (Ciemnozielony):",
+      "aDesc": "Doskonała jakość odżywcza. Żywność, którą możesz spożywać regularnie.",
+      "b": "Ocena B (Jasnozielony):",
+      "bDesc": "Dobra jakość odżywcza.",
+      "c": "Ocena C (Żółty):",
+      "cDesc": "Umiarkowana jakość odżywcza. Spożywaj z umiarem.",
+      "d": "Ocena D (Pomarańczowy):",
+      "dDesc": "Niska jakość odżywcza. Zawiera wyższy poziom negatywnych składników odżywczych.",
+      "e": "Ocena E (Czerwony):",
+      "eDesc": "Najniższa jakość odżywcza. Produkty takie jak słodkie przekąski, mocno przetworzone mięso i artykuły wysokotłuszczowe. Powinny być spożywane okazjonalnie."
+    }
+  },
+  "nova": {
+    "title": "2. Klasyfikacja NOVA (Produkty Spożywcze)",
+    "para1": "W przeciwieństwie do wzoru matematycznego Nutri-Score, klasyfikacja NOVA kategoryzuje żywność na podstawie stopnia jej przemysłowego przetworzenia. PureScan AI wykorzystuje zautomatyzowany algorytm do analizy listy składników produktu i przypisuje ją do jednej z czterech grup:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Nieprzetworzone / Minimalnie przetworzone)",
+        "desc": "Naturalna żywność, taka jak świeże owoce, warzywa, jajka lub mleko, która nie została poddana przetwarzaniu lub minimalnemu przetwarzaniu (np. zamrażaniu lub suszeniu) bez dodawania soli, cukru lub tłuszczów."
+      },
+      "2": {
+        "title": "NOVA 2 (Przetworzone dodatki kulinarne)",
+        "desc": "Substancje pochodzące bezpośrednio z natury lub z grupy 1 stosowane do gotowania, takie jak sól, cukier, masło i oleje roślinne."
+      },
+      "3": {
+        "title": "NOVA 3 (Żywność przetworzona)",
+        "desc": "Żywność wytwarzana przez dodanie składników z Grupy 2 (sól, cukier, tłuszcz) do żywności z Grupy 1. Przykłady obejmują warzywa w puszkach, zwykłe pieczywo, sery i solone orzechy."
+      },
+      "4": {
+        "title": "NOVA 4 (Żywność wysokoprzetworzona)",
+        "desc": "Preparaty przemysłowe zawierające zazwyczaj 5 lub więcej składników. Zawierają one substancje rzadko stosowane w domowej kuchni (np. syrop glukozowo-fruktozowy, uwodornione oleje) oraz dodatki kosmetyczne (np. sztuczne aromaty, barwniki, emulgatory, konserwanty)."
+      }
+    },
+    "howItWorks": {
+      "title": "Jak PureScan AI oblicza ocenę NOVA:",
+      "desc": "PureScan AI używa algorytmu, który skanuje listę składników w poszukiwaniu specyficznych \"znaczników\" wysokiego przetworzenia. Jeśli algorytm wykryje dodatki przemysłowe, sztuczne aromaty lub silnie przetworzone składniki, automatycznie oznacza produkt jako NOVA 4."
+    },
+    "important": {
+      "title": "Ważne rozróżnienie:",
+      "desc": "Możliwa jest sytuacja, że produkt będzie miał \"dobry\" wynik Nutri-Score (np. A lub B), ponieważ zawiera mało cukru i tłuszczu, ale nadal będzie klasyfikowany jako NOVA 4 (Wysokoprzetworzony), ponieważ używa sztucznych słodzików i zagęszczaczy, aby osiągnąć ten profil odżywczy."
+    }
+  },
+  "safety": {
+    "title": "3. System Oceny Bezpieczeństwa PureScan AI",
+    "para1": "Chociaż Nutri-Score i NOVA stanowią bazę, PureScan AI oblicza spersonalizowaną Ocenę Bezpieczeństwa (w skali od A do E). Nasz system ocen działa jak \"wskaźnik ryzyka\" - im więcej zgromadzonych punktów ryzyka, tym niższa końcowa ocena (bliżej E).",
+    "penalties": {
+      "title": "Jak Działają Kary i Odliczenia:",
+      "desc": "Produkt zaczyna z idealną oceną \"A\" i otrzymuje kary (punkty ryzyka) na podstawie różnych wykryć:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Spersonalizowany Profil Zdrowotny (Alergie i Dolegliwości)",
+        "desc": "Jeśli produkt zawiera składnik, na który użytkownik jest wyraźnie uczulony (np. orzeszki ziemne, gluten, nabiał), otrzymuje on surową karę i jego ocena natychmiast spada (do D lub E), ostrzegając użytkownika, że produkt jest dla niego wysoce niebezpieczny."
+      },
+      "b": {
+        "title": "B. Szkodliwe Dodatki i Składniki",
+        "desc": "Składniki są weryfikowane z naszą bazą danych toksykologicznych. Znane substancje rakotwórcze, zaburzające gospodarkę hormonalną lub silnie drażniące powodują mocne obniżenie oceny. Standardowe sztuczne dodatki, barwniki i konserwanty wiążą się z umiarkowanymi karami."
+      },
+      "c": {
+        "title": "C. Przetwarzanie i Wartości Odżywcze (Tylko Żywność)",
+        "desc": "Jeśli produkt to żywność wysokoprzetworzona (NOVA 4) lub ma słabą gęstość odżywczą (Nutri-Score D lub E), otrzymuje dodatkowe kary. Gwarantuje to, że nawet żywność \"wegańska\" lub \"bez alergenów\" nie dostanie automatycznie oceny 'A', jeśli jest z gruntu niezdrowa."
+      },
+      "d": {
+        "title": "D. Kosmetyki i Pielęgnacja (Tylko Kosmetyki)",
+        "desc": "W przypadku kosmetyków system nie bierze pod uwagę odżywiania. Zamiast tego dokładnie bada ich skład chemiczny. Kary nakładane są za:",
+        "list1": "Neurotoksyny i substancje zaburzające gospodarkę hormonalną (np. parabeny, ftalany).",
+        "list2": "Znane czynniki drażniące skórę i alergeny (np. syntetyczne substancje zapachowe, silne siarczany).",
+        "list3": "Toksyny środowiskowe (np. mikroplastiki, niektóre filtry UV)."
+      }
+    },
+    "summary": {
+      "title": "Podsumowanie Ocen",
+      "ab": "Ocena A/B:",
+      "abDesc": "Czysty, wysoce odpowiedni dla Twojego profilu, mała ilość lub brak szkodliwych dodatków.",
+      "c": "Ocena C:",
+      "cDesc": "Umiarkowany. Może zawierać trochę przetworzonych elementów lub drobne substancje drażniące. Stosować z ostrożnością.",
+      "de": "Ocena D/E (Wysokie Ryzyko):",
+      "deDesc": "Produkt zawiera składniki kolidujące z Twoimi alergiami, duże ilości toksycznych/szkodliwych chemikaliów lub jest wysoce przetworzony. Niezalecany do spożycia/użycia."
+    }
+  },
+  "footer": {
+    "grading": "System Oceny",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "support": "Wsparcie",
+    "copyright": "© {{year}} PureScan AI. Najbardziej Zaawansowany Skaner Żywności i Kosmetyków."
+  }
+}

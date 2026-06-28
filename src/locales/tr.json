@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Güvenlik ve Beslenme Puanlama Sistemi",
+  "introPara1": "Bu belge, PureScan AI'nin taranan ürünlerin güvenliğini, besin değerini ve genel kalitesini nasıl değerlendirdiğinin ve derecelendirdiğinin temelini açıklar. Sistemimiz, bileşenleri kapsamlı bir şekilde analiz etmek ve özel sağlık profilinize göre uyarlanmış akıllı, ceza tabanlı bir puanlama sistemi uygulamak için gelişmiş yapay zeka ile birleştirilmiş kapsamlı bilimsel veritabanlarına dayanmaktadır.",
+  "introPara2": "Lütfen unutmayın: Kesin matematiksel algoritmalar ve ağırlıklar PureScan AI'ye aittir, ancak temel ilkeler ve metodolojiler tamamen şeffaftır ve aşağıda özetlenmiştir.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Gıda Ürünleri)",
+    "para1": "Nutri-Score, bir gıda ürününün 100g veya 100ml başına genel besin değerini değerlendiren standartlaştırılmış, bilimsel bir algoritma kullanılarak hesaplanır. Sınırlandırılması gereken negatif besinleri, teşvik edilmesi gereken pozitif besinlerle dengeler ve sonuçta A (en iyi) ile E (en kötü) arasında bir derece verir.",
+    "para2": "PureScan AI, ürünün ambalajından girilen verileri kullanarak bunu otomatik olarak hesaplar:",
+    "negPoints": {
+      "title": "Negatif Puanlar (Puanı artırır / dereceyi kötüleştirir):",
+      "desc": "Enerji (kalori), doymuş yağ, şeker ve sodyum (tuz) miktarına göre puanlar eklenir."
+    },
+    "posPoints": {
+      "title": "Pozitif Puanlar (Puanı düşürür / dereceyi iyileştirir):",
+      "desc": "Meyve, sebze, bakliyat, kuruyemiş ve belirli faydalı yağların (kolza, ceviz, zeytinyağı) yüzdesine ve ayrıca lif ve protein içeriğine göre puanlar çıkarılır."
+    },
+    "finalGrade": {
+      "title": "Nihai Derece:",
+      "desc": "Nihai sayısal puanı elde etmek için pozitif puanlar negatif puanlardan çıkarılır. Bu sayı daha sonra A-E renk skalasıyla eşleştirilir. PureScan AI, milyonlarca ürün için bu puanı hesaplamak üzere ürünün beslenme tablosundan ve içerik listesinden elde edilen kesin besin değerlerini kullanır."
+    },
+    "grades": {
+      "a": "Grade A (Koyu Yeşil):",
+      "aDesc": "Mükemmel beslenme kalitesi. Düzenli olarak yiyebileceğiniz yiyecekler.",
+      "b": "Grade B (Açık Yeşil):",
+      "bDesc": "İyi beslenme kalitesi.",
+      "c": "Grade C (Sarı):",
+      "cDesc": "Orta düzey beslenme kalitesi. Ölçülü tüketin.",
+      "d": "Grade D (Turuncu):",
+      "dDesc": "Kötü beslenme kalitesi. Daha yüksek seviyelerde negatif besinler içerir.",
+      "e": "Grade E (Kırmızı):",
+      "eDesc": "En düşük beslenme kalitesi. Şekerli atıştırmalıklar, ağır işlenmiş etler ve yüksek yağlı ürünler gibi ürünler. Ara sıra tüketilmelidir."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA Sınıflandırması (Gıda Ürünleri)",
+    "para1": "Nutri-Score'un matematiksel formülünün aksine NOVA puanı, yiyecekleri ne kadar endüstriyel olarak işlendiğine göre kategorize eden bir sınıflandırma sistemidir. PureScan AI, ürünün içerik listesini analiz etmek ve onu dört gruptan birine kategorize etmek için otomatik bir algoritma kullanır:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (İşlenmemiş / Minimal işlenmiş)",
+        "desc": "Tuz, şeker veya yağ eklenmeden hiçbir işlemden geçmemiş veya minimum düzeyde işlenmiş (dondurma veya kurutma gibi) taze meyveler, sebzeler, yumurta veya süt gibi doğal yiyecekler."
+      },
+      "2": {
+        "title": "NOVA 2 (İşlenmiş mutfak malzemeleri)",
+        "desc": "Tuz, şeker, tereyağı ve bitkisel yağlar gibi yemek pişirmek için kullanılan, doğrudan doğadan veya Grup 1 gıdalardan elde edilen maddeler."
+      },
+      "3": {
+        "title": "NOVA 3 (İşlenmiş gıdalar)",
+        "desc": "Grup 1 gıdalara Grup 2 bileşenleri (tuz, şeker, yağ) eklenerek yapılan gıdalar. Örnekler arasında konserve sebzeler, basit ekmekler, peynir ve tuzlu kuruyemişler bulunur."
+      },
+      "4": {
+        "title": "NOVA 4 (Ultra işlenmiş gıdalar)",
+        "desc": "Genellikle 5 veya daha fazla bileşen içeren endüstriyel formülasyonlar. Bunlar, ev mutfağında yaygın olarak kullanılmayan maddeler (örneğin yüksek fruktozlu mısır şurubu, hidrojenize yağlar) ve kozmetik katkı maddeleri (örneğin yapay aromalar, renkler, emülgatörler, koruyucular) içerir."
+      }
+    },
+    "howItWorks": {
+      "title": "PureScan AI NOVA'yı nasıl hesaplar:",
+      "desc": "PureScan AI, belirli ultra işlem \"işaretçilerini\" aramak için içerik listesini tarayan bir algoritma kullanır. Algoritma endüstriyel katkı maddeleri, yapay tatlar veya ağır işlenmiş bileşenler algılarsa, ürünü otomatik olarak NOVA 4 olarak işaretler."
+    },
+    "important": {
+      "title": "Önemli Ayrım:",
+      "desc": "Bir ürünün şeker ve yağ oranı düşük olduğu için \"iyi\" bir Nutri-Score'a (örn. A veya B) sahip olması, ancak bu beslenme profiline ulaşmak için yapay tatlandırıcılar ve kıvam arttırıcılar kullandığından yine de NOVA 4 (Ultra işlenmiş) olarak sınıflandırılması tamamen mümkündür."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI Güvenlik Puanlama Sistemi",
+    "para1": "Nutri-Score ve NOVA temel çizgiler sağlarken, PureScan AI kişiselleştirilmiş bir Güvenlik Derecesi (A'dan E'ye kadar) hesaplar. Not sistemimiz bir \"risk puanı\" gibi işler; biriken risk puanları ne kadar yüksek olursa, nihai harf notu o kadar düşük olur (E'ye daha yakın).",
+    "penalties": {
+      "title": "Cezalar ve Kesintiler Nasıl Çalışır:",
+      "desc": "Bir ürün mükemmel bir \"A\" derecesi ile başlar ve çeşitli tespitlere dayalı olarak cezalar (risk puanları) alır:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Kişiselleştirilmiş Sağlık Profili (Alerjiler ve Durumlar)",
+        "desc": "Bir ürün, kullanıcının açıkça alerjisi olduğu bir bileşen (örneğin yer fıstığı, glüten, süt ürünleri) içeriyorsa, ürün ciddi bir ceza alır ve derhal daha düşük bir dereceye (D veya E) düşerek kullanıcıyı bunun kendisi için son derece güvensiz olduğu konusunda uyarır."
+      },
+      "b": {
+        "title": "B. Zararlı Katkı Maddeleri ve İçerikler",
+        "desc": "Bileşenler toksikolojik veri tabanımızla çapraz referanslandırılır. Bilinen kanserojenler, endokrin bozucular veya ağır tahriş edici maddeler puanı ağır bir şekilde cezalandırır. Standart yapay katkı maddeleri, yapay renklendiriciler ve koruyucular orta dereceli cezalar taşır."
+      },
+      "c": {
+        "title": "C. Gıda İşleme ve Beslenme (Yalnızca Gıda)",
+        "desc": "Ürün ultra işlenmiş bir gıdaysa (NOVA 4) veya besin yoğunluğu zayıfsa (Nutri-Score D veya E), ek cezalar alır. Bu, temel olarak sağlıksızsa \"vegan\" veya \"alerjensiz\" gıdalara bile otomatik olarak 'A' verilmemesini sağlar."
+      },
+      "d": {
+        "title": "D. Kozmetik ve Kişisel Bakım (Yalnızca Kozmetik)",
+        "desc": "Kozmetikler için sistem beslenmeye bakmaz. Bunun yerine, kimyasal bileşimi dikkatle inceler. Şunlar için cezalar uygulanır:",
+        "list1": "Nörotoksinler ve endokrin bozucular (örneğin parabenler, ftalatlar).",
+        "list2": "Bilinen cilt tahriş ediciler ve alerjenler (örneğin sentetik kokular, sert sülfatlar).",
+        "list3": "Çevresel toksinler (örneğin mikroplastikler, belirli UV filtreleri)."
+      }
+    },
+    "summary": {
+      "title": "Derecelerin Özeti",
+      "ab": "Grade A/B:",
+      "abDesc": "Temiz, profilinize son derece uygun, zararlı katkı maddesi çok az veya hiç yok.",
+      "c": "Grade C:",
+      "cDesc": "Orta. Bazı işlenmiş öğeler veya küçük tahriş edici maddeler içerebilir. Dikkatli bir şekilde ilerleyin.",
+      "de": "Grade D/E (Yüksek Risk):",
+      "deDesc": "Ürün doğrudan alerjilerinizle çelişen bileşenler, yüksek düzeyde toksik/zararlı kimyasallar içeriyor veya aşırı derecede ultra işlenmiş. Kullanılması önerilmez."
+    }
+  },
+  "footer": {
+    "grading": "Puanlama Sistemi",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "support": "Destek",
+    "copyright": "© {{year}} PureScan AI. En Gelişmiş Gıda ve Kozmetik Tarayıcısı."
+  }
+}

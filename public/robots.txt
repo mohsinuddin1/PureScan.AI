@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Allow LLM bots specifically
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://webpurescan.ai/sitemap.xml

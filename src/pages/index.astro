@@ -1,0 +1,14 @@
+---
+import { getTranslations } from '../lib/i18n-utils';
+import Layout from '../layouts/Layout.astro';
+import App from '../components/App.jsx';
+import { Analytics } from '@vercel/analytics/react';
+const lang = Astro.currentLocale || 'en';
+const translations = await getTranslations(lang);
+import { AppIsland } from '../components/Islands.jsx';
+---
+
+<Layout title="PureScan AI - Food & Cosmetic Scanner">
+  <AppIsland client:load  lang={lang} translations={translations} />
+  <Analytics client:idle />
+</Layout>

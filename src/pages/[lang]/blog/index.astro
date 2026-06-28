@@ -1,0 +1,96 @@
+---
+export function getStaticPaths() {
+  const locales = ["ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  return locales.map(lang => ({ params: { lang } }));
+}
+
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
+
+const lang = Astro.currentLocale || 'en';
+const currentBlogPosts = await getCollection('blog', ({ id }) => id.startsWith(`${lang}/`));
+---
+
+<Layout title="Blog - PureScan AI">
+  <div class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>
+    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href={lang === 'en' ? '/' : `/${lang}`} class="text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    <span class="text-sm font-medium hidden sm:inline">Back</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2 cursor-pointer">
+                <img src="/logo.png" alt="PureScan AI" class="w-5 h-5 object-contain" />
+                <span class="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI Blog</span>
+            </div>
+            <div class="flex items-center">
+                <LanguageSwitcher client:load currentLang={lang} />
+            </div>
+        </div>
+    </nav>
+
+    <main class="px-5 py-12 md:py-20 max-w-5xl mx-auto min-h-[70vh]">
+      <header class="mb-12 text-center sm:text-left max-w-3xl">
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+              The Health Hub
+          </h1>
+          <p class="text-lg text-slate-500 font-medium leading-relaxed">
+              Your trusted guide to understanding food labels, decoding cosmetics, and making healthier choices backed by scientific data.
+          </p>
+      </header>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+          {currentBlogPosts.map((post) => {
+              const slug = post.id.split('/')[1];
+              return (
+              <a 
+                  href={lang === 'en' ? `/blog/${slug}` : `/${lang}/blog/${slug}`}
+                  class="group relative h-[450px] sm:h-[500px] rounded-3xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 block"
+              >
+                  <div 
+                      class="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                      style={{ backgroundImage: `url(${post.data.image})` }}
+                  ></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition-opacity duration-300"></div>
+                  
+                  <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                      <div class="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 w-fit mb-4 shadow-sm">
+                          {post.data.badge}
+                      </div>
+                      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3 leading-snug drop-shadow-sm">
+                          {post.data.title}
+                      </h2>
+                      <p class="text-slate-200 text-sm sm:text-base line-clamp-3 font-medium">
+                          {post.data.description}
+                      </p>
+                  </div>
+              </a>
+          )})}
+      </div>
+    </main>
+
+    <footer class="py-12 bg-white border-t-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <div class="flex justify-center items-center gap-2 mb-6">
+            <img src="/logo.png" alt="PureScan AI" class="w-8 h-8 object-contain grayscale opacity-50" />
+            <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+          </div>
+          <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
+            <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
+            <span class="mx-3 hidden md:inline">•</span>
+            <a href="/blog" class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
+            <span class="mx-3">•</span>
+            <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
+            <span class="mx-3">•</span>
+            <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
+            <span class="mx-3">•</span>
+            <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
+          </p>
+          <p class="text-slate-400 font-medium text-xs">© {new Date().getFullYear()} PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
+        </div>
+    </footer>
+  </div>
+</Layout>

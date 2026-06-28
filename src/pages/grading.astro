@@ -1,0 +1,11 @@
+---
+import { getTranslations } from '../lib/i18n-utils';
+import Layout from '../layouts/Layout.astro';
+import Grading from '../components/Grading.jsx';
+const lang = Astro.currentLocale || 'en';
+const translations = await getTranslations(lang);
+import { GradingIsland } from '../components/Islands.jsx';
+---
+<Layout title="Grading - PureScan AI">
+  <GradingIsland client:load  lang={lang} translations={translations} />
+</Layout>

@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Drošības un Uzturvērtības Novērtēšanas Sistēma",
+  "introPara1": "Šajā dokumentā ir izskaidrots, kā PureScan AI novērtē un klasificē skenēto produktu drošību, uzturvērtību un vispārējo kvalitāti. Mūsu sistēma balstās uz visaptverošām zinātniskām datu bāzēm, kas apvienotas ar uzlabotu mākslīgo intelektu, lai rūpīgi analizētu sastāvdaļas un piemērotu viedu, uz sodiem balstītu vērtēšanas sistēmu, kas pielāgota jūsu konkrētajam veselības profilam.",
+  "introPara2": "Lūdzu, ņemiet vērā: precīzie matemātiskie algoritmi un svari pieder PureScan AI, taču pamatprincipi un metodoloģijas ir pilnībā pārredzamas un izklāstītas turpmāk.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Pārtikas Produkti)",
+    "para1": "Nutri-Score aprēķina, izmantojot standartizētu, zinātnisku algoritmu, kas novērtē pārtikas produkta vispārējo uzturvērtību uz 100g vai 100ml. Tas līdzsvaro negatīvās uzturvielas, kas jāierobežo, pret pozitīvajām uzturvielām, ko veicināt, tādējādi iegūstot atzīmi no A (labākais) līdz E (sliktākais).",
+    "para2": "PureScan AI to aprēķina automātiski, izmantojot datus, kas ievadīti no produkta iepakojuma:",
+    "negPoints": {
+      "title": "Negatīvie Punkti (Palielina rezultātu / pasliktina atzīmi):",
+      "desc": "Punkti tiek pievienoti, pamatojoties uz enerģijas (kaloriju), piesātināto tauku, cukuru un nātrija (sāls) daudzumu."
+    },
+    "posPoints": {
+      "title": "Pozitīvie Punkti (Samazina rezultātu / uzlabo atzīmi):",
+      "desc": "Punkti tiek atņemti, pamatojoties uz augļu, dārzeņu, pākšaugu, riekstu un noteiktu labvēlīgo eļļu (rapšu, valriekstu, olīveļļas) procentuālo daudzumu, kā arī šķiedrvielu un olbaltumvielu saturu."
+    },
+    "finalGrade": {
+      "title": "Galīgā Atzīme:",
+      "desc": "Pozitīvie punkti tiek atņemti no negatīvajiem punktiem, lai iegūtu galīgo ciparu rezultātu. Šis numurs pēc tam tiek kartēts uz A-E krāsu skalu. PureScan AI izmanto precīzas uzturvielu vērtības no produkta uzturvērtības tabulas un sastāvdaļu saraksta, lai aprēķinātu šo rezultātu miljoniem produktu."
+    },
+    "grades": {
+      "a": "Atzīme A (Tumši Zaļa):",
+      "aDesc": "Izcila uzturvērtība. Pārtika, ko varat ēst regulāri.",
+      "b": "Atzīme B (Gaiši Zaļa):",
+      "bDesc": "Laba uzturvērtība.",
+      "c": "Atzīme C (Dzeltena):",
+      "cDesc": "Mērena uzturvērtība. Patērējiet mērenībā.",
+      "d": "Atzīme D (Oranža):",
+      "dDesc": "Slikta uzturvērtība. Satur augstāku negatīvo uzturvielu līmeni.",
+      "e": "Atzīme E (Sarkana):",
+      "eDesc": "Zemākā uzturvērtība. Produkti, piemēram, saldas uzkodas, stipri pārstrādāta gaļa un produkti ar augstu tauku saturu. Jālieto neregulāri."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA Klasifikācija (Pārtikas Produkti)",
+    "para1": "Atšķirībā no Nutri-Score matemātiskās formulas, NOVA rezultāts ir klasifikācijas sistēma, kas iedala pārtiku kategorijās, pamatojoties uz to, cik daudz tā ir rūpnieciski pārstrādāta. PureScan AI izmanto automatizētu algoritmu, lai analizētu produkta sastāvdaļu sarakstu un iedalītu to vienā no četrām grupām:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Nepārstrādāti / Minimāli pārstrādāti)",
+        "desc": "Dabiski pārtikas produkti, piemēram, svaigi augļi, dārzeņi, olas vai piens, kas nav pakļauti apstrādei vai tikai minimālai apstrādei (piemēram, saldēšana vai žāvēšana), nepievienojot sāli, cukuru vai taukus."
+      },
+      "2": {
+        "title": "NOVA 2 (Pārstrādātas kulinārijas sastāvdaļas)",
+        "desc": "Vielas, kas iegūtas tieši no dabas vai 1. grupas pārtikas, ko izmanto ēdiena gatavošanai, piemēram, sāls, cukurs, sviests un augu eļļas."
+      },
+      "3": {
+        "title": "NOVA 3 (Pārstrādāta pārtika)",
+        "desc": "Pārtika, kas pagatavota, 1. grupas pārtikai pievienojot 2. grupas sastāvdaļas (sāls, cukurs, tauki). Piemēri ir konservēti dārzeņi, vienkārša maize, siers un sālīti rieksti."
+      },
+      "4": {
+        "title": "NOVA 4 (Īpaši pārstrādāta pārtika)",
+        "desc": "Rūpnieciskie preparāti, kas parasti satur 5 vai vairāk sastāvdaļas. Tie satur vielas, ko parasti neizmanto mājas virtuvē (piemēram, kukurūzas sīrups ar augstu fruktozes saturu, hidrogenētas eļļas), un kosmētikas piedevas (piemēram, mākslīgos aromatizētājus, krāsvielas, emulgatorus, konservantus)."
+      }
+    },
+    "howItWorks": {
+      "title": "Kā PureScan AI aprēķina NOVA:",
+      "desc": "PureScan AI izmanto algoritmu, kas skenē sastāvdaļu sarakstu, lai meklētu īpašus ultra-pārstrādes \"marķierus\". Ja algoritms atklāj rūpnieciskas piedevas, mākslīgos aromatizētājus vai ļoti apstrādātas sastāvdaļas, tas automātiski atzīmē produktu kā NOVA 4."
+    },
+    "important": {
+      "title": "Svarīga Atšķirība:",
+      "desc": "Ir pilnīgi iespējams, ka produktam var būt \"labs\" Nutri-Score (piemēram, A vai B), jo tajā ir maz cukura un tauku, taču tas joprojām tiek klasificēts kā NOVA 4 (Īpaši pārstrādāts), jo tajā tiek izmantoti mākslīgie saldinātāji un biezinātāji, lai sasniegtu šo uzturvērtības profilu."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI Drošības Novērtēšanas Sistēma",
+    "para1": "Lai gan Nutri-Score un NOVA nodrošina bāzes līniju, PureScan AI aprēķina personalizētu drošības pakāpi (no A līdz E). Mūsu vērtēšanas sistēma darbojas kā \"riska rādītājs\" — jo vairāk riska punktu uzkrāts, jo zemāka pēdējā burtu atzīme (tuvāk E).",
+    "penalties": {
+      "title": "Kā Darbojas Sodi un Atskaitījumi:",
+      "desc": "Produkts sākas ar perfektu \"A\" atzīmi un saņem sodus (riska punktus), pamatojoties uz dažādiem atklājumiem:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Personalizēts Veselības Profils (Alerģijas un Stāvokļi)",
+        "desc": "Ja produkts satur sastāvdaļu, pret kuru lietotājam ir acīmredzama alerģija (piemēram, zemesrieksti, lipeklis, piena produkti), produkts saņem bargu sodu un nekavējoties pazeminās uz zemāku atzīmi (D vai E), brīdinot lietotāju, ka tas viņam ir ārkārtīgi nedrošs."
+      },
+      "b": {
+        "title": "B. Kaitīgās Piedevas un Sastāvdaļas",
+        "desc": "Sastāvdaļas tiek savstarpēji pārbaudītas ar mūsu toksikoloģisko datubāzi. Zināmi kancerogēni, endokrīno sistēmu traucējoši vielas vai spēcīgi kairinātāji ievērojami samazina rezultātu. Standarta mākslīgās piedevas, mākslīgās krāsvielas un konservanti nes mērenus sodus."
+      },
+      "c": {
+        "title": "C. Pārtikas Pārstrāde un Uzturs (Tikai Pārtika)",
+        "desc": "Ja produkts ir īpaši pārstrādāta pārtika (NOVA 4) vai tam ir vājš uzturvielu blīvums (Nutri-Score D vai E), tam tiek piemēroti papildu sodi. Tas nodrošina, ka pat \"vegānu\" vai \"bez alergēnu\" pārtika automātiski nesaņem atzīmi \"A\", ja tā pamatā ir neveselīga."
+      },
+      "d": {
+        "title": "D. Kosmētika un Personīgā Higiēna (Tikai Kosmētika)",
+        "desc": "Kosmētikas jomā sistēma neskatās uz uzturu. Tā vietā tiek rūpīgi pārbaudīts ķīmiskais sastāvs. Sodi tiek piemēroti par:",
+        "list1": "Neirotoksīni un endokrīno sistēmu traucējošas vielas (piemēram, parabēni, ftalāti).",
+        "list2": "Zināmi ādas kairinātāji un alergēni (piemēram, sintētiskās smaržvielas, spēcīgi sulfāti).",
+        "list3": "Vides toksīni (piemēram, mikroplastmasa, daži UV filtri)."
+      }
+    },
+    "summary": {
+      "title": "Atzīmju Kopsavilkums",
+      "ab": "Atzīme A/B:",
+      "abDesc": "Tīrs, ļoti piemērots jūsu profilam, minimālas kaitīgas piedevas vai to nav vispār.",
+      "c": "Atzīme C:",
+      "cDesc": "Mērens. Var saturēt dažus apstrādātus elementus vai nelielus kairinātājus. Turpiniet uzmanīgi.",
+      "de": "Atzīme D/E (Augsts Risks):",
+      "deDesc": "Produkts satur sastāvdaļas, kas ir tiešā pretrunā ar jūsu alerģijām, augstu toksisko/kaitīgo ķīmisko vielu līmeni, vai ir ārkārtīgi pārstrādāts. Nav ieteicams lietošanai."
+    }
+  },
+  "footer": {
+    "grading": "Vērtēšanas Sistēma",
+    "privacy": "Privātuma Politika",
+    "terms": "Pakalpojumu Noteikumi",
+    "support": "Atbalsts",
+    "copyright": "© {{year}} PureScan AI. Visprogresīvākais Pārtikas un Kosmētikas Skeneris."
+  }
+}

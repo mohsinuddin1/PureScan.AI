@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Säkerhets- och Näringsbedömningssystem",
+  "introPara1": "Detta dokument förklarar grunden för hur PureScan AI utvärderar och betygsätter säkerheten, näringsvärdet och den övergripande kvaliteten på skannade produkter. Vårt system förlitar sig på omfattande vetenskapliga databaser kombinerat med avancerad AI för att noggrant analysera ingredienser och tillämpa ett intelligent, straffbaserat poängsystem anpassat till din specifika hälsoprofil.",
+  "introPara2": "Observera: De exakta matematiska algoritmerna och viktningarna är PureScan AIs egendom, men grundprinciperna och metoderna är helt transparenta och beskrivs nedan.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Livsmedel)",
+    "para1": "Nutri-Score beräknas med en standardiserad, vetenskaplig algoritm som bedömer det totala näringsvärdet av ett livsmedel per 100g eller 100ml. Den balanserar negativa näringsämnen som bör begränsas mot positiva näringsämnen som bör uppmuntras, vilket resulterar i ett betyg från A (bäst) till E (sämst).",
+    "para2": "PureScan AI beräknar detta automatiskt med hjälp av de uppgifter som anges från produktens förpackning:",
+    "negPoints": {
+      "title": "Negativa poäng (Ökar poängen / försämrar betyget):",
+      "desc": "Poäng läggs till baserat på mängden energi (kalorier), mättat fett, socker och natrium (salt)."
+    },
+    "posPoints": {
+      "title": "Positiva poäng (Minskar poängen / förbättrar betyget):",
+      "desc": "Poäng dras av baserat på andelen frukt, grönsaker, baljväxter, nötter och specifika nyttiga oljor (raps-, valnöts-, olivolja), samt fiber- och proteininnehåll."
+    },
+    "finalGrade": {
+      "title": "Det slutgiltiga betyget:",
+      "desc": "De positiva poängen dras från de negativa poängen för att få en slutgiltig numerisk poäng. Detta nummer mappas sedan till färgskalan A-E. PureScan AI använder de exakta näringsvärdena från produktens näringstabell och ingredienslista för att beräkna denna poäng för miljontals produkter."
+    },
+    "grades": {
+      "a": "Grade A (Mörkgrön):",
+      "aDesc": "Utmärkt näringskvalitet. Livsmedel du kan äta regelbundet.",
+      "b": "Grade B (Ljusgrön):",
+      "bDesc": "God näringskvalitet.",
+      "c": "Grade C (Gul):",
+      "cDesc": "Måttlig näringskvalitet. Konsumera med måtta.",
+      "d": "Grade D (Orange):",
+      "dDesc": "Dålig näringskvalitet. Innehåller högre halter av negativa näringsämnen.",
+      "e": "Grade E (Röd):",
+      "eDesc": "Lägst näringskvalitet. Produkter som sockerhaltiga snacks, kraftigt bearbetat kött och fettrika varor. Bör konsumeras ibland."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA-Klassificering (Livsmedel)",
+    "para1": "Till skillnad från den matematiska formeln för Nutri-Score är NOVA-poängen ett klassificeringssystem som kategoriserar livsmedel baserat på hur mycket det har bearbetats industriellt. PureScan AI använder en automatiserad algoritm för att analysera produktens ingredienslista och kategorisera den i en av fyra grupper:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Obearbetad / Minimalt bearbetad)",
+        "desc": "Naturliga livsmedel som färsk frukt, grönsaker, ägg eller mjölk som inte har genomgått någon bearbetning eller minimal bearbetning (som frysning eller torkning) utan tillsats av salt, socker eller fetter."
+      },
+      "2": {
+        "title": "NOVA 2 (Bearbetade kulinariska ingredienser)",
+        "desc": "Ämnen som härrör direkt från naturen eller livsmedel i Grupp 1 som används för matlagning, såsom salt, socker, smör och vegetabiliska oljor."
+      },
+      "3": {
+        "title": "NOVA 3 (Bearbetade livsmedel)",
+        "desc": "Livsmedel gjorda genom att lägga till ingredienser från Grupp 2 (salt, socker, fett) till livsmedel i Grupp 1. Exempel inkluderar konserverade grönsaker, enkla bröd, ost och saltade nötter."
+      },
+      "4": {
+        "title": "NOVA 4 (Ultraförädlade livsmedel)",
+        "desc": "Industriella formuleringar som vanligtvis innehåller 5 eller fler ingredienser. Dessa innehåller ämnen som inte vanligen används i ett hemmakök (t.ex. majssirap med hög fruktoshalt, hydrerade oljor) och kosmetiska tillsatser (t.ex. konstgjorda smaker, färger, emulgeringsmedel, konserveringsmedel)."
+      }
+    },
+    "howItWorks": {
+      "title": "Hur PureScan AI beräknar NOVA:",
+      "desc": "PureScan AI använder en algoritm som skannar ingredienslistan för att söka efter specifika \"markörer\" för ultrabearbetning. Om algoritmen upptäcker industriella tillsatser, konstgjorda smaker eller kraftigt bearbetade ingredienser flaggas produkten automatiskt som NOVA 4."
+    },
+    "important": {
+      "title": "Viktig skillnad:",
+      "desc": "Det är fullt möjligt för en produkt att ha en \"bra\" Nutri-Score (t.ex. A eller B) eftersom den har låg sockerhalt och låg fetthalt, men ändå klassificeras som NOVA 4 (Ultrabearbetad) eftersom den använder konstgjorda sötningsmedel och förtjockningsmedel för att uppnå den näringsprofilen."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI Säkerhetsbedömningssystem",
+    "para1": "Medan Nutri-Score och NOVA ger baslinjer, beräknar PureScan AI ett personligt säkerhetsbetyg (från A till E). Vårt betygssystem fungerar som en \"riskpoäng\" – ju fler riskpoäng som samlas, desto lägre blir slutbetyget (närmare E).",
+    "penalties": {
+      "title": "Hur straff och avdrag fungerar:",
+      "desc": "En produkt börjar med ett perfekt \"A\"-betyg och får straff (riskpoäng) baserat på olika upptäckter:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Personlig Hälsoprofil (Allergier & Tillstånd)",
+        "desc": "Om en produkt innehåller en ingrediens som användaren uttryckligen är allergisk mot (t.ex. jordnötter, gluten, mejeri), får produkten ett strängt straff och sjunker omedelbart till ett lägre betyg (D eller E), och varnar användaren om att den är mycket osäker för dem."
+      },
+      "b": {
+        "title": "B. Skadliga tillsatser & ingredienser",
+        "desc": "Ingredienser korsrefereras med vår toxikologiska databas. Kända cancerframkallande ämnen, hormonstörande ämnen eller kraftiga irriterande ämnen straffar poängen hårt. Standard konstgjorda tillsatser, konstgjorda färger och konserveringsmedel medför måttliga straff."
+      },
+      "c": {
+        "title": "C. Livsmedelsförädling & Näring (Endast livsmedel)",
+        "desc": "Om produkten är ett ultrabearbetat livsmedel (NOVA 4) eller har låg näringstäthet (Nutri-Score D eller E), medför den ytterligare straff. Detta säkerställer att även \"veganska\" eller \"allergenfria\" livsmedel inte automatiskt beviljas ett 'A' om de är fundamentalt ohälsosamma."
+      },
+      "d": {
+        "title": "D. Kosmetika & Personlig vård (Endast kosmetika)",
+        "desc": "För kosmetika tittar systemet inte på näring. Istället granskar den noggrant den kemiska sammansättningen. Straff tillämpas för:",
+        "list1": "Neurotoxiner och hormonstörande ämnen (t.ex. parabener, ftalater).",
+        "list2": "Kända hudirriterande ämnen och allergener (t.ex. syntetiska dofter, hårda sulfater).",
+        "list3": "Miljögifter (t.ex. mikroplast, vissa UV-filter)."
+      }
+    },
+    "summary": {
+      "title": "Sammanfattning av Betyg",
+      "ab": "Grade A/B:",
+      "abDesc": "Ren, mycket lämplig för din profil, minimala till inga skadliga tillsatser.",
+      "c": "Grade C:",
+      "cDesc": "Måttlig. Kan innehålla några bearbetade element eller mindre irriterande ämnen. Fortsätt med medvetenhet.",
+      "de": "Grade D/E (Hög Risk):",
+      "deDesc": "Produkten innehåller ingredienser som står i direkt konflikt med dina allergier, höga halter av giftiga/skadliga kemikalier, eller är extremt ultrabearbetad. Rekommenderas inte för användning."
+    }
+  },
+  "footer": {
+    "grading": "Bedömningssystem",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "support": "Support",
+    "copyright": "© {{year}} PureScan AI. Den mest avancerade livsmedels- och kosmetikaskannern."
+  }
+}

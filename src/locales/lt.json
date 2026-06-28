@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Saugos ir Mitybos Vertinimo Sistema",
+  "introPara1": "Šiame dokumente paaiškinamas pagrindas, kaip „PureScan AI“ vertina nuskaitytų produktų saugumą, maistinę vertę ir bendrą kokybę. Mūsų sistema remiasi išsamiomis mokslinėmis duomenų bazėmis, sujungtomis su pažangiu AI, kad būtų galima nuodugniai ištirti ingredientus ir pritaikyti intelektualią, baudos taškais pagrįstą vertinimo sistemą, pritaikytą jūsų specifiniam sveikatos profiliui.",
+  "introPara2": "Atkreipkite dėmesį: tikslūs matematiniai algoritmai ir svoriai yra „PureScan AI“ nuosavybė, tačiau pagrindiniai principai ir metodikos yra visiškai skaidrios ir aprašytos žemiau.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Maisto Produktai)",
+    "para1": "„Nutri-Score“ apskaičiuojamas naudojant standartizuotą, mokslinį algoritmą, kuris įvertina bendrą maisto produkto maistinę vertę 100g arba 100ml. Jis subalansuoja neigiamas maistines medžiagas, kurias reikia riboti, su teigiamomis maistinėmis medžiagomis, kurias reikia skatinti, ir gaunamas įvertinimas nuo A (geriausias) iki E (blogiausias).",
+    "para2": "„PureScan AI“ apskaičiuoja tai automatiškai naudodama duomenis, įvestus iš produkto pakuotės:",
+    "negPoints": {
+      "title": "Neigiami Taškai (Padidina balą / pablogina įvertinimą):",
+      "desc": "Taškai pridedami atsižvelgiant į energijos (kalorijų), sočiųjų riebalų, cukraus ir natrio (druskos) kiekį."
+    },
+    "posPoints": {
+      "title": "Teigiami Taškai (Sumažina balą / pagerina įvertinimą):",
+      "desc": "Taškai atimami atsižvelgiant į vaisių, daržovių, ankštinių augalų, riešutų ir specifinių naudingų aliejų (rapsų, graikinių riešutų, alyvuogių aliejaus) procentinę dalį, taip pat į skaidulų ir baltymų kiekį."
+    },
+    "finalGrade": {
+      "title": "Galutinis Įvertinimas:",
+      "desc": "Teigiami taškai atimami iš neigiamų taškų, kad būtų gautas galutinis skaitmeninis balas. Tada šis skaičius susiejamas su A-E spalvų skale. „PureScan AI“ naudoja tikslias maistinių medžiagų vertes iš produkto mitybos lentelės ir ingredientų sąrašo, kad apskaičiuotų šį balą milijonams produktų."
+    },
+    "grades": {
+      "a": "Grade A (Tamsiai Žalia):",
+      "aDesc": "Puiki mitybos kokybė. Maistas, kurį galite valgyti reguliariai.",
+      "b": "Grade B (Šviesiai Žalia):",
+      "bDesc": "Gera mitybos kokybė.",
+      "c": "Grade C (Geltona):",
+      "cDesc": "Vidutinė mitybos kokybė. Vartoti saikingai.",
+      "d": "Grade D (Oranžinė):",
+      "dDesc": "Prasta mitybos kokybė. Sudėtyje yra didesnis neigiamų maistinių medžiagų kiekis.",
+      "e": "Grade E (Raudona):",
+      "eDesc": "Žemiausia mitybos kokybė. Tokie produktai kaip saldūs užkandžiai, stipriai perdirbta mėsa ir daug riebalų turintys produktai. Turėtų būti vartojami retkarčiais."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA Klasifikacija (Maisto Produktai)",
+    "para1": "Skirtingai nuo matematinės „Nutri-Score“ formulės, NOVA balas yra klasifikavimo sistema, pagal kurią maistas skirstomas į kategorijas, atsižvelgiant į tai, kiek jis buvo pramoniniu būdu perdirbtas. „PureScan AI“ naudoja automatizuotą algoritmą, kuris analizuoja produkto ingredientų sąrašą ir priskiria jį vienai iš keturių grupių:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Neperdirbti / Minimaliai perdirbti)",
+        "desc": "Natūralūs maisto produktai, tokie kaip švieži vaisiai, daržovės, kiaušiniai ar pienas, kurie nebuvo perdirbti arba buvo minimaliai perdirbti (pvz., užšaldyti ar išdžiovinti) nepridedant druskos, cukraus ar riebalų."
+      },
+      "2": {
+        "title": "NOVA 2 (Perdirbti kulinarijos ingredientai)",
+        "desc": "Medžiagos, gaunamos tiesiogiai iš gamtos arba iš 1 grupės maisto produktų, naudojamos maisto ruošimui, pavyzdžiui, druska, cukrus, sviestas ir augaliniai aliejai."
+      },
+      "3": {
+        "title": "NOVA 3 (Perdirbti maisto produktai)",
+        "desc": "Maistas, pagamintas pridedant 2 grupės ingredientų (druskos, cukraus, riebalų) prie 1 grupės maisto produktų. Pavyzdžiai: konservuotos daržovės, paprasta duona, sūris ir sūdyti riešutai."
+      },
+      "4": {
+        "title": "NOVA 4 (Itin perdirbti maisto produktai)",
+        "desc": "Pramoninės sudėties produktai, kuriuose paprastai yra 5 ar daugiau ingredientų. Juose yra medžiagų, kurios paprastai nenaudojamos namų virtuvėje (pvz., didelio fruktozės kiekio kukurūzų sirupas, hidrinti aliejai), ir kosmetinių priedų (pvz., dirbtinių kvapiųjų medžiagų, dažiklių, emulsiklių, konservantų)."
+      }
+    },
+    "howItWorks": {
+      "title": "Kaip „PureScan AI“ apskaičiuoja NOVA:",
+      "desc": "„PureScan AI“ naudoja algoritmą, kuris nuskaito ingredientų sąrašą ir ieško specifinių itin perdirbto maisto „žymeklių“. Jei algoritmas aptinka pramoninių priedų, dirbtinių skonių ar stipriai perdirbtų ingredientų, jis automatiškai pažymi produktą kaip NOVA 4."
+    },
+    "important": {
+      "title": "Svarbus Skirtumas:",
+      "desc": "Visiškai įmanoma, kad produktas turės „gerą“ Nutri-Score (pvz., A arba B), nes jame mažai cukraus ir riebalų, bet vis tiek bus priskirtas NOVA 4 (itin perdirbtas) kategorijai, nes jam pasiekti naudojami dirbtiniai saldikliai ir tirštikliai."
+    }
+  },
+  "safety": {
+    "title": "3. „PureScan AI“ Saugos Vertinimo Sistema",
+    "para1": "Nors „Nutri-Score“ ir NOVA suteikia pagrindines linijas, „PureScan AI“ apskaičiuoja asmeninį saugumo įvertinimą (nuo A iki E). Mūsų vertinimo sistema veikia kaip „rizikos balas“ – kuo daugiau rizikos taškų sukaupiama, tuo žemesnis galutinis raidinis įvertinimas (arčiau E).",
+    "penalties": {
+      "title": "Kaip veikia baudos ir atskaitymai:",
+      "desc": "Produktas pradedamas vertinti tobulu „A“ balu ir gauna baudas (rizikos taškus) remiantis įvairiais aptikimais:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Asmeninis Sveikatos Profilis (Alergijos ir Būklės)",
+        "desc": "Jei produkte yra ingredientas, kuriam vartotojas yra aiškiai alergiškas (pvz., žemės riešutai, glitimas, pieno produktai), produktas gauna griežtą baudą ir iškart nukrenta iki žemesnio įvertinimo (D arba E), įspėjant vartotoją, kad jis jam yra labai nesaugus."
+      },
+      "b": {
+        "title": "B. Kenksmingi Priedai ir Ingredientai",
+        "desc": "Ingredientai tikrinami su mūsų toksikologine duomenų baze. Žinomi kancerogenai, endokrininę sistemą ardanti medžiagos ar stiprūs dirgikliai smarkiai sumažina balą. Standartiniai dirbtiniai priedai, dirbtinės spalvos ir konservantai užtraukia vidutines baudas."
+      },
+      "c": {
+        "title": "C. Maisto Perdirbimas ir Mityba (Tik Maistui)",
+        "desc": "Jei produktas yra itin perdirbtas (NOVA 4) arba jo maistinė vertė yra maža (Nutri-Score D arba E), jis gauna papildomas baudas. Tai užtikrina, kad net „veganiškam“ arba „be alergenų“ maistui automatiškai nesuteikiamas „A“ balas, jei jis iš esmės yra nesveikas."
+      },
+      "d": {
+        "title": "D. Kosmetika ir Asmens Higiena (Tik Kosmetikai)",
+        "desc": "Kosmetikos atveju sistema nežiūri į mitybą. Vietoj to ji atidžiai tiria cheminę sudėtį. Baudos taikomos už:",
+        "list1": "Neurotoksinus ir endokrininę sistemą ardanti medžiagas (pvz., parabenai, ftalatai).",
+        "list2": "Žinomus odos dirgiklius ir alergenus (pvz., sintetiniai kvapai, atšiaurūs sulfatai).",
+        "list3": "Aplinkos toksinus (pvz., mikroplastikai, tam tikri UV filtrai)."
+      }
+    },
+    "summary": {
+      "title": "Įvertinimų Santrauka",
+      "ab": "Grade A/B:",
+      "abDesc": "Švarus, puikiai tinka jūsų profiliui, jokių arba beveik jokių kenksmingų priedų.",
+      "c": "Grade C:",
+      "cDesc": "Vidutinis. Gali būti šiek tiek apdorotų elementų arba nedidelių dirgiklių. Naudokite atsargiai.",
+      "de": "Grade D/E (Didelė Rizika):",
+      "deDesc": "Produkte yra ingredientų, kurie tiesiogiai prieštarauja jūsų alergijoms, yra didelis toksiškų/kenksmingų cheminių medžiagų kiekis, arba jis yra itin perdirbtas. Nerekomenduojama naudoti."
+    }
+  },
+  "footer": {
+    "grading": "Vertinimo Sistema",
+    "privacy": "Privatumo Politika",
+    "terms": "Paslaugų Teikimo Sąlygos",
+    "support": "Palaikymas",
+    "copyright": "© {{year}} PureScan AI. Pažangiausias Maisto ir Kosmetikos Skaitytuvas."
+  }
+}

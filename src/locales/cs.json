@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Systém Hodnocení Bezpečnosti a Výživy",
+  "introPara1": "Tento dokument vysvětluje základ toho, jak PureScan AI hodnotí bezpečnost, nutriční hodnotu a celkovou kvalitu naskenovaných produktů. Náš systém se opírá o rozsáhlé vědecké databáze v kombinaci s pokročilou umělou inteligencí, která důkladně analyzuje složky a aplikuje inteligentní systém hodnocení založený na penalizacích, přizpůsobený vašemu specifickému zdravotnímu profilu.",
+  "introPara2": "Upozornění: Přesné matematické algoritmy a váhy jsou vlastnictvím společnosti PureScan AI, ale základní principy a metodiky jsou plně transparentní a jsou popsány níže.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Potravinářské Výrobky)",
+    "para1": "Nutri-Score se vypočítává pomocí standardizovaného vědeckého algoritmu, který posuzuje celkovou nutriční hodnotu potravinářského výrobku na 100g nebo 100ml. Vyvažuje negativní živiny, které je třeba omezit, s pozitivními živinami, které je třeba podporovat, což vede ke známce od A (nejlepší) po E (nejhorší).",
+    "para2": "PureScan AI to vypočítá automaticky pomocí dat zadaných z obalu produktu:",
+    "negPoints": {
+      "title": "Negativní Body (Zvyšují skóre / zhoršují známku):",
+      "desc": "Body se přičítají na základě množství energie (kalorií), nasycených tuků, cukrů a sodíku (soli)."
+    },
+    "posPoints": {
+      "title": "Pozitivní Body (Snižují skóre / zlepšují známku):",
+      "desc": "Body se odečítají na základě procenta ovoce, zeleniny, luštěnin, ořechů a specifických prospěšných olejů (řepkový, vlašský ořech, olivový olej), stejně jako obsahu vlákniny a bílkovin."
+    },
+    "finalGrade": {
+      "title": "Konečná Známka:",
+      "desc": "Pozitivní body se odečítají od negativních bodů, aby se získalo konečné číselné skóre. Toto číslo je pak namapováno na barevnou škálu A-E. PureScan AI používá přesné hodnoty živin z tabulky nutričních hodnot a seznamu složek k výpočtu tohoto skóre pro miliony produktů."
+    },
+    "grades": {
+      "a": "Známka A (Tmavě Zelená):",
+      "aDesc": "Vynikající nutriční kvalita. Potraviny, které můžete jíst pravidelně.",
+      "b": "Známka B (Světle Zelená):",
+      "bDesc": "Dobrá nutriční kvalita.",
+      "c": "Známka C (Žlutá):",
+      "cDesc": "Střední nutriční kvalita. Konzumujte s mírou.",
+      "d": "Známka D (Oranžová):",
+      "dDesc": "Špatná nutriční kvalita. Obsahuje vyšší úroveň negativních živin.",
+      "e": "Známka E (Červená):",
+      "eDesc": "Nejnižší nutriční kvalita. Produkty, jako jsou sladké přesnídávky, silně zpracované maso a tučné výrobky. Měly by být konzumovány příležitostně."
+    }
+  },
+  "nova": {
+    "title": "2. Klasifikace NOVA (Potravinářské Výrobky)",
+    "para1": "Na rozdíl od matematického vzorce Nutri-Score je skóre NOVA klasifikační systém, který rozděluje potraviny na základě toho, jak moc byly průmyslově zpracovány. PureScan AI používá automatický algoritmus k analýze seznamu složek produktu a jeho zařazení do jedné ze čtyř skupin:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Nezpracované / Minimálně zpracované)",
+        "desc": "Přírodní potraviny jako čerstvé ovoce, zelenina, vejce nebo mléko, které neprošly žádným zpracováním nebo minimálním zpracováním (jako zmrazení nebo sušení) bez přidání soli, cukru nebo tuků."
+      },
+      "2": {
+        "title": "NOVA 2 (Zpracované kulinářské přísady)",
+        "desc": "Látky pocházející přímo z přírody nebo potraviny skupiny 1 používané k vaření, jako je sůl, cukr, máslo a rostlinné oleje."
+      },
+      "3": {
+        "title": "NOVA 3 (Zpracované potraviny)",
+        "desc": "Potraviny vyrobené přidáním složek skupiny 2 (sůl, cukr, tuk) do potravin skupiny 1. Mezi příklady patří konzervovaná zelenina, jednoduché pečivo, sýry a solené ořechy."
+      },
+      "4": {
+        "title": "NOVA 4 (Vysoce zpracované potraviny)",
+        "desc": "Průmyslové formulace obvykle obsahující 5 nebo více složek. Obsahují látky běžně nepoužívané v domácí kuchyni (např. kukuřičný sirup s vysokým obsahem fruktózy, hydrogenované oleje) a kosmetické přísady (např. umělá aromata, barviva, emulgátory, konzervanty)."
+      }
+    },
+    "howItWorks": {
+      "title": "Jak PureScan AI počítá NOVA:",
+      "desc": "PureScan AI používá algoritmus, který prohledává seznam složek a hledá specifické „markery“ ultra-zpracování. Pokud algoritmus detekuje průmyslové přísady, umělá aromata nebo vysoce zpracované složky, automaticky označí produkt jako NOVA 4."
+    },
+    "important": {
+      "title": "Důležitý Rozdíl:",
+      "desc": "Je zcela možné, že produkt má „dobré“ Nutri-Score (např. A nebo B), protože má nízký obsah cukru a tuku, ale přesto je klasifikován jako NOVA 4 (Vysoce zpracované), protože k dosažení tohoto nutričního profilu používá umělá sladidla a zahušťovadla."
+    }
+  },
+  "safety": {
+    "title": "3. Systém Hodnocení Bezpečnosti PureScan AI",
+    "para1": "Zatímco Nutri-Score a NOVA poskytují základ, PureScan AI vypočítá personalizovanou známku bezpečnosti (od A do E). Náš systém hodnocení funguje jako „skóre rizika“ – čím více rizikových bodů se nahromadí, tím nižší je konečná známka (blíže k E).",
+    "penalties": {
+      "title": "Jak Fungují Sankce a Srážky:",
+      "desc": "Produkt začíná na perfektní známce „A“ a dostává sankce (rizikové body) na základě různých zjištění:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Personalizovaný Zdravotní Profil (Alergie a Stavy)",
+        "desc": "Pokud produkt obsahuje složku, na kterou je uživatel výslovně alergický (např. arašídy, lepek, mléčné výrobky), dostává vysokou penalizaci a okamžitě klesá na nižší známku (D nebo E), varující uživatele, že je to pro něj vysoce nebezpečné."
+      },
+      "b": {
+        "title": "B. Škodlivé Přísady a Složky",
+        "desc": "Složky jsou porovnávány s naší toxikologickou databází. Známé karcinogeny, endokrinní disruptory nebo silné dráždivé látky silně penalizují skóre. Standardní umělé přísady, umělá barviva a konzervanty přinášejí mírné tresty."
+      },
+      "c": {
+        "title": "C. Zpracování Potravin a Výživa (Pouze Potraviny)",
+        "desc": "Pokud se jedná o vysoce zpracovanou potravinu (NOVA 4) nebo má nízkou hustotu živin (Nutri-Score D nebo E), dostává dodatečné tresty. Tím je zajištěno, že ani „veganské“ nebo „bezalergenní“ potraviny nedostanou automaticky hodnocení „A“, pokud jsou zásadně nezdravé."
+      },
+      "d": {
+        "title": "D. Kosmetika a Osobní Péče (Pouze Kosmetika)",
+        "desc": "U kosmetiky systém nesleduje výživu. Namísto toho důkladně zkoumá chemické složení. Sankce se uplatňují za:",
+        "list1": "Neurotoxiny a endokrinní disruptory (např. parabeny, ftaláty).",
+        "list2": "Známé kožní dráždivé látky a alergeny (např. syntetické vůně, drsné sulfáty).",
+        "list3": "Environmentální toxiny (např. mikroplasty, určité UV filtry)."
+      }
+    },
+    "summary": {
+      "title": "Shrnutí Známek",
+      "ab": "Známka A/B:",
+      "abDesc": "Čisté, velmi vhodné pro váš profil, minimum nebo žádné škodlivé přísady.",
+      "c": "Známka C:",
+      "cDesc": "Mírné. Může obsahovat některé zpracované prvky nebo menší dráždivé látky. Pokračujte s vědomím.",
+      "de": "Známka D/E (Vysoké Riziko):",
+      "deDesc": "Produkt obsahuje složky přímo v rozporu s vašimi alergiemi, vysoké hladiny toxických/škodlivých chemikálií, nebo je extrémně vysoce zpracován. Nedoporučuje se k použití."
+    }
+  },
+  "footer": {
+    "grading": "Systém Hodnocení",
+    "privacy": "Zásady Ochrany Osobních Údajů",
+    "terms": "Podmínky Služby",
+    "support": "Podpora",
+    "copyright": "© {{year}} PureScan AI. Nejpokročilejší Skener Potravin a Kosmetiky."
+  }
+}

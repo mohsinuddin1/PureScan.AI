@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Safety & Nutritional Scoring System",
+  "introPara1": "This document explains the foundation of how PureScan AI evaluates and grades the safety, nutritional value, and overall quality of scanned products. Our system relies on comprehensive scientific databases combined with advanced AI to thoroughly analyze ingredients and apply an intelligent, penalty-based scoring system tailored to your specific health profile.",
+  "introPara2": "Please note: The exact mathematical algorithms and weights are proprietary to PureScan AI, but the core principles and methodologies are fully transparent and outlined below.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Food Products)",
+    "para1": "The Nutri-Score is calculated using a standardized, scientific algorithm that assesses the overall nutritional value of a food product per 100g or 100ml. It balances negative nutrients to limit against positive nutrients to encourage, resulting in a grade from A (best) to E (worst).",
+    "para2": "PureScan AI calculates this automatically using the data entered from the product's packaging:",
+    "negPoints": {
+      "title": "Negative Points (Increase the score / worsen the grade):",
+      "desc": "Points are added based on the amount of energy (calories), saturated fat, sugars, and sodium (salt)."
+    },
+    "posPoints": {
+      "title": "Positive Points (Decrease the score / improve the grade):",
+      "desc": "Points are subtracted based on the percentage of fruits, vegetables, pulses, nuts, and specific beneficial oils (rapeseed, walnut, olive oil), as well as fiber and protein content."
+    },
+    "finalGrade": {
+      "title": "The Final Grade:",
+      "desc": "The positive points are subtracted from the negative points to get a final numerical score. This number is then mapped to the A-E color scale. PureScan AI uses the exact nutrient values from the product's nutrition table and ingredient list to compute this score for millions of products."
+    },
+    "grades": {
+      "a": "Grade A (Dark Green):",
+      "aDesc": "Excellent nutritional quality. Foods you can eat regularly.",
+      "b": "Grade B (Light Green):",
+      "bDesc": "Good nutritional quality.",
+      "c": "Grade C (Yellow):",
+      "cDesc": "Moderate nutritional quality. Consume in moderation.",
+      "d": "Grade D (Orange):",
+      "dDesc": "Poor nutritional quality. Contains higher levels of negative nutrients.",
+      "e": "Grade E (Red):",
+      "eDesc": "Lowest nutritional quality. Products like sugary snacks, heavily processed meats, and high-fat items. Should be consumed occasionally."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA Classification (Food Products)",
+    "para1": "Unlike the mathematical formula of the Nutri-Score, the NOVA score is a classification system that categorizes food based on how much it has been industrially processed. PureScan AI uses an automated algorithm to analyze the product's ingredient list and categorize it into one of four groups:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Unprocessed / Minimally processed)",
+        "desc": "Natural foods like fresh fruits, vegetables, eggs, or milk that have undergone no processing or minimal processing (like freezing or drying) without adding salt, sugar, or fats."
+      },
+      "2": {
+        "title": "NOVA 2 (Processed culinary ingredients)",
+        "desc": "Substances derived directly from nature or Group 1 foods used for cooking, such as salt, sugar, butter, and vegetable oils."
+      },
+      "3": {
+        "title": "NOVA 3 (Processed foods)",
+        "desc": "Foods made by adding Group 2 ingredients (salt, sugar, fat) to Group 1 foods. Examples include canned vegetables, simple breads, cheese, and salted nuts."
+      },
+      "4": {
+        "title": "NOVA 4 (Ultra-processed foods)",
+        "desc": "Industrial formulations typically containing 5 or more ingredients. These contain substances not commonly used in a home kitchen (e.g., high-fructose corn syrup, hydrogenated oils) and cosmetic additives (e.g., artificial flavors, colors, emulsifiers, preservatives)."
+      }
+    },
+    "howItWorks": {
+      "title": "How PureScan AI calculates NOVA:",
+      "desc": "PureScan AI uses an algorithm that scans the ingredient list to search for specific \"markers\" of ultra-processing. If the algorithm detects industrial additives, artificial flavors, or highly processed ingredients, it automatically flags the product as NOVA 4."
+    },
+    "important": {
+      "title": "Important Distinction:",
+      "desc": "It is entirely possible for a product to have a \"good\" Nutri-Score (e.g., A or B) because it is low in sugar and fat, but still be classified as NOVA 4 (Ultra-processed) because it uses artificial sweeteners and thickeners to achieve that nutritional profile."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI Safety Scoring System",
+    "para1": "While Nutri-Score and NOVA provide baselines, PureScan AI calculates a personalized Safety Grade (ranging from A to E). Our grading system acts like a \"risk score\"—the higher the risk points accumulated, the lower the final letter grade (closer to E).",
+    "penalties": {
+      "title": "How Penalties and Deductions Work:",
+      "desc": "A product starts with a perfect \"A\" grade and receives penalties (risk points) based on various detections:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Personalized Health Profile (Allergies & Conditions)",
+        "desc": "If a product contains an ingredient that the user is explicitly allergic to (e.g., peanuts, gluten, dairy), the product receives a severe penalty and immediately drops to a lower grade (D or E), warning the user it is highly unsafe for them."
+      },
+      "b": {
+        "title": "B. Harmful Additives & Ingredients",
+        "desc": "Ingredients are cross-referenced with our toxicological database. Known carcinogens, endocrine disruptors, or heavy irritants heavily penalize the score. Standard artificial additives, artificial colors, and preservatives carry moderate penalties."
+      },
+      "c": {
+        "title": "C. Food Processing & Nutrition (Food Only)",
+        "desc": "If the product is an ultra-processed food (NOVA 4) or has poor nutritional density (Nutri-Score D or E), it incurs additional penalties. This ensures that even \"vegan\" or \"allergen-free\" foods aren't automatically granted an 'A' if they are fundamentally unhealthy."
+      },
+      "d": {
+        "title": "D. Cosmetics & Personal Care (Cosmetics Only)",
+        "desc": "For cosmetics, the system does not look at nutrition. Instead, it heavily scrutinizes the chemical composition. Penalties are applied for:",
+        "list1": "Neurotoxins and endocrine disruptors (e.g., parabens, phthalates).",
+        "list2": "Known skin irritants and allergens (e.g., synthetic fragrances, harsh sulfates).",
+        "list3": "Environmental toxins (e.g., microplastics, certain UV filters)."
+      }
+    },
+    "summary": {
+      "title": "Summary of Grades",
+      "ab": "Grade A/B:",
+      "abDesc": "Clean, highly suitable for your profile, minimal to no harmful additives.",
+      "c": "Grade C:",
+      "cDesc": "Moderate. Might contain some processed elements or minor irritants. Proceed with awareness.",
+      "de": "Grade D/E (High Risk):",
+      "deDesc": "The product contains ingredients directly conflicting with your allergies, high levels of toxic/harmful chemicals, or is extremely ultra-processed. Not recommended for use."
+    }
+  },
+  "footer": {
+    "grading": "Grading System",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Support",
+    "copyright": "© {{year}} PureScan AI. The Most Advanced Food & Cosmetic Scanner."
+  }
+}

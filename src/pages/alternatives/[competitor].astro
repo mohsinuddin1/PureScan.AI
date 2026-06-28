@@ -1,0 +1,28 @@
+---
+import { getTranslations } from '../../lib/i18n-utils';
+import Layout from '../../layouts/Layout.astro';
+import Alternative from '../../components/Alternative.jsx';
+
+const lang = Astro.currentLocale || 'en';
+const translations = await getTranslations(lang);
+
+export function getStaticPaths() {
+  // We need to define all the possible competitors that the component supports.
+  // We'll define a few common ones for static generation.
+  return [
+    {params: {competitor: 'yuka'}},
+    {params: {competitor: 'clearya'}},
+    {params: {competitor: 'ewg'}},
+    {params: {competitor: 'think-dirty'}},
+    {params: {competitor: 'trash-panda'}},
+    {params: {competitor: 'incibeauty'}},
+    {params: {competitor: 'bobby-approved'}},
+  ];
+}
+
+const { competitor } = Astro.params;
+import { AlternativeIsland } from '../../components/Islands.jsx';
+---
+<Layout title={`PureScan AI vs ${competitor}`}>
+  <AlternativeIsland client:load  lang={lang} translations={translations} competitor={competitor} />
+</Layout>

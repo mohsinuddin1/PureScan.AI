@@ -1,0 +1,16 @@
+---
+export function getStaticPaths() {
+  const locales = ["ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  return locales.map(lang => ({ params: { lang } }));
+}
+
+import { getTranslations } from '../../lib/i18n-utils';
+import Layout from '../../layouts/Layout.astro';
+import PrivacyPolicy from '../../components/privacy.jsx';
+const lang = Astro.currentLocale || 'en';
+const translations = await getTranslations(lang);
+import { PrivacyIsland } from '../../components/Islands.jsx';
+---
+<Layout title="Privacy Policy - PureScan AI">
+  <PrivacyIsland client:load  lang={lang} translations={translations} />
+</Layout>

@@ -1,0 +1,34 @@
+---
+import { getTranslations } from '../../../lib/i18n-utils';
+import Layout from '../../../layouts/Layout.astro';
+import Alternative from '../../../components/Alternative.jsx';
+
+const lang = Astro.currentLocale || 'en';
+const translations = await getTranslations(lang);
+
+export function getStaticPaths() {
+  const locales = ["ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const comps = [
+    {params: {competitor: 'yuka'}},
+    {params: {competitor: 'clearya'}},
+    {params: {competitor: 'ewg'}},
+    {params: {competitor: 'think-dirty'}},
+    {params: {competitor: 'trash-panda'}},
+    {params: {competitor: 'incibeauty'}},
+    {params: {competitor: 'bobby-approved'}},
+  ];
+  const paths = [];
+  for (const lang of locales) {
+      for (const c of comps) {
+          paths.push({ params: { lang, competitor: c.params.competitor } });
+      }
+  }
+  return paths;
+}
+
+const { competitor } = Astro.params;
+import { AlternativeIsland } from '../../../components/Islands.jsx';
+---
+<Layout title={`PureScan AI vs ${competitor}`}>
+  <AlternativeIsland client:load  lang={lang} translations={translations} competitor={competitor} />
+</Layout>

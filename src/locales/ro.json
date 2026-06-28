@@ -1,0 +1,109 @@
+{
+  "pageTitle": "Sistem de Evaluare a Siguranței și Nutriției",
+  "introPara1": "Acest document explică baza modului în care PureScan AI evaluează și notează siguranța, valoarea nutrițională și calitatea generală a produselor scanate. Sistemul nostru se bazează pe baze de date științifice cuprinzătoare combinate cu inteligență artificială avansată pentru a analiza amănunțit ingredientele și a aplica un sistem inteligent de notare bazat pe penalități, adaptat profilului tău specific de sănătate.",
+  "introPara2": "Vă rugăm să rețineți: Algoritmii matematici exacți și ponderile sunt proprietatea PureScan AI, dar principiile de bază și metodologiile sunt complet transparente și prezentate mai jos.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Produse Alimentare)",
+    "para1": "Nutri-Score este calculat folosind un algoritm științific standardizat care evaluează valoarea nutrițională generală a unui produs alimentar la 100g sau 100ml. Echilibrează nutrienții negativi care trebuie limitați cu nutrienții pozitivi care trebuie încurajați, rezultând o notă de la A (cel mai bun) la E (cel mai rău).",
+    "para2": "PureScan AI calculează acest lucru automat folosind datele introduse de pe ambalajul produsului:",
+    "negPoints": {
+      "title": "Puncte Negative (Cresc scorul / înrăutățesc nota):",
+      "desc": "Punctele sunt adăugate în funcție de cantitatea de energie (calorii), grăsimi saturate, zaharuri și sodiu (sare)."
+    },
+    "posPoints": {
+      "title": "Puncte Pozitive (Scad scorul / îmbunătățesc nota):",
+      "desc": "Punctele sunt scăzute în funcție de procentul de fructe, legume, leguminoase, nuci și uleiuri benefice specifice (rapiță, nuci, ulei de măsline), precum și conținutul de fibre și proteine."
+    },
+    "finalGrade": {
+      "title": "Nota Finală:",
+      "desc": "Punctele pozitive sunt scăzute din punctele negative pentru a obține un scor numeric final. Acest număr este apoi mapat pe scara de culori A-E. PureScan AI folosește valorile exacte ale nutrienților din tabelul nutrițional și lista de ingrediente a produsului pentru a calcula acest scor pentru milioane de produse."
+    },
+    "grades": {
+      "a": "Grade A (Verde Închis):",
+      "aDesc": "Calitate nutrițională excelentă. Alimente pe care le poți mânca regulat.",
+      "b": "Grade B (Verde Deschis):",
+      "bDesc": "Calitate nutrițională bună.",
+      "c": "Grade C (Galben):",
+      "cDesc": "Calitate nutrițională moderată. Consumați cu moderație.",
+      "d": "Grade D (Portocaliu):",
+      "dDesc": "Calitate nutrițională slabă. Conține niveluri mai ridicate de nutrienți negativi.",
+      "e": "Grade E (Roșu):",
+      "eDesc": "Cea mai scăzută calitate nutrițională. Produse precum gustările dulci, carnea puternic procesată și articolele bogate în grăsimi. Ar trebui consumate ocazional."
+    }
+  },
+  "nova": {
+    "title": "2. Clasificarea NOVA (Produse Alimentare)",
+    "para1": "Spre deosebire de formula matematică a Nutri-Score, scorul NOVA este un sistem de clasificare care categorizează alimentele în funcție de gradul de procesare industrială. PureScan AI folosește un algoritm automatizat pentru a analiza lista de ingrediente a produsului și pentru a-l categoriza într-unul dintre cele patru grupuri:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Neprocesate / Minim procesate)",
+        "desc": "Alimente naturale precum fructe proaspete, legume, ouă sau lapte care nu au suferit nicio procesare sau au o procesare minimă (precum congelarea sau uscarea) fără adăugarea de sare, zahăr sau grăsimi."
+      },
+      "2": {
+        "title": "NOVA 2 (Ingrediente culinare procesate)",
+        "desc": "Substanțe derivate direct din natură sau din alimentele din Grupul 1 folosite pentru gătit, cum ar fi sarea, zahărul, untul și uleiurile vegetale."
+      },
+      "3": {
+        "title": "NOVA 3 (Alimente procesate)",
+        "desc": "Alimente obținute prin adăugarea ingredientelor din Grupul 2 (sare, zahăr, grăsime) la alimentele din Grupul 1. Exemplele includ legume conservate, pâine simplă, brânză și nuci sărate."
+      },
+      "4": {
+        "title": "NOVA 4 (Alimente ultraprocesate)",
+        "desc": "Formulări industriale care conțin de obicei 5 sau mai multe ingrediente. Acestea conțin substanțe care nu sunt utilizate în mod obișnuit într-o bucătărie casnică (de ex., sirop de porumb bogat în fructoză, uleiuri hidrogenate) și aditivi cosmetici (de ex., arome artificiale, coloranți, emulgatori, conservanți)."
+      }
+    },
+    "howItWorks": {
+      "title": "Cum calculează PureScan AI NOVA:",
+      "desc": "PureScan AI folosește un algoritm care scanează lista de ingrediente pentru a căuta „markeri” specifici ai ultraprocesării. Dacă algoritmul detectează aditivi industriali, arome artificiale sau ingrediente extrem de procesate, semnalează automat produsul ca NOVA 4."
+    },
+    "important": {
+      "title": "Distincție Importantă:",
+      "desc": "Este perfect posibil ca un produs să aibă un Nutri-Score „bun” (de ex., A sau B) deoarece are un conținut scăzut de zahăr și grăsimi, dar să fie totuși clasificat ca NOVA 4 (Ultraprocesat) deoarece folosește îndulcitori artificiali și agenți de îngroșare pentru a obține acel profil nutrițional."
+    }
+  },
+  "safety": {
+    "title": "3. Sistemul de Evaluare a Siguranței PureScan AI",
+    "para1": "În timp ce Nutri-Score și NOVA oferă linii de bază, PureScan AI calculează o Notă de Siguranță personalizată (de la A la E). Sistemul nostru de notare acționează ca un „scor de risc” — cu cât sunt acumulate mai multe puncte de risc, cu atât litera finală este mai mică (mai aproape de E).",
+    "penalties": {
+      "title": "Cum funcționează penalitățile și deducerile:",
+      "desc": "Un produs începe cu o notă perfectă „A” și primește penalități (puncte de risc) pe baza diverselor detectări:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Profil de Sănătate Personalizat (Alergii și Afecțiuni)",
+        "desc": "Dacă un produs conține un ingredient la care utilizatorul este explicit alergic (de ex., arahide, gluten, lactate), produsul primește o penalitate severă și scade imediat la o notă inferioară (D sau E), avertizând utilizatorul că este extrem de nesigur pentru el."
+      },
+      "b": {
+        "title": "B. Aditivi și Ingrediente Dăunătoare",
+        "desc": "Ingredientele sunt verificate cu baza noastră de date toxicologică. Carcinogenii cunoscuți, perturbatorii endocrini sau iritanții puternici penalizează puternic scorul. Aditivii artificiali standard, coloranții artificiali și conservanții aduc penalități moderate."
+      },
+      "c": {
+        "title": "C. Procesarea Alimentelor și Nutriție (Doar pentru Alimente)",
+        "desc": "Dacă produsul este un aliment ultraprocesat (NOVA 4) sau are o densitate nutrițională slabă (Nutri-Score D sau E), suportă penalități suplimentare. Acest lucru asigură că nici măcar alimentele „vegane” sau „fără alergeni” nu primesc automat un 'A' dacă sunt fundamental nesănătoase."
+      },
+      "d": {
+        "title": "D. Cosmetice și Îngrijire Personală (Doar pentru Cosmetice)",
+        "desc": "Pentru cosmetice, sistemul nu analizează nutriția. În schimb, examinează cu atenție compoziția chimică. Se aplică penalități pentru:",
+        "list1": "Neurotoxine și perturbatori endocrini (de ex., parabeni, ftalați).",
+        "list2": "Iritanți ai pielii și alergeni cunoscuți (de ex., parfumuri sintetice, sulfați duri).",
+        "list3": "Toxine de mediu (de ex., microplastice, anumite filtre UV)."
+      }
+    },
+    "summary": {
+      "title": "Rezumatul Notelor",
+      "ab": "Grade A/B:",
+      "abDesc": "Curat, foarte potrivit pentru profilul tău, aditivi dăunători minime sau deloc.",
+      "c": "Grade C:",
+      "cDesc": "Moderat. Poate conține unele elemente procesate sau iritanți minori. Procedați cu atenție.",
+      "de": "Grade D/E (Risc Ridicat):",
+      "deDesc": "Produsul conține ingrediente care intră în conflict direct cu alergiile tale, niveluri ridicate de substanțe chimice toxice/dăunătoare, sau este extrem de ultraprocesat. Nu este recomandat pentru utilizare."
+    }
+  },
+  "footer": {
+    "grading": "Sistem de Evaluare",
+    "privacy": "Politica de Confidențialitate",
+    "terms": "Termeni de Utilizare",
+    "support": "Asistență",
+    "copyright": "© {{year}} PureScan AI. Cel Mai Avansat Scanner pentru Alimente și Cosmetice."
+  }
+}
