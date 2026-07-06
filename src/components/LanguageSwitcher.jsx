@@ -1,12 +1,37 @@
 import React from 'react';
-export default function LanguageSwitcher({ currentLang = 'en' }) {
+export default function LanguageSwitcher({ currentLang = 'en', blogSlugMap = null }) {
 
   const changeLanguage = (e) => {
     const targetLang = e.target.value;
     let path = window.location.pathname;
     let segments = path.split('/').filter(Boolean);
     const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fr', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+
+    // Check if we are on a blog post page and have a slug map
+    const isBlogPost = blogSlugMap && Object.keys(blogSlugMap).length > 0;
+
+    if (isBlogPost) {
+      // Use the slug map to navigate to the correct translated blog post
+      const targetSlug = blogSlugMap[targetLang];
+      if (targetSlug) {
+        // Navigate to the translated blog post
+        if (targetLang === 'en') {
+          window.location.href = `/blog/${targetSlug}`;
+        } else {
+          window.location.href = `/${targetLang}/blog/${targetSlug}`;
+        }
+      } else {
+        // No translated blog for this language — go to the blog index
+        if (targetLang === 'en') {
+          window.location.href = '/blog';
+        } else {
+          window.location.href = `/${targetLang}/blog`;
+        }
+      }
+      return;
+    }
     
+    // Non-blog page: swap the locale prefix as before
     if (segments.length > 0 && locales.includes(segments[0])) {
       segments[0] = targetLang;
     } else {
@@ -17,7 +42,6 @@ export default function LanguageSwitcher({ currentLang = 'en' }) {
         segments.shift();
     }
     
-    // Removed blog slug truncation so we stay on the current blog post
     window.location.href = '/' + segments.join('/') + window.location.search;
   };
 

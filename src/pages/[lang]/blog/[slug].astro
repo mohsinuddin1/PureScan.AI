@@ -5,14 +5,19 @@ import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const slugs = new Set(posts.map(p => p.id.split('/')[1]));
   const locales = ["bg","ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   const paths = [];
-  for (const lang of locales) {
-      for (const s of slugs) {
-          paths.push({ params: { lang, slug: s } });
-      }
+
+  for (const post of posts) {
+    const postLang = post.id.split('/')[0];
+    const postSlug = post.id.split('/')[1];
+
+    // Only generate paths for posts that actually exist in non-en locales
+    if (locales.includes(postLang)) {
+      paths.push({ params: { lang: postLang, slug: postSlug } });
+    }
   }
+
   return paths;
 }
 
@@ -29,6 +34,18 @@ if (!post) {
 }
 
 const { Content } = await render(post);
+
+// Build the blog slug map for language switching
+const blogId = post.data.id;
+const allPosts = await getCollection('blog');
+const blogSlugMap = {};
+for (const p of allPosts) {
+  if (p.data.id === blogId) {
+    const pLang = p.id.split('/')[0];
+    const pSlug = p.id.split('/')[1];
+    blogSlugMap[pLang] = pSlug;
+  }
+}
 ---
 
 <Layout title={post.data.title} description={post.data.description} image={post.data.image}>
@@ -106,7 +123,7 @@ const { Content } = await render(post);
                 <span class="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI Blog</span>
             </div>
             <div class="flex items-center">
-                <LanguageSwitcher client:load currentLang={lang} />
+                <LanguageSwitcher client:load currentLang={lang} blogSlugMap={blogSlugMap} />
             </div>
         </div>
     </nav>
@@ -155,7 +172,7 @@ const { Content } = await render(post);
             <span class="mx-3">•</span>
             <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
           </p>
-          <p class="text-slate-400 font-medium text-xs">© {new Date().getFullYear()} PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
+          <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
         </div>
     </footer>
   </div>

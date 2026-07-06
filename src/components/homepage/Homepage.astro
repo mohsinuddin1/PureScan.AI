@@ -1,0 +1,377 @@
+---
+/**
+ * Homepage.astro — Server-rendered homepage
+ * 
+ * All sections are static Astro HTML (visible to crawlers immediately).
+ * Only the image slideshow carousel uses a React island (client:visible).
+ */
+import Slideshow from './Slideshow.jsx';
+---
+
+<div class="min-h-screen bg-white text-slate-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 select-none transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2 md:gap-3">
+        <img src="/logo.png" alt="PureScan AI" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
+        <span class="font-extrabold tracking-tight text-xl md:text-3xl italic text-[#17C37B]">PureScan AI</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 bg-[#0A0A0A] text-white px-3 py-2 md:px-5 md:py-2.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-xs md:text-base font-bold">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5">
+            <path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" />
+          </svg>
+          <span class="hidden sm:inline">App Store</span>
+          <span class="sm:hidden">iOS</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.purescanai.app&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 bg-[#0A0A0A] text-white px-3 py-2 md:px-5 md:py-2.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-xs md:text-base font-bold">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-[#17C37B]">
+            <path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" />
+          </svg>
+          <span class="hidden sm:inline">Play Store</span>
+          <span class="sm:hidden">Android</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Database / Mascot Section -->
+  <section class="py-12 md:py-24 px-4 md:px-12 max-w-7xl mx-auto relative overflow-hidden md:overflow-visible">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white border border-slate-100 rounded-[2rem] md:rounded-[3rem] -z-10 shadow-sm"></div>
+
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 text-center md:text-left">
+
+      <div class="w-full md:w-1/2 p-2 md:p-8 animate-fade-in-left">
+        <h3 class="text-sm md:text-xl font-bold text-slate-400 mb-2 tracking-widest uppercase">Most Advance</h3>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-800 mb-6 md:mb-10 leading-tight">
+          Food & Cosmetic Scanner
+        </h1>
+
+        <div class="space-y-3 md:space-y-5">
+          <div class="flex items-center gap-3 md:gap-4 bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-left">
+            <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#17C37B] text-white flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">A comprehensive, massive database.</p>
+          </div>
+
+          <div class="flex items-center gap-3 md:gap-4 bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-left">
+            <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#17C37B] text-white flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">When an item is unknown, <span class="text-[#17C37B]">no need to guess or manually fill details!</span></p>
+          </div>
+
+          <div class="flex items-center gap-3 md:gap-4 bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-left">
+            <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#17C37B] text-white flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">Reads labels in <span class="text-[#17C37B]">ALL languages</span> via AI Camera.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 flex justify-center animate-fade-in-up">
+        <div class="relative w-full max-w-[280px] md:max-w-[450px]">
+          <img src="/use_Mascot_to_new.png" alt="PureScan AI Mascot" class="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Psychology & Urgency Section -->
+  <section class="py-12 md:py-24 px-4 md:px-6 bg-slate-50 my-8 md:my-12 border-y border-slate-100 shadow-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-12 text-center md:text-left">
+      <div class="w-full md:w-1/3 flex justify-center">
+        <img src="/mascot_scared.png" alt="Are you eating toxins?" class="w-[140px] md:w-[180px] drop-shadow-xl hover:-translate-y-4 transition-transform duration-300" />
+      </div>
+      <div class="w-full md:w-2/3">
+        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 leading-tight">Don't let hidden toxins sabotage your health.</h2>
+        <p class="text-base md:text-xl text-slate-600 mb-6 md:mb-8 font-medium leading-relaxed">Over 80% of everyday grocery and cosmetic items contain additives linked to hormonal imbalances, PCOS, and chronic inflammation. Take back control today.</p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+          <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-lg md:text-xl font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg border border-slate-800">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-7 md:h-7">
+              <path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" />
+            </svg>
+            App Store
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.purescanai.app&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-lg md:text-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-7 md:h-7"><path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" /></svg>
+            Play Store
+          </a>
+        </div>
+        <p class="mt-6 text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest flex items-center justify-center md:justify-start gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Trusted by 100,000+ Users
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (with Slideshow) -->
+  <section class="py-12 md:py-24 px-4 md:px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-12 md:mb-20">
+      <h2 class="text-2xl md:text-5xl font-black text-slate-800 mb-4 leading-tight">
+        Scan the labels of your <br />
+        <span class="text-[#17C37B]">food and cosmetic</span> products
+      </h2>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+      <!-- Mockup Slideshow (React Island) -->
+      <div class="w-full md:w-[40%] flex justify-center">
+        <Slideshow client:visible />
+      </div>
+
+      <!-- Features on the right -->
+      <div class="w-full md:w-[50%] space-y-8 md:space-y-14">
+        <div class="flex gap-4 md:gap-6 relative">
+          <div class="shrink-0 mt-1">
+            <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /><path d="M16 2v3" /><path d="M4 10h16" /><path d="M21 16c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2h14c1.1 0 2 .9 2v9Z" /><path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" /></svg>
+          </div>
+          <div class="relative z-10 w-full pr-4 md:pr-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#17C37B]">Food analysis</h3>
+            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">Takes disease/condition allergies and gives personalized results per person, not general answers. Every scan is evaluated against your unique health profile.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 md:gap-6 relative">
+          <div class="absolute right-0 top-0 opacity-[0.05] md:opacity-[0.08] pointer-events-none">
+            <img src="/mascot_neutral.png" class="w-[80px] md:w-[120px]" alt="Neutral Mascot" />
+          </div>
+          <div class="shrink-0 mt-1">
+            <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a3.5 3.5 0 0 1 3.5 3.5V8a1 1 0 0 1-1 1H9.5a1 1 0 0 1-1-1V6A3.5 3.5 0 0 1 12 2.5Z" /><path d="M5 16h14" /><path d="M8 12h8" /><path d="M5.5 8h13l1.5 13H4L5.5 8Z" /></svg>
+          </div>
+          <div class="relative z-10 w-full pr-4 md:pr-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#17C37B]">Cosmetic analysis</h3>
+            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">Detect endocrine disruptors, carcinogens, and allergens in your personal care products instantly with a simple scan.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 md:gap-6 relative">
+          <div class="shrink-0 mt-1">
+            <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /><rect width="7" height="5" x="7" y="7" rx="1" /><rect width="7" height="5" x="10" y="12" rx="1" /></svg>
+          </div>
+          <div class="relative z-10 w-full pr-4 md:pr-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-slate-700">AI Camera Label Reader</h3>
+            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">Worst case if a product isn't recognized, you can use our advanced AI camera to read the ingredient label. It supports all languages worldwide!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dietary & Lifestyle Features Section -->
+  <section class="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-12 md:mb-16">
+      <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-[#17C37B] text-sm font-bold tracking-widest uppercase mb-4">Your Health, Your Rules</span>
+      <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">
+        Designed for <br class="md:hidden" /><span class="text-[#17C37B]">Vegan, Gluten-Free, & Allergic</span> Lifestyles
+      </h2>
+      <p class="mt-4 md:mt-6 text-lg text-slate-600 max-w-2xl mx-auto font-medium">Shop with absolute peace of mind. PureScan AI instantly decodes complex labels into clear, life-saving alerts.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <!-- Allergy -->
+      <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
+        <div class="text-4xl md:text-5xl drop-shadow-sm">🥜</div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Allergy Scanning</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">Scan groceries and even bottled water to reveal hidden ingredients that could trigger an allergic reaction. Don't risk your safety on vague labels.</p>
+        </div>
+      </div>
+
+      <!-- Gluten Free -->
+      <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
+        <div class="text-4xl md:text-5xl drop-shadow-sm">🌾</div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Gluten Free Scanning</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">Wheat, barley, rye, or their hidden derivatives—the scanner relentlessly flags any gluten-containing ingredients to protect your gut.</p>
+        </div>
+      </div>
+
+      <!-- Dairy & Lactose -->
+      <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
+        <div class="text-4xl md:text-5xl drop-shadow-sm">🥛</div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Dairy and Lactose</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">Instantly detect common dairy-derived ingredients like casein, whey, lactose, and more. Essential for strict vegans and lactose intolerants.</p>
+        </div>
+      </div>
+
+      <!-- Ingredient Checking -->
+      <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
+        <div class="text-4xl md:text-5xl drop-shadow-sm">✅</div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Ingredient Checking</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">Decode complex, deceptive ingredient labels in seconds with easy-to-understand alerts. Know exactly what you're putting into your body.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-12 md:py-24 bg-white relative">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-4xl font-black text-center text-slate-800 mb-10 md:mb-16 leading-tight">See why people rely on <br class="md:hidden" /><span class="text-[#17C37B]">PureScan AI</span></h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- Review 1 -->
+        <div class="bg-slate-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-shadow">
+          <div>
+            <div class="flex gap-1 mb-3 md:mb-4 text-[#17C37B]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">"Changed my life! I finally know exactly what triggers my PCOS. The AI labels read are mind-blowing. It truly adapts to YOUR health."</p>
+          </div>
+          <div class="mt-4 md:mt-6">
+            <span class="font-bold text-slate-800 text-sm md:text-base">— Sarah M.</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-slate-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 flex flex-col justify-between relative overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="absolute right-[-10px] top-[-10px] opacity-10 md:opacity-20 pointer-events-none">
+            <img src="/mascot_happy.png" class="w-[80px] md:w-[120px]" alt="Happy Mascot" />
+          </div>
+          <div class="relative z-10">
+            <div class="flex gap-1 mb-3 md:mb-4 text-[#17C37B]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">"Scanning is addictive! I found out my favorite cereal was full of carcinogens. I love that I don't have to manually type unknown products."</p>
+          </div>
+          <div class="mt-4 md:mt-6 relative z-10">
+            <span class="font-bold text-slate-800 text-sm md:text-base">— Emily R.</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-slate-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-shadow">
+          <div class="relative z-10">
+            <div class="flex gap-1 mb-3 md:mb-4 text-[#17C37B]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">"The only scanner that ACTUALLY reads the label when a product isn't in their database. Absolute game-changer."</p>
+          </div>
+          <div class="mt-4 md:mt-6 relative z-10">
+            <span class="font-bold text-slate-800 text-sm md:text-base">— Jessica T.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table Section -->
+  <section class="py-12 md:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+      <div class="text-center mb-10 md:mb-16">
+        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 md:mb-6 leading-tight">Why PureScan AI is the <br class="md:hidden" />Most Advanced</h2>
+      </div>
+
+      <div class="overflow-x-auto border-4 border-slate-100 rounded-[1.5rem] md:rounded-[2rem] shadow-xl p-1 bg-white">
+        <table class="w-full text-left border-collapse min-w-[650px]">
+          <thead>
+            <tr>
+              <th class="p-4 md:p-8 bg-slate-50 border-b-4 border-slate-100 text-lg md:text-2xl font-black text-slate-600 w-1/3 rounded-tl-[1rem] md:rounded-tl-[1.5rem]">Feature</th>
+              <th class="p-4 md:p-8 bg-[#17C37B] border-b-4 border-[#16b572] text-lg md:text-2xl font-black text-white w-1/3 text-center shadow-inner pt-6 md:pt-10">PureScan AI</th>
+              <th class="p-4 md:p-8 bg-slate-50 border-b-4 border-slate-100 text-lg md:text-2xl font-black text-slate-500 w-1/3 text-center rounded-tr-[1rem] md:rounded-tr-[1.5rem]">Other Scanners</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm md:text-lg text-slate-700 font-medium">
+            <tr>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Analysis Type</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Personalized to YOU</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">General only</td>
+            </tr>
+            <tr>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Health Adaptability</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Adaptable to Conditions</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">Standard grading</td>
+            </tr>
+            <tr>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Product Database</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Massive - No typing</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">Manual entry needed</td>
+            </tr>
+            <tr>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Unrecognized Items</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Reads labels via AI</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">Scan fails</td>
+            </tr>
+            <tr>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Language Support</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">ALL World Languages</td>
+              <td class="p-4 md:p-6 border-b-2 border-slate-100 bg-white text-center text-slate-400">Limited languages</td>
+            </tr>
+            <tr>
+              <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-white rounded-bl-[1rem] md:rounded-bl-[1.5rem] font-bold text-slate-800">The Experience</td>
+              <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-green-50/50 text-center">
+                <img src="/mascot_happy.png" alt="Happy Experience" class="inline-block w-[60px] md:w-[90px] drop-shadow-md animate-bounce" style="animation-duration: 2.5s" />
+              </td>
+              <td class="p-4 md:p-6 bg-white text-center rounded-br-[1rem] md:rounded-br-[1.5rem]">
+                <img src="/mascot_scared.png" alt="Sad Experience" class="inline-block w-[60px] md:w-[90px] drop-shadow-sm opacity-50 grayscale transition-all hover:grayscale-0" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white border-t-2 border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="flex justify-center items-center gap-2 mb-6">
+        <img src="/logo.png" alt="PureScan AI" class="w-8 h-8 object-contain grayscale opacity-50" />
+        <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+      </div>
+      <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
+        <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
+        <span class="mx-3 hidden md:inline">•</span>
+        <a href="/blog" class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
+        <span class="mx-3">•</span>
+        <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
+        <span class="mx-3">•</span>
+        <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
+        <span class="mx-3">•</span>
+        <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
+      </p>
+      <p class="text-slate-400 font-medium text-xs">&copy; 2025 PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
+    </div>
+  </footer>
+
+</div>
+
+<style>
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out both;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+</style>
