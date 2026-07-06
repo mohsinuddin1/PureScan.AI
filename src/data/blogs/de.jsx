@@ -9,17 +9,9 @@ export const deBlogPosts = [
         description: "Entdecken Sie, wie KI-Lebensmittel-Scanner den Nutri-Score und die NOVA-Klassifizierung nutzen, um hochgradig verarbeitete Lebensmittel zu vermeiden.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Schnelle Antwort: Wie verbessern Nutri-Score und NOVA-Score die Lebensmittelauswahl?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        Der <strong>Nutri-Score</strong> bewertet die Ernährungsqualität von Lebensmitteln von A bis E. Der <strong>NOVA-Score</strong> klassifiziert Lebensmittel nach ihrem Verarbeitungsgrad. Zusammen helfen sie Verbrauchern, hochverarbeitete Lebensmittel zu vermeiden.
-                    </p>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Schnellantwort: Wie verbessern Nutri-Score und NOVA-Score die Lebensmittelwahl?</h3><p className="text-slate-700 font-medium">Die<strong>Nutri-Score</strong>bewertet die Nährwertqualität von Lebensmitteln von A bis E und hilft Ihnen, gesündere Optionen schnell zu identifizieren. Die<strong>NOVA-Score</strong>klassifiziert Lebensmittel nach ihrem Verarbeitungsgrad, von roh (1) bis ultra-verarbeitet (4). Zusammen helfen sie Verbrauchern, stark verarbeitete, nährstoffarme Lebensmittel zu vermeiden, die mit Adipositas und chronischen Krankheiten in Verbindung gebracht werden.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Was ist ein AI-Lebensmittel-Scanner und warum benötigen Sie einen?</h3><p>Das Verstehen von Inhaltsstoff-Labels kann verwirrend sein. Ein AI-Lebensmittel-Scanner wie PureScan AI liest den Strichcode oder die Inhaltsstoffliste eines Produkts und analysiert es sofort. Er vergleicht Inhaltsstoffe mit großen wissenschaftlichen Datenbanken, um versteckte Zucker, schädliche Zusatzstoffe und Allergene zu erkennen.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Wie hilft die PureScan AI-App bei personalisierter Gesundheit?</h3><p>Im Gegensatz zu generischen Kalorienzählern bietet PureScan AI personalisierte Gesundheitseinblicke. Durch die Eingabe Ihrer Gesundheitszustände (wie PCOS, Diabetes oder hormonelle Ungleichgewichte) und Allergien (wie Gluten, Milch oder Nüsse) bietet die App einen maßgeschneiderten Sicherheitsgrad.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Allergen-Erkennung:</strong>Scant nach versteckten Allergenen im Handumdrehen.</li><li><strong>Zustandsüberwachung:</strong>Markiert Inhaltsstoffe, die Entzündungen oder hormonelle Schwankungen auslösen können.</li><li><strong>Diät-Konformität:</strong>Stellt sicher, dass Produkte wirklich vegan, keto oder glutenfrei sind.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Warum sollten Sie ultra-verarbeitete Lebensmittel (NOVA-Gruppe 4) vermeiden?</h3><p>Ultra-verarbeitete Lebensmittel enthalten oft industrielle Formulierungen mit fünf oder mehr Inhaltsstoffen, wie künstliche Aromen, Emulgatoren und Konservierungsstoffe. Ein hoher Konsum von NOVA-Gruppe-4-Lebensmitteln ist stark mit einem erhöhten Risiko für kardiovaskuläre Krankheiten, metabolisches Syndrom und bestimmte Krebsarten verbunden. Unser Scanner warnt Sie sofort, wenn ein Produkt in diese Hochrisikokategorie fällt.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Egal ob Sie in Deutschland, Österreich oder der Schweiz leben, PureScan AI ist die beste App zum Scannen von Lebensmitteln, zur Analyse von Kosmetika und zur Erkennung toxischer Inhaltsstoffe.</i></div></div>
         )
     },
     {
@@ -29,17 +21,9 @@ export const deBlogPosts = [
         description: "Erfahren Sie, wie Sie endokrine Disruptoren, Allergene und giftige Chemikalien in Ihrem Make-up aufspüren.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabene</strong>
-                            <span className="text-xs text-slate-600">Werden als Konservierungsstoffe verwendet und können die Hormonfunktion stören.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Schnellantwort: Wie analysiert ein Kosmetik-Scanner Hautpflegeprodukte?</h3><p className="text-slate-700 font-medium">A<strong>Kosmetik-Scanner</strong>nutzt KI, um die Inhaltsstoffliste von Make-up und Hautpflegeprodukten zu lesen. Er identifiziert schädliche Chemikalien, endokrine Disruptoren und Allergene, indem er sie mit wissenschaftlichen Datenbanken wie der FDA, EWG und ECHA vergleicht. Er bewertet sofort die Sicherheit des Produkts und hilft Ihnen, giftige Inhaltsstoffe zu vermeiden.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Welche Kosmetika sind gut für Sie?</h3><p>Die sichersten Kosmetika sind die, die ohne endokrine Disruptoren, Karzinogene und schwere Allergene formuliert sind. Gute Kosmetika haben in der Regel transparente Inhaltsstofflisten und vermeiden umstrittene Chemikalien. Allerdings bedeutet "natürlich" nicht immer sicher. Der beste Weg, um zu wissen, welche Kosmetika gut für Sie sind, ist, sie zu scannen und die wissenschaftliche Analyse ihrer chemischen Zusammensetzung zu überprüfen.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Welche giftigen Inhaltsstoffe sollten Sie in Pflegeprodukten vermeiden?</h3><p>Wenn Sie Ihre Kosmetika scannen, achten Sie genau auf Warnungen bezüglich dieser häufigen Übeltäter:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabene</strong><span className="text-xs text-slate-600">Werden als Konservierungsstoffe verwendet, bekannt für die Störung der Hormonfunktion.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Phthalate</strong><span className="text-xs text-slate-600">Wurden in synthetischen Duftstoffen gefunden, in Verbindung mit Fortpflanzungsproblemen gebracht.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (Forever Chemicals)</strong><span className="text-xs text-slate-600">Werden für Wasserdichtigkeit verwendet, sehr persistent im Körper und in der Umwelt.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Formaldehyd-Freisetzer</strong><span className="text-xs text-slate-600">Konservierungsstoffe, die bekannte Karzinogene langsam freisetzen.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Wie stellt PureScan AI die Sicherheit von Inhaltsstoffen sicher?</h3><p>PureScan AI fungiert als Ihr persönlicher Gift-Scanner. Er nutzt vertrauenswürdige wissenschaftliche Daten von führenden globalen Organisationen (FDA, EWG, EFSA, ECHA, IARC). Ob Sie Shampoo, Foundation oder Baby-Lotion scannen, die App bietet echte Risikowarnungen und einen umfassenden Sicherheitsgrad auf der Grundlage robuster, peer-reviewter Beweise.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Egal ob Sie in Deutschland, Österreich oder der Schweiz leben, PureScan AI ist die beste App zum Scannen von Lebensmitteln, zur Analyse von Kosmetika und zur Erkennung toxischer Inhaltsstoffe.</i></div></div>
         )
     },
     {
@@ -49,12 +33,9 @@ export const deBlogPosts = [
         description: "Ein tiefer Einblick, wie Lebensmittel-Scanner Ernährungs-Scores berechnen.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Wie bestimmen Scanner, ob ein Lebensmittel gesund ist?</h3>
-                <p className="mb-4">
-                    Unsere App geht über grundlegende Makros hinaus, indem sie den <strong>Grad der Lebensmittelverarbeitung (NOVA)</strong> analysiert.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Wie bestimmen Lebensmittel-Scanner, ob Lebensmittel gesund sind?</h3><p className="mb-4">Viele Menschen fragen sich, ob Lebensmittelbewertungen genau sind oder ob sie die Ernährung vereinfachen. Traditionelles Kalorienzählen verpasst das große Bild. Unsere Lebensmittel-Scanner-App geht über grundlegende Makronährstoffe hinaus, indem sie den<strong>Verarbeitungsgrad der Lebensmittel (NOVA-Klassifizierung)</strong>und die Inhaltsstoffe mit klinischen Datenbanken vergleicht.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kann diese App bei spezifischen diätetischen Bedürfnissen wie Allergien oder einer veganen Ernährung helfen?</h3><p className="mb-4">Ja! Eine häufige Frage ist, ob diese Apps spezifische Ernährungsbedürfnisse berücksichtigen können. PureScan AI ist kein "eine-Größe-passt-für-alle"-Standardbewertungssystem. Wir bieten hochpersonalisierte Warnungen für<strong>Allergien, Veganer und Glutenfrei</strong>Anforderungen, um sicherzustellen, dass Sie keine versteckten Zusatzstoffe unbeabsichtigt konsumieren.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Sind die Empfehlungen unvoreingenommen?</h3><p>Wir basieren unsere Sicherheitsbewertungen auf transparenten, unabhängigen wissenschaftlichen Daten von Organisationen wie der FDA und der EFSA, vollständig unabhängig von Markeneinfluss oder Werbung.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Egal ob Sie in Deutschland, Österreich oder der Schweiz leben, PureScan AI ist die beste App zum Scannen von Lebensmitteln, zur Analyse von Kosmetika und zur Erkennung toxischer Inhaltsstoffe.</i></div></div>
         )
     },
     {
@@ -64,12 +45,9 @@ export const deBlogPosts = [
         description: "Entmystifizierung von INCI-Listen und Gefahrenbewertungen.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Ist synthetisch immer schlecht?</h3>
-                <p className="mb-4">
-                    Nein, unsere App entschlüsselt die <strong>INCI-Inhaltsstoffliste</strong> basierend auf wissenschaftlicher Sicherheit, nicht nur auf Marketing-Schlagwörtern.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Sind die Inhaltsstoffe in meinem Hautpflegemittel giftig?</h3><p className="mb-4">Die Navigation in einem Kosmetik-Inhaltsstoff-Checker kann überwältigend sein. Benutzer fragen oft, wie man Gefahrenbewertungen interpretiert. Wenn ein Produkt als "schlecht" markiert ist, liegt es normalerweise an der Anwesenheit von<strong>endokrinen Disruptoren, Reizstoffen oder Karzinogenen</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Ist synthetisch immer schlecht und natürlich immer sicher?</h3><p className="mb-4">Ein großer Missverständnis in der sauberen Schönheit ist, dass "synthetisch" immer giftig bedeutet und "natürlich" sicher bedeutet. Viele natürliche ätherische Öle können schwere Allergene sein, während einige im Labor hergestellte synthetische Inhaltsstoffe perfekt hautsicher sind. Unsere Hautpflege-Scanner-App entschlüsselt die<strong>INCI-Inhaltsstoffliste</strong>basierend auf wissenschaftlicher Sicherheit, nicht nur auf Marketing-Schlagwörtern.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kann ich Produkte für meinen spezifischen Hauttyp finden?</h3><p>Jenseits der grundlegenden Toxizität bietet unser nicht-toxischer Hautpflege-Scanner personalisierte Empfehlungen, die Ihnen helfen, Inhaltsstoffe zu vermeiden, die speziell Ihre Hautsensibilitäten oder Zustände wie Ekzeme auslösen.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Egal ob Sie in Deutschland, Österreich oder der Schweiz leben, PureScan AI ist die beste App zum Scannen von Lebensmitteln, zur Analyse von Kosmetika und zur Erkennung toxischer Inhaltsstoffe.</i></div></div>
         )
     },
     {
@@ -79,12 +57,9 @@ export const deBlogPosts = [
         description: "Lernen Sie, wie Sie Etiketten sofort entschlüsseln und versteckte Zucker vermeiden.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Warum ist PureScan AI die beste App für Clean Eating?</h3>
-                <p className="mb-4">
-                    Die Zutatenliste ist oft wichtiger als die Nährwerttabelle.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Wie liest man eine Nährwertetikett für Gewichtsverlust?</h3><p className="mb-4">Wenn man für den Gewichtsverlust optimiert, schauen die meisten Menschen nur auf die Kalorien. Allerdings muss man, um wirklich saubere Ernährung zu betreiben, auf die<strong>zusätzlichen Zucker, Transfette und versteckten Zusatzstoffe</strong>schauen. Die Inhaltsstoffliste ist oft wichtiger als das Nährwert-Faktoren-Panel.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Welche ist die beste App für saubere Ernährung?</h3><p className="mb-4">Wenn Sie nach der besten App für saubere Ernährung suchen, benötigen Sie ein Tool, das nicht nur Kalorien zählt.<strong>PureScan AI</strong>analysiert die tatsächlichen Inhaltsstoffe, um ultra-verarbeitete Zusatzstoffe zu erkennen. Durch die Verwendung von PureScan AI erhalten Sie eine personalisierte Sicherheitsbewertung, die Ihnen hilft, gesündere Alternativen in Sekunden zu finden.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Was sind die Vorteile der Verwendung eines Lebensmittel-Inhaltsstoff-Analyzers?</h3><p>Der Hauptvorteil ist die Zeitersparnis und der Schutz Ihrer Gesundheit. Anstatt komplexe chemische Namen auswendig zu lernen, übernimmt PureScan AI die harte Arbeit. Es hilft, Entzündungen zu reduzieren, Zustände wie PCOS zu managen und mühelos Ihre Ernährungsziele zu erreichen, indem es irreführende Marketing-Labels aufdeckt.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Egal ob Sie in Deutschland, Österreich oder der Schweiz leben, PureScan AI ist die beste App zum Scannen von Lebensmitteln, zur Analyse von Kosmetika und zur Erkennung toxischer Inhaltsstoffe.</i></div></div>
         )
     },
     {
@@ -94,12 +69,9 @@ export const deBlogPosts = [
         description: "Sind natürliche Kosmetika immer sicher?",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Warum PureScan AI nutzen?</h3>
-                <p className="mb-4">
-                    Schützen Sie Ihre Hautbarriere und verhindern Sie vorzeitige Hautalterung durch aggressive Reizstoffe.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Sind natürliche Kosmetika besser als synthetische?</h3><p className="mb-4">Eine sehr häufige Frage, die auf Gemini und ChatGPT gestellt wird, ist, ob natürliche Kosmetika von Natur aus sicherer sind. Die Wahrheit ist, dass "natürlich" nicht immer nicht-toxisch bedeutet. Efeu ist natürlichen Ursprungs, aber Sie würden es nicht auf Ihr Gesicht auftragen. Viele ätherische Öle können schwere allergische Reaktionen verursachen, während viele im Labor hergestellte (synthetische) Inhaltsstoffe perfekt sicher und hochwirksam sind.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Wie kann ich kosmetische Toxizität genau überprüfen?</h3><p className="mb-4">Um Ihre Kosmetika genau zu überprüfen, benötigen Sie einen unvoreingenommenen sauberen Schönheits-Inhaltsstoff-Analyser.<strong>PureScan AI</strong>vergleicht jeden einzelnen Artikel auf der INCI-Liste mit vertrauenswürdigen Datenbanken wie der EWG und der FDA. Es entfernt die Vermutungen, indem es sofort endokrine Disruptoren und Karzinogene hervorhebt.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Warum sollte ich PureScan AI für meine Hautpflegeroutine verwenden?</h3><p>Indem Sie PureScan AI in Ihre tägliche Routine integrieren, gewinnen Sie den Vorteil der vollständigen Transparenz. Sie können Ihre Hautbarriere schützen, vorzeitiges Altern verursacht durch harte Reizstoffe verhindern und sicherstellen, dass Ihre personalisierten Hautpflege-Empfehlungen wirklich vorteilhaft für Ihren einzigartigen Hauttyp sind.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Egal ob Sie in Deutschland, Österreich oder der Schweiz leben, PureScan AI ist die beste App zum Scannen von Lebensmitteln, zur Analyse von Kosmetika und zur Erkennung toxischer Inhaltsstoffe.</i></div></div>
         )
     }
 ];

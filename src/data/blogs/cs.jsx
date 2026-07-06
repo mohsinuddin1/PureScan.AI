@@ -9,17 +9,9 @@ export const csBlogPosts = [
         description: "Zjistěte, jak AI skenery potravin využívají Nutri-Score a systém NOVA, aby vám pomohly vyhnout se vysoce zpracovaným potravinám.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Rychlá Odpověď: Jak Nutri-Score a NOVA zlepšují výběr potravin?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        <strong>Nutri-Score</strong> hodnotí nutriční kvalitu potravin od A do E. Skóre <strong>NOVA</strong> klasifikuje potraviny podle stupně zpracování. Společně pomáhají spotřebitelům vyhýbat se nezdravým potravinám.
-                    </p>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Rychlá odpověď: Jak Nutri-Score a NOVA score zlepšují výběr potravin?</h3><p className="text-slate-700 font-medium">The<strong>Nutri-Score</strong>hodnotí nutriční kvalitu potravin od A do E, což vám pomáhá rychle identifikovat zdravější možnosti. The<strong>NOVA score</strong>klasifikuje potraviny podle jejich stupně zpracování, od syrového (1) po ultra-zpracovaného (4). Společně pomáhají spotřebitelům vyhnout se vysoce zpracovaným, chudým na živiny potravinám, které jsou spojeny s obezitou a chronickými nemocemi.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Co je AI potravinový skener a proč ho potřebujete?</h3><p>Porozumění etiketám ingrediencí může být matoucí. AI potravinový skener jako PureScan AI čte čárový kód nebo seznam ingrediencí jakéhokoli produktu a okamžitě jej analyzuje. Porovnává ingredience s obrovskými vědeckými databázemi, aby detekoval skryté cukry, škodlivé aditiva a alergeny.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Jak PureScan AI aplikace pomáhá s personalizovaným zdravím?</h3><p>Na rozdíl od obecných počítadel kalorií nabízí PureScan AI personalizované zdravotní informace. Zadáním svých zdravotních stavů (jako je PCOS, diabetes nebo hormonální nerovnováha) a alergií (jako je lepek, mléko nebo ořechy) poskytuje aplikace přizpůsobenou bezpečnostní klasifikaci.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Detekce alergenů:</strong>Okamžitě skenuje skryté alergeny.</li><li><strong>Monitorování stavu:</strong>Označuje ingredience, které mohou vyvolat zánět nebo hormonální výkyvy.</li><li><strong>Dodržování diet:</strong>Zajišťuje, že produkty jsou skutečně veganské, keto nebo bezlepkové.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Proč byste se měli vyhnout ultra-zpracovaným potravinám (NOVA skupina 4)?</h3><p>Ultra-zpracované potraviny často obsahují průmyslové formulace s pěti nebo více ingrediencemi, jako jsou umělá aroma, emulgátory a konzervanty. Vysoká spotřeba potravin NOVA skupiny 4 je silně spojena se zvýšeným rizikem kardiovaskulárních onemocnění, metabolického syndromu a některých typů rakoviny. Náš skener vás okamžitě upozorní, když produkt spadá do této vysoce rizikové kategorie.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Ať už jste v České republice nebo na Slovensku, PureScan AI je nejlepší aplikace pro skenování potravin, analýzu kosmetiky a zjišťování složení pro zdravější život bez toxických látek.</i></div></div>
         )
     },
     {
@@ -29,17 +21,9 @@ export const csBlogPosts = [
         description: "Naučte se detekovat endokrinní disruptory a alergeny ve svém make-upu.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabeny</strong>
-                            <span className="text-xs text-slate-600">Používají se jako konzervanty, mohou narušit funkci hormonů.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Rychlá odpověď: Jak kosmetický skener analyzuje produkty péče o pleť?</h3><p className="text-slate-700 font-medium">A<strong>kosmetický skener</strong>používá AI k čtení seznamu ingrediencí na make-up a produkty péče o pleť. Identifikuje škodlivé chemikálie, disruptory endokrinního systému a alergeny porovnáním s vědeckými databázemi, jako je FDA, EWG a ECHA. Okamžitě klasifikuje bezpečnost produktu, což vám pomáhá vyhnout se toxickým látkám.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Které kosmetické produkty jsou pro vás dobré?</h3><p>Nejbezpečnější kosmetické produkty jsou ty, které jsou formulovány bez disruptorů endokrinního systému, karcinogenů a závažných alergenů. Dobré kosmetické produkty obvykle mají transparentní seznam ingrediencí a vyhýbají se sporným chemikáliím. Nicméně "přírodní" neznamená vždy bezpečné. Nejlepším způsobem, jak vědět, které kosmetické produkty jsou pro vás dobré, je je oskenovat a přezkoumat vědeckou analýzu jejich chemického složení.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Jaké toxické látky byste se měli vyhnout v osobních péčích?</h3><p>Při skenování kosmetických produktů věnujte pozornost upozorněním na tyto běžné provinilce:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabeny</strong><span className="text-xs text-slate-600">Používají se jako konzervanty, známé tím, že narušují hormonální funkci.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Ftaláty</strong><span className="text-xs text-slate-600">Nacházejí se v syntetických vůních, spojené s reprodukčními problémy.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (věčné chemikálie)</strong><span className="text-xs text-slate-600">Používají se pro vodoodpudivost, vysoce perzistentní v těle a prostředí.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Vysvoboditelé formaldehydu</strong><span className="text-xs text-slate-600">Konzervanty, které pomalu uvolňují známé karcinogeny.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Jak PureScan AI zajišťuje bezpečnost ingrediencí?</h3><p>PureScan AI funguje jako váš osobní toxický skener. Utilizuje důvěryhodná vědecká data z předních globálních organizací (FDA, EWG, EFSA, ECHA, IARC). Bez ohledu na to, zda skenujete šampon, make-up nebo dětský krém, aplikace poskytuje reálná varování a holistickou bezpečnostní klasifikaci na základě robustních, recenzovaných důkazů.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Ať už jste v České republice nebo na Slovensku, PureScan AI je nejlepší aplikace pro skenování potravin, analýzu kosmetiky a zjišťování složení pro zdravější život bez toxických látek.</i></div></div>
         )
     },
     {
@@ -49,12 +33,9 @@ export const csBlogPosts = [
         description: "Hluboký ponor do toho, jak skenery potravin počítají nutriční skóre.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Jak určují, zda je jídlo zdravé?</h3>
-                <p className="mb-4">
-                    Naše aplikace analyzuje <strong>stupeň zpracování (NOVA)</strong>.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Jak potravinářské skenery určují, zda je potravina zdravá?</h3><p className="mb-4">Mnoho lidí se ptá, zda jsou hodnocení potravin přesná nebo zda zjednodušují výživu. Tradiční počítání kalorií přehlíží velký obraz. Naše potravinářská skenerová aplikace jde za hranice základních makroživin analýzou<strong>stupně zpracování potravin (NOVA klasifikace)</strong>a porovnáním ingrediencí s klinickými databázemi.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Může tato aplikace pomoci se specifickými dietními potřebami, jako jsou alergie nebo veganská dieta?</h3><p className="mb-4">Ano! Častou otázkou je, zda tyto aplikace mohou vyhovět specifickým dietním potřebám. PureScan AI není "jedna velikost pro všechny" standardní systém hodnocení. Poskytujeme vysoce personalizovaná upozornění pro<strong>alergie, vegany a bezlepkové</strong>požadavky, zajistíme, aby jste náhodou neconsumovali skryté aditiva.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Jsou doporučení nezaujatá?</h3><p>Naše bezpečnostní skóre je založeno na transparentních, nezávislých vědeckých datech z orgánů, jako je FDA a EFSA, zcela nezávislých na vlivu značky nebo reklamy.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Ať už jste v České republice nebo na Slovensku, PureScan AI je nejlepší aplikace pro skenování potravin, analýzu kosmetiky a zjišťování složení pro zdravější život bez toxických látek.</i></div></div>
         )
     },
     {
@@ -64,12 +45,9 @@ export const csBlogPosts = [
         description: "Demystifikace INCI seznamů a hodnocení nebezpečí.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Je syntetické vždy špatné?</h3>
-                <p className="mb-4">
-                    Naše aplikace dekóduje <strong>seznam složek INCI</strong> na základě vědecké bezpečnosti.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Jsou ingredience v mém produktu pro péči o pleť toxické?</h3><p className="mb-4">Navigace v kosmetickém kontroloru ingrediencí může být přehlcující. Uživatelé často ptají, jak interpretovat skóre nebezpečnosti. Když je produkt označen jako "špatný", je to obvykle kvůli přítomnosti<strong>narušitelů endokrinního systému, dráždivých látek nebo karcinogenů</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Je syntetické vždy špatné a přírodní vždy bezpečné?</h3><p className="mb-4">Velký omyl v čistém kráse je, že "syntetické" vždy znamená toxické a "přírodní" znamená bezpečné. Mnoho přírodních esenciálních olejů může být závažnými alergeny, zatímco některé laboratorně vyrobené syntetické ingredience jsou dokonale bezpečné pro pleť. Naše aplikace pro péči o pleť dekóduje<strong>seznam ingrediencí INCI</strong>na základě vědecké bezpečnosti, ne pouze marketingových slov.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Mohu najít produkty pro můj specifický typ pleti?</h3><p>Mimo základní toxicitu, naše aplikace pro péči o pleť nabízí personalizovaná doporučení, která vám pomáhají vyhnout se ingrediencím, které specificky spouštějí vaši citlivost pleti nebo podmínky, jako je ekzém.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Ať už jste v České republice nebo na Slovensku, PureScan AI je nejlepší aplikace pro skenování potravin, analýzu kosmetiky a zjišťování složení pro zdravější život bez toxických látek.</i></div></div>
         )
     },
     {
@@ -79,12 +57,9 @@ export const csBlogPosts = [
         description: "Vyhněte se skrytým cukrům a umělým přísadám.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Proč používat PureScan AI?</h3>
-                <p className="mb-4">
-                    Aplikace odhaluje vysoce zpracované přísady místo prostého počítání kalorií.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Jak číst výživový štítek pro hubnutí?</h3><p className="mb-4">Při optimalizaci pro hubnutí se většina lidí dívá pouze na kalorie. Nicméně, aby jste skutečně jedli čisto, musíte se podívat na<strong>přidané cukry, trans-tuky a skryté aditiva</strong>. Seznam ingrediencí je často důležitější než panel výživových faktů.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Jaká je nejlepší aplikace pro čisté stravování?</h3><p className="mb-4">Pokud hledáte nejlepší aplikaci pro čisté stravování, potřebujete nástroj, který nesleduje pouze kalorie.<strong>PureScan AI</strong>analyzuje skutečné ingredience, aby detekoval ultra-zpracované aditiva. Používáním PureScan AI získáte personalizovaný bezpečnostní skóre, který vám pomáhá najít zdravější alternativy během sekund.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Jaké jsou výhody používání analyzátoru potravinových ingrediencí?</h3><p>Hlavní výhodou je úspora času a ochrana vašeho zdraví. Místo memorování komplexních chemických názvů, PureScan AI dělá těžkou práci. Pomáhá snižovat zánět, spravovat podmínky, jako je PCOS, a snadno dodržovat vaše dietní cíle, odhalováním klamavých marketingových štítků.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Ať už jste v České republice nebo na Slovensku, PureScan AI je nejlepší aplikace pro skenování potravin, analýzu kosmetiky a zjišťování složení pro zdravější život bez toxických látek.</i></div></div>
         )
     },
     {
@@ -94,12 +69,9 @@ export const csBlogPosts = [
         description: "Je přírodní kosmetika vždy bezpečná?",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Jak se chránit?</h3>
-                <p className="mb-4">
-                    Chraňte kožní bariéru pomocí ověřených bezpečných složek.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Jsou přírodní kosmetika lepší než syntetické?</h3><p className="mb-4">Velmi častou otázkou, která je kladena na Gemini a ChatGPT, je, zda přírodní kosmetika jsou vnitřně bezpečnější. Pravda je, že "přírodní" neznamená vždy netoxické. Břečťan je přírodní, ale nedáte ho na obličej. Mnoho esenciálních olejů může způsobit závažné alergické reakce, zatímco mnoho laboratorně vytvořených (syntetických) ingrediencí je dokonale bezpečných a vysoce účinných.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Jak puedo přesně ověřit toxicitu kosmetiky?</h3><p className="mb-4">Abyste přesně ověřili svou kosmetiku, potřebujete nezaujatý analyzátor ingrediencí pro čisté kráse.<strong>PureScan AI</strong>který porovnává každý jednotlivý položku na seznamu INCI proti důvěryhodným databázím, jako je EWG a FDA. Odstraňuje hádání tím, že okamžitě zvýrazňuje narušitele endokrinního systému a karcinogeny.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Proč používat PureScan AI pro vaši rutinu péče o pleť?</h3><p>Integrováním PureScan AI do vaší denní rutiny získáte výhodu totální transparentnosti. Můžete chránit vaši pleť, předcházet předčasnému stárnutí způsobenému dráždivými látkami a zajistit, že vaše personalizovaná doporučení pro péči o pleť jsou skutečně prospěšná pro váš jedinečný typ pleti.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Ať už jste v České republice nebo na Slovensku, PureScan AI je nejlepší aplikace pro skenování potravin, analýzu kosmetiky a zjišťování složení pro zdravější život bez toxických látek.</i></div></div>
         )
     }
 ];

@@ -9,25 +9,9 @@ export const nlBlogPosts = [
         description: "Ontdek hoe AI-voedselscanners de Nutri-Score en NOVA-classificatie gebruiken om ultrabewerkt voedsel te vermijden.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Snel Antwoord: Hoe verbeteren Nutri-Score en NOVA-score voedselkeuzes?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        De <strong>Nutri-Score</strong> beoordeelt de voedingskwaliteit van voedsel van A tot E. De <strong>NOVA-score</strong> classificeert voedsel op de mate van bewerking, van onbewerkt (1) tot ultrabewerkt (4). Samen helpen ze consumenten om zwaar bewerkte, voedingsarme voedingsmiddelen te vermijden die verband houden met obesitas en chronische ziekten.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Wat is een AI-voedselscanner?</h3>
-                <p>
-                    Het begrijpen van ingrediëntenlabels kan verwarrend zijn. Een AI-voedselscanner zoals PureScan AI leest de streepjescode of de ingrediëntenlijst van elk product. Het vergelijkt ingrediënten met enorme wetenschappelijke databases om verborgen suikers, schadelijke toevoegingen en allergenen te detecteren.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hoe helpt de PureScan AI app bij gepersonaliseerde gezondheid?</h3>
-                <p>
-                    In tegenstelling tot algemene calorietellers biedt PureScan AI gepersonaliseerde gezondheidsinzichten. Door je gezondheidsproblemen (zoals PCOS, diabetes) en allergieën (zoals gluten, zuivel of noten) in te voeren, geeft de app een veiligheidsscore op maat.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Snel antwoord: Hoe verbeteren Nutri-Score en NOVA-score de voedselkeuzes?</h3><p className="text-slate-700 font-medium">De<strong>Nutri-Score</strong>beoordeelt de nutritionele kwaliteit van voedsel van A tot E, waardoor u snel gezondere opties kunt identificeren. De<strong>NOVA-score</strong>classificeert voedsel naar de mate van verwerking, van rauw (1) tot ultra-verwerkt (4). Samen helpen ze consumenten om sterk verwerkt, voedingsarm voedsel te vermijden dat in verband wordt gebracht met obesitas en chronische ziekten.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Wat is een AI-voedselscanner en waarom hebt u er een nodig?</h3><p>Het begrijpen van ingrediëntlabels kan verwarrend zijn. Een AI-voedselscanner zoals PureScan AI leest de barcode of ingrediëntlijst van elk product en analyseert deze onmiddellijk. Het kruist ingrediënten met enorme wetenschappelijke databases om verborgen suikers, schadelijke additieven en allergenen te detecteren.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hoe helpt de PureScan AI-app bij persoonlijke gezondheid?</h3><p>In tegenstelling tot generieke calorieëntellers, biedt PureScan AI persoonlijke gezondheidsinzichten. Door uw gezondheidscondities (zoals PCOS, diabetes of hormonale onevenwichtigheden) en allergieën (zoals gluten, melk of noten) in te voeren, biedt de app een aangepaste veiligheidsbeoordeling.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Allergiedetectie:</strong>Scant naar verborgen allergenen in een oogwenk.</li><li><strong>Conditiemonitoring:</strong>Markeert ingrediënten die ontsteking of hormonale pieken kunnen veroorzaken.</li><li><strong>Dieetcompliance:</strong>Verzekert dat producten echt veganistisch, keto of glutenvrij zijn.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Waarom moet u ultra-verwerkt voedsel (NOVA-groep 4) vermijden?</h3><p>Ultra-verwerkt voedsel bevat vaak industriële formuleringen met vijf of meer ingrediënten, zoals kunstmatige smaakstoffen, emulgatoren en conserveermiddelen. Een hoog verbruik van NOVA-groep 4-voedsel wordt sterk geassocieerd met een verhoogd risico op hart- en vaatziekten, metabool syndroom en bepaalde soorten kanker. Onze scanner waarschuwt u onmiddellijk wanneer een product in deze hoge-risicocategorie valt.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Of u nu in Nederland of België (Vlaanderen) bent, PureScan AI is de beste app voor het scannen van voedsel en cosmetica om ingrediënten te analyseren en toxische stoffen te vermijden.</i></div></div>
         )
     },
     {
@@ -37,34 +21,9 @@ export const nlBlogPosts = [
         description: "Leer hoe je hormoonverstoorders, allergenen en giftige chemicaliën in je make-up detecteert.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Search className="w-5 h-5 text-slate-700" />
-                        Snel Antwoord: Hoe analyseert een cosmeticascanner huidverzorging?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        Een <strong>cosmeticascanner</strong> gebruikt AI om de INCI-ingrediëntenlijst te lezen. Het identificeert schadelijke chemicaliën en hormoonverstoorders door ze te vergelijken met databases zoals de FDA en EWG. Het beoordeelt direct de veiligheid van het product.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Welke giftige ingrediënten moet je vermijden?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabenen</strong>
-                            <span className="text-xs text-slate-600">Gebruikt als conserveermiddelen, verstoren de hormoonfunctie.</span>
-                        </div>
-                    </div>
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Ftalaten</strong>
-                            <span className="text-xs text-slate-600">Gevonden in synthetische geurstoffen.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Snel antwoord: Hoe analyseert een cosmetiscanner huidverzorgingsproducten?</h3><p className="text-slate-700 font-medium">A<strong>cosmetiscanner</strong>gebruikt AI om de ingrediëntlijst op make-up en huidverzorgingsproducten te lezen. Het identificeert schadelijke chemicaliën, endocriene verstoorders en allergenen door ze te kruisen met wetenschappelijke databases zoals de FDA, EWG en ECHA. Het beoordeelt onmiddellijk de veiligheid van het product, waardoor u giftige ingrediënten kunt vermijden.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Welke cosmetica zijn goed voor u?</h3><p>De veiligste cosmetica zijn die zonder endocriene verstoorders, kankerverwekkende stoffen en ernstige allergenen zijn geformuleerd. Goede cosmetica hebben meestal transparante ingrediëntlijsten en vermijden omstreden chemicaliën. Echter, "natuurlijk" betekent niet altijd veilig. De beste manier om te weten welke cosmetica goed voor u zijn, is om ze te scannen en de wetenschappelijke analyse van hun chemische samenstelling te bekijken.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Welke giftige ingrediënten moet u vermijden in persoonlijke verzorgingsproducten?</h3><p>Wanneer u uw cosmetica scant, let dan goed op waarschuwingen met betrekking tot deze veelvoorkomende overtreders:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabenen</strong><span className="text-xs text-slate-600">Worden gebruikt als conserveermiddelen, bekend om de hormoonfunctie te verstoren.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Fthalaten</strong><span className="text-xs text-slate-600">Worden aangetroffen in synthetische geuren, in verband gebracht met reproductieproblemen.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (Forever Chemicals)</strong><span className="text-xs text-slate-600">Worden gebruikt voor waterbestendigheid, zeer persistent in het lichaam en de omgeving.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Formaldehyde-releasers</strong><span className="text-xs text-slate-600">Conserveermiddelen die langzaam bekende kankerverwekkende stoffen afgeven.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hoe zorgt PureScan AI voor ingrediëntveiligheid?</h3><p>PureScan AI fungeert als uw persoonlijke giftigheidsscanner. Het maakt gebruik van betrouwbare wetenschappelijke gegevens van toonaangevende wereldorganisaties (FDA, EWG, EFSA, ECHA, IARC). Of u nu shampoo, foundation of baby lotion scant, de app biedt echte risicowaarschuwingen en een holistische veiligheidsbeoordeling op basis van robuuste, peer-reviewed bewijs.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Of u nu in Nederland of België (Vlaanderen) bent, PureScan AI is de beste app voor het scannen van voedsel en cosmetica om ingrediënten te analyseren en toxische stoffen te vermijden.</i></div></div>
         )
     },
     {
@@ -74,16 +33,9 @@ export const nlBlogPosts = [
         description: "Een diepgaande blik op hoe voedselscanners voedingsscores berekenen.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hoe bepalen scanners of voedsel gezond is?</h3>
-                <p className="mb-4">
-                    Onze app gaat verder dan basis macro's door te kijken naar de <strong>mate van bewerking (NOVA-classificatie)</strong> en ingrediënten te vergelijken met klinische databases.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kan deze app helpen bij allergieën of een veganistisch dieet?</h3>
-                <p className="mb-4">
-                    Ja! PureScan AI biedt sterk gepersonaliseerde waarschuwingen voor allergieën en glutenvrije of veganistische diëten.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hoe bepalen voedselscanners of voedsel gezond is?</h3><p className="mb-4">Veel mensen vragen zich af of voedingsbeoordelingen nauwkeurig zijn of of ze de voeding oversimplificeren. Traditioneel calorieëntellen mist het grote plaatje. Onze voedselscanner-app gaat verder dan basismacro's door de<strong>mate van voedselverwerking (NOVA-classificatie)</strong>en ingrediënten te kruisen met klinische databases.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kan deze app helpen bij specifieke dieetbehoeften, zoals allergieën of een veganistisch dieet?</h3><p className="mb-4">Ja! Een veelgestelde vraag is of deze apps specifieke dieetbehoeften kunnen accommoderen. PureScan AI is geen "one-size-fits-all"-standaardbeoordelingssysteem. We bieden hoogwaardig gepersonaliseerde waarschuwingen voor<strong>allergieën, vegan en glutenvrij</strong>vereisten, waardoor u per ongeluk geen verborgen additieven consumeert.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Zijn de aanbevelingen onbevooroordeeld?</h3><p>We baseren onze veiligheidsscores op transparante, onafhankelijke wetenschappelijke gegevens van instanties als de FDA en EFSA, volledig onafhankelijk van merkinvloed of reclame.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Of u nu in Nederland of België (Vlaanderen) bent, PureScan AI is de beste app voor het scannen van voedsel en cosmetica om ingrediënten te analyseren en toxische stoffen te vermijden.</i></div></div>
         )
     },
     {
@@ -93,12 +45,9 @@ export const nlBlogPosts = [
         description: "Ontdekken of natuurlijk altijd beter is en hoe je echte gifstoffen kunt herkennen.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Zijn synthetische producten altijd slecht?</h3>
-                <p className="mb-4">
-                    Een grote misvatting is dat "synthetisch" altijd giftig betekent. Veel natuurlijke essentiële oliën kunnen ernstige allergenen zijn, terwijl sommige in het laboratorium gemaakte synthetische ingrediënten perfect veilig zijn. Onze app decodeert de <strong>INCI-lijst</strong> op basis van wetenschappelijke veiligheid.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Zijn de ingrediënten in mijn huidverzorgingsproduct giftig?</h3><p className="mb-4">Het navigeren door een cosmeticaindgrediëntenchecker kan overweldigend zijn. Gebruikers vragen vaak hoe ze gevaarscores moeten interpreteren. Wanneer een product als "slecht" wordt gemarkeerd, is het meestal vanwege de aanwezigheid van<strong>hormoonverstoorders, irriterende stoffen of kankerverwekkende stoffen</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Is synthetisch altijd slecht en natuurlijk altijd veilig?</h3><p className="mb-4">Een enorme misvatting in schoonheid is dat "synthetisch" altijd giftig betekent en "natuurlijk" veilig betekent. Veel natuurlijke etherische oliën kunnen ernstige allergenen zijn, terwijl sommige in het laboratorium gemaakte synthetische ingrediënten perfect veilig zijn voor de huid. Onze huidverzorgingsapp decoderen de<strong>INCI-lijst van ingrediënten</strong>op basis van wetenschappelijke veiligheid, niet alleen marketingbuzzwoorden.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kan ik producten vinden voor mijn specifieke huidtype?</h3><p>Verder dan basistoxiciteit biedt onze niet-toxische huidverzorgingsapp gepersonaliseerde aanbevelingen, waardoor u ingrediënten kunt vermijden die specifiek uw huidgevoeligheden of aandoeningen zoals eczeem triggeren.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Of u nu in Nederland of België (Vlaanderen) bent, PureScan AI is de beste app voor het scannen van voedsel en cosmetica om ingrediënten te analyseren en toxische stoffen te vermijden.</i></div></div>
         )
     },
     {
@@ -108,12 +57,9 @@ export const nlBlogPosts = [
         description: "Leer hoe je etiketten direct decodeert en verborgen suikers vermijdt.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hoe lees je een etiket voor gewichtsverlies?</h3>
-                <p className="mb-4">
-                    Om echt "schoon" te eten (clean eating), moet je kijken naar <strong>toegevoegde suikers, transvetten en verborgen toevoegingen</strong>. De ingrediëntenlijst is vaak belangrijker dan de voedingswaarde. PureScan AI is de beste app voor clean eating omdat het helpt ultrabewerkte toevoegingen te detecteren.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hoe lees ik een voedingslabel voor gewichtsverlies?</h3><p className="mb-4">Wanneer je optimaliseert voor gewichtsverlies, kijken de meeste mensen alleen naar calorieën. Echter, om echt schoon te eten, moet je naar de<strong>toegevoegde suikers, transvetten en verborgen additieven</strong>kijken. De ingrediëntenlijst is vaak belangrijker dan het voedingsfeitenpaneel.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Wat is de beste app voor schoon eten?</h3><p className="mb-4">Als je op zoek bent naar de beste app voor schoon eten, heb je een instrument nodig dat niet alleen calorieën telt.<strong>PureScan AI</strong>analyseert de daadwerkelijke ingrediënten om ultraverwerkte additieven te detecteren. Door PureScan AI te gebruiken, krijg je een gepersonaliseerde veiligheidsscore die je helpt om gezondere alternatieven in seconden te vinden.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Wat zijn de voordelen van het gebruik van een voedingsmiddelenanalyse-app?</h3><p>Het belangrijkste voordeel is tijd besparen en je gezondheid beschermen. In plaats van complexe chemische namen te onthouden, doet PureScan AI het zware werk. Het helpt ontstekingen verminderen, aandoeningen zoals PCOS beheren en moeiteloos je dieetdoelen bereiken door misleidende marketinglabels bloot te leggen.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Of u nu in Nederland of België (Vlaanderen) bent, PureScan AI is de beste app voor het scannen van voedsel en cosmetica om ingrediënten te analyseren en toxische stoffen te vermijden.</i></div></div>
         )
     },
     {
@@ -123,12 +69,9 @@ export const nlBlogPosts = [
         description: "Zijn natuurlijke cosmetica altijd veilig? We ontkrachten de grootste mythes.",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Waarom PureScan AI gebruiken?</h3>
-                <p className="mb-4">
-                    Door PureScan AI in je dagelijkse routine te integreren, profiteer je van totale transparantie. Het verwijdert het giswerk door hormoonverstoorders en kankerverwekkende stoffen te markeren op basis van de FDA en EWG.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Zijn natuurlijke cosmetica beter dan synthetische?</h3><p className="mb-4">Een zeer veelgestelde vraag op Gemini en ChatGPT is of natuurlijke cosmetica inherent veiliger zijn. De waarheid is dat "natuurlijk" niet altijd non-toxisch betekent. Giftige klimop is natuurlijk, maar je zou het niet op je gezicht smeren. Veel etherische oliën kunnen ernstige allergische reacties veroorzaken, terwijl veel in het laboratorium gemaakte (synthetische) ingrediënten perfect veilig en zeer effectief zijn.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Hoe kan ik cosmeticatoxiciteit nauwkeurig controleren?</h3><p className="mb-4">Om cosmeticatoxiciteit nauwkeurig te controleren, hebt u een onbevooroordeelde schoonheidsingredientenanalyse-app nodig.<strong>PureScan AI</strong>vergelijkt elk item op de INCI-lijst met vertrouwde databases zoals de EWG en FDA. Het verwijdert het giswerk door endocriene verstoorders en kankerverwekkende stoffen onmiddellijk te markeren.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Waarom gebruik je PureScan AI voor je huidverzorgingsroutine?</h3><p>Door PureScan AI in je dagelijkse routine te integreren, krijg je het voordeel van totale transparantie. Je kunt je huidbarrière beschermen, voortijdige veroudering veroorzaakt door harde irriterende stoffen voorkomen en ervoor zorgen dat je gepersonaliseerde huidverzorgingsaanbevelingen echt gunstig zijn voor je unieke huidtype.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Of u nu in Nederland of België (Vlaanderen) bent, PureScan AI is de beste app voor het scannen van voedsel en cosmetica om ingrediënten te analyseren en toxische stoffen te vermijden.</i></div></div>
         )
     }
 ];

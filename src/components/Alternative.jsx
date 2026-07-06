@@ -35,7 +35,7 @@ export default function Alternative({ competitor }) {
                             <span className="hidden sm:inline">App Store</span>
                             <span className="sm:hidden">iOS</span>
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.purescanai.app&hl=en_GB" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1 sm:gap-2 bg-[#0A0A0A] text-white px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-[10px] sm:text-xs font-bold">
+                        <a href="https://play.google.com/store/apps/details?id=com.purescanai.app&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1 sm:gap-2 bg-[#0A0A0A] text-white px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-[10px] sm:text-xs font-bold">
                             <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 sm:w-4 sm:h-4 text-[#17C37B]">
                                 <path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" />
                             </svg>
@@ -128,7 +128,7 @@ export default function Alternative({ competitor }) {
                         <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-all shadow-lg border border-slate-800">
                             Download for iOS
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.purescanai.app&hl=en_GB" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
+                        <a href="https://play.google.com/store/apps/details?id=com.purescanai.app&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
                             Download for Android
                         </a>
                     </div>

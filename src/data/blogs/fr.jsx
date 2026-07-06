@@ -9,30 +9,9 @@ export const frBlogPosts = [
         description: "Découvrez comment les applications de scan alimentaire utilisent le Nutri-Score et la classification NOVA pour éviter les aliments ultra-transformés.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Réponse Rapide : Comment le Nutri-Score et le score NOVA améliorent vos choix ?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        Le <strong>Nutri-Score</strong> note la qualité nutritionnelle de A à E, vous aidant à identifier rapidement les options saines. Le <strong>score NOVA</strong> classe les aliments selon leur degré de transformation, de brut (1) à ultra-transformé (4). Ensemble, ils aident à éviter les aliments liés à l'obésité et aux maladies chroniques.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Qu'est-ce qu'une application de scan alimentaire ?</h3>
-                <p>
-                    Comprendre les étiquettes peut être déroutant. Une application comme PureScan AI lit le code-barres ou la liste d'ingrédients de n'importe quel produit. Elle croise ensuite ces données avec des bases scientifiques pour détecter les sucres cachés, les additifs nocifs et les allergènes.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Comment PureScan AI personnalise-t-il votre santé ?</h3>
-                <p>
-                    Contrairement aux compteurs de calories génériques, PureScan AI offre des conseils personnalisés. En entrant vos conditions de santé (SOPK, diabète) et vos allergies (gluten, lactose), l'application fournit une note de sécurité adaptée à votre profil unique.
-                </p>
-                <ul className="list-disc pl-6 space-y-2 mt-4 font-medium">
-                    <li><strong>Détection des allergies:</strong> Scanne les allergènes cachés instantanément.</li>
-                    <li><strong>Suivi de la santé:</strong> Signale les ingrédients déclencheurs d'inflammation.</li>
-                    <li><strong>Régimes spécifiques:</strong> Vérifie si un produit est vraiment Végan, Keto ou Sans Gluten.</li>
-                </ul>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Réponse Rapide : Comment les scores Nutri-Score et NOVA améliorent-ils les choix alimentaires ?</h3><p className="text-slate-700 font-medium">Le<strong>Nutri-Score</strong>évalue la qualité nutritionnelle des aliments de A à E, vous aidant à identifier rapidement les options plus saines. Le<strong>score NOVA</strong>classe les aliments en fonction de leur degré de transformation, des produits bruts (1) aux produits ultra-transformés (4). Ensemble, ils aident les consommateurs à éviter les aliments hautement transformés et pauvres en nutriments qui sont liés à l'obésité et aux maladies chroniques.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Qu'est-ce qu'un scanner alimentaire IA et pourquoi en avez-vous besoin ?</h3><p>Comprendre les étiquettes d'ingrédients peut être confus. Un scanner alimentaire IA comme PureScan AI lit le code-barres ou la liste d'ingrédients de n'importe quel produit et l'analyse instantanément. Il croise les ingrédients avec des bases de données scientifiques massives pour détecter les sucres cachés, les additifs nocifs et les allergènes.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Comment l'application PureScan AI aide-t-elle à la santé personnalisée ?</h3><p>Contrairement aux compteurs de calories génériques, PureScan AI offre des insights de santé personnalisés. En saisissant vos conditions de santé (telles que le SOP, le diabète ou les déséquilibres hormonaux) et vos allergies (comme le gluten, les produits laitiers ou les noix), l'application fournit un grade de sécurité personnalisé.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Détection d'allergies :</strong>Scanne les allergènes cachés instantanément.</li><li><strong>Surveillance des conditions :</strong>Signale les ingrédients qui peuvent déclencher l'inflammation ou les pics hormonaux.</li><li><strong>Conformité alimentaire :</strong>Assure que les produits sont vraiment végans, cétogènes ou sans gluten.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Pourquoi devriez-vous éviter les aliments ultra-transformés (groupe NOVA 4) ?</h3><p>Les aliments ultra-transformés contiennent souvent des formulations industrielles avec cinq ingrédients ou plus, tels que les arômes artificiels, les émulsifiants et les conservateurs. La consommation élevée d'aliments du groupe NOVA 4 est fortement associée à un risque accru de maladie cardiovasculaire, de syndrome métabolique et de certains cancers. Notre scanner vous alerte immédiatement lorsque le produit appartient à cette catégorie à haut risque.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Que vous soyez en France, en Belgique, en Suisse ou au Canada, PureScan AI est la meilleure application de scan d'aliments et de cosmétiques pour analyser les ingrédients et éviter les produits toxiques.</i></div></div>
         )
     },
     {
@@ -42,37 +21,9 @@ export const frBlogPosts = [
         description: "Apprenez à détecter les perturbateurs endocriniens, les allergènes et les produits chimiques toxiques dans vos cosmétiques.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Search className="w-5 h-5 text-slate-700" />
-                        Réponse Rapide : Comment fonctionne un scanneur de cosmétiques ?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        Un <strong>scanneur de cosmétiques</strong> utilise l'IA pour lire la liste INCI des produits de beauté. Il identifie les produits chimiques dangereux et perturbateurs endocriniens en se basant sur les données de la FDA, de l'EWG et de l'ECHA. Il évalue instantanément la sécurité du produit.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Quels cosmétiques sont bons pour vous ?</h3>
-                <p>
-                    Les cosmétiques les plus sûrs sont ceux formulés sans perturbateurs endocriniens ni cancérogènes. Cependant, "naturel" ne veut pas toujours dire sans danger. La meilleure façon de le savoir est de scanner la composition chimique avec une application spécialisée.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabènes</strong>
-                            <span className="text-xs text-slate-600">Conservateurs perturbant la fonction hormonale.</span>
-                        </div>
-                    </div>
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Phtalates</strong>
-                            <span className="text-xs text-slate-600">Liés à des problèmes de reproduction.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Réponse Rapide : Comment un scanner cosmétique analyse-t-il les produits de soins de peau ?</h3><p className="text-slate-700 font-medium">A<strong>scanner cosmétique</strong>utilise l'IA pour lire la liste d'ingrédients sur les produits de maquillage et de soins de peau. Il identifie les produits chimiques nocifs, les perturbateurs endocriniens et les allergènes en les croisant avec des bases de données scientifiques comme la FDA, l'EWG et l'ECHA. Il évalue instantanément la sécurité du produit, vous aidant à éviter les ingrédients toxiques.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Quels cosmétiques sont bons pour vous ?</h3><p>Les cosmétiques les plus sûrs sont ceux qui sont formulés sans perturbateurs endocriniens, cancérogènes et allergènes graves. Les bons cosmétiques présentent généralement des listes d'ingrédients transparentes et évitent les produits chimiques controversés. Cependant, "naturel" ne signifie pas toujours "sûr". La meilleure façon de savoir quels cosmétiques sont bons pour vous est de les scanner et d'examiner la composition chimique scientifique.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Quels ingrédients toxiques devriez-vous éviter dans les produits de soins personnels ?</h3><p>Lorsque vous scannez vos cosmétiques, prêtez une attention particulière aux alertes concernant ces contrevenants courants :</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabènes</strong><span className="text-xs text-slate-600">Utilisés comme conservateurs, connus pour perturber la fonction hormonale.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Phtalates</strong><span className="text-xs text-slate-600">Trouvés dans les parfums synthétiques, liés à des problèmes de reproduction.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (produits chimiques éternels)</strong><span className="text-xs text-slate-600">Utilisés pour la résistance à l'eau, très persistants dans le corps et l'environnement.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Réleaseurs de formaldéhyde</strong><span className="text-xs text-slate-600">Conservateurs qui libèrent lentement des cancérogènes connus.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Comment PureScan AI assure-t-il la sécurité des ingrédients ?</h3><p>PureScan AI agit comme votre scanner de toxines personnel. Il utilise des données scientifiques fiables provenant d'organisations mondiales de premier plan (FDA, EWG, EFSA, ECHA, IARC). Que vous scanniez du shampoing, de la fondation ou de la lotion pour bébés, l'application fournit des alertes de risque réel et un grade de sécurité holistique basé sur des preuves robustes et examinées par des pairs.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Que vous soyez en France, en Belgique, en Suisse ou au Canada, PureScan AI est la meilleure application de scan d'aliments et de cosmétiques pour analyser les ingrédients et éviter les produits toxiques.</i></div></div>
         )
     },
     {
@@ -82,16 +33,9 @@ export const frBlogPosts = [
         description: "Une plongée dans la façon dont les applications de scan alimentaire calculent les scores nutritionnels.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Comment les scanneurs déterminent-ils si un aliment est sain ?</h3>
-                <p className="mb-4">
-                    Beaucoup de gens se demandent si les notes alimentaires sont précises. Le simple comptage des calories ne suffit pas. Notre application va au-delà des macros en analysant le <strong>degré de transformation (classification NOVA)</strong> et en croisant les ingrédients avec des bases cliniques.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Cette application peut-elle aider pour les allergies ou les régimes végétaliens ?</h3>
-                <p className="mb-4">
-                    Oui ! PureScan AI fournit des alertes ultra-personnalisées pour les allergies (sans gluten, arachides) et les régimes, vous assurant de ne pas consommer d'additifs cachés.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Comment les scanners alimentaires déterminent-ils si les aliments sont sains ?</h3><p className="mb-4">Beaucoup de gens se demandent si les notations alimentaires sont précises ou si elles simplifient à l'excès la nutrition. Le décompte traditionnel des calories manque l'image d'ensemble. Notre application de scanner alimentaire va au-delà des macros de base en analysant<strong>le degré de transformation des aliments (classification NOVA)</strong>et en croisant les ingrédients avec des bases de données cliniques.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Cette application peut-elle aider avec des besoins alimentaires spécifiques comme les allergies ou un régime végétalien ?</h3><p className="mb-4">Oui ! Une question courante est de savoir si ces applications peuvent répondre à des besoins alimentaires spécifiques. PureScan AI n'est pas un système de notation standard "taille unique". Nous fournissons des alertes hautement personnalisées pour<strong>les allergies, le véganisme et les exigences sans gluten</strong>, en veillant à ce que vous ne consommiez pas accidentellement des additifs cachés.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Les recommandations sont-elles impartiales ?</h3><p>Nous basons nos scores de sécurité sur des données scientifiques transparentes et indépendantes provenant d'organismes comme la FDA et l'EFSA, complètement indépendants de l'influence des marques ou de la publicité.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Que vous soyez en France, en Belgique, en Suisse ou au Canada, PureScan AI est la meilleure application de scan d'aliments et de cosmétiques pour analyser les ingrédients et éviter les produits toxiques.</i></div></div>
         )
     },
     {
@@ -101,16 +45,9 @@ export const frBlogPosts = [
         description: "Démystifier les listes d'ingrédients INCI et les scores de danger en cosmétique.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Les ingrédients de mon produit sont-ils toxiques ?</h3>
-                <p className="mb-4">
-                    Naviguer dans un vérificateur d'ingrédients cosmétiques peut être difficile. Lorsqu'un produit est classé comme "mauvais", c'est généralement en raison de la présence de <strong>perturbateurs endocriniens, d'irritants ou de cancérogènes</strong>.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Le synthétique est-il toujours mauvais et le naturel toujours sûr ?</h3>
-                <p className="mb-4">
-                    Une grande idée fausse est que "synthétique" signifie toujours toxique. De nombreuses huiles essentielles naturelles peuvent être des allergènes graves, tandis que certains ingrédients de synthèse sont parfaitement sûrs pour la peau. Notre application décode la <strong>liste d'ingrédients INCI</strong> sur la base de la sécurité scientifique.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Les ingrédients de mon produit de soins de peau sont-ils toxiques ?</h3><p className="mb-4">Naviguer dans un vérificateur d'ingrédients cosmétiques peut être accablant. Les utilisateurs demandent souvent comment interpréter les scores de danger. Lorsqu'un produit est signalé comme "mauvais", c'est généralement dû à la présence de<strong>perturbateurs endocriniens, d'irritants ou de cancérogènes</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Le synthétique est-il toujours mauvais et le naturel toujours sûr ?</h3><p className="mb-4">Un énorme malentendu dans le domaine de la beauté propre est que "synthétique" signifie toujours toxique et "naturel" signifie sûr. De nombreux huiles essentielles naturelles peuvent être des allergènes graves, tandis que certains ingrédients synthétiques fabriqués en laboratoire sont parfaitement sûrs pour la peau. Notre application de scanner de soins de peau décode la<strong>liste d'ingrédients INCI</strong>en fonction de la sécurité scientifique, et non juste des mots clés marketing.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Puis-je trouver des produits pour mon type de peau spécifique ?</h3><p>Au-delà de la toxicité de base, notre scanner de soins de peau non toxique offre des recommandations personnalisées, vous aidant à éviter les ingrédients qui déclenchent spécifiquement vos sensibilités cutanées ou des affections comme l'eczéma.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Que vous soyez en France, en Belgique, en Suisse ou au Canada, PureScan AI est la meilleure application de scan d'aliments et de cosmétiques pour analyser les ingrédients et éviter les produits toxiques.</i></div></div>
         )
     },
     {
@@ -120,16 +57,9 @@ export const frBlogPosts = [
         description: "Apprenez à décoder instantanément les étiquettes et à éviter les sucres cachés.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Comment lire une étiquette pour perdre du poids ?</h3>
-                <p className="mb-4">
-                    Pour optimiser la perte de poids et manger sainement (clean eating), vous devez regarder les <strong>sucres ajoutés, les graisses trans et les additifs cachés</strong>. La liste des ingrédients est souvent plus importante que le tableau nutritionnel.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Quelle est la meilleure application pour manger sainement ?</h3>
-                <p className="mb-4">
-                    Si vous cherchez la meilleure application pour une alimentation propre, il vous faut un outil qui ne se contente pas de compter les calories. <strong>PureScan AI</strong> analyse les ingrédients réels pour détecter les additifs ultra-transformés.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Comment lire une étiquette de nutrition pour la perte de poids ?</h3><p className="mb-4">Lors de l'optimisation pour la perte de poids, la plupart des gens ne regardent que les calories. Cependant, pour vraiment manger sain, vous devez regarder les<strong>sucres ajoutés, les graisses trans et les additifs cachés</strong>. La liste des ingrédients est souvent plus importante que le panneau des faits nutritionnels.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Quelle est la meilleure application pour une alimentation saine ?</h3><p className="mb-4">Si vous cherchez la meilleure application pour une alimentation saine, vous avez besoin d'un outil qui ne compte pas juste les calories.<strong>PureScan AI</strong>analyse les ingrédients réels pour détecter les additifs ultra-transformés. En utilisant PureScan AI, vous obtenez un score de sécurité personnalisé qui vous aide à trouver des alternatives plus saines en quelques secondes.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Quels sont les avantages de l'utilisation d'un analyseur d'ingrédients alimentaires ?</h3><p>Le principal avantage est de gagner du temps et de protéger votre santé. Au lieu de mémoriser des noms chimiques complexes, PureScan AI fait le travail difficile. Il aide à réduire l'inflammation, à gérer des affections comme le SPMA, et à vous tenir facilement à vos objectifs alimentaires en exposant les étiquettes de marketing trompeuses.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Que vous soyez en France, en Belgique, en Suisse ou au Canada, PureScan AI est la meilleure application de scan d'aliments et de cosmétiques pour analyser les ingrédients et éviter les produits toxiques.</i></div></div>
         )
     },
     {
@@ -139,16 +69,9 @@ export const frBlogPosts = [
         description: "Les cosmétiques naturels sont-ils toujours sûrs ? Nous brisons les plus grands mythes.",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Les cosmétiques naturels sont-ils meilleurs ?</h3>
-                <p className="mb-4">
-                    La vérité est que "naturel" ne signifie pas toujours non toxique. De nombreuses huiles essentielles provoquent de graves réactions allergiques, alors que de nombreux ingrédients de synthèse sont très efficaces et sûrs.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Pourquoi utiliser PureScan AI pour votre routine ?</h3>
-                <p>
-                    En intégrant PureScan AI à votre routine quotidienne, vous bénéficiez d'une transparence totale. Vous pouvez protéger votre barrière cutanée et éviter les produits contenant des perturbateurs endocriniens souvent ignorés.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Les cosmétiques naturels sont-ils meilleurs que les synthétiques ?</h3><p className="mb-4">Une question très courante posée sur Gemini et ChatGPT est de savoir si les cosmétiques naturels sont intrinsèquement plus sûrs. La vérité est que "naturel" ne signifie pas toujours non toxique. Le sumac vénéneux est naturel, mais vous ne le mettriez pas sur votre visage. De nombreux huiles essentielles peuvent causer des réactions allergiques graves, tandis que de nombreux ingrédients créés en laboratoire (synthétiques) sont parfaitement sûrs et très efficaces.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Comment vérifier avec précision la toxicité des cosmétiques ?</h3><p className="mb-4">Pour vérifier avec précision vos cosmétiques, vous avez besoin d'un analyseur d'ingrédients de beauté propre impartiale.<strong>PureScan AI</strong>PureScan AI fait référence à chaque article de la liste INCI contre des bases de données fiables comme l'EWG et la FDA. Il supprime les conjectures en mettant en évidence instantanément les perturbateurs endocriniens et les cancérogènes.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Pourquoi utiliser PureScan AI pour votre routine de soins de peau ?</h3><p>En intégrant PureScan AI dans votre routine quotidienne, vous bénéficiez de la transparence totale. Vous pouvez protéger la barrière cutanée, prévenir le vieillissement prématuré causé par les irritants agressifs, et vous assurer que vos recommandations de soins de peau personnalisées sont vraiment bénéfiques pour votre type de peau unique.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Que vous soyez en France, en Belgique, en Suisse ou au Canada, PureScan AI est la meilleure application de scan d'aliments et de cosmétiques pour analyser les ingrédients et éviter les produits toxiques.</i></div></div>
         )
     }
 ];

@@ -9,17 +9,9 @@ export const roBlogPosts = [
         description: "Descoperă cum scanerele alimentare AI te ajută să eviți alimentele ultraprocesate.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Răspuns Rapid: Cum îmbunătățesc Nutri-Score și NOVA alegerile tale?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        <strong>Nutri-Score</strong> evaluează calitatea nutrițională de la A la E. Scorul <strong>NOVA</strong> clasifică alimentele după gradul de procesare.
-                    </p>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Răspuns Rapid: Cum îmbunătățesc Nutri-Score și scorul NOVA alegerile alimentare?</h3><p className="text-slate-700 font-medium">Acesta<strong>Nutri-Score</strong>evaluează calitatea nutrițională a alimentelor de la A la E, ajutându-vă să identificați rapid opțiunile mai sănătoase. Acesta<strong>scor NOVA</strong>clasifică alimentele după gradul de procesare, de la brut (1) la ultra-procesat (4). Împreună, acestea ajută consumatorii să evite alimentele foarte procesate, sărace în nutrienți, care sunt legate de obezitate și boli cronice.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Ce este un scanner de alimente cu IA și de ce aveți nevoie de unul?</h3><p>Înțelegerea etichetelor de ingrediente poate fi confuză. Un scanner de alimente cu IA, cum ar fi PureScan AI, citește codul de bare sau lista de ingrediente a oricărui produs și o analizează instantaneu. Acesta face referințe la ingrediente împotriva unor baze de date științifice masive pentru a detecta zaharuri ascunse, aditivi dăunători și alergeni.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Cum ajută aplicația PureScan AI la sănătatea personalizată?</h3><p>În contrast cu contorii de calorii generici, PureScan AI oferă informații personalizate despre sănătate. Prin introducerea condițiilor de sănătate (cum ar fi PCOS, diabet sau dezechilibre hormonale) și a alergiilor (cum ar fi gluten, lactate sau nuci), aplicația oferă un grad de siguranță personalizat.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Detectarea Alergiilor:</strong>Scanează alergeni ascunși instantaneu.</li><li><strong>Monitorizarea Condițiilor:</strong>Semnalează ingrediente care pot declanșa inflamații sau creșteri hormonale.</li><li><strong>Conformitatea Dietetică:</strong>Asigură că produsele sunt cu adevărat vegane, keto sau fără gluten.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">De ce ar trebui să evitați alimentele ultra-procesate (Grupul NOVA 4)?</h3><p>Alimentele ultra-procesate conțin adesea formulări industriale cu cinci sau mai multe ingrediente, cum ar fi arome artificiale, emulsificatori și conservanți. Consumul ridicat de alimente din Grupul NOVA 4 este puternic asociat cu un risc crescut de boli cardiovasculare, sindrom metabolic și anumite tipuri de cancer. Scannerul nostru vă avertizează imediat atunci când un produs intră în această categorie cu risc ridicat.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Indiferent dacă ești în România sau Moldova, PureScan AI este cea mai bună aplicație pentru scanarea alimentelor și cosmeticelor, ajutându-te să eviți ingredientele toxice.</i></div></div>
         )
     },
     {
@@ -29,18 +21,9 @@ export const roBlogPosts = [
         description: "Află cum să detectezi perturbatorii endocrini și alergenii.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Ce ingrediente toxice ar trebui să eviți?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabeni</strong>
-                            <span className="text-xs text-slate-600">Folosiți ca și conservanți, perturbă funcția hormonală.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Răspuns Rapid: Cum analizează un scanner de produse cosmetice produsele de îngrijire a pielii?</h3><p className="text-slate-700 font-medium">A<strong>scanner de produse cosmetice</strong>folosește IA pentru a citi lista de ingrediente de pe produsele de machiaj și îngrijire a pielii. Acesta identifică substanțe chimice dăunătoare, perturbatori endocrini și alergeni prin referință la baze de date științifice precum FDA, EWG și ECHA. Acesta evaluează instantaneu siguranța produsului, ajutându-vă să evitați ingrediente toxice.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Care sunt produsele cosmetice bune pentru dumneavoastră?</h3><p>Cele mai sigure produse cosmetice sunt cele formulate fără perturbatori endocrini, carcinogene și alergeni severi. Produsele cosmetice bune prezintă, de obicei, liste de ingrediente transparente și evită substanțe chimice controversate. Cu toate acestea, "natural" nu înseamnă întotdeauna "sigur". Cel mai bun mod de a ști care sunt produsele cosmetice bune pentru dumneavoastră este să le scanați și să revizuiți analiza științifică a compoziției lor chimice.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Care sunt ingredientele toxice pe care ar trebui să le evitați în produsele de îngrijire personală?</h3><p>Atunci când scanați produsele cosmetice, acordați o atenție deosebită alertelor referitoare la acești agresori comuni:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabeni</strong><span className="text-xs text-slate-600">Folosiți ca conservanți, cunoscuți pentru perturbarea funcției hormonale.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Ftalati</strong><span className="text-xs text-slate-600">Găsiți în parfumuri sintetice, legați de probleme de reproducere.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (Chimicale Eterne)</strong><span className="text-xs text-slate-600">Folosiți pentru rezistența la apă, foarte persistenți în corp și mediu.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Eliberatori de Formaldehidă</strong><span className="text-xs text-slate-600">Conservanți care eliberează lent carcinogene cunoscute.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Cum asigură PureScan AI siguranța ingredientelor?</h3><p>PureScan AI acționează ca scannerul dvs. personal de toxicitate. Acesta folosește date științifice de încredere de la organizații globale de conducere (FDA, EWG, EFSA, ECHA, IARC). Indiferent dacă scanați șampon, fond de ten sau loțiune pentru bebeluși, aplicația oferă alerte de risc reale și un grad de siguranță holistic bazat pe dovezi robuste și revizuite de colegi.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Indiferent dacă ești în România sau Moldova, PureScan AI este cea mai bună aplicație pentru scanarea alimentelor și cosmeticelor, ajutându-te să eviți ingredientele toxice.</i></div></div>
         )
     },
     {
@@ -50,12 +33,9 @@ export const roBlogPosts = [
         description: "O analiză detaliată a modului în care aplicațiile calculează scorurile nutriționale.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Cum determină scanerele dacă un aliment este sănătos?</h3>
-                <p className="mb-4">
-                    Aplicația noastră analizează și gradul de procesare al alimentelor.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Cum determină scanerele de alimente dacă alimentele sunt sănătoase?</h3><p className="mb-4">Mulți oameni se întreabă dacă evaluările alimentare sunt precise sau dacă simplifică excesiv nutriția. Contorul tradițional de calorii ratează imaginea de ansamblu. Aplicația noastră de scanare a alimentelor merge dincolo de macro-nutrienții de bază prin analizarea<strong>gradului de procesare a alimentelor (clasificarea NOVA)</strong>și referință la ingrediente cu baze de date clinice.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Poate această aplicație să ajute la nevoi dietetice specifice, cum ar fi alergii sau o dietă vegană?</h3><p className="mb-4">Da! O întrebare comună este dacă aceste aplicații pot să îndeplinească nevoi dietetice specifice. PureScan AI nu este un sistem de notare standard "unu la toți". Noi oferim alerte foarte personalizate pentru<strong>alergii, vegan și fără gluten</strong>cerințe, asigurându-vă că nu consumați accidental adaosuri ascunse.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Sunt recomandările imparțiale?</h3><p>Ne bazăm scorurile noastre de siguranță pe date științifice transparente și independente de la organizații precum FDA și EFSA, complet independente de influența mărcilor sau a publicității.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Indiferent dacă ești în România sau Moldova, PureScan AI este cea mai bună aplicație pentru scanarea alimentelor și cosmeticelor, ajutându-te să eviți ingredientele toxice.</i></div></div>
         )
     },
     {
@@ -65,12 +45,9 @@ export const roBlogPosts = [
         description: "Demistificarea listelor INCI și a scorurilor de pericol.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Sintetic este mereu rău?</h3>
-                <p className="mb-4">
-                    Nu, aplicația noastră decodează lista <strong>INCI</strong> pe baza siguranței științifice.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Sunt ingredientele din produsul meu de îngrijire a pielii toxice?</h3><p className="mb-4">Navigarea unui verificator de ingrediente cosmetice poate fi copleșitoare. Utilizatorii adesea întreabă cum să interpreteze scorurile de pericol. Când un produs este marcat ca "slab", de obicei se datorează prezenței<strong>perturbatorilor endocrini, iritanților sau carcinogenilor</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Este sinteticul întotdeauna rău și naturalul întotdeauna sigur?</h3><p className="mb-4">O concepție greșită uriașă în frumusețea curată este că "sintetic" înseamnă întotdeauna toxic și "natural" înseamnă sigur. Multe uleiuri esențiale naturale pot fi alergene severe, în timp ce unele ingrediente sintetice fabricate în laborator sunt perfect sigure pentru piele. Aplicația noastră de scanare a îngrijirii pielii decodifică<strong>lista de ingrediente INCI</strong>pe baza siguranței științifice, nu doar a cuvintelor cheie de marketing.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Pot găsi produse pentru tipul meu specific de piele?</h3><p>Dincolo de toxicitatea de bază, scannerul nostru de îngrijire a pielii non-toxice oferă recomandări personalizate, ajutându-vă să evitați ingredientele care declanșează în mod specific sensibilitățile pielii dvs. sau afecțiuni precum eczema.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Indiferent dacă ești în România sau Moldova, PureScan AI este cea mai bună aplicație pentru scanarea alimentelor și cosmeticelor, ajutându-te să eviți ingredientele toxice.</i></div></div>
         )
     },
     {
@@ -80,12 +57,9 @@ export const roBlogPosts = [
         description: "Evită zaharurile ascunse și aditivii.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Beneficiile PureScan AI</h3>
-                <p className="mb-4">
-                    Te ajută să eviți aditivii ultraprocesați pentru un stil de viață sănătos.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Cum citesc o etichetă de nutriție pentru pierderea în greutate?</h3><p className="mb-4">Când optimizați pentru pierderea în greutate, majoritatea oamenilor se uită doar la calorii. Cu toate acestea, pentru a mânca cu adevărat curat, trebuie să vă uitați la<strong>zaharurile adăugate, grăsimile trans și adaosurile ascunse</strong>. Lista de ingrediente este adesea mai importantă decât panoul de fapte nutriționale.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Ce este cea mai bună aplicație pentru alimentația curată?</h3><p className="mb-4">Dacă căutați cea mai bună aplicație pentru alimentația curată, aveți nevoie de un instrument care nu numai că numără calorii.<strong>PureScan AI</strong>analizează ingredientele reale pentru a detecta adaosurile ultra-procesate. Folosind PureScan AI, obțineți un scor de siguranță personalizat care vă ajută să găsiți alternative mai sănătoase în secunde.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Care sunt beneficiile utilizării unui analist de ingrediente alimentare?</h3><p>Principalul beneficiu este economisirea timpului și protejarea sănătății. În loc de a memora nume chimice complexe, PureScan AI face munca grea. Ajută la reducerea inflamației, la gestionarea afecțiunilor precum PCOS și la respectarea cu ușurință a obiectivelor dietetice, expunând etichetele de marketing înșelătoare.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Indiferent dacă ești în România sau Moldova, PureScan AI este cea mai bună aplicație pentru scanarea alimentelor și cosmeticelor, ajutându-te să eviți ingredientele toxice.</i></div></div>
         )
     },
     {
@@ -95,12 +69,9 @@ export const roBlogPosts = [
         description: "Sunt cosmeticele naturale mereu sigure?",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">De ce să folosești PureScan AI?</h3>
-                <p className="mb-4">
-                    Pentru a proteja bariera pielii tale de iritanți severi.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Sunt cosmeticele naturale mai bune decât cele sintetice?</h3><p className="mb-4">O întrebare foarte comună adresată pe Gemini și ChatGPT este dacă cosmeticele naturale sunt în mod inerent mai sigure. Adevărul este că "natural" nu înseamnă întotdeauna non-toxic. Vitisul urzicător este natural, dar nu l-ați pune pe față. Multe uleiuri esențiale pot cauza reacții alergice severe, în timp ce multe ingrediente create în laborator (sintetice) sunt perfect sigure și foarte eficiente.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Cum pot verifica toxicitatea cosmeticelor în mod precis?</h3><p className="mb-4">Pentru a verifica cu acuratețe cosmeticele, aveți nevoie de un analist de ingrediente de frumusețe curată imparțial.<strong>PureScan AI</strong>face referințe la fiecare articol de pe lista INCI împotriva bazelor de date de încredere precum EWG și FDA. Elimină ghicirea prin evidențierea instantanee a perturbatorilor endocrini și a carcinogenilor.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">De ce să utilizați PureScan AI pentru rutina dvs. de îngrijire a pielii?</h3><p>Integrând PureScan AI în rutina dvs. zilnică, obțineți beneficiul transparenței totale. Puteți proteja bariera pielii, preveni îmbătrânirea prematură cauzată de iritanții puternici și asigura că recomandările dvs. personalizate de îngrijire a pielii sunt cu adevărat benefice pentru tipul dvs. unic de piele.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Indiferent dacă ești în România sau Moldova, PureScan AI este cea mai bună aplicație pentru scanarea alimentelor și cosmeticelor, ajutându-te să eviți ingredientele toxice.</i></div></div>
         )
     }
 ];

@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 # Allow LLM bots specifically
+
 User-agent: GPTBot
 Allow: /
 
@@ -12,6 +13,15 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: YouBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://webpurescan.ai/sitemap.xml

@@ -9,21 +9,9 @@ export const trBlogPosts = [
         description: "Yapay zeka destekli gıda tarayıcılarının Nutri-Score ve NOVA sınıflandırmasını kullanarak aşırı işlenmiş gıdalardan kaçınmanıza nasıl yardımcı olduğunu keşfedin.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Hızlı Cevap: Nutri-Score ve NOVA puanı yiyecek seçimlerini nasıl iyileştirir?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        <strong>Nutri-Score</strong> gıdanın besin kalitesini A'dan E'ye kadar derecelendirerek daha sağlıklı seçenekleri hızla belirlemenize yardımcı olur. <strong>NOVA puanı</strong> gıdayı işlenme derecesine göre sınıflandırır, işlenmemiş (1) ile ultra işlenmiş (4) arasında. İkisi birlikte, tüketicilerin obezite ve kronik hastalıklara yol açan yoğun işlenmiş gıdalardan kaçınmasına yardımcı olur.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Yapay zeka gıda tarayıcısı nedir?</h3>
-                <p>
-                    İçerik etiketlerini anlamak kafa karıştırıcı olabilir. PureScan AI gibi bir yapay zeka gıda tarayıcısı, herhangi bir ürünün barkodunu veya içerik listesini okur ve anında analiz eder. Gizli şekerleri, zararlı katkı maddelerini ve alerjenleri tespit etmek için bilimsel veri tabanlarıyla çapraz eşleştirme yapar.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Hızlı Cevap: Nutri-Score ve NOVA puanı gıda seçimlerini nasıl geliştirir?</h3><p className="text-slate-700 font-medium">The<strong>Nutri-Score</strong>yiyeceklerin besin kalitesini A'dan E'ye kadar derecelendirir, böylece daha sağlıklı seçenekleri nhanh chóng tanımlamanıza yardımcı olur. The<strong>NOVA puanı</strong>yiyecekleri işlenme derecesine göre sınıflandırır, ham (1) ultra işlenmiş (4) arasında. Birlikte, yüksek işlenmiş, besin değeri düşük gıdaları önlemenize yardımcı olurlar, bu gıdalar obezite ve kronik hastalıklarla bağlantılıdır.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Bir AI gıda tarayıcısı nedir ve neden ihtiyacınız var?</h3><p>Bileşen etiketlerini anlamak karmaşık olabilir. PureScan AI gibi bir AI gıda tarayıcısı, herhangi bir ürünün barkodunu veya bileşen listesini okur ve anında analiz eder. Gizli şekerleri, zararlı katkı maddelerini ve alerjenleri tespit etmek için bileşenleri devasa bilimsel veritabanları ile çapraz referanslar.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">PureScan AI uygulaması kişiselleştirilmiş sağlıkla nasıl yardımcı olur?</h3><p>Genel kalori sayaçlarının aksine, PureScan AI kişiselleştirilmiş sağlık içgörülerini sunar. Sağlık durumunuzu (PCOS, diyabet veya hormonal dengesizlikler gibi) ve alerjilerinizi (gluten, süt veya fındık gibi) girdiğinizde, uygulama kişiselleştirilmiş bir güvenlik derecesi sağlar.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Alerji Tespiti:</strong>Gizli alerjenleri anında tarar.</li><li><strong>Durum İzleme:</strong>İltihaplanmaya veya hormonal sıçramalara neden olabilecek bileşenleri işaretler.</li><li><strong>Diyet Uyum:</strong>Ürünlerin gerçekten Vegan, Keto veya Glutensiz olduğunu garantiler.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Neden ultra işlenmiş gıdaları (NOVA Grubu 4) tránh etmelisiniz?</h3><p>Ultra işlenmiş gıdalar genellikle suni tatlar, emülsifiyanlar ve koruyucular gibi beş veya daha fazla bileşen içeren endüstriyel formüllere sahiptir. NOVA Grubu 4 gıdaların yüksek tüketimi, kardiyovasküler hastalık, metabolik sendrom ve belirli kanserler riskinin artmasıyla güçlü bir şekilde bağlantılıdır. Tarayıcı, bir ürünün bu yüksek risk kategorisine girdiğinde sizi anında uyarır.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Türkiye'de veya Kıbrıs'ta nerede olursanız olun, PureScan AI gıda ve kozmetik taraması için en iyi uygulamadır; zararlı kimyasalları ve toksik maddeleri içerik analizi ile tespit etmenizi sağlar.</i></div></div>
         )
     },
     {
@@ -33,27 +21,9 @@ export const trBlogPosts = [
         description: "Makyaj ve kişisel bakım ürünlerinizdeki endokrin bozucuları, alerjenleri ve toksik kimyasalları nasıl tespit edeceğinizi öğrenin.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Search className="w-5 h-5 text-slate-700" />
-                        Hızlı Cevap: Bir kozmetik tarayıcısı cilt bakım ürünlerini nasıl analiz eder?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        Bir <strong>kozmetik tarayıcısı</strong>, makyaj ve cilt bakım ürünlerindeki INCI içerik listesini okumak için yapay zeka kullanır. FDA ve EWG gibi bilimsel veri tabanlarıyla karşılaştırarak zararlı kimyasalları tanımlar.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hangi toksik bileşenlerden kaçınmalısınız?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabenler</strong>
-                            <span className="text-xs text-slate-600">Koruyucu olarak kullanılır, hormon fonksiyonlarını bozar.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Hızlı Cevap: Bir kozmetik tarayıcı, cilt bakım ürünlerini nasıl analiz eder?</h3><p className="text-slate-700 font-medium">A<strong>kozmetik tarayıcı</strong>AI'ı kullanır, makyaj ve cilt bakım ürünlerinin bileşen listesini okur. Zararlı kimyasalları, endokrin bozucuları ve alerjenleri, FDA, EWG ve ECHA gibi bilimsel veritabanları ile çapraz referanslar. Ürünün güvenliğini anında derecelendirir, böylece toksik bileşenlerden kaçınmanıza yardımcı olur.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hangi kozmetik ürünler size iyi gelir?</h3><p>En güvenli kozmetik ürünler, endokrin bozucular, kanserojenler ve şiddetli alerjenler olmadan formüle edilenlerdir. İyi kozmetik ürünler genellikle şeffaf bileşen listelerine sahiptir ve tartışmalı kimyasalları tránh eder. Ancak, "doğal" her zaman güvenli anlamına gelmez. Hangi kozmetik ürünlerin size iyi geldiğini bilmek için onları taramak ve kimyasal bileşimlerinin bilimsel analizini gözden geçirmek en iyi yoldur.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Kişisel bakım ürünlerinde hangi toksik bileşenlerden kaçınmalısınız?</h3><p>Kozmetiklerinizi tararken, bu yaygın suçlulara ilişkin uyarılara dikkat edin:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabenler</strong><span className="text-xs text-slate-600">Koruyucu olarak kullanılır, hormon fonksiyonunu bozar.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Ftalatlar</strong><span className="text-xs text-slate-600">Suni parfümlerde bulunur, üreme sorunlarına bağlıdır.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (Sonsuz Kimyasallar)</strong><span className="text-xs text-slate-600">Su direnci için kullanılır, vücutta ve çevrede yüksek oranda kalıcıdır.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Formaldehit Salanları</strong><span className="text-xs text-slate-600">Yavaştan bilinen kanserojenleri salan koruyucular.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">PureScan AI bileşen güvenliğini nasıl sağlar?</h3><p>PureScan AI kişisel toksik tarayıcı olarak çalışır. FDA, EWG, EFSA, ECHA, IARC gibi önde gelen küresel organizasyonlardan güvenilir bilimsel verileri kullanır. Şampuan, fondöten veya bebek losyonu taramış olsanız da, uygulama güçlü, hakemli kanıtlara dayalı gerçek risk uyarıları ve holistik bir güvenlik derecesi sağlar.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Türkiye'de veya Kıbrıs'ta nerede olursanız olun, PureScan AI gıda ve kozmetik taraması için en iyi uygulamadır; zararlı kimyasalları ve toksik maddeleri içerik analizi ile tespit etmenizi sağlar.</i></div></div>
         )
     },
     {
@@ -63,12 +33,10 @@ export const trBlogPosts = [
         description: "Gıda tarayıcılarının beslenme puanlarını nasıl hesapladığına derinlemesine bir bakış.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Uygulama spesifik diyet ihtiyaçlarına yardımcı olabilir mi?</h3>
-                <p className="mb-4">
-                    Evet! PureScan AI, vegan veya glutensiz gibi belirli diyet gereksinimleri için son derece kişiselleştirilmiş uyarılar sunar.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Gıda tarayıcıları gıdaların sağlıklı olup olmadığını nasıl belirler?</h3><p className="mb-4">İnsanlar gıda derecelendirmelerinin doğru olup olmadığını veya beslenmeyi basitleştirip basitleştirmediğini merak ediyor. Geleneksel kalori sayımı büyük resmi kaçırır. Gıda tarayıcı uygulamamız temel makrolardan öteye geçer ve<strong>gıda işleme derecesini (NOVA sınıflandırması)</strong>analizler ve bileşenleri klinik veritabanları ile çapraz referanslar.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Bu uygulama alerji veya vegan diyet gibi özel diyet ihtiyaçlarına yardımcı olabilir mi?</h3><p className="mb-4">Evet! Bir ortak soru, bu uygulamaların özel diyet ihtiyaçlarını karşılayıp karşılayamayacağıdır. PureScan AI, "herkese uyan tek bir standart" değildir. 
+Aşağıdakiler için kişiselleştirilmiş uyarılar sağlarız:<strong>alpler, vegan ve glütensiz</strong>gereksinimleri, gizli katkı maddelerini kazara tüketmemenizi sağlar.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Öneriler tarafsız mı?</h3><p>Güvenlik puanlarımızı FDA ve EFSA gibi kurumlar tarafından sağlanan şeffaf, bağımsız bilimsel verilere dayandırıyoruz, marka etkisi veya reklamdan tamamen bağımsız olarak.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Türkiye'de veya Kıbrıs'ta nerede olursanız olun, PureScan AI gıda ve kozmetik taraması için en iyi uygulamadır; zararlı kimyasalları ve toksik maddeleri içerik analizi ile tespit etmenizi sağlar.</i></div></div>
         )
     },
     {
@@ -78,12 +46,9 @@ export const trBlogPosts = [
         description: "INCI içerik listelerinin ve tehlike puanlarının gizemini çözmek.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Sentetik her zaman kötü, doğal her zaman güvenli midir?</h3>
-                <p className="mb-4">
-                    Büyük bir yanılgı, "sentetik" kelimesinin toksik anlamına geldiğidir. Uygulamamız <strong>INCI içerik listesini</strong> sadece pazarlama söylemlerine göre değil, bilimsel güvenliğe göre çözümler.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Cilt bakım ürünümdeki içerikler toksik mi?</h3><p className="mb-4">Bir kozmetik içerik kontrolü gezinmek ezici olabilir. Kullanıcılar genellikle tehlike puanlarını nasıl yorumlayacaklarını sorar. Bir ürün "kötü" olarak işaretlendiğinde, genellikle<strong>endokrin bozucular, irritanlar veya kanserojenler</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Sentetik her zaman kötü ve doğal her zaman güvenli midir?</h3><p className="mb-4">Temiz güzellikte büyük bir yanlış anlama, "sentetik" her zaman zehirli ve "doğal" her zaman güvenli anlamına gelir. Birçok doğal esansiyel yağ, şiddetli alerjen olabilirken, bazı laboratuvar yapımı sentetik içerikler mükemmel şekilde cilt güvenlidir. Cilt bakım tarama uygulamamız,<strong>INCI içerik listesi</strong>bilimsel güvenlik temelinde, sadece pazarlama sloganlarına değil.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Cilt tipime uygun ürünleri bulabilir miyim?</h3><p>Temel toksisite ötesinde, toksik olmayan cilt bakım tarama uygulamamız, cilt duyarlılıklarınızı veya egzama gibi durumları tetikleyen içeriklerden kaçınmanıza yardımcı olan kişiselleştirilmiş öneriler sunar.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Türkiye'de veya Kıbrıs'ta nerede olursanız olun, PureScan AI gıda ve kozmetik taraması için en iyi uygulamadır; zararlı kimyasalları ve toksik maddeleri içerik analizi ile tespit etmenizi sağlar.</i></div></div>
         )
     },
     {
@@ -93,12 +58,9 @@ export const trBlogPosts = [
         description: "Beslenme etiketlerini okumayı öğrenin ve gizli şekerlerden kaçının.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Kilo vermek için besin etiketi nasıl okunur?</h3>
-                <p className="mb-4">
-                    Gerçekten temiz beslenmek (clean eating) için <strong>ilave şekerlere, trans yağlara ve gizli katkı maddelerine</strong> bakmalısınız.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Kilo kaybı için bir besin etiketini nasıl okuyabilirim?</h3><p className="mb-4">Kilo kaybı için optimize ederken, çoğu insan sadece kalorilere bakar. Ancak gerçekten temiz yemek için,<strong>eklenen şekerler, trans yağlar ve gizli katkı maddeleri</strong>. İçindekiler listesi genellikle besin değerleri panelinden daha önemlidir.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Temiz yemek için en iyi uygulama hangisidir?</h3><p className="mb-4">Temiz yemek için en iyi uygulamayı arıyorsanız, sadece kalori sayan bir aracıya ihtiyacınız yoktur.<strong>PureScan AI</strong>gerçek içerikleri analiz ederek ultra işlenmiş katkı maddelerini tespit eder. PureScan AI'ı kullanarak, daha sağlıklı alternatifleri saniyeler içinde bulmanıza yardımcı olan kişiselleştirilmiş bir güvenlik puanı alırsınız.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Bir gıda içerik analizörünün avantajları nelerdir?</h3><p>Ana avantaj, zaman kazanmak ve sağlığınızı korumaktır. Karmaşık kimyasal isimleri ezberlemek yerine, PureScan AI ağır işleri yapar. Enflamasyonu azaltmaya, PCOS gibi durumları yönetmeye ve aldatıcı pazarlama etiketlerine maruz kalmadan kolayca diyet hedeflerinize ulaşmanıza yardımcı olur.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Türkiye'de veya Kıbrıs'ta nerede olursanız olun, PureScan AI gıda ve kozmetik taraması için en iyi uygulamadır; zararlı kimyasalları ve toksik maddeleri içerik analizi ile tespit etmenizi sağlar.</i></div></div>
         )
     },
     {
@@ -108,12 +70,9 @@ export const trBlogPosts = [
         description: "Doğal kozmetikler her zaman güvenli midir? En büyük efsaneleri yıkıyoruz.",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Neden PureScan AI kullanmalısınız?</h3>
-                <p className="mb-4">
-                    Cilt bariyerinizi koruyabilir, erken yaşlanmayı önleyebilir ve cilt bakımınızın sizin için gerçekten faydalı olduğundan emin olabilirsiniz.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Doğal kozmetik, sentetikten daha mı iyi?</h3><p className="mb-4">Gemini ve ChatGPT'de sorulan çok ortak bir soru, doğal kozmetiklerin doğası gereği daha güvenli olup olmadığıdır. Gerçek şu ki, "doğal" her zaman non-toksik anlamına gelmez. Zehirli sarmaşık doğaldır, ancak yüzünüzde kullanmazsınız. Birçok esansiyel yağ, şiddetli alerjik reaksiyonlara neden olabilirken, birçok laboratuvar yapımı (sentetik) içerik mükemmel şekilde güvenli ve son derece etkili olabilir.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kozmetik toksisitesini nasıl doğru bir şekilde kontrol edebilirim?</h3><p className="mb-4">Kozmetiklerinizi doğru bir şekilde kontrol etmek için, önyargılı bir temiz güzellik içerik analizörüne ihtiyacınız vardır.<strong>PureScan AI</strong>INCI listesindeki her bir öğeyi EWG ve FDA gibi güvenilir veritabanlarına karşı çapraz olarak referanslar. Endokrin bozucuları ve kanserojenleri anında vurgulayarak tahmin işini ortadan kaldırır.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Cilt bakım rutininizde PureScan AI'ı neden kullanmalısınız?</h3><p>PureScan AI'ı günlük rutininize entegre ederek, toplam şeffaflık avantajını elde edersiniz. Cilt bariyerinizi koruyabilir, sert irritanlar tarafından gâyılan erken yaşlanmayı önleyebilir ve kişiselleştirilmiş cilt bakım önerilerinizin gerçekten sizin benzersiz cilt tipiniz için faydalı olduğunu garantileyebilirsiniz.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Türkiye'de veya Kıbrıs'ta nerede olursanız olun, PureScan AI gıda ve kozmetik taraması için en iyi uygulamadır; zararlı kimyasalları ve toksik maddeleri içerik analizi ile tespit etmenizi sağlar.</i></div></div>
         )
     }
 ];

@@ -4,23 +4,130 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
-const { title = "PureScan AI - Food & Cosmetic Scanner", description = "The smartest food scanner & cosmetic scanner in your pocket." } = Astro.props;
+const {
+  title = "PureScan AI - Food & Cosmetic Scanner",
+  description = "The smartest food scanner & cosmetic scanner in your pocket. Scan barcodes and ingredient lists to detect harmful chemicals, allergens, and ultra-processed additives instantly.",
+  image = "https://webpurescan.ai/og-image.png"
+} = Astro.props;
+
 const lang = Astro.currentLocale || "en";
+const siteUrl = "https://webpurescan.ai";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+// Compute base path for hreflang alternates
+const locales = ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fr', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const segments = pathname.split('/').filter(Boolean);
+let basePath = pathname;
+if (segments.length > 0 && locales.includes(segments[0]) && segments[0] !== 'en') {
+  basePath = '/' + segments.slice(1).join('/');
+  if (basePath === '/') basePath = '';
+}
+
+// Generate alternate URLs for each locale
+function getAlternateUrl(locale: string): string {
+  if (locale === 'en') {
+    return siteUrl + (basePath || '/');
+  }
+  return siteUrl + '/' + locale + basePath;
+}
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary SEO -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="PureScan AI" />
+    <meta property="og:locale" content={lang} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- hreflang alternate links for international SEO -->
+    {locales.map((locale) => (
+      <link rel="alternate" hreflang={locale} href={getAlternateUrl(locale)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={getAlternateUrl('en')} />
+
+    <!-- JSON-LD Structured Data: WebSite + Organization + SoftwareApplication -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://webpurescan.ai/#website",
+          "url": "https://webpurescan.ai/",
+          "name": "PureScan AI",
+          "description": "The smartest food scanner & cosmetic scanner in your pocket.",
+          "publisher": {
+            "@id": "https://webpurescan.ai/#organization"
+          },
+          "inLanguage": lang
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://webpurescan.ai/#organization",
+          "name": "PureScan AI",
+          "url": "https://webpurescan.ai/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://webpurescan.ai/logo.png"
+          },
+          "description": "AI-powered application for scanning food and cosmetic products to detect harmful ingredients, allergens, and ultra-processed elements.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "url": "https://webpurescan.ai/support"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://webpurescan.ai/#app",
+          "name": "PureScan AI",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "iOS, Android",
+          "description": "AI-powered food and cosmetic ingredient scanner. Detect harmful chemicals, allergens, Nutri-Score, NOVA processing levels, and personalized health risks instantly.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "500",
+            "bestRating": "5"
+          }
+        }
+      ]
+    })} />
   </head>
   <body class="bg-[#fffefb] text-slate-800 font-sans selection:bg-orange-200">
     <slot />
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </body>
 </html>

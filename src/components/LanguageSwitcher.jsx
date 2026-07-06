@@ -5,7 +5,7 @@ export default function LanguageSwitcher({ currentLang = 'en' }) {
     const targetLang = e.target.value;
     let path = window.location.pathname;
     let segments = path.split('/').filter(Boolean);
-    const locales = ['en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fr', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fr', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
     
     if (segments.length > 0 && locales.includes(segments[0])) {
       segments[0] = targetLang;
@@ -17,10 +17,7 @@ export default function LanguageSwitcher({ currentLang = 'en' }) {
         segments.shift();
     }
     
-    if (segments.includes('blog') && segments.length > segments.indexOf('blog') + 1) {
-      segments = segments.slice(0, segments.indexOf('blog') + 1);
-    }
-    
+    // Removed blog slug truncation so we stay on the current blog post
     window.location.href = '/' + segments.join('/') + window.location.search;
   };
 
@@ -32,6 +29,7 @@ export default function LanguageSwitcher({ currentLang = 'en' }) {
         className="block w-full rounded-full border-2 border-slate-200 bg-white py-1.5 pl-3 pr-8 text-sm font-medium text-slate-700 shadow-sm focus:border-[#17C37B] focus:outline-none focus:ring-1 focus:ring-[#17C37B] appearance-none"
       >
         <option value="en">English</option>
+        <option value="bg">Български</option>
         <option value="fr">Français</option>
         <option value="es">Español</option>
         <option value="de">Deutsch</option>

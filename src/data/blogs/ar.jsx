@@ -9,25 +9,9 @@ export const arBlogPosts = [
         description: "اكتشف كيف تستخدم تطبيقات مسح الطعام بالذكاء الاصطناعي نظام Nutri-Score وتصنيف NOVA لمساعدتك في تجنب الأطعمة فائقة المعالجة.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6" dir="rtl">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        إجابة سريعة: كيف يحسن Nutri-Score وتصنيف NOVA خياراتك الغذائية؟
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        يقوم <strong>Nutri-Score</strong> بتقييم الجودة الغذائية للطعام من A إلى E، مما يساعدك على تحديد الخيارات الصحية بسرعة. بينما يصنف <strong>NOVA score</strong> الطعام حسب درجة المعالجة، من الخام (1) إلى المعالج للغاية (4). معًا، يساعدان المستهلكين على تجنب الأطعمة المفتقرة للعناصر الغذائية والمعالجة بشكل كبير، والتي ترتبط بالسمنة والأمراض المزمنة.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">ما هو تطبيق مسح الطعام بالذكاء الاصطناعي ولماذا تحتاجه؟</h3>
-                <p>
-                    فهم ملصقات المكونات يمكن أن يكون محيرًا. تطبيق مثل PureScan AI يقرأ الباركود أو قائمة المكونات لأي منتج ويحلله على الفور. حيث يقوم بمقارنة المكونات بقواعد بيانات علمية ضخمة للكشف عن السكريات الخفية، والإضافات الضارة، والمواد المسببة للحساسية.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">كيف يساعد تطبيق PureScan AI في صحتك الشخصية؟</h3>
-                <p>
-                    على عكس تطبيقات حساب السعرات الحرارية التقليدية، يقدم PureScan AI رؤى صحية مخصصة. من خلال إدخال حالاتك الصحية (مثل تكيس المبايض أو السكري) والحساسية (مثل الجلوتين أو منتجات الألبان)، يوفر التطبيق درجة أمان مصممة خصيصًا لك.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />إجابة سريعة: كيف يحسن نظام Nutri-Score و NOVA الخيارات الغذائية؟</h3><p className="text-slate-700 font-medium">ال<strong>نظام Nutri-Score</strong>يقيّم الجودة الغذائية للأطعمة من A إلى E، مما يساعدك على تحديد الخيارات الصحية بسرعة. نظام<strong>NOVA</strong>يصنف الأطعمة حسب درجة المعالجة، من الطعام الخام (1) إلى الطعام المعالج بشكل كبير (4). معًا، يساعدان المستهلكين على تجنب الأطعمة المعالجة بشكل كبير والفقيرة بالمغذيات والتي ترتبط بالسمنة والأمراض المزمنة.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">ما هو مسحور الطعام الإصطناعي ولماذا تحتاجه؟</h3><p>يمكن أن يكون فهم ملصقات المكونات محيرًا. مسحور الطعام الإصطناعي مثل PureScan AI يقرأ الشريط المموج أو قائمة المكونات لأي منتج ويحللها على الفور. إنه يعمل بالتعاون مع قواعد بيانات علمية ضخمة لاكتشاف السكريات الخفية والإضافات الضارة والملفلات.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">كيف يساعد تطبيق PureScan AI في الصحة الشخصية؟</h3><p>على عكس عدادات السعرات الحرارية العامة، يقدم PureScan AI رؤى صحية شخصية. من خلال إدخال حالات الصحة الخاصة بك (مثل PCOS أو السكري أو اختلالات الهرمونات) والملفلات (مثل الغلوتين أو اللبن أو المكسرات)، يوفر التطبيق درجة أمان مخصصة.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>اكتشاف الحساسية:</strong>ي扫ن لاكتشاف الملفلات الخفية على الفور.</li><li><strong>مراقبة الحالة:</strong>يحدد المكونات التي قد تسبب الالتهاب أو انخفاض الهرمونات.</li><li><strong>امتثال النظام الغذائي:</strong>يضمن أن تكون المنتجات خالية من الحيوانات أو الكيتو أو الغلوتين.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">لماذا يجب عليك تجنب الأطعمة المعالجة بشكل كبير (مجموعة NOVA 4)?</h3><p>غالبًا ما تحتوي الأطعمة المعالجة بشكل كبير على صيغ صناعية تحتوي على خمس مكونات أو أكثر، مثل النكهات الاصطناعية والمواد المخثرة والمحافظة. يرتبط استهلاك الأطعمة من مجموعة NOVA 4 بزيادة خطر الإصابة بأمراض القلب والأوعية الدموية ومتلازمة التمثيل الغذائي و某些 أنواع من السرطان. يُحذر مسحورنا على الفور عندما ي属于 منتج إلى هذه الفئة عالية الخطورة.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>سواء كنت في المملكة العربية السعودية، الإمارات العربية المتحدة، أو مصر، فإن تطبيق PureScan AI هو أفضل تطبيق لفحص الطعام، مسح مستحضرات التجميل، ومعرفة المكونات الصحية لتجنب المواد الكيميائية السامة.</i></div></div>
         )
     },
     {
@@ -37,34 +21,9 @@ export const arBlogPosts = [
         description: "تعلم كيفية اكتشاف المواد المسببة لاضطرابات الغدد الصماء، ومسببات الحساسية، والمواد الكيميائية السامة في مكياجك.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6" dir="rtl">
-                <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Search className="w-5 h-5 text-slate-700" />
-                        إجابة سريعة: كيف يحلل تطبيق مسح مستحضرات التجميل منتجات العناية بالبشرة؟
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        يستخدم <strong>ماسح مستحضرات التجميل</strong> الذكاء الاصطناعي لقراءة قائمة المكونات (INCI). يحدد المواد الكيميائية الضارة ومسببات اضطراب الغدد الصماء من خلال مقارنتها بقواعد بيانات علمية مثل FDA و EWG.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">ما هي المكونات السامة التي يجب تجنبها؟</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">البارابين (Parabens)</strong>
-                            <span className="text-xs text-slate-600">تستخدم كمواد حافظة، وتعرف بأنها تعطل وظيفة الهرمونات.</span>
-                        </div>
-                    </div>
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">الفثالات (Phthalates)</strong>
-                            <span className="text-xs text-slate-600">توجد في العطور الاصطناعية، مرتبطة بمشاكل إنجابية.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />إجابة سريعة: كيف يحلل مسحور التجميل منتجات العناية بالبشرة؟</h3><p className="text-slate-700 font-medium">A<strong>مسحور التجميل</strong>يستخدم الذكاء الاصطناعي لقراءة قائمة المكونات على مستحضرات التجميل ومنتجات العناية بالبشرة. يحدد المواد الكيميائية الضارة وموانع الهرمونات والملفلات من خلال عمل مقارنات مع قواعد بيانات علمية مثل FDA و EWG و ECHA. يُصنف على الفور سلامة المنتج، مما يساعدك على تجنب المكونات السامة.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">أي مستحضرات تجميل جيدة لك؟</h3><p>أمان nhất مستحضرات التجميل هي تلك التي يتم صياغتها بدون موانع الهرمونات والمسرطنة والملفلات الشديدة. عادة ما تتميز مستحضرات التجميل الجيدة بقوائم مكونات شفافة وتتجنب المواد الكيميائية المثيرة للجدل. ومع ذلك، لا يعني "الطبيعي" دائمًا السلامة. أفضل طريقة لمعرفة مستحضرات التجميل الجيدة لك هي مسحها ومراجعة التحليل العلمي لتكوينها الكيميائي.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">ما المكونات السامة التي يجب عليك تجنبها في منتجات العناية الشخصية؟</h3><p>عند مسح مستحضرات التجميل الخاصة بك، اهتم بالتحذيرات المتعلقة بهذه المخالفات الشائعة:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">البارابين</strong><span className="text-xs text-slate-600">تستخدم كمحافظة، معروفة بتعطيل وظيفة الهرمون.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">الفتالات</strong><span className="text-xs text-slate-600">توجد في الروائح الاصطناعية، ترتبط بالمشاكل الإنجابية.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (الكيماويات الدائمة)</strong><span className="text-xs text-slate-600">تستخدم للمقاومة للماء، متأصلة بشكل كبير في الجسم والبيئة.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">مفركات الفورمالديهايد</strong><span className="text-xs text-slate-600">المحافظة التي تطلق ببطء المواد المسرطنة المعروفة.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">كيف يضمن PureScan AI سلامة المكونات؟</h3><p>يُعد PureScan AI مسحورك الشخصي للمواد السامة. إنه يستفيد من البيانات العلمية الموثوقة من المنظمات العالمية الرائدة (FDA و EWG و EFSA و ECHA و IARC). سواء كنت تمسح شامبو أو مكياج أو كريم أطفال، يوفر التطبيق تحذيرات خطر حقيقية ودرجة أمان شاملة dựa على أدلة قوية ومراجعة الأقران.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>سواء كنت في المملكة العربية السعودية، الإمارات العربية المتحدة، أو مصر، فإن تطبيق PureScan AI هو أفضل تطبيق لفحص الطعام، مسح مستحضرات التجميل، ومعرفة المكونات الصحية لتجنب المواد الكيميائية السامة.</i></div></div>
         )
     },
     {
@@ -74,16 +33,9 @@ export const arBlogPosts = [
         description: "نظرة عميقة حول كيفية حساب تطبيقات مسح الطعام للدرجات الغذائية وتقديم توصيات مخصصة.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6" dir="rtl">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">كيف تحدد ماسحات الطعام ما إذا كان الطعام صحياً؟</h3>
-                <p className="mb-4">
-                    يذهب تطبيقنا أبعد من السعرات الحرارية الأساسية من خلال تحليل <strong>درجة معالجة الأغذية (تصنيف NOVA)</strong> ومقارنة المكونات مع قواعد البيانات السريرية.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">هل يمكن لهذا التطبيق المساعدة في الاحتياجات الغذائية كالحساسية أو النظام النباتي؟</h3>
-                <p className="mb-4">
-                    نعم! يوفر PureScan AI تنبيهات مخصصة للغاية للحساسية، وللأنظمة الغذائية الخالية من الجلوتين، والنباتية، لضمان عدم تناولك للإضافات الخفية عن طريق الخطأ.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">كيف تحدد مسحورات الأطعمة ما إذا كانت الأطعمة صحية؟</h3><p className="mb-4">يتساءل الكثير من الناس عما إذا كانت تقييمات الأطعمة دقيقة أو إذا كانت تبسط التغذية. يغفل حساب السعرات الحرارية التقليدية الصورة الكبيرة. تذهب تطبيق مسحور الطعام لدينا إلى ما هو أبعد من المقاييس الأساسية من خلال تحليل<strong>درجة معالجة الطعام (تصنيف NOVA)</strong>والمقارنة بين المكونات مع قواعد البيانات السريرية.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">هل يمكن لهذا التطبيق مساعدتك في احتياجات غذائية محددة مثل الحساسية أو نظام غذائي نباتي؟</h3><p className="mb-4">نعم! سؤال شائع هو ما إذا كان يمكن لهذه التطبيقات تلبية احتياجات غذائية محددة. PureScan AI ليس نظامًا معياريًا لدرجات واحدة تناسب الجميع. نقدم تنبيهات شخصية عالية التخصيص ل<strong>الحساسية، والفيغان، وبدون غلوتين</strong>المتطلبات، مما يضمن عدم استهلاكك للمواد الإضافية المخفية عن طريق الخطأ.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">هل التوصيات غير متحيزة؟</h3><p>نستند إلى درجات السلامة لدينا على بيانات علمية شفافة ومستقلة من هيئات مثل إدارة الأغذية والأدوية ووكالة الأمن الغذائي الأوروبي، بشكل مستقل تمامًا عن تأثير العلامة التجارية أو الإعلان.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>سواء كنت في المملكة العربية السعودية، الإمارات العربية المتحدة، أو مصر، فإن تطبيق PureScan AI هو أفضل تطبيق لفحص الطعام، مسح مستحضرات التجميل، ومعرفة المكونات الصحية لتجنب المواد الكيميائية السامة.</i></div></div>
         )
     },
     {
@@ -93,12 +45,9 @@ export const arBlogPosts = [
         description: "كيفية تفسير قوائم مكونات INCI ودرجات الخطورة للمنتجات التجميلية.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6" dir="rtl">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">هل الاصطناعي سيء دائمًا والطبيعي آمن دائمًا؟</h3>
-                <p className="mb-4">
-                    من المفاهيم الخاطئة الكبيرة أن "الاصطناعي" يعني دائمًا سام، و"الطبيعي" آمن. يمكن أن تكون العديد من الزيوت العطرية الطبيعية مسببة لحساسية شديدة، في حين أن بعض المكونات الاصطناعية آمنة تمامًا. تطبيقنا يفك شفرة <strong>قائمة مكونات INCI</strong> بناءً على السلامة العلمية.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">هل المكونات في منتج العناية بالبشرة سامة؟</h3><p className="mb-4">يمكن أن يكون التنقل في فاحص مكونات التجميل مخيفًا. يسأل المستخدمون عادة كيف يفسر نتيجة التهديد. عندما يتم وضع علامة على منتج بأنه "سيئ"، فغالبًا ما يكون ذلك بسبب وجود<strong>موانع الهرمونات، أو المثيرات، أو المسرطنة</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">هل الاصطناعي دائمًا سيئ والطبيعي دائمًا آمن؟</h3><p className="mb-4">concept خاطئ كبير في جمال النظافة هو أن "الاصطناعي" يعني دائمًا سامًا و "الطبيعي" يعني آمنًا. يمكن أن تكون الزيوت العطرية الطبيعية محسنة الحساسية الشديدة، في حين أن بعض المكونات الاصطناعية المصنعة في المعمل آمنة تمامًا للجلد. تطبيق فاحص العناية بالبشرة الخاص بنا يفك شفرة<strong>قائمة مكونات INCI</strong>استنادًا إلى السلامة العلمية، وليس مجرد كلمات الدعاية التسويقية.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">هل يمكنني العثور على منتجات لنوع بشرتي المحدد؟</h3><p>إلى ما وراء السمية الأساسية، يقدم فاحص العناية بالبشرة غير السامة الخاص بنا توصيات شخصية، مما يساعدك على تجنب المكونات التي تثير تحسس بشرتك أو حالات مثل الحكة.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>سواء كنت في المملكة العربية السعودية، الإمارات العربية المتحدة، أو مصر، فإن تطبيق PureScan AI هو أفضل تطبيق لفحص الطعام، مسح مستحضرات التجميل، ومعرفة المكونات الصحية لتجنب المواد الكيميائية السامة.</i></div></div>
         )
     },
     {
@@ -108,12 +57,9 @@ export const arBlogPosts = [
         description: "تعلم كيفية قراءة الملصقات على الفور وتجنب السكريات والإضافات الخفية.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6" dir="rtl">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">كيف تقرأ الملصق الغذائي لفقدان الوزن؟</h3>
-                <p className="mb-4">
-                    لكي تأكل بشكل نظيف حقًا (Clean Eating)، تحتاج إلى النظر إلى <strong>السكريات المضافة، والدهون المتحولة، والإضافات الخفية</strong>. قائمة المكونات غالبًا ما تكون أكثر أهمية من لوحة الحقائق الغذائية.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">كيف أقرأ ملصق التغذية لفقدان الوزن؟</h3><p className="mb-4">عند التحسين لفقدان الوزن، ينظر معظم الناس فقط إلى السعرات الحرارية. ومع ذلك، لتحقيق نظام غذائي نظيف حقًا، تحتاج إلى النظر إلى<strong>السكريات المضافة، والدهون المتحولة، والمواد الإضافية المخفية</strong>. غالبًا ما تكون قائمة المكونات أكثر أهمية من لوحة الحقائق الغذائية.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">ما هو أفضل تطبيق للنظام الغذائي النظيف؟</h3><p className="mb-4">إذا كنت تبحث عن أفضل تطبيق للنظام الغذائي النظيف، ف bạn تحتاج إلى أداة لا تحسب السعرات الحرارية فقط.<strong>PureScan AI</strong>يحلل المكونات الفعلية للكشف عن المواد الإضافية المعالجة بشكل كبير. من خلال استخدام PureScan AI، تحصل على درجة سلامة شخصية تساعدك على العثور على بدائل أكثر صحة في ثوان.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">ما هي فوائد استخدام محلل مكونات الطعام؟</h3><p>المنفعة الرئيسية هي توفير الوقت وحماية صحتك. بدلاً من تذكر الأسماء الكيميائية المعقدة، يقوم PureScan AI بالعمل الشاق. يساعد في تقليل الالتهاب، وإدارة الحالات مثل PCOS، والالتزام بسهولة بأهدافك الغذائية من خلال كشف الملصقات التسويقية الخادعة.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>سواء كنت في المملكة العربية السعودية، الإمارات العربية المتحدة، أو مصر، فإن تطبيق PureScan AI هو أفضل تطبيق لفحص الطعام، مسح مستحضرات التجميل، ومعرفة المكونات الصحية لتجنب المواد الكيميائية السامة.</i></div></div>
         )
     },
     {
@@ -123,12 +69,9 @@ export const arBlogPosts = [
         description: "هل مستحضرات التجميل الطبيعية آمنة دائمًا؟ نحن نكسر أكبر الخرافات في الصناعة.",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6" dir="rtl">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">لماذا تستخدم PureScan AI لروتين العناية بالبشرة؟</h3>
-                <p className="mb-4">
-                    من خلال دمج PureScan AI في روتينك اليومي، ستحصل على شفافية تامة. يمكنك حماية حاجز بشرتك ومنع الشيخوخة المبكرة الناتجة عن المهيجات القاسية والمواد المسببة لاضطراب الغدد الصماء.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">هل التجميل الطبيعي أفضل من الاصطناعي؟</h3><p className="mb-4">سؤال شائع جدًا يُطرح على Gemini و ChatGPT هو ما إذا كانت مستحضرات التجميل الطبيعية أكثر أمانًا بشكل固 hữu. الحقيقة هي أن "الطبيعي" لا يعني دائمًا غير سام. النبات السام هو طبيعي، لكنك لن تضعه على وجهك. يمكن أن تسبب الزيوت العطرية الطبيعية ردود فعل تحسسية شديدة، في حين أن العديد من المكونات المخلقة في المعمل (الاصطناعية) آمنة تمامًا وفعالة للغاية.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">كيف يمكنني التحقق من سمية التجميل بدقة؟</h3><p className="mb-4">للتحقق بدقة من مستحضرات التجميل الخاصة بك، تحتاج إلى فاحص مكونات التجميل النظيف غير المحايد.<strong>PureScan AI</strong>يضيف كل عنصر على قائمة INCI إلى قواعد البيانات الموثوقة مثل EWG وFDA. إنه يزيل التخمين من خلال التأكيد الفوري على موانع الهرمونات والمسرطنة.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">لماذا أستخدم PureScan AI لروتيني للعناية بالبشرة؟</h3><p>من خلال دمج PureScan AI في روتينك اليومي، تحصل على ميزة الشفافية الكاملة. يمكنك حماية حاجز بشرتك، ومنع الشيخوخة المبكرة الناجمة عن المثيرات القاسية، وضمان أن تكون توصيات العناية بالبشرة الشخصية الخاصة بك مفيدة حقًا لنوع بشرتك الفريد.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>سواء كنت في المملكة العربية السعودية، الإمارات العربية المتحدة، أو مصر، فإن تطبيق PureScan AI هو أفضل تطبيق لفحص الطعام، مسح مستحضرات التجميل، ومعرفة المكونات الصحية لتجنب المواد الكيميائية السامة.</i></div></div>
         )
     }
 ];

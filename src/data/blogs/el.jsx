@@ -9,17 +9,9 @@ export const elBlogPosts = [
         description: "Ανακαλύψτε πώς οι σαρωτές τροφίμων AI χρησιμοποιούν την ταξινόμηση Nutri-Score και NOVA για να αποφύγετε τα υπερεπεξεργασμένα τρόφιμα.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Γρήγορη Απάντηση: Πώς βελτιώνουν τις διατροφικές επιλογές το Nutri-Score και το NOVA;
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        Το <strong>Nutri-Score</strong> βαθμολογεί τη διατροφική ποιότητα από A έως E. Το <strong>NOVA score</strong> ταξινομεί ανάλογα με τον βαθμό επεξεργασίας. Μαζί βοηθούν τους καταναλωτές να αποφύγουν επικίνδυνα τρόφιμα.
-                    </p>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Γρήγορη Απάντηση: Πώς οι Nutri-Score και NOVA score βελτιώνουν τις επιλογές τροφίμων;</h3><p className="text-slate-700 font-medium">Το<strong>Nutri-Score</strong>βαθμολογεί την ποιότητα των θρεπτικών συστατικών των τροφίμων από A έως E, βοηθώντας σας να αναγνωρίσετε γρήγορα πιο здоровές επιλογές. Το<strong>NOVA score</strong>ταξινομεί τα τρόφιμα ανάλογα με το βαθμό επεξεργασίας τους, από άγρια (1) έως υπερεπεξεργασμένα (4). Μαζί, βοηθούν τους καταναλωτές να αποφεύγουν τα υπερεπεξεργασμένα, φτωχά σε θρεπτικά συστατικά τρόφιμα που συνδέονται με την παχυσαρκία και τις χρονιές ασθένειες.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Τι είναι ένας AI σαρωτής τροφίμων και γιατί τον χρειάζεστε;</h3><p>Η κατανόηση των ετικετών συστατικών μπορεί να είναι συναρπαστική. Ένας AI σαρωτής τροφίμων όπως ο PureScan AI διαβάζει τον κωδικό γραμμών ή τη λίστα συστατικών οποιουδήποτε προϊόντος και αναλύει το άμεσα. Ανταποκρίνεται τα συστατικά με τεράστιες επιστημονικές βάσεις δεδομένων για να ανιχνεύσει κρυμμένα σάκχαρα, επιβλαβή πρόσθετα και αλλεργιογόνα.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Πώς η εφαρμογή PureScan AI βοηθά με προσωπική υγεία;</h3><p>Σε αντίθεση με τους γενικούς μετρητές θερμίδων, η εφαρμογή PureScan AI προσφέρει προσωπικές πληροφορίες για την υγεία. Εισάγοντας τις συνθήκες υγείας σας (όπως PCOS, διαβήτης ή ορμονικές ανισορροπίες) και τις αλλεργίες σας (όπως γλουτένη, γάλα ή ξηρά καρπός), η εφαρμογή παρέχει einen προσαρμοσμένο βαθμό ασφάλειας.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Ανίχνευση Αλλεργιών:</strong>Σκανάρει για κρυμμένα αλλεργιογόνα άμεσα.</li><li><strong>Παρακολούθηση Συνθηκών:</strong>Σημαδεύει συστατικά που μπορεί να προκαλέσουν φλεγμονή ή ορμονικές σπίκες.</li><li><strong>Συμμόρφωση Διαιτού:</strong>Εγγυάται ότι τα προϊόντα είναι πραγματικά Βέγκαν, Keto ή Χωρίς Γλουτένη.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Γιατί πρέπει να αποφεύγετε τα υπερεπεξεργασμένα τρόφιμα (Ομάδα NOVA 4);</h3><p>Τα υπερεπεξεργασμένα τρόφιμα συχνά περιέχουν βιομηχανικές συνθέσεις με πέντε ή περισσότερα συστατικά, όπως τεχνητά αρώματα, εμουλγatörες και συντηρητικά. Η υψηλή κατανάλωση τροφίμων της Ομάδας NOVA 4 είναι ισχυρά συνδεδεμένη με αυξημένο κίνδυνο καρδιακής νόσου, μεταβολικού συνδρόμου και ορισμένων καρκίνων. Ο σαρωτής μας σας ενημερώνει άμεσα όταν ένα προϊόν ανήκει σε αυτήν την υψηλού κινδύνου κατηγορία.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Είτε βρίσκεστε στην Ελλάδα είτε στην Κύπρο, το PureScan AI είναι η καλύτερη εφαρμογή σάρωσης τροφίμων και καλλυντικών για την ανάλυση συστατικών και την αποφυγή τοξικών χημικών.</i></div></div>
         )
     },
     {
@@ -29,17 +21,9 @@ export const elBlogPosts = [
         description: "Μάθετε πώς να ανιχνεύετε ενδοκρινικούς διαταράκτες, αλλεργιογόνα και τοξικές χημικές ουσίες.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabens</strong>
-                            <span className="text-xs text-slate-600">Χρησιμοποιούνται ως συντηρητικά, διαταράσσουν τη λειτουργία των ορμονών.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Γρήγορη Απάντηση: Πώς ένας σαρωτής καλλυντικών αναλύει προϊόντα περιποίησης δέρματος;</h3><p className="text-slate-700 font-medium">A<strong>σαρωτής καλλυντικών</strong>χρησιμοποιεί AI για να διαβάσει τη λίστα συστατικών στα προϊόντα μακιγιάζ και περιποίησης δέρματος. Αναγνωρίζει επιβλαβή χημικά, διαταράκτες ενδοκρινών και αλλεργιογόνα ανταποκρίνωντας τα με επιστημονικές βάσεις δεδομένων όπως η FDA, EWG και ECHA. Βαθμολογεί άμεσα την ασφάλεια του προϊόντος, βοηθώντας σας να αποφύγετε τοξικά συστατικά.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Ποια καλλυντικά είναι καλά για σας;</h3><p>Τα ασφαλέστερα καλλυντικά είναι αυτά που έχουν συντεθεί χωρίς διαταράκτες ενδοκρινών, καρκινογόνους και σοβαρά αλλεργιογόνα. Τα καλά καλλυντικά συνήθως έχουν διαφανείς λίστες συστατικών και αποφεύγουν αμφισβητούμενα χημικά. Ωστόσο, το "φυσικό" δεν σημαίνει πάντα ασφαλές. Ο καλύτερος τρόπος για να γνωρίσετε ποια καλλυντικά είναι καλά για σας είναι να τα σκανάρετε και να αναθεωρήσετε την επιστημονική ανάλυση της χημικής σύνθεσής τους.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Ποια τοξικά συστατικά πρέπει να αποφεύγετε στα προϊόντα προσωπικής φροντίδας;</h3><p>Όταν σκανάρετε τα καλλυντικά σας, προσεξτε τις προειδοποιήσεις σχετικά με αυτά τα κοινά δράστες:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Παραβένες</strong><span className="text-xs text-slate-600">Χρησιμοποιούνται ως συντηρητικά, γνωστό ότι διαταράσσουν την ορμονική λειτουργία.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Φθαλάτες</strong><span className="text-xs text-slate-600">Βρίσκονται σε συνθετικά αρώματα, συνδεδεμένα με προβλήματα αναπαραγωγής.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (Χημικά για πάντα)</strong><span className="text-xs text-slate-600">Χρησιμοποιούνται για την αντοχή στο νερό, εξαιρετικά επιμονή στο σώμα και το περιβάλλον.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Απαιλοί της Φορμαλδεΰδης</strong><span className="text-xs text-slate-600">Συντηρητικά που απελευθερώνουν σιγά-σιγά γνωστούς καρκινογόνους.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Πώς η PureScan AI διασφαλίζει την ασφάλεια των συστατικών;</h3><p>Η PureScan AI ενεργεί ως ο προσωπικός σας σαρωτής τοξικών. Εκμεταλλεύεται αξιόπιστα επιστημονικά δεδομένα από κορυφαίες παγκόσμιες οργανώσεις (FDA, EWG, EFSA, ECHA, IARC). Ανεξάρτητα από το αν σκανάρετε σαμπουάν,基金 ή lotion μωρού, η εφαρμογή παρέχει πραγματικές προειδοποιήσεις κινδύνου και einen ολιστικό βαθμό ασφάλειας με βάση ισχυρά, επικριμένα στοιχεία.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Είτε βρίσκεστε στην Ελλάδα είτε στην Κύπρο, το PureScan AI είναι η καλύτερη εφαρμογή σάρωσης τροφίμων και καλλυντικών για την ανάλυση συστατικών και την αποφυγή τοξικών χημικών.</i></div></div>
         )
     },
     {
@@ -49,12 +33,9 @@ export const elBlogPosts = [
         description: "Μια βαθιά ματιά στο πώς οι σαρωτές υπολογίζουν τις βαθμολογίες.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Πώς καθορίζουν εάν το φαγητό είναι υγιεινό;</h3>
-                <p className="mb-4">
-                    Η εφαρμογή μας αναλύει τον <strong>βαθμό επεξεργασίας (NOVA)</strong>.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Πώς οι σαρωτές τροφίμων καθορίζουν αν τα τρόφιμα είναι υγιή;</h3><p className="mb-4">Πολλοί άνθρωποι αναρωτιούνται αν οι βαθμολογίες τροφίμων είναι ακριβείς ή αν απλοποιούν υπερβολικά τη διατροφή. Η παραδοσιακή μέτρηση θερμίδων χάνει το μεγάλο πλάνο. Η εφαρμογή σαρωτή τροφίμων μας πηγαίνει πέρα από τις βασικές μακροθρεπτικές ουσίες αναλύοντας<strong>τον βαθμό επεξεργασίας των τροφίμων (ταξινόμηση NOVA)</strong>και ανταποκρίνεται τα συστατικά με κλινικές βάσεις δεδομένων.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Μπορεί αυτή η εφαρμογή να βοηθήσει με συγκεκριμένες διατροφικές ανάγκες όπως αλλεργίες ή μια βέγκαν διατροφή;</h3><p className="mb-4">Ναι! Eine συνηθισμένη ερώτηση είναι αν αυτές οι εφαρμογές μπορούν να ικανοποιήσουν συγκεκριμένες διατροφικές ανάγκες. Το PureScan AI δεν είναι ένα "ένα-μέγεθος-ταιριάζει-όλα" πρότυπο συστήματος βαθμολόγησης. Παρέχουμε εξαιρετικά προσωποποιημένες ειδοποιήσεις για<strong>αλλεργίες, βέγκαν και χωρίς γλουτένη</strong>απαιτήσεις, διασφαλίζοντας ότι δεν καταναλώνετε κατά λάθος κρυφές πρόσθετες ουσίες.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Είναι οι συστάσεις αμερόληπτες;</h3><p>Βασίζουμε τους δείκτες ασφάλειας μας σε διαφανή, ανεξάρτητα επιστημονικά δεδομένα από σώματα όπως η FDA και η EFSA,完全 ανεξάρτητα από την επιρροή της μάρκας ή της διαφήμισης.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Είτε βρίσκεστε στην Ελλάδα είτε στην Κύπρο, το PureScan AI είναι η καλύτερη εφαρμογή σάρωσης τροφίμων και καλλυντικών για την ανάλυση συστατικών και την αποφυγή τοξικών χημικών.</i></div></div>
         )
     },
     {
@@ -64,12 +45,9 @@ export const elBlogPosts = [
         description: "Απομυθοποίηση λιστών INCI και βαθμολογιών κινδύνου.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Είναι το συνθετικό πάντα κακό;</h3>
-                <p className="mb-4">
-                    Η εφαρμογή μας αποκωδικοποιεί τη <strong>λίστα συστατικών INCI</strong> με βάση την επιστημονική ασφάλεια.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Είναι οι συστατικά του προϊόντος περιποίησης δέρματος μου τοξικά;</h3><p className="mb-4">Η πλοήγηση σε einen έλεγχο συστατικών καλλυντικών μπορεί να είναι αποθαρρυντική. Οι χρήστες συχνά ρωτούν πώς να ερμηνεύσουν τους δείκτες κινδύνου. Όταν ένα προϊόν σημειώνεται ως "κακό", συνήθως οφείλεται στην παρουσία<strong>διαταρακτών ενδοκρινών, ερεθισμάτων ή καρκινογόνων</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Είναι το συνθετικό πάντα κακό και το φυσικό πάντα ασφαλές;</h3><p className="mb-4">Μια τεράστια λανθασμένη αντίληψη στη καθαρή ομορφιά είναι ότι το "συνθετικό" πάντα σημαίνει τοξικό και το "φυσικό" σημαίνει ασφαλές. Πολλά φυσικά αιθέρια έλαια μπορούν να είναι σοβαρά αλλεργιογόνα, ενώ κάποια συνθετικά συστατικά που παράγονται σε εργαστήριο είναι απόλυτα ασφαλή για το δέρμα. Η εφαρμογή σκανερίσματος περιποίησης δέρματος μας αποκωδικοποιεί τη<strong>λίστα συστατικών INCI</strong>με βάση την επιστημονική ασφάλεια, όχι μόνο τους μάρκετινγκ buzzwords.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Μπορώ να βρω προϊόντα για τον συγκεκριμένο τύπο δέρματος μου;</h3><p>Πέρα από τη βασική τοξικότητα, ο σκανερίστας περιποίησης δέρματος μας χωρίς τοξίνες προσφέρει προσωποποιημένες συστάσεις, βοηθώντας σας να αποφύγετε τα συστατικά που προκαλούν ειδικά τις ευαισθησίες του δέρματος σας ή τις καταστάσεις όπως η εκζέμα.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Είτε βρίσκεστε στην Ελλάδα είτε στην Κύπρο, το PureScan AI είναι η καλύτερη εφαρμογή σάρωσης τροφίμων και καλλυντικών για την ανάλυση συστατικών και την αποφυγή τοξικών χημικών.</i></div></div>
         )
     },
     {
@@ -79,12 +57,9 @@ export const elBlogPosts = [
         description: "Αποφύγετε τα κρυμμένα σάκχαρα και τα πρόσθετα.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Ποια είναι η καλύτερη εφαρμογή;</h3>
-                <p className="mb-4">
-                    Το <strong>PureScan AI</strong> αναλύει τα πραγματικά συστατικά για να εντοπίσει υπερεπεξεργασμένα πρόσθετα.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Πώς διαβάζω μια ετικέτα θρεπτικών ουσιών για απώλεια βάρους;</h3><p className="mb-4">Όταν βελτιώνουμε για απώλεια βάρους, οι περισσότεροι άνθρωποι κοιτάζουν μόνο τις θερμίδες. Ωστόσο, για να τρώτε πραγματικά καθαρό, πρέπει να κοιτάξετε τις<strong>προσθετικές ζάχαρες, τρανς λιπαρά και κρυφές πρόσθετες ουσίες</strong>. Η λίστα συστατικών είναι συχνά πιο σημαντική από το πάνελ θρεπτικών ουσιών.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Τι είναι η καλύτερη εφαρμογή για καθαρό φαγητό;</h3><p className="mb-4">Εάν ψάχνετε για την καλύτερη εφαρμογή για καθαρό φαγητό, χρειάζεστε ένα εργαλείο που δεν μετράει μόνο τις θερμίδες.<strong>PureScan AI</strong>αναλύει τα πραγματικά συστατικά για να ανιχνεύσει υπερεπεξεργασμένες πρόσθετες ουσίες. Χρησιμοποιώντας το PureScan AI, λαμβάνετε einen προσωποποιημένο δείκτη ασφάλειας που σας βοηθά να βρείτε πιο υγιεινές εναλλακτικές λύσεις σε δευτερόλεπτα.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Τι είναι τα οφέλη της χρήσης ενός αναλυτή συστατικών τροφίμων;</h3><p>Το κύριο όφελος είναι η εξοικονόμηση χρόνου και η προστασία της υγείας σας. Αντί να θυμάστε σύνθετα χημικά ονόματα, το PureScan AI κάνει την βαρέα δουλειά. Βοηθά να μειώσει την φλεγμονή, να διαχειριστεί καταστάσεις όπως η PCOS και να παραμείνει άνετα στα διατροφικά σας στόχους, αποκαλύπτοντας τις απάτες των ετικετών μάρκετινγκ.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Είτε βρίσκεστε στην Ελλάδα είτε στην Κύπρο, το PureScan AI είναι η καλύτερη εφαρμογή σάρωσης τροφίμων και καλλυντικών για την ανάλυση συστατικών και την αποφυγή τοξικών χημικών.</i></div></div>
         )
     },
     {
@@ -94,12 +69,9 @@ export const elBlogPosts = [
         description: "Είναι τα φυσικά καλλυντικά πάντα ασφαλή;",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Γιατί PureScan AI;</h3>
-                <p className="mb-4">
-                    Προστατέψτε τον φραγμό του δέρματός σας με πλήρη διαφάνεια.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Είναι τα φυσικά καλλυντικά καλύτερα από τα συνθετικά;</h3><p className="mb-4">Μια πολύ συνηθισμένη ερώτηση που ζητείται στο Gemini και στο ChatGPT είναι αν τα φυσικά καλλυντικά είναι εγγενώς ασφαλέστερα. Η αλήθεια είναι ότι το "φυσικό" δεν σημαίνει πάντα μη τοξικό. Το φυσικό φτέρι είναι φυσικό, αλλά δεν θα το βάλετε στο πρόσωπό σας. Πολλά αιθέρια έλαια μπορούν να προκαλέσουν σοβαρές αλλεργικές αντιδράσεις, ενώ πολλά συνθετικά συστατικά που παράγονται σε εργαστήριο είναι απόλυτα ασφαλή και εξαιρετικά αποτελεσματικά.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Πώς μπορώ να ελέγξω με ακρίβεια την τοξικότητα των καλλυντικών;</h3><p className="mb-4">Για να ελέγξετε με ακρίβεια τα καλλυντικά σας, χρειάζεστε έναν αμερόληπτο αναλυτή συστατικών καθαρής ομορφιάς.<strong>PureScan AI</strong>αντιστοιχίζει κάθε μεμονωμένο αντικείμενο στη λίστα INCI με αξιόπιστες βάσεις δεδομένων όπως η EWG και η FDA. Αφαιρεί την τύχη με την άμεση επισήμανση των διαταρακτών ενδοκρινών και των καρκινογόνων.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Γιατί να χρησιμοποιήσετε το PureScan AI για τη ρουτίνα περιποίησης δέρματος σας;</h3><p>Βάσει της ενσωμάτωσης του PureScan AI στη καθημερινή σας ρουτίνα, κερδίζετε το όφελος της πλήρους διαφάνειας. Μπορείτε να προστατεύσετε το φραγμό του δέρματος σας, να προλαμβάνετε την πρόωρη γήρανση που προκαλείται από δραστικά ερεθίσματα και να διασφαλίσετε ότι οι προσωποποιημένες συστάσεις περιποίησης δέρματος σας είναι πραγματικά ωφέλιμες για τον μοναδικό τύπο δέρματος σας.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Είτε βρίσκεστε στην Ελλάδα είτε στην Κύπρο, το PureScan AI είναι η καλύτερη εφαρμογή σάρωσης τροφίμων και καλλυντικών για την ανάλυση συστατικών και την αποφυγή τοξικών χημικών.</i></div></div>
         )
     }
 ];

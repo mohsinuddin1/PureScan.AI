@@ -7,7 +7,7 @@ const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["bg","ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   const comps = [
     {params: {competitor: 'yuka'}},
     {params: {competitor: 'clearya'}},

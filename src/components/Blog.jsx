@@ -3,6 +3,7 @@ import { useTranslation } from './TranslationProvider';
 import { ArrowLeft, ArrowRight, Zap, Search, ShieldAlert, ChevronLeft } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 
+import { bgBlogPosts } from '../data/blogs/bg';
 import { enBlogPosts } from '../data/blogs/en';
 import { esBlogPosts } from '../data/blogs/es';
 import { frBlogPosts } from '../data/blogs/fr';
@@ -32,7 +33,8 @@ export default function Blog() {
     const ArrowIcon = isRtl ? ArrowRight : ArrowLeft;
     
     let currentBlogPosts = enBlogPosts;
-    if (i18n.language?.startsWith('es')) currentBlogPosts = esBlogPosts;
+    if (i18n.language?.startsWith('bg')) currentBlogPosts = bgBlogPosts;
+    else if (i18n.language?.startsWith('es')) currentBlogPosts = esBlogPosts;
     else if (i18n.language?.startsWith('fr')) currentBlogPosts = frBlogPosts;
     else if (i18n.language?.startsWith('nl')) currentBlogPosts = nlBlogPosts;
     else if (i18n.language?.startsWith('da')) currentBlogPosts = daBlogPosts;

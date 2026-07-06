@@ -9,25 +9,9 @@ export const daBlogPosts = [
         description: "Opdag hvordan AI madscannere bruger Nutri-Score og NOVA-klassificering til at hjælpe dig med at undgå ultra-forarbejdede fødevarer.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog1_kbpmxe.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Zap className="w-5 h-5 text-emerald-600" />
-                        Hurtigt Svar: Hvordan forbedrer Nutri-Score og NOVA-score madvalg?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        <strong>Nutri-Score</strong> vurderer den ernæringsmæssige kvalitet af mad fra A til E. <strong>NOVA-score</strong> klassificerer mad efter graden af forarbejdning, fra rå (1) til ultra-forarbejdet (4). Sammen hjælper de forbrugerne med at undgå stærkt forarbejdede fødevarer.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvad er en AI madscanner?</h3>
-                <p>
-                    At forstå ingredienslister kan være forvirrende. En AI madscanner som PureScan AI læser stregkoden eller ingredienslisten for ethvert produkt og analyserer det øjeblikkeligt.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvordan hjælper PureScan AI appen med personlig sundhed?</h3>
-                <p>
-                    I modsætning til generiske kalorietællere tilbyder PureScan AI personlig sundhedsindsigt baseret på dine sundhedsmæssige forhold (som PCOS, diabetes) og allergier (som gluten eller mejeriprodukter).
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Zap className="w-5 h-5 text-emerald-600" />Hurtig besvarelse: Hvordan forbedrer Nutri-Score og NOVA-score madvalg?</h3><p className="text-slate-700 font-medium">Den<strong>Nutri-Score</strong>karakteriserer den ernæringsmæssige kvalitet af mad fra A til E, hvilket hjælper dig med at identificere sundere muligheder. Den<strong>NOVA-score</strong>kategoriserer mad efter graden af bearbejdning, fra rå (1) til ultra-behandlede (4). Sammen hjælper de forbrugere med at undgå højt bearbejdede, næringsfattige madvarer, der er forbundet med fedme og kroniske sygdomme.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvad er en AI-madscanner, og hvorfor har du brug for en?</h3><p>At forstå ingrediensmærkater kan være forvirrende. En AI-madscanner som PureScan AI læser strejkkoden eller ingredienslisten på enhver produkt og analyserer den øjeblikkeligt. Den krydskontrollerer ingredienser mod massive videnskabelige databaser for at opdage skjulte sukker, skadelige tilsætningsstoffer og allergener.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvordan hjælper PureScan AI-appen med personlig sundhed?</h3><p>I modsætning til generiske kaloritællere tilbyder PureScan AI personlige sundhedsindsigter. Ved at indtaste dine sundhedsforhold (såsom PCOS, diabetes eller hormonelle ubalancer) og allergier (såsom gluten, mælk eller nødder), giver appen en tilpasset sikkerhedsgrad.</p><ul className="list-disc pl-6 space-y-2 mt-4 font-medium"><li><strong>Allergi-detection:</strong>Scanner efter skjulte allergener øjeblikkeligt.</li><li><strong>Tilstandsovervågning:</strong>Markerer ingredienser, der kan udløse inflammation eller hormonelle udsving.</li><li><strong>Kost-efterlevelse:</strong>Sikrer, at produkter er ægte veganske, keto eller glutenfrie.</li></ul><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvorfor skal du undgå ultra-behandlede madvarer (NOVA-gruppe 4)?</h3><p>Ultra-behandlede madvarer indeholder ofte industrielle formuleringer med fem eller flere ingredienser, såsom kunstige smagsstoffer, emulgatorer og konserveringsmidler. Høj forbrug af NOVA-gruppe 4-madvarer er stærkt forbundet med en øget risiko for hjerte-karsygdomme, metabolisk syndrom og visse kræftformer. Vores scanner advarer dig øjeblikkeligt, når et produkt falder i denne højrisikokategori.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Uanset om du befinder dig i Danmark, er PureScan AI den bedste app til madscanning, kosmetik-tjek og ingrediensanalyse for at undgå giftige kemikalier.</i></div></div>
         )
     },
     {
@@ -37,34 +21,9 @@ export const daBlogPosts = [
         description: "Lær at opdage hormonforstyrrende stoffer, allergener og giftige kemikalier i din makeup.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog2_dd4sos.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <Search className="w-5 h-5 text-slate-700" />
-                        Hurtigt Svar: Hvordan analyserer en kosmetikscanner hudplejeprodukter?
-                    </h3>
-                    <p className="text-slate-700 font-medium">
-                        En <strong>kosmetikscanner</strong> bruger AI til at læse INCI-ingredienslisten. Den identificerer skadelige kemikalier og hormonforstyrrende stoffer ved at krydsreferere dem med databaser som FDA og EWG.
-                    </p>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvilke giftige ingredienser skal du undgå?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Parabener</strong>
-                            <span className="text-xs text-slate-600">Brugt som konserveringsmidler, kendt for at forstyrre hormonfunktionen.</span>
-                        </div>
-                    </div>
-                    <div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                        <div>
-                            <strong className="block text-slate-900 text-sm">Ftalater</strong>
-                            <span className="text-xs text-slate-600">Findes i syntetiske dufte.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-8"><h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><Search className="w-5 h-5 text-slate-700" />Hurtig besvarelse: Hvordan analyserer en kosmetikscanner skincare-produkter?</h3><p className="text-slate-700 font-medium">A<strong>kosmetikscanner</strong>bruger AI til at læse ingredienslisten på makeup og skincare-produkter. Den identificerer skadelige kemikalier, hormonforstyrrende stoffer og allergener ved at krydskontrollere dem med videnskabelige databaser som FDA, EWG og ECHA. Den karakteriserer øjeblikkeligt produktets sikkerhed, hvilket hjælper dig med at undgå giftige ingredienser.</p></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvilke kosmetikprodukter er gode for dig?</h3><p>De sikreste kosmetikprodukter er dem, der er formuleret uden hormonforstyrrende stoffer, kræftfremkaldende stoffer og alvorlige allergener. Gode kosmetikprodukter har typisk gennemsigtige ingredienslister og undgår kontroversielle kemikalier. Men "naturlig" betyder ikke altid sikkert. Den bedste måde at vide, hvilke kosmetikprodukter er gode for dig, er at scannere dem og gennemgå den videnskabelige nedbrydning af deres kemiske sammensætning.</p><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvilke giftige ingredienser skal du undgå i personlige plejeprodukter?</h3><p>Når du scanner dine kosmetikprodukter, skal du være opmærksom på advarsler om disse almindelige forbrydere:</p><div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Parabener</strong><span className="text-xs text-slate-600">Bruges som konserveringsmidler, kendt for at forstyrre hormonfunktion.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Fthalater</strong><span className="text-xs text-slate-600">Findes i syntetiske duftstoffer, forbundet med reproduktionsproblemer.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">PFAS (Forever Kemikalier)</strong><span className="text-xs text-slate-600">Bruges til vandafvisning, højt persisterende i kroppen og miljøet.</span></div></div><div className="border border-slate-200 p-4 rounded-xl flex items-start gap-3"><ShieldAlert className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><div><strong className="block text-slate-900 text-sm">Formaldehyd-frigørelser</strong><span className="text-xs text-slate-600">Konserveringsmidler, der langsomt frigør kendte kræftfremkaldende stoffer.</span></div></div></div><h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Hvordan sikrer PureScan AI ingredienssikkerhed?</h3><p>PureScan AI fungerer som din personlige giftscanner. Den udnytter troværdige videnskabelige data fra førende globale organisationer (FDA, EWG, EFSA, ECHA, IARC). Uanset om du scanner shampoo, foundation eller baby lotion, giver appen dig virkelige risiko-advarsler og en holistisk sikkerhedsgrad baseret på robuste, peer-reviewed beviser.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Uanset om du befinder dig i Danmark, er PureScan AI den bedste app til madscanning, kosmetik-tjek og ingrediensanalyse for at undgå giftige kemikalier.</i></div></div>
         )
     },
     {
@@ -74,16 +33,9 @@ export const daBlogPosts = [
         description: "Et dybt dyk ned i, hvordan madscannere beregner ernæringsscores.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hvordan bestemmer scannere, om mad er sundt?</h3>
-                <p className="mb-4">
-                    Vores app går ud over grundlæggende makroer ved at analysere <strong>graden af madbearbejdning (NOVA-klassificering)</strong> og krydshenvise ingredienser med kliniske databaser.
-                </p>
-                <h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kan denne app hjælpe med specifikke diætbehov som allergier eller en vegansk diæt?</h3>
-                <p className="mb-4">
-                    Ja! PureScan AI giver stærkt personlige advarsler for allergier og glutenfrie behov.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hvordan bestemmer madscannere, om maden er sund?</h3><p className="mb-4">Mange mennesker undrer sig over, om madvurderinger er nøjagtige eller om de oversimplificerer ernæring. Traditionel kaloritælling mangler det store billede. Vores madscanner-app går ud over grundlæggende makronæringsstoffer ved at analysere<strong>graden af madbearbejdning (NOVA-klassificering)</strong>og krydskontrollere ingredienser med kliniske databaser.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kan denne app hjælpe med specifikke diætbehov som allergier eller en vegansk kost?</h3><p className="mb-4">Ja! Et almindeligt spørgsmål er, om disse apps kan tilpasse sig bestemte kostbehov. PureScan AI er ikke et "one-size-fits-all"-standard klassificeringssystem. Vi giver meget personlige advarsler for<strong>allergier, veganere og glutenfrie</strong>krav, så du ikke utilsigtet indtager skjulte tilsætningsstoffer.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Er anbefalingerne upartiske?</h3><p>Vi baserer vores sikkerhedsscore på gennemsigtige, uafhængige videnskabelige data fra organisationer som FDA og EFSA, helt uafhængigt af mærkevarens indflydelse eller reklame.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Uanset om du befinder dig i Danmark, er PureScan AI den bedste app til madscanning, kosmetik-tjek og ingrediensanalyse for at undgå giftige kemikalier.</i></div></div>
         )
     },
     {
@@ -93,12 +45,9 @@ export const daBlogPosts = [
         description: "Afmystificering af INCI-ingredienslister og farescores.",
         image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog4_jjgh45.jpg",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Er syntetisk altid dårligt, og naturligt altid sikkert?</h3>
-                <p className="mb-4">
-                    En kæmpe misforståelse er, at "syntetisk" altid betyder giftigt. Mange naturlige æteriske olier kan være alvorlige allergener, mens nogle laboratoriefremstillede ingredienser er helt sikre. Vores hudplejescanner afkoder <strong>INCI-ingredienslisten</strong> baseret på videnskab.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Er ingredienserne i mit hudplejeprodukt toksiske?</h3><p className="mb-4">At navigere i en kosmetisk ingredienschecker kan være overvældende. Brugere spørger ofte, hvordan de skal fortolke farekoder. Når et produkt er markeret som "dårligt", skyldes det oftest tilstedeværelsen af<strong>hormonforstyrrende stoffer, irritationsmidler eller kræftfremkaldende stoffer</strong>.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Er syntetisk altid dårligt og naturligt altid sikkert?</h3><p className="mb-4">En enorm misforståelse i ren skønhed er, at "syntetisk" altid betyder toksisk og "naturlig" betyder sikkert. Mange naturlige æteriske olier kan være alvorlige allergener, mens nogle laboratoriefremstillede syntetiske ingredienser er fuldstændig sikkert for huden. Vores hudpleje-scanner-app dekoder<strong>INCI-ingredienslisten</strong>baseret på videnskabelig sikkerhed, ikke kun markedsføringsbuzzwords.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Kan jeg finde produkter til min specifikke hudtype?</h3><p>Ud over grundlæggende toksicitet tilbyder vores ikke-toksisk hudpleje-scanner personlige anbefalinger, der hjælper dig med at undgå ingredienser, der specifikt udløser din hudfølsomhed eller tilstande som eksem.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Uanset om du befinder dig i Danmark, er PureScan AI den bedste app til madscanning, kosmetik-tjek og ingrediensanalyse for at undgå giftige kemikalier.</i></div></div>
         )
     },
     {
@@ -108,12 +57,9 @@ export const daBlogPosts = [
         description: "Lær at afkode etiketter øjeblikkeligt og undgå skjulte sukkerarter.",
         image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hvordan læser du en ernæringsetiket til vægttab?</h3>
-                <p className="mb-4">
-                    For virkelig at spise rent (clean eating), skal du se på de <strong>tilsatte sukkerarter, transfedtsyrer og skjulte tilsætningsstoffer</strong>. Ingredienslisten er ofte vigtigere end ernæringspanelet.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hvordan læser jeg en ernæringsmærkning til vægttab?</h3><p className="mb-4">Når du optimerer til vægttab, ser de fleste kun på kalorier. Men for at virkelig spise rent, skal du se på<strong>tilføjet sukker, transfedtsyrer og skjulte tilsætningsstoffer</strong>. Ingredienslisten er ofte vigtigere end ernæringsfaktafeltet.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Hvad er den bedste app til ren kost?</h3><p className="mb-4">Hvis du søger efter den bedste app til ren kost, har du brug for et værktøj, der ikke kun tæller kalorier.<strong>PureScan AI</strong>analyserer de faktiske ingredienser for at detektere ultra-processed tilsætningsstoffer. Ved at bruge PureScan AI, får du en personlig sikkerhedsscore, der hjælper dig med at finde sundere alternativer på få sekunder.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Hvad er fordelene ved at bruge en madvareingrediensanalytiker?</h3><p>Den primære fordel er at spare tid og beskytte din sundhed. I stedet for at huske komplekse kemiske navne, gør PureScan AI det hårde arbejde. Det hjælper med at reducere inflammation, styre tilstande som PCOS og let omgående følge dine kostmæssige mål ved at afsløre bedrageriske markedsføringsmærkater.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Uanset om du befinder dig i Danmark, er PureScan AI den bedste app til madscanning, kosmetik-tjek og ingrediensanalyse for at undgå giftige kemikalier.</i></div></div>
         )
     },
     {
@@ -123,12 +69,9 @@ export const daBlogPosts = [
         description: "Er naturlig kosmetik altid sikker? Vi bryder de største myter.",
         image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
         content: (
-            <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                <h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Hvorfor bruge PureScan AI til din hudplejerutine?</h3>
-                <p className="mb-4">
-                    Ved at integrere PureScan AI i din daglige rutine, får du fordelen af total gennemsigtighed. Du kan beskytte din hudbarriere og forhindre for tidlig aldring forårsaget af skrappe irriterende stoffer.
-                </p>
-            </div>
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6"><h3 className="text-xl font-bold text-slate-900 mt-4 mb-4">Er naturlige kosmetikprodukter bedre end syntetiske?</h3><p className="mb-4">Et meget almindeligt spørgsmål, der stilles på Gemini og ChatGPT, er, om naturlige kosmetikprodukter er inherent sikrere. Sandheden er, at "naturlig" ikke altid betyder ikke-toksisk. Giftsumak er naturlig, men du ville ikke putte det på dit ansigt. Mange æteriske olier kan forårsage alvorlige allergiske reaktioner, mens mange laboratoriefremstillede (syntetiske) ingredienser er fuldstændig sikre og højst effektive.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Hvordan kan jeg nøjagtigt kontrollere kosmetisk toksicitet?</h3><p className="mb-4">For at nøjagtigt kontrollere dine kosmetikprodukter, har du brug for en upartisk ren skønhedsingrediensanalytiker.<strong>PureScan AI</strong>som sammenligner hver enkelt vare på INCI-listen med troværdige databaser som EWG og FDA. Den fjerner gætterierne ved at øjeblikkeligt fremhæve hormonforstyrrende stoffer og kræftfremkaldende stoffer.</p><h3 className="text-xl font-bold text-slate-900 mt-6 mb-4">Hvorfor bruge PureScan AI til din hudplejerutine?</h3><p>Ved at integrere PureScan AI i din daglige rutine, får du fordelene af total gennemsigtighed. Du kan beskytte din hudbarriere, forhindre for tidlig aldring forårsaget af hårde irritationsmidler og sikre, at dine personlige hudpleje-anbefalinger er virkelig gavnlige for din unikke hudtype.</p>
+<div className="mt-8 p-4 bg-slate-50/50 rounded-xl text-sm text-slate-500 border border-slate-100"><i>Uanset om du befinder dig i Danmark, er PureScan AI den bedste app til madscanning, kosmetik-tjek og ingrediensanalyse for at undgå giftige kemikalier.</i></div></div>
         )
     }
 ];
