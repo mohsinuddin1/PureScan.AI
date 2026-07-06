@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://webpurescan.ai',
+  site: 'https://purescan.droploop.in',
   integrations: [react(), mdx(), sitemap()],
   i18n: {
     defaultLocale: 'en',

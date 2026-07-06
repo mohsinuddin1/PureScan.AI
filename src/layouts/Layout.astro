@@ -10,11 +10,11 @@ interface Props {
 const {
   title = "PureScan AI - Food & Cosmetic Scanner",
   description = "The smartest food scanner & cosmetic scanner in your pocket. Scan barcodes and ingredient lists to detect harmful chemicals, allergens, and ultra-processed additives instantly.",
-  image = "https://webpurescan.ai/og-image.png"
+  image = "https://purescan.droploop.in/og-image.png"
 } = Astro.props;
 
 const lang = Astro.currentLocale || "en";
-const siteUrl = "https://webpurescan.ai";
+const siteUrl = "https://purescan.droploop.in";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 
 // Compute base path for hreflang alternates
@@ -76,34 +76,34 @@ function getAlternateUrl(locale: string): string {
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "https://webpurescan.ai/#website",
-          "url": "https://webpurescan.ai/",
+          "@id": "https://purescan.droploop.in/#website",
+          "url": "https://purescan.droploop.in/",
           "name": "PureScan AI",
           "description": "The smartest food scanner & cosmetic scanner in your pocket.",
           "publisher": {
-            "@id": "https://webpurescan.ai/#organization"
+            "@id": "https://purescan.droploop.in/#organization"
           },
           "inLanguage": lang
         },
         {
           "@type": "Organization",
-          "@id": "https://webpurescan.ai/#organization",
+          "@id": "https://purescan.droploop.in/#organization",
           "name": "PureScan AI",
-          "url": "https://webpurescan.ai/",
+          "url": "https://purescan.droploop.in/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://webpurescan.ai/logo.png"
+            "url": "https://purescan.droploop.in/logo.png"
           },
           "description": "AI-powered application for scanning food and cosmetic products to detect harmful ingredients, allergens, and ultra-processed elements.",
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer support",
-            "url": "https://webpurescan.ai/support"
+            "url": "https://purescan.droploop.in/support"
           }
         },
         {
           "@type": "SoftwareApplication",
-          "@id": "https://webpurescan.ai/#app",
+          "@id": "https://purescan.droploop.in/#app",
           "name": "PureScan AI",
           "applicationCategory": "HealthApplication",
           "operatingSystem": "iOS, Android",

@@ -24,4 +24,4 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://webpurescan.ai/sitemap.xml
+Sitemap: https://purescan.droploop.in/sitemap-index.xml
