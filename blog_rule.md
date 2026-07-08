@@ -67,7 +67,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–11)
+## 2. Master Topic Index (Blogs 1–16)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -125,6 +125,31 @@ All blog posts must follow this exact structural pattern:
 - **Badge**: Skin Barrier & Food Safety
 - **Image**: `https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Skin barrier damage, synthetic fragrances (Parfum/Fragrance), formaldehyde releasers (DMDM Hydantoin, Methylisothiazolinone, Quaternium-15), contact dermatitis from cosmetics, artificial food dyes (Red 40/E129, Yellow 5/E102, Yellow 6/E110), synthetic sweeteners (Sucralose, Aspartame, Erythritol), gut microbiota disruption by artificial sweeteners, histamine intolerance triggers, misleading "Hypoallergenic" and "Dermatologist Tested" claims, misleading "Sugar-Free" labels, over-exfoliation risks when combining actives with fragranced products.
+
+### Blog 12 — Which Skincare Ingredients and Food Additives Should You Avoid During Pregnancy? The Hidden Dangers of Retinoids, Chemical UV Filters, and Nitrates
+- **Badge**: Pregnancy & Family Safety
+- **Image**: `https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Pregnancy safety scanning, topical retinoids (Retinol, Tretinoin, Retinyl Palmitate), teratogens in cosmetics, high-concentration salicylic acid (BHA), chemical UV filters (Oxybenzone, Octinoxate), endocrine disruption during pregnancy and breastfeeding, cured meat preservatives (Sodium Nitrite, Sodium Nitrate), nitrosamines, synthetic antioxidant preservatives (BHA, BHT), placental barrier transfer, heavy metals in ultra-processed foods and supplements, greenwashing claims ("Pregnancy-Safe", "All-Natural").
+
+### Blog 13 — Why Is My Hair Thinning and Scalp Itchy? The Hidden Impact of Harsh Sulfates, Silicones, and Inflammatory Seed Oils
+- **Badge**: Hair & Scalp Health
+- **Image**: `https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Hair and scalp health scanning, harsh sulfate surfactants (SLS, SLES), acid mantle disruption, non-water-soluble silicones (Dimethicone, Amodimethicone), occlusive follicle clogging, Malassezia overgrowth, seborrheic dermatitis, industrial seed oils (omega-6 fatty acids, arachidonic acid pathways), refined sugars and insulin spikes, follicle miniaturization, misleading "Sulfate-Free" claims (Olefin Sulfonates, Cocamidopropyl Betaine allergies).
+
+### Blog 14 — Why Do I Have Sensitive Teeth and Canker Sores? The Hidden Dangers of SLS in Toothpaste, Alcohol Mouthwashes, and Hidden Dietary Acids
+- **Badge**: Oral & Dental Health
+- **Image**: `https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Oral health scanning, recurrent aphthous stomatitis (canker sores), Sodium Lauryl Sulfate (SLS) mucosal irritation and barrier stripping, oral mucin layer degradation, antiseptic alcohol mouthwashes, oral microbiome disruption, nitric oxide pathway impairment, titratable dietary acids (citric acid, phosphoric acid, malic acid), enamel demineralization (pH < 5.5), hidden fermentable syrups in ultra-processed snacks, dentin hypersensitivity, misleading "Complete Protection" and "Enamel Safe" claims.
+
+### Blog 15 — Why Do Natural Deodorants Cause Rashes and Dark Armpits? The Hidden Dangers of Baking Soda, Aluminum Chlorohydrate, and Dietary Odor Triggers
+- **Badge**: Body Care & Hygiene
+- **Image**: `https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Underarm skin safety scanning, natural deodorant contact dermatitis, alkaline Sodium Bicarbonate (baking soda) acid mantle disruption, Propylene Glycol penetration enhancement, post-inflammatory hyperpigmentation (dark armpits), Aluminum Chlorohydrate pore occlusion, axillary microbiome diversity reduction, Corynebacterium overgrowth and rebound body odor, dietary sulfur emissions, ultra-processed food insulin spikes and sweat composition, misleading "All-Natural" and "Aluminum-Free" claims.
+
+### Blog 16 — Why Does Sunscreen Sting My Eyes and Cause Breakouts? The Hidden Dangers of Chemical UV Filters, Comedogenic Emollients, and Dietary Glycation
+- **Badge**: Sun Protection & Photoaging
+- **Image**: `https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Sun protection and photobiology scanning, eye stinging and corneal nerve irritation from migrating chemical UV filters (Avobenzone, Octocrylene, Homosalate), mineral vs chemical sunscreen safety, comedogenic SPF emollients and fatty acid esters (Isopropyl Myristate, Ethylhexyl Palmitate, Isopropyl Palmitate), microcomedone formation and Cutibacterium acnes overgrowth under occlusive films, dietary Advanced Glycation End-products (AGEs), high-fructose syrups and collagen glycation, photoaging acceleration, misleading "Non-Comedogenic" and "Gentle for Sensitive Eyes" claims.
 
 ---
 
