@@ -67,7 +67,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–20)
+## 2. Master Topic Index (Blogs 1–26)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -170,6 +170,36 @@ All blog posts must follow this exact structural pattern:
 - **Badge**: Hand Care & Skin Barrier
 - **Image**: `https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Hand care and skin barrier safety scanning, unexplained hand eczema, painful finger cracks, and dyshidrotic vesicles, sensitizing biocide preservatives (Methylisothiazolinone / MI / MIT, Methylchloroisothiazolinone / MCI) in liquid hand soaps and dish cleansers, alkaline anionic surfactants (Sodium Lauryl Sulfate / SLS) disrupting hand skin acid mantle (pH 4.5–5.5) and lipid ceramides, systemic dietary contact allergens (high sulfites, canned foods, trace nickel), misleading "Gentle on Hands" and "Antibacterial Protection" claims.
+
+### Blog 21 — Why Does My Face Get Red, Hot, and Flaky? The Hidden Dangers of Denatured Alcohol, Essential Oils, and Dietary Histamines
+- **Badge**: Facial Redness & Rosacea Care
+- **Image**: `https://images.unsplash.com/photo-1512290746430-3ffb4fab31bc?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Facial redness and rosacea safety scanning, sudden burning flushing and persistent erythema, drying astringent toners and low-molecular-weight Denatured Alcohol (Alcohol Denat. / SD Alcohol 40-B) dissolving intercellular ceramides and triggering vascular dilation, volatile essential oils (peppermint, eucalyptus, sweet orange peel) and fragrance terpenes (linalool, limonene, eugenol) auto-oxidizing into contact haptens activating TRPV1 sensory nerve receptors, dietary histamine liberators and preservatives (sulfites E220–E228, cured meat nitrates, biogenic amines in aged cheeses) overwhelming diamine oxidase (DAO) and dilating facial capillaries (telangiectasia), misleading "Soothing" and "Botanical Relief" claims.
+
+### Blog 22 — Why Do I Get Razor Burn, Ingrown Hairs, and Dark Spots After Shaving? The Hidden Dangers of Harsh Aftershaves, Comedogenic Shave Creams, and Dietary Sugar
+- **Badge**: Shaving & Follicle Safety
+- **Image**: `https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Shaving safety scanning, razor burn (perifollicular erythema), painful ingrown hairs (pseudofolliculitis), post-shave dark spots (post-inflammatory hyperpigmentation - PIH), occlusive comedogenic esters and waxes in shaving creams and foams (Isopropyl Myristate, Isopropyl Palmitate, heavy PEG waxes) clogging freshly exfoliated follicular orifices, stripping high-proof Denatured Alcohol (Alcohol Denat.) and synthetic cooling agents (menthol, camphor) in aftershaves dehydrating micro-lacerated tissue and triggering melanocyte hyper-reactivity, dietary insulin spikes from refined sugars, high-fructose corn syrup, and whey protein isolates elevating IGF-1 and inducing infundibular follicular hyperkeratosis, misleading "Sensitive Skin" and "Cooling Relief" claims.
+
+### Blog 23 — Why Are My Nails Peeling, Brittle, and Weak? The Hidden Dangers of HEMA Gel Polishes, Formaldehyde Hardeners, and Nutritional Deficiencies
+- **Badge**: Nail Care & Cuticle Safety
+- **Image**: `https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Nail matrix and cuticle safety scanning, peeling nail plates in layers (onychoschizia), painful periungual cuticle inflammation, brittle splitting, HEMA (2-Hydroxyethyl Methacrylate) and Di-HEMA Trimethylhexyl Dicarbamate sensitizing acrylate monomers in UV gel manicures triggering allergic contact dermatitis across European women, rigidifying chemical cross-linkers Formaldehyde and Tosylamide/Formaldehyde Resin in nail hardeners causing nail brittleness, pure acetone removers dissolving intercellular dorsal plate lipids leading to onycholysis, ultra-processed diet mineral depletion (bioavailable iron, zinc, selenium) and glucose spikes stiffening alpha-keratin synthesis, misleading "Salon Quality" and "Strengthening" claims.
+
+### Blog 24 — Why Are My Toenails Yellow and Thick and My Heels Deeply Cracked? The Hidden Dangers of Harsh Foot Peel Masks, Antifungal Solvents, and Dietary Sugar
+- **Badge**: Foot Care & Fungal Defense
+- **Image**: `https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Plantar skin barrier and nail fungal safety scanning, yellow thickened toenails (onychomycosis / dermatophyte infection from *Trichophyton rubrum*), deep painful heel fissures (hielkloven), chemical foot peel booties containing high concentrations of alpha-hydroxy acids (glycolic/lactic/salicylic acid) and stripping Denatured Alcohol damaging stratum corneum lipids and causing unregulated peeling, conventional antifungal nail lacquers and urea pastes (>40%) macerating periungual skin folds, high-sugar diets and refined carbohydrates elevating skin tissue glucose to feed fungal proliferation, misleading "Intensive Exfoliating" and "Podiatrist Recommended" claims.
+
+### Blog 25 — Why Does My Face Burn, Peel, and Break Out in Freezing Weather? The Hidden Dangers of Water-Based Cold Creams, Occlusive Waxes, and Winter Lipid Depletion
+- **Badge**: Winter Skincare & Frost Protection
+- **Image**: `https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Sub-zero weather facial barrier protection scanning, facial stinging and frostnip (*frostskade*) in freezing temperatures, water-in-oil and oil-in-water emulsions crystallizing on the epidermis (-10°C or colder), heavy anhydrous winter cold creams (*kuldekrem*) containing occlusive mineral oil, petrolatum, and impure lanolin alcohols trapping sweat and sebum under ski goggles and winter gear, anaerobic *Cutibacterium acnes* proliferation and occlusion cystic acne, vasoconstriction reducing cutaneous microcirculation, dietary long-chain Omega-3 (EPA/DHA) and Vitamin D3 deficiencies impairing epidermal ceramide synthesis during dark Nordic winters, misleading "Extreme Weather" and "Barrier Shield" claims.
+
+### Blog 26 — Why Do I Have Stubborn Dark Patches on My Face and Upper Lip? The Hidden Dangers of Phototoxic Fragrances, Rebound Pigmentation, and Summer Melasma
+- **Badge**: Sun Protection & Pigmentation Safety
+- **Image**: `https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Scented skincare and perfume phototoxicity scanning under intense Mediterranean sunlight, stubborn brownish-gray patches across the cheeks, forehead, and upper lip ("sun mustache" / melasma / *panades*), furocoumarins (psoralens) and citrus essential oils (bergamot oil / *Citrus aurantium bergamia*, limonene, bitter orange) absorbing UVA radiation and inducing Berloque dermatitis (phytophotodermatitis), high-strength unbuffered glycolic acid and aggressive summer chemical peels thinning the stratum corneum and triggering post-inflammatory rebound hyperpigmentation, dietary glycemic spikes and advanced glycation end-products (AGEs) sensitizing melanocytes, Mediterranean polyphenol (extra virgin olive oil, green tea catechins) antioxidant defenses against UV reactive oxygen species (ROS), misleading "Brightening" and "Natural Botanical" claims.
 
 ---
 
