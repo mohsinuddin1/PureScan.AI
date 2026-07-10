@@ -67,7 +67,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–26)
+## 2. Master Topic Index (Blogs 1–31)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -200,6 +200,31 @@ All blog posts must follow this exact structural pattern:
 - **Badge**: Sun Protection & Pigmentation Safety
 - **Image**: `https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Scented skincare and perfume phototoxicity scanning under intense Mediterranean sunlight, stubborn brownish-gray patches across the cheeks, forehead, and upper lip ("sun mustache" / melasma / *panades*), furocoumarins (psoralens) and citrus essential oils (bergamot oil / *Citrus aurantium bergamia*, limonene, bitter orange) absorbing UVA radiation and inducing Berloque dermatitis (phytophotodermatitis), high-strength unbuffered glycolic acid and aggressive summer chemical peels thinning the stratum corneum and triggering post-inflammatory rebound hyperpigmentation, dietary glycemic spikes and advanced glycation end-products (AGEs) sensitizing melanocytes, Mediterranean polyphenol (extra virgin olive oil, green tea catechins) antioxidant defenses against UV reactive oxygen species (ROS), misleading "Brightening" and "Natural Botanical" claims.
+
+### Blog 27 — Why Do I Have Tiny Hard White Bumps Under My Eyes That Won't Pop? The Hidden Dangers of Heavy 'Slugging' Ointments, Comedogenic Eye Creams, and Keratin Trapping
+- **Badge**: Eye Care & Keratin Safety
+- **Image**: `https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Periorbital eye cream and slugging ointment scanning, tiny firm pearl-like white bumps under the eyes and upper cheeks (milia / subepidermal keratin cysts), thick occlusive slugging ointments (pure petrolatum, heavy paraffin wax, mineral oil) creating an impermeable barrier over thin 0.5mm eye tissue and preventing normal corneocyte desquamation, rich comedogenic eye creams containing pore-clogging esters (isopropyl myristate, acetylated lanolin, ethylhexyl palmitate), mechanical popping and squeezing rupturing fragile periorbital capillaries and causing permanent micro-scarring without releasing encapsulated keratin, dietary dairy hormones (IGF-1 from whey protein and skim milk) and trans fats stimulating keratinocyte hyperproliferation and cellular stickiness, anti-inflammatory Omega-3 fatty acid deficiencies reducing cell membrane fluidity.
+
+### Blog 28 — Why Is the Skin on My Neck and Chest Crepey, Red, and Wrinkled? The Hidden Dangers of Direct Perfume Sprays, Aggressive Neck Actives, and Sugar Glycation
+- **Badge**: Neck & Décolletage Care
+- **Image**: `https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Neck and décolletage cream and perfume spray scanning, premature crepey tissue-paper skin texture across the neck and upper chest, reddish-brown mottled reticular discoloration on neck sides (Poikiloderma of Civatte), spraying denatured alcohol and phototoxic fragrance allergens directly onto bare sun-exposed neck skin inducing phototoxic elastolysis, applying aggressive unbuffered facial serums (high-strength retinol, concentrated glycolic acid) onto lipid-poor thin neck tissue causing chronic irritant contact dermatitis, horizontal "tech neck" creases worsened by smartphone posture, dietary refined sugar spikes and glycemic loads creating Advanced Glycation End-Products (AGEs) that cross-link and stiffen Type I collagen and elastin fibers.
+
+### Blog 29 — Why Is Niacinamide Breaking Me Out and Causing Tiny Red Bumps? The Hidden Dangers of 10% Serum Overdose, 'Purging' Myths, and B-Vitamin Acne
+- **Badge**: Active Ingredients & Barrier Safety
+- **Image**: `https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: High-strength Niacinamide serum and supplement scanning, top-searched Reddit skincare mystery on why 10% Niacinamide + Zinc serums cause tiny itchy red bumps and cystic breakouts, debunking Niacinamide "purging" myths (Niacinamide does not accelerate cell turnover unlike exfoliants or retinoids), Irritant Contact Dermatitis and barrier disruption caused by Niacinamide overdose beyond the clinical 2% to 5% efficacy window, cumulative active stacking across cleansers, essences, serums, and sunscreens exceeding 20% active exposure, oral B-complex megavitamins (Vitamin B12 and Biotin) altering follicular *Cutibacterium acnes* gene expression and stimulating pro-inflammatory cytokine release.
+
+### Blog 30 — Why Do My Nose Pores Look So Huge and Filled with Dark Plugs? The Myth of 'Blackheads' vs. Sebaceous Filaments, Pore Strip Damage, and Double Cleansing
+- **Badge**: Pore Care & Sebum Control
+- **Image**: `https://images.unsplash.com/photo-1521590832161-bf0d0926d17e?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Facial cleanser and pore treatment scanning, viral top-searched Reddit skincare mystery on why dark pinpoint plugs across the nose and chin keep refilling within days of squeezing or adhesive pore strip extraction, dermatological distinction between true blackheads (open comedones caused by follicular occlusion) and normal Sebaceous Filaments (healthy anatomical conduits of squalene and corneocytes that oxidize dark gray at the surface), mechanical trauma from squeezing and adhesive strips rupturing perinasal capillaries and permanently stretching pore elasticity, harsh alcohol astringents stripping lipids and triggering rebound 5-alpha-reductase sebum surge, dietary sugar spikes and skim dairy IGF-1 increasing sebum squalene oxidation.
+
+### Blog 31 — Why Does My Skincare Roll Off in Little White Balls? The Science of Product Pilling, Polymer Clashes, and Layering Incompatibilities
+- **Badge**: Formulation & Layering Science
+- **Image**: `https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Skincare layering and serum/sunscreen routine scanning, top-searched ChatGPT and Gemini AI prompt on why serums, moisturizers, or sunscreens roll off into rubbery white flakes or balls across the face when touched (product pilling), dermatological explanation of formulation phase separation and polymer precipitation vs. dead skin peeling, synthetic gel thickeners (Carbomer, Xanthan Gum, Acrylates/C10-30 Alkyl Acrylate Crosspolymer) and hydrophobic silicones (Dimethicone) balling up under mechanical shear friction, pH incompatibilities where acidic L-Ascorbic Acid (Vitamin C pH 2.5–3.0) collapses neutral Carbomer gel networks causing instant solid precipitation, skin dehydration and dietary omega-3 deficiency increasing surface friction and preventing uniform lipid penetration.
 
 ---
 
