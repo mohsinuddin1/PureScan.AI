@@ -218,7 +218,7 @@ All blog posts must follow this exact structural pattern:
 
 ### Blog 30 — Why Do My Nose Pores Look So Huge and Filled with Dark Plugs? The Myth of 'Blackheads' vs. Sebaceous Filaments, Pore Strip Damage, and Double Cleansing
 - **Badge**: Pore Care & Sebum Control
-- **Image**: `https://images.unsplash.com/photo-1521590832161-bf0d0926d17e?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Facial cleanser and pore treatment scanning, viral top-searched Reddit skincare mystery on why dark pinpoint plugs across the nose and chin keep refilling within days of squeezing or adhesive pore strip extraction, dermatological distinction between true blackheads (open comedones caused by follicular occlusion) and normal Sebaceous Filaments (healthy anatomical conduits of squalene and corneocytes that oxidize dark gray at the surface), mechanical trauma from squeezing and adhesive strips rupturing perinasal capillaries and permanently stretching pore elasticity, harsh alcohol astringents stripping lipids and triggering rebound 5-alpha-reductase sebum surge, dietary sugar spikes and skim dairy IGF-1 increasing sebum squalene oxidation.
 
 ### Blog 31 — Why Does My Skincare Roll Off in Little White Balls? The Science of Product Pilling, Polymer Clashes, and Layering Incompatibilities
