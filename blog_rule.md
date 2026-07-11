@@ -67,7 +67,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–31)
+## 2. Master Topic Index (Blogs 1–32)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -225,6 +225,11 @@ All blog posts must follow this exact structural pattern:
 - **Badge**: Formulation & Layering Science
 - **Image**: `https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Skincare layering and serum/sunscreen routine scanning, top-searched ChatGPT and Gemini AI prompt on why serums, moisturizers, or sunscreens roll off into rubbery white flakes or balls across the face when touched (product pilling), dermatological explanation of formulation phase separation and polymer precipitation vs. dead skin peeling, synthetic gel thickeners (Carbomer, Xanthan Gum, Acrylates/C10-30 Alkyl Acrylate Crosspolymer) and hydrophobic silicones (Dimethicone) balling up under mechanical shear friction, pH incompatibilities where acidic L-Ascorbic Acid (Vitamin C pH 2.5–3.0) collapses neutral Carbomer gel networks causing instant solid precipitation, skin dehydration and dietary omega-3 deficiency increasing surface friction and preventing uniform lipid penetration.
+
+### Blog 32 — Why Are My Eyelashes Falling Out? The Hidden Dangers of Waterproof Mascara, Prostaglandin Serums, and Harsh Removers
+- **Badge**: Eyelash & Eye Safety
+- **Image**: `https://images.unsplash.com/photo-1512496015851-a1cbfb9b0dbb?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Eyelash shedding (madarosis), mechanical trauma from waterproof mascaras (isododecane, heavy waxes), eyelash cuticle dehydration, harsh makeup removers causing follicular micro-trauma, synthetic prostaglandin analogue lash serums (bimatoprost, isopropyl cloprostenate), prostaglandin-associated periorbitopathy (PAP), eyelid redness, orbital fat atrophy, nutritional deficiencies (alpha-keratin, biotin, zinc, bioavailable iron), mechanical damage from eyelash curlers.
 
 ---
 
