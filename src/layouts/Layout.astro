@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title?: string;
@@ -129,5 +130,6 @@ function getAlternateUrl(locale: string): string {
       import { inject } from '@vercel/analytics';
       inject();
     </script>
+    <SpeedInsights />
   </body>
 </html>
