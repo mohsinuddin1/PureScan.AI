@@ -67,7 +67,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–32)
+## 2. Master Topic Index (Blogs 1–34)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -230,6 +230,16 @@ All blog posts must follow this exact structural pattern:
 - **Badge**: Eyelash & Eye Safety
 - **Image**: `https://images.unsplash.com/photo-1512496015851-a1cbfb9b0dbb?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Eyelash shedding (madarosis), mechanical trauma from waterproof mascaras (isododecane, heavy waxes), eyelash cuticle dehydration, harsh makeup removers causing follicular micro-trauma, synthetic prostaglandin analogue lash serums (bimatoprost, isopropyl cloprostenate), prostaglandin-associated periorbitopathy (PAP), eyelid redness, orbital fat atrophy, nutritional deficiencies (alpha-keratin, biotin, zinc, bioavailable iron), mechanical damage from eyelash curlers.
+
+### Blog 33 — Why Do I Get Painful Cystic Breakouts Along My Jawline and Chin? The Hidden Dangers of Comedogenic Hair Oils, Heavy Facial Oils, and Dairy Hormones
+- **Badge**: Jawline Acne & Hormonal Health
+- **Image**: `https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Jawline and chin cystic acne (nodulocystic acne), comedogenic hair care migration (leave-in conditioners, styling oils, heavy waxes like isopropyl myristate and coconut oil), heavy botanical facial oils with high oleic acid (marula oil, wheat germ oil), hormonal triggers from skim dairy and whey protein isolates increasing circulating IGF-1 and DHT via 5-alpha-reductase, sebum squalene oxidation and follicular hyperkeratosis along dense androgen receptor areas of the lower face.
+
+### Blog 34 — Why Do I Get Tiny, Itchy Bumps on My Forehead and Chest? The Hidden Dangers of Fungal Acne (Malassezia), Lipid-Rich Skincare, and Dietary Sugar
+- **Badge**: Fungal Acne & Microbiome Safety
+- **Image**: `https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Fungal acne (Malassezia folliculitis), differences from bacterial acne (Cutibacterium acnes), why salicylic acid and benzoyl peroxide fail or worsen fungal breakouts, lipid triggers with C11–C24 carbon chain lengths (polysorbates, glyceryl stearate, isopropyl myristate, palmitic/stearic acids, botanical oils like olive, argan, jojoba, coconut), free fatty acid release causing follicular micro-inflammation and intense pruritus (itching), dietary sugar/refined carbohydrates/high-glycemic foods triggering insulin and IGF-1 spikes that overstimulate sebaceous gland triglyceride secretion, systemic yeast overgrowth from gut microbiome disruption, 4-step method for fungal acne safety using PureScan AI.
 
 ---
 
