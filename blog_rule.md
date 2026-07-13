@@ -67,7 +67,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–34)
+## 2. Master Topic Index (Blogs 1–36)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -240,6 +240,16 @@ All blog posts must follow this exact structural pattern:
 - **Badge**: Fungal Acne & Microbiome Safety
 - **Image**: `https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Fungal acne (Malassezia folliculitis), differences from bacterial acne (Cutibacterium acnes), why salicylic acid and benzoyl peroxide fail or worsen fungal breakouts, lipid triggers with C11–C24 carbon chain lengths (polysorbates, glyceryl stearate, isopropyl myristate, palmitic/stearic acids, botanical oils like olive, argan, jojoba, coconut), free fatty acid release causing follicular micro-inflammation and intense pruritus (itching), dietary sugar/refined carbohydrates/high-glycemic foods triggering insulin and IGF-1 spikes that overstimulate sebaceous gland triglyceride secretion, systemic yeast overgrowth from gut microbiome disruption, 4-step method for fungal acne safety using PureScan AI.
+
+### Blog 35 — Why Do I Get Sudden Burning, Red Rashes Around My Mouth and Chin? The Hidden Dangers of Perioral Dermatitis, Occlusive Creams, and Dietary Cinnamates
+- **Badge**: Perioral Health & Barrier Safety
+- **Image**: `https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Perioral dermatitis (POD) presentation around the mouth, nasolabial folds, and chin leaving a clear vermilion border, distinction from bacterial acne and contact dermatitis, why acne treatments (salicylic acid, retinoids) and topical corticosteroids (hydrocortisone) cause severe barrier breakdown and steroid rebound effects, heavy occlusive skincare ingredients (petrolatum, paraffin wax, isopropyl myristate, shea butter) trapping moisture and encouraging *Demodex* mite and spindle-shaped bacterial overgrowth, high-foaming SLS and high-fluoride toothpastes degrading inter-cellular lipid lamellae, systemic and contact dietary triggers from cinnamates and benzoates (cinnamon flavoring, cola beverages, E210-E213 preservatives) and capsaicin spicy foods triggering neurogenic vasodilation and mast cell degranulation.
+
+### Blog 36 — Why Do I Get Painful, Deep Boils in My Armpits and Groin? The Hidden Dangers of Hidradenitis Suppurativa, Harsh Antiperspirants, and Dietary Dairy
+- **Badge**: Body Folds & Follicular Safety
+- **Image**: `https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Hidradenitis Suppurativa (HS / Acne Inversa) presentation as recurring painful subcutaneous nodules, boils, and deep abscesses in apocrine gland-rich body folds (armpits, groin, inner thighs, inframammary folds), follicular occlusion and infundibular hyperkeratosis, why acne spot treatments (salicylic acid, 10% benzoyl peroxide, mechanical squeezing/lancing) fail and trigger severe localized barrier breakdown, lateral rupture of follicular keratin debris and matrix metalloproteinases leading to sinus tracts and hypertrophic scarring, harsh antiperspirant aluminum salts (`Aluminum Chloride`, `Aluminum Zirconium Tetrachlorohydrex GLY`) constricting sweat ducts and forming protein plugs at the follicular infundibulum, heavy occlusive waxes and emollients (`Petrolatum`, `Paraffin`, `Ozokerite Wax`, `Isopropyl Myristate`, `Stearyl Alcohol`) sealing sweat and keratin under synthetic activewear friction, dietary triggers from dairy products (whey protein supplements, skim milk IGF-1 stimulating 5-alpha-reductase and infundibular keratinocyte hyperproliferation) and dietary yeast (`Saccharomyces cerevisiae` in bread, beer, nutritional yeast stimulating ASCA antibodies and macrophage activation).
 
 ---
 
