@@ -8,5 +8,18 @@
       "source": "/get",
       "destination": "/api/download"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.*)\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://purescan.droploop.in/$1",
+      "permanent": true
+    }
   ]
 }
