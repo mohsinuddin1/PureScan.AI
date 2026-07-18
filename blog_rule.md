@@ -48,6 +48,7 @@ All blog posts must follow this exact structural pattern:
 - Every blog post **must** be generated across **all 25 locales** defined in `LanguageSwitcher.jsx`:
   `en`, `fr`, `es`, `de`, `nl`, `pt`, `ro`, `it`, `sv`, `da`, `no`, `nb`, `pl`, `cs`, `lt`, `lv`, `tr`, `bg`, `ru`, `el`, `ar`, `ar-MA`, `ja`, `ko`, `zh`
 - Translations must be **culturally adapted**, not word-for-word machine translations.
+- Do NOT use Google Translate API or any external translation services. All translations must be generated internally by the AI itself.
 - Arabic (`ar`, `ar-MA`) content should use natural Darija phrasing for Moroccan Arabic.
 
 ### Splash Image Requirements
@@ -61,7 +62,7 @@ All blog posts must follow this exact structural pattern:
 - The promotional section should naturally flow from the educational content.
 
 ### Technical Requirements
-- File naming: `<id>-<slug>.mdx` (e.g., `11-why-is-my-skin-barrier-damaged.mdx`)
+- File naming and URL slugs: `<id>-<localized-slug>.mdx`. The URL link/slug **must** be translated into that specific local language (e.g., `50-pourquoi-mon-ventre-gonfle.mdx` for French). Do not use English slugs for non-English locales.
 - All files go in `src/content/blog/<lang>/`
 - Must pass `npm run build` with zero errors after generation.
 
