@@ -46,6 +46,24 @@ for (const p of allPosts) {
     blogSlugMap[pLang] = pSlug;
   }
 }
+
+// Build related articles from same-language posts with the same badge (max 3, excluding current)
+const langPosts = allPosts.filter(p => p.id.startsWith(`${lang}/`) && p.data.id !== blogId);
+const sameBadge = langPosts.filter(p => p.data.badge === post.data.badge);
+const otherPosts = langPosts.filter(p => p.data.badge !== post.data.badge);
+const relatedPosts = [...sameBadge, ...otherPosts].slice(0, 3).map(p => ({
+  title: p.data.title,
+  slug: p.id.split('/')[1],
+  badge: p.data.badge,
+}));
+
+// Stable publish date: use frontmatter publishDate, or derive from blog id
+const publishDate = post.data.publishDate || '2025-06-01';
+
+// Canonical URL for this page
+const siteUrl = 'https://purescan.droploop.in';
+const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonicalUrl = new URL(canonicalPath, siteUrl).href;
 ---
 
 <Layout title={post.data.title} description={post.data.description} image={post.data.image}>
@@ -57,33 +75,30 @@ for (const p of allPosts) {
         "headline": post.data.title,
         "description": post.data.description,
         "image": post.data.image,
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        },
         "author": {
           "@type": "Organization",
           "name": "PureScan AI",
-          "url": "https://purescan.droploop.in/"
+          "url": "https://purescan.droploop.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://purescan.droploop.in/logo.png"
+          }
         },
         "publisher": {
           "@id": "https://purescan.droploop.in/#organization"
         },
-        "datePublished": new Date().toISOString().split('T')[0],
-        "dateModified": new Date().toISOString().split('T')[0],
+        "datePublished": publishDate,
+        "dateModified": publishDate,
+        "inLanguage": lang,
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["article", "h1", ".prose h3", ".prose p"]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": post.data.title,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": post.data.description
-            }
-          }
-        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -152,6 +167,21 @@ for (const p of allPosts) {
         <article class="max-w-3xl mx-auto">
             <Content />
         </article>
+
+        {/* Related Articles — Internal Linking for SEO */}
+        {relatedPosts.length > 0 && (
+          <div class="max-w-3xl mx-auto mt-16 pt-10 border-t border-slate-200">
+            <h3 class="text-lg font-bold text-slate-900 mb-6">Related Articles</h3>
+            <div class="grid gap-4 sm:grid-cols-3">
+              {relatedPosts.map(rp => (
+                <a href={`/${lang}/blog/${rp.slug}`} class="block p-4 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-all group">
+                  <span class="inline-block text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mb-2 border border-emerald-100">{rp.badge}</span>
+                  <p class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-emerald-700 transition-colors line-clamp-3">{rp.title}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </main>
 

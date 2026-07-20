@@ -68,7 +68,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–48)
+## 2. Master Topic Index (Blogs 1–50)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -313,6 +313,12 @@ All blog posts must follow this exact structural pattern:
 - **Image**: `https://images.unsplash.com/photo-1558435334-118c465d676b?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Titanium dioxide (E171) as a whitening agent, EFSA genotoxicity assessment, EU ban (August 2022), FDA continued approval (≤1% by weight), common foods containing TiO2 (chewing gum, candy coatings, coffee creamer, frosting), nanoparticle absorption, DNA damage risk, how to identify E171 on labels with PureScan AI.
 - **Target Queries**: titanium dioxide food safety, why is E171 banned in Europe, is titanium dioxide safe to eat, titanium dioxide in candy, food additives banned in Europe but legal in US.
+
+### Blog 49 — What Are Ultra-Processed Foods and Why Are They Making You Sick? The NOVA Classification Explained
+- **Badge**: UPF Awareness & Health
+- **Image**: `https://images.unsplash.com/photo-1577900232427-18219b9166a0?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Ultra-processed foods (UPFs), NOVA classification (Group 4), emulsifiers, maltodextrin, high-fructose corn syrup (HFCS), artificial flavorings, hyper-palatable foods, obesity, type 2 diabetes, cardiovascular diseases, brain fog.
+- **Target Queries**: what are ultra-processed foods, NOVA classification explained, UPF health risks, what is NOVA Group 4, foods that cause brain fog.
 
 ### Blog 50 — Why Does My Stomach Bloat After Every Meal? The Hidden Dangers of Emulsifiers, Thickeners, and Gut Barrier Disruptors in Everyday Food
 - **Badge**: Gut Health & Digestion

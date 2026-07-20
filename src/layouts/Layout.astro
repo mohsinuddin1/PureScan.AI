@@ -26,7 +26,11 @@ const segments = pathname.split('/').filter(Boolean);
 let basePath = pathname;
 if (segments.length > 0 && locales.includes(segments[0]) && segments[0] !== 'en') {
   basePath = '/' + segments.slice(1).join('/');
-  if (basePath === '/') basePath = '';
+}
+
+// Ensure basePath doesn't end up as just '/' so that locale paths don't get a trailing slash
+if (basePath === '/') {
+  basePath = '';
 }
 
 // Generate alternate URLs for each locale

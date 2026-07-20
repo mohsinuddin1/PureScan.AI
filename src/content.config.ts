@@ -9,6 +9,7 @@ const blogCollection = defineCollection({
     badge: z.string(),
     description: z.string(),
     image: z.string(),
+    publishDate: z.string().optional(),
   }),
 });
 
