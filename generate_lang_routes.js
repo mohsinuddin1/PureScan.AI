@@ -25,7 +25,7 @@ function processFile(filePath) {
 
     if (filePath.includes('[slug].astro')) {
         content = content.replace(
-            /export async function getStaticPaths\(\) \{[\s\S]*?return Array\.from\(slugs\)\.map[\s\S]*?\}\)/,
+            /^export async function getStaticPaths\(\) \{[\s\S]*?^}/m,
             `export async function getStaticPaths() {
   const posts = await getCollection('blog');
   const slugs = new Set(posts.map(p => p.id.split('/')[1]));
