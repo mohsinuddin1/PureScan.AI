@@ -5,20 +5,13 @@ import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const locales = ["bg","ar","ar-MA","cs","da","de","el","es","fr","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
-  const paths = [];
-
-  for (const post of posts) {
-    const postLang = post.id.split('/')[0];
-    const postSlug = post.id.split('/')[1];
-
-    // Only generate paths for posts that actually exist in non-en locales
-    if (locales.includes(postLang)) {
-      paths.push({ params: { lang: postLang, slug: postSlug } });
-    }
-  }
-
-  return paths;
+  // Only generate paths for English blog slugs at the root /blog/ route
+  const enSlugs = posts
+    .filter(p => p.id.startsWith('en/'))
+    .map(p => p.id.split('/')[1]);
+  return enSlugs.map(slug => ({
+    params: { slug }
+  }));
 }
 
 const lang = Astro.currentLocale || 'en';
@@ -36,6 +29,7 @@ if (!post) {
 const { Content } = await render(post);
 
 // Build the blog slug map for language switching
+// Uses the numeric id in frontmatter to find the equivalent blog in each language
 const blogId = post.data.id;
 const allPosts = await getCollection('blog');
 const blogSlugMap = {};
@@ -47,10 +41,10 @@ for (const p of allPosts) {
   }
 }
 
-// Build related articles from same-language posts with the same badge (max 3, excluding current)
-const langPosts = allPosts.filter(p => p.id.startsWith(`${lang}/`) && p.data.id !== blogId);
-const sameBadge = langPosts.filter(p => p.data.badge === post.data.badge);
-const otherPosts = langPosts.filter(p => p.data.badge !== post.data.badge);
+// Build related articles from English posts with the same badge (max 3, excluding current)
+const enPosts = allPosts.filter(p => p.id.startsWith('en/') && p.data.id !== blogId);
+const sameBadge = enPosts.filter(p => p.data.badge === post.data.badge);
+const otherPosts = enPosts.filter(p => p.data.badge !== post.data.badge);
 const relatedPosts = [...sameBadge, ...otherPosts].slice(0, 3).map(p => ({
   title: p.data.title,
   slug: p.id.split('/')[1],
@@ -174,7 +168,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
             <h3 class="text-lg font-bold text-slate-900 mb-6">Related Articles</h3>
             <div class="grid gap-4 sm:grid-cols-3">
               {relatedPosts.map(rp => (
-                <a href={`/${lang}/blog/${rp.slug}`} class="block p-4 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-all group">
+                <a href={lang === 'en' ? `/blog/${rp.slug}` : `/${lang}/blog/${rp.slug}`} class="block p-4 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-all group">
                   <span class="inline-block text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mb-2 border border-emerald-100">{rp.badge}</span>
                   <p class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-emerald-700 transition-colors line-clamp-3">{rp.title}</p>
                 </a>
