@@ -1,0 +1,107 @@
+{
+  "pageTitle": "Turvallisuuden ja Ravintoarvojen Pisteytysjärjestelmä",
+  "introPara1": "Tämä asiakirja selittää perusteet sille, miten PureScan AI arvioi ja luokittelee skannattujen tuotteiden turvallisuutta, ravintoarvoja ja yleistä laatua. Järjestelmämme luottaa kattaviin tieteellisiin tietokantoihin ja edistyneeseen tekoälyyn, jotka analysoivat ainesosat perusteellisesti. Sovellamme älykästä, pistevähennyksiin perustuvaa arviointijärjestelmää, joka on räätälöity juuri sinun terveysprofiilillesi.",
+  "introPara2": "Huomaa: Tarkat matemaattiset algoritmit ja painotukset ovat PureScan AI:n yksityisomaisuutta, mutta perusperiaatteet ja menetelmät ovat täysin läpinäkyviä ja kuvattu alla.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Elintarvikkeet)",
+    "para1": "Nutri-Score lasketaan käyttämällä standardoitua, tieteellistä algoritmia, joka arvioi elintarvikkeen yleisen ravintoarvon 100 grammaa tai 100 millilitraa kohden. Se tasapainottaa vältettävät negatiiviset ravintoaineet suositeltavien positiivisten ravintoaineiden kanssa, jolloin tuloksena on arvosana A:sta (paras) E:hen (huonoin).",
+    "para2": "PureScan AI laskee tämän automaattisesti tuotteen pakkauksesta saatujen tietojen perusteella:",
+    "negPoints": {
+      "title": "Miinuspisteet (Lisäävät pistemäärää / huonontavat arvosanaa):",
+      "desc": "Pisteitä lisätään energian (kalorit), tyydyttyneiden rasvojen, sokereiden ja natriumin (suola) määrän perusteella."
+    },
+    "posPoints": {
+      "title": "Pluspisteet (Vähentävät pistemäärää / parantavat arvosanaa):",
+      "desc": "Pisteitä vähennetään hedelmien, vihannesten, palkokasvien, pähkinöiden ja tiettyjen hyödyllisten öljyjen (rypsi-, saksanpähkinä-, oliiviöljy) prosenttiosuuden sekä kuitu- ja proteiinipitoisuuden perusteella."
+    },
+    "finalGrade": {
+      "title": "Lopullinen arvosana:",
+      "desc": "Pluspisteet vähennetään miinuspisteistä lopullisen numeroarvon saamiseksi. Tämä numero muunnetaan sitten A-E -väriasteikoksi. PureScan AI käyttää tuotteen ravintosisältötaulukon ja ainesosaluettelon tarkkoja ravintoarvoja tämän pistemäärän laskemiseen miljoonille tuotteille."
+    },
+    "grades": {
+      "a": "Arvosana A (Tummanvihreä):",
+      "aDesc": "Erinomainen ravitsemuksellinen laatu. Ruokia, joita voit syödä säännöllisesti.",
+      "b": "Arvosana B (Vaaleanvihreä):",
+      "bDesc": "Hyvä ravitsemuksellinen laatu.",
+      "c": "Arvosana C (Keltainen):",
+      "cDesc": "Kohtalainen ravitsemuksellinen laatu. Käytä kohtuudella.",
+      "d": "Arvosana D (Oranssi):",
+      "dDesc": "Heikko ravitsemuksellinen laatu. Sisältää enemmän negatiivisia ravintoaineita.",
+      "e": "Arvosana E (Punainen):",
+      "eDesc": "Heikoin ravitsemuksellinen laatu. Tuotteita kuten sokeriset välipalat, voimakkaasti prosessoidut lihat ja runsasrasvaiset tuotteet. Tulisi käyttää vain satunnaisesti."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA-luokitus (Elintarvikkeet)",
+    "para1": "Toisin kuin Nutri-Scoren matemaattinen kaava, NOVA-pisteytys on luokitusjärjestelmä, joka jaottelee ruoat sen perusteella, kuinka paljon niitä on teollisesti prosessoitu. PureScan AI käyttää automatisoitua algoritmia tuotteen ainesosaluettelon analysointiin ja luokittelee sen yhteen neljästä ryhmästä:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Käsittelemättömät / Minimaalisesti prosessoidut)",
+        "desc": "Luonnolliset ruoat kuten tuoreet hedelmät, vihannekset, kananmunat tai maito, joita ei ole käsitelty lainkaan tai jotka on käsitelty minimaalisesti (kuten pakastamalla tai kuivaamalla) lisäämättä suolaa, sokeria tai rasvoja."
+      },
+      "2": {
+        "title": "NOVA 2 (Prosessoidut kulinaariset ainesosat)",
+        "desc": "Suoraan luonnosta tai ryhmän 1 elintarvikkeista peräisin olevat, ruoanlaitossa käytettävät aineet, kuten suola, sokeri, voi ja kasviöljyt."
+      },
+      "3": {
+        "title": "NOVA 3 (Prosessoidut ruoat)",
+        "desc": "Ruoat, jotka on valmistettu lisäämällä ryhmän 2 ainesosia (suolaa, sokeria, rasvaa) ryhmän 1 elintarvikkeisiin. Esimerkkejä ovat säilykevihannekset, yksinkertaiset leivät, juusto ja suolatut pähkinät."
+      },
+      "4": {
+        "title": "NOVA 4 (Pitkälle prosessoidut ruoat)",
+        "desc": "Teolliset valmisteet, jotka tyypillisesti sisältävät 5 tai useampia ainesosia. Nämä sisältävät aineita, joita ei yleensä käytetä kotikeittiössä (esim. runsaasti fruktoosia sisältävä maissisiirappi, hydratut öljyt) sekä kosmeettisia lisäaineita (esim. keinotekoiset aromit, väriaineet, emulgointiaineet, säilöntäaineet)."
+      }
+    },
+    "howItWorks": {
+      "title": "Miten PureScan AI laskee NOVA:n:",
+      "desc": "PureScan AI käyttää algoritmia, joka skannaa ainesosaluettelon etsien tiettyjä teollisen prosessoinnin merkkejä. Jos algoritmi havaitsee teollisia lisäaineita, keinotekoisia aromeja tai voimakkaasti prosessoituja ainesosia, se merkitsee tuotteen automaattisesti luokkaan NOVA 4."
+    },
+    "important": {
+      "title": "Tärkeä ero:",
+      "desc": "On täysin mahdollista, että tuotteella on \"hyvä\" Nutri-Score (esim. A tai B) alhaisen sokeri- ja rasvapitoisuutensa vuoksi, mutta se luokitellaan silti NOVA 4:ään (Pitkälle prosessoitu), koska se käyttää keinotekoisia makeutusaineita ja sakeuttamisaineita saavuttaakseen kyseisen ravintoarvoprofiilin."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI - Turvallisuuden Pisteytysjärjestelmä",
+    "para1": "Vaikka Nutri-Score ja NOVA tarjoavat perustason, PureScan AI laskee henkilökohtaisen Turvallisuusarvosanan (A:sta E:hen). Arviointijärjestelmämme toimii kuin \"riskipisteet\" – mitä enemmän riskipisteitä kertyy, sitä huonompi lopullinen arvosana on (lähempänä E:tä).",
+    "penalties": {
+      "title": "Kuinka rangaistukset ja vähennykset toimivat:",
+      "desc": "Tuote aloittaa täydellisellä A-arvosanalla ja saa rangaistuksia (riskipisteitä) erilaisten havaintojen perusteella:"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Henkilökohtainen Terveysprofiili (Allergiat ja Oireet)",
+        "desc": "Jos tuote sisältää ainesosan, jolle olet nimenomaisesti allerginen (esim. maapähkinät, gluteeni, maitotuotteet), tuote saa ankaran rangaistuksen ja putoaa välittömästi huonompaan arvosanaan (D tai E), varoittaen sinua sen suuresta riskistä."
+      },
+      "b": {
+        "title": "B. Haitalliset Lisäaineet ja Ainesosat",
+        "desc": "Ainesosia verrataan toksikologiseen tietokantaamme. Tunnetut karsinogeenit, hormonaaliset häiriköt tai voimakkaasti ärsyttävät aineet rankaisevat pistemäärää voimakkaasti. Tavalliset keinotekoiset lisäaineet, väriaineet ja säilöntäaineet aiheuttavat kohtalaisia rangaistuksia."
+      },
+      "c": {
+        "title": "C. Ruoan Prosessointi ja Ravitsemus (Vain elintarvikkeet)",
+        "desc": "Jos tuote on pitkälle prosessoitua (NOVA 4) tai sen ravintotiheys on huono (Nutri-Score D tai E), siitä seuraa lisärangaistuksia. Tämä varmistaa, ettei edes \"vegaanisille\" tai \"allergeenittomille\" ruoille anneta automaattisesti A-arvosanaa, jos ne ovat perimmiltään epäterveellisiä."
+      },
+      "d": {
+        "title": "D. Kosmetiikka ja Henkilökohtainen Hygienia (Vain kosmetiikka)",
+        "desc": "Kosmetiikassa järjestelmä ei tarkastele ravintoarvoja, vaan tutkii kemiallista koostumusta. Rangaistuksia annetaan seuraavista:",
+        "list1": "Hermomyrkyt ja hormonaaliset häiriköt (esim. parabeenit, ftalaatit).",
+        "list2": "Tunnetut ihoa ärsyttävät aineet ja allergeenit (esim. synteettiset hajusteet, voimakkaat sulfaatit).",
+        "list3": "Ympäristömyrkyt (esim. mikromuovit, tietyt UV-suodattimet)."
+      }
+    },
+    "summary": {
+      "title": "Arvosanojen Yhteenveto",
+      "ab": "Arvosana A/B:",
+      "abDesc": "Puhdas, erittäin sopiva profiiliisi, minimaalisesti tai ei ollenkaan haitallisia lisäaineita.",
+      "c": "Arvosana C:",
+      "cDesc": "Kohtalainen. Saattaa sisältää joitain prosessoituja elementtejä tai lievästi ärsyttäviä aineita. Käytä harkiten.",
+      "de": "Arvosana D/E (Korkea riski):",
+      "deDesc": "Tuote sisältää ainesosia, jotka ovat suorassa ristiriidassa allergioidesi kanssa, runsaasti myrkyllisiä/haitallisia kemikaaleja, tai se on erittäin pitkälle prosessoitu. Ei suositella käytettäväksi."
+    }
+  },
+  "footer": {
+    "grading": "Arviointijärjestelmä",
+    "privacy": "Tietosuojaseloste",
+    "terms": "Käyttöehdot"
+  }
+}

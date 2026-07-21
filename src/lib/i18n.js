@@ -26,6 +26,8 @@ import csTranslation from '../locales/cs.json';
 import jaTranslation from '../locales/ja.json';
 import koTranslation from '../locales/ko.json';
 import zhTranslation from '../locales/zh.json';
+import huTranslation from '../locales/hu.json';
+import fiTranslation from '../locales/fi.json';
 
 const resources = {
   en: { translation: enTranslation },
@@ -52,6 +54,8 @@ const resources = {
   ja: { translation: jaTranslation },
   ko: { translation: koTranslation },
   zh: { translation: zhTranslation },
+  hu: { translation: huTranslation },
+  fi: { translation: fiTranslation },
 };
 
 i18n

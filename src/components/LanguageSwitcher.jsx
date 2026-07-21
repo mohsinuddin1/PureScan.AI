@@ -5,7 +5,7 @@ export default function LanguageSwitcher({ currentLang = 'en', blogSlugMap = nul
     const targetLang = e.target.value;
     let path = window.location.pathname;
     let segments = path.split('/').filter(Boolean);
-    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fr', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
 
     // Check if we are on a blog post page and have a slug map
     const isBlogPost = blogSlugMap && Object.keys(blogSlugMap).length > 0;
@@ -77,6 +77,8 @@ export default function LanguageSwitcher({ currentLang = 'en', blogSlugMap = nul
         <option value="ja">日本語</option>
         <option value="ko">한국어</option>
         <option value="zh">中文</option>
+        <option value="hu">Magyar</option>
+        <option value="fi">Suomi</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-400">
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

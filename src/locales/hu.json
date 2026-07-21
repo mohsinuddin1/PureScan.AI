@@ -1,0 +1,107 @@
+{
+  "pageTitle": "Biztonsági és Tápérték Értékelési Rendszer",
+  "introPara1": "Ez a dokumentum bemutatja, hogyan értékeli és osztályozza a PureScan AI a beolvasott termékek biztonságát, tápértékét és általános minőségét. Rendszerünk átfogó tudományos adatbázisokra és fejlett mesterséges intelligenciára támaszkodva alaposan elemzi az összetevőket, és egy intelligens, büntetőpontos osztályozási rendszert alkalmaz, amelyet a te egyedi egészségügyi profilodra szabtunk.",
+  "introPara2": "Kérjük, vedd figyelembe: A pontos matematikai algoritmusok és súlyozások a PureScan AI szellemi tulajdonát képezik, de az alapelvek és a módszertan teljesen átláthatóak, és az alábbiakban olvashatóak.",
+  "nutriScore": {
+    "title": "1. Nutri-Score (Élelmiszerek)",
+    "para1": "A Nutri-Score kiszámítása egy szabványosított, tudományos algoritmus segítségével történik, amely 100g-ra vagy 100ml-re vonatkozóan értékeli az élelmiszerek általános tápértékét. Egyensúlyozza a korlátozandó negatív tápanyagokat az ösztönzendő pozitív tápanyagokkal, ami A-tól (legjobb) E-ig (legrosszabb) terjedő besorolást eredményez.",
+    "para2": "A PureScan AI ezt automatikusan kiszámítja a termék csomagolásán található adatok alapján:",
+    "negPoints": {
+      "title": "Negatív pontok (Növelik a pontszámot / rontják a besorolást):",
+      "desc": "A rendszer az energia (kalória), a telített zsírok, a cukrok és a nátrium (só) mennyisége alapján ad hozzá pontokat."
+    },
+    "posPoints": {
+      "title": "Pozitív pontok (Csökkentik a pontszámot / javítják a besorolást):",
+      "desc": "A gyümölcsök, zöldségek, hüvelyesek, diófélék és bizonyos jótékony olajok (repce-, dió-, olívaolaj), valamint a rost- és fehérjetartalom aránya alapján von le pontokat a rendszer."
+    },
+    "finalGrade": {
+      "title": "A végső besorolás:",
+      "desc": "A pozitív pontokat levonjuk a negatív pontokból, így megkapjuk a végső számértéket. Ezt a számot az A-E színskálához rendeljük hozzá. A PureScan AI a termék tápérték-táblázatából és összetevőlistájából származó pontos tápanyagértékeket használja a pontszám kiszámításához millió termék esetében."
+    },
+    "grades": {
+      "a": "A Besorolás (Sötétzöld):",
+      "aDesc": "Kiváló tápérték. Rendszeresen fogyasztható élelmiszerek.",
+      "b": "B Besorolás (Világoszöld):",
+      "bDesc": "Jó tápérték.",
+      "c": "C Besorolás (Sárga):",
+      "cDesc": "Közepes tápérték. Mértékkel fogyassza.",
+      "d": "D Besorolás (Narancs):",
+      "dDesc": "Gyenge tápérték. Magasabb arányban tartalmaz negatív tápanyagokat.",
+      "e": "E Besorolás (Piros):",
+      "eDesc": "A legalacsonyabb tápérték. Ide tartoznak a cukros rágcsálnivalók, az erősen feldolgozott húsok és a magas zsírtartalmú termékek. Csak alkalmanként fogyasztandók."
+    }
+  },
+  "nova": {
+    "title": "2. NOVA Osztályozás (Élelmiszerek)",
+    "para1": "A Nutri-Score matematikai képletével ellentétben a NOVA pontszám egy osztályozási rendszer, amely aszerint kategorizálja az élelmiszereket, hogy mennyire iparilag feldolgozottak. A PureScan AI egy automatizált algoritmussal elemzi a termék összetevőlistáját, és négy csoport egyikébe sorolja be:",
+    "groups": {
+      "1": {
+        "title": "NOVA 1 (Feldolgozatlan / Minimálisan feldolgozott)",
+        "desc": "Természetes élelmiszerek, például friss gyümölcsök, zöldségek, tojás vagy tej, amelyeket nem, vagy csak minimálisan (például fagyasztással vagy szárítással) dolgoztak fel, só, cukor vagy zsírok hozzáadása nélkül."
+      },
+      "2": {
+        "title": "NOVA 2 (Feldolgozott konyhai összetevők)",
+        "desc": "Közvetlenül a természetből vagy az 1. csoport élelmiszereiből származó, főzéshez használt anyagok, mint például a só, a cukor, a vaj és a növényi olajok."
+      },
+      "3": {
+        "title": "NOVA 3 (Feldolgozott élelmiszerek)",
+        "desc": "Olyan élelmiszerek, amelyeket az 1. csoportba tartozó élelmiszerekhez 2. csoportba tartozó összetevők (só, cukor, zsír) hozzáadásával készítenek. Ilyenek például a zöldségkonzervek, az egyszerű kenyerek, a sajtok és a sózott diófélék."
+      },
+      "4": {
+        "title": "NOVA 4 (Ultrafeldolgozott élelmiszerek)",
+        "desc": "Ipari készítmények, amelyek jellemzően 5 vagy annál több összetevőt tartalmaznak. Olyan anyagok is vannak bennük, amelyeket az otthoni konyhában nem használnak (pl. magas fruktóztartalmú kukoricaszirup, hidrogénezett olajok), valamint kozmetikai adalékanyagok (pl. mesterséges aromák, színezékek, emulgeálószerek, tartósítószerek)."
+      }
+    },
+    "howItWorks": {
+      "title": "Hogyan számítja ki a PureScan AI a NOVA-t:",
+      "desc": "A PureScan AI algoritmusa átvizsgálja az összetevők listáját, hogy specifikus „markereket” keressen az ultrafeldolgozásra. Ha az algoritmus ipari adalékanyagokat, mesterséges aromákat vagy erősen feldolgozott összetevőket talál, automatikusan NOVA 4-es kategóriába sorolja a terméket."
+    },
+    "important": {
+      "title": "Fontos Megkülönböztetés:",
+      "desc": "Teljesen lehetséges, hogy egy terméknek „jó” Nutri-Score-ja (pl. A vagy B) van, mert alacsony a cukor- és zsírtartalma, de mégis NOVA 4 (Ultrafeldolgozott) besorolást kap, mivel mesterséges édesítőszereket és sűrítőanyagokat használ a tápértékprofil eléréséhez."
+    }
+  },
+  "safety": {
+    "title": "3. PureScan AI Biztonsági Értékelési Rendszer",
+    "para1": "Míg a Nutri-Score és a NOVA alapértékeket ad, a PureScan AI kiszámít egy személyre szabott Biztonsági Osztályzatot (A-tól E-ig). Rendszerünk úgy működik, mint egy „kockázati pontszám” – minél több kockázati pont gyűlik össze, annál alacsonyabb a végső besorolás (közelebb az E-hez).",
+    "penalties": {
+      "title": "Hogyan működnek a büntetések és a pontlevonások:",
+      "desc": "Egy termék tökéletes „A” besorolással indul, és a különböző találatok alapján kap büntetéseket (kockázati pontokat):"
+    },
+    "sections": {
+      "a": {
+        "title": "A. Személyre Szabott Egészségügyi Profil (Allergiák és Állapotok)",
+        "desc": "Ha a termék olyan összetevőt tartalmaz, amelyre a felhasználó egyértelműen allergiás (pl. földimogyoró, glutén, tejtermék), a termék súlyos büntetést kap, és azonnal alacsonyabb besorolásba (D vagy E) esik, figyelmeztetve a felhasználót a magas kockázatra."
+      },
+      "b": {
+        "title": "B. Káros Adalékanyagok és Összetevők",
+        "desc": "Az összetevőket a toxikológiai adatbázisunkkal vetjük össze. Az ismert rákkeltő anyagok, hormonrendszert károsító anyagok vagy erős irritáló anyagok súlyosan rontják a pontszámot. A szokványos mesterséges adalékanyagok, színezékek és tartósítószerek közepes mértékű büntetést vonnak maguk után."
+      },
+      "c": {
+        "title": "C. Élelmiszer-feldolgozás és Tápérték (Csak Élelmiszerek)",
+        "desc": "Ha a termék ultrafeldolgozott (NOVA 4), vagy rossz a tápanyagsűrűsége (Nutri-Score D vagy E), további büntetéseket kap. Ezzel biztosítjuk, hogy még a „vegán” vagy „allergénmentes” élelmiszerek se kapjanak automatikusan 'A' osztályzatot, ha alapvetően egészségtelenek."
+      },
+      "d": {
+        "title": "D. Kozmetikumok és Személyes Higiénia (Csak Kozmetikumok)",
+        "desc": "A kozmetikumok esetében a rendszer nem a tápértéket vizsgálja, hanem a kémiai összetételt. Büntetések járnak a következőkért:",
+        "list1": "Idegrendszeri toxinok és hormonrendszert károsító anyagok (pl. parabének, ftalátok).",
+        "list2": "Ismert bőrirritáló anyagok és allergének (pl. szintetikus illatanyagok, durva szulfátok).",
+        "list3": "Környezeti méreganyagok (pl. mikroműanyagok, bizonyos UV-szűrők)."
+      }
+    },
+    "summary": {
+      "title": "A Besorolások Összegzése",
+      "ab": "A/B Besorolás:",
+      "abDesc": "Tiszta, a te profilodnak nagyon megfelelő, minimális vagy semmilyen káros adalékanyagot nem tartalmaz.",
+      "c": "C Besorolás:",
+      "cDesc": "Közepes. Tartalmazhat némi feldolgozott elemet vagy enyhe irritáló anyagot. Légy körültekintő a használatakor.",
+      "de": "D/E Besorolás (Magas Kockázat):",
+      "deDesc": "A termék olyan összetevőket tartalmaz, amelyek közvetlen konfliktusban vannak az allergiáiddal, magas a mérgező/káros vegyi anyag tartalma, vagy rendkívül ultrafeldolgozott. Használata nem ajánlott."
+    }
+  },
+  "footer": {
+    "grading": "Minősítési Rendszer",
+    "privacy": "Adatvédelmi Tájékoztató",
+    "terms": "Felhasználási Feltételek"
+  }
+}

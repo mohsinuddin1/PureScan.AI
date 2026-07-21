@@ -8,4 +8,23 @@ import { GradingIsland } from '../components/Islands.jsx';
 ---
 <Layout title="Grading - PureScan AI">
   <GradingIsland client:load  lang={lang} translations={translations} />
+  <script is:inline>
+    (function() {
+      if (sessionStorage.getItem('grading_redirected')) return;
+      const locales = ['bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+      const path = window.location.pathname;
+      if (path === '/grading' || path === '/grading/') {
+        const exact = navigator.language || navigator.userLanguage || '';
+        const base = exact.split('-')[0];
+        let target = null;
+        if (locales.includes(exact)) target = exact;
+        else if (locales.includes(base)) target = base;
+        
+        if (target && target !== 'en') {
+          sessionStorage.setItem('grading_redirected', 'true');
+          window.location.href = '/' + target + '/grading' + window.location.search;
+        }
+      }
+    })();
+  </script>
 </Layout>
