@@ -109,9 +109,12 @@ export default function PrivacyPolicy() {
                     <hr className="border-slate-200" />
 
                     <section>
-                        <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-3">Your Rights & Data Deletion</h2>
+                        <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-3">Data Retention & Deletion Policy</h2>
                         <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                            You have total control over your data. At any point, you can request full deletion of your account and all associated personal data from within the Settings page of the app. Alternatively, you may contact our support team.
+                            We minimize the data we store to protect your privacy. User data is retained for a maximum of 30 days, after which it is automatically deleted from our systems.
+                        </p>
+                        <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                            You have total control over your data. At any point, you can request full deletion of your account and all associated personal data from within the Settings page of the app. Alternatively, you may contact our support team. For deleted accounts, all associated user data is automatically and permanently deleted within 30 days of the deletion request.
                         </p>
                         <p className="text-sm text-slate-500 italic">
                             Note: Once initiated, account deletion is irreversible and removes all your synced scanning history, preferences, and profile associations permanently.
