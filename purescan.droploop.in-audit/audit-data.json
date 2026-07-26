@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "health_score": 88,
+    "business_type": "SaaS / Mobile App",
+    "top_findings": [
+      "Excellent Schema.org implementation (SoftwareApplication, Organization)",
+      "Strong international SEO with 27 hreflang alternates",
+      "Missing passage-level citability for AI Overviews",
+      "Thin E-E-A-T signals on the homepage (missing team/founder context)"
+    ],
+    "quick_wins": [
+      "Add a 'What is PureScan AI?' direct answer block for AI search",
+      "Add explicit trust signals (security, privacy badges) near CTAs"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 95,
+      "what_works": [
+        "Self-referencing canonical tag present",
+        "Extensive and correct hreflang implementation",
+        "Vercel Edge network caching enabled"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Content Quality & E-E-A-T",
+      "score": 75,
+      "what_works": [
+        "Strong, benefit-driven H1 and H2 tags",
+        "Clear value proposition (allergens, toxins)"
+      ],
+      "findings": [
+        {
+          "title": "Low Trust/Authoritativeness Signals",
+          "severity": "Medium",
+          "description": "The homepage lacks explicit 'Who is behind this' information. YMYL (Health) apps require high E-E-A-T. Missing founder credentials or medical review board mentions.",
+          "recommendation": "Add a 'Backed by Science' or 'Meet the Team' section to establish topical authority."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 100,
+      "what_works": [
+        "SoftwareApplication schema is perfectly configured",
+        "AggregateRating included (4.8 stars)",
+        "Organization schema with logo and contact point"
+      ],
+      "findings": []
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 80,
+      "what_works": [
+        "Clear value proposition in meta tags"
+      ],
+      "findings": [
+        {
+          "title": "Missing AI-Citability Block",
+          "severity": "High",
+          "description": "AI Overviews and Perplexity favor 40-60 word direct answers to 'What is [App]'. The current page scatters this info.",
+          "recommendation": "Add a dedicated paragraph: 'PureScan AI is a mobile application that uses AI to scan food and cosmetic labels, detecting hidden toxins, allergens, and endocrine disruptors instantly.'"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: AI Search & Trust",
+        "timeframe": "Week 1",
+        "items": [
+          "Add a 50-word direct answer block defining the app for LLM crawlers.",
+          "Introduce a 'Trusted By' or 'Scientific Advisory' section to boost E-E-A-T."
+        ]
+      },
+      {
+        "name": "Phase 2: Content Expansion",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Ensure the /blog pages have Author schema and reviewed-by credentials."
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

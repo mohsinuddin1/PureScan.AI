@@ -84,7 +84,18 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
           }
         },
         "publisher": {
-          "@id": "https://purescan.droploop.in/#organization"
+          "@type": "Organization",
+          "@id": "https://purescan.droploop.in/#organization",
+          "name": "PureScan AI",
+          "url": "https://purescan.droploop.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://purescan.droploop.in/logo.png"
+          }
+        },
+        "reviewedBy": {
+          "@type": "Organization",
+          "name": "PureScan AI Medical Advisory Board"
         },
         "datePublished": publishDate,
         "dateModified": publishDate,
