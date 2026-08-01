@@ -43,15 +43,13 @@ export default async function handler(req, res) {
     const customerId = customerData.data[0].id;
 
     // Step 2: Mint a portal session for this customer
-    const portalResponse = await fetch(`${baseUrl}/customer-portal-sessions`, {
+    const portalResponse = await fetch(`${baseUrl}/customers/${customerId}/portal-sessions`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        customer_id: customerId
-      })
+      body: JSON.stringify({})
     });
 
     if (!portalResponse.ok) {

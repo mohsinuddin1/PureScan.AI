@@ -594,6 +594,33 @@ export default function CheckoutPortal({ paddleClientToken }) {
             {manageLoading ? <Loader2 style={{ width: 18, height: 18, animation: 'spin 1s linear infinite' }} /> : '⚙️ Manage Subscription'}
           </button>
 
+          <button
+            onClick={async () => {
+              await supabase.auth.signOut();
+              window.location.reload();
+            }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              maxWidth: 380,
+              padding: '12px 24px',
+              background: 'transparent',
+              color: '#ef4444',
+              border: 'none',
+              fontSize: 15,
+              fontWeight: 600,
+              cursor: 'pointer',
+              marginTop: 12,
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.textDecoration = 'underline'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.textDecoration = 'none'; }}
+          >
+            Sign Out
+          </button>
+
           {authError && (
             <div style={{
               marginTop: 16,

@@ -7,6 +7,7 @@
  */
 import Slideshow from './Slideshow.jsx';
 import ProButton from './ProButton.jsx';
+import SignOutButton from './SignOutButton.jsx';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog');
@@ -421,6 +422,7 @@ const latestPosts = allPosts
         <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
         <span class="mx-3">•</span>
         <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
+        <SignOutButton client:load />
       </p>
       <p class="text-slate-400 font-medium text-xs">&copy; 2025 PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
     </div>
