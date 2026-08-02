@@ -116,7 +116,7 @@ const KEYFRAMES = `
 /* ──────────────────────────────────────────────────────────────────────
    COMPONENT
    ────────────────────────────────────────────────────────────────────── */
-export default function CheckoutPortal({ paddleClientToken }) {
+export default function CheckoutPortal({ paddleClientToken, publicMode = false }) {
   // ─── Auth state ───────────────────────────────────────────────────
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -652,7 +652,7 @@ export default function CheckoutPortal({ paddleClientToken }) {
   // ════════════════════════════════════════════════════════════════════
   //  RENDER: Auth — Initial landing (not logged in)
   // ════════════════════════════════════════════════════════════════════
-  if (!session) {
+  if (!session && !publicMode) {
     if (authMode === 'initial') {
       return (
         <div style={{
@@ -771,9 +771,9 @@ export default function CheckoutPortal({ paddleClientToken }) {
           textAlign: 'center', color: '#64748b', fontSize: 14,
           margin: '0 0 28px 0', padding: '0 16px', fontWeight: 500,
         }}>
-          {authMode === 'subscribe'
-            ? 'Sign in using your app credentials to upgrade to Pro.'
-            : 'Log in to access your account.'}
+          {isLoginView 
+            ? 'Sign in using your existing PureScan AI mobile app credentials to upgrade to Pro or manage your account.'
+            : 'Create an account to subscribe. You will use this email and password to log into the mobile app.'}
         </p>
 
         {authError && (
@@ -906,6 +906,7 @@ export default function CheckoutPortal({ paddleClientToken }) {
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '16px 16px 80px', animation: 'cp-fadeInUp 0.5s ease-out' }}>
       {/* Sign out */}
+      {session && (
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
         <button
           onClick={() => supabase.auth.signOut()}
@@ -920,6 +921,7 @@ export default function CheckoutPortal({ paddleClientToken }) {
           Sign Out
         </button>
       </div>
+      )}
 
       {/* Two-column on desktop, stacked on mobile */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
@@ -1249,7 +1251,13 @@ export default function CheckoutPortal({ paddleClientToken }) {
 
             {/* CTA Button */}
             <button
-              onClick={handleSubscribe}
+              onClick={() => {
+                if (publicMode && !session) {
+                  window.location.href = '/pro';
+                } else {
+                  handleSubscribe();
+                }
+              }}
               disabled={checkoutLoading || pricesLoading}
               style={{
                 width: '100%',
@@ -1295,6 +1303,22 @@ export default function CheckoutPortal({ paddleClientToken }) {
                 'Continue'
               )}
             </button>
+
+            {/* Trust Sentence */}
+            <p style={{
+              textAlign: 'center',
+              marginTop: 16,
+              fontSize: 13,
+              color: '#64748b',
+              fontWeight: 600,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 6
+            }}>
+              <Shield style={{ width: 14, height: 14, color: '#10b981' }} />
+              Secure checkout. Cancel anytime. No hidden fees.
+            </p>
 
             {authError && (
               <p style={{
