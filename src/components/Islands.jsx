@@ -7,6 +7,7 @@ import Alternative from './Alternative';
 import PrivacyPolicy from './privacy';
 import Terms from './Terms';
 import Support from './Support';
+import DeleteAccount from './DeleteAccount';
 
 function withTranslations(Component) {
     return function Wrapper({ lang, translations, ...props }) {
@@ -25,3 +26,4 @@ export const AlternativeIsland = withTranslations(Alternative);
 export const PrivacyIsland = withTranslations(PrivacyPolicy);
 export const TermsIsland = withTranslations(Terms);
 export const SupportIsland = withTranslations(Support);
+export const DeleteAccountIsland = withTranslations(DeleteAccount);

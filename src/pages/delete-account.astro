@@ -1,11 +1,11 @@
 ---
 import { getTranslations } from '../lib/i18n-utils';
 import Layout from '../layouts/Layout.astro';
-import { SupportIsland } from '../components/Islands.jsx';
+import { DeleteAccountIsland } from '../components/Islands.jsx';
 
 const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 ---
-<Layout title="Support - PureScan AI">
-  <SupportIsland client:load  lang={lang} translations={translations} />
+<Layout title="Delete Account - PureScan AI">
+  <DeleteAccountIsland client:load  lang={lang} translations={translations} />
 </Layout>
