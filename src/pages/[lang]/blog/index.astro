@@ -10,9 +10,35 @@ import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
 
 const lang = Astro.currentLocale || 'en';
 const currentBlogPosts = await getCollection('blog', ({ id }) => id.startsWith(`${lang}/`));
+
+// Generate ItemList schema for rich results
+const blogItems = currentBlogPosts.map((post, index) => ({
+  "@type": "ListItem",
+  "position": index + 1,
+  "url": `https://purescan.droploop.in/${lang}/blog/${post.id.split('/')[1]}`,
+  "name": post.data.title
+}));
 ---
 
-<Layout title="Blog - PureScan AI">
+<Layout 
+  title="PureScan AI Blog — Hidden Toxins in Food & Cosmetics"
+  shortTitle="Health Blog — Hidden Toxins in Food & Skincare | PureScan AI"
+  description="Expert articles on hidden toxins, allergens, and endocrine disruptors in everyday food and cosmetic products. Backed by PubMed research."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "PureScan AI Blog",
+    "description": "Expert articles on hidden toxins in food and cosmetics.",
+    "url": `https://purescan.droploop.in/${lang}/blog`,
+    "isPartOf": {
+      "@id": "https://purescan.droploop.in/#website"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": blogItems
+    }
+  })} />
   <div class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>
     <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">

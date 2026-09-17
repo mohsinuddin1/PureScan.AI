@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
 
-# Allow LLM bots specifically
+# Allow Google explicitly
+User-agent: Googlebot
+Allow: /
 
+# Allow LLM bots specifically
 User-agent: GPTBot
 Allow: /
 
@@ -22,6 +25,15 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://purescan.droploop.in/sitemap-index.xml

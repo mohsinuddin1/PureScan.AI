@@ -1,0 +1,49 @@
+# PureScan AI
+
+> The most advanced AI-powered food and cosmetic ingredient scanner app for iOS and Android
+
+PureScan AI is a mobile application that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Unlike other scanner apps, PureScan AI provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences.
+
+## Key Features
+
+- AI barcode scanning with automatic ingredient analysis
+- Nutri-Score (A–E) and NOVA classification (1–4) for food products
+- Cosmetic hazard scoring and endocrine disruptor detection
+- Personalized results based on health conditions (PCOS, diabetes, hormonal imbalances, allergies)
+- AI camera label reader supporting all world languages
+- Allergy, gluten-free, dairy-free, and vegan scanning modes
+- Deep ingredient analysis with PubMed-backed scientific data
+
+## How It Works
+
+1. Scan a product barcode or photograph the ingredient list
+2. AI cross-references ingredients against scientific databases
+3. Hidden hazards (carcinogens, endocrine disruptors, allergens) are flagged
+4. A personalized safety score is generated based on your health profile
+
+## Who It's For
+
+- People with food allergies (gluten, dairy, nuts, soy, shellfish)
+- Parents scanning children's snacks for harmful additives (Red 40, BHT, sodium benzoate)
+- Anyone following vegan, keto, paleo, or clean-eating diets
+- Skincare enthusiasts checking for comedogenic ingredients, parabens, and phthalates
+- Pregnant and breastfeeding women avoiding teratogens and endocrine disruptors
+- Fitness enthusiasts auditing protein powders and supplements
+
+## Core Pages
+
+- [Home](https://purescan.droploop.in/): Main landing page
+- [Blog](https://purescan.droploop.in/blog): 50+ expert articles on hidden toxins in food and cosmetics
+- [Grading System](https://purescan.droploop.in/grading): How safety scores are calculated
+- [Pricing](https://purescan.droploop.in/pricing): Free and Pro plans
+
+## Download
+
+- [App Store (iOS)](https://apps.apple.com/app/pure-ai/id6762176490)
+- [Google Play (Android)](https://play.google.com/store/apps/details?id=com.purescanai.app)
+
+## Optional
+
+- [Privacy Policy](https://purescan.droploop.in/privacy)
+- [Terms of Service](https://purescan.droploop.in/terms)
+- [Support](https://purescan.droploop.in/support)

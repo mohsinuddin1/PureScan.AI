@@ -4,15 +4,20 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title?: string;
+  shortTitle?: string;
   description?: string;
   image?: string;
 }
 
 const {
   title = "PureScan AI - Food & Cosmetic Scanner",
+  shortTitle,
   description = "The smartest food scanner & cosmetic scanner in your pocket. Scan barcodes and ingredient lists to detect harmful chemicals, allergens, and ultra-processed additives instantly.",
   image = "https://purescan.droploop.in/og-image.png"
 } = Astro.props;
+
+// Use shortTitle for <title> tag if provided (for SERP-optimized titles ≤60 chars)
+const pageTitle = shortTitle || title;
 
 const lang = Astro.currentLocale || "en";
 const siteUrl = "https://purescan.droploop.in";
@@ -51,9 +56,16 @@ function getAlternateUrl(locale: string): string {
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary SEO -->
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Apple Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6762176490" />
+
+    <!-- AI Search / GEO: llms.txt discovery -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

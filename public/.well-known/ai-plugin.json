@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "PureScan AI",
+  "name_for_model": "purescan_ai",
+  "description_for_human": "AI-powered food and cosmetic ingredient scanner. Detect hidden toxins, allergens, and ultra-processed additives instantly.",
+  "description_for_model": "PureScan AI is a mobile application (iOS and Android) that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences. The app features Nutri-Score (A-E), NOVA classification (1-4), cosmetic hazard scoring, and AI camera label reading in all world languages.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://purescan.droploop.in/llms-full.txt"
+  },
+  "logo_url": "https://purescan.droploop.in/logo.png",
+  "contact_email": "support@purescanai.com",
+  "legal_info_url": "https://purescan.droploop.in/terms"
+}
