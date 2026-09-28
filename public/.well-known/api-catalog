@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://purescan.droploop.in/api",
+      "service-desc": [
+        {
+          "href": "https://purescan.droploop.in/api/openapi.json",
+          "type": "application/vnd.oai.openapi+json;version=3.0"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://purescan.droploop.in/docs/api",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://purescan.droploop.in/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

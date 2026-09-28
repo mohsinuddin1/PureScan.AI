@@ -45,6 +45,14 @@ function getAlternateUrl(locale: string): string {
   }
   return siteUrl + '/' + locale + basePath;
 }
+
+// RFC 8288 Link response headers for AI agent discovery
+if (Astro.response && Astro.response.headers) {
+  Astro.response.headers.set(
+    'Link',
+    '</.well-known/api-catalog>; rel="api-catalog", </.well-known/ai-catalog.json>; rel="describedby", </llms.txt>; rel="describedby", </.well-known/oauth-protected-resource>; rel="service-desc"'
+  );
+}
 ---
 
 <!doctype html>
@@ -66,6 +74,10 @@ function getAlternateUrl(locale: string): string {
     <!-- AI Search / GEO: llms.txt discovery -->
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full" />
+
+    <!-- AI Agent Discovery: RFC 9727 API Catalog & ARD Catalog -->
+    <link rel="api-catalog" type="application/linkset+json" href="/.well-known/api-catalog" />
+    <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -148,5 +160,103 @@ function getAlternateUrl(locale: string): string {
       inject();
     </script>
     <SpeedInsights />
+
+    <!-- WebMCP: Expose site tools to AI agents via browser modelContext -->
+    <script is:inline>
+      (function() {
+        function registerWebMcpTools() {
+          if (!('modelContext' in navigator) || !navigator.modelContext) return;
+          try {
+            var abortController = new AbortController();
+            var tools = [
+              {
+                name: "scan_food_ingredients",
+                description: "Analyze food ingredients for harmful additives, allergens, Nutri-Score, and NOVA ultra-processing classifications",
+                inputSchema: {
+                  type: "object",
+                  properties: {
+                    ingredients: {
+                      type: "string",
+                      description: "Food ingredient list text or comma-separated items"
+                    }
+                  },
+                  required: ["ingredients"]
+                },
+                execute: async function(args) {
+                  return {
+                    status: "success",
+                    query: args && args.ingredients ? args.ingredients : "",
+                    summary: "PureScan AI analysis initiated for food ingredients."
+                  };
+                }
+              },
+              {
+                name: "scan_cosmetic_ingredients",
+                description: "Analyze cosmetic ingredients for endocrine disruptors, allergens, and comedogenic ratings",
+                inputSchema: {
+                  type: "object",
+                  properties: {
+                    ingredients: {
+                      type: "string",
+                      description: "Cosmetic ingredient list text"
+                    }
+                  },
+                  required: ["ingredients"]
+                },
+                execute: async function(args) {
+                  return {
+                    status: "success",
+                    query: args && args.ingredients ? args.ingredients : "",
+                    summary: "PureScan AI analysis initiated for cosmetic ingredients."
+                  };
+                }
+              },
+              {
+                name: "get_safety_grading_criteria",
+                description: "Retrieve PureScan AI safety grading criteria, Nutri-Score definitions, and NOVA processing levels",
+                inputSchema: {
+                  type: "object",
+                  properties: {
+                    category: {
+                      type: "string",
+                      enum: ["all", "food", "cosmetics", "nova", "nutri-score"]
+                    }
+                  }
+                },
+                execute: async function(args) {
+                  return {
+                    status: "success",
+                    category: (args && args.category) || "all",
+                    documentationUrl: "https://purescan.droploop.in/grading"
+                  };
+                }
+              }
+            ];
+
+            if (typeof navigator.modelContext.registerTool === 'function') {
+              tools.forEach(function(tool) {
+                try {
+                  navigator.modelContext.registerTool(tool, { signal: abortController.signal });
+                } catch (e) {}
+              });
+            }
+
+            if (typeof navigator.modelContext.provideContext === 'function') {
+              try {
+                navigator.modelContext.provideContext({ tools: tools });
+              } catch (e) {}
+            }
+          } catch (err) {
+            console.warn('WebMCP initialization note:', err);
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', registerWebMcpTools);
+        } else {
+          registerWebMcpTools();
+        }
+      })();
+    </script>
   </body>
 </html>

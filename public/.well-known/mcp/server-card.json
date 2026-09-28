@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/server-card.schema.json",
+  "serverInfo": {
+    "name": "purescan-ai-mcp",
+    "title": "PureScan AI MCP Server",
+    "description": "Model Context Protocol server for PureScan AI - food & cosmetic safety analysis, allergen detection, and ingredient hazard scanning",
+    "version": "1.0.0"
+  },
+  "endpoint": "https://purescan.droploop.in/api/mcp",
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  }
+}

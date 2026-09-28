@@ -1,0 +1,97 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "PureScan AI API",
+    "description": "API services for PureScan AI - food & cosmetic safety analysis, ingredient hazard scanning, app downloads, and customer billing portal management.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "PureScan AI Support",
+      "url": "https://purescan.droploop.in/support"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://purescan.droploop.in",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Service health check",
+        "description": "Returns operational status of PureScan AI API endpoints.",
+        "responses": {
+          "200": {
+            "description": "API is operational",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" },
+                    "timestamp": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/portal": {
+      "post": {
+        "summary": "Create customer portal session",
+        "description": "Generates a Paddle billing portal session URL for an authenticated customer.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email"],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Customer email address"
+                  },
+                  "isSandbox": {
+                    "type": "boolean",
+                    "description": "Whether to use Paddle sandbox environment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Portal session URL created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": { "type": "string", "format": "uri" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "Invalid input or missing email" },
+          "404": { "description": "Customer not found" },
+          "500": { "description": "Server error" }
+        }
+      }
+    },
+    "/api/download": {
+      "get": {
+        "summary": "Platform-aware mobile app download redirect",
+        "description": "Detects visitor user-agent and redirects iOS users to App Store and Android users to Google Play.",
+        "responses": {
+          "302": { "description": "Redirect to Apple App Store or Google Play Store" }
+        }
+      }
+    }
+  }
+}

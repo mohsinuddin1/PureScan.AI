@@ -1,0 +1,15 @@
+{
+  "resource": "https://purescan.droploop.in",
+  "authorization_servers": [
+    "https://purescan.droploop.in"
+  ],
+  "scopes_supported": [
+    "api:read",
+    "api:write",
+    "scan:read"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_documentation": "https://purescan.droploop.in/docs/api"
+}

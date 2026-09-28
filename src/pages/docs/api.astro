@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="API Documentation - PureScan AI" description="PureScan AI API documentation, machine-readable specifications, and agent discovery endpoints.">
+  <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mb-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 mb-4">
+        PureScan AI Developer & Agent Documentation
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">API & Agent Documentation</h1>
+      <p class="mt-4 text-lg text-slate-600">
+        PureScan AI provides automated endpoints, OpenAPI schemas, and Agentic protocols for discovering and interacting with our food and cosmetic safety tools.
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      <!-- Overview Card -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+        <h2 class="text-xl font-bold text-slate-900 mb-3">Discovery Endpoints</h2>
+        <p class="text-slate-600 mb-4">
+          Machine-readable catalogs and specifications adhere to standard RFCs and draft protocols:
+        </p>
+        <ul class="divide-y divide-slate-100 font-mono text-sm">
+          <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="font-semibold text-slate-900">RFC 9727 API Catalog:</span>
+              <span class="text-slate-500 block sm:inline sm:ml-2">/.well-known/api-catalog</span>
+            </div>
+            <a href="/.well-known/api-catalog" class="text-emerald-600 hover:text-emerald-700 underline text-xs">View linkset+json</a>
+          </li>
+          <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="font-semibold text-slate-900">OpenAPI 3.0 Spec:</span>
+              <span class="text-slate-500 block sm:inline sm:ml-2">/api/openapi.json</span>
+            </div>
+            <a href="/api/openapi.json" class="text-emerald-600 hover:text-emerald-700 underline text-xs">View OpenAPI JSON</a>
+          </li>
+          <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="font-semibold text-slate-900">ARD Capability Manifest:</span>
+              <span class="text-slate-500 block sm:inline sm:ml-2">/.well-known/ai-catalog.json</span>
+            </div>
+            <a href="/.well-known/ai-catalog.json" class="text-emerald-600 hover:text-emerald-700 underline text-xs">View ai-catalog.json</a>
+          </li>
+          <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="font-semibold text-slate-900">MCP Server Card:</span>
+              <span class="text-slate-500 block sm:inline sm:ml-2">/.well-known/mcp/server-card.json</span>
+            </div>
+            <a href="/.well-known/mcp/server-card.json" class="text-emerald-600 hover:text-emerald-700 underline text-xs">View MCP Card</a>
+          </li>
+          <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="font-semibold text-slate-900">Agent Skills Index:</span>
+              <span class="text-slate-500 block sm:inline sm:ml-2">/.well-known/agent-skills/index.json</span>
+            </div>
+            <a href="/.well-known/agent-skills/index.json" class="text-emerald-600 hover:text-emerald-700 underline text-xs">View Skills Index</a>
+          </li>
+          <li class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="font-semibold text-slate-900">Auth & Registration:</span>
+              <span class="text-slate-500 block sm:inline sm:ml-2">/auth.md</span>
+            </div>
+            <a href="/auth.md" class="text-emerald-600 hover:text-emerald-700 underline text-xs">View auth.md</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Endpoints Details -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">REST & Utility Endpoints</h2>
+        <div class="space-y-6">
+          <div class="border-l-4 border-emerald-500 pl-4">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800">GET</span>
+              <span class="font-mono text-sm font-semibold text-slate-900">/api/health</span>
+            </div>
+            <p class="text-sm text-slate-600">Returns service status, uptime, and version information.</p>
+          </div>
+
+          <div class="border-l-4 border-emerald-500 pl-4">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">POST</span>
+              <span class="font-mono text-sm font-semibold text-slate-900">/api/portal</span>
+            </div>
+            <p class="text-sm text-slate-600">Generates a self-service Paddle billing portal session URL for verified customers.</p>
+          </div>
+
+          <div class="border-l-4 border-emerald-500 pl-4">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800">GET</span>
+              <span class="font-mono text-sm font-semibold text-slate-900">/api/download</span>
+            </div>
+            <p class="text-sm text-slate-600">Smart routing redirect to App Store (iOS) or Google Play Store (Android) based on user agent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

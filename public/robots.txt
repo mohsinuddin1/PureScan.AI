@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Agentmap: https://purescan.droploop.in/.well-known/ai-catalog.json
 
 # Allow Google explicitly
 User-agent: Googlebot

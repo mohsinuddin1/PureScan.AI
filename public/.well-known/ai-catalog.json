@@ -1,0 +1,64 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "PureScan AI",
+    "identifier": "did:web:purescan.droploop.in"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:purescan.droploop.in:server:mcp",
+      "displayName": "PureScan AI MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://purescan.droploop.in/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "scan food ingredients for toxins",
+        "check cosmetic product safety",
+        "detect endocrine disruptors in cosmetics"
+      ]
+    },
+    {
+      "identifier": "urn:air:purescan.droploop.in:schema:openapi",
+      "displayName": "PureScan AI OpenAPI Specification",
+      "type": "application/vnd.oai.openapi+json;version=3.0",
+      "url": "https://purescan.droploop.in/api/openapi.json",
+      "representativeQueries": [
+        "purescan api endpoints",
+        "food scanner openapi schema",
+        "paddle customer portal session api"
+      ]
+    },
+    {
+      "identifier": "urn:air:purescan.droploop.in:skill:food-analysis",
+      "displayName": "Food Ingredient Analysis Skill",
+      "type": "text/markdown",
+      "url": "https://purescan.droploop.in/.well-known/agent-skills/food-ingredient-analysis/SKILL.md",
+      "representativeQueries": [
+        "how to analyze food additives and E numbers",
+        "nutri-score calculation guide",
+        "nova food classification detection"
+      ]
+    },
+    {
+      "identifier": "urn:air:purescan.droploop.in:skill:cosmetic-analysis",
+      "displayName": "Cosmetic Hazard Scan Skill",
+      "type": "text/markdown",
+      "url": "https://purescan.droploop.in/.well-known/agent-skills/cosmetic-hazard-scan/SKILL.md",
+      "representativeQueries": [
+        "cosmetic ingredient safety check",
+        "identify parabens and phthalates in skincare",
+        "comedogenic rating checker"
+      ]
+    },
+    {
+      "identifier": "urn:air:purescan.droploop.in:doc:auth",
+      "displayName": "PureScan AI Agent Auth Specification",
+      "type": "text/markdown",
+      "url": "https://purescan.droploop.in/auth.md",
+      "representativeQueries": [
+        "agent registration instructions",
+        "oauth protected resource metadata purescan",
+        "auth.md discovery"
+      ]
+    }
+  ]
+}

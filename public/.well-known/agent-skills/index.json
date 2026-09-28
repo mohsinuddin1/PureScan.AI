@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "food-ingredient-analysis",
+      "type": "skill-md",
+      "description": "Analyze food ingredients for harmful additives, ultra-processed NOVA classifications, Nutri-Score, and allergen risks.",
+      "url": "https://purescan.droploop.in/.well-known/agent-skills/food-ingredient-analysis/SKILL.md",
+      "digest": "sha256:f3e440723cfc5bed808610e607f02fdaa8e05cd63f4cef0f35e90a8a3a0af277"
+    },
+    {
+      "name": "cosmetic-hazard-scan",
+      "type": "skill-md",
+      "description": "Analyze cosmetic and personal care ingredient lists for endocrine disruptors, allergens, and comedogenic ratings.",
+      "url": "https://purescan.droploop.in/.well-known/agent-skills/cosmetic-hazard-scan/SKILL.md",
+      "digest": "sha256:fd12a9790a502d0437550d81c0634e4e307a50c2e49583a0ad6b6962d371929b"
+    },
+    {
+      "name": "auth-md",
+      "type": "skill-md",
+      "description": "Discover and register AI agents for authenticated access to PureScan AI resources per the Auth.md specification.",
+      "url": "https://purescan.droploop.in/.well-known/agent-skills/auth-md/SKILL.md",
+      "digest": "sha256:c4d16980974302d6b1160d93ffe3eac245d93600f231efb9d8978834d0db52e6"
+    }
+  ]
+}
