@@ -1,13 +1,22 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { supabase } from '../lib/supabase';
-import { CheckCircle2, AlertCircle, Heart, Star, Loader2, Shield, Sparkles, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Heart, Star, Loader2, Shield, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { DodoPayments } from 'dodopayments-checkout';
 
 /* ──────────────────────────────────────────────────────────────────────
-   FALLBACK PLANS — only used when Paddle PricePreview is unavailable
+   DODO PAYMENTS PLANS CONFIGURATION
    ────────────────────────────────────────────────────────────────────── */
-const FALLBACK_PLANS = (isSandbox) => [
+const DODO_ANNUAL_PRODUCT_ID =
+  (typeof import.meta !== 'undefined' && (import.meta.env?.PUBLIC_DODO_PRODUCT_ANNUAL || import.meta.env?.VITE_DODO_PRODUCT_ANNUAL)) ||
+  'pdt_0Noa60FhhT6igBwxvT0Sz';
+
+const DODO_MONTHLY_PRODUCT_ID =
+  (typeof import.meta !== 'undefined' && (import.meta.env?.PUBLIC_DODO_PRODUCT_MONTHLY || import.meta.env?.VITE_DODO_PRODUCT_MONTHLY)) ||
+  'pdt_0Noa60DO9XekcWWBOSvlh';
+
+const PLANS = [
   {
-    id: isSandbox ? 'pri_01kyyfjtfbazar9jdwcd9x8qy1' : 'pri_01kyy60pedn2hwgty8p1ccg47t',
+    id: DODO_ANNUAL_PRODUCT_ID,
     name: 'Annual',
     period: 'billed yearly',
     price: '$29.99',
@@ -19,7 +28,7 @@ const FALLBACK_PLANS = (isSandbox) => [
     recommended: true,
   },
   {
-    id: isSandbox ? 'pri_01kyyfjt2sx8w4qq62vwmp1k6f' : 'pri_01kyy60p356w52srtw841pywwz',
+    id: DODO_MONTHLY_PRODUCT_ID,
     name: 'Monthly',
     period: 'billed monthly',
     price: '$9.99',
@@ -42,7 +51,7 @@ const FEATURES = [
 ];
 
 /* ──────────────────────────────────────────────────────────────────────
-   REVIEWS — same reviews from the mobile paywall
+   REVIEWS — genuine verified customer feedback
    ────────────────────────────────────────────────────────────────────── */
 const REVIEWS = [
   {
@@ -103,20 +112,9 @@ const KEYFRAMES = `
   0%   { opacity: 1; transform: translate(0, 0) rotate(0deg); }
   100% { opacity: 0; transform: translate(40px, -130px) rotate(-220deg); }
 }
-@keyframes cp-shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0;  }
-}
-@keyframes cp-float {
-  0%, 100% { transform: translateY(0px); }
-  50%      { transform: translateY(-8px); }
-}
 `;
 
-/* ──────────────────────────────────────────────────────────────────────
-   COMPONENT
-   ────────────────────────────────────────────────────────────────────── */
-export default function CheckoutPortal({ paddleClientToken, publicMode = false }) {
+export default function CheckoutPortal({ publicMode = false }) {
   // ─── Auth state ───────────────────────────────────────────────────
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -127,10 +125,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
   const [isLoginView, setIsLoginView] = useState(true);
 
   // ─── Checkout state ───────────────────────────────────────────────
-  const isSandbox = paddleClientToken?.startsWith('test_');
-  const [plans, setPlans] = useState(FALLBACK_PLANS(isSandbox));
-  const [pricesLoading, setPricesLoading] = useState(true);
-  const [selectedPlan, setSelectedPlan] = useState(null); // set after plans load
+  const [selectedPlan, setSelectedPlan] = useState(PLANS[0].id);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [showProButton, setShowProButton] = useState(false);
@@ -143,7 +138,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
 
   // ─── Inject keyframes ─────────────────────────────────────────────
   useEffect(() => {
-    if (!document.getElementById(STYLE_ID)) {
+    if (typeof document !== 'undefined' && !document.getElementById(STYLE_ID)) {
       const style = document.createElement('style');
       style.id = STYLE_ID;
       style.textContent = KEYFRAMES;
@@ -151,13 +146,71 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
     }
   }, []);
 
-  // ─── Supabase Auth ────────────────────────────────────────────────
+  // ─── Track if overlay checkout completed (for close event detection) ──
+  const overlayCheckoutCompleted = useRef(false);
+
+  // ─── Initialize Dodo Payments Checkout SDK ─────────────────────────
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const dodoMode =
+      (typeof import.meta !== 'undefined' && (import.meta.env?.PUBLIC_DODO_MODE || import.meta.env?.VITE_DODO_MODE)) ||
+      'test';
+
+    try {
+      DodoPayments.Initialize({
+        mode: dodoMode === 'live' ? 'live' : 'test',
+        displayType: 'overlay',
+        onEvent: async (event) => {
+          console.log('[Dodo Payments Event]:', event);
+          const eventName = event?.event || event?.type || '';
+          if (
+            eventName === 'checkout.completed' ||
+            eventName === 'payment.succeeded'
+          ) {
+            overlayCheckoutCompleted.current = true;
+            setIsSuccess(true);
+            const { data: { session: currentSession } } = await supabase.auth.getSession();
+            if (currentSession?.user?.id) {
+              await supabase
+                .from('users')
+                .update({ is_pro: true })
+                .eq('id', currentSession.user.id);
+            }
+          }
+          // If user closes overlay after checkout was completed, ensure we stay on success screen
+          if (eventName === 'closed' && overlayCheckoutCompleted.current) {
+            setIsSuccess(true);
+          }
+        },
+      });
+    } catch (err) {
+      console.warn('DodoPayments initialization warning:', err);
+    }
+  }, []);
+
+  // ─── Supabase Auth & Pro Status Check ──────────────────────────────
   useEffect(() => {
     async function initAuth() {
+      // Check for success redirect in URL (Dodo redirects back with ?success=true, ?status=succeeded, or ?payment_id=...)
+      if (typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search);
+        const hasSuccessParam =
+          params.get('success') === 'true' ||
+          params.get('status') === 'succeeded' ||
+          !!params.get('payment_id');
+
+        if (hasSuccessParam) {
+          setIsSuccess(true);
+          // Clean URL to hide query params — user sees /pro instead of /pro?success=true
+          const cleanUrl = window.location.pathname;
+          window.history.replaceState({}, '', cleanUrl);
+        }
+      }
+
       const { data: { session: s } } = await supabase.auth.getSession();
       setSession(s);
-      
-      // If logged in, check if already Pro
+
       if (s?.user) {
         const { data } = await supabase.from('users').select('is_pro').eq('id', s.user.id).single();
         if (data && data.is_pro) {
@@ -166,183 +219,21 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
       }
       setLoading(false);
     }
-    
+
     initAuth();
-    
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_ev, s) => {
       setSession(s);
       if (s?.user) {
         const { data } = await supabase.from('users').select('is_pro').eq('id', s.user.id).single();
         if (data && data.is_pro) {
           setIsSuccess(true);
-        } else {
-          setIsSuccess(false);
         }
-      } else {
-        setIsSuccess(false);
       }
     });
+
     return () => subscription.unsubscribe();
   }, []);
-
-  // ─── Paddle Init + PricePreview ───────────────────────────────────
-  useEffect(() => {
-    let cancelled = false;
-
-    const initPaddle = () => {
-      if (typeof window === 'undefined' || !window.Paddle) return false;
-
-      if (paddleClientToken?.startsWith('test_')) {
-        window.Paddle.Environment.set('sandbox');
-      }
-      window.Paddle.Initialize({
-        token: paddleClientToken || 'CLIENT_TOKEN_REQUIRED',
-        eventCallback: async (event) => {
-          if (event.name === 'checkout.completed') {
-            setIsSuccess(true);
-            
-            // Immediately sync Pro status to database for the web experience
-            const { data: { session: currentSession } } = await supabase.auth.getSession();
-            if (currentSession?.user?.id) {
-              const { error } = await supabase
-                .from('users')
-                .update({ is_pro: true })
-                .eq('id', currentSession.user.id);
-                
-              if (error) {
-                console.error('Failed to sync pro status immediately after checkout:', error);
-              }
-            }
-          }
-        },
-      });
-
-      // Fetch dynamic prices via PricePreview
-      fetchDynamicPrices(cancelled);
-      return true;
-    };
-
-    if (!initPaddle()) {
-      const interval = setInterval(() => {
-        if (initPaddle()) clearInterval(interval);
-      }, 200);
-      const timeout = setTimeout(() => {
-        clearInterval(interval);
-        setPricesLoading(false); // fallback
-      }, 15000);
-      return () => {
-        cancelled = true;
-        clearInterval(interval);
-        clearTimeout(timeout);
-      };
-    }
-
-    return () => { cancelled = true; };
-  }, [paddleClientToken]);
-
-  const fetchDynamicPrices = useCallback(async (cancelled) => {
-    const fallback = FALLBACK_PLANS(isSandbox);
-    const priceIds = fallback.map(p => p.id);
-
-    try {
-      if (!window.Paddle?.PricePreview) {
-        setPricesLoading(false);
-        return;
-      }
-
-      const result = await window.Paddle.PricePreview({
-        items: priceIds.map(id => ({ priceId: id, quantity: 1 })),
-      });
-
-      if (cancelled) return;
-
-      const details = result?.data?.details?.lineItems || [];
-      if (details.length === 0) {
-        setPricesLoading(false);
-        return;
-      }
-
-      // Build a map of priceId -> formatted data
-      const priceMap = {};
-      for (const item of details) {
-        const pid = item.price?.id;
-        if (!pid) continue;
-        priceMap[pid] = item;
-      }
-
-      // Build dynamic plans
-      const dynamicPlans = fallback.map((plan) => {
-        const data = priceMap[plan.id];
-        if (!data) return plan; // keep fallback
-
-        const formatted = data.formattedTotals?.subtotal || data.formattedTotals?.total || plan.price;
-        const rawTotal = parseFloat(data.totals?.subtotal || data.totals?.total || '0') / 100;
-        const billingCycle = data.price?.billingCycle;
-        const trialPeriod = data.price?.trialPeriod;
-
-        let periodLabel = plan.period;
-        if (billingCycle) {
-          if (billingCycle.interval === 'year') periodLabel = `billed yearly`;
-          else if (billingCycle.interval === 'month') periodLabel = `billed monthly`;
-          else if (billingCycle.interval === 'week') periodLabel = `billed weekly`;
-        }
-
-        let trial = null;
-        if (trialPeriod) {
-          const n = trialPeriod.frequency || 1;
-          const unit = trialPeriod.interval || 'day';
-          trial = `${n} ${unit}${n > 1 ? 's' : ''} free trial`;
-        }
-
-        // Per-week calculation
-        let perWeek = plan.perWeek;
-        const currencySymbol = formatted.replace(/[\d.,\s]/g, '').trim() || '$';
-        if (rawTotal > 0) {
-          if (billingCycle?.interval === 'year') {
-            perWeek = `${currencySymbol}${(rawTotal / 52).toFixed(2)}/week`;
-          } else if (billingCycle?.interval === 'month') {
-            perWeek = `${currencySymbol}${((rawTotal * 12) / 52).toFixed(2)}/week`;
-          }
-        }
-
-        return {
-          ...plan,
-          price: formatted,
-          rawPrice: rawTotal,
-          period: periodLabel,
-          perWeek,
-          trial: trial || plan.trial,
-        };
-      });
-
-      // Compute savings dynamically
-      const annual = dynamicPlans.find(p => p.name === 'Annual');
-      const monthly = dynamicPlans.find(p => p.name === 'Monthly');
-      if (annual && monthly && annual.rawPrice > 0 && monthly.rawPrice > 0) {
-        const yearlyEquiv = monthly.rawPrice * 12;
-        if (yearlyEquiv > annual.rawPrice) {
-          annual.savingPercentage = Math.round(((yearlyEquiv - annual.rawPrice) / yearlyEquiv) * 100);
-        }
-      }
-
-      setPlans(dynamicPlans);
-      // Default select the recommended (annual) plan
-      const recommended = dynamicPlans.find(p => p.recommended);
-      setSelectedPlan(recommended?.id || dynamicPlans[0]?.id);
-    } catch (err) {
-      console.warn('PricePreview failed, using fallback prices:', err);
-    } finally {
-      if (!cancelled) setPricesLoading(false);
-    }
-  }, [isSandbox]);
-
-  // Set default selected plan when plans load
-  useEffect(() => {
-    if (!selectedPlan && plans.length > 0) {
-      const recommended = plans.find(p => p.recommended);
-      setSelectedPlan(recommended?.id || plans[0]?.id);
-    }
-  }, [plans, selectedPlan]);
 
   // ─── Success page: show Pro Member button after 2 seconds ─────────
   useEffect(() => {
@@ -383,33 +274,94 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
     if (error) setAuthError(error.message);
   };
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
     if (!session?.user) {
       setAuthError('Please log in first to continue.');
       return;
     }
-    if (!window.Paddle) {
-      setAuthError('Payment gateway is still loading. Please wait a moment and try again.');
-      return;
-    }
+
     setCheckoutLoading(true);
     setAuthError('');
+
     try {
-      window.Paddle.Checkout.open({
-        items: [{ priceId: selectedPlan, quantity: 1 }],
-        customer: { email: session.user.email },
-        customData: { app_user_id: session.user.id },
-        settings: { allowLogout: false },
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          productId: selectedPlan,
+          email: session.user.email,
+          userId: session.user.id,
+          returnUrl: `${window.location.origin}/pro?success=true`,
+        }),
       });
+
+      let data;
+      const text = await response.text();
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error(`Server returned ${response.status} (${response.statusText || 'Non-JSON response'}).`);
+      }
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create checkout session');
+      }
+
+      if (!data.checkout_url) {
+        throw new Error('Checkout URL was not returned by server');
+      }
+
+      // Try opening via Dodo Payments Overlay SDK; fallback to direct redirect
+      try {
+        if (DodoPayments?.Checkout?.open) {
+          DodoPayments.Checkout.open({
+            checkoutUrl: data.checkout_url,
+          });
+        } else {
+          window.location.href = data.checkout_url;
+        }
+      } catch (overlayErr) {
+        console.warn('Overlay failed to open, redirecting to hosted checkout:', overlayErr);
+        window.location.href = data.checkout_url;
+      }
+
     } catch (err) {
-      console.error('Checkout error', err);
-      setAuthError('Failed to open checkout. Please refresh the page and try again.');
+      console.error('Checkout error:', err);
+      setAuthError(err.message || 'Failed to open checkout. Please try again.');
     } finally {
       setCheckoutLoading(false);
     }
   };
 
-  const activePlan = plans.find(p => p.id === selectedPlan) || plans[0];
+  const handleManageSubscription = async () => {
+    if (!session?.user?.email) return;
+    setManageLoading(true);
+    setAuthError('');
+    try {
+      const response = await fetch('/api/portal', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: session.user.email })
+      });
+      let data;
+      const text = await response.text();
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error(`Server returned ${response.status} (${response.statusText || 'Non-JSON response'}).`);
+      }
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to generate customer billing portal');
+      }
+      window.location.href = data.url;
+    } catch (err) {
+      console.error(err);
+      setAuthError(err.message || 'Could not load subscription manager. Please try again.');
+      setManageLoading(false);
+    }
+  };
+
+  const activePlan = PLANS.find(p => p.id === selectedPlan) || PLANS[0];
 
   // ════════════════════════════════════════════════════════════════════
   //  RENDER: Loading
@@ -421,29 +373,6 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
       </div>
     );
   }
-
-  const handleManageSubscription = async () => {
-    if (!session?.user?.email) return;
-    setManageLoading(true);
-    setAuthError('');
-    try {
-      const isSandbox = paddleClientToken?.startsWith('test_');
-      const response = await fetch('/api/portal', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: session.user.email, isSandbox })
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to open portal');
-      }
-      window.location.href = data.url;
-    } catch (err) {
-      console.error(err);
-      setAuthError(err.message || 'Could not load subscription manager. Please try again.');
-      setManageLoading(false);
-    }
-  };
 
   // ════════════════════════════════════════════════════════════════════
   //  RENDER: Success / Thank You Page
@@ -459,7 +388,6 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
       }}>
         {/* Confetti particles */}
         <div style={{ position: 'relative', display: 'inline-block', marginBottom: 32 }}>
-          {/* Animated glow */}
           <div style={{
             position: 'absolute',
             inset: -20,
@@ -467,7 +395,6 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
             borderRadius: '50%',
             animation: 'cp-pulse 2s ease-in-out infinite',
           }} />
-          {/* Confetti dots */}
           {['#2E9E6D', '#FFD700', '#FF6B6B', '#4ECDC4', '#A78BFA', '#F472B6'].map((color, i) => (
             <div key={i} style={{
               position: 'absolute',
@@ -480,7 +407,6 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
               animation: `cp-confetti${i + 1} 1.5s ease-out ${i * 0.1}s forwards`,
             }} />
           ))}
-          {/* Check icon */}
           <div style={{
             position: 'relative',
             zIndex: 10,
@@ -498,7 +424,6 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
           </div>
         </div>
 
-        {/* Congratulations heading */}
         <h1 style={{
           fontSize: 'clamp(28px, 5vw, 44px)',
           fontWeight: 900,
@@ -531,7 +456,6 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
           Enjoy unlimited access to all PureScan AI features and personalized health insights.
         </p>
 
-        {/* Pro Member button — fades in after 2s */}
         <div style={{
           opacity: showProButton ? 1 : 0,
           transform: showProButton ? 'translateY(0)' : 'translateY(16px)',
@@ -771,9 +695,9 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
           textAlign: 'center', color: '#64748b', fontSize: 14,
           margin: '0 0 28px 0', padding: '0 16px', fontWeight: 500,
         }}>
-          {isLoginView 
-            ? 'Sign in using your existing PureScan AI mobile app credentials to upgrade to Pro or manage your account.'
-            : 'Create an account to subscribe. You will use this email and password to log into the mobile app.'}
+          {isLoginView
+            ? 'Sign in using your existing PureScan AI credentials to upgrade to Pro or manage your account.'
+            : 'Create an account to subscribe. You will use this email and password to log in.'}
         </p>
 
         {authError && (
@@ -856,7 +780,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
           </div>
         </div>
 
-        {/* OAuth */}
+        {/* Google OAuth */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 12 }}>
           <button
             onClick={() => handleOAuthLogin('google')}
@@ -877,53 +801,34 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
             </svg>
             Google
           </button>
-          {/* Apple login commented out
-          <button
-            onClick={() => handleOAuthLogin('apple')}
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-              padding: '12px 16px', border: '2px solid #1e293b', borderRadius: 12,
-              background: '#0f172a', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-              color: 'white', transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = '#1e293b'}
-            onMouseLeave={(e) => e.currentTarget.style.background = '#0f172a'}
-          >
-            <svg height="18" width="18" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M16.365 21.444c-1.141.074-2.282-.519-3.348-.519-1.065 0-2.206.593-3.346.519-2.054-.074-3.956-1.186-5.021-2.964-2.13-3.705-1.826-9.261.228-12.965 1.064-1.926 3.04-3.111 5.17-3.111 1.141 0 2.206.741 3.272.741 1.064 0 2.205-.815 3.5-1.037.456-.074 1.826-.148 3.118.963-4.108 2.222-3.5 8.149.684 9.854-1.065 2.667-2.434 5.482-4.257 8.519M16.29 4.333C17.051 3.444 17.583 2.185 17.431 1c-1.065.074-2.434.741-3.27 1.63-.685.741-1.294 2.074-1.065 3.186 1.217.074 2.434-.667 3.27-1.482l-.076-.001z" />
-            </svg>
-            Apple
-          </button>
-          */}
         </div>
       </div>
     );
   }
 
   // ════════════════════════════════════════════════════════════════════
-  //  RENDER: Main Paywall (logged in)
+  //  RENDER: Main Paywall (logged in or public mode)
   // ════════════════════════════════════════════════════════════════════
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '16px 16px 80px', animation: 'cp-fadeInUp 0.5s ease-out' }}>
-      {/* Sign out */}
       {session && (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
-        <button
-          onClick={() => supabase.auth.signOut()}
-          style={{
-            background: 'none', border: 'none', color: '#94a3b8',
-            fontSize: 13, fontWeight: 600, cursor: 'pointer',
-            textDecoration: 'underline', transition: 'color 0.2s',
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = '#475569'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#94a3b8'}
-        >
-          Sign Out
-        </button>
-      </div>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+          <button
+            onClick={() => supabase.auth.signOut()}
+            style={{
+              background: 'none', border: 'none', color: '#94a3b8',
+              fontSize: 13, fontWeight: 600, cursor: 'pointer',
+              textDecoration: 'underline', transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#475569'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#94a3b8'}
+          >
+            Sign Out
+          </button>
+        </div>
       )}
 
-      {/* Two-column on desktop, stacked on mobile */}
+      {/* Two-column layout */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
 
         {/* ─── LEFT COLUMN: Hero + Features + Reviews ─────────────── */}
@@ -971,7 +876,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
               fontWeight: 500,
             }}>
               Your trusted companion for safe shopping.<br />
-              Let's protect your health together.
+              Let's protect your family's health together.
             </p>
           </div>
 
@@ -1128,7 +1033,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
           </div>
         </div>
 
-        {/* ─── RIGHT COLUMN: Plans + CTA (sticky on desktop) ──────── */}
+        {/* ─── RIGHT COLUMN: Plans + CTA ──────────────────────────── */}
         <div style={{
           flex: '1 1 360px',
           minWidth: 0,
@@ -1154,99 +1059,80 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
 
             {/* Plan cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
-              {pricesLoading ? (
-                <div style={{ display: 'flex', justifyContent: 'center', padding: 32 }}>
-                  <Loader2 style={{ width: 24, height: 24, color: '#2E9E6D', animation: 'spin 1s linear infinite' }} />
-                </div>
-              ) : (
-                plans.map((plan) => {
-                  const isSelected = selectedPlan === plan.id;
-                  return (
-                    <div
-                      key={plan.id}
-                      onClick={() => setSelectedPlan(plan.id)}
-                      style={{
-                        position: 'relative',
-                        padding: 'clamp(14px, 2vw, 18px)',
-                        borderRadius: 18,
-                        border: `2px solid ${isSelected ? '#2E9E6D' : '#e2e8f0'}`,
-                        background: isSelected ? '#f0fdf4' : 'white',
-                        cursor: 'pointer',
-                        transition: 'all 0.25s ease',
-                        boxShadow: isSelected ? '0 4px 20px rgba(46,158,109,0.12)' : 'none',
-                      }}
-                    >
-                      {/* Discount badge */}
-                      {plan.discount && (
-                        <div style={{
-                          position: 'absolute', top: -10, right: 20,
-                          background: 'linear-gradient(135deg, #2E9E6D, #22C55E)',
-                          color: 'white', padding: '4px 12px', borderRadius: 20,
-                          fontSize: 11, fontWeight: 800, letterSpacing: 0.5,
-                          boxShadow: '0 2px 8px rgba(46,158,109,0.3)',
-                        }}>
-                          {plan.discount}
-                        </div>
-                      )}
+              {PLANS.map((plan) => {
+                const isSelected = selectedPlan === plan.id;
+                return (
+                  <div
+                    key={plan.id}
+                    onClick={() => setSelectedPlan(plan.id)}
+                    style={{
+                      position: 'relative',
+                      padding: 'clamp(14px, 2vw, 18px)',
+                      borderRadius: 18,
+                      border: `2px solid ${isSelected ? '#2E9E6D' : '#e2e8f0'}`,
+                      background: isSelected ? '#f0fdf4' : 'white',
+                      cursor: 'pointer',
+                      transition: 'all 0.25s ease',
+                      boxShadow: isSelected ? '0 4px 20px rgba(46,158,109,0.12)' : 'none',
+                    }}
+                  >
+                    {plan.discount && (
+                      <div style={{
+                        position: 'absolute', top: -10, right: 20,
+                        background: 'linear-gradient(135deg, #2E9E6D, #22C55E)',
+                        color: 'white', padding: '4px 12px', borderRadius: 20,
+                        fontSize: 11, fontWeight: 800, letterSpacing: 0.5,
+                        boxShadow: '0 2px 8px rgba(46,158,109,0.3)',
+                      }}>
+                        {plan.discount}
+                      </div>
+                    )}
 
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                        {/* Radio */}
-                        <div style={{
-                          width: 24, height: 24, borderRadius: '50%',
-                          border: `2px solid ${isSelected ? '#2E9E6D' : '#cbd5e1'}`,
-                          background: isSelected ? '#2E9E6D' : 'transparent',
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          flexShrink: 0, transition: 'all 0.2s',
-                        }}>
-                          {isSelected && (
-                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth="3">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                          )}
-                        </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                      <div style={{
+                        width: 24, height: 24, borderRadius: '50%',
+                        border: `2px solid ${isSelected ? '#2E9E6D' : '#cbd5e1'}`,
+                        background: isSelected ? '#2E9E6D' : 'transparent',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        flexShrink: 0, transition: 'all 0.2s',
+                      }}>
+                        {isSelected && (
+                          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth="3">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </div>
 
-                        {/* Plan info */}
-                        <div style={{ flex: 1 }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                            <span style={{ fontSize: 17, fontWeight: 800, color: '#1e293b' }}>{plan.name}</span>
-                            {plan.savingPercentage > 0 && (
-                              <span style={{
-                                background: '#E8F5E9', color: '#2E9E6D',
-                                padding: '2px 8px', borderRadius: 8,
-                                fontSize: 10, fontWeight: 800,
-                                border: '1px solid #A5D6A7',
-                                letterSpacing: 0.3,
-                              }}>
-                                SAVE {plan.savingPercentage}%
-                              </span>
-                            )}
-                          </div>
-                          {plan.perWeek && (
-                            <div style={{ fontSize: 14, fontWeight: 800, color: '#2E9E6D', marginTop: 2 }}>
-                              {plan.perWeek}
-                            </div>
-                          )}
-                          {plan.trial && (
-                            <div style={{
-                              fontSize: 12, fontWeight: 700, color: '#16a34a',
-                              marginTop: 4, display: 'flex', alignItems: 'center', gap: 4,
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                          <span style={{ fontSize: 17, fontWeight: 800, color: '#1e293b' }}>{plan.name}</span>
+                          {plan.savingPercentage > 0 && (
+                            <span style={{
+                              background: '#E8F5E9', color: '#2E9E6D',
+                              padding: '2px 8px', borderRadius: 8,
+                              fontSize: 10, fontWeight: 800,
+                              border: '1px solid #A5D6A7',
+                              letterSpacing: 0.3,
                             }}>
-                              <Sparkles style={{ width: 12, height: 12 }} />
-                              {plan.trial}
-                            </div>
+                              SAVE {plan.savingPercentage}%
+                            </span>
                           )}
                         </div>
+                        {plan.perWeek && (
+                          <div style={{ fontSize: 14, fontWeight: 800, color: '#2E9E6D', marginTop: 2 }}>
+                            {plan.perWeek}
+                          </div>
+                        )}
+                      </div>
 
-                        {/* Price */}
-                        <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                          <div style={{ fontSize: 18, fontWeight: 900, color: '#1e293b' }}>{plan.price}</div>
-                          <div style={{ fontSize: 12, color: '#94a3b8', fontWeight: 500, marginTop: 2 }}>{plan.period}</div>
-                        </div>
+                      <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                        <div style={{ fontSize: 18, fontWeight: 900, color: '#1e293b' }}>{plan.price}</div>
+                        <div style={{ fontSize: 12, color: '#94a3b8', fontWeight: 500, marginTop: 2 }}>{plan.period}</div>
                       </div>
                     </div>
-                  );
-                })
-              )}
+                  </div>
+                );
+              })}
             </div>
 
             {/* CTA Button */}
@@ -1258,7 +1144,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
                   handleSubscribe();
                 }
               }}
-              disabled={checkoutLoading || pricesLoading}
+              disabled={checkoutLoading}
               style={{
                 width: '100%',
                 padding: '16px 24px',
@@ -1268,18 +1154,18 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
                 color: 'white',
                 fontSize: 17,
                 fontWeight: 800,
-                cursor: (checkoutLoading || pricesLoading) ? 'not-allowed' : 'pointer',
-                opacity: (checkoutLoading || pricesLoading) ? 0.7 : 1,
+                cursor: checkoutLoading ? 'not-allowed' : 'pointer',
+                opacity: checkoutLoading ? 0.7 : 1,
                 boxShadow: '0 12px 40px rgba(46,158,109,0.3)',
                 transition: 'all 0.2s',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 8,
-                animation: (!checkoutLoading && !pricesLoading) ? 'cp-pulse 2.5s ease-in-out infinite' : 'none',
+                animation: !checkoutLoading ? 'cp-pulse 2.5s ease-in-out infinite' : 'none',
               }}
               onMouseEnter={(e) => {
-                if (!checkoutLoading && !pricesLoading) {
+                if (!checkoutLoading) {
                   e.currentTarget.style.transform = 'translateY(-2px)';
                   e.currentTarget.style.boxShadow = '0 16px 48px rgba(46,158,109,0.35)';
                 }
@@ -1292,12 +1178,7 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
               {checkoutLoading ? (
                 <>
                   <Loader2 style={{ width: 20, height: 20, animation: 'spin 1s linear infinite' }} />
-                  Loading Checkout...
-                </>
-              ) : pricesLoading ? (
-                <>
-                  <Loader2 style={{ width: 20, height: 20, animation: 'spin 1s linear infinite' }} />
-                  Loading Plans...
+                  Securing Checkout...
                 </>
               ) : (
                 'Continue'
@@ -1346,20 +1227,19 @@ export default function CheckoutPortal({ paddleClientToken, publicMode = false }
               }}>
                 Privacy Policy
               </a>
+              <a href="/refund" target="_blank" rel="noopener noreferrer" style={{
+                fontSize: 11, color: '#94a3b8', textDecoration: 'underline',
+                fontWeight: 500, transition: 'color 0.2s',
+              }}>
+                Refund Policy
+              </a>
             </div>
 
             <p style={{
               textAlign: 'center', fontSize: 11, color: '#cbd5e1',
               marginTop: 12, lineHeight: 1.5, fontWeight: 400,
             }}>
-              By continuing, you agree to our Terms of Service & Privacy Policy.
-              {activePlan?.trial && (
-                <> Your free trial will begin immediately. You can cancel anytime before {(() => {
-                  const d = new Date();
-                  d.setDate(d.getDate() + 3);
-                  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                })()} to avoid charges.</>
-              )}
+              By continuing, you agree to our Terms of Service & Privacy Policy. Payments processed securely via Dodo Payments.
             </p>
           </div>
         </div>

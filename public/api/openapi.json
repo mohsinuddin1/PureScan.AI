@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "PureScan AI API",
-    "description": "API services for PureScan AI - food & cosmetic safety analysis, ingredient hazard scanning, app downloads, and customer billing portal management.",
+    "description": "API services for PureScan AI - food & cosmetic safety analysis, ingredient hazard scanning, app downloads, and Dodo Payments customer billing portal management.",
     "version": "1.0.0",
     "contact": {
       "name": "PureScan AI Support",
@@ -38,10 +38,51 @@
         }
       }
     },
+    "/api/checkout": {
+      "post": {
+        "summary": "Create Dodo Payments checkout session",
+        "description": "Generates a single-use hosted checkout session URL for purchasing PureScan AI Pro subscriptions.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["productId"],
+                "properties": {
+                  "productId": { "type": "string", "description": "Dodo Payments product ID (Monthly or Annual)" },
+                  "email": { "type": "string", "format": "email", "description": "Customer email" },
+                  "userId": { "type": "string", "description": "Supabase authenticated user ID" },
+                  "returnUrl": { "type": "string", "format": "uri", "description": "Post-payment redirect URL" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Checkout session created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "checkout_url": { "type": "string", "format": "uri" },
+                    "session_id": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "Missing productId" },
+          "500": { "description": "Server error" }
+        }
+      }
+    },
     "/api/portal": {
       "post": {
         "summary": "Create customer portal session",
-        "description": "Generates a Paddle billing portal session URL for an authenticated customer.",
+        "description": "Generates a self-service Dodo Payments customer billing portal session URL for an authenticated customer.",
         "requestBody": {
           "required": true,
           "content": {
@@ -55,9 +96,9 @@
                     "format": "email",
                     "description": "Customer email address"
                   },
-                  "isSandbox": {
-                    "type": "boolean",
-                    "description": "Whether to use Paddle sandbox environment"
+                  "customerId": {
+                    "type": "string",
+                    "description": "Optional direct Dodo Payments customer ID"
                   }
                 }
               }
@@ -81,6 +122,17 @@
           "400": { "description": "Invalid input or missing email" },
           "404": { "description": "Customer not found" },
           "500": { "description": "Server error" }
+        }
+      }
+    },
+    "/api/webhook": {
+      "post": {
+        "summary": "Dodo Payments webhook handler",
+        "description": "Receives and verifies cryptographically signed webhook events from Dodo Payments.",
+        "responses": {
+          "200": { "description": "Event processed successfully" },
+          "401": { "description": "Invalid webhook signature" },
+          "500": { "description": "Server error processing event" }
         }
       }
     },
