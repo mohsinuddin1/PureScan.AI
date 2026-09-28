@@ -1,19 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CheckoutPortal from '../components/CheckoutPortal.jsx';
-
-// For Paddle Checkout v2, a client-side token is required.
-// We fallback to paddle_key from .env, but normally this should be a client-side token starting with 'live_' or 'test_'
-const paddleClientToken = import.meta.env.VITE_SANDBOX_PADDLE_TOKEN || import.meta.env.VITE_PADDLE_CLIENT_TOKEN || import.meta.env.paddle_key || '';
-const isSandbox = paddleClientToken.startsWith('test_');
-const paddleScriptUrl = isSandbox
-  ? 'https://sandbox-cdn.paddle.com/paddle/v2/paddle.js'
-  : 'https://cdn.paddle.com/paddle/v2/paddle.js';
 ---
 
 <Layout title="PureScan AI Pro - Total Family Protection" description="Upgrade to PureScan AI Pro for unlimited scans and personalized health risk detection.">
-  <script src={paddleScriptUrl} is:inline></script>
-  
   <main style="min-height: 100vh; background: linear-gradient(180deg, #fffefb 0%, #f0fdf4 50%, #fffefb 100%); padding-top: 16px; padding-bottom: 48px;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
       <div style="display: flex; justify-content: center; margin-bottom: 32px;">
@@ -22,7 +12,7 @@ const paddleScriptUrl = isSandbox
         </a>
       </div>
       
-      <CheckoutPortal paddleClientToken={paddleClientToken} client:load />
+      <CheckoutPortal client:load />
     </div>
   </main>
 </Layout>

@@ -82,9 +82,25 @@ import Layout from '../../layouts/Layout.astro';
           <div class="border-l-4 border-emerald-500 pl-4">
             <div class="flex items-center gap-2 mb-1">
               <span class="px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">POST</span>
+              <span class="font-mono text-sm font-semibold text-slate-900">/api/checkout</span>
+            </div>
+            <p class="text-sm text-slate-600">Creates a Dodo Payments checkout session for subscription plans.</p>
+          </div>
+
+          <div class="border-l-4 border-emerald-500 pl-4">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">POST</span>
               <span class="font-mono text-sm font-semibold text-slate-900">/api/portal</span>
             </div>
-            <p class="text-sm text-slate-600">Generates a self-service Paddle billing portal session URL for verified customers.</p>
+            <p class="text-sm text-slate-600">Generates a self-service Dodo Payments customer billing portal session URL for verified customers.</p>
+          </div>
+
+          <div class="border-l-4 border-emerald-500 pl-4">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">POST</span>
+              <span class="font-mono text-sm font-semibold text-slate-900">/api/webhook</span>
+            </div>
+            <p class="text-sm text-slate-600">Receives verified Dodo Payments webhook lifecycle events and synchronizes Pro status.</p>
           </div>
 
           <div class="border-l-4 border-emerald-500 pl-4">
