@@ -55,9 +55,9 @@ async function ensureRevenueCatSubscriber(appUserId) {
 /**
  * Grants a promotional entitlement to a user in RevenueCat
  * @param {string} appUserId - Supabase User ID (matches Purchases.logIn in mobile app)
- * @param {'monthly' | 'annual'} duration - Duration of promotional entitlement
+ * @param {'monthly' | 'yearly'} duration - Duration of promotional entitlement
  */
-async function grantRevenueCatEntitlement(appUserId, duration = 'annual') {
+async function grantRevenueCatEntitlement(appUserId, duration = 'yearly') {
   const rcKey = process.env.REVENUECAT_SECRET_API_KEY;
   const entitlementId = process.env.REVENUECAT_ENTITLEMENT_ID || 'pro';
   if (!rcKey || !appUserId) {
@@ -80,16 +80,18 @@ async function grantRevenueCatEntitlement(appUserId, duration = 'annual') {
       const url = `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}/entitlements/${encodeURIComponent(entitlementId)}/promotional`;
       console.log(`[RevenueCat] Grant attempt ${attempt}/${maxAttempts} — POST ${url}`);
 
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${rcKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          duration: duration === 'monthly' ? 'monthly' : 'annual',
-        }),
-      });
+        // RevenueCat accepts: 'daily', 'three_day', 'weekly', 'monthly', 'two_month', 'three_month', 'six_month', 'yearly', 'lifetime'
+        const rcDuration = duration === 'monthly' ? 'monthly' : 'yearly';
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${rcKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            duration: rcDuration,
+          }),
+        });
 
       const resBody = await res.text();
       if (!res.ok) {
@@ -233,11 +235,11 @@ export default async function handler(req, res) {
         }
       }
 
-      // Determine subscription plan duration (monthly or annual)
+      // Determine subscription plan duration (monthly or yearly)
       const productId = eventData.product_id;
       const billingInterval = eventData.payment_frequency_interval || eventData.billing_cycle?.interval;
       const isMonthly = billingInterval === 'Month' || productId?.includes('monthly') || productId === process.env.PUBLIC_DODO_PRODUCT_MONTHLY;
-      const duration = isMonthly ? 'monthly' : 'annual';
+      const duration = isMonthly ? 'monthly' : 'yearly';
 
       // 1. Handle successful subscription or payment events
       if (
