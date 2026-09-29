@@ -269,14 +269,13 @@ export default async function handler(req, res) {
         }
 
         // Grant Entitlement in RevenueCat (enables premium in mobile app)
-        // We grant to userId (Supabase UUID) which should match Purchases.logIn in mobile app
-        // Also grant to email as fallback to guarantee coverage
+        // We grant to userId (Supabase UUID) which matches Purchases.logIn in mobile app.
+        // Fallback to email only if userId is not found.
         const rcResults = [];
         if (userId) {
           const ok = await grantRevenueCatEntitlement(userId, duration);
           rcResults.push({ identifier: userId, type: 'userId', success: ok });
-        }
-        if (userEmail && userEmail !== userId) {
+        } else if (userEmail) {
           const ok = await grantRevenueCatEntitlement(userEmail, duration);
           rcResults.push({ identifier: userEmail, type: 'email', success: ok });
         }
@@ -304,8 +303,7 @@ export default async function handler(req, res) {
         // Revoke Entitlement in RevenueCat
         if (userId) {
           await revokeRevenueCatEntitlement(userId);
-        }
-        if (userEmail && userEmail !== userId) {
+        } else if (userEmail) {
           await revokeRevenueCatEntitlement(userEmail);
         }
       }
