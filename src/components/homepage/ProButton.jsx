@@ -25,11 +25,38 @@ export default function ProButton() {
           console.error('Error fetching pro status:', error);
         } else if (data && data.is_pro) {
           setIsPro(true);
+        } else {
+          // DB says not Pro — background sync to check RevenueCat & Dodo
+          syncProInBackground(session);
         }
       } catch (err) {
         console.error('Failed to check pro status:', err);
       } finally {
         setLoading(false);
+      }
+    }
+
+    // Non-blocking sync that checks RevenueCat + Dodo if DB is stale
+    async function syncProInBackground(session) {
+      if (!session?.access_token) return;
+      try {
+        const res = await fetch('/api/sync-pro', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${session.access_token}`,
+          },
+        });
+        if (res.ok) {
+          const result = await res.json();
+          if (result.is_pro) {
+            console.log('[ProButton] Background sync found active Pro — updating UI');
+            setIsPro(true);
+          }
+        }
+      } catch (err) {
+        // Silently fail — sync is best-effort
+        console.warn('[ProButton] Background sync-pro failed:', err.message);
       }
     }
 

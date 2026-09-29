@@ -151,6 +151,43 @@ async function revokeRevenueCatEntitlement(appUserId) {
   }
 }
 
+/**
+ * Checks if a user has any active entitlement in RevenueCat.
+ * Used for cross-platform safety check before revoking Pro.
+ * @param {string} appUserId - Supabase User ID or email
+ * @returns {Promise<boolean>} true if user has at least one active entitlement
+ */
+async function checkRevenueCatEntitlement(appUserId) {
+  const rcKey = process.env.REVENUECAT_SECRET_API_KEY;
+  if (!rcKey || !appUserId) return false;
+
+  try {
+    const res = await fetch(
+      `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`,
+      {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${rcKey}` },
+      }
+    );
+
+    if (!res.ok) return false;
+
+    const data = await res.json();
+    const entitlements = data.subscriber?.entitlements || {};
+
+    for (const [id, entitlement] of Object.entries(entitlements)) {
+      if (!entitlement.expires_date || new Date(entitlement.expires_date) > new Date()) {
+        console.log(`[Dodo Webhook] User has active RC entitlement: ${id}`);
+        return true;
+      }
+    }
+    return false;
+  } catch (err) {
+    console.error('[Dodo Webhook] Error checking RC entitlement:', err.message);
+    return false;
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -286,25 +323,64 @@ export default async function handler(req, res) {
         }
       }
 
-      // 2. Handle failed or expired subscriptions
+      // 2. Handle failed or expired subscriptions (with cross-platform safety check)
       if (
         event.type === 'subscription.failed' ||
         event.type === 'subscription.expired'
       ) {
-        console.log(`[Dodo Webhook] Revoking Pro for user: userId=${userId}, email=${userEmail}`);
-        
-        // Update Supabase Database
-        if (userId) {
-          await supabase.from('users').update({ is_pro: false }).eq('id', userId);
-        } else if (userEmail) {
-          await supabase.from('users').update({ is_pro: false }).eq('email', userEmail);
+        console.log(`[Dodo Webhook] Revocation event for user: userId=${userId}, email=${userEmail}`);
+
+        // CROSS-PLATFORM CHECK: Before revoking Pro, check if user still has
+        // an active entitlement in RevenueCat (mobile subscription).
+        const rcIdentifier = userId || userEmail;
+        let hasActiveRCEntitlement = false;
+        if (rcIdentifier) {
+          hasActiveRCEntitlement = await checkRevenueCatEntitlement(rcIdentifier);
         }
 
-        // Revoke Entitlement in RevenueCat
-        if (userId) {
-          await revokeRevenueCatEntitlement(userId);
-        } else if (userEmail) {
-          await revokeRevenueCatEntitlement(userEmail);
+        if (hasActiveRCEntitlement) {
+          console.log(`[Dodo Webhook] ⚠️ User ${rcIdentifier} still has active RevenueCat entitlement — keeping is_pro=true`);
+        } else {
+          // Safe to revoke — no active subscription on any platform
+          console.log(`[Dodo Webhook] No active RC entitlement — revoking Pro`);
+
+          // Update Supabase Database
+          if (userId) {
+            await supabase.from('users').update({ is_pro: false }).eq('id', userId);
+          } else if (userEmail) {
+            await supabase.from('users').update({ is_pro: false }).eq('email', userEmail);
+          }
+
+          // Revoke Entitlement in RevenueCat
+          if (userId) {
+            await revokeRevenueCatEntitlement(userId);
+          } else if (userEmail) {
+            await revokeRevenueCatEntitlement(userEmail);
+          }
+        }
+      }
+
+      // 3. Handle payment failures (prevents ghost Pro from client-side optimistic writes)
+      if (event.type === 'payment.failed') {
+        console.log(`[Dodo Webhook] Payment failed for user: userId=${userId}, email=${userEmail}`);
+
+        // Check if user has an active RevenueCat entitlement before revoking
+        const rcId = userId || userEmail;
+        let hasRCEntitlement = false;
+        if (rcId) {
+          hasRCEntitlement = await checkRevenueCatEntitlement(rcId);
+        }
+
+        if (!hasRCEntitlement) {
+          if (userId) {
+            await supabase.from('users').update({ is_pro: false }).eq('id', userId);
+            console.log(`[Dodo Webhook] ✅ Reverted is_pro=false after payment failure for userId: ${userId}`);
+          } else if (userEmail) {
+            await supabase.from('users').update({ is_pro: false }).eq('email', userEmail);
+            console.log(`[Dodo Webhook] ✅ Reverted is_pro=false after payment failure for email: ${userEmail}`);
+          }
+        } else {
+          console.log(`[Dodo Webhook] Payment failed but user has active RC entitlement — keeping is_pro=true`);
         }
       }
     }

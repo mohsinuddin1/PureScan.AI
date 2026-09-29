@@ -189,6 +189,30 @@ export default function CheckoutPortal({ publicMode = false }) {
     }
   }, []);
 
+  // ─── Background Sync Helper ────────────────────────────────────────
+  const syncProStatus = async (userSession) => {
+    if (!userSession?.access_token || !userSession?.user?.id) return;
+    try {
+      const res = await fetch('/api/sync-pro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userSession.access_token}`,
+        },
+      });
+      if (res.ok) {
+        const result = await res.json();
+        if (result.is_pro) {
+          console.log('[CheckoutPortal] Background sync found active Pro — upgrading UI');
+          setIsSuccess(true);
+        }
+      }
+    } catch (err) {
+      // Silently fail — sync is non-blocking
+      console.warn('[CheckoutPortal] Background sync-pro failed:', err.message);
+    }
+  };
+
   // ─── Supabase Auth & Pro Status Check ──────────────────────────────
   useEffect(() => {
     async function initAuth() {
@@ -215,6 +239,9 @@ export default function CheckoutPortal({ publicMode = false }) {
         const { data } = await supabase.from('users').select('is_pro').eq('id', s.user.id).single();
         if (data && data.is_pro) {
           setIsSuccess(true);
+        } else {
+          // DB says not Pro — background sync to check RevenueCat & Dodo
+          syncProStatus(s);
         }
       }
       setLoading(false);
@@ -228,6 +255,9 @@ export default function CheckoutPortal({ publicMode = false }) {
         const { data } = await supabase.from('users').select('is_pro').eq('id', s.user.id).single();
         if (data && data.is_pro) {
           setIsSuccess(true);
+        } else {
+          // DB says not Pro — background sync to check RevenueCat & Dodo
+          syncProStatus(s);
         }
       }
     });
