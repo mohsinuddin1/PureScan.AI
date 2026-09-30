@@ -53,11 +53,106 @@ async function ensureRevenueCatSubscriber(appUserId) {
 }
 
 /**
- * Grants a promotional entitlement to a user in RevenueCat
+ * Fetches subscriber data from RevenueCat API
+ * @param {string} appUserId - Supabase User ID
+ */
+async function getRevenueCatSubscriberData(appUserId) {
+  const rcKey = process.env.REVENUECAT_SECRET_API_KEY;
+  if (!rcKey || !appUserId) return null;
+  try {
+    const res = await fetch(
+      `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`,
+      {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${rcKey}` },
+      }
+    );
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (err) {
+    console.error('[RevenueCat] Network error fetching subscriber:', err.message);
+    return null;
+  }
+}
+
+/**
+ * Accurately determines plan duration ('monthly' | 'yearly') from Dodo webhook event data.
+ * Protects against blindly defaulting to 'yearly'.
+ */
+function resolvePlanDuration(eventData) {
+  if (!eventData) return 'monthly';
+
+  // 1. Explicit plan_duration in metadata (set by /api/checkout)
+  const metaDuration =
+    eventData.metadata?.plan_duration ||
+    eventData.subscription?.metadata?.plan_duration ||
+    eventData.payment?.metadata?.plan_duration ||
+    eventData.customer?.metadata?.plan_duration;
+
+  if (metaDuration === 'monthly' || metaDuration === 'yearly') {
+    return metaDuration;
+  }
+
+  // 2. Billing cycle / payment frequency interval (from Subscription object)
+  const interval = (
+    eventData.payment_frequency_interval ||
+    eventData.subscription_period_interval ||
+    eventData.billing_cycle?.interval ||
+    eventData.subscription?.payment_frequency_interval ||
+    ''
+  ).toLowerCase();
+
+  if (interval === 'month' || interval.includes('month')) return 'monthly';
+  if (interval === 'year' || interval.includes('year') || interval.includes('annu')) return 'yearly';
+
+  // 3. Product ID check
+  const productId =
+    eventData.product_id ||
+    eventData.metadata?.product_id ||
+    eventData.subscription?.product_id ||
+    eventData.payment?.product_id;
+
+  const monthlyProductId = process.env.PUBLIC_DODO_PRODUCT_MONTHLY || process.env.VITE_DODO_PRODUCT_MONTHLY || 'pdt_0Noa60DO9XekcWWBOSvlh';
+  const annualProductId = process.env.PUBLIC_DODO_PRODUCT_ANNUAL || process.env.VITE_DODO_PRODUCT_ANNUAL || 'pdt_0Noa60FhhT6igBwxvT0Sz';
+
+  if (productId) {
+    if (productId === monthlyProductId || productId.toLowerCase().includes('month')) {
+      return 'monthly';
+    }
+    if (productId === annualProductId || productId.toLowerCase().includes('year') || productId.toLowerCase().includes('annu')) {
+      return 'yearly';
+    }
+  }
+
+  // 4. Amount check: monthly is $9.99 (999 cents), annual is $29.99 (2999 cents)
+  const amount =
+    eventData.total_amount ||
+    eventData.recurring_pre_tax_amount ||
+    eventData.price ||
+    eventData.payment?.total_amount;
+
+  if (typeof amount === 'number' && amount > 0) {
+    if (amount < 2000) {
+      return 'monthly';
+    } else {
+      return 'yearly';
+    }
+  }
+
+  // Safe fallback: default to 'monthly' (never assume yearly!)
+  return 'monthly';
+}
+
+/**
+ * Grants a promotional entitlement to a user in RevenueCat.
+ * Checks for existing active promotional grants to prevent duplicate calls,
+ * and revokes conflicting promotional grants (e.g. accidental yearly on monthly purchase)
+ * so that the user never has both packages in RevenueCat.
+ *
  * @param {string} appUserId - Supabase User ID (matches Purchases.logIn in mobile app)
  * @param {'monthly' | 'yearly'} duration - Duration of promotional entitlement
  */
-async function grantRevenueCatEntitlement(appUserId, duration = 'yearly') {
+async function grantRevenueCatEntitlement(appUserId, duration = 'monthly') {
   const rcKey = process.env.REVENUECAT_SECRET_API_KEY;
   const entitlementId = process.env.REVENUECAT_ENTITLEMENT_ID || 'pro';
   if (!rcKey || !appUserId) {
@@ -65,33 +160,87 @@ async function grantRevenueCatEntitlement(appUserId, duration = 'yearly') {
     return false;
   }
 
-  console.log(`[RevenueCat] Attempting to grant '${entitlementId}' (${duration}) to: ${appUserId}`);
+  const targetDuration = duration === 'yearly' ? 'yearly' : 'monthly';
+  console.log(`[RevenueCat] Evaluating promotional grant '${entitlementId}' (${targetDuration}) for: ${appUserId}`);
 
   // 1. Ensure subscriber exists (provisions new subscriber if first time)
-  const provisioned = await ensureRevenueCatSubscriber(appUserId);
-  if (!provisioned) {
-    console.error(`[RevenueCat] Cannot grant entitlement — subscriber provisioning failed for: ${appUserId}`);
+  await ensureRevenueCatSubscriber(appUserId);
+
+  // 2. Fetch current subscriber state to check for existing active promotional grants
+  const subscriberData = await getRevenueCatSubscriberData(appUserId);
+  const subscriber = subscriberData?.subscriber;
+  const subscriptions = subscriber?.subscriptions || {};
+
+  const now = new Date();
+
+  // Inspect active promotional grants
+  let hasMatchingPromo = false;
+  let hasConflictingPromo = false;
+  let hasActivePromo = false;
+
+  for (const [key, sub] of Object.entries(subscriptions)) {
+    const isPromo = sub.ownership_type === 'PROMOTIONAL' || sub.store === 'promotional' || key.startsWith('rc_promo_');
+    const isUnexpired = !sub.expires_date || new Date(sub.expires_date) > now;
+
+    if (isPromo && isUnexpired) {
+      hasActivePromo = true;
+      const expiresMs = sub.expires_date ? new Date(sub.expires_date).getTime() : Infinity;
+      const purchaseMs = sub.purchase_date ? new Date(sub.purchase_date).getTime() : now.getTime();
+      const durationDays = (expiresMs - purchaseMs) / (1000 * 60 * 60 * 24);
+      const remainingDays = (expiresMs - now.getTime()) / (1000 * 60 * 60 * 24);
+
+      const isSubMonthly = key.toLowerCase().includes('month') || (durationDays > 0 && durationDays <= 45);
+      const isSubYearly = key.toLowerCase().includes('year') || key.toLowerCase().includes('annu') || durationDays > 100;
+
+      if (targetDuration === 'monthly') {
+        if (isSubMonthly && remainingDays > 3) {
+          hasMatchingPromo = true;
+        }
+        if (isSubYearly) {
+          hasConflictingPromo = true;
+        }
+      } else if (targetDuration === 'yearly') {
+        if (isSubYearly && remainingDays > 15) {
+          hasMatchingPromo = true;
+        }
+        if (isSubMonthly) {
+          hasConflictingPromo = true;
+        }
+      }
+    }
   }
 
-  // 2. Grant promotional entitlement (with 1 retry)
+  // 3. Deduplication: If subscriber already has the exact matching promotional active with ample time remaining
+  // and no conflicting grants, skip redundant API call
+  if (hasMatchingPromo && !hasConflictingPromo) {
+    console.log(`[RevenueCat] Subscriber ${appUserId} already has active matching '${targetDuration}' promotional entitlement. Skipping redundant grant.`);
+    return true;
+  }
+
+  // 4. If conflicting promotional grant exists (e.g. has yearly when target is monthly, or has both),
+  // or if we need a fresh grant, revoke existing promotional grants first to avoid package stacking
+  if (hasConflictingPromo || hasActivePromo) {
+    console.log(`[RevenueCat] Cleaning up existing promotional entitlements for ${appUserId} before granting '${targetDuration}' (conflicting: ${hasConflictingPromo})...`);
+    await revokeRevenueCatEntitlement(appUserId);
+  }
+
+  // 5. Grant promotional entitlement (with 1 retry)
   const maxAttempts = 2;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const url = `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}/entitlements/${encodeURIComponent(entitlementId)}/promotional`;
-      console.log(`[RevenueCat] Grant attempt ${attempt}/${maxAttempts} — POST ${url}`);
+      console.log(`[RevenueCat] Grant attempt ${attempt}/${maxAttempts} — POST ${url} with duration=${targetDuration}`);
 
-        // RevenueCat accepts: 'daily', 'three_day', 'weekly', 'monthly', 'two_month', 'three_month', 'six_month', 'yearly', 'lifetime'
-        const rcDuration = duration === 'monthly' ? 'monthly' : 'yearly';
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${rcKey}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            duration: rcDuration,
-          }),
-        });
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${rcKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          duration: targetDuration,
+        }),
+      });
 
       const resBody = await res.text();
       if (!res.ok) {
@@ -103,8 +252,7 @@ async function grantRevenueCatEntitlement(appUserId, duration = 'yearly') {
         }
         return false;
       } else {
-        console.log(`[RevenueCat] ✅ Successfully granted '${entitlementId}' (${duration}) to subscriber: ${appUserId}`);
-        console.log(`[RevenueCat] Response:`, resBody);
+        console.log(`[RevenueCat] ✅ Successfully granted '${entitlementId}' (${targetDuration}) to subscriber: ${appUserId}`);
         return true;
       }
     } catch (err) {
@@ -120,13 +268,13 @@ async function grantRevenueCatEntitlement(appUserId, duration = 'yearly') {
 }
 
 /**
- * Revokes a promotional entitlement from a user in RevenueCat
+ * Revokes all promotional entitlements from a user in RevenueCat
  * @param {string} appUserId - Supabase User ID
  */
 async function revokeRevenueCatEntitlement(appUserId) {
   const rcKey = process.env.REVENUECAT_SECRET_API_KEY;
   const entitlementId = process.env.REVENUECAT_ENTITLEMENT_ID || 'pro';
-  if (!rcKey || !appUserId) return;
+  if (!rcKey || !appUserId) return false;
 
   try {
     const res = await fetch(
@@ -142,12 +290,15 @@ async function revokeRevenueCatEntitlement(appUserId) {
 
     if (!res.ok) {
       const errText = await res.text();
-      console.error(`[RevenueCat] Failed to revoke entitlement (${res.status}):`, errText);
+      console.error(`[RevenueCat] Failed to revoke promotional entitlements (${res.status}):`, errText);
+      return false;
     } else {
-      console.log(`[RevenueCat] Successfully revoked '${entitlementId}' from subscriber: ${appUserId}`);
+      console.log(`[RevenueCat] Successfully revoked promotional '${entitlementId}' from subscriber: ${appUserId}`);
+      return true;
     }
   } catch (err) {
-    console.error('[RevenueCat] Network error revoking entitlement:', err.message);
+    console.error('[RevenueCat] Network error revoking promotional entitlement:', err.message);
+    return false;
   }
 }
 
@@ -272,19 +423,17 @@ export default async function handler(req, res) {
         }
       }
 
-      // Determine subscription plan duration (monthly or yearly)
-      const productId = eventData.product_id;
-      const billingInterval = eventData.payment_frequency_interval || eventData.billing_cycle?.interval;
-      const isMonthly = billingInterval === 'Month' || productId?.includes('monthly') || productId === process.env.PUBLIC_DODO_PRODUCT_MONTHLY;
-      const duration = isMonthly ? 'monthly' : 'yearly';
+      // Determine subscription plan duration (monthly or yearly) using multi-tier resolver
+      const duration = resolvePlanDuration(eventData);
 
       // 1. Handle successful subscription or payment events
       if (
         event.type === 'payment.succeeded' ||
         event.type === 'subscription.active' ||
-        event.type === 'subscription.renewed'
+        event.type === 'subscription.renewed' ||
+        event.type === 'subscription.plan_changed'
       ) {
-        console.log(`[Dodo Webhook] Upgrading user to Pro: userId=${userId}, email=${userEmail}, duration=${duration}`);
+        console.log(`[Dodo Webhook] Upgrading/renewing user Pro (${event.type}): userId=${userId}, email=${userEmail}, duration=${duration}`);
         
         // Update Supabase Database
         if (userId) {
@@ -308,25 +457,20 @@ export default async function handler(req, res) {
         // Grant Entitlement in RevenueCat (enables premium in mobile app)
         // We grant to userId (Supabase UUID) which matches Purchases.logIn in mobile app.
         // Fallback to email only if userId is not found.
-        const rcResults = [];
-        if (userId) {
-          const ok = await grantRevenueCatEntitlement(userId, duration);
-          rcResults.push({ identifier: userId, type: 'userId', success: ok });
-        } else if (userEmail) {
-          const ok = await grantRevenueCatEntitlement(userEmail, duration);
-          rcResults.push({ identifier: userEmail, type: 'email', success: ok });
-        }
-        if (rcResults.length === 0) {
-          console.warn('[Dodo Webhook] ⚠️ No userId or email — cannot grant RevenueCat entitlement');
+        const rcTargetId = userId || userEmail;
+        if (rcTargetId) {
+          const ok = await grantRevenueCatEntitlement(rcTargetId, duration);
+          console.log(`[RevenueCat] Grant result for ${rcTargetId} (${duration}): ${ok ? 'SUCCESS' : 'FAILED'}`);
         } else {
-          console.log('[RevenueCat] Grant results:', JSON.stringify(rcResults));
+          console.warn('[Dodo Webhook] ⚠️ No userId or email found — cannot grant RevenueCat entitlement');
         }
       }
 
-      // 2. Handle failed or expired subscriptions (with cross-platform safety check)
+      // 2. Handle failed, expired, or cancelled subscriptions (with cross-platform safety check)
       if (
         event.type === 'subscription.failed' ||
-        event.type === 'subscription.expired'
+        event.type === 'subscription.expired' ||
+        event.type === 'subscription.cancelled'
       ) {
         console.log(`[Dodo Webhook] Revocation event for user: userId=${userId}, email=${userEmail}`);
 

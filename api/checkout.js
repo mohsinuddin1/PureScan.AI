@@ -25,22 +25,29 @@ export default async function handler(req, res) {
       environment: environment,
     });
 
+    const monthlyProductId = process.env.PUBLIC_DODO_PRODUCT_MONTHLY || process.env.VITE_DODO_PRODUCT_MONTHLY || 'pdt_0Noa60DO9XekcWWBOSvlh';
+    const isMonthly = productId === monthlyProductId || productId?.toLowerCase().includes('monthly');
+    const planDuration = isMonthly ? 'monthly' : 'yearly';
+
+    const metadata = {
+      ...(userId ? { user_id: userId, app_user_id: userId } : {}),
+      product_id: productId,
+      plan_duration: planDuration,
+    };
+
     const sessionPayload = {
       product_cart: [
         { product_id: productId, quantity: 1 }
       ],
       return_url: returnUrl || 'https://purescan.ai/pro?success=true',
+      metadata,
     };
 
     if (email) {
       sessionPayload.customer = {
         email,
-        ...(userId ? { metadata: { user_id: userId, app_user_id: userId } } : {}),
+        metadata,
       };
-    }
-
-    if (userId) {
-      sessionPayload.metadata = { user_id: userId, app_user_id: userId };
     }
 
     const session = await client.checkoutSessions.create(sessionPayload);

@@ -54,7 +54,19 @@ export default async function handler(req, res) {
     const rcActive = await checkRevenueCatEntitlement(userId);
 
     // ── 3. Check Dodo Payments ───────────────────────────────────────
-    const dodoActive = await checkDodoSubscription(userEmail);
+    const dodoResult = await checkDodoSubscription(userEmail);
+    const dodoActive = dodoResult.active;
+
+    // If Dodo is active, reconcile RevenueCat to fix/prevent any package stacking
+    if (dodoActive && dodoResult.subscription) {
+      const sub = dodoResult.subscription;
+      const interval = (sub.payment_frequency_interval || sub.subscription_period_interval || '').toLowerCase();
+      const productId = sub.product_id || '';
+      const monthlyProductId = process.env.PUBLIC_DODO_PRODUCT_MONTHLY || process.env.VITE_DODO_PRODUCT_MONTHLY || 'pdt_0Noa60DO9XekcWWBOSvlh';
+      const isMonthly = interval === 'month' || productId === monthlyProductId || productId.toLowerCase().includes('month');
+      const dodoDuration = isMonthly ? 'monthly' : 'yearly';
+      await reconcileRevenueCatWithDodo(userId, dodoDuration);
+    }
 
     // ── 4. Determine final Pro status ────────────────────────────────
     const isProActive = rcActive || dodoActive;
@@ -142,12 +154,13 @@ async function checkRevenueCatEntitlement(appUserId) {
 /**
  * Checks if the user has an active subscription in Dodo Payments.
  * Looks up the customer by email, then checks subscription status.
+ * Returns { active: boolean, subscription: object | null }
  */
 async function checkDodoSubscription(userEmail) {
-  if (!userEmail) return false;
+  if (!userEmail) return { active: false, subscription: null };
 
   const apiKey = process.env.DODO_PAYMENTS_API_KEY || process.env.DODO_PAYMENTS_TEST_API_KEY || process.env.DODO_PAYMENTS_PROD_API_KEY;
-  if (!apiKey) return false;
+  if (!apiKey) return { active: false, subscription: null };
 
   const environment = process.env.DODO_PAYMENTS_ENVIRONMENT === 'live_mode' ? 'live_mode' : 'test_mode';
 
@@ -164,7 +177,7 @@ async function checkDodoSubscription(userEmail) {
 
     if (!customer) {
       console.log(`[sync-pro] No Dodo customer found for email: ${userEmail}`);
-      return false;
+      return { active: false, subscription: null };
     }
 
     // List subscriptions for this customer
@@ -174,14 +187,103 @@ async function checkDodoSubscription(userEmail) {
     for (const sub of subItems) {
       if (sub.status === 'active' || sub.status === 'trialing') {
         console.log(`[sync-pro] Active Dodo subscription found: ${sub.subscription_id} (status: ${sub.status})`);
-        return true;
+        return { active: true, subscription: sub };
       }
     }
 
-    return false;
+    return { active: false, subscription: null };
   } catch (err) {
     console.error('[sync-pro] Dodo check error:', err.message);
-    // On error, return false (don't grant Pro on failure)
-    return false;
+    return { active: false, subscription: null };
+  }
+}
+
+/**
+ * Reconciles RevenueCat promotional entitlements with active Dodo subscription.
+ * Fixes users who experienced the bug (having both monthly and yearly packages, or wrong duration in RC).
+ */
+async function reconcileRevenueCatWithDodo(appUserId, targetDuration) {
+  const rcKey = process.env.REVENUECAT_SECRET_API_KEY;
+  const entitlementId = process.env.REVENUECAT_ENTITLEMENT_ID || 'pro';
+  if (!rcKey || !appUserId || !targetDuration) return;
+
+  try {
+    const res = await fetch(
+      `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`,
+      {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${rcKey}` },
+      }
+    );
+    if (!res.ok && res.status !== 404) return;
+
+    let hasConflictingPromo = false;
+    let hasMatchingPromo = false;
+    const now = new Date();
+
+    if (res.ok) {
+      const data = await res.json();
+      const subscriptions = data.subscriber?.subscriptions || {};
+
+      for (const [key, sub] of Object.entries(subscriptions)) {
+        const isPromo = sub.ownership_type === 'PROMOTIONAL' || sub.store === 'promotional' || key.startsWith('rc_promo_');
+        const isUnexpired = !sub.expires_date || new Date(sub.expires_date) > now;
+
+        if (isPromo && isUnexpired) {
+          const expiresMs = sub.expires_date ? new Date(sub.expires_date).getTime() : Infinity;
+          const purchaseMs = sub.purchase_date ? new Date(sub.purchase_date).getTime() : now.getTime();
+          const durationDays = (expiresMs - purchaseMs) / (1000 * 60 * 60 * 24);
+          const remainingDays = (expiresMs - now.getTime()) / (1000 * 60 * 60 * 24);
+
+          const isSubMonthly = key.toLowerCase().includes('month') || (durationDays > 0 && durationDays <= 45);
+          const isSubYearly = key.toLowerCase().includes('year') || key.toLowerCase().includes('annu') || durationDays > 100;
+
+          if (targetDuration === 'monthly') {
+            if (isSubMonthly && remainingDays > 3) hasMatchingPromo = true;
+            if (isSubYearly) hasConflictingPromo = true;
+          } else if (targetDuration === 'yearly') {
+            if (isSubYearly && remainingDays > 15) hasMatchingPromo = true;
+            if (isSubMonthly) hasConflictingPromo = true;
+          }
+        }
+      }
+    }
+
+    // If already clean and matching, nothing to heal
+    if (hasMatchingPromo && !hasConflictingPromo) {
+      console.log(`[sync-pro] RC promotional entitlement already clean and matching '${targetDuration}' for ${appUserId}`);
+      return;
+    }
+
+    console.log(`[sync-pro] Healing RC promotional entitlement for ${appUserId}: conflicting=${hasConflictingPromo}, matching=${hasMatchingPromo} → target=${targetDuration}`);
+
+    // Revoke stale/conflicting promotionals
+    await fetch(
+      `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}/entitlements/${encodeURIComponent(entitlementId)}/revoke_promotionals`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${rcKey}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    // Grant correct target duration
+    await fetch(
+      `https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}/entitlements/${encodeURIComponent(entitlementId)}/promotional`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${rcKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ duration: targetDuration }),
+      }
+    );
+
+    console.log(`[sync-pro] ✅ Healed RC promotional entitlement: set to '${targetDuration}' for ${appUserId}`);
+  } catch (err) {
+    console.error('[sync-pro] Error reconciling RC promotional entitlement:', err.message);
   }
 }
