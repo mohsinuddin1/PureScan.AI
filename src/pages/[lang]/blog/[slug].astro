@@ -4,8 +4,8 @@ import { getCollection, getEntry, render } from 'astro:content';
 import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
 
 export async function getStaticPaths() {
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   const posts = await getCollection('blog');
-  const locales = ["ar","ar-MA","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   
   // Build a map of locale -> set of slugs that exist for that locale
   const localeSlugs = {};
@@ -19,10 +19,14 @@ export async function getStaticPaths() {
   for (const post of posts) {
     const [postLang, ...slugParts] = post.id.split('/');
     const slug = slugParts.join('/');
-    if (postLang === 'en') {
+    const postLangLower = postLang.toLowerCase();
+    if (postLangLower === 'en') {
       enSlugs.add(slug);
-    } else if (localeSlugs[postLang]) {
-      localeSlugs[postLang].add(slug);
+    } else {
+      const matched = locales.find(l => l.toLowerCase() === postLangLower);
+      if (matched && localeSlugs[matched]) {
+        localeSlugs[matched].add(slug);
+      }
     }
   }
   
@@ -39,10 +43,13 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const lang = Astro.currentLocale || 'en';
+const lang = Astro.params.lang || Astro.currentLocale || 'en';
 const { slug } = Astro.params;
 
 let post = await getEntry('blog', `${lang}/${slug}`);
+if (!post) {
+  post = await getEntry('blog', `${lang.toLowerCase()}/${slug}`);
+}
 if (!post) {
   post = await getEntry('blog', `en/${slug}`);
 }
@@ -63,6 +70,9 @@ for (const p of allPosts) {
     const pLang = p.id.split('/')[0];
     const pSlug = p.id.split('/')[1];
     blogSlugMap[pLang] = pSlug;
+    if (pLang.toLowerCase() === 'ar-ma') {
+      blogSlugMap['ar-MA'] = pSlug;
+    }
   }
 }
 

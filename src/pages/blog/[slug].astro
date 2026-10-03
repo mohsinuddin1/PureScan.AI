@@ -38,6 +38,9 @@ for (const p of allPosts) {
     const pLang = p.id.split('/')[0];
     const pSlug = p.id.split('/')[1];
     blogSlugMap[pLang] = pSlug;
+    if (pLang.toLowerCase() === 'ar-ma') {
+      blogSlugMap['ar-MA'] = pSlug;
+    }
   }
 }
 
