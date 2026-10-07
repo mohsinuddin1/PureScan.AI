@@ -9,6 +9,20 @@ import Slideshow from './Slideshow.jsx';
 import ProButton from './ProButton.jsx';
 import SignOutButton from './SignOutButton.jsx';
 import { getCollection } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import mascotHero from '../../assets/mascot-hero.png';
+import mascotScared from '../../assets/mascot-scared.png';
+import mascotNeutral from '../../assets/mascot-neutral.png';
+import mascotHappy from '../../assets/mascot-happy.png';
+import logoImg from '../../assets/logo.png';
+import foodResultImg from '../../assets/food-result.jpg';
+import cosmeticResultImg from '../../assets/cosmetic-result.jpg';
+import historyScreenImg from '../../assets/history-screen.png';
+
+const slide1 = await getImage({ src: foodResultImg, format: 'webp', width: 640 });
+const slide2 = await getImage({ src: cosmeticResultImg, format: 'webp', width: 640 });
+const slide3 = await getImage({ src: historyScreenImg, format: 'webp', width: 640 });
+const slideshowImages = [slide1.src, slide2.src, slide3.src];
 
 const allPosts = await getCollection('blog');
 const latestPosts = allPosts
@@ -23,7 +37,7 @@ const latestPosts = allPosts
   <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 select-none transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
       <div class="flex items-center gap-2 md:gap-3">
-        <img src="/logo.png" alt="PureScan AI" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
+        <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
         <span class="font-extrabold tracking-tight text-xl md:text-3xl italic text-[#17C37B]">PureScan AI</span>
       </div>
       <div class="flex items-center gap-2">
@@ -86,25 +100,31 @@ const latestPosts = allPosts
 
       <div class="w-full md:w-1/2 flex justify-center animate-fade-in-up">
         <div class="relative w-full max-w-[280px] md:max-w-[450px]">
-          <img src="/use_Mascot_to_new.png" alt="PureScan AI Mascot" class="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+          <Image src={mascotHero} alt="PureScan AI Mascot" format="webp" loading="eager" fetchpriority="high" class="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- AI Citability Block (GEO) -->
-  <section class="py-6 px-4 md:px-6 max-w-4xl mx-auto text-center" aria-label="About PureScan AI">
-    <p class="text-sm md:text-base text-slate-500 font-medium">
-      PureScan AI is a mobile application that uses AI to scan food and cosmetic labels, detecting hidden toxins, allergens, and endocrine disruptors instantly.
+  <!-- AI Citability Block (GEO/AEO) — Definitive answer for AI crawlers -->
+  <section class="py-8 md:py-10 px-4 md:px-6 max-w-4xl mx-auto text-center" aria-label="About PureScan AI" id="about">
+    <p class="text-base md:text-lg text-slate-600 font-medium leading-relaxed">
+      <strong>PureScan AI</strong> is a mobile application for iOS and Android that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences.
     </p>
+    <div class="flex flex-wrap justify-center gap-3 mt-5">
+      <a href="/ingredient-scanner" class="text-sm font-bold text-[#17C37B] hover:underline">Ingredient Scanner →</a>
+      <a href="/food-scanner-app" class="text-sm font-bold text-[#17C37B] hover:underline">Food Scanner →</a>
+      <a href="/cosmetic-safety-checker" class="text-sm font-bold text-[#17C37B] hover:underline">Cosmetic Checker →</a>
+      <a href="/allergy-scanner" class="text-sm font-bold text-[#17C37B] hover:underline">Allergy Scanner →</a>
+    </div>
   </section>
 
   <!-- Psychology & Urgency Section -->
   <section class="py-12 md:py-24 px-4 md:px-6 bg-slate-50 my-8 md:my-12 border-y border-slate-100 shadow-sm">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-12 text-center md:text-left">
       <div class="w-full md:w-1/3 flex justify-center">
-        <img src="/mascot_scared.png" alt="Are you eating toxins?" class="w-[140px] md:w-[180px] drop-shadow-xl hover:-translate-y-4 transition-transform duration-300" />
+        <Image src={mascotScared} alt="Are you eating toxins?" format="webp" loading="lazy" class="w-[140px] md:w-[180px] drop-shadow-xl hover:-translate-y-4 transition-transform duration-300" />
       </div>
       <div class="w-full md:w-2/3">
         <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 leading-tight">Don't let hidden toxins sabotage your health.</h2>
@@ -142,7 +162,7 @@ const latestPosts = allPosts
     <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
       <!-- Mockup Slideshow (React Island) -->
       <div class="w-full md:w-[40%] flex justify-center">
-        <Slideshow client:visible />
+        <Slideshow client:visible slides={slideshowImages} />
       </div>
 
       <!-- Features on the right -->
@@ -159,7 +179,7 @@ const latestPosts = allPosts
 
         <div class="flex gap-4 md:gap-6 relative">
           <div class="absolute right-0 top-0 opacity-[0.05] md:opacity-[0.08] pointer-events-none">
-            <img src="/mascot_neutral.png" class="w-[80px] md:w-[120px]" alt="Neutral Mascot" />
+            <Image src={mascotNeutral} class="w-[80px] md:w-[120px]" alt="Neutral Mascot" format="webp" loading="lazy" />
           </div>
           <div class="shrink-0 mt-1">
             <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a3.5 3.5 0 0 1 3.5 3.5V8a1 1 0 0 1-1 1H9.5a1 1 0 0 1-1-1V6A3.5 3.5 0 0 1 12 2.5Z" /><path d="M5 16h14" /><path d="M8 12h8" /><path d="M5.5 8h13l1.5 13H4L5.5 8Z" /></svg>
@@ -274,7 +294,7 @@ const latestPosts = allPosts
         <!-- Review 2 -->
         <div class="bg-slate-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 flex flex-col justify-between relative overflow-hidden hover:shadow-xl transition-shadow">
           <div class="absolute right-[-10px] top-[-10px] opacity-10 md:opacity-20 pointer-events-none">
-            <img src="/mascot_happy.png" class="w-[80px] md:w-[120px]" alt="Happy Mascot" />
+            <Image src={mascotHappy} class="w-[80px] md:w-[120px]" alt="Happy Mascot" format="webp" loading="lazy" />
           </div>
           <div class="relative z-10">
             <div class="flex gap-1 mb-3 md:mb-4 text-[#17C37B]">
@@ -357,10 +377,10 @@ const latestPosts = allPosts
             <tr>
               <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-white rounded-bl-[1rem] md:rounded-bl-[1.5rem] font-bold text-slate-800">The Experience</td>
               <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-green-50/50 text-center">
-                <img src="/mascot_happy.png" alt="Happy Experience" class="inline-block w-[60px] md:w-[90px] drop-shadow-md animate-bounce" style="animation-duration: 2.5s" />
+                <Image src={mascotHappy} alt="Happy Experience" format="webp" loading="lazy" class="inline-block w-[60px] md:w-[90px] drop-shadow-md animate-bounce" style="animation-duration: 2.5s" />
               </td>
               <td class="p-4 md:p-6 bg-white text-center rounded-br-[1rem] md:rounded-br-[1.5rem]">
-                <img src="/mascot_scared.png" alt="Sad Experience" class="inline-block w-[60px] md:w-[90px] drop-shadow-sm opacity-50 grayscale transition-all hover:grayscale-0" />
+                <Image src={mascotScared} alt="Sad Experience" format="webp" loading="lazy" class="inline-block w-[60px] md:w-[90px] drop-shadow-sm opacity-50 grayscale transition-all hover:grayscale-0" />
               </td>
             </tr>
           </tbody>
@@ -409,7 +429,7 @@ const latestPosts = allPosts
   <footer class="py-12 bg-white border-t-2 border-slate-100">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <div class="flex justify-center items-center gap-2 mb-6">
-        <img src="/logo.png" alt="PureScan AI" class="w-8 h-8 object-contain grayscale opacity-50" />
+        <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
         <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
       </div>
       <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
@@ -418,6 +438,14 @@ const latestPosts = allPosts
         <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
         <span class="mx-3 hidden md:inline">•</span>
         <a href="/blog" class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
+        <span class="mx-3">•</span>
+        <a href="/ingredient-scanner" class="hover:text-[#17C37B] transition-colors">Ingredient Scanner</a>
+        <span class="mx-3">•</span>
+        <a href="/food-scanner-app" class="hover:text-[#17C37B] transition-colors">Food Scanner</a>
+        <span class="mx-3 hidden md:inline">•</span>
+        <a href="/cosmetic-safety-checker" class="hover:text-[#17C37B] transition-colors">Cosmetic Checker</a>
+        <span class="mx-3 hidden md:inline">•</span>
+        <a href="/allergy-scanner" class="hover:text-[#17C37B] transition-colors">Allergy Scanner</a>
         <span class="mx-3">•</span>
         <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
         <span class="mx-3">•</span>

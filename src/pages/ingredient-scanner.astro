@@ -1,0 +1,321 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import mascotHero from '../assets/mascot-hero.png';
+import mascotHappy from '../assets/mascot-happy.png';
+import logoImg from '../assets/logo.png';
+
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p => p.id.startsWith('en/'))
+  .filter(p => ['Ingredient Safety', 'Food Safety', 'Cosmetic Safety', 'Skincare Science'].includes(p.data.badge))
+  .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf())
+  .slice(0, 6);
+
+const faqs = [
+  {
+    question: "How does PureScan AI scan ingredients?",
+    answer: "PureScan AI uses barcode scanning to look up products in a massive database. If a product isn't found, its AI camera reads the ingredient label in any language, then cross-references each ingredient against scientific toxicology databases to detect hidden hazards."
+  },
+  {
+    question: "What harmful ingredients can PureScan AI detect?",
+    answer: "PureScan AI detects endocrine disruptors (parabens, phthalates, BPA), carcinogens, allergens, comedogenic ingredients, ultra-processed additives, artificial dyes like Red 40, preservatives like BHT, and over 500 other flagged substances in food and cosmetics."
+  },
+  {
+    question: "Is PureScan AI better than other ingredient scanner apps?",
+    answer: "PureScan AI provides personalized results based on your health profile, while most other scanner apps give generic scores. It also features AI-powered label reading in all languages when products aren't in the database, solving the 'product not found' problem."
+  },
+  {
+    question: "Can PureScan AI scan both food and cosmetic ingredients?",
+    answer: "Yes. PureScan AI is the only scanner app that provides comprehensive analysis for both food products (Nutri-Score, NOVA classification, allergens) and cosmetic products (hazard scores, endocrine disruptors, comedogenic ratings) in a single app."
+  },
+  {
+    question: "Is the ingredient scanner free to use?",
+    answer: "PureScan AI offers a free tier with essential ingredient scanning features. A Pro subscription unlocks unlimited scans, advanced personalized analysis, and detailed ingredient breakdowns. Download free on iOS and Android."
+  },
+  {
+    question: "Does PureScan AI work with international products?",
+    answer: "Yes. The AI camera feature reads ingredient labels in all world languages, making PureScan AI ideal for scanning imported products or shopping while traveling abroad. No manual typing required."
+  }
+];
+---
+
+<Layout
+  title="Ingredient Scanner App — Scan Food & Cosmetic Labels Instantly | PureScan AI"
+  shortTitle="Best Ingredient Scanner App 2026 | PureScan AI"
+  description="Scan any food or cosmetic ingredient list with AI. PureScan AI detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Free on iOS & Android."
+>
+  <!-- FAQ + SoftwareApplication Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://purescan.droploop.in/#app",
+        "name": "PureScan AI",
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "Ingredient Scanner",
+        "operatingSystem": "iOS, Android",
+        "description": "AI-powered ingredient scanner that detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives in food and cosmetic products instantly.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "500",
+          "bestRating": "5"
+        },
+        "featureList": "Barcode scanning, AI camera label reading, Allergen detection, Endocrine disruptor screening, Nutri-Score, NOVA classification, Personalized health risk assessment"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://purescan.droploop.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Ingredient Scanner" }
+        ]
+      }
+    ]
+  })} />
+
+  <div class="min-h-screen bg-white text-slate-800 font-sans">
+    <!-- Nav -->
+    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+          <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 object-contain" />
+          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">PureScan AI</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
+          <a href="/grading" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Grading</a>
+          <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform">
+            Download Free
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-28 px-4 md:px-6 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-[#17C37B] text-xs font-bold tracking-widest uppercase mb-4">AI-Powered Scanner</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-[1.1]">
+            Scan Any <span class="text-[#17C37B]">Ingredient Label</span> Instantly with AI
+          </h1>
+
+          <!-- AI Citability Block — 40-60 word definitive answer for AEO -->
+          <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-8" id="about-ingredient-scanner">
+            PureScan AI is the most advanced ingredient scanner app for iOS and Android. It uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly — personalized to your unique health conditions and allergies.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" /></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_ingredient%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" /></svg>
+              Google Play
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-slate-400 font-medium">Free download · No account required · Works offline</p>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+          <Image src={mascotHero} alt="PureScan AI ingredient scanner mascot" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[350px] drop-shadow-2xl" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works - Step by Step (AEO: HowTo format) -->
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">How to Scan Ingredients with PureScan AI</h2>
+          <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Three simple steps to know exactly what's in your food and cosmetics.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 rounded-2xl bg-[#17C37B]/10 text-[#17C37B] flex items-center justify-center mx-auto mb-5 text-3xl font-black">1</div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Scan the Barcode or Label</h3>
+            <p class="text-slate-600 font-medium">Point your phone camera at any product barcode or ingredient label. The AI reads labels in all languages worldwide.</p>
+          </div>
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 rounded-2xl bg-[#17C37B]/10 text-[#17C37B] flex items-center justify-center mx-auto mb-5 text-3xl font-black">2</div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">AI Analyzes Every Ingredient</h3>
+            <p class="text-slate-600 font-medium">Each ingredient is cross-referenced against scientific databases to detect toxins, allergens, endocrine disruptors, and carcinogens.</p>
+          </div>
+          <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center hover:shadow-xl transition-shadow">
+            <div class="w-16 h-16 rounded-2xl bg-[#17C37B]/10 text-[#17C37B] flex items-center justify-center mx-auto mb-5 text-3xl font-black">3</div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">Get Personalized Results</h3>
+            <p class="text-slate-600 font-medium">Unlike generic scanners, PureScan AI adapts results to YOUR health conditions — PCOS, diabetes, allergies, pregnancy, and more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Detect -->
+    <section class="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">What PureScan AI Detects in Your Products</h2>
+        <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Comprehensive ingredient analysis for both food and cosmetic products.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: "🧪", title: "Endocrine Disruptors", desc: "Parabens, phthalates, BPA/BPS, oxybenzone, triclosan — chemicals that interfere with your hormones." },
+          { icon: "⚠️", title: "Carcinogens", desc: "Formaldehyde releasers, coal tar dyes, butylated hydroxyanisole (BHA), and other cancer-linked substances." },
+          { icon: "🤧", title: "Allergens", desc: "14+ major allergen categories including gluten, dairy, nuts, soy, shellfish, and hidden derivatives." },
+          { icon: "🍟", title: "Ultra-Processed Additives", desc: "NOVA 4 indicators like emulsifiers, artificial sweeteners, MSG, and synthetic flavor enhancers." },
+          { icon: "🎨", title: "Artificial Dyes", desc: "Red 40, Yellow 5, Blue 1, and other synthetic food colorings linked to behavioral issues and hyperactivity." },
+          { icon: "🧴", title: "Comedogenic Ingredients", desc: "Pore-clogging substances in skincare that cause acne, blackheads, and breakouts — rated on a 0-5 scale." },
+        ].map(item => (
+          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+            <div class="text-3xl mb-4">{item.icon}</div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">{item.title}</h3>
+            <p class="text-slate-600 font-medium text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Comparison Mini-Table -->
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">PureScan AI vs Other Ingredient Scanners</h2>
+        </div>
+        <div class="overflow-x-auto border-2 border-slate-100 rounded-2xl shadow-lg bg-white">
+          <table class="w-full text-left border-collapse min-w-[500px]">
+            <thead>
+              <tr>
+                <th class="p-5 bg-slate-50 border-b-2 border-slate-100 font-bold text-slate-600">Feature</th>
+                <th class="p-5 bg-[#17C37B] border-b-2 border-[#16b572] font-bold text-white text-center">PureScan AI</th>
+                <th class="p-5 bg-slate-50 border-b-2 border-slate-100 font-bold text-slate-400 text-center">Others</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-slate-700 font-medium">
+              <tr><td class="p-4 border-b border-r border-slate-100 font-bold">Results Type</td><td class="p-4 border-b border-r border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B]">Personalized to YOU</td><td class="p-4 border-b border-slate-100 text-center text-slate-400">Generic scores</td></tr>
+              <tr><td class="p-4 border-b border-r border-slate-100 font-bold">Unknown Products</td><td class="p-4 border-b border-r border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B]">AI reads label</td><td class="p-4 border-b border-slate-100 text-center text-slate-400">Scan fails</td></tr>
+              <tr><td class="p-4 border-b border-r border-slate-100 font-bold">Language Support</td><td class="p-4 border-b border-r border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B]">All languages</td><td class="p-4 border-b border-slate-100 text-center text-slate-400">Limited</td></tr>
+              <tr><td class="p-4 border-b border-r border-slate-100 font-bold">Food + Cosmetics</td><td class="p-4 border-b border-r border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B]">Both in one app</td><td class="p-4 border-b border-slate-100 text-center text-slate-400">Usually one</td></tr>
+              <tr><td class="p-4 border-r border-slate-100 font-bold">Health Conditions</td><td class="p-4 border-r border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B]">PCOS, diabetes, etc.</td><td class="p-4 text-center text-slate-400">Not supported</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+          <a href="/alternatives/yuka" class="text-sm font-medium text-[#17C37B] hover:underline">PureScan AI vs Yuka →</a>
+          <a href="/alternatives/ewg" class="text-sm font-medium text-[#17C37B] hover:underline">vs EWG →</a>
+          <a href="/alternatives/think-dirty" class="text-sm font-medium text-[#17C37B] hover:underline">vs Think Dirty →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 px-4 md:px-6 max-w-4xl mx-auto" id="faq">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq, i) => (
+          <details class="group bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <summary class="p-6 cursor-pointer flex items-center justify-between gap-4 font-bold text-slate-800 text-lg select-none">
+              {faq.question}
+              <svg class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 font-medium leading-relaxed -mt-2">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related Blog Posts (Internal Linking) -->
+    {relatedPosts.length > 0 && (
+      <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-2">Learn More About Ingredient Safety</h2>
+            <p class="text-slate-600 font-medium">Expert research on hidden toxins in everyday products.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map(post => (
+              <a href={`/blog/${post.id.split('/')[1]}`} class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                {post.data.image && (
+                  <div class="aspect-video w-full overflow-hidden bg-slate-100">
+                    <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  </div>
+                )}
+                <div class="p-5 flex flex-col flex-grow">
+                  <span class="text-[#17C37B] text-xs font-bold uppercase tracking-widest mb-2">{post.data.badge}</span>
+                  <h3 class="text-base font-bold text-slate-800 mb-2 group-hover:text-[#17C37B] transition-colors line-clamp-2">{post.data.title}</h3>
+                  <p class="text-slate-600 text-sm font-medium line-clamp-2 flex-grow">{post.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Bottom CTA -->
+    <section class="py-20 md:py-28 px-4 md:px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Start Scanning Your Products Today</h2>
+        <p class="text-lg text-slate-600 font-medium mb-8 max-w-xl mx-auto">Download PureScan AI free and discover what's really hiding in your food and cosmetics.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" /></svg>
+            Download for iOS
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_ingredient%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" /></svg>
+            Download for Android
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t-2 border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6">
+          <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+        </div>
+        <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
+          <a href="/" class="hover:text-[#17C37B] transition-colors">Home</a>
+          <span class="mx-3">•</span>
+          <a href="/food-scanner-app" class="hover:text-[#17C37B] transition-colors">Food Scanner</a>
+          <span class="mx-3">•</span>
+          <a href="/cosmetic-safety-checker" class="hover:text-[#17C37B] transition-colors">Cosmetic Checker</a>
+          <span class="mx-3">•</span>
+          <a href="/allergy-scanner" class="hover:text-[#17C37B] transition-colors">Allergy Scanner</a>
+          <span class="mx-3">•</span>
+          <a href="/blog" class="hover:text-[#17C37B] transition-colors">Blog</a>
+          <span class="mx-3">•</span>
+          <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy</a>
+          <span class="mx-3">•</span>
+          <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms</a>
+        </p>
+        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI. The Most Advanced Ingredient Scanner App.</p>
+      </div>
+    </footer>
+  </div>
+</Layout>

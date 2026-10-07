@@ -80,6 +80,13 @@ The PureScan AI blog publishes expert-written articles on hidden toxins in food 
 ### Fitness & Supplements
 - Blog 52: Why Does My Protein Shake Cause Acne and Bloating? — https://purescan.droploop.in/blog/52-why-does-my-protein-shake-cause-acne-and-bloating
 
+## Product Landing Pages
+
+- [Ingredient Scanner](https://purescan.droploop.in/ingredient-scanner): Scan any food or cosmetic ingredient list with AI. Detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly.
+- [Food Scanner App](https://purescan.droploop.in/food-scanner-app): Scan food barcodes to get Nutri-Score (A–E), NOVA classification (1–4), allergen alerts, and personalized health risk assessments.
+- [Cosmetic Safety Checker](https://purescan.droploop.in/cosmetic-safety-checker): Check if your cosmetics are safe. Detects endocrine disruptors, carcinogens, comedogenic ingredients, and contact allergens in skincare and beauty products.
+- [Allergy Scanner](https://purescan.droploop.in/allergy-scanner): Detect hidden food allergens instantly — gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories personalized to your allergy profile.
+
 ## Competitor Comparison Pages
 
 - [PureScan AI vs Yuka](https://purescan.droploop.in/alternatives/yuka)

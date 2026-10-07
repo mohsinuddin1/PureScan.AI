@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CheckoutPortal from '../components/CheckoutPortal.jsx';
+import { Image } from 'astro:assets';
+import logoImg from '../assets/logo.png';
 ---
 
 <Layout title="PureScan AI Pro - Total Family Protection" description="Upgrade to PureScan AI Pro for unlimited scans and personalized health risk detection.">
@@ -8,7 +10,7 @@ import CheckoutPortal from '../components/CheckoutPortal.jsx';
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
       <div style="display: flex; justify-content: center; margin-bottom: 32px;">
         <a href="/" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-          <img src="/logo.png" alt="PureScan AI Logo" style="height: 64px; width: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(46,158,109,0.15);" />
+          <Image src={logoImg} alt="PureScan AI Logo" format="webp" loading="eager" style="height: 64px; width: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(46,158,109,0.15);" />
         </a>
       </div>
       

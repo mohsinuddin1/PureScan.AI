@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import mascotScared from '../assets/mascot-scared.png';
+import mascotHappy from '../assets/mascot-happy.png';
+import logoImg from '../assets/logo.png';
+
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p => p.id.startsWith('en/'))
+  .filter(p => ['Cosmetic Safety', 'Skincare Science', 'Ingredient Safety'].includes(p.data.badge))
+  .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf())
+  .slice(0, 6);
+
+const faqs = [
+  {
+    question: "How do I check if my cosmetics are safe?",
+    answer: "Use PureScan AI to scan any cosmetic product barcode or photograph the ingredient label. The app instantly analyzes every ingredient against toxicology databases, detecting endocrine disruptors, carcinogens, allergens, and comedogenic substances — personalized to your skin type and health conditions."
+  },
+  {
+    question: "What is a cosmetic safety checker?",
+    answer: "A cosmetic safety checker is an app that analyzes skincare, makeup, and personal care product ingredients for potentially harmful substances. PureScan AI is the most advanced cosmetic safety checker, detecting endocrine disruptors (parabens, phthalates), carcinogens, comedogenic ingredients, and allergens in real time."
+  },
+  {
+    question: "What are endocrine disruptors in cosmetics?",
+    answer: "Endocrine disruptors are chemicals that interfere with your hormone system. Common endocrine disruptors found in cosmetics include parabens (methylparaben, propylparaben), phthalates, BPA/BPS, oxybenzone, triclosan, and certain UV filters. PureScan AI detects all of these when you scan a product."
+  },
+  {
+    question: "How does PureScan AI rate cosmetic ingredients?",
+    answer: "PureScan AI provides a hazard score for each cosmetic product based on the toxicity profile of every ingredient. It rates individual ingredients for cancer risk, hormone disruption, allergenicity, and comedogenicity (pore-clogging potential) using data from scientific studies and toxicology databases."
+  },
+  {
+    question: "Can PureScan AI detect comedogenic ingredients?",
+    answer: "Yes. PureScan AI rates every skincare ingredient on a comedogenic scale of 0-5, where 0 means non-comedogenic and 5 means highly likely to clog pores and cause acne. This is essential for people with acne-prone or sensitive skin."
+  },
+  {
+    question: "Is PureScan AI better than EWG Skin Deep?",
+    answer: "PureScan AI provides personalized results based on your specific health conditions and skin type, while EWG Skin Deep gives generic safety scores. PureScan AI also scans both food and cosmetics in one app, supports all languages via AI camera, and works even when products aren't in the database."
+  }
+];
+---
+
+<Layout
+  title="Cosmetic Safety Checker — Scan Skincare for Toxins & Endocrine Disruptors | PureScan AI"
+  shortTitle="Cosmetic Safety Checker — Scan Skincare Ingredients | PureScan AI"
+  description="Check if your cosmetics are safe. Scan skincare, makeup, and beauty products to detect endocrine disruptors, carcinogens, allergens, and comedogenic ingredients. Free app for iOS & Android."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+        }))
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://purescan.droploop.in/#app",
+        "name": "PureScan AI",
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "Cosmetic Safety Checker",
+        "operatingSystem": "iOS, Android",
+        "description": "AI-powered cosmetic safety checker that detects endocrine disruptors, carcinogens, allergens, and comedogenic ingredients in skincare and beauty products.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "500", "bestRating": "5" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://purescan.droploop.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Cosmetic Safety Checker" }
+        ]
+      }
+    ]
+  })} />
+
+  <div class="min-h-screen bg-white text-slate-800 font-sans">
+    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+          <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 object-contain" />
+          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">PureScan AI</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
+          <a href="/ingredient-scanner" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Ingredients</a>
+          <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform">Download Free</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-16 md:py-28 px-4 md:px-6 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-[#17C37B] text-xs font-bold tracking-widest uppercase mb-4">Cosmetic Safety</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-[1.1]">
+            Check If Your <span class="text-[#17C37B]">Cosmetics</span> Are Really Safe
+          </h1>
+          <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-8">
+            PureScan AI is an AI-powered cosmetic safety checker that scans skincare, makeup, and personal care product labels to detect endocrine disruptors, carcinogens, allergens, and comedogenic ingredients instantly. Get personalized safety ratings based on your skin type and health conditions.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" /></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_cosmetic%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" /></svg>
+              Google Play
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-slate-400 font-medium">Free · Endocrine disruptors · Comedogenic ratings · Allergens</p>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+          <Image src={mascotScared} alt="Cosmetic safety checker warning" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[280px] drop-shadow-2xl" />
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Detect in Cosmetics -->
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Harmful Chemicals Hiding in Your Cosmetics</h2>
+          <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">PureScan AI detects these dangerous substances that other apps miss.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { icon: "🧬", title: "Endocrine Disruptors", desc: "Parabens (methylparaben, propylparaben), phthalates, BPA/BPS, oxybenzone, triclosan — chemicals that mimic hormones and disrupt your endocrine system.", examples: "Found in: moisturizers, sunscreens, nail polish, perfumes" },
+            { icon: "☠️", title: "Carcinogens", desc: "Formaldehyde releasers (DMDM hydantoin, quaternium-15), coal tar dyes, butylated hydroxyanisole (BHA), and other cancer-linked substances.", examples: "Found in: shampoos, hair straighteners, makeup" },
+            { icon: "🔴", title: "Comedogenic Ingredients", desc: "Coconut oil, isopropyl myristate, lanolin, cocoa butter, and other ingredients rated 3-5 on the comedogenic scale that clog pores and cause acne.", examples: "Found in: moisturizers, foundations, serums" },
+            { icon: "🤧", title: "Contact Allergens", desc: "Fragrance mixes, methylisothiazolinone (MI), cocamidopropyl betaine, nickel, and other top contact allergens identified by dermatologists.", examples: "Found in: soaps, shampoos, wipes, cosmetics" },
+            { icon: "🧴", title: "Skin Barrier Disruptors", desc: "Denatured alcohol, sodium lauryl sulfate (SLS), retinoids in unsafe concentrations, and aggressive chemical exfoliants that damage skin barrier function.", examples: "Found in: cleansers, toners, anti-aging products" },
+            { icon: "🌍", title: "Forever Chemicals (PFAS)", desc: "Per- and polyfluoroalkyl substances (PFAS) that persist in the body and environment — linked to immune suppression, thyroid disease, and cancer.", examples: "Found in: waterproof makeup, non-stick cosmetics" },
+          ].map(item => (
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+              <div class="text-3xl mb-3">{item.icon}</div>
+              <h3 class="text-lg font-bold text-slate-800 mb-2">{item.title}</h3>
+              <p class="text-slate-600 font-medium text-sm leading-relaxed mb-3">{item.desc}</p>
+              <p class="text-xs text-slate-400 font-medium italic">{item.examples}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who Uses This -->
+    <section class="py-16 md:py-24 px-4 md:px-6 max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Who Needs a Cosmetic Safety Checker?</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { emoji: "🤰", title: "Pregnant & Breastfeeding Women", desc: "Avoid retinoids, salicylic acid, phthalates, and other teratogens that can affect fetal development." },
+          { emoji: "💆‍♀️", title: "Acne-Prone Skin", desc: "Identify comedogenic ingredients that clog pores before you buy — rated on a 0-5 scale." },
+          { emoji: "🩺", title: "Hormonal Conditions (PCOS, Thyroid)", desc: "Detect endocrine disruptors that worsen PCOS, thyroid disorders, and hormonal imbalances." },
+          { emoji: "🧒", title: "Parents of Young Children", desc: "Screen children's skincare and bath products for harsh chemicals, fragrances, and allergens." },
+        ].map(item => (
+          <div class="bg-white p-6 rounded-2xl border-2 border-emerald-50 shadow-sm hover:shadow-xl transition-all flex gap-5">
+            <div class="text-4xl shrink-0">{item.emoji}</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-800 mb-2">{item.title}</h3>
+              <p class="text-slate-600 font-medium text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-y border-slate-100" id="faq">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Frequently Asked Questions</h2>
+        </div>
+        <div class="space-y-4">
+          {faqs.map(faq => (
+            <details class="group bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <summary class="p-6 cursor-pointer flex items-center justify-between gap-4 font-bold text-slate-800 text-lg select-none">
+                {faq.question}
+                <svg class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <div class="px-6 pb-6 text-slate-600 font-medium leading-relaxed -mt-2">{faq.answer}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Posts -->
+    {relatedPosts.length > 0 && (
+      <section class="py-16 md:py-24 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-2">Expert Articles on Cosmetic Safety</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map(post => (
+              <a href={`/blog/${post.id.split('/')[1]}`} class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                {post.data.image && (
+                  <div class="aspect-video w-full overflow-hidden bg-slate-100">
+                    <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  </div>
+                )}
+                <div class="p-5 flex-grow">
+                  <span class="text-[#17C37B] text-xs font-bold uppercase tracking-widest mb-2">{post.data.badge}</span>
+                  <h3 class="text-base font-bold text-slate-800 group-hover:text-[#17C37B] transition-colors line-clamp-2 mt-1">{post.data.title}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Bottom CTA -->
+    <section class="py-20 md:py-28 px-4 md:px-6 text-center bg-slate-50 border-t border-slate-100">
+      <div class="max-w-3xl mx-auto">
+        <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Stop Guessing, Start Scanning</h2>
+        <p class="text-lg text-slate-600 font-medium mb-8">Download PureScan AI free and know exactly what's in your cosmetics.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-all shadow-lg">Download for iOS</a>
+          <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_cosmetic%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">Download for Android</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t-2 border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6">
+          <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+        </div>
+        <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
+          <a href="/" class="hover:text-[#17C37B] transition-colors">Home</a><span class="mx-3">•</span>
+          <a href="/ingredient-scanner" class="hover:text-[#17C37B] transition-colors">Ingredient Scanner</a><span class="mx-3">•</span>
+          <a href="/food-scanner-app" class="hover:text-[#17C37B] transition-colors">Food Scanner</a><span class="mx-3">•</span>
+          <a href="/allergy-scanner" class="hover:text-[#17C37B] transition-colors">Allergy Scanner</a><span class="mx-3">•</span>
+          <a href="/blog" class="hover:text-[#17C37B] transition-colors">Blog</a><span class="mx-3">•</span>
+          <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy</a>
+        </p>
+        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI.</p>
+      </div>
+    </footer>
+  </div>
+</Layout>

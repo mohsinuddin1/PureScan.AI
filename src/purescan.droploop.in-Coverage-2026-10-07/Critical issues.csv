@@ -1,0 +1,7 @@
+Reason,Source,Validation,Pages
+Not found (404),Website,Failed,229
+Alternate page with proper canonical tag,Website,Failed,158
+"Duplicate, Google chose different canonical than user",Google systems,Failed,211
+Crawled - currently not indexed,Google systems,Failed,108
+Soft 404,Website,Not Started,206
+Discovered - currently not indexed,Google systems,Passed,0

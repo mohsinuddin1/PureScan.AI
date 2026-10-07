@@ -1,8 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Homepage from '../components/homepage/Homepage.astro';
+
+const homepageFaqs = [
+  {
+    question: "What is PureScan AI?",
+    answer: "PureScan AI is a mobile application for iOS and Android that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences."
+  },
+  {
+    question: "How does PureScan AI scan food products?",
+    answer: "PureScan AI uses barcode scanning to look up products in a massive database. If a product isn't found, its AI camera reads the ingredient label in any language, then cross-references each ingredient against scientific toxicology databases to detect hidden hazards and provide Nutri-Score and NOVA classifications."
+  },
+  {
+    question: "Is PureScan AI free?",
+    answer: "Yes. PureScan AI offers a free tier with essential scanning features including barcode scanning, basic ingredient analysis, and allergen detection. A Pro subscription unlocks advanced personalized analysis, unlimited scans, and detailed ingredient breakdowns."
+  },
+  {
+    question: "What toxins can PureScan AI detect?",
+    answer: "PureScan AI detects endocrine disruptors (parabens, phthalates, BPA), carcinogens (formaldehyde releasers, BHA), comedogenic ingredients, ultra-processed additives, artificial dyes (Red 40, Yellow 5), harmful preservatives (BHT, sodium benzoate), and over 500 other flagged substances."
+  },
+  {
+    question: "Does PureScan AI work with cosmetics?",
+    answer: "Yes. PureScan AI scans both food and cosmetic products. For cosmetics, it detects endocrine disruptors, carcinogens, comedogenic ingredients (rated 0-5), contact allergens, and provides a hazard score based on the toxicity profile of every ingredient."
+  }
+];
 ---
 
-<Layout title="PureScan AI - Food & Cosmetic Scanner">
+<Layout
+  title="PureScan AI — AI Food & Cosmetic Ingredient Scanner App | Detect Hidden Toxins"
+  shortTitle="PureScan AI — Food & Cosmetic Scanner App"
+  description="The smartest AI-powered food and cosmetic scanner app. Scan barcodes and ingredient labels to detect hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Personalized to your health. Free on iOS & Android."
+>
+  <!-- Homepage FAQ Schema for Rich Results -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": homepageFaqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.answer
+      }
+    }))
+  })} />
   <Homepage />
 </Layout>

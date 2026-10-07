@@ -2,6 +2,9 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection, getEntry, render } from 'astro:content';
 import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
+import { Image } from 'astro:assets';
+import mascotHappy from '../../../assets/mascot-happy.png';
+import logoImg from '../../../assets/logo.png';
 
 export async function getStaticPaths() {
   const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
@@ -205,7 +208,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
                 </a>
             </div>
             <div class="flex items-center gap-2 cursor-pointer">
-                <img src="/logo.png" alt="PureScan AI" class="w-5 h-5 object-contain" />
+                <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-5 h-5 object-contain" />
                 <span class="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI Blog</span>
             </div>
             <div class="flex items-center">
@@ -259,7 +262,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
         {/* Download CTA Card */}
         <div class="max-w-3xl mx-auto mt-12 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 sm:p-10 border border-emerald-100 shadow-sm">
           <div class="flex flex-col sm:flex-row items-center gap-6">
-            <img src="/mascot_happy.png" alt="PureScan AI" class="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-md" />
+            <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-md" />
             <div class="text-center sm:text-left flex-1">
               <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2">Scan Your Products Now</h3>
               <p class="text-slate-600 font-medium text-sm sm:text-base mb-4">Download PureScan AI free and instantly detect hidden toxins, allergens, and harmful additives in your food and cosmetics.</p>
@@ -297,7 +300,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
     <footer class="py-12 bg-white border-t-2 border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
           <div class="flex justify-center items-center gap-2 mb-6">
-            <img src="/logo.png" alt="PureScan AI" class="w-8 h-8 object-contain grayscale opacity-50" />
+            <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
             <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
           </div>
           <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
