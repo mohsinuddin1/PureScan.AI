@@ -40,7 +40,7 @@ PureScan AI is a mobile application that uses artificial intelligence to scan fo
 ## Download
 
 - [App Store (iOS)](https://apps.apple.com/app/pure-ai/id6762176490)
-- [Google Play (Android)](https://play.google.com/store/apps/details?id=com.purescanai.app)
+- [Google Play (Android)](https://play.google.com/store/apps/details?id=com.pureai.com)
 
 ## Optional
 

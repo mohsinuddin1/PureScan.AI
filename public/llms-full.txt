@@ -95,4 +95,4 @@ The PureScan AI blog publishes expert-written articles on hidden toxins in food 
 - Website: https://purescan.droploop.in
 - Support: https://purescan.droploop.in/support
 - iOS App: https://apps.apple.com/app/pure-ai/id6762176490
-- Android App: https://play.google.com/store/apps/details?id=com.purescanai.app
+- Android App: https://play.google.com/store/apps/details?id=com.pureai.com
