@@ -44,7 +44,7 @@ Scan barcodes and ingredient lists to instantly detect harmful chemicals, endocr
 
 ## Apps
 - [iOS App Store](https://apps.apple.com/app/pure-ai/id6762176490)
-- [Google Play Store](https://play.google.com/store/apps/details?id=com.purescanai.app)
+- [Google Play Store](https://play.google.com/store/apps/details?id=com.pureai.com)
 `;
   }
 
