@@ -23,3 +23,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# email campaign data
+recipients.csv
+sent_log.txt
