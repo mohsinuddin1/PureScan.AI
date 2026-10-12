@@ -180,6 +180,23 @@ def create_mime_message(name, email):
     return msg
 
 
+def get_smtp_connection(retries=3, delay=5):
+    """Establishes an authenticated SSL connection to Gmail with retry logic."""
+    for attempt in range(1, retries + 1):
+        try:
+            print(f"Connecting to smtp.gmail.com:465 (attempt {attempt}/{retries})...")
+            server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30)
+            server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+            print("✅ Logged in successfully to Gmail.\n" + "-" * 60)
+            return server
+        except Exception as e:
+            print(f"⚠️ Connection attempt {attempt} failed: {e}")
+            if attempt < retries:
+                time.sleep(delay)
+            else:
+                raise e
+
+
 # ==========================================
 # MAIN EXECUTION
 # ==========================================
@@ -206,8 +223,7 @@ def main():
         test_email = args.test.strip()
         print(f"\n🚀 Running in TEST mode. Sending 1 email to: {test_email}")
         try:
-            server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-            server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+            server = get_smtp_connection()
             msg = create_mime_message("Test User", test_email)
             server.sendmail(GMAIL_USER, test_email, msg.as_string())
             server.quit()
@@ -255,14 +271,13 @@ def main():
     print(f"🚀 Preparing to send batch of {len(to_send)} email(s).")
     print(f"⏱️  Pacing delay: {MIN_DELAY_SECONDS}s to {MAX_DELAY_SECONDS}s randomized between sends.\n")
 
-    # Connect to SMTP
+    start_time = time.time()
+
+    # Connect to SMTP initial
     try:
-        print("Connecting to smtp.gmail.com:465...")
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-        server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
-        print("✅ Logged in successfully to Gmail.\n" + "-" * 60)
+        server = get_smtp_connection()
     except Exception as e:
-        print(f"❌ SMTP Authentication failed: {e}")
+        print(f"❌ Initial SMTP Authentication failed: {e}")
         sys.exit(1)
 
     sent_count = 0
@@ -274,15 +289,45 @@ def main():
 
             print(f"[{idx}/{len(to_send)}] Sending to: {email} (Hi {greeting_name})...")
 
+            # Check / ensure connection is healthy before sending
             try:
-                msg = create_mime_message(name, email)
-                server.sendmail(GMAIL_USER, email, msg.as_string())
-                log_sent_email(email)
-                sent_count += 1
-                print(f"    ✔️ Sent successfully!")
-            except Exception as send_err:
-                print(f"    ⚠️ Failed to send to {email}: {send_err}")
-                continue
+                if server is None:
+                    server = get_smtp_connection()
+                else:
+                    status = server.noop()[0]
+                    if status != 250:
+                        server = get_smtp_connection()
+            except Exception:
+                try:
+                    server = get_smtp_connection()
+                except Exception as reconn_err:
+                    print(f"    ⚠️ Could not reconnect to Gmail SMTP: {reconn_err}")
+                    continue
+
+            # Attempt sending with 1 automatic retry on disconnect
+            send_success = False
+            for attempt in range(2):
+                try:
+                    msg = create_mime_message(name, email)
+                    server.sendmail(GMAIL_USER, email, msg.as_string())
+                    log_sent_email(email)
+                    sent_count += 1
+                    print(f"    ✔️ Sent successfully!")
+                    send_success = True
+                    break
+                except Exception as send_err:
+                    print(f"    ⚠️ Send attempt {attempt + 1} failed: {send_err}")
+                    if attempt == 0:
+                        print("    🔄 Reconnecting to Gmail SMTP and retrying...")
+                        time.sleep(3)
+                        try:
+                            server = get_smtp_connection()
+                        except Exception as e:
+                            print(f"    ⚠️ Reconnection failed: {e}")
+                            break
+
+            if not send_success:
+                print(f"    ❌ Skipped {email} due to error (will be retried on next run).")
 
             # Random jitter wait (only if there are more emails left)
             if idx < len(to_send):
@@ -291,15 +336,26 @@ def main():
                 time.sleep(wait_time)
 
     except KeyboardInterrupt:
-        print("\n🛑 Stopped by user. Progress has been saved in sent_log.txt.")
+        elapsed = int(time.time() - start_time)
+        m, s = divmod(elapsed, 60)
+        h, m = divmod(m, 60)
+        time_str = f"{h}h {m}m {s}s" if h else (f"{m}m {s}s" if m else f"{s}s")
+        print(f"\n🛑 Stopped by user after {time_str}. Progress has been saved in sent_log.txt.")
     finally:
-        try:
-            server.quit()
-        except:
-            pass
+        if server:
+            try:
+                server.quit()
+            except:
+                pass
+
+    elapsed = int(time.time() - start_time)
+    m, s = divmod(elapsed, 60)
+    h, m = divmod(m, 60)
+    time_str = f"{h}h {m}m {s}s" if h else (f"{m}m {s}s" if m else f"{s}s")
 
     print("\n" + "=" * 60)
     print(f"🏁 Batch finished! Sent {sent_count} email(s) successfully.")
+    print(f"⏱️  Total time taken: {time_str}")
     remaining = total_pending - sent_count
     if remaining > 0:
         print(f"📌 {remaining} recipient(s) remaining for future batch.")

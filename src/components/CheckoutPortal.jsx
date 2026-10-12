@@ -213,6 +213,45 @@ export default function CheckoutPortal({ publicMode = false }) {
     }
   };
 
+  // ─── Set default health preferences for web signups ────────────────
+  const setWebSignupDefaults = async (userId, retryCount = 0) => {
+    try {
+      const { data } = await supabase
+        .from('users')
+        .select('health_preferences')
+        .eq('id', userId)
+        .maybeSingle();
+
+      // If row hasn't been provisioned yet by the DB trigger, retry once after 500ms
+      if (!data && retryCount < 1) {
+        setTimeout(() => setWebSignupDefaults(userId, 1), 500);
+        return;
+      }
+
+      const hasNoPreferences =
+        !data?.health_preferences ||
+        (typeof data.health_preferences === 'object' && Object.keys(data.health_preferences).length === 0);
+
+      if (data && hasNoPreferences) {
+        const today = new Date().toISOString().split('T')[0];
+        await supabase
+          .from('users')
+          .update({
+            health_preferences: {
+              goals: ['General Safety', 'Better Health'],
+              diseases: ['General Prevention'],
+              allergies: ['None'],
+              discovery_source: 'web',
+            },
+            last_scan_date: today,
+          })
+          .eq('id', userId);
+      }
+    } catch (err) {
+      console.warn('[CheckoutPortal] Failed to set signup defaults:', err.message);
+    }
+  };
+
   // ─── Supabase Auth & Pro Status Check ──────────────────────────────
   useEffect(() => {
     async function initAuth() {
@@ -252,6 +291,8 @@ export default function CheckoutPortal({ publicMode = false }) {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_ev, s) => {
       setSession(s);
       if (s?.user) {
+        // Set defaults for new OAuth signups (non-blocking)
+        if (_ev === 'SIGNED_IN') setWebSignupDefaults(s.user.id);
         const { data } = await supabase.from('users').select('is_pro').eq('id', s.user.id).single();
         if (data && data.is_pro) {
           setIsSuccess(true);
