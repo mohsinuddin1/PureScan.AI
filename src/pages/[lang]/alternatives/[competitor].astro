@@ -29,6 +29,6 @@ export function getStaticPaths() {
 const { competitor } = Astro.params;
 import { AlternativeIsland } from '../../../components/Islands.jsx';
 ---
-<Layout title={`PureScan AI vs ${competitor}`}>
+<Layout title={`Klar vs ${competitor.charAt(0).toUpperCase() + competitor.slice(1)} — The Best Alternative`}>
   <AlternativeIsland client:load  lang={lang} translations={translations} competitor={competitor} />
 </Layout>

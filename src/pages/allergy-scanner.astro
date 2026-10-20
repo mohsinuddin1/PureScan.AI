@@ -16,35 +16,35 @@ const relatedPosts = allPosts
 const faqs = [
   {
     question: "What is the best allergy scanner app?",
-    answer: "PureScan AI is the best allergy scanner app for iOS and Android. It detects 14+ major allergen categories — including gluten, dairy, nuts, soy, shellfish, eggs, and hidden derivatives — and provides personalized alerts based on your specific allergies and food sensitivities. Free to download."
+    answer: "Klar (formerly PureScan AI) is the best allergy scanner app for iOS and Android. It detects 14+ major allergen categories — including gluten, dairy, nuts, soy, shellfish, eggs, and hidden derivatives — and provides personalized alerts based on your specific allergies and food sensitivities. Free to download."
   },
   {
     question: "How does a food allergy scanner work?",
-    answer: "PureScan AI scans product barcodes or photographs ingredient labels using AI camera technology. It then analyzes every ingredient to detect allergens, including hidden derivatives like casein (dairy), maltodextrin (potential gluten), and sodium caseinate. Results are personalized to your specific allergy profile."
+    answer: "Klar scans product barcodes or photographs ingredient labels using AI camera technology. It then analyzes every ingredient to detect allergens, including hidden derivatives like casein (dairy), maltodextrin (potential gluten), and sodium caseinate. Results are personalized to your specific allergy profile."
   },
   {
-    question: "What allergens can PureScan AI detect?",
-    answer: "PureScan AI detects all 14 major allergens: gluten (wheat, barley, rye, oats), milk/dairy/lactose, tree nuts, peanuts, soy, shellfish, fish, eggs, sesame, mustard, celery, lupin, mollusks, and sulfites — plus hidden derivatives that disguise these allergens under chemical names."
+    question: "What allergens can Klar detect?",
+    answer: "Klar detects all 14 major allergens: gluten (wheat, barley, rye, oats), milk/dairy/lactose, tree nuts, peanuts, soy, shellfish, fish, eggs, sesame, mustard, celery, lupin, mollusks, and sulfites — plus hidden derivatives that disguise these allergens under chemical names."
   },
   {
-    question: "Can PureScan AI help with gluten-free shopping?",
-    answer: "Yes. PureScan AI flags all sources of gluten including wheat, barley, rye, spelt, kamut, and hidden gluten derivatives like modified food starch, maltodextrin, hydrolyzed vegetable protein, and malt extract. Essential for celiac disease and gluten sensitivity."
+    question: "Can Klar help with gluten-free shopping?",
+    answer: "Yes. Klar flags all sources of gluten including wheat, barley, rye, spelt, kamut, and hidden gluten derivatives like modified food starch, maltodextrin, hydrolyzed vegetable protein, and malt extract. Essential for celiac disease and gluten sensitivity."
   },
   {
-    question: "Does PureScan AI scan for dairy and lactose?",
-    answer: "Yes. PureScan AI detects all dairy-derived ingredients including casein, whey, lactose, sodium caseinate, lactalbumin, and other hidden milk derivatives. Perfect for lactose intolerant individuals and strict vegans."
+    question: "Does Klar scan for dairy and lactose?",
+    answer: "Yes. Klar detects all dairy-derived ingredients including casein, whey, lactose, sodium caseinate, lactalbumin, and other hidden milk derivatives. Perfect for lactose intolerant individuals and strict vegans."
   },
   {
-    question: "Can I use PureScan AI for my child's food allergies?",
-    answer: "Absolutely. PureScan AI is designed for parents who need to scan children's snacks, school lunches, and treats for hidden allergens. Set up your child's allergy profile and get instant alerts whenever a product contains their specific allergens."
+    question: "Can I use Klar for my child's food allergies?",
+    answer: "Absolutely. Klar is designed for parents who need to scan children's snacks, school lunches, and treats for hidden allergens. Set up your child's allergy profile and get instant alerts whenever a product contains their specific allergens."
   }
 ];
 ---
 
 <Layout
-  title="Allergy Scanner App — Detect Hidden Food Allergens Instantly | PureScan AI"
-  shortTitle="Best Allergy Scanner App — Gluten, Dairy, Nuts | PureScan AI"
-  description="Scan food products to detect hidden allergens instantly. PureScan AI identifies gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories — personalized to your allergies. Free on iOS & Android."
+  title="Allergy Scanner App — Detect Hidden Food Allergens Instantly | Klar"
+  shortTitle="Best Allergy Scanner App — Gluten, Dairy, Nuts | Klar"
+  description="Scan food products to detect hidden allergens instantly. Klar identifies gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories — personalized to your allergies. Free on iOS & Android."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -60,7 +60,8 @@ const faqs = [
       {
         "@type": "SoftwareApplication",
         "@id": "https://purescan.droploop.in/#app",
-        "name": "PureScan AI",
+        "name": "Klar - Food & Cosmetic Scanner",
+        "alternateName": ["PureScan AI", "PureScan", "Klar"],
         "applicationCategory": "HealthApplication",
         "applicationSubCategory": "Allergy Scanner",
         "operatingSystem": "iOS, Android",
@@ -82,8 +83,8 @@ const faqs = [
     <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 object-contain" />
-          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">PureScan AI</span>
+          <Image src={logoImg} alt="Klar - Food & Cosmetic Scanner" format="webp" loading="eager" class="w-8 h-8 object-contain" />
+          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">Klar</span>
         </a>
         <div class="flex items-center gap-3">
           <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
@@ -102,7 +103,7 @@ const faqs = [
             Never Eat a Hidden <span class="text-[#17C37B]">Allergen</span> Again
           </h1>
           <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-8">
-            PureScan AI is the most advanced allergy scanner app for iOS and Android. Scan any food product barcode or ingredient label to instantly detect hidden allergens — gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories — personalized to your specific allergy profile.
+            Klar (formerly PureScan AI) is the most advanced allergy scanner app for iOS and Android. Scan any food product barcode or ingredient label to instantly detect hidden allergens — gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories — personalized to your specific allergy profile.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
@@ -117,7 +118,7 @@ const faqs = [
           <p class="mt-4 text-sm text-slate-400 font-medium">Free · 14+ allergens · Personalized alerts · All languages</p>
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
-          <Image src={mascotHero} alt="PureScan AI allergy scanner" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[350px] drop-shadow-2xl" />
+          <Image src={mascotHero} alt="Klar allergy scanner" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[350px] drop-shadow-2xl" />
         </div>
       </div>
     </section>
@@ -127,7 +128,7 @@ const faqs = [
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">14+ Allergen Categories Detected</h2>
-          <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">PureScan AI catches hidden allergens that vague labels don't reveal.</p>
+          <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Klar catches hidden allergens that vague labels don't reveal.</p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
@@ -228,9 +229,9 @@ const faqs = [
     <!-- Bottom CTA -->
     <section class="py-20 md:py-28 px-4 md:px-6 text-center bg-slate-50 border-t border-slate-100">
       <div class="max-w-3xl mx-auto">
-        <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
+        <Image src={mascotHappy} alt="Klar - Food & Cosmetic Scanner" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
         <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Shop Allergy-Free with Confidence</h2>
-        <p class="text-lg text-slate-600 font-medium mb-8">Download PureScan AI free — never risk a hidden allergen again.</p>
+        <p class="text-lg text-slate-600 font-medium mb-8">Download Klar (formerly PureScan AI) free — never risk a hidden allergen again.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-all shadow-lg">Download for iOS</a>
           <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_allergy%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">Download for Android</a>
@@ -241,8 +242,8 @@ const faqs = [
     <footer class="py-12 bg-white border-t-2 border-slate-100">
       <div class="max-w-7xl mx-auto px-6 text-center">
         <div class="flex justify-center items-center gap-2 mb-6">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
-          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+          <Image src={logoImg} alt="Klar" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar</span>
         </div>
         <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
           <a href="/" class="hover:text-[#17C37B] transition-colors">Home</a><span class="mx-3">•</span>
@@ -252,7 +253,7 @@ const faqs = [
           <a href="/blog" class="hover:text-[#17C37B] transition-colors">Blog</a><span class="mx-3">•</span>
           <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy</a>
         </p>
-        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI.</p>
+        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
       </div>
     </footer>
   </div>

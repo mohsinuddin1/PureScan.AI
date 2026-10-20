@@ -11,7 +11,7 @@ const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 import { GradingIsland } from '../../components/Islands.jsx';
 ---
-<Layout title="Grading - PureScan AI">
+<Layout title="Grading - Klar (formerly PureScan AI)">
   <GradingIsland client:load  lang={lang} translations={translations} />
   <script is:inline>
     (function() {

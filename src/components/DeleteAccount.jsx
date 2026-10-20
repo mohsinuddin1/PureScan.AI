@@ -14,8 +14,8 @@ export default function DeleteAccount() {
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain" />
-                        <span className="font-semibold tracking-tight text-sm">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain" />
+                        <span className="font-semibold tracking-tight text-sm">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="w-10"></div> {/* Spacer to center logo */}
                 </div>
@@ -25,7 +25,7 @@ export default function DeleteAccount() {
                 <header className="mb-16 border-b border-slate-200 pb-10">
                     <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">Delete Account</h1>
                     <p className="text-base text-slate-600 leading-relaxed">
-                        To protect your privacy, you can request the permanent deletion of your PureScan AI account and all associated data. Please review the information below before proceeding.
+                        To protect your privacy, you can request the permanent deletion of your Klar (or legacy PureScan AI) account and all associated data. Please review the information below before proceeding.
                     </p>
                 </header>
 
@@ -59,16 +59,16 @@ export default function DeleteAccount() {
                     <section>
                         <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-5">Request Deletion</h2>
                         <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                            To delete your account, click the button below to send an email to our support team. Please include the email address associated with your PureScan AI account. We will process your request and confirm deletion within 48 hours.
+                            To delete your account, click the button below to send an email to our support team. Please include the email address associated with your Klar / PureScan AI account. We will process your request and confirm deletion within 48 hours.
                         </p>
                         <a
-                            href={"mailto:purescanai@outlook.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20PureScan%20AI%20account%20associated%20with%20this%20email%20address.%0A%0AAccount%20Email%3A%20%5BYour%20Account%20Email%5D%0AReason%20(optional)%3A%20%5BYour%20Reason%5D%0A%0AI%20understand%20that%20this%20action%20is%20permanent%20and%20cannot%20be%20reversed."}
+                            href={"mailto:purescanai@outlook.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20Klar%20(formerly%20PureScan%20AI)%20account%20associated%20with%20this%20email%20address.%0A%0AAccount%20Email%3A%20%5BYour%20Account%20Email%5D%0AReason%20(optional)%3A%20%5BYour%20Reason%5D%0A%0AI%20understand%20that%20this%20action%20is%20permanent%20and%20cannot%20be%20reversed."}
                             className="inline-block px-5 py-2.5 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors"
                         >
                             Request Account Deletion
                         </a>
                         <p className="text-sm text-slate-500 italic mt-4">
-                            Note: You can also request account deletion directly from within the Settings page of the PureScan AI app.
+                            Note: You can also request account deletion directly from within the Settings page of the Klar app.
                         </p>
                     </section>
                 </div>
@@ -87,8 +87,8 @@ export default function DeleteAccount() {
             <footer className="py-12 bg-[#FAFAFA] border-t border-slate-200">
                 <div className="max-w-3xl mx-auto px-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain grayscale opacity-50" />
-                        <span className="font-semibold tracking-tight text-sm text-slate-400">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain grayscale opacity-50" />
+                        <span className="font-semibold tracking-tight text-sm text-slate-400">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href="/grading" className="text-slate-500 hover:text-slate-900 transition-colors">Grading</a>
@@ -98,7 +98,7 @@ export default function DeleteAccount() {
                     </div>
                 </div>
                 <div className="max-w-3xl mx-auto px-6 mt-6 text-center sm:text-left">
-                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} PureScan AI. All rights reserved.</p>
+                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
                 </div>
             </footer>
         </div>

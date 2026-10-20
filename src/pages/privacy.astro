@@ -6,6 +6,6 @@ const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 import { PrivacyIsland } from '../components/Islands.jsx';
 ---
-<Layout title="Privacy Policy - PureScan AI">
+<Layout title="Privacy Policy - Klar (formerly PureScan AI)">
   <PrivacyIsland client:load  lang={lang} translations={translations} />
 </Layout>

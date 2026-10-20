@@ -1,13 +1,13 @@
 {
   "specVersion": "1.0",
   "host": {
-    "displayName": "PureScan AI",
+    "displayName": "Klar (formerly PureScan AI)",
     "identifier": "did:web:purescan.droploop.in"
   },
   "entries": [
     {
       "identifier": "urn:air:purescan.droploop.in:server:mcp",
-      "displayName": "PureScan AI MCP Server",
+      "displayName": "Klar (formerly PureScan AI) MCP Server",
       "type": "application/mcp-server-card+json",
       "url": "https://purescan.droploop.in/.well-known/mcp/server-card.json",
       "representativeQueries": [
@@ -18,13 +18,13 @@
     },
     {
       "identifier": "urn:air:purescan.droploop.in:schema:openapi",
-      "displayName": "PureScan AI OpenAPI Specification",
+      "displayName": "Klar (formerly PureScan AI) OpenAPI Specification",
       "type": "application/vnd.oai.openapi+json;version=3.0",
       "url": "https://purescan.droploop.in/api/openapi.json",
       "representativeQueries": [
         "purescan api endpoints",
         "food scanner openapi schema",
-        "paddle customer portal session api"
+        "dodo customer portal session api"
       ]
     },
     {
@@ -51,7 +51,7 @@
     },
     {
       "identifier": "urn:air:purescan.droploop.in:doc:auth",
-      "displayName": "PureScan AI Agent Auth Specification",
+      "displayName": "Klar (formerly PureScan AI) Agent Auth Specification",
       "type": "text/markdown",
       "url": "https://purescan.droploop.in/auth.md",
       "representativeQueries": [

@@ -7,7 +7,7 @@ export default function Alternative({ competitor }) {
     const name = competitor ? competitor.charAt(0).toUpperCase() + competitor.slice(1) : 'Competitor';
 
     useEffect(() => {
-        document.title = `PureScan AI vs ${name} - The Best Alternative`;
+        document.title = `Klar vs ${name} - The Best Alternative`;
         // Scroll to top
         window.scrollTo(0, 0);
     }, [name]);
@@ -24,8 +24,8 @@ export default function Alternative({ competitor }) {
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain" />
-                        <span className="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar" className="w-5 h-5 object-contain" />
+                        <span className="font-semibold tracking-tight text-sm hidden sm:inline">Klar</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1 sm:gap-2 bg-[#0A0A0A] text-white px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-[10px] sm:text-xs font-bold">
@@ -55,19 +55,19 @@ export default function Alternative({ competitor }) {
                         Looking for a <span className="text-[#17C37B]">{name} alternative?</span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto">
-                        If you are searching for an app like {name} but with personalized health alerts, allergy detection, and comprehensive cosmetic scanning, see why PureScan AI is the top choice.
+                        If you are searching for an app like {name} but with personalized health alerts, allergy detection, and comprehensive cosmetic scanning, see why Klar (formerly PureScan AI) is the top choice.
                     </p>
                 </div>
 
                 <div className="bg-white rounded-[2rem] p-6 sm:p-10 shadow-xl border border-slate-100 mb-16">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">PureScan AI vs {name}</h2>
+                    <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Klar vs {name}</h2>
                     
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse min-w-[500px]">
                             <thead>
                                 <tr className="border-b border-slate-200">
                                     <th className="py-4 px-4 font-bold text-slate-500 w-[40%]">Feature</th>
-                                    <th className="py-4 px-4 font-black text-xl text-[#17C37B] text-center w-[30%]">PureScan AI</th>
+                                    <th className="py-4 px-4 font-black text-xl text-[#17C37B] text-center w-[30%]">Klar</th>
                                     <th className="py-4 px-4 font-bold text-slate-400 text-center w-[30%]">{name}</th>
                                 </tr>
                             </thead>
@@ -103,12 +103,12 @@ export default function Alternative({ competitor }) {
                 </div>
 
                 <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Why choose PureScan AI over {name}?</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Why choose Klar over {name}?</h3>
                     <p>
-                        While {name} is a popular option for basic product scanning, it often provides generic nutritional grades that don't take your specific body and health conditions into account. PureScan AI is built differently. It operates as a personalized health companion.
+                        While {name} is a popular option for basic product scanning, it often provides generic nutritional grades that don't take your specific body and health conditions into account. Klar (formerly PureScan AI) is built differently. It operates as a personalized health companion.
                     </p>
                     <p>
-                        With PureScan AI, you aren't just getting a score; you are getting a tailored analysis based on your allergies (like gluten or dairy) and your specific health goals (such as managing PCOS, hormonal acne, or diabetes). If a product isn't in our massive database, our advanced AI camera reads the ingredient label instantly—in any language.
+                        With Klar, you aren't just getting a score; you are getting a tailored analysis based on your allergies (like gluten or dairy) and your specific health goals (such as managing PCOS, hormonal acne, or diabetes). If a product isn't in our massive database, our advanced AI camera reads the ingredient label instantly—in any language.
                     </p>
 
                     <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl my-8 flex items-start gap-4">

@@ -1,6 +1,6 @@
-# PureScan AI Blog Creation Rules & Topic Index
+# Klar — Food & Cosmetic Scanner Blog Creation Rules & Topic Index
 
-This document defines the mandatory criteria for creating new blog posts on the PureScan AI website and maintains a master index of all previously covered topics to prevent duplication.
+This document defines the mandatory criteria for creating new blog posts on the Klar (formerly PureScan AI) website and maintains a master index of all previously covered topics to prevent duplication.
 
 ---
 
@@ -37,7 +37,7 @@ All blog posts must follow this exact structural pattern:
    - Step 3: Detect Hidden Hazards
    - Step 4: Receive Personalized Score
 
-5. **Subtle App Promotion Section** — A final `<h3>` with a value-driven paragraph that naturally positions PureScan AI as the solution. **No aggressive sales pitch.** The tone should empower the reader.
+5. **Subtle App Promotion Section** — A final `<h3>` with a value-driven paragraph that naturally positions Klar (formerly PureScan AI) as the solution. **No aggressive sales pitch.** The tone should empower the reader.
 
 ### SEO & GEO Requirements
 - **Question-based H3 headings**: Must target high-volume Google search queries.
@@ -57,9 +57,9 @@ All blog posts must follow this exact structural pattern:
 - Recommended format: `https://images.unsplash.com/photo-XXXXX?q=80&w=1200&auto=format&fit=crop`
 
 ### Promotion Style
-- Always **value-first**: educate the reader before mentioning PureScan AI.
-- Position PureScan AI as a tool that **empowers** the user, not as a sales pitch.
-- The promotional section should naturally flow from the educational content.
+- Always **value-first**: educate the reader before mentioning Klar.
+- Position Klar as a tool that **empowers** the user, not as a sales pitch.
+- The promotional section should naturally flow from the educational content. Mention that Klar was formerly known as PureScan AI where contextually helpful.
 
 ### Technical Requirements
 - File naming and URL slugs: `<id>-<localized-slug>.mdx`. The URL link/slug **must** be translated into that specific local language (e.g., `50-pourquoi-mon-ventre-gonfle.mdx` for French). Do not use English slugs for non-English locales.

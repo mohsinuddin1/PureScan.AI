@@ -72,8 +72,8 @@ export default function Blog() {
                         </a>
                     </div>
                     <div className="flex items-center gap-2 cursor-pointer" onClick={() => setSelectedPostId(null)}>
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain" />
-                        <span className="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI Blog</span>
+                        <img src="/logo.png" alt="Klar" className="w-5 h-5 object-contain" />
+                        <span className="font-semibold tracking-tight text-sm hidden sm:inline">Klar Blog</span>
                     </div>
                     <div className="flex items-center">
                         <LanguageSwitcher currentLang={i18n.language || i18n.resolvedLanguage} />
@@ -87,7 +87,7 @@ export default function Blog() {
                     // GRID VIEW
                     <div>
                         <header className="mb-12 text-center sm:text-left max-w-3xl">
-                            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+                            <h1 className="text-3xl sm:5xl font-extrabold tracking-tight text-slate-900 mb-4">
                                 The Health Hub
                             </h1>
                             <p className="text-lg text-slate-500 font-medium leading-relaxed">
@@ -164,8 +164,8 @@ export default function Blog() {
             <footer className="py-12 bg-white border-t border-slate-200 mt-12">
                 <div className="max-w-5xl mx-auto px-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain grayscale opacity-50" />
-                        <span className="font-semibold tracking-tight text-sm text-slate-400">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar" className="w-5 h-5 object-contain grayscale opacity-50" />
+                        <span className="font-semibold tracking-tight text-sm text-slate-400">Klar</span>
                     </div>
                     <div className={`flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm ${isRtl ? 'flex-row-reverse' : ''}`}>
                         <a href="/grading" className="text-slate-500 hover:text-slate-900 transition-colors font-medium">{t('footer.grading')}</a>
@@ -176,7 +176,7 @@ export default function Blog() {
                     </div>
                 </div>
                 <div className="max-w-5xl mx-auto px-6 mt-6 text-center sm:text-left">
-                    <p className="text-slate-400 text-xs font-medium">© {new Date().getFullYear()} PureScan AI. All rights reserved.</p>
+                    <p className="text-slate-400 text-xs font-medium">© {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
                 </div>
             </footer>
         </div>

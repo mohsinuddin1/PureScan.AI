@@ -14,8 +14,8 @@ export default function Support() {
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain" />
-                        <span className="font-semibold tracking-tight text-sm">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain" />
+                        <span className="font-semibold tracking-tight text-sm">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="w-10"></div> {/* Spacer to center logo */}
                 </div>
@@ -27,7 +27,7 @@ export default function Support() {
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">Support</h1>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-md">
-                    If you have any questions, issues, or feedback regarding the PureScan AI app, please reach out. We aim to respond within 24-48 hours.
+                    If you have any questions, issues, or feedback regarding the Klar app (or your legacy PureScan AI account), please reach out. We aim to respond within 24-48 hours.
                 </p>
                 
                 <a 
@@ -48,8 +48,8 @@ export default function Support() {
             <footer className="py-12 bg-[#FAFAFA] border-t border-slate-200">
                 <div className="max-w-3xl mx-auto px-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain grayscale opacity-50" />
-                        <span className="font-semibold tracking-tight text-sm text-slate-400">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain grayscale opacity-50" />
+                        <span className="font-semibold tracking-tight text-sm text-slate-400">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href="/grading" className="text-slate-500 hover:text-slate-900 transition-colors">Grading</a>
@@ -59,7 +59,7 @@ export default function Support() {
                     </div>
                 </div>
                 <div className="max-w-3xl mx-auto px-6 mt-6 text-center sm:text-left">
-                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} PureScan AI. All rights reserved.</p>
+                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
                 </div>
             </footer>
         </div>

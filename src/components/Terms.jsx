@@ -20,8 +20,8 @@ export default function TermsOfService() {
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain" />
-                        <span className="font-semibold tracking-tight text-sm">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain" />
+                        <span className="font-semibold tracking-tight text-sm">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="w-10"></div> {/* Spacer to center logo */}
                 </div>
@@ -32,7 +32,7 @@ export default function TermsOfService() {
                     <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">Terms of Service</h1>
                     <p className="text-sm text-slate-500 mb-8">Updated {lastUpdated}</p>
                     <p className="text-base text-slate-600 leading-relaxed">
-                        Welcome to PureScan AI. By accessing or using our mobile applications, web applications, and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                        Welcome to Klar — Food &amp; Cosmetic Scanner (the &quot;App&quot;, &quot;Service&quot;), formerly operated and known as PureScan AI (collectively, &quot;Klar&quot;, &quot;PureScan AI&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). By accessing or using our mobile applications, web applications, and services, you agree to be bound by these Terms of Service. These Terms govern your use of the application Klar, including all legacy versions, accounts, and historical services originally created under the name PureScan AI. If you do not agree to these terms, please do not use our services.
                     </p>
                 </header>
 
@@ -41,10 +41,10 @@ export default function TermsOfService() {
                         <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-3">Educational Tool, Not Medical Advice</h2>
                         <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
                             <p>
-                                <strong className="text-slate-900 font-medium">PureScan AI is NOT a medical device, and the information provided is not medical advice.</strong> The toxicity scores, ingredient analyses, and personalized health insights are for informational and educational purposes only.
+                                <strong className="text-slate-900 font-medium">Klar is NOT a medical device, and the information provided is not medical advice.</strong> The toxicity scores, ingredient analyses, and personalized health insights are for informational and educational purposes only.
                             </p>
                             <p>
-                                They should never replace professional medical diagnosis, advice, or treatment. Always consult with a qualified healthcare provider regarding dietary restrictions, allergies, or health conditions before making dietary lifestyle changes or using any product. Reliance on any information provided by PureScan AI is solely at your own risk.
+                                They should never replace professional medical diagnosis, advice, or treatment. Always consult with a qualified healthcare provider regarding dietary restrictions, allergies, or health conditions before making dietary lifestyle changes or using any product. Reliance on any information provided by Klar (formerly PureScan AI) is solely at your own risk.
                             </p>
                         </div>
                     </section>
@@ -55,10 +55,10 @@ export default function TermsOfService() {
                         <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-3">Subscriptions & Payments</h2>
                         <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
                             <p>
-                                Some features of PureScan AI require a premium subscription. By subscribing, you agree to the pricing, payment terms, and billing increments presented at the time of purchase.
+                                Some features of Klar require a premium subscription. By subscribing, you agree to the pricing, payment terms, and billing increments presented at the time of purchase. Subscriptions, invoices, and bank records may temporarily display either &quot;PureScan AI&quot; or &quot;Klar&quot; during our brand transition period. All active Pro benefits and historical entitlements remain fully uninterrupted.
                             </p>
                             <p>
-                                Subscriptions automatically renew unless canceled. You must cancel your subscription through the Apple App Store or Google Play Store settings at least 24 hours before the renewal date to avoid being charged for the next billing cycle. We do not directly handle refunds; all refund requests must be processed through the respective app store according to their policies.
+                                Subscriptions automatically renew unless canceled. You must cancel your subscription through the Apple App Store, Google Play Store, or our web management portal at least 24 hours before the renewal date to avoid being charged for the next billing cycle. We mirror standard app store policies; all app store purchase refund requests must be processed through the respective app store according to their policies.
                             </p>
                         </div>
                     </section>
@@ -68,7 +68,7 @@ export default function TermsOfService() {
                     <section>
                         <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-4">User Conduct & Responsibilities</h2>
                         <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                            When using PureScan AI, you agree to the following conditions:
+                            When using Klar (or legacy PureScan AI services), you agree to the following conditions:
                         </p>
                         <ul className="space-y-3 text-sm text-slate-600 leading-relaxed list-disc list-inside">
                             <li>You are at least 13 years of age (or the minimum age of digital consent).</li>
@@ -139,8 +139,8 @@ export default function TermsOfService() {
             <footer className="py-12 bg-[#FAFAFA] border-t border-slate-200">
                 <div className="max-w-3xl mx-auto px-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain grayscale opacity-50" />
-                        <span className="font-semibold tracking-tight text-sm text-slate-400">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain grayscale opacity-50" />
+                        <span className="font-semibold tracking-tight text-sm text-slate-400">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href="/grading" className="text-slate-500 hover:text-slate-900 transition-colors">Grading</a>
@@ -150,7 +150,7 @@ export default function TermsOfService() {
                     </div>
                 </div>
                 <div className="max-w-3xl mx-auto px-6 mt-6 text-center sm:text-left">
-                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} PureScan AI. All rights reserved.</p>
+                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
                 </div>
             </footer>
         </div>

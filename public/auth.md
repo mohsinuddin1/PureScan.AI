@@ -1,6 +1,6 @@
-# PureScan AI auth.md
+# Klar (formerly PureScan AI) auth.md
 
-This document defines agent registration, authentication procedures, and credential management for AI agents interacting with PureScan AI APIs and tools.
+This document defines agent registration, authentication procedures, and credential management for AI agents interacting with Klar (formerly PureScan AI) APIs and tools.
 
 ## Discovery Metadata
 

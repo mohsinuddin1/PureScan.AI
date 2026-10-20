@@ -1,8 +1,8 @@
-# PureScan AI
+# Klar — Food & Cosmetic Scanner (formerly PureScan AI)
 
-> The most advanced AI-powered food and cosmetic ingredient scanner app for iOS and Android
+> The most advanced AI-powered food and cosmetic ingredient scanner app for iOS and Android (formerly PureScan AI)
 
-PureScan AI is a mobile application that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Unlike other scanner apps, PureScan AI provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences.
+Klar (formerly PureScan AI) is a mobile application that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Unlike other scanner apps, Klar provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences.
 
 ## Key Features
 

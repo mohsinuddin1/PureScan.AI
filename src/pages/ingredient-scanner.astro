@@ -15,36 +15,36 @@ const relatedPosts = allPosts
 
 const faqs = [
   {
-    question: "How does PureScan AI scan ingredients?",
-    answer: "PureScan AI uses barcode scanning to look up products in a massive database. If a product isn't found, its AI camera reads the ingredient label in any language, then cross-references each ingredient against scientific toxicology databases to detect hidden hazards."
+    question: "How does Klar scan ingredients?",
+    answer: "Klar (formerly PureScan AI) uses barcode scanning to look up products in a massive database. If a product isn't found, its AI camera reads the ingredient label in any language, then cross-references each ingredient against scientific toxicology databases to detect hidden hazards."
   },
   {
-    question: "What harmful ingredients can PureScan AI detect?",
-    answer: "PureScan AI detects endocrine disruptors (parabens, phthalates, BPA), carcinogens, allergens, comedogenic ingredients, ultra-processed additives, artificial dyes like Red 40, preservatives like BHT, and over 500 other flagged substances in food and cosmetics."
+    question: "What harmful ingredients can Klar detect?",
+    answer: "Klar detects endocrine disruptors (parabens, phthalates, BPA), carcinogens, allergens, comedogenic ingredients, ultra-processed additives, artificial dyes like Red 40, preservatives like BHT, and over 500 other flagged substances in food and cosmetics."
   },
   {
-    question: "Is PureScan AI better than other ingredient scanner apps?",
-    answer: "PureScan AI provides personalized results based on your health profile, while most other scanner apps give generic scores. It also features AI-powered label reading in all languages when products aren't in the database, solving the 'product not found' problem."
+    question: "Is Klar better than other ingredient scanner apps?",
+    answer: "Klar provides personalized results based on your health profile, while most other scanner apps give generic scores. It also features AI-powered label reading in all languages when products aren't in the database, solving the 'product not found' problem."
   },
   {
-    question: "Can PureScan AI scan both food and cosmetic ingredients?",
-    answer: "Yes. PureScan AI is the only scanner app that provides comprehensive analysis for both food products (Nutri-Score, NOVA classification, allergens) and cosmetic products (hazard scores, endocrine disruptors, comedogenic ratings) in a single app."
+    question: "Can Klar scan both food and cosmetic ingredients?",
+    answer: "Yes. Klar is the only scanner app that provides comprehensive analysis for both food products (Nutri-Score, NOVA classification, allergens) and cosmetic products (hazard scores, endocrine disruptors, comedogenic ratings) in a single app."
   },
   {
     question: "Is the ingredient scanner free to use?",
-    answer: "PureScan AI offers a free tier with essential ingredient scanning features. A Pro subscription unlocks unlimited scans, advanced personalized analysis, and detailed ingredient breakdowns. Download free on iOS and Android."
+    answer: "Klar offers a free tier with essential ingredient scanning features. A Pro subscription unlocks unlimited scans, advanced personalized analysis, and detailed ingredient breakdowns. Download free on iOS and Android."
   },
   {
-    question: "Does PureScan AI work with international products?",
-    answer: "Yes. The AI camera feature reads ingredient labels in all world languages, making PureScan AI ideal for scanning imported products or shopping while traveling abroad. No manual typing required."
+    question: "Does Klar work with international products?",
+    answer: "Yes. The AI camera feature reads ingredient labels in all world languages, making Klar ideal for scanning imported products or shopping while traveling abroad. No manual typing required."
   }
 ];
 ---
 
 <Layout
-  title="Ingredient Scanner App — Scan Food & Cosmetic Labels Instantly | PureScan AI"
-  shortTitle="Best Ingredient Scanner App 2026 | PureScan AI"
-  description="Scan any food or cosmetic ingredient list with AI. PureScan AI detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Free on iOS & Android."
+  title="Ingredient Scanner App — Scan Food & Cosmetic Labels Instantly | Klar"
+  shortTitle="Best Ingredient Scanner App 2026 | Klar"
+  description="Scan any food or cosmetic ingredient list with AI. Klar detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. Free on iOS & Android."
 >
   <!-- FAQ + SoftwareApplication Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -64,7 +64,8 @@ const faqs = [
       {
         "@type": "SoftwareApplication",
         "@id": "https://purescan.droploop.in/#app",
-        "name": "PureScan AI",
+        "name": "Klar - Food & Cosmetic Scanner",
+        "alternateName": ["PureScan AI", "Klar"],
         "applicationCategory": "HealthApplication",
         "applicationSubCategory": "Ingredient Scanner",
         "operatingSystem": "iOS, Android",
@@ -97,8 +98,8 @@ const faqs = [
     <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 object-contain" />
-          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">PureScan AI</span>
+          <Image src={logoImg} alt="Klar Logo" format="webp" loading="eager" class="w-8 h-8 object-contain" />
+          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">Klar</span>
         </a>
         <div class="flex items-center gap-3">
           <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
@@ -121,7 +122,7 @@ const faqs = [
 
           <!-- AI Citability Block — 40-60 word definitive answer for AEO -->
           <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-8" id="about-ingredient-scanner">
-            PureScan AI is the most advanced ingredient scanner app for iOS and Android. It uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly — personalized to your unique health conditions and allergies.
+            Klar (formerly PureScan AI) is the most advanced ingredient scanner app for iOS and Android. It uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly — personalized to your unique health conditions and allergies.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -137,7 +138,7 @@ const faqs = [
           <p class="mt-4 text-sm text-slate-400 font-medium">Free download · No account required · Works offline</p>
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
-          <Image src={mascotHero} alt="PureScan AI ingredient scanner mascot" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[350px] drop-shadow-2xl" />
+          <Image src={mascotHero} alt="Klar ingredient scanner mascot" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[350px] drop-shadow-2xl" />
         </div>
       </div>
     </section>
@@ -146,7 +147,7 @@ const faqs = [
     <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-y border-slate-100">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">How to Scan Ingredients with PureScan AI</h2>
+          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">How to Scan Ingredients with Klar</h2>
           <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Three simple steps to know exactly what's in your food and cosmetics.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -163,7 +164,7 @@ const faqs = [
           <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 rounded-2xl bg-[#17C37B]/10 text-[#17C37B] flex items-center justify-center mx-auto mb-5 text-3xl font-black">3</div>
             <h3 class="text-xl font-bold text-slate-800 mb-3">Get Personalized Results</h3>
-            <p class="text-slate-600 font-medium">Unlike generic scanners, PureScan AI adapts results to YOUR health conditions — PCOS, diabetes, allergies, pregnancy, and more.</p>
+            <p class="text-slate-600 font-medium">Unlike generic scanners, Klar adapts results to YOUR health conditions — PCOS, diabetes, allergies, pregnancy, and more.</p>
           </div>
         </div>
       </div>
@@ -172,7 +173,7 @@ const faqs = [
     <!-- What We Detect -->
     <section class="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">What PureScan AI Detects in Your Products</h2>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">What Klar Detects in Your Products</h2>
         <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Comprehensive ingredient analysis for both food and cosmetic products.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -197,14 +198,14 @@ const faqs = [
     <section class="py-16 md:py-24 px-4 md:px-6 bg-slate-50 border-y border-slate-100">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-10">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">PureScan AI vs Other Ingredient Scanners</h2>
+          <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Klar vs Other Ingredient Scanners</h2>
         </div>
         <div class="overflow-x-auto border-2 border-slate-100 rounded-2xl shadow-lg bg-white">
           <table class="w-full text-left border-collapse min-w-[500px]">
             <thead>
               <tr>
                 <th class="p-5 bg-slate-50 border-b-2 border-slate-100 font-bold text-slate-600">Feature</th>
-                <th class="p-5 bg-[#17C37B] border-b-2 border-[#16b572] font-bold text-white text-center">PureScan AI</th>
+                <th class="p-5 bg-[#17C37B] border-b-2 border-[#16b572] font-bold text-white text-center">Klar</th>
                 <th class="p-5 bg-slate-50 border-b-2 border-slate-100 font-bold text-slate-400 text-center">Others</th>
               </tr>
             </thead>
@@ -218,7 +219,7 @@ const faqs = [
           </table>
         </div>
         <div class="flex flex-wrap justify-center gap-3 mt-6">
-          <a href="/alternatives/yuka" class="text-sm font-medium text-[#17C37B] hover:underline">PureScan AI vs Yuka →</a>
+          <a href="/alternatives/yuka" class="text-sm font-medium text-[#17C37B] hover:underline">Klar vs Yuka →</a>
           <a href="/alternatives/ewg" class="text-sm font-medium text-[#17C37B] hover:underline">vs EWG →</a>
           <a href="/alternatives/think-dirty" class="text-sm font-medium text-[#17C37B] hover:underline">vs Think Dirty →</a>
         </div>
@@ -276,9 +277,9 @@ const faqs = [
     <!-- Bottom CTA -->
     <section class="py-20 md:py-28 px-4 md:px-6 text-center">
       <div class="max-w-3xl mx-auto">
-        <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
+        <Image src={mascotHappy} alt="Klar Logo" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
         <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Start Scanning Your Products Today</h2>
-        <p class="text-lg text-slate-600 font-medium mb-8 max-w-xl mx-auto">Download PureScan AI free and discover what's really hiding in your food and cosmetics.</p>
+        <p class="text-lg text-slate-600 font-medium mb-8 max-w-xl mx-auto">Download Klar free and discover what's really hiding in your food and cosmetics.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" /></svg>
@@ -296,8 +297,8 @@ const faqs = [
     <footer class="py-12 bg-white border-t-2 border-slate-100">
       <div class="max-w-7xl mx-auto px-6 text-center">
         <div class="flex justify-center items-center gap-2 mb-6">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
-          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+          <Image src={logoImg} alt="Klar Logo" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar <span class="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
         </div>
         <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
           <a href="/" class="hover:text-[#17C37B] transition-colors">Home</a>
@@ -314,7 +315,7 @@ const faqs = [
           <span class="mx-3">•</span>
           <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms</a>
         </p>
-        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI. The Most Advanced Ingredient Scanner App.</p>
+        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). The Most Advanced Ingredient Scanner App.</p>
       </div>
     </footer>
   </div>

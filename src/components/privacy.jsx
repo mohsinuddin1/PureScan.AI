@@ -20,8 +20,8 @@ export default function PrivacyPolicy() {
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain" />
-                        <span className="font-semibold tracking-tight text-sm">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain" />
+                        <span className="font-semibold tracking-tight text-sm">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="w-10"></div> {/* Spacer to center logo */}
                 </div>
@@ -32,7 +32,7 @@ export default function PrivacyPolicy() {
                     <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">Privacy Policy</h1>
                     <p className="text-sm text-slate-500 mb-8">Updated {lastUpdated}</p>
                     <p className="text-base text-slate-600 leading-relaxed">
-                        Welcome to PureScan AI. We are committed to protecting your privacy and ensuring you have a safe experience when using our mobile applications, web applications, and services. This Privacy Policy outlines how we collect, use, and safeguard your data.
+                        Welcome to Klar — Food &amp; Cosmetic Scanner (the &quot;App&quot;, &quot;Service&quot;), formerly operated and known as PureScan AI (collectively, &quot;Klar&quot;, &quot;PureScan AI&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to protecting your privacy and ensuring you have a safe experience when using our mobile applications, web applications, and services. This Privacy Policy outlines how we collect, use, and safeguard your data across all current versions of Klar as well as historical accounts originally established under PureScan AI.
                     </p>
                 </header>
 
@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
                     <section>
                         <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-3">Children's Privacy</h2>
                         <p className="text-sm text-slate-600 leading-relaxed">
-                            PureScan AI is not directed at or intended for children under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently received personal data from a user under the age of 13, we will immediately delete such information from our records.
+                            Klar (formerly PureScan AI) is not directed at or intended for children under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently received personal data from a user under the age of 13, we will immediately delete such information from our records.
                         </p>
                     </section>
 
@@ -136,8 +136,8 @@ export default function PrivacyPolicy() {
             <footer className="py-12 bg-[#FAFAFA] border-t border-slate-200">
                 <div className="max-w-3xl mx-auto px-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="PureScan AI" className="w-5 h-5 object-contain grayscale opacity-50" />
-                        <span className="font-semibold tracking-tight text-sm text-slate-400">PureScan AI</span>
+                        <img src="/logo.png" alt="Klar Logo" className="w-5 h-5 object-contain grayscale opacity-50" />
+                        <span className="font-semibold tracking-tight text-sm text-slate-400">Klar <span className="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href="/grading" className="text-slate-500 hover:text-slate-900 transition-colors">Grading</a>
@@ -147,7 +147,7 @@ export default function PrivacyPolicy() {
                     </div>
                 </div>
                 <div className="max-w-3xl mx-auto px-6 mt-6 text-center sm:text-left">
-                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} PureScan AI. All rights reserved.</p>
+                    <p className="text-slate-400 text-xs">© {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
                 </div>
             </footer>
         </div>

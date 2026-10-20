@@ -513,7 +513,7 @@ export default function CheckoutPortal({ publicMode = false }) {
           WebkitTextFillColor: 'transparent',
           margin: '0 0 20px 0',
         }}>
-          Welcome to PureScan Pro!
+          Welcome to Klar Pro!
         </h2>
         <p style={{
           fontSize: 'clamp(15px, 2.5vw, 18px)',
@@ -524,7 +524,7 @@ export default function CheckoutPortal({ publicMode = false }) {
           fontWeight: 500,
         }}>
           Thank you for subscribing! Your account has been successfully upgraded.
-          Enjoy unlimited access to all PureScan AI features and personalized health insights.
+          Enjoy unlimited access to all Klar features and personalized health insights.
         </p>
 
         <div style={{
@@ -665,7 +665,7 @@ export default function CheckoutPortal({ publicMode = false }) {
             letterSpacing: '-0.02em',
             lineHeight: 1.2,
           }}>
-            Welcome to PureScan AI
+            Welcome to Klar
           </h1>
           <p style={{
             fontSize: 'clamp(14px, 2.5vw, 17px)',
@@ -767,7 +767,7 @@ export default function CheckoutPortal({ publicMode = false }) {
           margin: '0 0 28px 0', padding: '0 16px', fontWeight: 500,
         }}>
           {isLoginView
-            ? 'Sign in using your existing PureScan AI credentials to upgrade to Pro or manage your account.'
+            ? 'Sign in using your Klar (or PureScan AI) credentials to upgrade to Pro or manage your account.'
             : 'Create an account to subscribe. You will use this email and password to log in.'}
         </p>
 

@@ -23,14 +23,14 @@ const blogItems = currentBlogPosts.map((post, index) => ({
 ---
 
 <Layout 
-  title="PureScan AI Blog — Hidden Toxins in Food & Cosmetics"
-  shortTitle="Health Blog — Hidden Toxins in Food & Skincare | PureScan AI"
+  title="Klar Blog — Hidden Toxins in Food & Cosmetics"
+  shortTitle="Health Blog — Hidden Toxins in Food & Skincare | Klar"
   description="Expert articles on hidden toxins, allergens, and endocrine disruptors in everyday food and cosmetic products. Backed by PubMed research."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "PureScan AI Blog",
+    "name": "Klar Blog",
     "description": "Expert articles on hidden toxins in food and cosmetics.",
     "url": `https://purescan.droploop.in/${lang}/blog`,
     "isPartOf": {
@@ -51,8 +51,8 @@ const blogItems = currentBlogPosts.map((post, index) => ({
                 </a>
             </div>
             <div class="flex items-center gap-2 cursor-pointer">
-                <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-5 h-5 object-contain" />
-                <span class="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI Blog</span>
+                <Image src={logoImg} alt="Klar" format="webp" loading="eager" class="w-5 h-5 object-contain" />
+                <span class="font-semibold tracking-tight text-sm hidden sm:inline">Klar Blog</span>
             </div>
             <div class="flex items-center">
                 <LanguageSwitcher client:load currentLang={lang} />
@@ -103,8 +103,8 @@ const blogItems = currentBlogPosts.map((post, index) => ({
     <footer class="py-12 bg-white border-t-2 border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
           <div class="flex justify-center items-center gap-2 mb-6">
-            <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
-            <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+            <Image src={logoImg} alt="Klar" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+            <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar</span>
           </div>
           <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
             <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
@@ -117,7 +117,7 @@ const blogItems = currentBlogPosts.map((post, index) => ({
             <span class="mx-3">•</span>
             <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
           </p>
-          <p class="text-slate-400 font-medium text-xs">© {new Date().getFullYear()} PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
+          <p class="text-slate-400 font-medium text-xs">© {new Date().getFullYear()} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved.</p>
         </div>
     </footer>
   </div>

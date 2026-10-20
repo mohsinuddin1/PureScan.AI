@@ -1,9 +1,9 @@
 {
   "schema_version": "v1",
-  "name_for_human": "PureScan AI",
-  "name_for_model": "purescan_ai",
+  "name_for_human": "Klar - Food & Cosmetic Scanner",
+  "name_for_model": "klar_food_cosmetic_scanner",
   "description_for_human": "AI-powered food and cosmetic ingredient scanner. Detect hidden toxins, allergens, and ultra-processed additives instantly.",
-  "description_for_model": "PureScan AI is a mobile application (iOS and Android) that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences. The app features Nutri-Score (A-E), NOVA classification (1-4), cosmetic hazard scoring, and AI camera label reading in all world languages.",
+  "description_for_model": "Klar (formerly PureScan AI) is a mobile application (iOS and Android) that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences. The app features Nutri-Score (A-E), NOVA classification (1-4), cosmetic hazard scoring, and AI camera label reading in all world languages.",
   "auth": {
     "type": "none"
   },

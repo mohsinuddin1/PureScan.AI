@@ -16,34 +16,34 @@ const relatedPosts = allPosts
 const faqs = [
   {
     question: "How do I check if my cosmetics are safe?",
-    answer: "Use PureScan AI to scan any cosmetic product barcode or photograph the ingredient label. The app instantly analyzes every ingredient against toxicology databases, detecting endocrine disruptors, carcinogens, allergens, and comedogenic substances — personalized to your skin type and health conditions."
+    answer: "Use Klar (formerly PureScan AI) to scan any cosmetic product barcode or photograph the ingredient label. The app instantly analyzes every ingredient against toxicology databases, detecting endocrine disruptors, carcinogens, allergens, and comedogenic substances — personalized to your skin type and health conditions."
   },
   {
     question: "What is a cosmetic safety checker?",
-    answer: "A cosmetic safety checker is an app that analyzes skincare, makeup, and personal care product ingredients for potentially harmful substances. PureScan AI is the most advanced cosmetic safety checker, detecting endocrine disruptors (parabens, phthalates), carcinogens, comedogenic ingredients, and allergens in real time."
+    answer: "A cosmetic safety checker is an app that analyzes skincare, makeup, and personal care product ingredients for potentially harmful substances. Klar is an advanced cosmetic safety checker, detecting endocrine disruptors (parabens, phthalates), carcinogens, comedogenic ingredients, and allergens in real time."
   },
   {
     question: "What are endocrine disruptors in cosmetics?",
-    answer: "Endocrine disruptors are chemicals that interfere with your hormone system. Common endocrine disruptors found in cosmetics include parabens (methylparaben, propylparaben), phthalates, BPA/BPS, oxybenzone, triclosan, and certain UV filters. PureScan AI detects all of these when you scan a product."
+    answer: "Endocrine disruptors are chemicals that interfere with your hormone system. Common endocrine disruptors found in cosmetics include parabens (methylparaben, propylparaben), phthalates, BPA/BPS, oxybenzone, triclosan, and certain UV filters. Klar detects all of these when you scan a product."
   },
   {
-    question: "How does PureScan AI rate cosmetic ingredients?",
-    answer: "PureScan AI provides a hazard score for each cosmetic product based on the toxicity profile of every ingredient. It rates individual ingredients for cancer risk, hormone disruption, allergenicity, and comedogenicity (pore-clogging potential) using data from scientific studies and toxicology databases."
+    question: "How does Klar rate cosmetic ingredients?",
+    answer: "Klar provides a hazard score for each cosmetic product based on the toxicity profile of every ingredient. It rates individual ingredients for cancer risk, hormone disruption, allergenicity, and comedogenicity (pore-clogging potential) using data from scientific studies and toxicology databases."
   },
   {
-    question: "Can PureScan AI detect comedogenic ingredients?",
-    answer: "Yes. PureScan AI rates every skincare ingredient on a comedogenic scale of 0-5, where 0 means non-comedogenic and 5 means highly likely to clog pores and cause acne. This is essential for people with acne-prone or sensitive skin."
+    question: "Can Klar detect comedogenic ingredients?",
+    answer: "Yes. Klar rates every skincare ingredient on a comedogenic scale of 0-5, where 0 means non-comedogenic and 5 means highly likely to clog pores and cause acne. This is essential for people with acne-prone or sensitive skin."
   },
   {
-    question: "Is PureScan AI better than EWG Skin Deep?",
-    answer: "PureScan AI provides personalized results based on your specific health conditions and skin type, while EWG Skin Deep gives generic safety scores. PureScan AI also scans both food and cosmetics in one app, supports all languages via AI camera, and works even when products aren't in the database."
+    question: "Is Klar better than EWG Skin Deep?",
+    answer: "Klar provides personalized results based on your specific health conditions and skin type, while EWG Skin Deep gives generic safety scores. Klar also scans both food and cosmetics in one app, supports all languages via AI camera, and works even when products aren't in the database."
   }
 ];
 ---
 
 <Layout
-  title="Cosmetic Safety Checker — Scan Skincare for Toxins & Endocrine Disruptors | PureScan AI"
-  shortTitle="Cosmetic Safety Checker — Scan Skincare Ingredients | PureScan AI"
+  title="Cosmetic Safety Checker — Scan Skincare for Toxins & Endocrine Disruptors | Klar"
+  shortTitle="Cosmetic Safety Checker — Scan Skincare Ingredients | Klar"
   description="Check if your cosmetics are safe. Scan skincare, makeup, and beauty products to detect endocrine disruptors, carcinogens, allergens, and comedogenic ingredients. Free app for iOS & Android."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -60,7 +60,8 @@ const faqs = [
       {
         "@type": "SoftwareApplication",
         "@id": "https://purescan.droploop.in/#app",
-        "name": "PureScan AI",
+        "name": "Klar - Food & Cosmetic Scanner",
+        "alternateName": ["PureScan AI", "PureScan", "Klar"],
         "applicationCategory": "HealthApplication",
         "applicationSubCategory": "Cosmetic Safety Checker",
         "operatingSystem": "iOS, Android",
@@ -82,8 +83,8 @@ const faqs = [
     <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 object-contain" />
-          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">PureScan AI</span>
+          <Image src={logoImg} alt="Klar - Food & Cosmetic Scanner" format="webp" loading="eager" class="w-8 h-8 object-contain" />
+          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">Klar</span>
         </a>
         <div class="flex items-center gap-3">
           <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
@@ -102,7 +103,7 @@ const faqs = [
             Check If Your <span class="text-[#17C37B]">Cosmetics</span> Are Really Safe
           </h1>
           <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-8">
-            PureScan AI is an AI-powered cosmetic safety checker that scans skincare, makeup, and personal care product labels to detect endocrine disruptors, carcinogens, allergens, and comedogenic ingredients instantly. Get personalized safety ratings based on your skin type and health conditions.
+            Klar (formerly PureScan AI) is an AI-powered cosmetic safety checker that scans skincare, makeup, and personal care product labels to detect endocrine disruptors, carcinogens, allergens, and comedogenic ingredients instantly. Get personalized safety ratings based on your skin type and health conditions.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
@@ -127,7 +128,7 @@ const faqs = [
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Harmful Chemicals Hiding in Your Cosmetics</h2>
-          <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">PureScan AI detects these dangerous substances that other apps miss.</p>
+          <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Klar detects these dangerous substances that other apps miss.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -221,9 +222,9 @@ const faqs = [
     <!-- Bottom CTA -->
     <section class="py-20 md:py-28 px-4 md:px-6 text-center bg-slate-50 border-t border-slate-100">
       <div class="max-w-3xl mx-auto">
-        <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
+        <Image src={mascotHappy} alt="Klar - Food & Cosmetic Scanner" format="webp" loading="lazy" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
         <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Stop Guessing, Start Scanning</h2>
-        <p class="text-lg text-slate-600 font-medium mb-8">Download PureScan AI free and know exactly what's in your cosmetics.</p>
+        <p class="text-lg text-slate-600 font-medium mb-8">Download Klar (formerly PureScan AI) free and know exactly what's in your cosmetics.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-all shadow-lg">Download for iOS</a>
           <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_cosmetic%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">Download for Android</a>
@@ -234,8 +235,8 @@ const faqs = [
     <footer class="py-12 bg-white border-t-2 border-slate-100">
       <div class="max-w-7xl mx-auto px-6 text-center">
         <div class="flex justify-center items-center gap-2 mb-6">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
-          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+          <Image src={logoImg} alt="Klar" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar</span>
         </div>
         <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
           <a href="/" class="hover:text-[#17C37B] transition-colors">Home</a><span class="mx-3">•</span>
@@ -245,7 +246,7 @@ const faqs = [
           <a href="/blog" class="hover:text-[#17C37B] transition-colors">Blog</a><span class="mx-3">•</span>
           <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy</a>
         </p>
-        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI.</p>
+        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). All rights reserved.</p>
       </div>
     </footer>
   </div>

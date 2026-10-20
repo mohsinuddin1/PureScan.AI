@@ -76,14 +76,14 @@ function generateShortTitle(fullTitle) {
   // Try to extract the question part (before the first ? or the subtitle separator)
   const questionMatch = fullTitle.match(/^(.+?\?)/);
   if (questionMatch && questionMatch[1].length <= 50) {
-    return `${questionMatch[1]} | PureScan AI`;
+    return `${questionMatch[1]} | Klar`;
   }
   // Otherwise truncate at a word boundary
   if (fullTitle.length > 50) {
     const truncated = fullTitle.substring(0, 50).replace(/\s+\S*$/, '');
-    return `${truncated}… | PureScan AI`;
+    return `${truncated}… | Klar`;
   }
-  return `${fullTitle} | PureScan AI`;
+  return `${fullTitle} | Klar`;
 }
 
 const shortTitle = generateShortTitle(post.data.title);
@@ -111,7 +111,8 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
         },
         "author": {
           "@type": "Organization",
-          "name": "PureScan AI",
+          "name": "Klar",
+          "alternateName": ["PureScan AI", "Klar"],
           "url": "https://purescan.droploop.in/",
           "logo": {
             "@type": "ImageObject",
@@ -121,7 +122,8 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
         "publisher": {
           "@type": "Organization",
           "@id": "https://purescan.droploop.in/#organization",
-          "name": "PureScan AI",
+          "name": "Klar",
+          "alternateName": ["PureScan AI", "Klar"],
           "url": "https://purescan.droploop.in/",
           "logo": {
             "@type": "ImageObject",
@@ -130,7 +132,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
         },
         "reviewedBy": {
           "@type": "Organization",
-          "name": "PureScan AI Research Team"
+          "name": "Klar Science & Research Team"
         },
         "about": {
           "@type": "Thing",
@@ -178,8 +180,8 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
                 </a>
             </div>
             <div class="flex items-center gap-2 cursor-pointer">
-                <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-5 h-5 object-contain" />
-                <span class="font-semibold tracking-tight text-sm hidden sm:inline">PureScan AI Blog</span>
+                <Image src={logoImg} alt="Klar" format="webp" loading="eager" class="w-5 h-5 object-contain" />
+                <span class="font-semibold tracking-tight text-sm hidden sm:inline">Klar Blog</span>
             </div>
             <div class="flex items-center">
                 <LanguageSwitcher client:load currentLang={lang} blogSlugMap={blogSlugMap} />
@@ -232,10 +234,10 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
         {/* Download CTA Card */}
         <div class="max-w-3xl mx-auto mt-12 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 sm:p-10 border border-emerald-100 shadow-sm">
           <div class="flex flex-col sm:flex-row items-center gap-6">
-            <Image src={mascotHappy} alt="PureScan AI" format="webp" loading="lazy" class="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-md" />
+            <Image src={mascotHappy} alt="Klar - Food & Cosmetic Scanner" format="webp" loading="lazy" class="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-md" />
             <div class="text-center sm:text-left flex-1">
-              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2">Scan Your Products Now</h3>
-              <p class="text-slate-600 font-medium text-sm sm:text-base mb-4">Download PureScan AI free and instantly detect hidden toxins, allergens, and harmful additives in your food and cosmetics.</p>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2">Scan Your Products Now with Klar</h3>
+              <p class="text-slate-600 font-medium text-sm sm:text-base mb-4">Download Klar (formerly PureScan AI) free and instantly detect hidden toxins, allergens, and harmful additives in your food and cosmetics.</p>
               <div class="flex flex-col sm:flex-row gap-3">
                 <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform shadow-md">
                   <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" /></svg>
@@ -270,8 +272,8 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
     <footer class="py-12 bg-white border-t-2 border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
           <div class="flex justify-center items-center gap-2 mb-6">
-            <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
-            <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+            <Image src={logoImg} alt="Klar" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+            <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar</span>
           </div>
           <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
             <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
@@ -284,7 +286,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
             <span class="mx-3">•</span>
             <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
           </p>
-          <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI. The Most Advanced Food & Cosmetic Scanner.</p>
+          <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved.</p>
         </div>
     </footer>
   </div>

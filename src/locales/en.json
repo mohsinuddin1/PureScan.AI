@@ -1,11 +1,11 @@
 {
   "pageTitle": "Safety & Nutritional Scoring System",
-  "introPara1": "This document explains the foundation of how PureScan AI evaluates and grades the safety, nutritional value, and overall quality of scanned products. Our system relies on comprehensive scientific databases combined with advanced AI to thoroughly analyze ingredients and apply an intelligent, penalty-based scoring system tailored to your specific health profile.",
-  "introPara2": "Please note: The exact mathematical algorithms and weights are proprietary to PureScan AI, but the core principles and methodologies are fully transparent and outlined below.",
+  "introPara1": "This document explains the foundation of how Klar (formerly PureScan AI) evaluates and grades the safety, nutritional value, and overall quality of scanned products. Our system relies on comprehensive scientific databases combined with advanced AI to thoroughly analyze ingredients and apply an intelligent, penalty-based scoring system tailored to your specific health profile.",
+  "introPara2": "Please note: The exact mathematical algorithms and weights are proprietary to Klar (formerly PureScan AI), but the core principles and methodologies are fully transparent and outlined below.",
   "nutriScore": {
     "title": "1. Nutri-Score (Food Products)",
     "para1": "The Nutri-Score is calculated using a standardized, scientific algorithm that assesses the overall nutritional value of a food product per 100g or 100ml. It balances negative nutrients to limit against positive nutrients to encourage, resulting in a grade from A (best) to E (worst).",
-    "para2": "PureScan AI calculates this automatically using the data entered from the product's packaging:",
+    "para2": "Klar calculates this automatically using the data entered from the product's packaging:",
     "negPoints": {
       "title": "Negative Points (Increase the score / worsen the grade):",
       "desc": "Points are added based on the amount of energy (calories), saturated fat, sugars, and sodium (salt)."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "The Final Grade:",
-      "desc": "The positive points are subtracted from the negative points to get a final numerical score. This number is then mapped to the A-E color scale. PureScan AI uses the exact nutrient values from the product's nutrition table and ingredient list to compute this score for millions of products."
+      "desc": "The positive points are subtracted from the negative points to get a final numerical score. This number is then mapped to the A-E color scale. Klar uses the exact nutrient values from the product's nutrition table and ingredient list to compute this score for millions of products."
     },
     "grades": {
       "a": "Grade A (Dark Green):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA Classification (Food Products)",
-    "para1": "Unlike the mathematical formula of the Nutri-Score, the NOVA score is a classification system that categorizes food based on how much it has been industrially processed. PureScan AI uses an automated algorithm to analyze the product's ingredient list and categorize it into one of four groups:",
+    "para1": "Unlike the mathematical formula of the Nutri-Score, the NOVA score is a classification system that categorizes food based on how much it has been industrially processed. Klar uses an automated algorithm to analyze the product's ingredient list and categorize it into one of four groups:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Unprocessed / Minimally processed)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "How PureScan AI calculates NOVA:",
-      "desc": "PureScan AI uses an algorithm that scans the ingredient list to search for specific \"markers\" of ultra-processing. If the algorithm detects industrial additives, artificial flavors, or highly processed ingredients, it automatically flags the product as NOVA 4."
+      "title": "How Klar calculates NOVA:",
+      "desc": "Klar uses an algorithm that scans the ingredient list to search for specific \"markers\" of ultra-processing. If the algorithm detects industrial additives, artificial flavors, or highly processed ingredients, it automatically flags the product as NOVA 4."
     },
     "important": {
       "title": "Important Distinction:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI Safety Scoring System",
-    "para1": "While Nutri-Score and NOVA provide baselines, PureScan AI calculates a personalized Safety Grade (ranging from A to E). Our grading system acts like a \"risk score\"—the higher the risk points accumulated, the lower the final letter grade (closer to E).",
+    "title": "3. Klar Safety Scoring System",
+    "para1": "While Nutri-Score and NOVA provide baselines, Klar calculates a personalized Safety Grade (ranging from A to E). Our grading system acts like a \"risk score\"—the higher the risk points accumulated, the lower the final letter grade (closer to E).",
     "penalties": {
       "title": "How Penalties and Deductions Work:",
       "desc": "A product starts with a perfect \"A\" grade and receives penalties (risk points) based on various detections:"
@@ -104,6 +104,6 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "support": "Support",
-    "copyright": "© {{year}} PureScan AI. The Most Advanced Food & Cosmetic Scanner."
+    "copyright": "© {{year}} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved."
   }
 }

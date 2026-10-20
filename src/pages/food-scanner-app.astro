@@ -15,34 +15,34 @@ const relatedPosts = allPosts
 const faqs = [
   {
     question: "What is the best food scanner app?",
-    answer: "PureScan AI is the most advanced food scanner app in 2026. It combines barcode scanning with AI-powered ingredient analysis, provides Nutri-Score and NOVA processing classifications, and gives personalized health risk assessments based on your individual health conditions, allergies, and dietary preferences. Free on iOS and Android."
+    answer: "Klar (formerly PureScan AI) is the most advanced food scanner app in 2026. It combines barcode scanning with AI-powered ingredient analysis, provides Nutri-Score and NOVA processing classifications, and gives personalized health risk assessments based on your individual health conditions, allergies, and dietary preferences. Free on iOS and Android."
   },
   {
     question: "How does a food scanner app work?",
-    answer: "A food scanner app uses your phone's camera to scan product barcodes or ingredient labels. PureScan AI then cross-references each ingredient against scientific databases to detect harmful additives, allergens, ultra-processed ingredients, and chemicals linked to health issues. Results are personalized to your specific health conditions."
+    answer: "A food scanner app uses your phone's camera to scan product barcodes or ingredient labels. Klar then cross-references each ingredient against scientific databases to detect harmful additives, allergens, ultra-processed ingredients, and chemicals linked to health issues. Results are personalized to your specific health conditions."
   },
   {
     question: "What is Nutri-Score and NOVA classification?",
-    answer: "Nutri-Score rates food nutritional quality from A (best) to E (worst) based on nutrients, calories, and composition. NOVA classification rates food processing level from 1 (unprocessed) to 4 (ultra-processed). PureScan AI shows both scores automatically for every food product you scan."
+    answer: "Nutri-Score rates food nutritional quality from A (best) to E (worst) based on nutrients, calories, and composition. NOVA classification rates food processing level from 1 (unprocessed) to 4 (ultra-processed). Klar shows both scores automatically for every food product you scan."
   },
   {
-    question: "Can PureScan AI detect ultra-processed foods?",
-    answer: "Yes. PureScan AI identifies ultra-processed foods (NOVA 4) by detecting emulsifiers, artificial sweeteners, modified starches, hydrogenated oils, flavor enhancers, and other markers of industrial food processing that are linked to obesity, diabetes, and chronic inflammation."
+    question: "Can Klar detect ultra-processed foods?",
+    answer: "Yes. Klar identifies ultra-processed foods (NOVA 4) by detecting emulsifiers, artificial sweeteners, modified starches, hydrogenated oils, flavor enhancers, and other markers of industrial food processing that are linked to obesity, diabetes, and chronic inflammation."
   },
   {
     question: "Does the food scanner detect allergens?",
-    answer: "PureScan AI detects 14+ major allergen categories including gluten, dairy, lactose, nuts, peanuts, soy, shellfish, eggs, sesame, mustard, celery, lupin, mollusks, and sulfites — plus hidden derivatives that often go unnoticed on ingredient labels."
+    answer: "Klar detects 14+ major allergen categories including gluten, dairy, lactose, nuts, peanuts, soy, shellfish, eggs, sesame, mustard, celery, lupin, mollusks, and sulfites — plus hidden derivatives that often go unnoticed on ingredient labels."
   },
   {
     question: "Can I scan food products from any country?",
-    answer: "Yes. PureScan AI has a massive global product database, and its AI camera reads ingredient labels in all world languages. You can scan imported foods, international groceries, and products purchased while traveling abroad."
+    answer: "Yes. Klar has a massive global product database, and its AI camera reads ingredient labels in all world languages. You can scan imported foods, international groceries, and products purchased while traveling abroad."
   }
 ];
 ---
 
 <Layout
-  title="Food Scanner App — AI Barcode Scanner for Hidden Toxins & Allergens | PureScan AI"
-  shortTitle="Best Food Scanner App 2026 — Nutri-Score & NOVA | PureScan AI"
+  title="Food Scanner App — AI Barcode Scanner for Hidden Toxins & Allergens | Klar"
+  shortTitle="Best Food Scanner App 2026 — Nutri-Score & NOVA | Klar"
   description="Scan food barcodes to detect hidden toxins, allergens, ultra-processed additives, and get Nutri-Score & NOVA ratings instantly. Personalized to your health. Free on iOS & Android."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -59,7 +59,8 @@ const faqs = [
       {
         "@type": "SoftwareApplication",
         "@id": "https://purescan.droploop.in/#app",
-        "name": "PureScan AI",
+        "name": "Klar - Food & Cosmetic Scanner",
+        "alternateName": ["PureScan AI", "Klar"],
         "applicationCategory": "HealthApplication",
         "applicationSubCategory": "Food Scanner",
         "operatingSystem": "iOS, Android",
@@ -71,11 +72,11 @@ const faqs = [
       {
         "@type": "HowTo",
         "name": "How to scan food for hidden toxins and allergens",
-        "description": "Use PureScan AI to scan food product barcodes and ingredient labels to detect harmful additives, allergens, and ultra-processed ingredients.",
+        "description": "Use Klar to scan food product barcodes and ingredient labels to detect harmful additives, allergens, and ultra-processed ingredients.",
         "step": [
-          { "@type": "HowToStep", "position": 1, "name": "Scan the barcode", "text": "Open PureScan AI and point your phone camera at any food product barcode. If the barcode isn't recognized, use the AI camera to photograph the ingredient label." },
-          { "@type": "HowToStep", "position": 2, "name": "Review the analysis", "text": "PureScan AI instantly shows you Nutri-Score (A-E), NOVA processing level (1-4), detected allergens, harmful additives, and ingredient-level safety ratings." },
-          { "@type": "HowToStep", "position": 3, "name": "Get personalized results", "text": "Based on your health profile (allergies, conditions like PCOS or diabetes), PureScan AI highlights ingredients that are specifically harmful to you." }
+          { "@type": "HowToStep", "position": 1, "name": "Scan the barcode", "text": "Open Klar and point your phone camera at any food product barcode. If the barcode isn't recognized, use the AI camera to photograph the ingredient label." },
+          { "@type": "HowToStep", "position": 2, "name": "Review the analysis", "text": "Klar instantly shows you Nutri-Score (A-E), NOVA processing level (1-4), detected allergens, harmful additives, and ingredient-level safety ratings." },
+          { "@type": "HowToStep", "position": 3, "name": "Get personalized results", "text": "Based on your health profile (allergies, conditions like PCOS or diabetes), Klar highlights ingredients that are specifically harmful to you." }
         ]
       },
       {
@@ -92,8 +93,8 @@ const faqs = [
     <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="eager" class="w-8 h-8 object-contain" />
-          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">PureScan AI</span>
+          <Image src={logoImg} alt="Klar Logo" format="webp" loading="eager" class="w-8 h-8 object-contain" />
+          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">Klar</span>
         </a>
         <div class="flex items-center gap-3">
           <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
@@ -114,7 +115,7 @@ const faqs = [
             Scan Food <span class="text-[#17C37B]">Barcodes</span> to Detect Hidden Toxins & Allergens
           </h1>
           <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-8">
-            PureScan AI is the smartest food scanner app for iOS and Android. Scan any food barcode or photograph the ingredient label to instantly get Nutri-Score, NOVA ultra-processing classification, allergen alerts, and personalized health risk assessments based on your unique health profile.
+            Klar (formerly PureScan AI) is the smartest food scanner app for iOS and Android. Scan any food barcode or photograph the ingredient label to instantly get Nutri-Score, NOVA ultra-processing classification, allergen alerts, and personalized health risk assessments based on your unique health profile.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-7 py-3.5 rounded-full text-lg font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg">
@@ -129,7 +130,7 @@ const faqs = [
           <p class="mt-4 text-sm text-slate-400 font-medium">Free · Nutri-Score · NOVA · 14+ Allergens</p>
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
-          <Image src={mascotHappy} alt="PureScan AI food scanner mascot" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[300px] drop-shadow-2xl" />
+          <Image src={mascotHappy} alt="Klar food scanner mascot" format="webp" loading="eager" fetchpriority="high" class="w-full max-w-[300px] drop-shadow-2xl" />
         </div>
       </div>
     </section>
@@ -139,12 +140,12 @@ const faqs = [
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Food Safety Scoring Systems</h2>
-          <p class="text-lg text-slate-600 font-medium">PureScan AI uses scientifically-backed scoring systems to rate every food product.</p>
+          <p class="text-lg text-slate-600 font-medium">Klar uses scientifically-backed scoring systems to rate every food product.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
             <h3 class="text-2xl font-black text-slate-800 mb-4">Nutri-Score (A–E)</h3>
-            <p class="text-slate-600 font-medium mb-6 leading-relaxed">The European nutritional quality grading system. PureScan AI calculates Nutri-Score based on positive factors (fiber, protein, fruits, vegetables) and negative factors (calories, sugar, saturated fat, sodium) to give each food a letter grade from A (healthiest) to E.</p>
+            <p class="text-slate-600 font-medium mb-6 leading-relaxed">The European nutritional quality grading system. Klar calculates Nutri-Score based on positive factors (fiber, protein, fruits, vegetables) and negative factors (calories, sugar, saturated fat, sodium) to give each food a letter grade from A (healthiest) to E.</p>
             <div class="flex gap-2">
               {['A', 'B', 'C', 'D', 'E'].map((letter, i) => (
                 <span class={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-white text-sm ${
@@ -171,7 +172,7 @@ const faqs = [
     <!-- What Gets Flagged -->
     <section class="py-16 md:py-24 px-4 md:px-6 max-w-5xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Hidden Dangers PureScan AI Finds in Your Food</h2>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Hidden Dangers Klar Finds in Your Food</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {[
@@ -241,7 +242,7 @@ const faqs = [
     <section class="py-20 md:py-28 px-4 md:px-6 text-center bg-slate-50 border-t border-slate-100">
       <div class="max-w-3xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4">Know What You're Really Eating</h2>
-        <p class="text-lg text-slate-600 font-medium mb-8">Download PureScan AI free — the most advanced food scanner app available.</p>
+        <p class="text-lg text-slate-600 font-medium mb-8">Download Klar free — the most advanced food scanner app available.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-all shadow-lg">Download for iOS</a>
           <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dlanding_food%26utm_campaign%3Dseo" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">Download for Android</a>
@@ -252,8 +253,8 @@ const faqs = [
     <footer class="py-12 bg-white border-t-2 border-slate-100">
       <div class="max-w-7xl mx-auto px-6 text-center">
         <div class="flex justify-center items-center gap-2 mb-6">
-          <Image src={logoImg} alt="PureScan AI" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
-          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">PureScan AI</span>
+          <Image src={logoImg} alt="Klar Logo" format="webp" loading="lazy" class="w-8 h-8 object-contain grayscale opacity-50" />
+          <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar <span class="text-xs text-slate-400 font-normal">(formerly PureScan AI)</span></span>
         </div>
         <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
           <a href="/" class="hover:text-[#17C37B] transition-colors">Home</a><span class="mx-3">•</span>
@@ -263,7 +264,7 @@ const faqs = [
           <a href="/blog" class="hover:text-[#17C37B] transition-colors">Blog</a><span class="mx-3">•</span>
           <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy</a>
         </p>
-        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} PureScan AI.</p>
+        <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI).</p>
       </div>
     </footer>
   </div>
