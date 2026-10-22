@@ -27,3 +27,4 @@ pnpm-debug.log*
 # email campaign data
 recipients.csv
 sent_log.txt
+enquire_sent_log.txt
