@@ -1,6 +1,6 @@
 ---
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   return locales.map(lang => ({ params: { lang } }));
 }
 
@@ -10,8 +10,10 @@ import Grading from '../../components/Grading.jsx';
 const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 import { GradingIsland } from '../../components/Islands.jsx';
+const metaTitle = translations?.grading?.pageMetaTitle || "Grading System — Scientific Health & Toxicity Scores | Klar";
+const metaDesc = translations?.grading?.pageMetaDesc || "Explore Klar's scientific grading system for food and cosmetics. Learn how AI calculates toxicity hazard scores, Nutri-Score, and NOVA ratings.";
 ---
-<Layout title="Grading - Klar (formerly PureScan AI)">
+<Layout title={metaTitle} description={metaDesc}>
   <GradingIsland client:load  lang={lang} translations={translations} />
   <script is:inline>
     (function() {

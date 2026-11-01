@@ -7,17 +7,113 @@ interface Props {
   shortTitle?: string;
   description?: string;
   image?: string;
+  alternateUrls?: Record<string, string>;
 }
 
 const {
   title = "Klar — Food & Cosmetic Scanner",
   shortTitle,
-  description = "The smartest food scanner & cosmetic scanner in your pocket. Scan barcodes and ingredient lists to detect harmful chemicals, allergens, and ultra-processed additives instantly.",
-  image = "https://purescan.droploop.in/og-image.png"
+  description = "Scan food & cosmetics with Klar to detect hidden toxins, allergens, and endocrine disruptors instantly. Free AI scanner app for iOS & Android.",
+  image = "https://purescan.droploop.in/og-image.png",
+  alternateUrls
 } = Astro.props;
 
-// Use shortTitle for <title> tag if provided (for SERP-optimized titles ≤60 chars)
-const pageTitle = shortTitle || title;
+// Industry-standard SEO / AEO / GEO meta description normalizer (guarantees length 25 - 145 chars, accounting for HTML entity expansion)
+function formatMetaDescription(desc: string | undefined): string {
+  const defaultDesc = "Scan food and cosmetics with Klar to detect hidden toxins, allergens, and endocrine disruptors instantly. Free on iOS and Android.";
+  if (!desc || typeof desc !== 'string') return defaultDesc;
+  
+  let clean = desc
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/\s+/g, ' ')
+    .trim();
+  
+  if (clean.length < 25) return defaultDesc;
+  
+  // Calculate potential HTML expansion (each '&' becomes '&amp;' = +4 chars in rendered HTML attribute)
+  const ampCount = (clean.match(/&/g) || []).length;
+  const maxSafeLen = Math.max(70, 145 - (ampCount * 4));
+  
+  if (clean.length <= maxSafeLen) return clean;
+  
+  const sub = clean.slice(0, maxSafeLen);
+  // 1. Look for a complete sentence ending between 45 and maxSafeLen chars
+  const sentenceMatches = [...sub.matchAll(/[.!?。！？](\s|$)/g)];
+  if (sentenceMatches.length > 0) {
+    const lastMatch = sentenceMatches[sentenceMatches.length - 1];
+    const cutIdx = lastMatch.index + 1;
+    if (cutIdx >= 45) {
+      return sub.slice(0, cutIdx).trim();
+    }
+  }
+  
+  // 2. Look for word boundary (space, comma, semicolon, CJK punctuation)
+  const lastBreak = Math.max(sub.lastIndexOf(' '), sub.lastIndexOf('，'), sub.lastIndexOf('、'));
+  if (lastBreak >= 45) {
+    let candidate = sub.slice(0, lastBreak).trim();
+    candidate = candidate.replace(/\b(and|or|with|the|in|for|to|of|by|at|on|ve|veya|y|de|et|und|e|oder|con|per|por|para|na|w|i|a)\b$/i, '').trim();
+    candidate = candidate.replace(/[,;:\-\s，、]+$/, '').trim();
+    if (!/[.!?。！？]$/.test(candidate) && candidate.length <= maxSafeLen - 1) {
+      candidate += '.';
+    }
+    if (candidate.length <= maxSafeLen && candidate.length >= 25) {
+      return candidate;
+    }
+  }
+  
+  return sub.slice(0, maxSafeLen - 1).trim() + '.';
+}
+
+const safeDescription = formatMetaDescription(description);
+
+// Industry-standard SEO title normalizer (guarantees length strictly < 65 chars, ideal 40-58 chars)
+function formatPageTitle(rawTitle: string | undefined): string {
+  if (!rawTitle) return "Klar — Food & Cosmetic Scanner";
+  
+  let clean = rawTitle
+    .replace(/&amp;/g, '&')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/\s+/g, ' ')
+    .trim();
+  
+  // Strip quotes to avoid &#39; expansion in <title>
+  clean = clean.replace(/['"]/g, '');
+  
+  const ampCount = (clean.match(/&/g) || []).length;
+  const maxSafeLen = Math.max(35, 62 - (ampCount * 4));
+  
+  if (clean.length <= maxSafeLen) return clean;
+  
+  let brand = '';
+  let body = clean;
+  if (clean.endsWith(' | Klar')) {
+    body = clean.slice(0, -7).trim();
+    brand = ' | Klar';
+  } else if (clean.endsWith(' — Klar')) {
+    body = clean.slice(0, -7).trim();
+    brand = ' | Klar';
+  }
+  
+  const availLen = maxSafeLen - brand.length;
+  let sub = body.slice(0, availLen).trim();
+  const lastBreak = Math.max(sub.lastIndexOf(' '), sub.lastIndexOf('—'), sub.lastIndexOf('-'));
+  if (lastBreak >= 20) {
+    sub = sub.slice(0, lastBreak).trim();
+  }
+  sub = sub.replace(/\b(and|or|with|the|in|for|to|of|by|at|on|ve|veya|y|de|et|und|e|oder|con|per|por|para|na|w|i|a)\b$/i, '').trim();
+  sub = sub.replace(/[,;:\-\—\s&]+$/, '').trim();
+  
+  return sub + brand;
+}
+
+const safeTitle = formatPageTitle(shortTitle || title);
 
 const lang = Astro.currentLocale || "en";
 const siteUrl = "https://purescan.droploop.in";
@@ -37,6 +133,10 @@ if (segments.length > 0 && locales.includes(segments[0]) && segments[0] !== 'en'
 if (basePath === '/') {
   basePath = '';
 }
+
+// Check if this page is a known multi-language page
+const multiLangPrefixes = ['', '/blog', '/grading', '/terms', '/privacy', '/support', '/delete-account'];
+const isMultiLang = multiLangPrefixes.includes(basePath) || basePath.startsWith('/alternatives/');
 
 // Generate alternate URLs for each locale
 function getAlternateUrl(locale: string): string {
@@ -64,8 +164,8 @@ if (Astro.response && Astro.response.headers) {
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary SEO -->
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
+    <title>{safeTitle}</title>
+    <meta name="description" content={safeDescription} />
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Apple Smart App Banner -->
@@ -83,7 +183,7 @@ if (Astro.response && Astro.response.headers) {
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={safeDescription} />
     <meta property="og:image" content={image} />
     <meta property="og:site_name" content="Klar" />
     <meta property="og:locale" content={lang} />
@@ -91,14 +191,20 @@ if (Astro.response && Astro.response.headers) {
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={safeDescription} />
     <meta name="twitter:image" content={image} />
 
     <!-- hreflang alternate links for international SEO -->
-    {locales.map((locale) => (
-      <link rel="alternate" hreflang={locale} href={getAlternateUrl(locale)} />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={getAlternateUrl('en')} />
+    {alternateUrls ? (
+      Object.entries(alternateUrls).map(([loc, url]) => (
+        <link rel="alternate" hreflang={loc} href={url} />
+      ))
+    ) : isMultiLang ? (
+      locales.map((locale) => (
+        <link rel="alternate" hreflang={locale} href={getAlternateUrl(locale)} />
+      ))
+    ) : null}
+    <link rel="alternate" hreflang="x-default" href={alternateUrls ? (alternateUrls['en'] || canonicalUrl) : isMultiLang ? getAlternateUrl('en') : canonicalUrl} />
 
     <!-- JSON-LD Structured Data: WebSite + Organization + SoftwareApplication -->
     <script type="application/ld+json" set:html={JSON.stringify({

@@ -88,6 +88,8 @@ def build_email_content(name):
     # Plain Text Fallback
     text_content = f"""{salutation}
 
+PureScan AI is now Klar Scanner.
+
 We've been working hard on something special for you. PureScan AI has been completely rebuilt from the ground up — faster scanning, a massive 10x larger product database, and advanced family safety alerts.
 
 What about your subscription?
@@ -119,6 +121,10 @@ The PureScan AI Team
     </div>
 
     <p style="font-size: 16px; margin-bottom: 16px;">{salutation}</p>
+
+    <p style="font-size: 16px; color: #111827; font-weight: 600; margin-bottom: 16px;">
+      PureScan AI is now Klar Scanner.
+    </p>
 
     <p style="font-size: 15px; color: #374151; margin-bottom: 20px;">
       We've been working hard on something special for you. <strong>PureScan AI has been completely rebuilt from the ground up</strong> — designed to help you and your family eat cleaner and live healthier.
@@ -364,3 +370,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+##python3 send_emails.py  --chunk 15 ##this will send 15 emails at a time

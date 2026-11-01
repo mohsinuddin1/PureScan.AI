@@ -16,8 +16,13 @@ title: "<string>"      # SEO-optimized title with primary keyword
 badge: "<string>"      # Short category badge (e.g., "Gut & Skin Health")
 description: "<string>" # 1-2 sentence meta description for search engines
 image: "<url>"         # Unique Unsplash image URL (must differ from ALL previous blogs)
+publishDate: "<string>" # ISO date string (e.g., "2025-10-31")
 ---
 ```
+
+- **No Fabricated Author Bylines or Generic Teams**:
+  - Do NOT invent artificial author bylines or editorial personas (e.g., no `"MedGPT Editorial Team"`, `"MedGPT Clinical Informatics Team"`, `"Editor"`, or fake medical reviewers).
+  - Genuine authority and accountable authorship must stem strictly from authentic external research sources, study authors, and official institutions cited in the body.
 
 ### Content Structure (MDX Body)
 All blog posts must follow this exact structural pattern:
@@ -39,10 +44,28 @@ All blog posts must follow this exact structural pattern:
 
 5. **Subtle App Promotion Section** — A final `<h3>` with a value-driven paragraph that naturally positions Klar (formerly PureScan AI) as the solution. **No aggressive sales pitch.** The tone should empower the reader.
 
-### SEO & GEO Requirements
-- **Question-based H3 headings**: Must target high-volume Google search queries.
+### SEO, GEO & AEO Requirements
+- **Question-based H3 headings**: Must target high-volume Google search queries and conversational prompts.
+- **Answer Engine Optimization (AEO)**: Direct, concise answers in the Quick Answer callout box and within the opening sentences of each H3 section for Google AI Overviews, Gemini, and ChatGPT search citations.
 - **Natural keyword integration**: Include terms people search for in Google, ChatGPT, and Gemini.
 - **Localized keywords**: Use region-specific phrasing and local-language search terms in each translation (not just literal translations of English keywords).
+
+### E-E-A-T, Backlinks & Authoritative Scientific Sources
+To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness) and generative answer engines:
+1. **Legitimate Scientific Authors & Authoritative External Citations**:
+   - Authority must be anchored directly in legitimate, peer-reviewed scientific literature and real researchers/institutions—**never** in fabricated editorial personas, fake reviewer teams, or arbitrary author tags (e.g., no "MedGPT Editorial Team", "MedGPT Clinical Informatics Team", or pseudo-editorial bylines).
+   - Every blog post **must** cite at least 2–4 authoritative external scientific or regulatory sources with direct markdown links.
+   - Permissible sources include: PubMed / NCBI (`https://pubmed.ncbi.nlm.nih.gov/...`), European Commission SCCS, EFSA, US FDA, WHO, American Academy of Pediatrics (AAP / HealthyChildren), French ANSM, or peer-reviewed journals (*JAAD*, *JACI*, *The Lancet*, *Pediatrics*, *J Invest Dermatol*).
+   - Anchor text must explicitly credit the legitimate authors, researchers, publication, or official body (e.g., `[Nikolovski et al., J Invest Dermatol](https://pubmed.ncbi.nlm.nih.gov/18385757/)`, `[AAP Clinical Guidance](https://www.healthychildren.org/...)`).
+2. **Strictly No Generic Homepage / Root Domain Links**:
+   - **Never link to generic website homepages or root domains** (e.g., strictly forbidden: `https://pubmed.ncbi.nlm.nih.gov/`, `https://www.aap.org/`, `https://ansm.sante.fr/`, `https://www.fda.gov/`, `https://efsa.europa.eu/`).
+   - Every single citation **must** point directly to the **exact, correct, verified, working deep URL** of the specific study (PMID article page), clinical guideline, or regulatory decision.
+   - All links must be verified to be live and working (returning HTTP 200).
+3. **Contextual Internal Backlinks (Topic Clusters)**:
+   - Every blog post **must** contain 2–4 contextual internal links to relevant existing articles on the site (e.g., linking to skin barrier repair, chemical preservatives, food additive guides, or allergy diagnostics).
+   - Internal links build strong topical authority, improve crawl depth, and guide users to relevant solutions across the platform.
+4. **Fact-Checking & No Hallucination**:
+   - All physiological mechanisms, clinical metrics, pH values, and regulatory statuses must reflect verified scientific literature. Never invent studies or exaggerate toxicity risks beyond published dermatological and toxicological data.
 
 ### Localization Requirements
 - Every blog post **must** be generated across **all 25 locales** defined in `LanguageSwitcher.jsx`:
@@ -68,7 +91,7 @@ All blog posts must follow this exact structural pattern:
 
 ---
 
-## 2. Master Topic Index (Blogs 1–60)
+## 2. Master Topic Index (Blogs 1–61)
 
 > **Rule**: Every new blog post MUST cover a topic that is **distinct** from all entries below. Check this index before selecting a topic.
 
@@ -384,6 +407,12 @@ All blog posts must follow this exact structural pattern:
 - **Topics Covered**: Active ingredient compatibility and molecular conflicts; pH dependency of transdermal absorption (pure L-ascorbic acid pH 2.5–3.5, AHAs pH 3.0–3.8 vs. physiological neutral pH 5.5–6.5 required for epidermal enzymatic conversion of retinol to retinoic acid via ADH/RALDH); enzyme denaturation and sensory stinging caused by low pH on unbuffered tissue; cumulative active stacking overload and stratum corneum lipid lamellae dissolution (ceramides, cholesterol, free fatty acids); activation of TRPV1 nociceptors and acute neurogenic inflammation; chemical oxidation of retinol by benzoyl peroxide; resolving the 1960s Vitamin C + Niacinamide myth while addressing temporary vascular flushing; circadian division strategy (morning antioxidant photoprotection vs. evening cellular renewal); 4-night skin cycling protocol (exfoliation, retinoid, 2 recovery nights); viscosity rule for product layering; how Klar audits INCI formulations for pH clashes and active overload.
 - **Target Queries**: can I use retinol and vitamin C together, skincare layering order, niacinamide and vitamin C conflict, AHA BHA with retinol, how to layer serums, active ingredient conflicts, skin cycling routine.
 
+### Blog 61 — Why Does My Baby Have Eczema and Red Patches? The Hidden Dangers of Baby Wash Ingredients, Synthetic Fragrances, and Food Allergens
+- **Badge**: Baby & Infant Skin Safety
+- **Image**: `https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200&auto=format&fit=crop`
+- **Topics Covered**: Infant skin permeability and micro-anatomy (30% thinner stratum corneum, high surface-area-to-weight ratio, developing acid mantle pH 6.5–7.0 transitioning to pH 5.0–5.5); opportunistic *Staphylococcus aureus* colonization fueling atopic flares; harsh sulfate surfactants (SLS/SLES) denaturing keratin and stripping natural moisturizing factors (NMF) and ceramides; synthetic fragrances ("Parfum") and phthalate fixatives as endocrine disruptors and contact sensitizers; formaldehyde-releasing biocide preservatives in wipes and washes (DMDM Hydantoin, Bronopol, Quaternium-15, Imidazolidinyl Urea); regulatory restrictions on methylisothiazolinone (MIT) and phenoxyethanol in infant leave-on and diaper-area products (ANSM guidelines); cosmetic talc inhalation hazards and asbestos contamination risks; dual-allergen exposure hypothesis (epicutaneous sensitization via impaired barrier vs. internal gut triggers); Cow's Milk Protein Allergy (CMPA / CMA) through breastmilk or formula; misleading "Pediatrician-Tested" and "Hypoallergenic" marketing claims; how Klar audits nursery products and milk formulas for infant safety.
+- **Target Queries**: why does my baby have eczema, baby wash ingredients to avoid, is baby lotion safe, baby eczema food allergy connection, best baby skincare for sensitive skin, baby eczema flare up causes, cows milk protein allergy baby eczema.
+
 ---
 
 ## 3. Checklist for Creating the Next Blog Post
@@ -393,6 +422,10 @@ Before generating a new blog post, verify:
 - [ ] **Topic uniqueness**: The chosen topic does NOT overlap with any blog in the Topic Index above.
 - [ ] **Splash image uniqueness**: The Unsplash image URL is NOT used by any previous blog.
 - [ ] **SEO keyword research**: Target queries are validated against Google Trends / common AI search queries.
+- [ ] **E-E-A-T & Authoritative Sources**: At least 2–4 verified peer-reviewed scientific studies (PubMed, JAAD, Lancet, AAP, SCCS, etc.) are cited with hyperlinks crediting the legitimate researchers/authors.
+- [ ] **Exact Deep Working URLs (No Generic Homepages)**: Every external source points to an exact, verified working article, clinical report, or regulation URL (strictly zero root domain homepage links like `aap.org` or `ansm.sante.fr`).
+- [ ] **No Fabricated Author Bylines**: No artificial editorial teams (e.g., strictly no "MedGPT Editorial Team", "MedGPT Clinical Informatics Team", or fake authors); authority is established purely through authentic scientific literature.
+- [ ] **Internal Backlinks**: At least 2–4 contextual links to existing related blogs on the site are included to support topical clusters.
 - [ ] **Content structure**: Follows the exact 5-section structure (Quick Answer → 3 Questions → 4-Step Method → Promotion).
 - [ ] **25-locale coverage**: All locales in `LanguageSwitcher.jsx` are generated.
 - [ ] **Build verification**: `npm run build` passes with zero errors after generation.

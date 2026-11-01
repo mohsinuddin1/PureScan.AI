@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Navbar from '../components/Navbar.jsx';
 import { Image } from 'astro:assets';
 import mascotHero from '../assets/mascot-hero.png';
 import mascotHappy from '../assets/mascot-happy.png';
@@ -44,7 +45,7 @@ const faqs = [
 <Layout
   title="Allergy Scanner App — Detect Hidden Food Allergens Instantly | Klar"
   shortTitle="Best Allergy Scanner App — Gluten, Dairy, Nuts | Klar"
-  description="Scan food products to detect hidden allergens instantly. Klar identifies gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories — personalized to your allergies. Free on iOS & Android."
+  description="Scan food labels with Klar to detect hidden gluten, dairy, nuts, soy, and 14+ allergens matched to your personal diet. Free on iOS and Android."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -80,19 +81,7 @@ const faqs = [
   })} />
 
   <div class="min-h-screen bg-white text-slate-800 font-sans">
-    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2">
-          <Image src={logoImg} alt="Klar - Food & Cosmetic Scanner" format="webp" loading="eager" class="w-8 h-8 object-contain" />
-          <span class="font-extrabold tracking-tight text-xl italic text-[#17C37B]">Klar</span>
-        </a>
-        <div class="flex items-center gap-3">
-          <a href="/blog" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Blog</a>
-          <a href="/ingredient-scanner" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors hidden sm:inline">Ingredients</a>
-          <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform">Download Free</a>
-        </div>
-      </div>
-    </nav>
+    <Navbar client:load />
 
     <!-- Hero -->
     <section class="py-16 md:py-28 px-4 md:px-6 max-w-6xl mx-auto">

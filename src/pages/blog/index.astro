@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import LanguageSwitcher from '../../components/LanguageSwitcher.jsx';
+import Navbar from '../../components/Navbar.jsx';
 import { Image } from 'astro:assets';
 import logoImg from '../../assets/logo.png';
 
@@ -37,23 +37,7 @@ const blogItems = currentBlogPosts.map((post, index) => ({
     }
   })} />
   <div class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>
-    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href={lang === 'en' ? '/' : `/${lang}`} class="text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    <span class="text-sm font-medium hidden sm:inline">Back</span>
-                </a>
-            </div>
-            <div class="flex items-center gap-2 cursor-pointer">
-                <Image src={logoImg} alt="Klar" format="webp" loading="eager" class="w-5 h-5 object-contain" />
-                <span class="font-semibold tracking-tight text-sm hidden sm:inline">Klar Blog</span>
-            </div>
-            <div class="flex items-center">
-                <LanguageSwitcher client:load currentLang={lang} />
-            </div>
-        </div>
-    </nav>
+    <Navbar client:load currentLang={lang} showBack={true} backUrl={lang === 'en' ? '/' : `/${lang}`} backText="Back" />
 
     <main class="px-5 py-12 md:py-20 max-w-5xl mx-auto min-h-[70vh]">
       <header class="mb-12 text-center sm:text-left max-w-3xl">

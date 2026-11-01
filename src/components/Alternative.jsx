@@ -1,16 +1,42 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Check, X, Shield } from 'lucide-react';
+import { useTranslation } from './TranslationProvider';
 
 export default function Alternative({ competitor }) {
+    const { t, i18n } = useTranslation();
+    const lang = i18n?.language || 'en';
     
     // Capitalize competitor name
     const name = competitor ? competitor.charAt(0).toUpperCase() + competitor.slice(1) : 'Competitor';
 
+    const homeUrl = lang === 'en' ? '/' : `/${lang}`;
+    const pageTitle = (t('alternatives.pageTitle', `Klar vs {name} - The Best Alternative`)).replace(/\{name\}/g, name);
+    const backToHome = t('alternatives.backToHome', 'Back to Home');
+    const badge = t('alternatives.badge', 'Comparison Guide');
+    const titleLooking = t('alternatives.titleLooking', 'Looking for a {name} alternative?').replace(/\{name\}/g, name);
+    const subtitle = t('alternatives.subtitle', `If you are searching for an app like {name} but with personalized health alerts, allergy detection, and comprehensive cosmetic scanning, see why Klar (formerly PureScan AI) is the top choice.`).replace(/\{name\}/g, name);
+    const vsTitle = t('alternatives.vsTitle', `Klar vs {name}`).replace(/\{name\}/g, name);
+    const colFeature = t('alternatives.colFeature', 'Feature');
+    const rowFoodCosmetic = t('alternatives.rowFoodCosmetic', 'Food & Cosmetic Scanning');
+    const rowHealthAlerts = t('alternatives.rowHealthAlerts', 'Personalized Health Alerts (PCOS, Thyroid, etc)');
+    const rowAllergyAlerts = t('alternatives.rowAllergyAlerts', 'Allergy Alerts (Gluten, Nuts, Dairy)');
+    const rowLimited = t('alternatives.rowLimited', 'Limited');
+    const rowAiLabelReading = t('alternatives.rowAiLabelReading', 'AI Label Reading (All Languages)');
+    const rowScientificDb = t('alternatives.rowScientificDb', 'Scientific Database Backed (FDA, EWG, EFSA)');
+    const whyChooseTitle = t('alternatives.whyChooseTitle', `Why choose Klar over {name}?`).replace(/\{name\}/g, name);
+    const whyChooseP1 = t('alternatives.whyChooseP1', `While {name} is a popular option for basic product scanning, it often provides generic nutritional grades that don't take your specific body and health conditions into account. Klar (formerly PureScan AI) is built differently. It operates as a personalized health companion.`).replace(/\{name\}/g, name);
+    const whyChooseP2 = t('alternatives.whyChooseP2', `With Klar, you aren't just getting a score; you are getting a tailored analysis based on your allergies (like gluten or dairy) and your specific health goals (such as managing PCOS, hormonal acne, or diabetes). If a product isn't in our massive database, our advanced AI camera reads the ingredient label instantly—in any language.`);
+    const transparencyTitle = t('alternatives.transparencyTitle', 'Total Ingredient Transparency');
+    const transparencyDesc = t('alternatives.transparencyDesc', `Don't let hidden additives sabotage your health. We flag endocrine disruptors, carcinogens, and ultra-processed additives instantly so you can shop with absolute confidence.`);
+    const switchTitle = t('alternatives.switchTitle', 'Ready to make the switch?');
+    const downloadIos = t('alternatives.downloadIos', 'Download for iOS');
+    const downloadAndroid = t('alternatives.downloadAndroid', 'Download for Android');
+
     useEffect(() => {
-        document.title = `Klar vs ${name} - The Best Alternative`;
+        document.title = pageTitle;
         // Scroll to top
         window.scrollTo(0, 0);
-    }, [name]);
+    }, [pageTitle]);
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200">
@@ -18,9 +44,9 @@ export default function Alternative({ competitor }) {
             <nav className="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <a href="/" className="text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <a href={homeUrl} className="text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
                             <ArrowLeft className="w-4 h-4" />
-                            <span className="text-sm font-medium hidden sm:inline">Back to Home</span>
+                            <span className="text-sm font-medium hidden sm:inline">{backToHome}</span>
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
@@ -49,51 +75,51 @@ export default function Alternative({ competitor }) {
             <main className="px-5 py-12 md:py-20 max-w-4xl mx-auto min-h-[70vh]">
                 <div className="text-center mb-16">
                     <span className="inline-block bg-emerald-50 px-3 py-1 rounded-full text-sm font-bold text-emerald-600 mb-6 border border-emerald-100 uppercase tracking-widest">
-                        Comparison Guide
+                        {badge}
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-6 leading-tight">
-                        Looking for a <span className="text-[#17C37B]">{name} alternative?</span>
+                        {titleLooking}
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto">
-                        If you are searching for an app like {name} but with personalized health alerts, allergy detection, and comprehensive cosmetic scanning, see why Klar (formerly PureScan AI) is the top choice.
+                        {subtitle}
                     </p>
                 </div>
 
                 <div className="bg-white rounded-[2rem] p-6 sm:p-10 shadow-xl border border-slate-100 mb-16">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Klar vs {name}</h2>
+                    <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">{vsTitle}</h2>
                     
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse min-w-[500px]">
                             <thead>
                                 <tr className="border-b border-slate-200">
-                                    <th className="py-4 px-4 font-bold text-slate-500 w-[40%]">Feature</th>
+                                    <th className="py-4 px-4 font-bold text-slate-500 w-[40%]">{colFeature}</th>
                                     <th className="py-4 px-4 font-black text-xl text-[#17C37B] text-center w-[30%]">Klar</th>
                                     <th className="py-4 px-4 font-bold text-slate-400 text-center w-[30%]">{name}</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
                                 <tr>
-                                    <td className="py-5 px-4 font-medium text-slate-700">Food & Cosmetic Scanning</td>
+                                    <td className="py-5 px-4 font-medium text-slate-700">{rowFoodCosmetic}</td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-[#17C37B] mx-auto" /></td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-slate-300 mx-auto" /></td>
                                 </tr>
                                 <tr>
-                                    <td className="py-5 px-4 font-medium text-slate-700">Personalized Health Alerts (PCOS, Thyroid, etc)</td>
+                                    <td className="py-5 px-4 font-medium text-slate-700">{rowHealthAlerts}</td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-[#17C37B] mx-auto" /></td>
                                     <td className="py-5 px-4 text-center"><X className="w-6 h-6 text-red-300 mx-auto" /></td>
                                 </tr>
                                 <tr>
-                                    <td className="py-5 px-4 font-medium text-slate-700">Allergy Alerts (Gluten, Nuts, Dairy)</td>
+                                    <td className="py-5 px-4 font-medium text-slate-700">{rowAllergyAlerts}</td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-[#17C37B] mx-auto" /></td>
-                                    <td className="py-5 px-4 text-center text-sm text-slate-400 font-medium">Limited</td>
+                                    <td className="py-5 px-4 text-center text-sm text-slate-400 font-medium">{rowLimited}</td>
                                 </tr>
                                 <tr>
-                                    <td className="py-5 px-4 font-medium text-slate-700">AI Label Reading (All Languages)</td>
+                                    <td className="py-5 px-4 font-medium text-slate-700">{rowAiLabelReading}</td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-[#17C37B] mx-auto" /></td>
                                     <td className="py-5 px-4 text-center"><X className="w-6 h-6 text-red-300 mx-auto" /></td>
                                 </tr>
                                 <tr>
-                                    <td className="py-5 px-4 font-medium text-slate-700">Scientific Database Backed (FDA, EWG, EFSA)</td>
+                                    <td className="py-5 px-4 font-medium text-slate-700">{rowScientificDb}</td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-[#17C37B] mx-auto" /></td>
                                     <td className="py-5 px-4 text-center"><Check className="w-6 h-6 text-slate-300 mx-auto" /></td>
                                 </tr>
@@ -103,33 +129,33 @@ export default function Alternative({ competitor }) {
                 </div>
 
                 <div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Why choose Klar over {name}?</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{whyChooseTitle}</h3>
                     <p>
-                        While {name} is a popular option for basic product scanning, it often provides generic nutritional grades that don't take your specific body and health conditions into account. Klar (formerly PureScan AI) is built differently. It operates as a personalized health companion.
+                        {whyChooseP1}
                     </p>
                     <p>
-                        With Klar, you aren't just getting a score; you are getting a tailored analysis based on your allergies (like gluten or dairy) and your specific health goals (such as managing PCOS, hormonal acne, or diabetes). If a product isn't in our massive database, our advanced AI camera reads the ingredient label instantly—in any language.
+                        {whyChooseP2}
                     </p>
 
                     <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl my-8 flex items-start gap-4">
                         <Shield className="w-8 h-8 text-emerald-500 shrink-0 mt-1" />
                         <div>
-                            <h4 className="text-lg font-bold text-slate-900 mb-2">Total Ingredient Transparency</h4>
+                            <h4 className="text-lg font-bold text-slate-900 mb-2">{transparencyTitle}</h4>
                             <p className="text-slate-700 font-medium text-base m-0">
-                                Don't let hidden additives sabotage your health. We flag endocrine disruptors, carcinogens, and ultra-processed additives instantly so you can shop with absolute confidence.
+                                {transparencyDesc}
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-16 text-center">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-6">Ready to make the switch?</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6">{switchTitle}</h3>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0A0A0A] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-all shadow-lg border border-slate-800">
-                            Download for iOS
+                            {downloadIos}
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#17C37B] text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
-                            Download for Android
+                            {downloadAndroid}
                         </a>
                     </div>
                 </div>

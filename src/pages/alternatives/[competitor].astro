@@ -21,8 +21,11 @@ export function getStaticPaths() {
 }
 
 const { competitor } = Astro.params;
+const name = competitor ? competitor.charAt(0).toUpperCase() + competitor.slice(1) : 'Competitor';
+const pageTitle = `Klar vs ${name} — The Best Alternative`;
+const pageDesc = `Klar vs ${name}: AI food and cosmetic scanner. Detect hidden toxins, allergens, and harmful additives. Free on iOS and Android.`;
 import { AlternativeIsland } from '../../components/Islands.jsx';
 ---
-<Layout title={`Klar vs ${competitor.charAt(0).toUpperCase() + competitor.slice(1)} — The Best Alternative`}>
+<Layout title={pageTitle} description={pageDesc}>
   <AlternativeIsland client:load  lang={lang} translations={translations} competitor={competitor} />
 </Layout>

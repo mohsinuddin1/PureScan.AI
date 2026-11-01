@@ -102,6 +102,92 @@
   "footer": {
     "grading": "Minősítési Rendszer",
     "privacy": "Adatvédelmi Tájékoztató",
-    "terms": "Felhasználási Feltételek"
+    "terms": "Felhasználási Feltételek",
+    "blog": "Blog"
+  },
+  "common": {
+    "back": "Vissza",
+    "backToHome": "Vissza a Főoldalra",
+    "appStore": "App Store",
+    "playStore": "Play Store",
+    "downloadIos": "Letöltés iOS-re",
+    "downloadAndroid": "Letöltés Androidra"
+  },
+  "blog": {
+    "metaTitle": "Klar Blog — Rejtett Toxinok az Ételekben és Kozmetikumokban",
+    "metaShortTitle": "Egészség Blog — Toxinok Ételekben és Kozmetikában | Klar",
+    "metaDescription": "Szakértői cikkek a rejtett méreganyagokról, allergénekről és hormonkárosító vegyületekről. PubMed kutatásokkal alátámasztva.",
+    "brandBlog": "Klar Blog",
+    "hubTitle": "Egészségközpont",
+    "hubSubtitle": "Az Ön megbízható útmutatója az élelmiszercímkék és kozmetikai összetevők megfejtéséhez, valamint a tudományosan megalapozott egészséges döntésekhez."
+  },
+  "alternatives": {
+    "pageMetaTitle": "Klar vs {name} — A Legjobb Alternatíva",
+    "pageMetaDesc": "Klar vs {name}: AI élelmiszer- és kozmetikai szkenner. Fedezze fel a toxinokat, allergéneket és adalékokat azonnal. Ingyenes iOS-re és Androidra.",
+    "pageTitle": "Klar vs {name} - A Legjobb Alternatíva",
+    "backToHome": "Vissza a Főoldalra",
+    "badge": "Összehasonlító Útmutató",
+    "titleLooking": "Alternatívát keres a(z) {name} helyett?",
+    "subtitle": "Ha olyan alkalmazást keres, mint a(z) {name}, de személyre szabott egészségügyi figyelmeztetésekkel, allergénfelismeréssel és teljes körű kozmetikai elemzéssel, nézze meg, miért a Klar (korábban PureScan AI) a legjobb döntés.",
+    "vsTitle": "Klar vs {name}",
+    "colFeature": "Funkció",
+    "rowFoodCosmetic": "Élelmiszerek és Kozmetikumok Szkennelése",
+    "rowHealthAlerts": "Személyre Szabott Egészségügyi Figyelmeztetések (PCOS, Pajzsmirigy stb.)",
+    "rowAllergyAlerts": "Allergén Figyelmeztetések (Glutén, Diófélék, Tejtermékek)",
+    "rowLimited": "Korlátozott",
+    "rowAiLabelReading": "AI Címkeolvasás Kamerával (Minden Nyelven)",
+    "rowScientificDb": "Tudományos Adatbázisok Háttérrel (FDA, EWG, EFSA)",
+    "whyChooseTitle": "Miért válassza a Klart a(z) {name} helyett?",
+    "whyChooseP1": "Míg a(z) {name} népszerű az alapvető szkenneléshez, gyakran általános pontszámokat ad, amelyek figyelmen kívül hagyják az Ön egyedi egészségügyi állapotát. A Klar (korábban PureScan AI) személyre szabott egészségügyi társként működik.",
+    "whyChooseP2": "A Klarral nem csupán egy számot kap, hanem a saját allergiáihoz és céljaihoz (pl. PCOS, hormonális akné vagy vércukorszint) igazított részletes értékelést. Ha egy termék hiányzik az adatbázisból, fejlett AI kameránk azonnal leolvassa az összetevőket bármilyen nyelven.",
+    "transparencyTitle": "Teljes Összetevő-Átláthatóság",
+    "transparencyDesc": "Ne hagyja, hogy a rejtett adalékanyagok károsítsák az egészségét. Azonnal jelezzük az endokrin diszruptorokat, rákkeltő anyagokat és ultra-feldolgozott adalékokat a gondtalan vásárlásért.",
+    "switchTitle": "Készen áll a Klarra váltani?",
+    "downloadIos": "Letöltés iOS-re",
+    "downloadAndroid": "Letöltés Androidra"
+  },
+  "support": {
+    "pageMetaTitle": "Támogatás - Klar (korábban PureScan AI)",
+    "pageMetaDesc": "Lépjen kapcsolatba a Klar ügyfélszolgálatával termékszkenneléssel, kozmetikumokkal vagy fiókjával kapcsolatos kérdésekben.",
+    "title": "Ügyfélszolgálat",
+    "subtitle": "Kérdése, észrevétele vagy technikai problémája van a Klar alkalmazással (vagy korábbi PureScan AI fiókjával)? 24–48 órán belül válaszolunk.",
+    "emailButton": "E-mail küldése az Ügyfélszolgálatnak",
+    "directEmailText": "Vagy írjon nekünk közvetlenül ide:"
+  },
+  "deleteAccount": {
+    "pageMetaTitle": "Fiók Törlése - Klar (korábban PureScan AI)",
+    "pageMetaDesc": "Útmutató a Klar-fiók és az összes kapcsolódó személyes adat végleges törléséhez.",
+    "title": "Fiók Törlése",
+    "subtitle": "Adatainak védelme érdekében kérheti Klar (vagy PureScan AI) fiókjának és minden kapcsolódó adatának végleges törlését.",
+    "section1Title": "Mi történik a fiók törlésekor",
+    "bullet1": "Egészségügyi profiljai, táplálkozási preferenciái és egyéni beállításai véglegesen törlődnek.",
+    "bullet2": "A teljes szkennelési előzmény és az elmentett termékek listája törlésre kerül.",
+    "bullet3": "Bejelentkezési adatai és e-mail címe törlődnek a rendszereinkből.",
+    "bullet4": "Minden kapcsolódó adat visszafordíthatatlanul megsemmisül a kérelemtől számított 30 napon belül.",
+    "section2Title": "Fontos figyelmeztetés a véglegességről",
+    "irreversibleNotice": "A fióktörlési kérelem feldolgozását követően az adatok semmilyen módon nem állíthatók helyre.",
+    "subNotice": "Ha aktív prémium előfizetéssel rendelkezik, kérjük, törlés előtt mondja le azt az Apple App Store-ban vagy a Google Play Store-ban.",
+    "section3Title": "Törlés kérelmezése",
+    "requestDesc": "Kattintson az alábbi gombra, hogy e-mailt küldjön ügyfélszolgálatunknak a fiókjához tartozó e-mail címről.",
+    "requestButton": "Fióktörlés Kérelmezése",
+    "appNotice": "Megjegyzés: A fiók törlését közvetlenül a Klar alkalmazás Beállítások menüjében is kezdeményezheti.",
+    "needHelpTitle": "Egyéb kérdésben van szüksége segítségre?",
+    "needHelpSubtitle": "Ügyfélszolgálati csapatunk készséggel áll rendelkezésére.",
+    "contactSupport": "Kapcsolatfelvétel"
+  },
+  "home": {
+    "metaTitle": "Klar - Élelmiszer és Kozmetikai Szkenner",
+    "metaDescription": "Szkenneljen élelmiszereket és kozmetikumokat a Klar AI-val a rejtett toxinok, allergének és adalékok kiszűrésére. Ingyenes iOS-re és Androidra.",
+    "badge": "A PureScan AI mostantól Klar",
+    "heroSubtitle": "A Legfejlettebb",
+    "heroTitle": "Élelmiszer és Kozmetikai Szkenner",
+    "point1": "Hatalmas, tudományosan ellenőrzött adatbázis.",
+    "point2": "Ismeretlen termék? Nem kell kézzel gépelni: az AI kamera egy másodperc alatt elemzi a címkét!",
+    "point3": "Egyéni figyelmeztetések PCOS, várandósság, allergiák és bélflóra kapcsán.",
+    "problemTitle": "Ne hagyja, hogy a rejtett méreganyagok aláássák az egészségét.",
+    "backedByScience": "Tudományos Eredményekre és Hitelesített Adatokra Építve",
+    "whyPeopleRely": "Nézze meg, miért bíznak ezrek a Klarban",
+    "whyMostAdvanced": "Miért a Klar a legfejlettebb választás",
+    "latestInsights": "Legfrissebb Cikkek"
   }
 }

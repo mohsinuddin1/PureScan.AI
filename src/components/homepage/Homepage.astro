@@ -6,7 +6,7 @@
  * Only the image slideshow carousel uses a React island (client:visible).
  */
 import Slideshow from './Slideshow.jsx';
-import ProButton from './ProButton.jsx';
+import Navbar from '../Navbar.jsx';
 import SignOutButton from './SignOutButton.jsx';
 import { getCollection } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
@@ -18,6 +18,20 @@ import logoImg from '../../assets/logo.png';
 import foodResultImg from '../../assets/food-result.jpg';
 import cosmeticResultImg from '../../assets/cosmetic-result.jpg';
 import historyScreenImg from '../../assets/history-screen.png';
+import { useTranslations } from '../../lib/i18n-utils';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+const isEn = lang === 'en';
+const gradingUrl = isEn ? '/grading' : `/${lang}/grading`;
+const blogUrl = isEn ? '/blog' : `/${lang}/blog`;
+const privacyUrl = isEn ? '/privacy' : `/${lang}/privacy`;
+const termsUrl = isEn ? '/terms' : `/${lang}/terms`;
+const supportUrl = isEn ? '/support' : `/${lang}/support`;
 
 const slide1 = await getImage({ src: foodResultImg, format: 'webp', width: 640 });
 const slide2 = await getImage({ src: cosmeticResultImg, format: 'webp', width: 640 });
@@ -25,42 +39,23 @@ const slide3 = await getImage({ src: historyScreenImg, format: 'webp', width: 64
 const slideshowImages = [slide1.src, slide2.src, slide3.src];
 
 const allPosts = await getCollection('blog');
-const latestPosts = allPosts
-  .filter(post => post.id.startsWith('en/'))
+let latestPosts = allPosts
+  .filter(post => post.id.toLowerCase().startsWith(`${lang.toLowerCase()}/`))
   .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf())
   .slice(0, 3);
+
+if (latestPosts.length === 0) {
+  latestPosts = allPosts
+    .filter(post => post.id.startsWith('en/'))
+    .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf())
+    .slice(0, 3);
+}
 ---
 
 <div class="min-h-screen bg-white text-slate-800 font-sans">
 
-  <!-- Navbar -->
-  <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 select-none transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
-      <div class="flex items-center gap-2 md:gap-3">
-        <Image src={logoImg} alt="Klar Logo" format="webp" loading="eager" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
-        <span class="font-extrabold tracking-tight text-xl md:text-3xl italic text-[#17C37B]">Klar</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <!-- APP STORE BUTTONS COMMENTED OUT FOR FUTURE USE
-        <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 bg-[#0A0A0A] text-white px-3 py-2 md:px-5 md:py-2.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-xs md:text-base font-bold">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5">
-            <path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" />
-          </svg>
-          <span class="hidden sm:inline">App Store</span>
-          <span class="sm:hidden">iOS</span>
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 bg-[#0A0A0A] text-white px-3 py-2 md:px-5 md:py-2.5 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-sm border border-slate-800 text-xs md:text-base font-bold">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-[#17C37B]">
-            <path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" />
-          </svg>
-          <span class="hidden sm:inline">Play Store</span>
-          <span class="sm:hidden">Android</span>
-        </a>
-        <!-- APP STORE BUTTONS COMMENTED OUT FOR FUTURE USE ... -->
-        <ProButton client:load />
-      </div>
-    </div>
-  </nav>
+  <!-- Navbar with Language Switcher, Subscribe to Pro, Dynamic OS Download & Animated Hamburger -->
+  <Navbar client:load currentLang={lang} />
 
   <!-- Hero / Database / Mascot Section -->
   <section class="py-12 md:py-24 px-4 md:px-12 max-w-7xl mx-auto relative overflow-hidden md:overflow-visible">
@@ -71,11 +66,11 @@ const latestPosts = allPosts
       <div class="w-full md:w-1/2 p-2 md:p-8 animate-fade-in-left">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 mb-3">
           <span class="w-2 h-2 rounded-full bg-[#17C37B] animate-pulse"></span>
-          PureScan AI is now Klar
+          {t('home.badge', 'PureScan AI is now Klar')}
         </div>
-        <h3 class="text-sm md:text-xl font-bold text-slate-400 mb-2 tracking-widest uppercase">Most Advance</h3>
+        <h3 class="text-sm md:text-xl font-bold text-slate-400 mb-2 tracking-widest uppercase">{t('home.heroSubtitle', 'Most Advance')}</h3>
         <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-800 mb-6 md:mb-10 leading-tight">
-          Food & Cosmetic Scanner
+          {t('home.heroTitle', 'Food & Cosmetic Scanner')}
         </h1>
 
         <div class="space-y-3 md:space-y-5">
@@ -83,21 +78,21 @@ const latestPosts = allPosts
             <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#17C37B] text-white flex items-center justify-center shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
-            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">A comprehensive, massive database.</p>
+            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">{t('home.point1', 'A comprehensive, massive database.')}</p>
           </div>
 
           <div class="flex items-center gap-3 md:gap-4 bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-left">
             <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#17C37B] text-white flex items-center justify-center shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
-            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">When an item is unknown, <span class="text-[#17C37B]">no need to guess or manually fill details!</span></p>
+            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">{t('home.point2', 'When an item is unknown, no need to guess or manually fill details!')}</p>
           </div>
 
           <div class="flex items-center gap-3 md:gap-4 bg-white/90 backdrop-blur-sm p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-left">
             <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#17C37B] text-white flex items-center justify-center shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
-            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">Reads labels in <span class="text-[#17C37B]">ALL languages</span> via AI Camera.</p>
+            <p class="text-sm md:text-lg font-bold text-slate-700 leading-tight">{t('home.point3', 'Reads labels in ALL languages via AI Camera.')}</p>
           </div>
         </div>
       </div>
@@ -403,7 +398,7 @@ const latestPosts = allPosts
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {latestPosts.map((post) => (
-          <a href={`/blog/${post.id.split('/')[1]}`} class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
+          <a href={isEn ? `/blog/${post.id.split('/')[1]}` : `/${lang}/blog/${post.id.split('/')[1]}`} class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
             {post.data.image && (
               <div class="aspect-video w-full overflow-hidden bg-slate-100">
                 <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -411,7 +406,7 @@ const latestPosts = allPosts
             )}
             <div class="p-6 flex flex-col flex-grow">
               <div class="text-[#17C37B] text-xs font-bold uppercase tracking-widest mb-2">
-                {new Date(post.data.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                {new Date(post.data.publishDate).toLocaleDateString(isEn ? 'en-US' : lang, { year: 'numeric', month: 'short', day: 'numeric' })}
               </div>
               <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3 group-hover:text-[#17C37B] transition-colors line-clamp-2">
                 {post.data.title}
@@ -439,9 +434,9 @@ const latestPosts = allPosts
       <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
         <a href="/pricing" class="hover:text-[#17C37B] transition-colors">Pricing</a>
         <span class="mx-3 hidden md:inline">•</span>
-        <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
+        <a href={gradingUrl} class="hover:text-[#17C37B] transition-colors">{t('footer.grading', 'Grading System')}</a>
         <span class="mx-3 hidden md:inline">•</span>
-        <a href="/blog" class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
+        <a href={blogUrl} class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">{t('footer.blog', 'Blog')}</a>
         <span class="mx-3">•</span>
         <a href="/ingredient-scanner" class="hover:text-[#17C37B] transition-colors">Ingredient Scanner</a>
         <span class="mx-3">•</span>
@@ -451,16 +446,16 @@ const latestPosts = allPosts
         <span class="mx-3 hidden md:inline">•</span>
         <a href="/allergy-scanner" class="hover:text-[#17C37B] transition-colors">Allergy Scanner</a>
         <span class="mx-3">•</span>
-        <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
+        <a href={privacyUrl} class="hover:text-[#17C37B] transition-colors">{t('footer.privacy', 'Privacy Policy')}</a>
         <span class="mx-3">•</span>
-        <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
+        <a href={termsUrl} class="hover:text-[#17C37B] transition-colors">{t('footer.terms', 'Terms of Service')}</a>
         <span class="mx-3 hidden md:inline">•</span>
         <a href="/refund" class="hover:text-[#17C37B] transition-colors">Refund Policy</a>
         <span class="mx-3 hidden sm:inline">•</span>
-        <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
+        <a href={supportUrl} class="hover:text-[#17C37B] transition-colors">{t('footer.support', 'Support')}</a>
         <SignOutButton client:load />
       </p>
-      <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). The Most Advanced Food &amp; Cosmetic Scanner.</p>
+      <p class="text-slate-400 font-medium text-xs">{(t('footer.copyright', '© {year} Klar (formerly PureScan AI). The Most Advanced Food & Cosmetic Scanner.')).replace(/\{\{year\}\}/g, new Date().getFullYear()).replace(/\{year\}/g, new Date().getFullYear())}</p>
     </div>
   </footer>
 

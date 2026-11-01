@@ -102,6 +102,92 @@
   "footer": {
     "grading": "Arviointijärjestelmä",
     "privacy": "Tietosuojaseloste",
-    "terms": "Käyttöehdot"
+    "terms": "Käyttöehdot",
+    "blog": "Blogi"
+  },
+  "common": {
+    "back": "Takaisin",
+    "backToHome": "Takaisin Etusivulle",
+    "appStore": "App Store",
+    "playStore": "Play Store",
+    "downloadIos": "Lataa iOS-laitteille",
+    "downloadAndroid": "Lataa Android-laitteille"
+  },
+  "blog": {
+    "metaTitle": "Klar-blogi — Piilevät Toksiinit Ruoassa ja Kosmetiikassa",
+    "metaShortTitle": "Terveysblogi — Piilevät Toksiinit Ruoassa ja Kosmetiikassa | Klar",
+    "metaDescription": "Asiantuntija-artikkeleita piilevistä myrkyistä, allergeeneista ja hormonitoimintaa häiritsevistä aineista. Perustuu PubMed-tutkimuksiin.",
+    "brandBlog": "Klar-blogi",
+    "hubTitle": "Terveys- ja Ravintokeskus",
+    "hubSubtitle": "Luotettava oppaasi tuoteselosteiden ymmärtämiseen, kosmetiikan ainesosien avaamiseen ja tieteeseen pohjautuvien terveellisempien valintojen tekemiseen."
+  },
+  "alternatives": {
+    "pageMetaTitle": "Klar vs {name} — Paras Vaihtoehto",
+    "pageMetaDesc": "Klar vs {name}: Tekoälypohjainen ruoka- ja kosmetiikkaskanneri. Tunnista toksiinit ja allergeenit välittömästi. Ilmainen iOS:lle ja Androidille.",
+    "pageTitle": "Klar vs {name} - Paras Vaihtoehto",
+    "backToHome": "Takaisin Etusivulle",
+    "badge": "Vertailuopas",
+    "titleLooking": "Etsitkö vaihtoehtoa sovellukselle {name}?",
+    "subtitle": "Jos kaipaat sovellusta kuten {name}, mutta henkilökohtaisilla terveysvaroituksilla, allergiatunnistuksella ja kattavalla kosmetiikan analyysillä, katso miksi Klar (entinen PureScan AI) on paras valinta.",
+    "vsTitle": "Klar vs {name}",
+    "colFeature": "Ominaisuus",
+    "rowFoodCosmetic": "Ruoan ja Kosmetiikan Skannaus",
+    "rowHealthAlerts": "Yksilölliset Terveysvaroitukset (PCOS, Kilpirauhanen jne.)",
+    "rowAllergyAlerts": "Allergiavaroitukset (Gluteeni, Pähkinät, Maito)",
+    "rowLimited": "Rajoitettu",
+    "rowAiLabelReading": "Tekoälypohjainen Kameraskannaus (Kaikki Kielet)",
+    "rowScientificDb": "Tieteellisesti Vahvistettu (FDA, EWG, EFSA)",
+    "whyChooseTitle": "Miksi valita Klar sovelluksen {name} sijaan?",
+    "whyChooseP1": "Vaikka {name} on suosittu perusskannaukseen, se antaa usein yleisluontoisia ravintoarvosanoja ottamatta huomioon kehosi yksilöllisiä tarpeita. Klar (entinen PureScan AI) on kehitetty henkilökohtaiseksi terveysavustajaksesi.",
+    "whyChooseP2": "Klarin avulla saat tarkat tiedot allergioidesi ja terveystavoitteidesi mukaan (kuten PCOS, hormonaalinen akne tai verensokeri). Jos tuotetta ei löydy tietokannasta, älykäs tekoälykamera lukee ainesosaluettelon heti millä tahansa kielellä.",
+    "transparencyTitle": "Täydellinen Ainesosien Läpinäkyvyys",
+    "transparencyDesc": "Älä anna piilotettujen lisäaineiden sabotoida terveyttäsi. Merkitsemme hormonihäiriköt, karsinogeenit ja haitalliset emulgointiaineet välittömästi turvallista ostamista varten.",
+    "switchTitle": "Valmis vaihtamaan Klariin?",
+    "downloadIos": "Lataa iOS-laitteille",
+    "downloadAndroid": "Lataa Android-laitteille"
+  },
+  "support": {
+    "pageMetaTitle": "Tuki - Klar (entinen PureScan AI)",
+    "pageMetaDesc": "Ota yhteyttä Klarin asiakastukeen tuotteiden skannaukseen, kosmetiikkaan tai tiliisi liittyvissä asioissa.",
+    "title": "Asiakastuki",
+    "subtitle": "Jos sinulla on kysyttävää, palautetta tai teknisiä ongelmia Klar-sovelluksen (tai aiemman PureScan AI -tilisi) kanssa, ota yhteyttä. Vastaamme 24–48 tunnin kuluessa.",
+    "emailButton": "Lähetä Sähköpostia Tukitiimille",
+    "directEmailText": "Tai kirjoita suoraan osoitteeseen"
+  },
+  "deleteAccount": {
+    "pageMetaTitle": "Tilin Poistaminen - Klar (entinen PureScan AI)",
+    "pageMetaDesc": "Ohjeet Klar-tilisi ja kaikkien siihen liittyvien henkilötietojen pysyvään poistamiseen.",
+    "title": "Poista Tili",
+    "subtitle": "Yksityisyytesi suojaamiseksi voit pyytää Klar-tilisi (tai PureScan AI -tilisi) ja kaikkien tallennettujen tietojen pysyvää poistoa.",
+    "section1Title": "Mitä tapahtuu tilin poistamisen yhteydessä",
+    "bullet1": "Terveysprofiilisi, ruokavaliovalintasi ja kaikki henkilökohtaiset asetuksesi pyyhitään pysyvästi.",
+    "bullet2": "Koko skannaushistoriasi ja tallentamasi tuotteet poistetaan pysyvästi.",
+    "bullet3": "Kirjautumistietosi ja sähköpostiosoitteesi poistetaan palvelimiltamme.",
+    "bullet4": "Kaikki tiedot hävitetään peruuttamattomasti 30 päivän kuluessa pyynnöstä.",
+    "section2Title": "Tärkeä huomautus peruuttamattomuudesta",
+    "irreversibleNotice": "Kun tilin poistopyyntö on käsitelty, tietoja ei voida enää palauttaa.",
+    "subNotice": "Jos sinulla on aktiivinen maksullinen tilaus, peruuta se Apple App Storen tai Google Play Storen kautta ennen tilin poistopyyntöä.",
+    "section3Title": "Pyydä poistoa",
+    "requestDesc": "Napsauta alla olevaa painiketta lähettääksesi sähköpostin tukitiimille tilillesi rekisteröidystä osoitteesta.",
+    "requestButton": "Pyydä Tilin Poistoa",
+    "appNotice": "Huomautus: Voit pyytää tilin poistoa myös suoraan Klar-sovelluksen Asetukset-valikosta.",
+    "needHelpTitle": "Tarvitsetko apua jossain muussa asiassa?",
+    "needHelpSubtitle": "Asiakastukitiimimme auttaa mielellään.",
+    "contactSupport": "Ota Yhteyttä Tukeen"
+  },
+  "home": {
+    "metaTitle": "Klar - Ruoka- ja Kosmetiikkaskanneri",
+    "metaDescription": "Skannaa ruoat ja kosmetiikka Klar AI:lla havaitaksesi toksiinit, allergeenit ja haitalliset lisäaineet sekunneissa. Ilmainen iOS & Android.",
+    "badge": "PureScan AI on nyt Klar",
+    "heroSubtitle": "Kaikkein Edistynein",
+    "heroTitle": "Ruoka- ja Kosmetiikkaskanneri",
+    "point1": "Kattava, tieteellisesti vahvistettu tietokanta.",
+    "point2": "Tuntematon tuote? Ei käsin kirjoittamista: tekoälykamera lukee etiketin sekunnissa!",
+    "point3": "Yksilölliset varoitukset PCOS:n, raskauden, allergioiden ja suoliston hyvinvoinnin tueksi.",
+    "problemTitle": "Älä anna piilotettujen myrkkyjen pilata terveyttäsi.",
+    "backedByScience": "Perustuu Tieteen ja Varmistettujen Tietojen Voimaan",
+    "whyPeopleRely": "Katso miksi tuhannet luottavat Klariin",
+    "whyMostAdvanced": "Miksi Klar on markkinoiden edistynein valinta",
+    "latestInsights": "Uusimmat Artikkelit"
   }
 }

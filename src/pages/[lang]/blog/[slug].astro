@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection, getEntry, render } from 'astro:content';
-import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
+import Navbar from '../../../components/Navbar.jsx';
 import { Image } from 'astro:assets';
 import mascotHappy from '../../../assets/mascot-happy.png';
 import logoImg from '../../../assets/logo.png';
@@ -35,11 +35,8 @@ export async function getStaticPaths() {
   
   const paths = [];
   for (const lang of locales) {
-    // For each locale, generate paths for:
-    // 1. Slugs that exist in this specific locale
-    // 2. English slugs as fallback (so links from language switcher still work)
-    const combinedSlugs = new Set([...localeSlugs[lang], ...enSlugs]);
-    for (const s of combinedSlugs) {
+    // Only generate paths for slugs that genuinely exist in this specific locale
+    for (const s of localeSlugs[lang]) {
       paths.push({ params: { lang, slug: s } });
     }
   }
@@ -103,17 +100,19 @@ const contentText = post.body || '';
 const wordCount = contentText.split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
-// Generate SEO-friendly short title (≤60 chars) for <title> tag
+// Generate SEO-friendly short title (strictly ≤60 chars, ideal 40-55 chars) for <title> tag
 function generateShortTitle(fullTitle) {
-  const questionMatch = fullTitle.match(/^(.+?\?)/);
-  if (questionMatch && questionMatch[1].length <= 50) {
+  // Strip quotes to avoid HTML entity expansion (&#39;) in the <title> tag
+  const unquoted = (fullTitle || '').replace(/['"]/g, '');
+  const questionMatch = unquoted.match(/^(.+?\?)/);
+  if (questionMatch && questionMatch[1].length <= 48) {
     return `${questionMatch[1]} | Klar`;
   }
-  if (fullTitle.length > 50) {
-    const truncated = fullTitle.substring(0, 50).replace(/\s+\S*$/, '');
-    return `${truncated}… | Klar`;
+  if (unquoted.length > 48) {
+    const truncated = unquoted.substring(0, 48).replace(/\s+\S*$/, '').replace(/[,;:\-\s&]+$/, '');
+    return `${truncated} | Klar`;
   }
-  return `${fullTitle} | Klar`;
+  return `${unquoted} | Klar`;
 }
 
 const shortTitle = generateShortTitle(post.data.title);
@@ -122,9 +121,19 @@ const shortTitle = generateShortTitle(post.data.title);
 const siteUrl = 'https://purescan.droploop.in';
 const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, siteUrl).href;
+
+// Construct alternate URLs for each existing translation of this post
+const alternateUrls: Record<string, string> = {};
+for (const [l, s] of Object.entries(blogSlugMap)) {
+  if (l === 'en') {
+    alternateUrls[l] = `${siteUrl}/blog/${s}`;
+  } else {
+    alternateUrls[l] = `${siteUrl}/${l}/blog/${s}`;
+  }
+}
 ---
 
-<Layout title={post.data.title} shortTitle={shortTitle} description={post.data.description} image={post.data.image}>
+<Layout title={post.data.title} shortTitle={shortTitle} description={post.data.description} image={post.data.image} alternateUrls={alternateUrls}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -201,23 +210,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
     ]
   })} />
   <div class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>
-    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} class="text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    <span class="text-sm font-medium hidden sm:inline">Back</span>
-                </a>
-            </div>
-            <div class="flex items-center gap-2 cursor-pointer">
-                <Image src={logoImg} alt="Klar" format="webp" loading="eager" class="w-5 h-5 object-contain" />
-                <span class="font-semibold tracking-tight text-sm hidden sm:inline">Klar Blog</span>
-            </div>
-            <div class="flex items-center">
-                <LanguageSwitcher client:load currentLang={lang} blogSlugMap={blogSlugMap} />
-            </div>
-        </div>
-    </nav>
+    <Navbar client:load currentLang={lang} blogSlugMap={blogSlugMap} showBack={true} backUrl={lang === 'en' ? '/blog' : `/${lang}/blog`} backText="Back" />
 
     <main class="px-5 py-12 md:py-20 max-w-5xl mx-auto min-h-[70vh]">
       <div class="bg-white rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-12 md:p-16 shadow-xl border border-slate-100 max-w-4xl mx-auto relative overflow-hidden">
@@ -306,15 +299,15 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).href;
             <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar</span>
           </div>
           <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
-            <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
+            <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} class="hover:text-[#17C37B] transition-colors">Grading System</a>
             <span class="mx-3 hidden md:inline">•</span>
-            <a href="/blog" class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
+            <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
             <span class="mx-3">•</span>
-            <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
+            <a href={lang === 'en' ? '/privacy' : `/${lang}/privacy`} class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
             <span class="mx-3">•</span>
-            <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
+            <a href={lang === 'en' ? '/terms' : `/${lang}/terms`} class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
             <span class="mx-3">•</span>
-            <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
+            <a href={lang === 'en' ? '/support' : `/${lang}/support`} class="hover:text-[#17C37B] transition-colors">Support</a>
           </p>
           <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved.</p>
         </div>

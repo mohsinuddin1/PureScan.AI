@@ -6,7 +6,7 @@ const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 import { GradingIsland } from '../components/Islands.jsx';
 ---
-<Layout title="Grading - Klar (formerly PureScan AI)">
+<Layout title="Grading System — Scientific Health & Toxicity Scores | Klar" description="Explore Klar's scientific grading system for food and cosmetics. Learn how AI calculates toxicity hazard scores, Nutri-Score, and NOVA ratings.">
   <GradingIsland client:load  lang={lang} translations={translations} />
   <script is:inline>
     (function() {

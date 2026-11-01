@@ -7,6 +7,6 @@ const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 import { TermsIsland } from '../components/Islands.jsx';
 ---
-<Layout title="Terms of Service - Klar (formerly PureScan AI)">
+<Layout title="Terms of Service — Klar Scanner" description="Read the Terms of Service for Klar (formerly PureScan AI). Understand the terms, conditions, and user guidelines for our scanner app.">
   <TermsIsland client:load  lang={lang} translations={translations} />
 </Layout>

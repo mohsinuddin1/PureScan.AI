@@ -7,7 +7,8 @@ export function getTranslations(lang) {
 
 export function useTranslations(lang) {
   const translations = getTranslations(lang);
-  return function t(key) {
-    return key.split('.').reduce((obj, k) => obj && obj[k], translations) || key;
+  return function t(key, fallback) {
+    const res = key.split('.').reduce((obj, k) => obj && obj[k], translations);
+    return res !== undefined && res !== null ? res : (fallback || key);
   };
 }

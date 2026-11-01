@@ -1,6 +1,6 @@
 ---
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   return locales.map(lang => ({ params: { lang } }));
 }
 
@@ -8,9 +8,11 @@ import { getTranslations } from '../../lib/i18n-utils';
 import Layout from '../../layouts/Layout.astro';
 import { SupportIsland } from '../../components/Islands.jsx';
 
-const lang = Astro.currentLocale || 'en';
+const lang = Astro.params.lang || Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
+const metaTitle = translations?.support?.pageMetaTitle || 'Support - Klar (formerly PureScan AI)';
+const metaDesc = translations?.support?.pageMetaDesc || 'Contact the Klar support team for help with food scanning, cosmetic checks, or your account.';
 ---
-<Layout title="Support - Klar (formerly PureScan AI)">
-  <SupportIsland client:load  lang={lang} translations={translations} />
+<Layout title={metaTitle} description={metaDesc}>
+  <SupportIsland client:load lang={lang} translations={translations} />
 </Layout>

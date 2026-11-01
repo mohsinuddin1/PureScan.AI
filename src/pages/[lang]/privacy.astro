@@ -1,6 +1,6 @@
 ---
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   return locales.map(lang => ({ params: { lang } }));
 }
 
@@ -10,7 +10,9 @@ import PrivacyPolicy from '../../components/privacy.jsx';
 const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 import { PrivacyIsland } from '../../components/Islands.jsx';
+const metaTitle = translations?.privacy?.pageMetaTitle || "Privacy Policy — Klar Scanner";
+const metaDesc = translations?.privacy?.pageMetaDesc || "Read Klar's Privacy Policy. Learn how your personal data, scan history, and health preferences are protected with strict privacy standards.";
 ---
-<Layout title="Privacy Policy - Klar (formerly PureScan AI)">
+<Layout title={metaTitle} description={metaDesc}>
   <PrivacyIsland client:load  lang={lang} translations={translations} />
 </Layout>

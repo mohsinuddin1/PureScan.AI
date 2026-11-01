@@ -1,0 +1,32 @@
+---
+id: 3
+title: "Ovatko ruokien terveysluokitukset tarkkoja? Miten sovelluksemme määrittää ruoan terveellisyyden"
+badge: "Tieto & Tarkkuus"
+description: "Syväsukellus siihen, miten ruokaskannerit laskevat ravitsemuspisteitä, vertailevat NOVA- ja Nutri-Score-järjestelmiä ja antavat henkilökohtaisia suosituksia."
+image: "https://res.cloudinary.com/den3i1c0b/image/upload/v1782589849/blog3_q8o5ae.jpg"
+publishDate: "2025-03-07"
+---
+import { ShieldAlert, Zap, SearchCheck, CheckCircle2 } from 'lucide-react';
+
+<div className="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
+  <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
+    <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-emerald-600" />Pikavastaus: Ovatko ruokaskannereiden arvosanat tieteellisesti luotettavia?</h3>
+    <p className="text-slate-700 font-medium">Kyllä, kun sovellus perustuu validoituihin malleihin kuten Nutri-Scoreen ja NOVA-luokitukseen. Tekoäly ei tarkastele ainoastaan kaloreita, vaan arvioi rasvojen laatua, lisätyn sokerin osuutta, suolapitoisuutta sekä teollisten lisäaineiden määrää kokonaisuutena.</p>
+  </div>
+
+  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Miksi pelkkä pakkauksen etupuolen lukeminen johtaa usein harhaan?</h3>
+  <p>Elintarvikeyhtiöt käyttävät suuria summia markkinointiin ja korostavat lauseita kuten ”kuitupitoinen” tai ”luonnollinen” tuotteissa, jotka ovat täynnä fruktoosisiirappia ja emulgointiaineita. Pakkauksen etupuoli on suunniteltu myymään, kun taas todellinen totuus löytyy pienellä präntätystä ainesosaluettelosta pakkauksen takana.</p>
+
+  <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Miten Klar arvioi elintarvikkeiden ravitsemuksellisen laadun?</h3>
+  <p>Kun skannaat viivakoodin älypuhelimellasi, Klar vertaa reseptiä tuoreisiin vertaisarvioituihin tutkimuksiin. Sovellus tunnistaa suolistomikrobiomia häiritsevät makeutusaineet ja tulehdusta ruokkivat rasvat antaen selkeän ja puolueettoman pisteytyksen.</p>
+
+  <div className="mt-12 pt-8 border-t border-slate-200">
+    <h3 className="text-lg font-bold text-slate-900 mb-4">Lähteet ja tieteelliset tutkimukset</h3>
+    <ol className="list-decimal pl-6 space-y-2 text-sm text-slate-600">
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/42458600/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">What evidence exists on salmon farming? An overview of reviews — PubMed</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/42437693/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">Development of a nutrient profiling scoring system for meal choices — PubMed</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/42432813/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">Assessing public policies aimed at addressing nutrition burdens — PubMed</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/42429442/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">Nutrient Profiling Systems in Food Selection: A Review — PubMed</a></li>
+    </ol>
+  </div>
+</div>

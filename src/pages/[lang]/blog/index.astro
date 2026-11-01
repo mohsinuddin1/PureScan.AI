@@ -6,11 +6,13 @@ export function getStaticPaths() {
 
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import LanguageSwitcher from '../../../components/LanguageSwitcher.jsx';
+import Navbar from '../../../components/Navbar.jsx';
 import { Image } from 'astro:assets';
 import logoImg from '../../../assets/logo.png';
+import { useTranslations } from '../../../lib/i18n-utils';
 
 const lang = Astro.params.lang || Astro.currentLocale || 'en';
+const t = useTranslations(lang);
 const currentBlogPosts = await getCollection('blog', ({ id }) => id.toLowerCase().startsWith(`${lang.toLowerCase()}/`));
 
 // Generate ItemList schema for rich results
@@ -20,18 +22,32 @@ const blogItems = currentBlogPosts.map((post, index) => ({
   "url": `https://purescan.droploop.in/${lang}/blog/${post.id.split('/')[1]}`,
   "name": post.data.title
 }));
+
+const metaTitle = t('blog.metaTitle', 'Klar Blog — Hidden Toxins in Food & Cosmetics');
+const metaShortTitle = t('blog.metaShortTitle', 'Health Blog — Hidden Toxins in Food & Skincare | Klar');
+const metaDescription = t('blog.metaDescription', 'Expert articles on hidden toxins, allergens, and endocrine disruptors in everyday food and cosmetic products. Backed by PubMed research.');
+const backText = t('common.back', 'Back');
+const brandBlog = t('blog.brandBlog', 'Klar Blog');
+const hubTitle = t('blog.hubTitle', 'The Health Hub');
+const hubSubtitle = t('blog.hubSubtitle', 'Your trusted guide to understanding food labels, decoding cosmetics, and making healthier choices backed by scientific data.');
+const gradingText = t('footer.grading', 'Grading System');
+const blogText = t('footer.blog', 'Blog');
+const privacyText = t('footer.privacy', 'Privacy Policy');
+const termsText = t('footer.terms', 'Terms of Service');
+const supportText = t('footer.support', 'Support');
+const copyright = (t('footer.copyright', '© {year} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved.')).replace(/\{year\}/g, new Date().getFullYear());
 ---
 
 <Layout 
-  title="Klar Blog — Hidden Toxins in Food & Cosmetics"
-  shortTitle="Health Blog — Hidden Toxins in Food & Skincare | Klar"
-  description="Expert articles on hidden toxins, allergens, and endocrine disruptors in everyday food and cosmetic products. Backed by PubMed research."
+  title={metaTitle}
+  shortTitle={metaShortTitle}
+  description={metaDescription}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Klar Blog",
-    "description": "Expert articles on hidden toxins in food and cosmetics.",
+    "name": brandBlog,
+    "description": metaDescription,
     "url": `https://purescan.droploop.in/${lang}/blog`,
     "isPartOf": {
       "@id": "https://purescan.droploop.in/#website"
@@ -42,31 +58,15 @@ const blogItems = currentBlogPosts.map((post, index) => ({
     }
   })} />
   <div class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>
-    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href={lang === 'en' ? '/' : `/${lang}`} class="text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    <span class="text-sm font-medium hidden sm:inline">Back</span>
-                </a>
-            </div>
-            <div class="flex items-center gap-2 cursor-pointer">
-                <Image src={logoImg} alt="Klar" format="webp" loading="eager" class="w-5 h-5 object-contain" />
-                <span class="font-semibold tracking-tight text-sm hidden sm:inline">Klar Blog</span>
-            </div>
-            <div class="flex items-center">
-                <LanguageSwitcher client:load currentLang={lang} />
-            </div>
-        </div>
-    </nav>
+    <Navbar client:load currentLang={lang} showBack={true} backUrl={lang === 'en' ? '/' : `/${lang}`} backText={backText} />
 
     <main class="px-5 py-12 md:py-20 max-w-5xl mx-auto min-h-[70vh]">
       <header class="mb-12 text-center sm:text-left max-w-3xl">
           <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-              The Health Hub
+              {hubTitle}
           </h1>
           <p class="text-lg text-slate-500 font-medium leading-relaxed">
-              Your trusted guide to understanding food labels, decoding cosmetics, and making healthier choices backed by scientific data.
+              {hubSubtitle}
           </p>
       </header>
       
@@ -107,17 +107,17 @@ const blogItems = currentBlogPosts.map((post, index) => ({
             <span class="font-extrabold tracking-tight text-xl italic text-slate-300">Klar</span>
           </div>
           <p class="text-slate-500 font-medium pb-4 text-sm flex flex-wrap justify-center items-center gap-y-2">
-            <a href="/grading" class="hover:text-[#17C37B] transition-colors">Grading System</a>
+            <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} class="hover:text-[#17C37B] transition-colors">{gradingText}</a>
             <span class="mx-3 hidden md:inline">•</span>
-            <a href="/blog" class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">Blog</a>
+            <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">{blogText}</a>
             <span class="mx-3">•</span>
-            <a href="/privacy" class="hover:text-[#17C37B] transition-colors">Privacy Policy</a>
+            <a href={lang === 'en' ? '/privacy' : `/${lang}/privacy`} class="hover:text-[#17C37B] transition-colors">{privacyText}</a>
             <span class="mx-3">•</span>
-            <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
+            <a href={lang === 'en' ? '/terms' : `/${lang}/terms`} class="hover:text-[#17C37B] transition-colors">{termsText}</a>
             <span class="mx-3">•</span>
-            <a href="/support" class="hover:text-[#17C37B] transition-colors">Support</a>
+            <a href={lang === 'en' ? '/support' : `/${lang}/support`} class="hover:text-[#17C37B] transition-colors">{supportText}</a>
           </p>
-          <p class="text-slate-400 font-medium text-xs">© {new Date().getFullYear()} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved.</p>
+          <p class="text-slate-400 font-medium text-xs">{copyright}</p>
         </div>
     </footer>
   </div>

@@ -13,10 +13,10 @@ export function TranslationProvider({ lang, translations, children }) {
 export function useTranslation() {
     const { lang, translations } = useContext(TranslationContext);
     
-    const t = (key) => {
-        if (!translations) return key;
+    const t = (key, fallback) => {
+        if (!translations) return fallback || key;
         const res = key.split('.').reduce((o, i) => o?.[i], translations);
-        return res || key;
+        return res !== undefined && res !== null ? res : (fallback || key);
     };
 
     return { t, i18n: { language: lang, resolvedLanguage: lang } };
