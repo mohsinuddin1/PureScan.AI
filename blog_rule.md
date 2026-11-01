@@ -231,7 +231,7 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 18 — Why Do I Have Red Bumps on My Arms and Back? The Hidden Dangers of Harsh Body Scrubs, Comedogenic Lotions, and Dietary Inflammation
 - **Badge**: Body Care & Skin Health
-- **Image**: `https://images.unsplash.com/photo-1512290900672-1f04e15efdf8?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1576426863848-c21f53c60b19?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Body skincare and follicular safety scanning, keratosis pilaris ('strawberry skin') and body acne ('bacne'), abrasive physical scrubs (walnut shell, apricot kernel, loofahs) causing follicular micro-lacerations and hyperkeratosis, heavy synthetic waxes and fatty esters (Isopropyl Myristate, PEG-100 Stearate) trapping keratin in body pores, Insulin-Like Growth Factor 1 (IGF-1) elevation from high-glycemic snacks and dairy/whey protein isolates, sebaceous gland stimulation and follicular inflammation, misleading "Smoothing Body Polish" and "Intensive Hydration" claims.
 
 ### Blog 19 — Why Do I Wake Up With Puffy Eyes and Dark Circles? The Hidden Dangers of Heavy Eye Creams, Fragrance Migration, and Dietary Sodium
@@ -301,7 +301,7 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 32 — Why Are My Eyelashes Falling Out? The Hidden Dangers of Waterproof Mascara, Prostaglandin Serums, and Harsh Removers
 - **Badge**: Eyelash & Eye Safety
-- **Image**: `https://images.unsplash.com/photo-1512496015851-a1cbfb9b0dbb?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1701285857712-48cacba95a8f?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Eyelash shedding (madarosis), mechanical trauma from waterproof mascaras (isododecane, heavy waxes), eyelash cuticle dehydration, harsh makeup removers causing follicular micro-trauma, synthetic prostaglandin analogue lash serums (bimatoprost, isopropyl cloprostenate), prostaglandin-associated periorbitopathy (PAP), eyelid redness, orbital fat atrophy, nutritional deficiencies (alpha-keratin, biotin, zinc, bioavailable iron), mechanical damage from eyelash curlers.
 
 ### Blog 33 — Why Do I Get Painful Cystic Breakouts Along My Jawline and Chin? The Hidden Dangers of Comedogenic Hair Oils, Heavy Facial Oils, and Dairy Hormones
@@ -336,7 +336,7 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 39 — Why Do Stubborn Red and Dark Marks Linger for Months After a Pimple Heals? The Hidden Dangers of PIE vs. PIH, Aggressive Exfoliants, and Dietary AGEs
 - **Badge**: Pigmentation & Post-Acne Recovery
-- **Image**: `https://images.unsplash.com/photo-1508759077030-cf395d22bb10?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Post-Inflammatory Erythema (PIE) caused by capillary dilation and micro-hemorrhages vs. Post-Inflammatory Hyperpigmentation (PIH) caused by melanin overproduction from hyperactive melanocytes (`melanogenesis`), why harsh physical scrubs and unbuffered high-strength AHA/BHA exfoliants damage capillary walls and prolong vascular redness (`persistent erythema`), comedogenic and occlusive ingredients (`Isopropyl Myristate`, `Dimethicone`, `Heavy Waxes`) trapping inflammation and delaying dermal matrix remodeling, dietary triggers including high-glycemic index foods and dietary Advanced Glycation End-products (`AGEs`) cross-linking dermal collagen and increasing vascular fragility, how PureScan AI detects irritating alcohols (`Alcohol Denat.`), artificial dyes (`Red 40`), and comedogenic emollients to accelerate barrier recovery and fade post-acne marks.
 
 ### Blog 40 — Why Does My Face Look Super Oily and Shiny Within Hours Yet Feels Tight, Flaky, and Dehydrated Underneath? The Hidden Dangers of the Dehydrated Oily Skin Paradox, Harsh Sulfates, and Linoleic Acid Deficiency
@@ -351,7 +351,7 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 42 — Why Do I Keep Getting Recurring Yeast Infections and BV? The Hidden Dangers of Scented Intimate Washes, Alkaline Soaps, and Dietary Sugar
 - **Badge**: Intimate Health & Microbiome Safety
-- **Image**: `https://images.unsplash.com/photo-1620052329718-725357321e06?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Vaginal microbiome scanning, bacterial vaginosis (BV) and vulvovaginal candidiasis (yeast infections), why scented feminine washes and synthetic fragrances (Parfum) disrupt the delicate vulvar acid mantle (pH 3.8-4.5), alkaline soaps (Sodium Tallowate) and high-foaming sulfates (SLS/SLES) killing beneficial *Lactobacillus* species, occlusive synthetic underwear (polyester, nylon) and tight activewear trapping moisture and heat to breed *Candida albicans*, dietary triggers from high-glycemic carbohydrates and refined sugars feeding systemic yeast overgrowth, recurrent infections linked to endocrine-disrupting chemicals (Phthalates, Parabens) in intimate wipes and lubricants.
 
 ### Blog 43 — Why Are My Eyelids Red, Swollen, and Flaky? The Hidden Dangers of Eyelid Dermatitis, Nail Polish Transfer, and Harsh Makeup Removers
@@ -366,23 +366,23 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 45 — Why Do I Get Painful Pimples on My Scalp and Hairline? The Hidden Dangers of Dry Shampoo Buildup, Comedogenic Pomades, and Dietary Sugar
 - **Badge**: Scalp Health & Hair Care
-- **Image**: `https://images.unsplash.com/photo-1519783851580-264489332565?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Scalp folliculitis and hairline breakouts (pomade acne), how aerosol dry shampoos (rice starch, butane, isobutane) absorb oil but trap sebum and dead skin against the scalp to breed anaerobic bacteria, the migration of comedogenic styling products (heavy pomades, edge controls, gels containing petrolatum, beeswax, isopropyl myristate) down the forehead and temples blocking follicular ostia, mechanical occlusion from wearing sweaty baseball caps, helmets, or tight hairstyles after workouts, internal dietary triggers from high-glycemic carbohydrates and dairy driving IGF-1-induced sebaceous gland overproduction on the scalp.
 
 ### Blog 46 — Why Is My Body Suddenly Covered in an Itchy Rash? The Hidden Toxins in Your Laundry Detergent and Fabric Softener
 - **Badge**: Body Care & Allergies
-- **Image**: `https://images.unsplash.com/photo-1582735689307-e4313f8373b9?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Allergic Contact Dermatitis and body eczema caused by laundry residues. How optical brighteners (fluorescent whitening agents), synthetic fragrance mixes, and harsh anionic surfactants in laundry pods embed deeply into fabric fibers. The leaching of these chemicals into the skin via sweat, leading to acid mantle disruption, full-body hives, and chronic itching. The specific dangers of fabric softeners and dryer sheets which coat clothing in quaternary ammonium compounds (Quats) and artificial lipids that impair fabric breathability, trap body heat, and provoke severe skin sensitivities.
 
 ### Blog 47 — Why Is Red Dye 40 Being Banned? The Hidden Dangers of Synthetic Food Dyes Your Family Is Still Eating Every Day
 - **Badge**: Food Dye Safety
-- **Image**: `https://images.unsplash.com/photo-1505253716362-af191b79f224?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Red 40 (Allura Red AC), Yellow 5 (Tartrazine), Yellow 6 (Sunset Yellow), Blue 1, FD&C Red No. 3 revocation, EU mandatory warning labels ("may affect activity and attention in children"), FDA 2026 voluntary phase-out, behavioral effects in children (Southampton Study), natural alternatives (beetroot, annatto, paprika), how to scan food labels for hidden dyes.
 - **Target Queries**: is red dye 40 safe, red dye 40 banned, synthetic food dyes health risks, FDA food dye ban 2026, red 40 vs natural food coloring.
 
 ### Blog 48 — Is Titanium Dioxide in Your Food Safe? Why Europe Banned E171 but America Didn't
 - **Badge**: Additive Regulation & Safety
-- **Image**: `https://images.unsplash.com/photo-1558435334-118c465d676b?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1559620192-032c4bc4674e?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Titanium dioxide (E171) as a whitening agent, EFSA genotoxicity assessment, EU ban (August 2022), FDA continued approval (≤1% by weight), common foods containing TiO2 (chewing gum, candy coatings, coffee creamer, frosting), nanoparticle absorption, DNA damage risk, how to identify E171 on labels with PureScan AI.
 - **Target Queries**: titanium dioxide food safety, why is E171 banned in Europe, is titanium dioxide safe to eat, titanium dioxide in candy, food additives banned in Europe but legal in US.
 
@@ -394,7 +394,7 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 50 — Why Does My Stomach Bloat After Every Meal? The Hidden Dangers of Emulsifiers, Thickeners, and Gut Barrier Disruptors in Everyday Food
 - **Badge**: Gut Health & Digestion
-- **Image**: `https://images.unsplash.com/photo-1522844990619-4951c40f7f28?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Common food emulsifiers (carrageenan E407, polysorbate 80 E433, carboxymethylcellulose E466, lecithins E322), thickeners (xanthan gum E415, guar gum E412), intestinal mucosal barrier disruption, tight junction permeability ("leaky gut"), microbiome dysbiosis and SIBO, low-grade systemic inflammation, misleading "Natural Flavor" and "All-Natural" claims.
 - **Target Queries**: why am I so bloated after eating, food emulsifiers gut health, carrageenan side effects, polysorbate 80 gut, hidden ingredients causing bloating
 
@@ -446,13 +446,13 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ### Blog 59 — Why Does My Vitamin C Serum Turn Brown and Sting My Face? The Hidden Dangers of Oxidized L-Ascorbic Acid and Unstable Formulations
 - **Badge**: Serum Safety & Efficacy
-- **Image**: `https://images.unsplash.com/photo-1608248597359-71097e88383e?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Oxidation cascade of L-Ascorbic Acid (LAA → dehydroascorbic acid DHAA → 2,3-diketogulonic acid → erythrulose & oxalic acid); how oxidized vitamin C acts as a pro-oxidant generating reactive oxygen species (ROS) and lipid peroxidation in cutaneous sebum; staining of follicular pores from erythrulose (the self-tanning keto-sugar); acid mantle mechanics and why low pH (pH 2.5–3.5 required for neutral non-ionized protonated state penetration) triggers TRPV1 nociceptor firing, acute stinging, and chemical barrier burns on compromised skins; Duke University / Pinnell patent parameters (15% LAA + 1% Alpha-Tocopherol + 0.5% Ferulic Acid at pH ≤ 3.5); comprehensive comparative analysis of modern stabilized Vitamin C derivatives (Ascorbyl Glucoside AA-2G, 3-O-Ethyl Ascorbic Acid EAA, Tetrahexyldecyl Ascorbate THD, Sodium Ascorbyl Phosphate SAP, Magnesium Ascorbyl Phosphate MAP); debunking the historical 1960s Vitamin C + Niacinamide conflict myth (reversible 1:1 complex vs. heat-degraded nicotinic acid flush) while outlining safe practical morning antioxidant layering rules; packaging red flags (clear droppers, broad-mouth jars) vs. protective criteria (airless opaque pumps, amber glass, nitrogen flushing); how PureScan AI analyzes cosmetic ingredient lists to identify vitamin C derivative types, calculates pH incompatibility and barrier irritation risks, and verifies formulation stability.
 - **Target Queries**: why does my vitamin c serum turn brown, vitamin c serum turned yellow or orange, is oxidized vitamin c serum bad for skin, vitamin c serum stinging burning tingling, stable vitamin c serum derivatives, can you use vitamin c and niacinamide together, skinceuticals ce ferulic patent stability.
 
 ### Blog 60 — Can I Layer Retinol, Vitamin C, AHAs, and Niacinamide Together? The Science of Active Ingredient Conflicts and Stacking Mistakes
 - **Badge**: Routine Building & Active Safety
-- **Image**: `https://images.unsplash.com/photo-1556228722-d0b5de70b774?q=80&w=1200&auto=format&fit=crop`
+- **Image**: `https://images.unsplash.com/photo-1552046122-03184de85e08?q=80&w=1200&auto=format&fit=crop`
 - **Topics Covered**: Active ingredient compatibility and molecular conflicts; pH dependency of transdermal absorption (pure L-ascorbic acid pH 2.5–3.5, AHAs pH 3.0–3.8 vs. physiological neutral pH 5.5–6.5 required for epidermal enzymatic conversion of retinol to retinoic acid via ADH/RALDH); enzyme denaturation and sensory stinging caused by low pH on unbuffered tissue; cumulative active stacking overload and stratum corneum lipid lamellae dissolution (ceramides, cholesterol, free fatty acids); activation of TRPV1 nociceptors and acute neurogenic inflammation; chemical oxidation of retinol by benzoyl peroxide; resolving the 1960s Vitamin C + Niacinamide myth while addressing temporary vascular flushing; circadian division strategy (morning antioxidant photoprotection vs. evening cellular renewal); 4-night skin cycling protocol (exfoliation, retinoid, 2 recovery nights); viscosity rule for product layering; how Klar audits INCI formulations for pH clashes and active overload.
 - **Target Queries**: can I use retinol and vitamin C together, skincare layering order, niacinamide and vitamin C conflict, AHA BHA with retinol, how to layer serums, active ingredient conflicts, skin cycling routine.
 
