@@ -12,13 +12,23 @@ Every blog post MDX file **must** include the following YAML frontmatter fields,
 ```yaml
 ---
 id: <number>           # Sequential integer (next available number)
-title: "<string>"      # SEO-optimized title with primary keyword
+title: "<string>"      # SEO-optimized title with primary keyword (MUST be < 65 characters)
 badge: "<string>"      # Short category badge (e.g., "Gut & Skin Health")
-description: "<string>" # 1-2 sentence meta description for search engines
+description: "<string>" # Meta description for search engines (MUST be > 25 and < 165 characters)
 image: "<url>"         # Unique Unsplash image URL (must differ from ALL previous blogs)
 publishDate: "<string>" # ISO date string (e.g., "2025-10-31")
 ---
 ```
+
+- **Strict Title Length Constraint (< 65 Characters)**:
+  - The `title` tag **MUST be strictly less than 65 characters (`< 65` chars)**.
+  - Search engines (Google, Bing) truncate titles exceeding 65–70 characters in SERP snippets. Keeping it under 65 ensures the full title displays cleanly without ellipses across desktop and mobile.
+  - Make each title unique, click-worthy, and focused on high-intent search queries.
+
+- **Strict Meta Description Length Constraint (> 25 and < 165 Characters)**:
+  - The `description` **MUST be strictly greater than 25 characters and strictly less than 165 characters (`> 25` and `< 165` chars)**.
+  - Descriptions shorter than 25 characters are rejected by search engine crawlers, which replace them with arbitrary page text. Descriptions longer than 165 characters are truncated on SERPs. The ideal sweet spot is 120–145 characters.
+  - Summarize the core value proposition and include primary search keywords naturally.
 
 - **No Fabricated Author Bylines or Generic Teams**:
   - Do NOT invent artificial author bylines or editorial personas (e.g., no `"MedGPT Editorial Team"`, `"MedGPT Clinical Informatics Team"`, `"Editor"`, or fake medical reviewers).
@@ -44,23 +54,35 @@ All blog posts must follow this exact structural pattern:
 
 5. **Subtle App Promotion Section** — A final `<h3>` with a value-driven paragraph that naturally positions Klar (formerly PureScan AI) as the solution. **No aggressive sales pitch.** The tone should empower the reader.
 
+6. **Dedicated Sources & References Block** — Every post **must** end with a dedicated references container:
+   ```html
+   <div className="mt-12 pt-8 border-t border-slate-200">
+     <h3 className="text-lg font-bold text-slate-900 mb-4">{Localized Heading}</h3>
+     <ol className="list-decimal pl-6 space-y-2 text-sm text-slate-600">
+       <li><a href="https://pubmed.ncbi.nlm.nih.gov/<PMID>/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">{Study Title} — PubMed</a></li>
+     </ol>
+   </div>
+   ```
+
 ### SEO, GEO & AEO Requirements
+- **Title Length**: Strictly `< 65` characters for maximum SERP visibility and click-through rate.
+- **Meta Description**: Strictly `> 25` and `< 165` characters (ideal: 120–145 characters) answering primary search intent.
 - **Question-based H3 headings**: Must target high-volume Google search queries and conversational prompts.
-- **Answer Engine Optimization (AEO)**: Direct, concise answers in the Quick Answer callout box and within the opening sentences of each H3 section for Google AI Overviews, Gemini, and ChatGPT search citations.
+- **Answer Engine Optimization (AEO)**: Direct, concise answers in the Quick Answer callout box and within the opening sentences of each H3 section for Google AI Overviews, Gemini, Perplexity, and ChatGPT search citations.
 - **Natural keyword integration**: Include terms people search for in Google, ChatGPT, and Gemini.
 - **Localized keywords**: Use region-specific phrasing and local-language search terms in each translation (not just literal translations of English keywords).
 
 ### E-E-A-T, Backlinks & Authoritative Scientific Sources
 To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness) and generative answer engines:
-1. **Legitimate Scientific Authors & Authoritative External Citations**:
-   - Authority must be anchored directly in legitimate, peer-reviewed scientific literature and real researchers/institutions—**never** in fabricated editorial personas, fake reviewer teams, or arbitrary author tags (e.g., no "MedGPT Editorial Team", "MedGPT Clinical Informatics Team", or pseudo-editorial bylines).
-   - Every blog post **must** cite at least 2–4 authoritative external scientific or regulatory sources with direct markdown links.
-   - Permissible sources include: PubMed / NCBI (`https://pubmed.ncbi.nlm.nih.gov/...`), European Commission SCCS, EFSA, US FDA, WHO, American Academy of Pediatrics (AAP / HealthyChildren), French ANSM, or peer-reviewed journals (*JAAD*, *JACI*, *The Lancet*, *Pediatrics*, *J Invest Dermatol*).
-   - Anchor text must explicitly credit the legitimate authors, researchers, publication, or official body (e.g., `[Nikolovski et al., J Invest Dermatol](https://pubmed.ncbi.nlm.nih.gov/18385757/)`, `[AAP Clinical Guidance](https://www.healthychildren.org/...)`).
+1. **Legitimate Scientific Authors & Exact Study Links (No Generic Roots)**:
+   - Authority must be anchored directly in legitimate, peer-reviewed scientific literature and real researchers/institutions—**never** in fabricated editorial personas, fake reviewer teams, or arbitrary author tags.
+   - Every single blog post **MUST contain 2–3 exact scientific citations** from legitimate peer-reviewed medical and toxicological journals.
+   - **Permissible Sources**: Direct PubMed/NCBI study records (`https://pubmed.ncbi.nlm.nih.gov/<PMID>/`), scientific DOIs (`https://doi.org/...`), European Commission SCCS opinions, EFSA scientific opinions, or peer-reviewed journals (*The Lancet*, *BMJ*, *JAAD*, *JACI*, *Pediatrics*, *J Invest Dermatol*).
+   - Anchor text must explicitly credit the legitimate authors, study title, or official journal (e.g., `[When do nutri-score labels shift food choices? — PubMed](https://pubmed.ncbi.nlm.nih.gov/42475008/)`).
 2. **Strictly No Generic Homepage / Root Domain Links**:
-   - **Never link to generic website homepages or root domains** (e.g., strictly forbidden: `https://pubmed.ncbi.nlm.nih.gov/`, `https://www.aap.org/`, `https://ansm.sante.fr/`, `https://www.fda.gov/`, `https://efsa.europa.eu/`).
-   - Every single citation **must** point directly to the **exact, correct, verified, working deep URL** of the specific study (PMID article page), clinical guideline, or regulatory decision.
-   - All links must be verified to be live and working (returning HTTP 200).
+   - **Never link to generic website homepages, root domains, or search homepages** (e.g., strictly forbidden: `https://pubmed.ncbi.nlm.nih.gov/`, `https://who.int`, `https://www.fda.gov/`, `https://efsa.europa.eu/`, `https://cdc.gov`).
+   - Every single citation **must** point directly to the **exact, verified, deep URL** where the specific clinical findings, data points, or regulatory decisions are published.
+   - All links must be verified to return HTTP 200.
 3. **Contextual Internal Backlinks (Topic Clusters)**:
    - Every blog post **must** contain 2–4 contextual internal links to relevant existing articles on the site (e.g., linking to skin barrier repair, chemical preservatives, food additive guides, or allergy diagnostics).
    - Internal links build strong topical authority, improve crawl depth, and guide users to relevant solutions across the platform.
@@ -68,8 +90,35 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
    - All physiological mechanisms, clinical metrics, pH values, and regulatory statuses must reflect verified scientific literature. Never invent studies or exaggerate toxicity risks beyond published dermatological and toxicological data.
 
 ### Localization Requirements
-- Every blog post **must** be generated across **all 25 locales** defined in `LanguageSwitcher.jsx`:
-  `en`, `fr`, `es`, `de`, `nl`, `pt`, `ro`, `it`, `sv`, `da`, `no`, `nb`, `pl`, `cs`, `lt`, `lv`, `tr`, `bg`, `ru`, `el`, `ar`, `ar-MA`, `ja`, `ko`, `zh`
+- Every blog post **must** be generated across **all 27 locales** supported by Klar:
+  `en`, `bg`, `ar`, `ar-MA`, `cs`, `da`, `de`, `el`, `es`, `fi`, `fr`, `hu`, `it`, `ja`, `ko`, `lt`, `lv`, `nb`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `tr`, `zh`
+- Use the verified localized headings for the Sources & References block:
+  - English (`en`): `Sources & References`
+  - Arabic (`ar`): `المصادر والمراجع العلمية المعتمدة`
+  - Moroccan Arabic (`ar-MA`): `المصادر والمراجع العلمية`
+  - Bulgarian (`bg`): `Източници и научни референции`
+  - Czech (`cs`): `Zdroje a vědecké reference`
+  - Danish (`da`): `Kilder og videnskabelige referencer`
+  - German (`de`): `Quellen & wissenschaftliche Referenzen`
+  - Greek (`el`): `Πηγές & Επιστημονικές Αναφορές`
+  - Spanish (`es`): `Fuentes y referencias científicas`
+  - Finnish (`fi`): `Lähteet ja tieteelliset tutkimukset`
+  - French (`fr`): `Sources et références scientifiques`
+  - Hungarian (`hu`): `Források és tudományos hivatkozások`
+  - Italian (`it`): `Fonti e riferimenti scientifici`
+  - Japanese (`ja`): `参考文献・科学的エビデンス`
+  - Korean (`ko`): `참고 문헌 및 과학적 근거`
+  - Lithuanian (`lt`): `Šaltiniai ir mokslinės nuorodos`
+  - Latvian (`lv`): `Avoti un zinātniskās atsauces`
+  - Norwegian Bokmål / Nynorsk (`nb`, `no`): `Kilder og vitenskapelige referanser`
+  - Dutch (`nl`): `Bronnen en wetenschappelijke referenties`
+  - Polish (`pl`): `Źródła i publikacje naukowe`
+  - Portuguese (`pt`): `Fontes e referências científicas`
+  - Romanian (`ro`): `Surse și referințe științifice`
+  - Russian (`ru`): `Источники и научные исследования`
+  - Swedish (`sv`): `Källor och vetenskapliga referenser`
+  - Turkish (`tr`): `Kaynaklar ve Bilimsel Referanslar`
+  - Chinese (`zh`): `参考文献与权威研究`
 - Translations must be **culturally adapted**, not word-for-word machine translations.
 - Do NOT use Google Translate API or any external translation services. All translations must be generated internally by the AI itself.
 - Arabic (`ar`, `ar-MA`) content should use natural Darija phrasing for Moroccan Arabic.

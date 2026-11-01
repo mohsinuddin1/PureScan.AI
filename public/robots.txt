@@ -1,41 +1,58 @@
+# Standard Robots.txt for Search Engines and AI Search Agents
 User-agent: *
 Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=no
-Agentmap: https://purescan.droploop.in/.well-known/ai-catalog.json
 
-# Allow Google explicitly
+# Google Search & Google AI (Gemini, AI Overviews / SGE)
 User-agent: Googlebot
 Allow: /
 
-# Allow LLM bots specifically
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI & ChatGPT (ChatGPT Search, Browsing, Citations)
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: Bingbot
+# Perplexity AI Search
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic & Claude
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# Microsoft Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+# Apple Intelligence & Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Other Leading AI Agents & Search Engines
+User-agent: YouBot
+Allow: /
+
 User-agent: cohere-ai
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Sitemaps
 Sitemap: https://purescan.droploop.in/sitemap-index.xml
