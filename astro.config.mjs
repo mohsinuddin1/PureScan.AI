@@ -88,10 +88,48 @@ function localApiDevPlugin() {
 export default defineConfig({
   site: 'https://purescan.droploop.in',
   trailingSlash: 'never',
+  redirects: {
+    '/ar/blog/2-': '/ar/blog/2-mash-mustahdarat-al-tajmil-kayfa-tarifu-al-muntajat-al-aminah',
+    '/ar/blog/3-': '/ar/blog/3-hal-taqyimat-al-taam-daqiqah-kayfa-yuhaddidu-tatbiquna-al-sihhi',
+    '/ar/blog/4-': '/ar/blog/4-hal-al-mukawwinat-fi-muntajat-al-inayah-bi-al-bashrah-sammah',
+    '/ar/blog/5-': '/ar/blog/5-kayfa-taqra-al-mulsawat-al-ghidhaiyyah-ka-al-muhtarifin',
+    '/ar/blog/6-': '/ar/blog/6-al-haqiqah-hawla-al-jamal-al-nazif-al-mukawwinat-al-tabiiyyah',
+
+    '/el/blog/2-': '/el/blog/2-sarosi-kallyntikon-pos-na-gnorizete-poia-einai-asfali',
+    '/el/blog/3-': '/el/blog/3-einai-akriveis-oi-axiologiseis-trofimon',
+    '/el/blog/4-': '/el/blog/4-einai-toxika-ta-systatika-stin-peripoiisi-dermatos',
+    '/el/blog/5-': '/el/blog/5-pos-na-diavazete-diatrofikes-etiketes-san-epangelmatias',
+
+    '/ja/blog/2-': '/ja/blog/2-mutenka-keshohin-anzen-keshohin-seibun-kaiseki-app',
+    '/ja/blog/3-': '/ja/blog/3-shokuhin-anzen-hyoka-seikaku-app-shikumi',
+    '/ja/blog/4-': '/ja/blog/4-skin-care-seibun-yugai-kikendo-score-mikata',
+    '/ja/blog/5-': '/ja/blog/5-diet-shokuhin-hyoji-eiyo-seibun-hyoji-tadashii-mikata',
+    '/ja/blog/6-vs': '/ja/blog/6-clean-beauty-shinjitsu-tennen-seibun-vs-gosei-seibun',
+
+    '/ko/blog/2-': '/ko/blog/2-hwajangpum-seongbun-bunseok-anjeonhan-hwajangpum-chatneun-beop',
+    '/ko/blog/3-': '/ko/blog/3-sikpum-pyeongjeom-jeonghwakhalkka-bunseok-wonli',
+    '/ko/blog/4-': '/ko/blog/4-skin-care-seongbun-yuhaehalkka-wiheomdo-jeomsu-haeseok',
+    '/ko/blog/5-': '/ko/blog/5-diet-yeongyang-seongbunpyo-jedaelo-ikneun-beop',
+    '/ko/blog/6-vs': '/ko/blog/6-clean-beauty-jinsil-cheonyeon-seongbun-vs-hapseong-seongbun',
+
+    '/ru/blog/2-': '/ru/blog/2-skanirovanie-kosmetiki-kak-uznat-kakaya-kosmetika-bezopasna',
+    '/ru/blog/3-': '/ru/blog/3-tochny-li-reytingi-edy-kak-app-opredelyaet-zdorovuyu-pishchu',
+    '/ru/blog/4-': '/ru/blog/4-toksichny-li-ingredienty-v-moey-kosmetike-opasnost',
+    '/ru/blog/5-': '/ru/blog/5-kak-chitat-etiketki-kak-professional-dlya-pokhudeniya',
+
+    '/zh/blog/2-': '/zh/blog/2-huazhuangpin-chengfen-chaxun-hufupin-anquan',
+    '/zh/blog/3-': '/zh/blog/3-shipin-pingfen-zhunquema-shipin-anquan-xitong',
+    '/zh/blog/4-': '/zh/blog/4-wode-hufu-chengfen-youdu-ma-weihai-pingfen',
+    '/zh/blog/5-': '/zh/blog/5-jianfei-daka-bibei-yuedu-yingyang-biaoqian',
+    '/zh/blog/6-vs': '/zh/blog/6-chunjing-meizhuang-zhenxiang-tianran-vs-hecheng',
+  },
   integrations: [react(), mdx(), sitemap({
     filter: (page) => {
       const url = new URL(page);
       const path = url.pathname;
+
+      // Exclude incomplete slugs or redirect paths from sitemap
+      if (path.match(/\/blog\/\d+-(?:vs)?$/)) return false;
 
       // Always include non-blog pages
       if (!path.includes('/blog/')) return true;
