@@ -10,7 +10,7 @@ This skill allows agents to discover OAuth Protected Resource Metadata, obtain t
 
 ## Endpoints
 
-- Registration: `https://purescan.droploop.in/api/agent/register`
-- PRM: `https://purescan.droploop.in/.well-known/oauth-protected-resource`
-- Authorization Server: `https://purescan.droploop.in/.well-known/oauth-authorization-server`
-- Auth Documentation: `https://purescan.droploop.in/auth.md`
+- Registration: `https://scaningredients.com/api/agent/register`
+- PRM: `https://scaningredients.com/.well-known/oauth-protected-resource`
+- Authorization Server: `https://scaningredients.com/.well-known/oauth-authorization-server`
+- Auth Documentation: `https://scaningredients.com/auth.md`

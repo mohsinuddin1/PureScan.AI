@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const INDEXNOW_API_URL = "https://api.indexnow.org/IndexNow";
-const HOST = "purescan.droploop.in";
+const HOST = "scaningredients.com";
 const KEY = "4000f00744d640bc801e0e6bbe49af9e";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const DIST_DIR = "./dist";

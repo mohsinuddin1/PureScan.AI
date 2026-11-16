@@ -1,22 +1,22 @@
 {
   "linkset": [
     {
-      "anchor": "https://purescan.droploop.in/api",
+      "anchor": "https://scaningredients.com/api",
       "service-desc": [
         {
-          "href": "https://purescan.droploop.in/api/openapi.json",
+          "href": "https://scaningredients.com/api/openapi.json",
           "type": "application/vnd.oai.openapi+json;version=3.0"
         }
       ],
       "service-doc": [
         {
-          "href": "https://purescan.droploop.in/docs/api",
+          "href": "https://scaningredients.com/docs/api",
           "type": "text/html"
         }
       ],
       "status": [
         {
-          "href": "https://purescan.droploop.in/api/health",
+          "href": "https://scaningredients.com/api/health",
           "type": "application/json"
         }
       ]

@@ -6,10 +6,10 @@ This document defines agent registration, authentication procedures, and credent
 
 AI agents should read the standard discovery endpoints before initiating authentication:
 
-- **OAuth Protected Resource Metadata (PRM):** [/.well-known/oauth-protected-resource](https://purescan.droploop.in/.well-known/oauth-protected-resource)
-- **OAuth Authorization Server Metadata:** [/.well-known/oauth-authorization-server](https://purescan.droploop.in/.well-known/oauth-authorization-server)
-- **OIDC Configuration:** [/.well-known/openid-configuration](https://purescan.droploop.in/.well-known/openid-configuration)
-- **API Catalog (RFC 9727):** [/.well-known/api-catalog](https://purescan.droploop.in/.well-known/api-catalog)
+- **OAuth Protected Resource Metadata (PRM):** [/.well-known/oauth-protected-resource](https://scaningredients.com/.well-known/oauth-protected-resource)
+- **OAuth Authorization Server Metadata:** [/.well-known/oauth-authorization-server](https://scaningredients.com/.well-known/oauth-authorization-server)
+- **OIDC Configuration:** [/.well-known/openid-configuration](https://scaningredients.com/.well-known/openid-configuration)
+- **API Catalog (RFC 9727):** [/.well-known/api-catalog](https://scaningredients.com/.well-known/api-catalog)
 
 ## Audience
 
@@ -19,7 +19,7 @@ This specification is intended for autonomous AI agents, LLM assistants, and pro
 
 Agents can register or provision access via the registration endpoint:
 
-- **Endpoint:** `https://purescan.droploop.in/api/agent/register`
+- **Endpoint:** `https://scaningredients.com/api/agent/register`
 - **Method:** `POST`
 - **Content-Type:** `application/json`
 
@@ -28,17 +28,17 @@ Agents can register or provision access via the registration endpoint:
 1. **Identity Assertion (ID-JAG):**
    - Assertion type: `urn:ietf:params:oauth:token-type:id-jag`
    - Credential types: `bearer_token`, `api_key`
-   - Claims endpoint: `https://purescan.droploop.in/api/agent/claim`
-   - Revocation endpoint: `https://purescan.droploop.in/api/agent/revoke`
+   - Claims endpoint: `https://scaningredients.com/api/agent/claim`
+   - Revocation endpoint: `https://scaningredients.com/api/agent/revoke`
 
 2. **Verified Email:**
    - Assertion type: `verified_email`
    - Credential types: `bearer_token`, `api_key`
-   - Claims endpoint: `https://purescan.droploop.in/api/agent/claim`
+   - Claims endpoint: `https://scaningredients.com/api/agent/claim`
 
 3. **Anonymous Agent Access:**
    - Credential types: `bearer_token`
-   - Claims endpoint: `https://purescan.droploop.in/api/agent/claim`
+   - Claims endpoint: `https://scaningredients.com/api/agent/claim`
 
 ## Credential Use
 
@@ -55,4 +55,4 @@ Tokens are scoped according to the requested capabilities:
 
 ## Revocation & Token Lifecycle
 
-Tokens may be revoked by submitting a POST request to `https://purescan.droploop.in/api/agent/revoke` with the token or assertion identifier.
+Tokens may be revoked by submitting a POST request to `https://scaningredients.com/api/agent/revoke` with the token or assertion identifier.

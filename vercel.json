@@ -141,10 +141,21 @@
       "has": [
         {
           "type": "host",
+          "value": "purescan\\.droploop\\.in"
+        }
+      ],
+      "destination": "https://scaningredients.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
           "value": "(.*)\\.vercel\\.app"
         }
       ],
-      "destination": "https://purescan.droploop.in/$1",
+      "destination": "https://scaningredients.com/$1",
       "permanent": true
     }
   ]

@@ -9,9 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://purescan.droploop.in/llms-full.txt"
+    "url": "https://scaningredients.com/llms-full.txt"
   },
-  "logo_url": "https://purescan.droploop.in/logo.png",
+  "logo_url": "https://scaningredients.com/logo.png",
   "contact_email": "support@purescanai.com",
-  "legal_info_url": "https://purescan.droploop.in/terms"
+  "legal_info_url": "https://scaningredients.com/terms"
 }

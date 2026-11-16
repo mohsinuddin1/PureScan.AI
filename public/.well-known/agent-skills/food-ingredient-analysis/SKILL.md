@@ -19,4 +19,4 @@ This skill allows agents to analyze food labels, evaluate additives (E numbers),
 
 Agents can query the PureScan AI MCP server:
 - Tool: `scan_food_ingredients`
-- Endpoint: `https://purescan.droploop.in/api/mcp`
+- Endpoint: `https://scaningredients.com/api/mcp`

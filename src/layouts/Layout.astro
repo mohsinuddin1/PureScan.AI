@@ -14,7 +14,7 @@ const {
   title = "Klar — Food & Cosmetic Scanner",
   shortTitle,
   description = "Scan food & cosmetics with Klar to detect hidden toxins, allergens, and endocrine disruptors instantly. Free AI scanner app for iOS & Android.",
-  image = "https://purescan.droploop.in/og-image.png",
+  image = "https://scaningredients.com/og-image.png",
   alternateUrls
 } = Astro.props;
 
@@ -116,7 +116,7 @@ function formatPageTitle(rawTitle: string | undefined): string {
 const safeTitle = formatPageTitle(shortTitle || title);
 
 const lang = Astro.currentLocale || "en";
-const siteUrl = "https://purescan.droploop.in";
+const siteUrl = "https://scaningredients.com";
 const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, siteUrl).href;
 
@@ -212,36 +212,36 @@ if (Astro.response && Astro.response.headers) {
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "https://purescan.droploop.in/#website",
-          "url": "https://purescan.droploop.in/",
+          "@id": "https://scaningredients.com/#website",
+          "url": "https://scaningredients.com/",
           "name": "Klar - Food & Cosmetic Scanner",
           "alternateName": "PureScan AI",
           "description": "The smartest food scanner & cosmetic scanner in your pocket.",
           "publisher": {
-            "@id": "https://purescan.droploop.in/#organization"
+            "@id": "https://scaningredients.com/#organization"
           },
           "inLanguage": lang
         },
         {
           "@type": "Organization",
-          "@id": "https://purescan.droploop.in/#organization",
+          "@id": "https://scaningredients.com/#organization",
           "name": "Klar",
           "alternateName": "PureScan AI",
-          "url": "https://purescan.droploop.in/",
+          "url": "https://scaningredients.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://purescan.droploop.in/logo.png"
+            "url": "https://scaningredients.com/logo.png"
           },
           "description": "AI-powered application for scanning food and cosmetic products to detect harmful ingredients, allergens, and ultra-processed elements.",
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer support",
-            "url": "https://purescan.droploop.in/support"
+            "url": "https://scaningredients.com/support"
           }
         },
         {
           "@type": "SoftwareApplication",
-          "@id": "https://purescan.droploop.in/#app",
+          "@id": "https://scaningredients.com/#app",
           "name": "Klar - Food & Cosmetic Scanner",
           "alternateName": ["PureScan AI", "PureScan", "Klar"],
           "applicationCategory": "HealthApplication",
@@ -336,7 +336,7 @@ if (Astro.response && Astro.response.headers) {
                   return {
                     status: "success",
                     category: (args && args.category) || "all",
-                    documentationUrl: "https://purescan.droploop.in/grading"
+                    documentationUrl: "https://scaningredients.com/grading"
                   };
                 }
               }

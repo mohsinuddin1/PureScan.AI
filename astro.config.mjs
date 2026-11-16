@@ -86,7 +86,7 @@ function localApiDevPlugin() {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://purescan.droploop.in',
+  site: 'https://scaningredients.com',
   trailingSlash: 'never',
   redirects: {
     '/ar/blog/2-': '/ar/blog/2-mash-mustahdarat-al-tajmil-kayfa-tarifu-al-muntajat-al-aminah',

@@ -657,7 +657,7 @@ export default function PaywallScreen({ navigation, route, isHardPaywall = false
                 </Animated.View>
 
                 <View style={[styles.bottomRow, { justifyContent: 'space-evenly', marginTop: moderateVerticalScale(16) }]}>
-                    <TouchableOpacity onPress={() => Linking.openURL('https://purescan.droploop.in/terms')}>
+                    <TouchableOpacity onPress={() => Linking.openURL('https://scaningredients.com/terms')}>
                         <Text style={styles.legalLink}>Terms of Service</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={handleRestore} disabled={restoring}>
@@ -665,7 +665,7 @@ export default function PaywallScreen({ navigation, route, isHardPaywall = false
                             {restoring ? 'Restoring...' : 'Restore'}
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => Linking.openURL('https://purescan.droploop.in/privacy')}>
+                    <TouchableOpacity onPress={() => Linking.openURL('https://scaningredients.com/privacy')}>
                         <Text style={styles.legalLink}>Privacy Policy</Text>
                     </TouchableOpacity>
                 </View>

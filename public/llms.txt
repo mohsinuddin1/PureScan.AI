@@ -32,14 +32,14 @@ Klar (formerly PureScan AI) is a mobile application that uses artificial intelli
 
 ## Core Pages
 
-- [Home](https://purescan.droploop.in/): Main landing page
-- [Ingredient Scanner](https://purescan.droploop.in/ingredient-scanner): AI-powered ingredient scanner for food and cosmetic labels
-- [Food Scanner App](https://purescan.droploop.in/food-scanner-app): Food barcode scanner with Nutri-Score and NOVA classification
-- [Cosmetic Safety Checker](https://purescan.droploop.in/cosmetic-safety-checker): Check cosmetics for endocrine disruptors, carcinogens, and allergens
-- [Allergy Scanner](https://purescan.droploop.in/allergy-scanner): Detect hidden food allergens — gluten, dairy, nuts, soy, and 14+ categories
-- [Blog](https://purescan.droploop.in/blog): 50+ expert articles on hidden toxins in food and cosmetics
-- [Grading System](https://purescan.droploop.in/grading): How safety scores are calculated
-- [Pricing](https://purescan.droploop.in/pricing): Free and Pro plans
+- [Home](https://scaningredients.com/): Main landing page
+- [Ingredient Scanner](https://scaningredients.com/ingredient-scanner): AI-powered ingredient scanner for food and cosmetic labels
+- [Food Scanner App](https://scaningredients.com/food-scanner-app): Food barcode scanner with Nutri-Score and NOVA classification
+- [Cosmetic Safety Checker](https://scaningredients.com/cosmetic-safety-checker): Check cosmetics for endocrine disruptors, carcinogens, and allergens
+- [Allergy Scanner](https://scaningredients.com/allergy-scanner): Detect hidden food allergens — gluten, dairy, nuts, soy, and 14+ categories
+- [Blog](https://scaningredients.com/blog): 50+ expert articles on hidden toxins in food and cosmetics
+- [Grading System](https://scaningredients.com/grading): How safety scores are calculated
+- [Pricing](https://scaningredients.com/pricing): Free and Pro plans
 
 ## Download
 
@@ -48,6 +48,6 @@ Klar (formerly PureScan AI) is a mobile application that uses artificial intelli
 
 ## Optional
 
-- [Privacy Policy](https://purescan.droploop.in/privacy)
-- [Terms of Service](https://purescan.droploop.in/terms)
-- [Support](https://purescan.droploop.in/support)
+- [Privacy Policy](https://scaningredients.com/privacy)
+- [Terms of Service](https://scaningredients.com/terms)
+- [Support](https://scaningredients.com/support)

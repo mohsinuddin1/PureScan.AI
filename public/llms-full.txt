@@ -49,57 +49,57 @@ Klar offers a free tier with essential scanning features. A Pro subscription unl
 The Klar blog publishes expert-written articles on hidden toxins in food and cosmetics, backed by PubMed research citations.
 
 ### Food Safety Topics
-- Blog 1: How Food Scanning, Nutri-Score, and NOVA Score Help You Eat Healthier — https://purescan.droploop.in/blog/1-how-food-scanning-nutri-score-and-nova-score-help-you-eat-healthier
-- Blog 3: Are Food Ratings Accurate? How Our App Determines if Food is Actually Healthy — https://purescan.droploop.in/blog/3-are-food-ratings-accurate-how-our-app-determines-if-food-is-actually-healthy
-- Blog 5: How to Read Nutrition Labels Like a Pro for Weight Loss & Clean Eating — https://purescan.droploop.in/blog/5-how-to-read-nutrition-labels-like-a-pro-for-weight-loss-clean-eating
-- Blog 7: Hidden Toxins in Food and Cosmetics — https://purescan.droploop.in/blog/7-hidden-toxins-in-food-and-cosmetics
-- Blog 47: Why Is Red Dye 40 Being Banned? Synthetic Food Dyes Dangers — https://purescan.droploop.in/blog/47-why-is-red-dye-40-being-banned
-- Blog 48: Is Titanium Dioxide in Your Food Safe? Why Europe Banned E171 — https://purescan.droploop.in/blog/48-is-titanium-dioxide-in-your-food-safe-why-europe-banned-e171-but-america-didnt
-- Blog 49: What Are Ultra-Processed Foods? NOVA Classification Explained — https://purescan.droploop.in/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained
-- Blog 50: Why Does My Stomach Bloat After Every Meal? Emulsifiers and Gut Health — https://purescan.droploop.in/blog/50-why-does-my-stomach-bloat-after-every-meal
+- Blog 1: How Food Scanning, Nutri-Score, and NOVA Score Help You Eat Healthier — https://scaningredients.com/blog/1-how-food-scanning-nutri-score-and-nova-score-help-you-eat-healthier
+- Blog 3: Are Food Ratings Accurate? How Our App Determines if Food is Actually Healthy — https://scaningredients.com/blog/3-are-food-ratings-accurate-how-our-app-determines-if-food-is-actually-healthy
+- Blog 5: How to Read Nutrition Labels Like a Pro for Weight Loss & Clean Eating — https://scaningredients.com/blog/5-how-to-read-nutrition-labels-like-a-pro-for-weight-loss-clean-eating
+- Blog 7: Hidden Toxins in Food and Cosmetics — https://scaningredients.com/blog/7-hidden-toxins-in-food-and-cosmetics
+- Blog 47: Why Is Red Dye 40 Being Banned? Synthetic Food Dyes Dangers — https://scaningredients.com/blog/47-why-is-red-dye-40-being-banned
+- Blog 48: Is Titanium Dioxide in Your Food Safe? Why Europe Banned E171 — https://scaningredients.com/blog/48-is-titanium-dioxide-in-your-food-safe-why-europe-banned-e171-but-america-didnt
+- Blog 49: What Are Ultra-Processed Foods? NOVA Classification Explained — https://scaningredients.com/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained
+- Blog 50: Why Does My Stomach Bloat After Every Meal? Emulsifiers and Gut Health — https://scaningredients.com/blog/50-why-does-my-stomach-bloat-after-every-meal
 
 ### Skincare & Cosmetic Safety Topics
-- Blog 2: Cosmetic Scanning: How to Know Which Cosmetics Are Safe for You — https://purescan.droploop.in/blog/2-cosmetic-scanning-how-to-know-which-cosmetics-are-safe-for-you
-- Blog 4: Are Ingredients in My Skincare Toxic? Cosmetic Hazard Scores — https://purescan.droploop.in/blog/4-are-ingredients-in-my-skincare-toxic-how-to-interpret-cosmetic-hazard-scores
-- Blog 6: The Truth About Clean Beauty: Natural vs. Synthetic Ingredients — https://purescan.droploop.in/blog/6-the-truth-about-clean-beauty-natural-vs-synthetic-ingredients
-- Blog 9: What Are Forever Chemicals (PFAS) and Endocrine Disruptors? — https://purescan.droploop.in/blog/9-what-are-forever-chemicals-pfas-and-endocrine-disruptors
-- Blog 10: What is the Gut-Skin Axis? UPFs, Emulsifiers, and Comedogenic Skincare — https://purescan.droploop.in/blog/10-what-is-the-gut-skin-axis-upf-emulsifiers-and-comedogenic-skincare
-- Blog 11: Why Is My Skin Barrier Damaged? Fragrances, Formaldehyde, and Dyes — https://purescan.droploop.in/blog/11-why-is-my-skin-barrier-damaged-synthetic-fragrances-formaldehyde-releasers-artificial-dyes
+- Blog 2: Cosmetic Scanning: How to Know Which Cosmetics Are Safe for You — https://scaningredients.com/blog/2-cosmetic-scanning-how-to-know-which-cosmetics-are-safe-for-you
+- Blog 4: Are Ingredients in My Skincare Toxic? Cosmetic Hazard Scores — https://scaningredients.com/blog/4-are-ingredients-in-my-skincare-toxic-how-to-interpret-cosmetic-hazard-scores
+- Blog 6: The Truth About Clean Beauty: Natural vs. Synthetic Ingredients — https://scaningredients.com/blog/6-the-truth-about-clean-beauty-natural-vs-synthetic-ingredients
+- Blog 9: What Are Forever Chemicals (PFAS) and Endocrine Disruptors? — https://scaningredients.com/blog/9-what-are-forever-chemicals-pfas-and-endocrine-disruptors
+- Blog 10: What is the Gut-Skin Axis? UPFs, Emulsifiers, and Comedogenic Skincare — https://scaningredients.com/blog/10-what-is-the-gut-skin-axis-upf-emulsifiers-and-comedogenic-skincare
+- Blog 11: Why Is My Skin Barrier Damaged? Fragrances, Formaldehyde, and Dyes — https://scaningredients.com/blog/11-why-is-my-skin-barrier-damaged-synthetic-fragrances-formaldehyde-releasers-artificial-dyes
 
 ### Dermatological Conditions & Ingredient Dangers
-- Blog 13: Why Is My Hair Thinning? Sulfates, Silicones, and Seed Oils — https://purescan.droploop.in/blog/13-why-is-my-hair-thinning-and-scalp-itchy-sulfates-silicones-seed-oils
-- Blog 16: Why Does Sunscreen Sting Eyes and Cause Breakouts? — https://purescan.droploop.in/blog/16-why-does-sunscreen-sting-eyes-and-cause-breakouts-chemical-spf
-- Blog 29: Why Is Niacinamide Breaking Me Out? Serum Overdose Dangers — https://purescan.droploop.in/blog/29-why-is-niacinamide-breaking-me-out-red-bumps-purging-reddit
-- Blog 30: Why Do My Nose Pores Look Huge? Sebaceous Filaments vs Blackheads — https://purescan.droploop.in/blog/30-why-do-my-nose-pores-look-huge-sebaceous-filaments-blackheads-reddit
-- Blog 34: Why Do I Get Tiny Itchy Bumps on My Forehead? Fungal Acne — https://purescan.droploop.in/blog/34-why-do-i-get-tiny-itchy-bumps-on-forehead-fungal-acne
+- Blog 13: Why Is My Hair Thinning? Sulfates, Silicones, and Seed Oils — https://scaningredients.com/blog/13-why-is-my-hair-thinning-and-scalp-itchy-sulfates-silicones-seed-oils
+- Blog 16: Why Does Sunscreen Sting Eyes and Cause Breakouts? — https://scaningredients.com/blog/16-why-does-sunscreen-sting-eyes-and-cause-breakouts-chemical-spf
+- Blog 29: Why Is Niacinamide Breaking Me Out? Serum Overdose Dangers — https://scaningredients.com/blog/29-why-is-niacinamide-breaking-me-out-red-bumps-purging-reddit
+- Blog 30: Why Do My Nose Pores Look Huge? Sebaceous Filaments vs Blackheads — https://scaningredients.com/blog/30-why-do-my-nose-pores-look-huge-sebaceous-filaments-blackheads-reddit
+- Blog 34: Why Do I Get Tiny Itchy Bumps on My Forehead? Fungal Acne — https://scaningredients.com/blog/34-why-do-i-get-tiny-itchy-bumps-on-forehead-fungal-acne
 
 ### Pregnancy & Family Safety
-- Blog 12: Skincare Ingredients and Food Additives to Avoid During Pregnancy — https://purescan.droploop.in/blog/12-which-skincare-ingredients-and-food-additives-to-avoid-during-pregnancy
-- Blog 51: Is Your Children's Snack Box Secretly Toxic? Hidden Additives in Kids' Foods — https://purescan.droploop.in/blog/51-is-your-childrens-snack-box-secretly-toxic
+- Blog 12: Skincare Ingredients and Food Additives to Avoid During Pregnancy — https://scaningredients.com/blog/12-which-skincare-ingredients-and-food-additives-to-avoid-during-pregnancy
+- Blog 51: Is Your Children's Snack Box Secretly Toxic? Hidden Additives in Kids' Foods — https://scaningredients.com/blog/51-is-your-childrens-snack-box-secretly-toxic
 
 ### Fitness & Supplements
-- Blog 52: Why Does My Protein Shake Cause Acne and Bloating? — https://purescan.droploop.in/blog/52-why-does-my-protein-shake-cause-acne-and-bloating
+- Blog 52: Why Does My Protein Shake Cause Acne and Bloating? — https://scaningredients.com/blog/52-why-does-my-protein-shake-cause-acne-and-bloating
 
 ## Product Landing Pages
 
-- [Ingredient Scanner](https://purescan.droploop.in/ingredient-scanner): Scan any food or cosmetic ingredient list with AI. Detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly.
-- [Food Scanner App](https://purescan.droploop.in/food-scanner-app): Scan food barcodes to get Nutri-Score (A–E), NOVA classification (1–4), allergen alerts, and personalized health risk assessments.
-- [Cosmetic Safety Checker](https://purescan.droploop.in/cosmetic-safety-checker): Check if your cosmetics are safe. Detects endocrine disruptors, carcinogens, comedogenic ingredients, and contact allergens in skincare and beauty products.
-- [Allergy Scanner](https://purescan.droploop.in/allergy-scanner): Detect hidden food allergens instantly — gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories personalized to your allergy profile.
+- [Ingredient Scanner](https://scaningredients.com/ingredient-scanner): Scan any food or cosmetic ingredient list with AI. Detects hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly.
+- [Food Scanner App](https://scaningredients.com/food-scanner-app): Scan food barcodes to get Nutri-Score (A–E), NOVA classification (1–4), allergen alerts, and personalized health risk assessments.
+- [Cosmetic Safety Checker](https://scaningredients.com/cosmetic-safety-checker): Check if your cosmetics are safe. Detects endocrine disruptors, carcinogens, comedogenic ingredients, and contact allergens in skincare and beauty products.
+- [Allergy Scanner](https://scaningredients.com/allergy-scanner): Detect hidden food allergens instantly — gluten, dairy, nuts, soy, shellfish, eggs, and 14+ allergen categories personalized to your allergy profile.
 
 ## Competitor Comparison Pages
 
-- [PureScan AI vs Yuka](https://purescan.droploop.in/alternatives/yuka)
-- [PureScan AI vs EWG Healthy Living](https://purescan.droploop.in/alternatives/ewg)
-- [PureScan AI vs Think Dirty](https://purescan.droploop.in/alternatives/think-dirty)
-- [PureScan AI vs Bobby Approved](https://purescan.droploop.in/alternatives/bobby-approved)
-- [PureScan AI vs Clearya](https://purescan.droploop.in/alternatives/clearya)
-- [PureScan AI vs Trash Panda](https://purescan.droploop.in/alternatives/trash-panda)
-- [PureScan AI vs InciBeauty](https://purescan.droploop.in/alternatives/incibeauty)
+- [PureScan AI vs Yuka](https://scaningredients.com/alternatives/yuka)
+- [PureScan AI vs EWG Healthy Living](https://scaningredients.com/alternatives/ewg)
+- [PureScan AI vs Think Dirty](https://scaningredients.com/alternatives/think-dirty)
+- [PureScan AI vs Bobby Approved](https://scaningredients.com/alternatives/bobby-approved)
+- [PureScan AI vs Clearya](https://scaningredients.com/alternatives/clearya)
+- [PureScan AI vs Trash Panda](https://scaningredients.com/alternatives/trash-panda)
+- [PureScan AI vs InciBeauty](https://scaningredients.com/alternatives/incibeauty)
 
 ## Contact & Support
 
-- Website: https://purescan.droploop.in
-- Support: https://purescan.droploop.in/support
+- Website: https://scaningredients.com
+- Support: https://scaningredients.com/support
 - iOS App: https://apps.apple.com/app/pure-ai/id6762176490
 - Android App: https://play.google.com/store/apps/details?id=com.pureai.com

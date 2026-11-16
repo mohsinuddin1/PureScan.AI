@@ -55,4 +55,4 @@ User-agent: FacebookBot
 Allow: /
 
 # Sitemaps
-Sitemap: https://purescan.droploop.in/sitemap-index.xml
+Sitemap: https://scaningredients.com/sitemap-index.xml

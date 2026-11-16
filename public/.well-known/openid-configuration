@@ -1,9 +1,9 @@
 {
-  "issuer": "https://purescan.droploop.in",
-  "authorization_endpoint": "https://purescan.droploop.in/oauth/authorize",
-  "token_endpoint": "https://purescan.droploop.in/oauth/token",
-  "userinfo_endpoint": "https://purescan.droploop.in/oauth/userinfo",
-  "jwks_uri": "https://purescan.droploop.in/.well-known/jwks.json",
+  "issuer": "https://scaningredients.com",
+  "authorization_endpoint": "https://scaningredients.com/oauth/authorize",
+  "token_endpoint": "https://scaningredients.com/oauth/token",
+  "userinfo_endpoint": "https://scaningredients.com/oauth/userinfo",
+  "jwks_uri": "https://scaningredients.com/.well-known/jwks.json",
   "response_types_supported": [
     "code",
     "token",

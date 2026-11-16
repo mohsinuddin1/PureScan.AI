@@ -19,4 +19,4 @@ This skill guides AI agents in auditing personal care, skincare, and cosmetic in
 
 Agents can query the PureScan AI MCP server:
 - Tool: `scan_cosmetic_ingredients`
-- Endpoint: `https://purescan.droploop.in/api/mcp`
+- Endpoint: `https://scaningredients.com/api/mcp`

@@ -6,12 +6,12 @@
     "version": "1.0.0",
     "contact": {
       "name": "PureScan AI Support",
-      "url": "https://purescan.droploop.in/support"
+      "url": "https://scaningredients.com/support"
     }
   },
   "servers": [
     {
-      "url": "https://purescan.droploop.in",
+      "url": "https://scaningredients.com",
       "description": "Production server"
     }
   ],

@@ -19,7 +19,7 @@ const currentBlogPosts = await getCollection('blog', ({ id }) => id.toLowerCase(
 const blogItems = currentBlogPosts.map((post, index) => ({
   "@type": "ListItem",
   "position": index + 1,
-  "url": `https://purescan.droploop.in/${lang}/blog/${post.id.split('/')[1]}`,
+  "url": `https://scaningredients.com/${lang}/blog/${post.id.split('/')[1]}`,
   "name": post.data.title
 }));
 
@@ -48,9 +48,9 @@ const copyright = (t('footer.copyright', '© {year} Klar (formerly PureScan AI).
     "@type": "CollectionPage",
     "name": brandBlog,
     "description": metaDescription,
-    "url": `https://purescan.droploop.in/${lang}/blog`,
+    "url": `https://scaningredients.com/${lang}/blog`,
     "isPartOf": {
-      "@id": "https://purescan.droploop.in/#website"
+      "@id": "https://scaningredients.com/#website"
     },
     "mainEntity": {
       "@type": "ItemList",

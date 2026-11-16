@@ -1,7 +1,7 @@
 {
-  "resource": "https://purescan.droploop.in",
+  "resource": "https://scaningredients.com",
   "authorization_servers": [
-    "https://purescan.droploop.in"
+    "https://scaningredients.com"
   ],
   "scopes_supported": [
     "api:read",
@@ -11,5 +11,5 @@
   "bearer_methods_supported": [
     "header"
   ],
-  "resource_documentation": "https://purescan.droploop.in/docs/api"
+  "resource_documentation": "https://scaningredients.com/docs/api"
 }

@@ -12,7 +12,7 @@ const currentBlogPosts = await getCollection('blog', ({ id }) => id.startsWith(`
 const blogItems = currentBlogPosts.map((post, index) => ({
   "@type": "ListItem",
   "position": index + 1,
-  "url": `https://purescan.droploop.in/blog/${post.id.split('/')[1]}`,
+  "url": `https://scaningredients.com/blog/${post.id.split('/')[1]}`,
   "name": post.data.title
 }));
 ---
@@ -27,9 +27,9 @@ const blogItems = currentBlogPosts.map((post, index) => ({
     "@type": "CollectionPage",
     "name": "Klar Blog",
     "description": "Expert articles on hidden toxins, allergens, and endocrine disruptors in everyday food and cosmetic products.",
-    "url": "https://purescan.droploop.in/blog",
+    "url": "https://scaningredients.com/blog",
     "isPartOf": {
-      "@id": "https://purescan.droploop.in/#website"
+      "@id": "https://scaningredients.com/#website"
     },
     "mainEntity": {
       "@type": "ItemList",

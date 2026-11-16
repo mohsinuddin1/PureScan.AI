@@ -1286,13 +1286,13 @@ export default function CheckoutPortal({ publicMode = false }) {
               display: 'flex', justifyContent: 'center', flexWrap: 'wrap',
               gap: 16, marginTop: 20,
             }}>
-              <a href="https://purescan.droploop.in/terms" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://scaningredients.com/terms" target="_blank" rel="noopener noreferrer" style={{
                 fontSize: 11, color: '#94a3b8', textDecoration: 'underline',
                 fontWeight: 500, transition: 'color 0.2s',
               }}>
                 Terms of Service
               </a>
-              <a href="https://purescan.droploop.in/privacy" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://scaningredients.com/privacy" target="_blank" rel="noopener noreferrer" style={{
                 fontSize: 11, color: '#94a3b8', textDecoration: 'underline',
                 fontWeight: 500, transition: 'color 0.2s',
               }}>

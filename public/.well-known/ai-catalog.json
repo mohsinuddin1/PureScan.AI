@@ -2,14 +2,14 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "Klar (formerly PureScan AI)",
-    "identifier": "did:web:purescan.droploop.in"
+    "identifier": "did:web:scaningredients.com"
   },
   "entries": [
     {
-      "identifier": "urn:air:purescan.droploop.in:server:mcp",
+      "identifier": "urn:air:scaningredients.com:server:mcp",
       "displayName": "Klar (formerly PureScan AI) MCP Server",
       "type": "application/mcp-server-card+json",
-      "url": "https://purescan.droploop.in/.well-known/mcp/server-card.json",
+      "url": "https://scaningredients.com/.well-known/mcp/server-card.json",
       "representativeQueries": [
         "scan food ingredients for toxins",
         "check cosmetic product safety",
@@ -17,10 +17,10 @@
       ]
     },
     {
-      "identifier": "urn:air:purescan.droploop.in:schema:openapi",
+      "identifier": "urn:air:scaningredients.com:schema:openapi",
       "displayName": "Klar (formerly PureScan AI) OpenAPI Specification",
       "type": "application/vnd.oai.openapi+json;version=3.0",
-      "url": "https://purescan.droploop.in/api/openapi.json",
+      "url": "https://scaningredients.com/api/openapi.json",
       "representativeQueries": [
         "purescan api endpoints",
         "food scanner openapi schema",
@@ -28,10 +28,10 @@
       ]
     },
     {
-      "identifier": "urn:air:purescan.droploop.in:skill:food-analysis",
+      "identifier": "urn:air:scaningredients.com:skill:food-analysis",
       "displayName": "Food Ingredient Analysis Skill",
       "type": "text/markdown",
-      "url": "https://purescan.droploop.in/.well-known/agent-skills/food-ingredient-analysis/SKILL.md",
+      "url": "https://scaningredients.com/.well-known/agent-skills/food-ingredient-analysis/SKILL.md",
       "representativeQueries": [
         "how to analyze food additives and E numbers",
         "nutri-score calculation guide",
@@ -39,10 +39,10 @@
       ]
     },
     {
-      "identifier": "urn:air:purescan.droploop.in:skill:cosmetic-analysis",
+      "identifier": "urn:air:scaningredients.com:skill:cosmetic-analysis",
       "displayName": "Cosmetic Hazard Scan Skill",
       "type": "text/markdown",
-      "url": "https://purescan.droploop.in/.well-known/agent-skills/cosmetic-hazard-scan/SKILL.md",
+      "url": "https://scaningredients.com/.well-known/agent-skills/cosmetic-hazard-scan/SKILL.md",
       "representativeQueries": [
         "cosmetic ingredient safety check",
         "identify parabens and phthalates in skincare",
@@ -50,10 +50,10 @@
       ]
     },
     {
-      "identifier": "urn:air:purescan.droploop.in:doc:auth",
+      "identifier": "urn:air:scaningredients.com:doc:auth",
       "displayName": "Klar (formerly PureScan AI) Agent Auth Specification",
       "type": "text/markdown",
-      "url": "https://purescan.droploop.in/auth.md",
+      "url": "https://scaningredients.com/auth.md",
       "representativeQueries": [
         "agent registration instructions",
         "oauth protected resource metadata purescan",
