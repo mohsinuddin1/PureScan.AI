@@ -140,18 +140,6 @@ export default defineConfig({
       // Always include English blog posts (no locale prefix)
       if (path.match(/^\/blog\/.+$/)) return true;
 
-      // For localized blog posts: exclude English-looking slugs (fallback pages)
-      const localeBlogMatch = path.match(/^\/([a-z]{2}(?:-[a-zA-Z]{2})?)\//);
-      if (localeBlogMatch) {
-        const englishPatterns = [
-          '-why-', '-how-', '-what-', '-are-', '-is-', '-the-', '-do-', '-does-',
-          '-hidden-', '-your-', '-and-', '-for-', '-that-', '-you-', '-my-',
-          '-in-my-', '-of-', '-to-', '-after-', '-cause-'
-        ];
-        const hasEnglishWords = englishPatterns.some(p => path.includes(p));
-        if (hasEnglishWords) return false;
-      }
-
       return true;
     },
     lastmod: new Date(),

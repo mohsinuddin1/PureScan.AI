@@ -343,7 +343,7 @@ export default function Navbar({
               Health Blog
             </a>
             <a 
-              href={currentLang === 'en' ? '/pricing' : `/${currentLang}/pricing`} 
+              href="/pricing" 
               className="py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 hover:text-[#17C37B] transition-colors"
             >
               Pricing

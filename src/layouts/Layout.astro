@@ -182,7 +182,7 @@ if (Astro.response && Astro.response.headers) {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={safeTitle} />
     <meta property="og:description" content={safeDescription} />
     <meta property="og:image" content={image} />
     <meta property="og:site_name" content="Klar" />
@@ -190,7 +190,7 @@ if (Astro.response && Astro.response.headers) {
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={safeTitle} />
     <meta name="twitter:description" content={safeDescription} />
     <meta name="twitter:image" content={image} />
 

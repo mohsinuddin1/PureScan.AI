@@ -1,14 +1,13 @@
 ---
 import { getTranslations } from '../../lib/i18n-utils';
 import Layout from '../../layouts/Layout.astro';
-import Alternative from '../../components/Alternative.jsx';
+import { AlternativeIsland } from '../../components/Islands.jsx';
+import { getCompetitor } from '../../data/competitorData.js';
 
 const lang = Astro.currentLocale || 'en';
 const translations = await getTranslations(lang);
 
 export function getStaticPaths() {
-  // We need to define all the possible competitors that the component supports.
-  // We'll define a few common ones for static generation.
   return [
     {params: {competitor: 'yuka'}},
     {params: {competitor: 'clearya'}},
@@ -21,11 +20,86 @@ export function getStaticPaths() {
 }
 
 const { competitor } = Astro.params;
-const name = competitor ? competitor.charAt(0).toUpperCase() + competitor.slice(1) : 'Competitor';
+const compData = getCompetitor(competitor);
+const name = compData.name;
+
 const pageTitle = `Klar vs ${name} — The Best Alternative`;
-const pageDesc = `Klar vs ${name}: AI food and cosmetic scanner. Detect hidden toxins, allergens, and harmful additives. Free on iOS and Android.`;
-import { AlternativeIsland } from '../../components/Islands.jsx';
+const pageDesc = `Klar vs ${name}: In-depth comparison. Discover why Klar is the top AI food & cosmetic scanner for detecting hidden toxins, allergens, and additives.`;
+
+const siteUrl = 'https://purescan.droploop.in';
+const pageUrl = `${siteUrl}/alternatives/${competitor}`;
+
+const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+const alternateUrls: Record<string, string> = {
+  en: `${siteUrl}/alternatives/${competitor}`
+};
+for (const loc of locales) {
+  alternateUrls[loc] = `${siteUrl}/${loc}/alternatives/${competitor}`;
+}
+
+const faqSchemaItems = (compData.faqs || []).map(f => ({
+  "@type": "Question",
+  "name": f.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": f.answer
+  }
+}));
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Klar",
+      "alternateName": ["PureScan AI", "Klar AI"],
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS, Android",
+      "url": "https://purescan.droploop.in/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1420",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "description": `Klar is the leading AI-powered food and cosmetic scanner app, offering personalized toxin alerts, allergy detection, and camera label OCR as an alternative to ${name}.`
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": siteUrl
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": `${siteUrl}/alternatives/${competitor}`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": `Klar vs ${name}`
+        }
+      ]
+    },
+    ...(faqSchemaItems.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": faqSchemaItems
+    }] : [])
+  ]
+};
 ---
-<Layout title={pageTitle} description={pageDesc}>
-  <AlternativeIsland client:load  lang={lang} translations={translations} competitor={competitor} />
+<Layout title={pageTitle} description={pageDesc} alternateUrls={alternateUrls}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <AlternativeIsland client:load lang={lang} translations={translations} competitor={competitor} />
 </Layout>

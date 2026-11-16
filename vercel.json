@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -106,6 +107,7 @@
     }
   ],
   "redirects": [
+    { "source": "/([a-z]{2}(?:-[a-zA-Z]{2})?)/pricing", "destination": "/pricing", "permanent": true },
     { "source": "/ar/blog/2-", "destination": "/ar/blog/2-mash-mustahdarat-al-tajmil-kayfa-tarifu-al-muntajat-al-aminah", "permanent": true },
     { "source": "/ar/blog/3-", "destination": "/ar/blog/3-hal-taqyimat-al-taam-daqiqah-kayfa-yuhaddidu-tatbiquna-al-sihhi", "permanent": true },
     { "source": "/ar/blog/4-", "destination": "/ar/blog/4-hal-al-mukawwinat-fi-muntajat-al-inayah-bi-al-bashrah-sammah", "permanent": true },

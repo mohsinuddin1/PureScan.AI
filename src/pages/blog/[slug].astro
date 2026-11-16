@@ -58,6 +58,24 @@ const relatedPosts = [...sameBadge, ...otherPosts].slice(0, 6).map(p => ({
   image: p.data.image,
 }));
 
+// Extract scientific citations for GEO & E-E-A-T schema
+const rawBody = post.body || '';
+const citationRegex = /href=["'](https:\/\/(?:pubmed\.ncbi\.nlm\.nih\.gov|doi\.org)[^"']+)["'][^>]*>([^<]+)<\/a>/g;
+const citations: Array<{ "@type": string; name: string; url: string }> = [];
+const seenCitationUrls = new Set<string>();
+for (const match of rawBody.matchAll(citationRegex)) {
+  const url = match[1].trim();
+  const name = match[2].trim().replace(/\s*—\s*PubMed.*$/i, '').trim() || 'Scientific Citation';
+  if (!seenCitationUrls.has(url)) {
+    seenCitationUrls.add(url);
+    citations.push({
+      "@type": "CreativeWork",
+      "name": name,
+      "url": url,
+    });
+  }
+}
+
 // Stable publish date: use frontmatter publishDate, or derive from blog id
 const publishDate = post.data.publishDate || '2025-06-01';
 
@@ -151,9 +169,10 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
         "datePublished": publishDate,
         "dateModified": publishDate,
         "inLanguage": lang,
+        ...(citations.length > 0 ? { "citation": citations } : {}),
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".quick-answer", "article h3:first-of-type", "article h3:first-of-type + p", "h1"]
+          "cssSelector": [".quick-answer", "article .rounded-2xl:first-of-type p", "article h3:first-of-type", "article h3:first-of-type + p", "h1"]
         }
       },
       {
