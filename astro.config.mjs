@@ -89,6 +89,8 @@ export default defineConfig({
   site: 'https://scaningredients.com',
   trailingSlash: 'never',
   redirects: {
+    '/blog/49-what-are-ultra-processed-foods': '/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained',
+    '/no/blog/49-what-are-ultra-processed-foods': '/no/blog/49-hva-er-ultraprosessert-mat-og-nova-klassifiseringen',
     '/ar/blog/2-': '/ar/blog/2-mash-mustahdarat-al-tajmil-kayfa-tarifu-al-muntajat-al-aminah',
     '/ar/blog/3-': '/ar/blog/3-hal-taqyimat-al-taam-daqiqah-kayfa-yuhaddidu-tatbiquna-al-sihhi',
     '/ar/blog/4-': '/ar/blog/4-hal-al-mukawwinat-fi-muntajat-al-inayah-bi-al-bashrah-sammah',

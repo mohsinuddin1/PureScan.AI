@@ -107,6 +107,8 @@
     }
   ],
   "redirects": [
+    { "source": "/blog/49-what-are-ultra-processed-foods", "destination": "/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained", "permanent": true },
+    { "source": "/no/blog/49-what-are-ultra-processed-foods", "destination": "/no/blog/49-hva-er-ultraprosessert-mat-og-nova-klassifiseringen", "permanent": true },
     { "source": "/([a-z]{2}(?:-[a-zA-Z]{2})?)/pricing", "destination": "/pricing", "permanent": true },
     { "source": "/ar/blog/2-", "destination": "/ar/blog/2-mash-mustahdarat-al-tajmil-kayfa-tarifu-al-muntajat-al-aminah", "permanent": true },
     { "source": "/ar/blog/3-", "destination": "/ar/blog/3-hal-taqyimat-al-taam-daqiqah-kayfa-yuhaddidu-tatbiquna-al-sihhi", "permanent": true },
