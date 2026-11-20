@@ -1,6 +1,6 @@
 ---
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   return locales.map(lang => ({ params: { lang } }));
 }
 
@@ -13,6 +13,6 @@ const translations = await getTranslations(lang);
 const metaTitle = translations?.deleteAccount?.pageMetaTitle || 'Delete Account - Klar (formerly PureScan AI)';
 const metaDesc = translations?.deleteAccount?.pageMetaDesc || 'Instructions on how to delete your Klar (formerly PureScan AI) account and permanently purge your data.';
 ---
-<Layout title={metaTitle} description={metaDesc}>
+<Layout title={metaTitle} description={metaDesc} noindex={true}>
   <DeleteAccountIsland client:load lang={lang} translations={translations} />
 </Layout>

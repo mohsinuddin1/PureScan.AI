@@ -84,71 +84,58 @@ function localApiDevPlugin() {
   };
 }
 
+// Collect real per-page publish dates (or file mtimes) for accurate sitemap <lastmod>
+const blogDateMap = new Map();
+const blogRootDir = path.resolve(process.cwd(), 'src/content/blog');
+if (fs.existsSync(blogRootDir)) {
+  for (const loc of fs.readdirSync(blogRootDir)) {
+    const locDir = path.join(blogRootDir, loc);
+    if (!fs.statSync(locDir).isDirectory()) continue;
+    for (const file of fs.readdirSync(locDir)) {
+      if (!file.endsWith('.mdx')) continue;
+      const fullPath = path.join(locDir, file);
+      const raw = fs.readFileSync(fullPath, 'utf8');
+      const dateMatch = raw.match(/^publishDate:\s*["']?(\d{4}-\d{2}-\d{2})["']?/m);
+      const isoDate = dateMatch
+        ? new Date(`${dateMatch[1]}T00:00:00.000Z`).toISOString()
+        : fs.statSync(fullPath).mtime.toISOString();
+      const slug = file.replace(/\.mdx$/, '');
+      const urlPath = loc === 'en' ? `/blog/${slug}` : `/${loc}/blog/${slug}`;
+      blogDateMap.set(urlPath, isoDate);
+      blogDateMap.set(urlPath.toLowerCase(), isoDate);
+    }
+  }
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://scaningredients.com',
   trailingSlash: 'never',
-  redirects: {
-    '/blog/49-what-are-ultra-processed-foods': '/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained',
-    '/no/blog/49-what-are-ultra-processed-foods': '/no/blog/49-hva-er-ultraprosessert-mat-og-nova-klassifiseringen',
-    '/ar/blog/2-': '/ar/blog/2-mash-mustahdarat-al-tajmil-kayfa-tarifu-al-muntajat-al-aminah',
-    '/ar/blog/3-': '/ar/blog/3-hal-taqyimat-al-taam-daqiqah-kayfa-yuhaddidu-tatbiquna-al-sihhi',
-    '/ar/blog/4-': '/ar/blog/4-hal-al-mukawwinat-fi-muntajat-al-inayah-bi-al-bashrah-sammah',
-    '/ar/blog/5-': '/ar/blog/5-kayfa-taqra-al-mulsawat-al-ghidhaiyyah-ka-al-muhtarifin',
-    '/ar/blog/6-': '/ar/blog/6-al-haqiqah-hawla-al-jamal-al-nazif-al-mukawwinat-al-tabiiyyah',
-
-    '/el/blog/2-': '/el/blog/2-sarosi-kallyntikon-pos-na-gnorizete-poia-einai-asfali',
-    '/el/blog/3-': '/el/blog/3-einai-akriveis-oi-axiologiseis-trofimon',
-    '/el/blog/4-': '/el/blog/4-einai-toxika-ta-systatika-stin-peripoiisi-dermatos',
-    '/el/blog/5-': '/el/blog/5-pos-na-diavazete-diatrofikes-etiketes-san-epangelmatias',
-
-    '/ja/blog/2-': '/ja/blog/2-mutenka-keshohin-anzen-keshohin-seibun-kaiseki-app',
-    '/ja/blog/3-': '/ja/blog/3-shokuhin-anzen-hyoka-seikaku-app-shikumi',
-    '/ja/blog/4-': '/ja/blog/4-skin-care-seibun-yugai-kikendo-score-mikata',
-    '/ja/blog/5-': '/ja/blog/5-diet-shokuhin-hyoji-eiyo-seibun-hyoji-tadashii-mikata',
-    '/ja/blog/6-vs': '/ja/blog/6-clean-beauty-shinjitsu-tennen-seibun-vs-gosei-seibun',
-
-    '/ko/blog/2-': '/ko/blog/2-hwajangpum-seongbun-bunseok-anjeonhan-hwajangpum-chatneun-beop',
-    '/ko/blog/3-': '/ko/blog/3-sikpum-pyeongjeom-jeonghwakhalkka-bunseok-wonli',
-    '/ko/blog/4-': '/ko/blog/4-skin-care-seongbun-yuhaehalkka-wiheomdo-jeomsu-haeseok',
-    '/ko/blog/5-': '/ko/blog/5-diet-yeongyang-seongbunpyo-jedaelo-ikneun-beop',
-    '/ko/blog/6-vs': '/ko/blog/6-clean-beauty-jinsil-cheonyeon-seongbun-vs-hapseong-seongbun',
-
-    '/ru/blog/2-': '/ru/blog/2-skanirovanie-kosmetiki-kak-uznat-kakaya-kosmetika-bezopasna',
-    '/ru/blog/3-': '/ru/blog/3-tochny-li-reytingi-edy-kak-app-opredelyaet-zdorovuyu-pishchu',
-    '/ru/blog/4-': '/ru/blog/4-toksichny-li-ingredienty-v-moey-kosmetike-opasnost',
-    '/ru/blog/5-': '/ru/blog/5-kak-chitat-etiketki-kak-professional-dlya-pokhudeniya',
-
-    '/zh/blog/2-': '/zh/blog/2-huazhuangpin-chengfen-chaxun-hufupin-anquan',
-    '/zh/blog/3-': '/zh/blog/3-shipin-pingfen-zhunquema-shipin-anquan-xitong',
-    '/zh/blog/4-': '/zh/blog/4-wode-hufu-chengfen-youdu-ma-weihai-pingfen',
-    '/zh/blog/5-': '/zh/blog/5-jianfei-daka-bibei-yuedu-yingyang-biaoqian',
-    '/zh/blog/6-vs': '/zh/blog/6-chunjing-meizhuang-zhenxiang-tianran-vs-hecheng',
-  },
   integrations: [react(), mdx(), sitemap({
     filter: (page) => {
       const url = new URL(page);
-      const path = url.pathname;
+      const pathname = url.pathname.replace(/\/$/, '') || '/';
 
       // Exclude incomplete slugs or redirect paths from sitemap
-      if (path.match(/\/blog\/\d+-(?:vs)?$/)) return false;
+      if (pathname.match(/\/blog\/\d+-(?:vs)?$/)) return false;
 
-      // Always include non-blog pages
-      if (!path.includes('/blog/')) return true;
+      // Exclude utility and auth-wall pages
+      if (pathname.endsWith('/delete-account') || pathname === '/pro') return false;
 
-      // Always include blog index pages
-      if (path.endsWith('/blog') || path.endsWith('/blog/')) return true;
-
-      // Always include English blog posts (no locale prefix)
-      if (path.match(/^\/blog\/.+$/)) return true;
+      // Exclude noindex localized homepages until full homepage body copy is translated
+      if (pathname.match(/^\/[a-z]{2}(?:-[a-zA-Z]{2})?$/)) return false;
 
       return true;
     },
-    lastmod: new Date(),
+    serialize: (item) => {
+      const pathname = new URL(item.url).pathname.replace(/\/$/, '') || '/';
+      item.lastmod = blogDateMap.get(pathname) || blogDateMap.get(pathname.toLowerCase()) || '2026-11-16T00:00:00.000Z';
+      return item;
+    },
   })],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'],
+    locales: ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'],
     routing: {
       prefixDefaultLocale: false
     }

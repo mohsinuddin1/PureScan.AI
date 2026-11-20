@@ -125,7 +125,8 @@ article hr {
   border-top: 1px solid #e2e8f0;
 }
 
-article a {
+/* Regular article inline text links */
+article a:not(.no-underline):not(.btn-store):not([class*="no-underline"]):not([class*="bg-slate-"]):not([class*="bg-emerald-"]) {
   color: #059669;
   font-weight: 600;
   text-decoration: underline;
@@ -133,8 +134,61 @@ article a {
   transition: color 0.15s ease;
 }
 
-article a:hover {
+article a:not(.no-underline):not(.btn-store):not([class*="no-underline"]):not([class*="bg-slate-"]):not([class*="bg-emerald-"]):hover {
   color: #047857;
+}
+
+/* Store action buttons & CTA links - prevent underline inheritance */
+article a.btn-store,
+article a.no-underline,
+article a[class*="no-underline"],
+article a[class*="bg-slate-950"],
+article a[class*="bg-slate-900"] {
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+
+article a.btn-store *,
+article a.no-underline *,
+article a[class*="no-underline"] *,
+article a[class*="bg-slate-950"] *,
+article a[class*="bg-slate-900"] * {
+  text-decoration: none !important;
+}
+
+/* Crisp, Sleek Badges & Pills inside Article Content */
+article .badge-pill,
+article .badge-price,
+article .badge-emerald,
+article .badge-slate {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+article .badge-emerald {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+}
+
+article .badge-price {
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 9999px !important;
+}
+
+article .badge-price svg,
+article .badge-emerald svg,
+article .badge-slate svg {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
 }
 
 /* Beautiful responsive tables with breathing room */

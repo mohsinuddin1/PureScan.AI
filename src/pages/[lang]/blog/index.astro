@@ -1,6 +1,6 @@
 ---
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   return locales.map(lang => ({ params: { lang } }));
 }
 
@@ -111,9 +111,9 @@ const copyright = (t('footer.copyright', '© {year} Klar (formerly PureScan AI).
             <span class="mx-3 hidden md:inline">•</span>
             <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} class="hover:text-[#17C37B] transition-colors ml-3 md:ml-0">{blogText}</a>
             <span class="mx-3">•</span>
-            <a href={lang === 'en' ? '/privacy' : `/${lang}/privacy`} class="hover:text-[#17C37B] transition-colors">{privacyText}</a>
+            <a href="/privacy" class="hover:text-[#17C37B] transition-colors">{privacyText}</a>
             <span class="mx-3">•</span>
-            <a href={lang === 'en' ? '/terms' : `/${lang}/terms`} class="hover:text-[#17C37B] transition-colors">{termsText}</a>
+            <a href="/terms" class="hover:text-[#17C37B] transition-colors">{termsText}</a>
             <span class="mx-3">•</span>
             <a href={lang === 'en' ? '/support' : `/${lang}/support`} class="hover:text-[#17C37B] transition-colors">{supportText}</a>
           </p>

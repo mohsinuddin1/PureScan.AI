@@ -67,50 +67,56 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="bg-emerald-600 text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-sm uppercase tracking-wide">
+        <span className="badge-emerald inline-flex items-center gap-1 bg-emerald-600 text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-xs uppercase tracking-wider whitespace-nowrap" style={{ color: '#ffffff' }}>
           #1 Top Pick
         </span>
-        <span className="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200">
+        <span className="badge-slate inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap">
           iOS & Android
         </span>
       </div>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
-      <div className="p-4 rounded-2xl bg-white border-2 border-emerald-500/30 shadow-sm flex items-center justify-between">
-        <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 block mb-0.5">
-            Annual Plan
-          </span>
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl sm:text-3xl font-black text-slate-900">$29.99</span>
-            <span className="text-xs font-semibold text-slate-500">/ year</span>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div className="relative p-5 rounded-2xl bg-white border-2 border-emerald-500 shadow-md flex flex-col justify-between overflow-hidden">
+        <div className="flex items-start justify-between gap-2 mb-2">
+          <div>
+            <span className="inline-block text-[10px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200/60 mb-1">
+              Annual Plan • Best Value
+            </span>
+            <div className="flex items-baseline gap-1.5 mt-1">
+              <span className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">$29.99</span>
+              <span className="text-sm font-semibold text-slate-500">/ year</span>
+            </div>
           </div>
-          <span className="text-xs text-emerald-600 font-bold block mt-0.5">
-            ~$2.50 / month
+          <span className="badge-emerald bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-xs shrink-0 whitespace-nowrap" style={{ color: '#ffffff' }}>
+            Save 72%
           </span>
         </div>
-        <span className="bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-          Save 72%
-        </span>
+        <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
+          <span className="text-emerald-700 font-bold">~$2.50 / month</span>
+          <span className="text-slate-400">Billed annually</span>
+        </div>
       </div>
 
-      <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
-        <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-0.5">
-            Monthly Plan
-          </span>
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl sm:text-3xl font-black text-slate-900">$8.99</span>
-            <span className="text-xs font-semibold text-slate-500">/ month</span>
+      <div className="relative p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div className="flex items-start justify-between gap-2 mb-2">
+          <div>
+            <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200 mb-1">
+              Monthly Plan
+            </span>
+            <div className="flex items-baseline gap-1.5 mt-1">
+              <span className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">$8.99</span>
+              <span className="text-sm font-semibold text-slate-500">/ month</span>
+            </div>
           </div>
-          <span className="text-xs text-slate-500 font-medium block mt-0.5">
-            Cancel anytime
+          <span className="badge-slate bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full border border-slate-200 shrink-0 whitespace-nowrap">
+            Flexible
           </span>
         </div>
-        <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full border border-slate-200">
-          Monthly
-        </span>
+        <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
+          <span className="text-slate-600">Cancel anytime</span>
+          <span className="text-slate-400">No commitment</span>
+        </div>
       </div>
     </div>
 
@@ -126,14 +132,15 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
           href="https://apps.apple.com/app/pure-ai/id6762176490" 
           target="_blank" 
           rel="noreferrer" 
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-950 text-white px-5 py-3 rounded-2xl hover:bg-slate-900 hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-xl border border-slate-800 no-underline group"
+          className="btn-store w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-950 text-white px-5 py-3 rounded-2xl hover:bg-slate-900 hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-xl border border-slate-800 no-underline group whitespace-nowrap"
+          style={{ textDecoration: 'none', color: '#ffffff' }}
         >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-white shrink-0 group-hover:scale-110 transition-transform">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.77 1.05-1.84.93-2.91-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.81 1.02.08 2.08-.5 2.7-1.27z"/>
           </svg>
-          <div className="text-left leading-tight">
-            <span className="block text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Download on the</span>
-            <span className="block text-sm font-bold text-white tracking-tight">App Store</span>
+          <div className="text-left leading-tight whitespace-nowrap">
+            <span className="block text-[10px] text-slate-400 font-semibold uppercase tracking-wider whitespace-nowrap">Download on the</span>
+            <span className="block text-sm font-bold text-white tracking-tight whitespace-nowrap">App Store</span>
           </div>
         </a>
 
@@ -141,17 +148,18 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
           href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" 
           target="_blank" 
           rel="noreferrer" 
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-950 text-white px-5 py-3 rounded-2xl hover:bg-slate-900 hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-xl border border-slate-800 no-underline group"
+          className="btn-store w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-950 text-white px-5 py-3 rounded-2xl hover:bg-slate-900 hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-xl border border-slate-800 no-underline group whitespace-nowrap"
+          style={{ textDecoration: 'none', color: '#ffffff' }}
         >
-          <svg viewBox="0 0 24 24" className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" fill="none">
+          <svg viewBox="0 0 24 24" className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform" fill="none">
             <path d="M3.6 2.2c-.4.4-.6 1-.6 1.7v16.2c0 .7.2 1.3.6 1.7l.1.1 9.1-9.1v-.2L3.7 2.1l-.1.1z" fill="#00D2FF"/>
             <path d="M15.8 15.9l-3-3v-.2l3-3 .1.1 3.5 2c1 .6 1 1.5 0 2.1l-3.6 2z" fill="#FFCE00"/>
             <path d="M12.8 12.7L3.6 21.9c.4.4 1 .5 1.7.1l10.5-6-3-3.3z" fill="#00E676"/>
             <path d="M12.8 11.3l3-3.3-10.5-6C4.6 1.6 4 1.7 3.6 2.1l9.2 9.2z" fill="#FF3A44"/>
           </svg>
-          <div className="text-left leading-tight">
-            <span className="block text-[10px] text-slate-400 font-semibold uppercase tracking-wider">GET IT ON</span>
-            <span className="block text-sm font-bold text-white tracking-tight">Google Play</span>
+          <div className="text-left leading-tight whitespace-nowrap">
+            <span className="block text-[10px] text-slate-400 font-semibold uppercase tracking-wider whitespace-nowrap">GET IT ON</span>
+            <span className="block text-sm font-bold text-white tracking-tight whitespace-nowrap">Google Play</span>
           </div>
         </a>
       </div>
@@ -161,8 +169,8 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
   <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
       <h4 className="text-xl font-bold text-slate-900 m-0">2. Yuka</h4>
-      <span className="bg-slate-200 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">
-        Free / $10–$20/yr
+      <span className="badge-price bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
+        <span className="whitespace-nowrap">Free / $10–$20/yr</span>
       </span>
     </div>
     <p className="text-slate-700 leading-relaxed mb-0">Beliebte 0–100-Punkte-Bewertung (60% Nährwerte, 30% Zusatzstoffe, 10% Bio). Große europäische Datenbank, benötigt aber zwingend Barcodes und warnt nicht vor Samenölen.</p>
@@ -171,8 +179,8 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
   <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
       <h4 className="text-xl font-bold text-slate-900 m-0">3. EWG Healthy Living</h4>
-      <span className="bg-slate-200 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">
-        Free / $19.99 IAP
+      <span className="badge-price bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
+        <span className="whitespace-nowrap">Free / $19.99 IAP</span>
       </span>
     </div>
     <p className="text-slate-700 leading-relaxed mb-0">Basiert auf toxikologischen Daten der US-Organisation EWG. Bewertet Lebensmittel, Kosmetik und Haushaltsreiniger von 1 bis 10, ist jedoch stark auf US-Waren fixiert.</p>
@@ -181,8 +189,8 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
   <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
       <h4 className="text-xl font-bold text-slate-900 m-0">4. Open Food Facts</h4>
-      <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">
-        100% Free
+      <span className="badge-price bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
+        <span className="whitespace-nowrap">100% Free</span>
       </span>
     </div>
     <p className="text-slate-700 leading-relaxed mb-0">Gemeinschaftliche Open-Source-Datenbank mit fast 5 Millionen Produkten. 100% kostenlos mit Nutri-Score und NOVA, jedoch ohne Live-KI-Etikettenleser.</p>
@@ -191,8 +199,8 @@ Industriell raffinierte Samenöle (Raps-, Soja-, Sonnenblumen- und Maiskeimöl) 
   <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
       <h4 className="text-xl font-bold text-slate-900 m-0">5. Fooducate</h4>
-      <span className="bg-slate-200 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">
-        Free / $35.99/yr
+      <span className="badge-price bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
+        <span className="whitespace-nowrap">Free / $35.99/yr</span>
       </span>
     </div>
     <p className="text-slate-700 leading-relaxed mb-0">Schwerpunkt auf Kalorien- und Makronährstoffzählen mit Schulnoten von A bis D. Gut für Diäten, enthält jedoch Werbung und keine Samenöl-Warnungen.</p>

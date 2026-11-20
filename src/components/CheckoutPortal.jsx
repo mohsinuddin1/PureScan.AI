@@ -121,8 +121,11 @@ export default function CheckoutPortal({ publicMode = false }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
-  const [authMode, setAuthMode] = useState('initial'); // 'initial' | 'login' | 'subscribe'
-  const [isLoginView, setIsLoginView] = useState(true);
+  const [authNotice, setAuthNotice] = useState('');
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [pendingCheckout, setPendingCheckout] = useState(false);
+  const [authBusy, setAuthBusy] = useState(false);
+  const [isLoginView, setIsLoginView] = useState(false);
 
   // ─── Checkout state ───────────────────────────────────────────────
   const [selectedPlan, setSelectedPlan] = useState(PLANS[0].id);
@@ -281,6 +284,16 @@ export default function CheckoutPortal({ publicMode = false }) {
         } else {
           // DB says not Pro — background sync to check RevenueCat & Dodo
           syncProStatus(s);
+          try {
+            const pendingPlan = sessionStorage.getItem('klar_pending_plan');
+            if (pendingPlan) {
+              sessionStorage.removeItem('klar_pending_plan');
+              setSelectedPlan(pendingPlan);
+              setLoading(false);
+              handleSubscribe(s, pendingPlan);
+              return;
+            }
+          } catch {}
         }
       }
       setLoading(false);
@@ -291,6 +304,7 @@ export default function CheckoutPortal({ publicMode = false }) {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_ev, s) => {
       setSession(s);
       if (s?.user) {
+        setShowAuthModal(false);
         // Set defaults for new OAuth signups (non-blocking)
         if (_ev === 'SIGNED_IN') setWebSignupDefaults(s.user.id);
         const { data } = await supabase.from('users').select('is_pro').eq('id', s.user.id).single();
@@ -326,28 +340,58 @@ export default function CheckoutPortal({ publicMode = false }) {
   const handleEmailAuth = async (e) => {
     e.preventDefault();
     setAuthError('');
-    setLoading(true);
+    setAuthNotice('');
+    setAuthBusy(true);
     let result;
     if (isLoginView) {
       result = await supabase.auth.signInWithPassword({ email, password });
     } else {
       result = await supabase.auth.signUp({ email, password });
     }
-    if (result.error) setAuthError(result.error.message);
-    setLoading(false);
+    setAuthBusy(false);
+    if (result.error) {
+      setAuthError(result.error.message);
+      return;
+    }
+
+    const activeSession = result.data?.session;
+    if (!activeSession) {
+      setAuthNotice('Check your email to confirm your account, then log in to continue.');
+      setIsLoginView(true);
+      return;
+    }
+
+    setSession(activeSession);
+    setShowAuthModal(false);
+    if (pendingCheckout) {
+      setPendingCheckout(false);
+      await handleSubscribe(activeSession);
+    }
   };
 
   const handleOAuthLogin = async (provider) => {
+    if (pendingCheckout) {
+      try {
+        sessionStorage.setItem('klar_pending_plan', selectedPlan);
+      } catch {}
+    }
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: window.location.origin + '/pro' },
+      options: { redirectTo: window.location.origin + window.location.pathname },
     });
     if (error) setAuthError(error.message);
   };
 
-  const handleSubscribe = async () => {
-    if (!session?.user) {
-      setAuthError('Please log in first to continue.');
+  const handleSubscribe = async (overrideSession = null, overridePlan = null) => {
+    const activeSession = overrideSession?.user ? overrideSession : session;
+    const planId = overridePlan || selectedPlan;
+
+    if (!activeSession?.user) {
+      setAuthError('');
+      setAuthNotice('');
+      setPendingCheckout(true);
+      setIsLoginView(false);
+      setShowAuthModal(true);
       return;
     }
 
@@ -359,9 +403,9 @@ export default function CheckoutPortal({ publicMode = false }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          productId: selectedPlan,
-          email: session.user.email,
-          userId: session.user.id,
+          productId: planId,
+          email: activeSession.user.email,
+          userId: activeSession.user.id,
           returnUrl: `${window.location.origin}/pro?success=true`,
         }),
       });
@@ -645,245 +689,12 @@ export default function CheckoutPortal({ publicMode = false }) {
   }
 
   // ════════════════════════════════════════════════════════════════════
-  //  RENDER: Auth — Initial landing (not logged in)
-  // ════════════════════════════════════════════════════════════════════
-  if (!session && !publicMode) {
-    if (authMode === 'initial') {
-      return (
-        <div style={{
-          maxWidth: 540,
-          margin: '0 auto',
-          padding: '48px 24px',
-          textAlign: 'center',
-          animation: 'cp-fadeInUp 0.5s ease-out',
-        }}>
-          <h1 style={{
-            fontSize: 'clamp(26px, 5vw, 40px)',
-            fontWeight: 900,
-            color: '#1e293b',
-            margin: '0 0 12px 0',
-            letterSpacing: '-0.02em',
-            lineHeight: 1.2,
-          }}>
-            Welcome to Klar
-          </h1>
-          <p style={{
-            fontSize: 'clamp(14px, 2.5vw, 17px)',
-            color: '#64748b',
-            lineHeight: 1.7,
-            maxWidth: 400,
-            margin: '0 auto 40px auto',
-            fontWeight: 500,
-          }}>
-            Log in to manage your account or upgrade to Pro for ultimate family protection.
-          </p>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 12,
-            maxWidth: 340,
-            margin: '0 auto',
-          }}>
-            <button
-              onClick={() => { setAuthMode('login'); setIsLoginView(true); }}
-              style={{
-                padding: '14px 24px',
-                border: '2px solid #e2e8f0',
-                borderRadius: 14,
-                background: 'white',
-                color: '#1e293b',
-                fontSize: 16,
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#cbd5e1'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.transform = 'translateY(0)'; }}
-            >
-              Log In
-            </button>
-            <button
-              onClick={() => { setAuthMode('subscribe'); setIsLoginView(true); }}
-              style={{
-                padding: '16px 24px',
-                border: 'none',
-                borderRadius: 14,
-                background: 'linear-gradient(135deg, #2E9E6D, #22C55E)',
-                color: 'white',
-                fontSize: 16,
-                fontWeight: 800,
-                cursor: 'pointer',
-                boxShadow: '0 8px 30px rgba(46,158,109,0.3)',
-                transition: 'all 0.2s',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 36px rgba(46,158,109,0.35)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(46,158,109,0.3)'; }}
-            >
-              Subscribe to Pro
-            </button>
-          </div>
-        </div>
-      );
-    }
-
-    // ── Auth form (login / signup) ────────────────────────────────────
-    return (
-      <div style={{
-        maxWidth: 440,
-        margin: '0 auto',
-        padding: '32px 24px 40px',
-        background: 'white',
-        borderRadius: 24,
-        boxShadow: '0 25px 80px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04)',
-        position: 'relative',
-        animation: 'cp-fadeInUp 0.4s ease-out',
-      }}>
-        <button
-          onClick={() => setAuthMode('initial')}
-          style={{
-            position: 'absolute', top: 16, left: 16,
-            background: 'none', border: 'none',
-            color: '#94a3b8', cursor: 'pointer',
-            padding: 4, borderRadius: 8,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            transition: 'color 0.2s',
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = '#475569'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#94a3b8'}
-        >
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-        </button>
-
-        <h2 style={{
-          fontSize: 24, fontWeight: 900, textAlign: 'center',
-          color: '#1e293b', margin: '8px 0 8px 0',
-        }}>
-          {isLoginView ? 'Welcome Back' : 'Create Account'}
-        </h2>
-        <p style={{
-          textAlign: 'center', color: '#64748b', fontSize: 14,
-          margin: '0 0 28px 0', padding: '0 16px', fontWeight: 500,
-        }}>
-          {isLoginView
-            ? 'Sign in using your Klar (or PureScan AI) credentials to upgrade to Pro or manage your account.'
-            : 'Create an account to subscribe. You will use this email and password to log in.'}
-        </p>
-
-        {authError && (
-          <div style={{
-            background: '#FEF2F2', color: '#DC2626', padding: '12px 16px',
-            borderRadius: 12, fontSize: 14, marginBottom: 20, textAlign: 'center',
-            fontWeight: 500, border: '1px solid #FECACA',
-          }}>
-            {authError}
-          </div>
-        )}
-
-        <form onSubmit={handleEmailAuth}>
-          <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 700, color: '#475569', marginBottom: 6 }}>Email</label>
-            <input
-              type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com" required
-              style={{
-                width: '100%', padding: '12px 16px', borderRadius: 12,
-                border: '2px solid #e2e8f0', fontSize: 15, outline: 'none',
-                transition: 'border-color 0.2s', boxSizing: 'border-box',
-                fontFamily: 'inherit',
-              }}
-              onFocus={(e) => e.target.style.borderColor = '#2E9E6D'}
-              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-            />
-          </div>
-          <div style={{ marginBottom: 24 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 700, color: '#475569', marginBottom: 6 }}>Password</label>
-            <input
-              type="password" value={password} onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••" required
-              style={{
-                width: '100%', padding: '12px 16px', borderRadius: 12,
-                border: '2px solid #e2e8f0', fontSize: 15, outline: 'none',
-                transition: 'border-color 0.2s', boxSizing: 'border-box',
-                fontFamily: 'inherit',
-              }}
-              onFocus={(e) => e.target.style.borderColor = '#2E9E6D'}
-              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-            />
-          </div>
-          <button type="submit" disabled={loading} style={{
-            width: '100%', padding: '14px', borderRadius: 14, border: 'none',
-            background: 'linear-gradient(135deg, #2E9E6D, #22C55E)', color: 'white',
-            fontSize: 16, fontWeight: 800, cursor: loading ? 'not-allowed' : 'pointer',
-            opacity: loading ? 0.7 : 1, transition: 'all 0.2s',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            {loading ? <Loader2 style={{ width: 20, height: 20, animation: 'spin 1s linear infinite' }} /> : (isLoginView ? 'Log In' : 'Sign Up')}
-          </button>
-        </form>
-
-        <div style={{ marginTop: 24, textAlign: 'center', fontSize: 14 }}>
-          <span style={{ color: '#64748b' }}>
-            {isLoginView ? "Don't have an account? " : 'Already have an account? '}
-          </span>
-          <button
-            onClick={() => setIsLoginView(!isLoginView)}
-            style={{
-              background: 'none', border: 'none', color: '#2E9E6D',
-              fontWeight: 700, cursor: 'pointer', textDecoration: 'underline',
-              fontSize: 14,
-            }}
-          >
-            {isLoginView ? 'Sign Up' : 'Log In'}
-          </button>
-        </div>
-
-        {/* Divider */}
-        <div style={{ position: 'relative', margin: '28px 0' }}>
-          <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
-            <div style={{ width: '100%', height: 1, background: '#e2e8f0' }} />
-          </div>
-          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <span style={{ padding: '0 12px', background: 'white', color: '#94a3b8', fontSize: 13, fontWeight: 500 }}>
-              Or continue with
-            </span>
-          </div>
-        </div>
-
-        {/* Google OAuth */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 12 }}>
-          <button
-            onClick={() => handleOAuthLogin('google')}
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-              padding: '12px 16px', border: '2px solid #e2e8f0', borderRadius: 12,
-              background: 'white', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-              color: '#475569', transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#cbd5e1'}
-            onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e2e8f0'}
-          >
-            <svg height="18" width="18" viewBox="0 0 24 24">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-            </svg>
-            Google
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // ════════════════════════════════════════════════════════════════════
-  //  RENDER: Main Paywall (logged in or public mode)
+  //  RENDER: Main Paywall (shown immediately upfront to maximize conversion)
   // ════════════════════════════════════════════════════════════════════
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '16px 16px 80px', animation: 'cp-fadeInUp 0.5s ease-out' }}>
-      {session && (
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12 }}>
+        {session ? (
           <button
             onClick={() => supabase.auth.signOut()}
             style={{
@@ -896,6 +707,194 @@ export default function CheckoutPortal({ publicMode = false }) {
           >
             Sign Out
           </button>
+        ) : (
+          <button
+            onClick={() => {
+              setPendingCheckout(false);
+              setIsLoginView(true);
+              setAuthError('');
+              setAuthNotice('');
+              setShowAuthModal(true);
+            }}
+            style={{
+              background: 'white', border: '1px solid #e2e8f0', color: '#475569',
+              fontSize: 13, fontWeight: 700, cursor: 'pointer',
+              padding: '8px 16px', borderRadius: 999, transition: 'all 0.2s',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#2E9E6D'; e.currentTarget.style.color = '#2E9E6D'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#475569'; }}
+          >
+            Already have an account? Log In
+          </button>
+        )}
+      </div>
+
+      {/* Inline Auth Modal when user clicks Continue or Log In */}
+      {!session && showAuthModal && (
+        <div
+          onClick={() => { setShowAuthModal(false); setPendingCheckout(false); }}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 100,
+            background: 'rgba(15, 23, 42, 0.55)', backdropFilter: 'blur(4px)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: 16,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: '100%', maxWidth: 440,
+              padding: '32px 24px 36px',
+              background: 'white',
+              borderRadius: 24,
+              boxShadow: '0 25px 80px rgba(0,0,0,0.2)',
+              position: 'relative',
+              animation: 'cp-fadeInUp 0.25s ease-out',
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => { setShowAuthModal(false); setPendingCheckout(false); }}
+              aria-label="Close sign in dialog"
+              style={{
+                position: 'absolute', top: 16, right: 16,
+                background: '#f1f5f9', border: 'none',
+                color: '#64748b', cursor: 'pointer',
+                width: 32, height: 32, borderRadius: '50%',
+                fontSize: 18, fontWeight: 700,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}
+            >
+              ×
+            </button>
+
+            <h2 style={{
+              fontSize: 24, fontWeight: 900, textAlign: 'center',
+              color: '#1e293b', margin: '4px 0 8px 0',
+            }}>
+              {isLoginView ? 'Welcome Back' : 'Create Your Account'}
+            </h2>
+            <p style={{
+              textAlign: 'center', color: '#64748b', fontSize: 14,
+              margin: '0 0 24px 0', padding: '0 12px', fontWeight: 500,
+            }}>
+              {isLoginView
+                ? 'Sign in with your Klar (or PureScan AI) account to continue.'
+                : 'Quick step so your Pro access syncs seamlessly to the iOS & Android app.'}
+            </p>
+
+            {authError && (
+              <div style={{
+                background: '#FEF2F2', color: '#DC2626', padding: '12px 16px',
+                borderRadius: 12, fontSize: 14, marginBottom: 18, textAlign: 'center',
+                fontWeight: 500, border: '1px solid #FECACA',
+              }}>
+                {authError}
+              </div>
+            )}
+
+            {authNotice && (
+              <div style={{
+                background: '#ECFDF5', color: '#047857', padding: '12px 16px',
+                borderRadius: 12, fontSize: 14, marginBottom: 18, textAlign: 'center',
+                fontWeight: 600, border: '1px solid #A7F3D0',
+              }}>
+                {authNotice}
+              </div>
+            )}
+
+            <form onSubmit={handleEmailAuth}>
+              <div style={{ marginBottom: 14 }}>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 700, color: '#475569', marginBottom: 6 }}>Email</label>
+                <input
+                  type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com" required
+                  style={{
+                    width: '100%', padding: '12px 16px', borderRadius: 12,
+                    border: '2px solid #e2e8f0', fontSize: 15, outline: 'none',
+                    transition: 'border-color 0.2s', boxSizing: 'border-box',
+                    fontFamily: 'inherit',
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#2E9E6D'}
+                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+                />
+              </div>
+              <div style={{ marginBottom: 20 }}>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 700, color: '#475569', marginBottom: 6 }}>Password</label>
+                <input
+                  type="password" value={password} onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••" required
+                  style={{
+                    width: '100%', padding: '12px 16px', borderRadius: 12,
+                    border: '2px solid #e2e8f0', fontSize: 15, outline: 'none',
+                    transition: 'border-color 0.2s', boxSizing: 'border-box',
+                    fontFamily: 'inherit',
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#2E9E6D'}
+                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+                />
+              </div>
+              <button type="submit" disabled={authBusy} style={{
+                width: '100%', padding: '14px', borderRadius: 14, border: 'none',
+                background: 'linear-gradient(135deg, #2E9E6D, #22C55E)', color: 'white',
+                fontSize: 16, fontWeight: 800, cursor: authBusy ? 'not-allowed' : 'pointer',
+                opacity: authBusy ? 0.7 : 1, transition: 'all 0.2s',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                {authBusy ? <Loader2 style={{ width: 20, height: 20, animation: 'spin 1s linear infinite' }} /> : (isLoginView ? 'Log In & Continue' : 'Create Account & Continue')}
+              </button>
+            </form>
+
+            <div style={{ marginTop: 18, textAlign: 'center', fontSize: 14 }}>
+              <span style={{ color: '#64748b' }}>
+                {isLoginView ? "Don't have an account? " : 'Already have an account? '}
+              </span>
+              <button
+                type="button"
+                onClick={() => { setIsLoginView(!isLoginView); setAuthError(''); setAuthNotice(''); }}
+                style={{
+                  background: 'none', border: 'none', color: '#2E9E6D',
+                  fontWeight: 700, cursor: 'pointer', textDecoration: 'underline',
+                  fontSize: 14,
+                }}
+              >
+                {isLoginView ? 'Sign Up' : 'Log In'}
+              </button>
+            </div>
+
+            <div style={{ position: 'relative', margin: '22px 0' }}>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
+                <div style={{ width: '100%', height: 1, background: '#e2e8f0' }} />
+              </div>
+              <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+                <span style={{ padding: '0 12px', background: 'white', color: '#94a3b8', fontSize: 13, fontWeight: 500 }}>
+                  Or continue with
+                </span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => handleOAuthLogin('google')}
+              style={{
+                width: '100%',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                padding: '12px 16px', border: '2px solid #e2e8f0', borderRadius: 12,
+                background: 'white', cursor: 'pointer', fontSize: 14, fontWeight: 600,
+                color: '#475569', transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = '#cbd5e1'}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e2e8f0'}
+            >
+              <svg height="18" width="18" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+              </svg>
+              Google
+            </button>
+          </div>
         </div>
       )}
 
@@ -1208,13 +1207,7 @@ export default function CheckoutPortal({ publicMode = false }) {
 
             {/* CTA Button */}
             <button
-              onClick={() => {
-                if (publicMode && !session) {
-                  window.location.href = '/pro';
-                } else {
-                  handleSubscribe();
-                }
-              }}
+              onClick={() => handleSubscribe()}
               disabled={checkoutLoading}
               style={{
                 width: '100%',

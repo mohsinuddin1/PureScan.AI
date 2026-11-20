@@ -14,7 +14,6 @@ const LANGUAGES = [
   { code: 'nl', name: 'Nederlands' },
   { code: 'da', name: 'Dansk' },
   { code: 'sv', name: 'Svenska' },
-  { code: 'nb', name: 'Norsk (Bokmål)' },
   { code: 'no', name: 'Norsk' },
   { code: 'fi', name: 'Suomi' },
   { code: 'hu', name: 'Magyar' },
@@ -75,21 +74,24 @@ export default function Navbar({
       return;
     }
 
-    const path = window.location.pathname;
-    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
     let segments = path.split('/').filter(Boolean);
 
     if (segments.length > 0 && locales.includes(segments[0])) {
-      segments[0] = targetLang;
-    } else {
-      segments.unshift(targetLang);
-    }
-
-    if (targetLang === 'en' && locales.includes(segments[0])) {
       segments.shift();
     }
 
-    window.location.href = '/' + segments.join('/') + window.location.search;
+    const basePath = segments.length > 0 ? '/' + segments.join('/') : '';
+    const multiLangPaths = ['', '/blog', '/grading', '/support', '/delete-account'];
+
+    if (!multiLangPaths.includes(basePath)) {
+      window.location.href = (targetLang === 'en' ? '/' : `/${targetLang}`) + window.location.search;
+      return;
+    }
+
+    const nextPath = targetLang === 'en' ? (basePath || '/') : `/${targetLang}${basePath}`;
+    window.location.href = nextPath + window.location.search;
   };
 
   // Determine OS specific store link, label and icon

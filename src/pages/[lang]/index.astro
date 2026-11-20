@@ -1,6 +1,6 @@
 ---
 export function getStaticPaths() {
-  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
+  const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nl","no","pl","pt","ro","ru","sv","tr","zh"];
   return locales.map(lang => ({ params: { lang } }));
 }
 
@@ -14,6 +14,6 @@ const metaTitle = t('home.metaTitle', 'Klar - Food & Cosmetic Scanner');
 const metaDescription = t('home.metaDescription', 'Scan food & cosmetic ingredients with Klar AI to detect hidden toxins, allergens, and ultra-processed additives instantly. Free on iOS & Android.');
 ---
 
-<Layout title={metaTitle} description={metaDescription}>
+<Layout title={metaTitle} description={metaDescription} noindex={true}>
   <Homepage lang={lang} />
 </Layout>

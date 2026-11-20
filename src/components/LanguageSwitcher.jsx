@@ -3,9 +3,9 @@ export default function LanguageSwitcher({ currentLang = 'en', blogSlugMap = nul
 
   const changeLanguage = (e) => {
     const targetLang = e.target.value;
-    let path = window.location.pathname;
+    let path = window.location.pathname.replace(/\/$/, '') || '/';
     let segments = path.split('/').filter(Boolean);
-    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+    const locales = ['bg', 'en', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
 
     // Check if we are on a blog post page and have a slug map
     const isBlogPost = blogSlugMap && Object.keys(blogSlugMap).length > 0;
@@ -31,18 +31,20 @@ export default function LanguageSwitcher({ currentLang = 'en', blogSlugMap = nul
       return;
     }
     
-    // Non-blog page: swap the locale prefix as before
     if (segments.length > 0 && locales.includes(segments[0])) {
-      segments[0] = targetLang;
-    } else {
-      segments.unshift(targetLang);
+      segments.shift();
     }
-    
-    if (targetLang === 'en' && locales.includes(segments[0])) {
-        segments.shift();
+
+    const basePath = segments.length > 0 ? '/' + segments.join('/') : '';
+    const multiLangPaths = ['', '/blog', '/grading', '/support', '/delete-account'];
+
+    if (!multiLangPaths.includes(basePath)) {
+      window.location.href = (targetLang === 'en' ? '/' : `/${targetLang}`) + window.location.search;
+      return;
     }
-    
-    window.location.href = '/' + segments.join('/') + window.location.search;
+
+    const nextPath = targetLang === 'en' ? (basePath || '/') : `/${targetLang}${basePath}`;
+    window.location.href = nextPath + window.location.search;
   };
 
   return (
@@ -70,7 +72,6 @@ export default function LanguageSwitcher({ currentLang = 'en', blogSlugMap = nul
         <option value="tr">Türkçe</option>
         <option value="pl">Polski</option>
         <option value="no">Norsk</option>
-        <option value="nb">Norsk (Bokmål)</option>
         <option value="it">Italiano</option>
         <option value="lv">Latviešu</option>
         <option value="cs">Čeština</option>

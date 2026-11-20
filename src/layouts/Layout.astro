@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SpeedInsights from "@vercel/speed-insights/astro";
+import StickyAppBanner from '../components/StickyAppBanner.jsx';
 
 interface Props {
   title?: string;
@@ -8,6 +9,7 @@ interface Props {
   description?: string;
   image?: string;
   alternateUrls?: Record<string, string>;
+  noindex?: boolean;
 }
 
 const {
@@ -15,7 +17,8 @@ const {
   shortTitle,
   description = "Scan food & cosmetics with Klar to detect hidden toxins, allergens, and endocrine disruptors instantly. Free AI scanner app for iOS & Android.",
   image = "https://scaningredients.com/og-image.png",
-  alternateUrls
+  alternateUrls,
+  noindex = false
 } = Astro.props;
 
 // Industry-standard SEO / AEO / GEO meta description normalizer (guarantees length 25 - 145 chars, accounting for HTML entity expansion)
@@ -121,7 +124,7 @@ const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, siteUrl).href;
 
 // Compute base path for hreflang alternates
-const locales = ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+const locales = ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
 const pathname = canonicalPath;
 const segments = pathname.split('/').filter(Boolean);
 let basePath = pathname;
@@ -135,8 +138,8 @@ if (basePath === '/') {
 }
 
 // Check if this page is a known multi-language page
-const multiLangPrefixes = ['', '/blog', '/grading', '/terms', '/privacy', '/support', '/delete-account'];
-const isMultiLang = multiLangPrefixes.includes(basePath) || basePath.startsWith('/alternatives/');
+const multiLangPrefixes = ['', '/blog', '/grading', '/support'];
+const isMultiLang = multiLangPrefixes.includes(basePath);
 
 // Generate alternate URLs for each locale
 function getAlternateUrl(locale: string): string {
@@ -166,6 +169,7 @@ if (Astro.response && Astro.response.headers) {
     <!-- Primary SEO -->
     <title>{safeTitle}</title>
     <meta name="description" content={safeDescription} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Apple Smart App Banner -->
@@ -264,6 +268,7 @@ if (Astro.response && Astro.response.headers) {
   </head>
   <body class="bg-[#fffefb] text-slate-800 font-sans selection:bg-orange-200">
     <slot />
+    <StickyAppBanner client:load />
     <script>
       import { inject } from '@vercel/analytics';
       inject();

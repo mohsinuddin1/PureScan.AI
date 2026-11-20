@@ -29,14 +29,6 @@ const pageDesc = `Klar vs ${name}: In-depth comparison. Discover why Klar is the
 const siteUrl = 'https://scaningredients.com';
 const pageUrl = `${siteUrl}/alternatives/${competitor}`;
 
-const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nb","nl","no","pl","pt","ro","ru","sv","tr","zh"];
-const alternateUrls: Record<string, string> = {
-  en: `${siteUrl}/alternatives/${competitor}`
-};
-for (const loc of locales) {
-  alternateUrls[loc] = `${siteUrl}/${loc}/alternatives/${competitor}`;
-}
-
 const faqSchemaItems = (compData.faqs || []).map(f => ({
   "@type": "Question",
   "name": f.question,
@@ -77,7 +69,7 @@ const schemaData = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": siteUrl
+          "item": `${siteUrl}/`
         },
         {
           "@type": "ListItem",
@@ -99,7 +91,7 @@ const schemaData = {
   ]
 };
 ---
-<Layout title={pageTitle} description={pageDesc} alternateUrls={alternateUrls}>
+<Layout title={pageTitle} description={pageDesc}>
   <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   <AlternativeIsland client:load lang={lang} translations={translations} competitor={competitor} />
 </Layout>
