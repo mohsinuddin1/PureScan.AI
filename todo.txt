@@ -1,0 +1,4 @@
+write blog 63. it should be scientific backed with back links of the exact link, not a generalised URL link from the website where taken its sources there should be citations, 
+URL links and follow the blog rule and it should don't AI slop or hallucinated or long very long it should be concise with proper format, not too much messy type, clean spacing everything , 
+translate in the other languages, don't use external API. Do it by yourself. It should be contextual, not just plain translation
+
