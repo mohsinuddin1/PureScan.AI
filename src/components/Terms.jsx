@@ -144,6 +144,7 @@ export default function TermsOfService() {
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href="/grading" className="text-slate-500 hover:text-slate-900 transition-colors">Grading</a>
+                        <a href="/blog" className="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
                         <a href="/privacy" className="text-slate-500 hover:text-slate-900 transition-colors">Privacy</a>
                         <a href="/terms" className="text-slate-900 font-medium">Terms</a>
                         <a href="/support" className="text-slate-500 hover:text-slate-900 transition-colors">Support</a>

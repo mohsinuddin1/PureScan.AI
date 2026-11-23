@@ -107,20 +107,19 @@ export default function HeroDownloadCTA() {
       </p>
 
       {isMacOrWindows && (
-        <a
-          href="/download"
-          className="inline-flex items-center gap-3.5 bg-white/95 hover:bg-white border border-slate-200 hover:border-[#17C37B] rounded-2xl p-3 shadow-sm hover:shadow-md transition-all text-left group max-w-sm"
+        <div
+          className="inline-flex items-center gap-3.5 bg-white/95 border border-slate-200 rounded-2xl p-3 shadow-sm text-left max-w-sm"
         >
           <DownloadQrSvg />
           <div>
-            <p className="text-sm font-extrabold text-slate-900 group-hover:text-[#17C37B] transition-colors leading-snug">
+            <p className="text-sm font-extrabold text-slate-900 leading-snug">
               On Mac or PC? Scan to install on your phone
             </p>
             <p className="text-xs font-medium text-slate-500 mt-1">
-              Auto-detects iOS &amp; Android via <span className="underline">/download</span>
+              Auto-detects iOS &amp; Android via QR Code
             </p>
           </div>
-        </a>
+        </div>
       )}
     </div>
   );

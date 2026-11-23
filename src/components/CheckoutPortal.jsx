@@ -479,17 +479,6 @@ export default function CheckoutPortal({ publicMode = false }) {
   const activePlan = PLANS.find(p => p.id === selectedPlan) || PLANS[0];
 
   // ════════════════════════════════════════════════════════════════════
-  //  RENDER: Loading
-  // ════════════════════════════════════════════════════════════════════
-  if (loading && !session) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
-        <Loader2 style={{ width: 32, height: 32, color: '#2E9E6D', animation: 'spin 1s linear infinite' }} />
-      </div>
-    );
-  }
-
-  // ════════════════════════════════════════════════════════════════════
   //  RENDER: Success / Thank You Page
   // ════════════════════════════════════════════════════════════════════
   if (isSuccess) {

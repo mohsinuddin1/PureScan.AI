@@ -21,11 +21,19 @@ const {
   noindex = false
 } = Astro.props;
 
-// Industry-standard SEO / AEO / GEO meta description normalizer (guarantees length 25 - 145 chars, accounting for HTML entity expansion)
-function formatMetaDescription(desc: string | undefined): string {
-  const defaultDesc = "Scan food and cosmetics with Klar to detect hidden toxins, allergens, and endocrine disruptors instantly. Free on iOS and Android.";
+const locales = ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+const siteUrl = "https://scaningredients.com";
+const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonicalUrl = new URL(canonicalPath, siteUrl).href;
+const segments = canonicalPath.split('/').filter(Boolean);
+const detectedPathLocale = segments.length > 0 ? locales.find(l => l.toLowerCase() === segments[0].toLowerCase()) : undefined;
+const lang = (Astro.params?.lang as string | undefined) || detectedPathLocale || Astro.currentLocale || "en";
+
+// Industry-standard SEO / AEO / GEO meta description normalizer (guarantees length strictly > 100 and < 145 chars, accounting for HTML entity expansion)
+function formatMetaDescription(desc: string | undefined, fallbackContext?: string, localeCode: string = 'en'): string {
+  const defaultDesc = "Scan food and cosmetics with Klar AI to detect hidden toxins, allergens, and endocrine disruptors instantly. Free on iOS and Android.";
   if (!desc || typeof desc !== 'string') return defaultDesc;
-  
+
   let clean = desc
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
@@ -34,44 +42,94 @@ function formatMetaDescription(desc: string | undefined): string {
     .replace(/&gt;/g, '>')
     .replace(/\s+/g, ' ')
     .trim();
-  
+
   if (clean.length < 25) return defaultDesc;
-  
+
+  const isCjk = localeCode === 'ja' || localeCode === 'zh' || localeCode === 'ko';
+  const paddingByLocale: Record<string, string> = {
+    en: 'Scan product barcodes and labels with Klar AI to detect hidden toxins, allergens, and harmful additives in seconds.',
+    ar: 'افحص مكونات الطعام ومستحضرات التجميل فوراً عبر Klar AI لاكتشاف السموم الخفية ومسببات الحساسية وتقييم الأمان الشخصي.',
+    'ar-MA': 'فحص مكونات الماكلة ومستحضرات التجميل بسرعة مع Klar AI باش تكتشف السموم الخفية ومسببات الحساسية وتحمي صحتك.',
+    bg: 'Сканирайте храни и козметика с Klar AI, за да откриете скрити токсини, алергени и вредни добавки за секунди.',
+    cs: 'Skenujte potraviny a kosmetiku s Klar AI a okamžitě odhalte skryté toxiny, alergeny a škodlivé přísady ve složení.',
+    da: 'Scan mad og kosmetik med Klar AI for øjeblikkeligt at opdage skjulte toksiner, allergener og skadelige tilsætningsstoffer.',
+    de: 'Scannen Sie Lebensmittel und Kosmetik mit Klar AI, um versteckte Schadstoffe, Allergene und schädliche Zusätze sofort zu erkennen.',
+    el: 'Σαρώστε τρόφιμα και καλλυντικά με το Klar AI για να εντοπίσετε άμεσα κρυφές τοξίνες, αλλεργιογόνα και επιβλαβή πρόσθετα.',
+    es: 'Escanea alimentos y cosméticos con Klar AI para detectar toxinas ocultas, alérgenos y aditivos dañinos al instante.',
+    fi: 'Skannaa elintarvikkeet ja kosmetiikka Klar AI:lla tunnistaaksesi piilevät myrkyt, allergeenit ja haitalliset lisäaineet heti.',
+    fr: 'Scannez aliments et cosmétiques avec Klar AI pour détecter instantanément toxines cachées, allergènes et additifs nocifs.',
+    hu: 'Szkennelje az élelmiszereket és kozmetikumokat a Klar AI segítségével a rejtett toxinok és allergének azonnali felismeréséhez.',
+    it: 'Scansiona alimenti e cosmetici con Klar AI per rilevare subito tossine nascoste, allergeni e additivi nocivi nelle etichette.',
+    ja: 'Klar AIで食品や化粧品の原材料成分を瞬時にスキャンし、隠れた有害添加物やアレルゲン、内分泌攪乱物質を科学的に分析して、あなた専用のパーソナライズされた安全スコアと健康リスク評価を無料ですぐに確認できます。',
+    ko: 'Klar AI로 식품과 화장품 성분표를 즉시 스캔하여 숨겨진 독소, 알레르기 유발 물질, 내분비계 교란물질을 과학적으로 분석하고, 개인 건강 상태와 알레르기에 맞춘 맞춤형 안전 점수를 무료로 바로 확인하세요.',
+    lt: 'Nuskenuokite maisto ir kosmetikos sudėtį su Klar AI, kad akimirksniu aptiktumėte paslėptus toksinus, alergenus ir priedus.',
+    lv: 'Skenējiet pārtiku un kosmētiku ar Klar AI, lai uzreiz atklātu slēptos toksīnus, alergēnus un kaitīgās piedevas.',
+    nl: 'Scan voeding en cosmetica met Klar AI om verborgen gifstoffen, allergenen en schadelijke toevoegingen direct te herkennen.',
+    no: 'Skann mat og kosmetikk med Klar AI for å oppdage skjulte giftstoffer, allergener og skadelige tilsetningsstoffer umiddelbart.',
+    pl: 'Skanuj żywność i kosmetyki z Klar AI, aby natychmiast wykryć ukryte toksyny, alergeny oraz szkodliwe dodatki w składzie.',
+    pt: 'Digitalize alimentos e cosméticos com Klar AI para detetar toxinas ocultas, alergénios e aditivos prejudiciais em segundos.',
+    ro: 'Scanează alimente și cosmetice cu Klar AI pentru a detecta instantaneu toxinele ascunse, alergenii și aditivii nocivi.',
+    ru: 'Сканируйте продукты и косметику с Klar AI, чтобы мгновенно выявлять скрытые токсины, аллергены и вредные добавки.',
+    sv: 'Skanna mat och kosmetika med Klar AI för att omedelbart upptäcka dolda gifter, allergener och skadliga tillsatser.',
+    tr: 'Klar AI ile gıda ve kozmetik ürünlerini tarayarak gizli toksinleri, alerjenleri ve zararlı katkı maddelerini anında tespit edin.',
+    zh: '使用 Klar AI 即刻扫描食品与化妆品成分表，依据权威毒理学与医学数据库全面排查隐藏毒素、致敏原、内分泌干扰物与超加工添加剂，免费获取您的专属安全评分与个性化健康分析报告。',
+  };
+
+  if (clean.length < 105) {
+    const contextClean = (fallbackContext || '')
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/\s+/g, ' ')
+      .trim();
+    const sep = isCjk ? '' : (/[.!?。！？]$/.test(clean) ? ' ' : '. ');
+    if (contextClean && !clean.toLowerCase().includes(contextClean.slice(0, 20).toLowerCase()) && clean.length + contextClean.length + sep.length >= 105) {
+      clean = `${clean}${sep}${contextClean}`;
+    }
+    if (clean.length < 105) {
+      const extra = paddingByLocale[localeCode] || paddingByLocale.en;
+      const padSep = isCjk ? '' : (/[.!?。！？]$/.test(clean) ? ' ' : '. ');
+      clean = `${clean}${padSep}${extra}`;
+    }
+  }
+
   // Calculate potential HTML expansion (each '&' becomes '&amp;' = +4 chars in rendered HTML attribute)
   const ampCount = (clean.match(/&/g) || []).length;
-  const maxSafeLen = Math.max(70, 145 - (ampCount * 4));
-  
+  const maxSafeLen = Math.max(105, 144 - (ampCount * 4));
+
   if (clean.length <= maxSafeLen) return clean;
-  
+
   const sub = clean.slice(0, maxSafeLen);
-  // 1. Look for a complete sentence ending between 45 and maxSafeLen chars
+  // 1. Look for a complete sentence ending only between 105 and maxSafeLen chars so we never shorten under 101
   const sentenceMatches = [...sub.matchAll(/[.!?。！？](\s|$)/g)];
   if (sentenceMatches.length > 0) {
     const lastMatch = sentenceMatches[sentenceMatches.length - 1];
     const cutIdx = lastMatch.index + 1;
-    if (cutIdx >= 45) {
+    if (cutIdx >= 105) {
       return sub.slice(0, cutIdx).trim();
     }
   }
-  
-  // 2. Look for word boundary (space, comma, semicolon, CJK punctuation)
+
+  // 2. Look for word boundary (space, comma, semicolon, CJK punctuation) >= 105 chars
   const lastBreak = Math.max(sub.lastIndexOf(' '), sub.lastIndexOf('，'), sub.lastIndexOf('、'));
-  if (lastBreak >= 45) {
+  if (lastBreak >= 105) {
     let candidate = sub.slice(0, lastBreak).trim();
-    candidate = candidate.replace(/\b(and|or|with|the|in|for|to|of|by|at|on|ve|veya|y|de|et|und|e|oder|con|per|por|para|na|w|i|a)\b$/i, '').trim();
+    candidate = candidate.replace(/\b(and|or|with|the|in|for|to|of|by|at|on|ve|veya|y|de|et|und|e|oder|con|per|por|para|na|w|i|a)$/i, '').trim();
     candidate = candidate.replace(/[,;:\-\s，、]+$/, '').trim();
+    const endPunct = isCjk ? '。' : '.';
     if (!/[.!?。！？]$/.test(candidate) && candidate.length <= maxSafeLen - 1) {
-      candidate += '.';
+      candidate += endPunct;
     }
-    if (candidate.length <= maxSafeLen && candidate.length >= 25) {
+    if (candidate.length <= maxSafeLen && candidate.length >= 101) {
       return candidate;
     }
   }
-  
-  return sub.slice(0, maxSafeLen - 1).trim() + '.';
+
+  const endPunct = isCjk ? '。' : '.';
+  return sub.slice(0, maxSafeLen - 1).trim() + endPunct;
 }
 
-const safeDescription = formatMetaDescription(description);
+const safeDescription = formatMetaDescription(description, title, lang);
 
 // Industry-standard SEO title normalizer (guarantees length strictly < 65 chars, ideal 40-58 chars)
 function formatPageTitle(rawTitle: string | undefined): string {
@@ -118,17 +176,10 @@ function formatPageTitle(rawTitle: string | undefined): string {
 
 const safeTitle = formatPageTitle(shortTitle || title);
 
-const lang = Astro.currentLocale || "en";
-const siteUrl = "https://scaningredients.com";
-const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
-const canonicalUrl = new URL(canonicalPath, siteUrl).href;
-
 // Compute base path for hreflang alternates
-const locales = ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
 const pathname = canonicalPath;
-const segments = pathname.split('/').filter(Boolean);
 let basePath = pathname;
-if (segments.length > 0 && locales.includes(segments[0]) && segments[0] !== 'en') {
+if (segments.length > 0 && detectedPathLocale && detectedPathLocale !== 'en') {
   basePath = '/' + segments.slice(1).join('/');
 }
 
@@ -137,8 +188,8 @@ if (basePath === '/') {
   basePath = '';
 }
 
-// Check if this page is a known multi-language page
-const multiLangPrefixes = ['', '/blog', '/grading', '/support'];
+// Check if this page is a known multi-language page (exclude root '' while localized homepages are noindex)
+const multiLangPrefixes = ['/blog', '/grading', '/support'];
 const isMultiLang = multiLangPrefixes.includes(basePath);
 
 // Generate alternate URLs for each locale
@@ -199,16 +250,20 @@ if (Astro.response && Astro.response.headers) {
     <meta name="twitter:image" content={image} />
 
     <!-- hreflang alternate links for international SEO -->
-    {alternateUrls ? (
-      Object.entries(alternateUrls).map(([loc, url]) => (
-        <link rel="alternate" hreflang={loc} href={url} />
-      ))
-    ) : isMultiLang ? (
-      locales.map((locale) => (
-        <link rel="alternate" hreflang={locale} href={getAlternateUrl(locale)} />
-      ))
-    ) : null}
-    <link rel="alternate" hreflang="x-default" href={alternateUrls ? (alternateUrls['en'] || canonicalUrl) : isMultiLang ? getAlternateUrl('en') : canonicalUrl} />
+    {!noindex && (
+      alternateUrls ? (
+        Object.entries(alternateUrls).map(([loc, url]) => (
+          <link rel="alternate" hreflang={loc} href={url} />
+        ))
+      ) : isMultiLang ? (
+        locales.map((locale) => (
+          <link rel="alternate" hreflang={locale} href={getAlternateUrl(locale)} />
+        ))
+      ) : null
+    )}
+    {!noindex && (
+      <link rel="alternate" hreflang="x-default" href={alternateUrls ? (alternateUrls['en'] || canonicalUrl) : isMultiLang ? getAlternateUrl('en') : canonicalUrl} />
+    )}
 
     <!-- JSON-LD Structured Data: WebSite + Organization + SoftwareApplication -->
     <script type="application/ld+json" set:html={JSON.stringify({

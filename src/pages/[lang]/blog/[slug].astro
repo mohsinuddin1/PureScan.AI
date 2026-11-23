@@ -64,20 +64,23 @@ const allPosts = await getCollection('blog');
 const blogSlugMap = {};
 for (const p of allPosts) {
   if (p.data.id === blogId) {
-    const pLang = p.id.split('/')[0];
+    const rawLang = p.id.split('/')[0];
+    const pLang = rawLang.toLowerCase() === 'ar-ma' ? 'ar-MA' : rawLang;
     const pSlug = p.id.split('/')[1];
     blogSlugMap[pLang] = pSlug;
-    if (pLang.toLowerCase() === 'ar-ma') {
-      blogSlugMap['ar-MA'] = pSlug;
-    }
   }
 }
 
 // Build related articles from posts in the current language with the same badge (max 6, excluding current)
-const currentLangPosts = allPosts.filter(p => p.id.toLowerCase().startsWith(`${lang.toLowerCase()}/`) && p.data.id !== blogId);
+// Deterministically sorted and rotated by blogId so every post receives multiple incoming internal links
+const currentLangPosts = allPosts
+  .filter(p => p.id.toLowerCase().startsWith(`${lang.toLowerCase()}/`) && p.data.id !== blogId)
+  .sort((a, b) => (a.data.id || 0) - (b.data.id || 0));
 const sameBadge = currentLangPosts.filter(p => p.data.badge === post.data.badge);
 const otherPosts = currentLangPosts.filter(p => p.data.badge !== post.data.badge);
-const relatedPosts = [...sameBadge, ...otherPosts].slice(0, 6).map(p => ({
+const rotate = (arr, offset) => arr.length ? [...arr.slice(offset % arr.length), ...arr.slice(0, offset % arr.length)] : [];
+const relatedPool = [...rotate(sameBadge, blogId || 0), ...rotate(otherPosts, (blogId || 0) * 3)];
+const relatedPosts = relatedPool.slice(0, 6).map(p => ({
   title: p.data.title,
   slug: p.id.split('/')[1],
   badge: p.data.badge,
@@ -161,7 +164,11 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
         "wordCount": wordCount,
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": canonicalUrl
+          "@id": canonicalUrl,
+          "reviewedBy": {
+            "@type": "Organization",
+            "name": "Klar Science & Research Team"
+          }
         },
         "author": {
           "@type": "Organization",
@@ -183,10 +190,6 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
             "@type": "ImageObject",
             "url": "https://scaningredients.com/logo.png"
           }
-        },
-        "reviewedBy": {
-          "@type": "Organization",
-          "name": "Klar Science & Research Team"
         },
         "about": {
           "@type": "Thing",
@@ -275,7 +278,6 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
           <div class="flex items-center gap-2 shrink-0 flex-wrap justify-center">
             <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center bg-[#0A0A0A] text-white px-4 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform">App Store</a>
             <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dmid_article_cta%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center bg-[#17C37B] text-white px-4 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform">Google Play</a>
-            <a href="/download" class="hidden md:inline-flex items-center justify-center bg-white text-slate-700 border border-slate-300 px-3 py-2 rounded-full text-xs font-bold hover:border-[#17C37B] hover:text-[#17C37B] transition-colors">QR / Auto</a>
           </div>
         </div>
 
@@ -348,6 +350,8 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
             <a href="/terms" class="hover:text-[#17C37B] transition-colors">Terms of Service</a>
             <span class="mx-3">•</span>
             <a href={lang === 'en' ? '/support' : `/${lang}/support`} class="hover:text-[#17C37B] transition-colors">Support</a>
+            <span class="mx-3">•</span>
+            <a href="/docs/api" class="hover:text-[#17C37B] transition-colors">API &amp; Docs</a>
           </p>
           <p class="text-slate-400 font-medium text-xs">&copy; {new Date().getFullYear()} Klar (formerly PureScan AI). Food & Cosmetic Scanner. All rights reserved.</p>
         </div>

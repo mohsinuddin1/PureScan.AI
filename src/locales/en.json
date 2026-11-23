@@ -150,7 +150,7 @@
   },
   "support": {
     "pageMetaTitle": "Support - Klar (formerly PureScan AI)",
-    "pageMetaDesc": "Contact the Klar support team for help with food scanning, cosmetic checks, or your account.",
+    "pageMetaDesc": "Contact the Klar support team for help with food scanning, cosmetic safety checks, subscription billing, or managing your account.",
     "title": "Support",
     "subtitle": "If you have any questions, issues, or feedback regarding the Klar app (or your legacy PureScan AI account), please reach out. We aim to respond within 24-48 hours.",
     "emailButton": "Email Support Team",
@@ -179,7 +179,7 @@
   },
   "home": {
     "metaTitle": "Klar - Food & Cosmetic Scanner",
-    "metaDescription": "Scan food & cosmetic ingredients with Klar AI to detect hidden toxins, allergens, and ultra-processed additives instantly. Free on iOS & Android.",
+    "metaDescription": "Scan food and cosmetic ingredients with Klar AI to detect hidden toxins, allergens, and ultra-processed additives. Free on iOS and Android.",
     "badge": "PureScan AI is now Klar",
     "heroSubtitle": "Most Advanced",
     "heroTitle": "Food & Cosmetic Scanner",

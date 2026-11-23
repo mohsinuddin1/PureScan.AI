@@ -107,6 +107,9 @@
     }
   ],
   "redirects": [
+    { "source": "/ar-ma", "destination": "/ar-MA", "permanent": true },
+    { "source": "/ar-ma/(.*)", "destination": "/ar-MA/$1", "permanent": true },
+    { "source": "/ar/blog/59-limadha-yatahawwal-serum-vitamin-c-ila-al-bunni-wa-yalesa-al-wajh", "destination": "/ar/blog/59-limatha-yatahawwal-serum-vitamin-c-ila-al-bunni-wa-yalesa-al-wajh", "permanent": true },
     { "source": "/blog/49-what-are-ultra-processed-foods", "destination": "/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained", "permanent": true },
     { "source": "/no/blog/49-what-are-ultra-processed-foods", "destination": "/no/blog/49-hva-er-ultraprosessert-mat-og-nova-klassifiseringen", "permanent": true },
     { "source": "/nb", "destination": "/no", "permanent": true },

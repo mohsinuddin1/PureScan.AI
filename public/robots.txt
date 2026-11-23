@@ -1,6 +1,9 @@
 # Standard Robots.txt for Search Engines and AI Search Agents
 User-agent: *
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Google Search & Google AI (Gemini, AI Overviews / SGE)
 User-agent: Googlebot

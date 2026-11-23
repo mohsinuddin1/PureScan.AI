@@ -38,12 +38,12 @@ export default function Support() {
                 </div>
             </nav>
 
-            <main className="flex-1 px-5 py-24 md:py-32 max-w-2xl mx-auto w-full flex flex-col items-center text-center">
+            <main className="flex-1 px-5 py-16 md:py-24 max-w-3xl mx-auto w-full flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-900 mb-6">
                     <Mail className="w-5 h-5" />
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">{title}</h1>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-md">
+                <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4 text-center">{title}</h1>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-xl text-center">
                     {subtitle}
                 </p>
                 
@@ -54,12 +54,39 @@ export default function Support() {
                     {emailButton}
                 </a>
 
-                <p className="mt-8 text-sm text-slate-500">
+                <p className="mt-8 text-sm text-slate-500 text-center">
                     {directEmailText}{' '}
                     <a href="mailto:purescanai@outlook.com" className="text-slate-900 font-medium hover:underline">
                         purescanai@outlook.com
                     </a>
                 </p>
+
+                <div className="w-full mt-16 pt-12 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">Barcode &amp; AI Label Scanning</h2>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                            Point your camera at any food or cosmetic barcode for instant Nutri-Score, NOVA level, and hazard ratings. If an item is not in the database yet, switch to AI Label Mode to photograph the ingredient list in any language for an immediate toxicology breakdown.
+                        </p>
+                    </div>
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">Klar Pro &amp; Account Sync</h2>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                            Your Klar Pro subscription (including legacy PureScan AI Pro accounts) stays synced across iOS, Android, and the web portal via your sign-in email. To manage or cancel a web subscription, visit our <a href="/pricing" className="text-slate-900 font-medium underline">Pricing &amp; Subscription Portal</a>.
+                        </p>
+                    </div>
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">Allergens &amp; Health Profiles</h2>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                            Customize your allergies, skin conditions, and dietary preferences inside the app settings. Klar automatically highlights hidden derivatives such as casein, gluten sources, parabens, phthalates, and endocrine disruptors tailored specifically to your profile.
+                        </p>
+                    </div>
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">Privacy &amp; Data Deletion</h2>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                            We never sell your scan history or health preferences. You can review our <a href="/privacy" className="text-slate-900 font-medium underline">Privacy Policy</a>, check our <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} className="text-slate-900 font-medium underline">Scientific Grading System</a>, or permanently erase your account data at any time.
+                        </p>
+                    </div>
+                </div>
             </main>
 
             <footer className="py-12 bg-[#FAFAFA] border-t border-slate-200">
@@ -70,9 +97,11 @@ export default function Support() {
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} className="text-slate-500 hover:text-slate-900 transition-colors">{gradingText}</a>
+                        <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} className="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
                         <a href="/privacy" className="text-slate-500 hover:text-slate-900 transition-colors">{privacyText}</a>
                         <a href="/terms" className="text-slate-500 hover:text-slate-900 transition-colors">{termsText}</a>
                         <a href={lang === 'en' ? '/support' : `/${lang}/support`} className="text-slate-900 font-medium">{supportText}</a>
+                        <a href="/docs/api" className="text-slate-500 hover:text-slate-900 transition-colors">API &amp; Docs</a>
                     </div>
                 </div>
                 <div className="max-w-3xl mx-auto px-6 mt-6 text-center sm:text-left">

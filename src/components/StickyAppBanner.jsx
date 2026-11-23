@@ -6,7 +6,7 @@ const DISMISS_KEY = "klar_sticky_app_dismissed";
 
 export default function StickyAppBanner() {
   const [visible, setVisible] = useState(false);
-  const [href, setHref] = useState("/download");
+  const [href, setHref] = useState(IOS_LINK);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -26,7 +26,7 @@ export default function StickyAppBanner() {
     } else if (/iPad|iPhone|iPod/.test(ua) || isIpadTouch) {
       setHref(IOS_LINK);
     } else {
-      setHref('/download');
+      setHref(IOS_LINK);
     }
 
     setVisible(true);

@@ -126,6 +126,7 @@ export default function DeleteAccount() {
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} className="text-slate-500 hover:text-slate-900 transition-colors">{gradingText}</a>
+                        <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} className="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
                         <a href="/privacy" className="text-slate-500 hover:text-slate-900 transition-colors">{privacyText}</a>
                         <a href="/terms" className="text-slate-500 hover:text-slate-900 transition-colors">{termsText}</a>
                         <a href={lang === 'en' ? '/support' : `/${lang}/support`} className="text-slate-500 hover:text-slate-900 transition-colors">{supportText}</a>
