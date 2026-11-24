@@ -53,7 +53,7 @@ if (latestPosts.length === 0) {
 }
 ---
 
-<div class="min-h-screen bg-white text-slate-800 font-sans">
+<div class="min-h-screen bg-white text-slate-800 font-sans" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>
 
   <!-- Navbar with Language Switcher, Subscribe to Pro, Dynamic OS Download & Animated Hamburger -->
   <Navbar client:load currentLang={lang} />
@@ -112,13 +112,13 @@ if (latestPosts.length === 0) {
   <!-- AI Citability Block (GEO/AEO) — Definitive answer for AI crawlers -->
   <section class="py-8 md:py-10 px-4 md:px-6 max-w-4xl mx-auto text-center" aria-label="About Klar" id="about">
     <p class="text-base md:text-lg text-slate-600 font-medium leading-relaxed">
-      <strong>Klar</strong> (formerly <strong>PureScan AI</strong>) is a mobile application for iOS and Android that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences.
+      {t('home.aboutText', "Klar (formerly PureScan AI) is a mobile application for iOS and Android that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences.")}
     </p>
     <div class="flex flex-wrap justify-center gap-3 mt-5">
-      <a href="/ingredient-scanner" class="text-sm font-bold text-[#17C37B] hover:underline">Ingredient Scanner →</a>
-      <a href="/food-scanner-app" class="text-sm font-bold text-[#17C37B] hover:underline">Food Scanner →</a>
-      <a href="/cosmetic-safety-checker" class="text-sm font-bold text-[#17C37B] hover:underline">Cosmetic Checker →</a>
-      <a href="/allergy-scanner" class="text-sm font-bold text-[#17C37B] hover:underline">Allergy Scanner →</a>
+      <a href="/ingredient-scanner" class="text-sm font-bold text-[#17C37B] hover:underline">{t('home.linkIngredientScanner', 'Ingredient Scanner →')}</a>
+      <a href="/food-scanner-app" class="text-sm font-bold text-[#17C37B] hover:underline">{t('home.linkFoodScanner', 'Food Scanner →')}</a>
+      <a href="/cosmetic-safety-checker" class="text-sm font-bold text-[#17C37B] hover:underline">{t('home.linkCosmeticChecker', 'Cosmetic Checker →')}</a>
+      <a href="/allergy-scanner" class="text-sm font-bold text-[#17C37B] hover:underline">{t('home.linkAllergyScanner', 'Allergy Scanner →')}</a>
     </div>
   </section>
 
@@ -129,24 +129,24 @@ if (latestPosts.length === 0) {
         <Image src={mascotScared} alt="Are you eating toxins?" format="webp" loading="lazy" class="w-[140px] md:w-[180px] drop-shadow-xl hover:-translate-y-4 transition-transform duration-300" />
       </div>
       <div class="w-full md:w-2/3">
-        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 leading-tight">Don't let hidden toxins sabotage your health.</h2>
-        <p class="text-base md:text-xl text-slate-600 mb-6 md:mb-8 font-medium leading-relaxed">Over 80% of everyday grocery and cosmetic items contain additives linked to hormonal imbalances, PCOS, and chronic inflammation. Take back control today.</p>
+        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 leading-tight">{t('home.problemTitle', "Don't let hidden toxins sabotage your health.")}</h2>
+        <p class="text-base md:text-xl text-slate-600 mb-6 md:mb-8 font-medium leading-relaxed">{t('home.problemDesc', "Over 80% of everyday grocery and cosmetic items contain additives linked to hormonal imbalances, PCOS, and chronic inflammation. Take back control today.")}</p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
           <a href="https://apps.apple.com/app/pure-ai/id6762176490" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0A] text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-lg md:text-xl font-bold hover:scale-105 hover:shadow-2xl transition-all shadow-lg border border-slate-800">
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-7 md:h-7">
               <path d="M15.4 7.6c.4-.6.8-1.5.8-2.3 0-.1 0-.2-.1-.3-.8.1-1.8.5-2.5 1-.6.5-1.1 1.4-1.1 2.2 0 .1.1.2.1.2.8 0 1.8-.4 2.8-.8zm.5 1.5c-1.3 0-2.6.9-3.4.9s-1.8-.8-3-.8c-1.6 0-3 .9-3.9 2.3-1.8 2.8-.5 7 .1 8.1.6.9 1.4 2 2.4 1.9.9-.1 1.4-.7 2.6-.7s1.6.7 2.6.7c1.1.1 1.7-.9 2.4-1.9.8-1.1 1.2-2.3 1.2-2.3s-2.1-.8-2.2-3.3c-.1-2.1 1.7-3.1 1.7-3.2-1-1.4-2.5-1.6-3-1.7z" />
             </svg>
-            App Store
+            {t('common.appStore', 'App Store')}
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.pureai.com&hl=en_GB&referrer=utm_source%3Dpurescanai_website%26utm_medium%3Dbutton%26utm_campaign%3Dorganic" target="_blank" rel="noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#17C37B] text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-lg md:text-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-[#17C37B]/30">
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-7 md:h-7"><path d="M15.5 12.5a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm-7 0a1 1 0 01-1-1 1 1 0 011-1 1 1 0 011 1 1 1 0 01-1 1zm12.3-5.2l1.6-2.8a.4.4 0 00-.2-.6.4.4 0 00-.5.1L20.2 7A9.4 9.4 0 0012 4.6c-3 0-5.7 1.4-7.4 3.5a.5.5 0 000 0l-1.5-2.7a.4.4 0 00-.6-.1c-.2.2-.3.4-.2.6l1.6 2.8A9.7 9.7 0 002 15h20a9.8 9.8 0 00-1.2-7.7z" /></svg>
-            Play Store
+            {t('common.playStore', 'Play Store')}
           </a>
         </div>
         <p class="mt-6 text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest flex items-center justify-center md:justify-start gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          Trusted by 100,000+ Users
+          {t('home.trustedBy', 'Trusted by 100,000+ Users')}
         </p>
       </div>
     </div>
@@ -156,8 +156,8 @@ if (latestPosts.length === 0) {
   <section class="py-12 md:py-24 px-4 md:px-6 max-w-7xl mx-auto">
     <div class="text-center mb-12 md:mb-20">
       <h2 class="text-2xl md:text-5xl font-black text-slate-800 mb-4 leading-tight">
-        Scan the labels of your <br />
-        <span class="text-[#17C37B]">food and cosmetic</span> products
+        {t('home.scanLabelsHeading1', 'Scan the labels of your')} <br />
+        <span class="text-[#17C37B]">{t('home.scanLabelsHeading2', 'food and cosmetic')}</span> {t('home.scanLabelsHeading3', 'products')}
       </h2>
     </div>
 
@@ -174,8 +174,8 @@ if (latestPosts.length === 0) {
             <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /><path d="M16 2v3" /><path d="M4 10h16" /><path d="M21 16c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2h14c1.1 0 2 .9 2v9Z" /><path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" /></svg>
           </div>
           <div class="relative z-10 w-full pr-4 md:pr-8">
-            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#17C37B]">Food analysis</h3>
-            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">Takes disease/condition allergies and gives personalized results per person, not general answers. Every scan is evaluated against your unique health profile.</p>
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#17C37B]">{t('home.foodAnalysisTitle', 'Food analysis')}</h3>
+            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">{t('home.foodAnalysisDesc', 'Takes disease/condition allergies and gives personalized results per person, not general answers. Every scan is evaluated against your unique health profile.')}</p>
           </div>
         </div>
 
@@ -187,8 +187,8 @@ if (latestPosts.length === 0) {
             <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a3.5 3.5 0 0 1 3.5 3.5V8a1 1 0 0 1-1 1H9.5a1 1 0 0 1-1-1V6A3.5 3.5 0 0 1 12 2.5Z" /><path d="M5 16h14" /><path d="M8 12h8" /><path d="M5.5 8h13l1.5 13H4L5.5 8Z" /></svg>
           </div>
           <div class="relative z-10 w-full pr-4 md:pr-8">
-            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#17C37B]">Cosmetic analysis</h3>
-            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">Detect endocrine disruptors, carcinogens, and allergens in your personal care products instantly with a simple scan.</p>
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#17C37B]">{t('home.cosmeticAnalysisTitle', 'Cosmetic analysis')}</h3>
+            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">{t('home.cosmeticAnalysisDesc', 'Detect endocrine disruptors, carcinogens, and allergens in your personal care products instantly with a simple scan.')}</p>
           </div>
         </div>
 
@@ -197,8 +197,8 @@ if (latestPosts.length === 0) {
             <svg width="32" height="32" class="md:w-[44px] md:h-[44px]" viewBox="0 0 24 24" fill="none" stroke="#17C37B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /><rect width="7" height="5" x="7" y="7" rx="1" /><rect width="7" height="5" x="10" y="12" rx="1" /></svg>
           </div>
           <div class="relative z-10 w-full pr-4 md:pr-8">
-            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-slate-700">AI Camera Label Reader</h3>
-            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">Worst case if a product isn't recognized, you can use our advanced AI camera to read the ingredient label. It supports all languages worldwide!</p>
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-slate-700">{t('home.aiReaderTitle', 'AI Camera Label Reader')}</h3>
+            <p class="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">{t('home.aiReaderDesc', "Worst case if a product isn't recognized, you can use our advanced AI camera to read the ingredient label. It supports all languages worldwide!")}</p>
           </div>
         </div>
       </div>
@@ -208,11 +208,11 @@ if (latestPosts.length === 0) {
   <!-- Dietary & Lifestyle Features Section -->
   <section class="py-16 md:py-24 px-4 md:px-6 max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
-      <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-[#17C37B] text-sm font-bold tracking-widest uppercase mb-4">Your Health, Your Rules</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-[#17C37B] text-sm font-bold tracking-widest uppercase mb-4">{t('home.healthRulesBadge', 'Your Health, Your Rules')}</span>
       <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">
-        Designed for <br class="md:hidden" /><span class="text-[#17C37B]">Vegan, Gluten-Free, & Allergic</span> Lifestyles
+        {t('home.designedForPrefix', 'Designed for')} <br class="md:hidden" /><span class="text-[#17C37B]">{t('home.designedForHighlight', 'Vegan, Gluten-Free, & Allergic')}</span> {t('home.designedForSuffix', 'Lifestyles')}
       </h2>
-      <p class="mt-4 md:mt-6 text-lg text-slate-600 max-w-2xl mx-auto font-medium">Shop with absolute peace of mind. Klar instantly decodes complex labels into clear, life-saving alerts.</p>
+      <p class="mt-4 md:mt-6 text-lg text-slate-600 max-w-2xl mx-auto font-medium">{t('home.designedForSubtitle', 'Shop with absolute peace of mind. Klar instantly decodes complex labels into clear, life-saving alerts.')}</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -220,8 +220,8 @@ if (latestPosts.length === 0) {
       <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
         <div class="text-4xl md:text-5xl drop-shadow-sm">🥜</div>
         <div>
-          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Allergy Scanning</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Scan groceries and even bottled water to reveal hidden ingredients that could trigger an allergic reaction. Don't risk your safety on vague labels.</p>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">{t('home.allergyTitle', 'Allergy Scanning')}</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">{t('home.allergyDesc', "Scan groceries and even bottled water to reveal hidden ingredients that could trigger an allergic reaction. Don't risk your safety on vague labels.")}</p>
         </div>
       </div>
 
@@ -229,8 +229,8 @@ if (latestPosts.length === 0) {
       <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
         <div class="text-4xl md:text-5xl drop-shadow-sm">🌾</div>
         <div>
-          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Gluten Free Scanning</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Wheat, barley, rye, or their hidden derivatives—the scanner relentlessly flags any gluten-containing ingredients to protect your gut.</p>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">{t('home.glutenTitle', 'Gluten Free Scanning')}</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">{t('home.glutenDesc', 'Wheat, barley, rye, or their hidden derivatives—the scanner relentlessly flags any gluten-containing ingredients to protect your gut.')}</p>
         </div>
       </div>
 
@@ -238,8 +238,8 @@ if (latestPosts.length === 0) {
       <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
         <div class="text-4xl md:text-5xl drop-shadow-sm">🥛</div>
         <div>
-          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Dairy and Lactose</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Instantly detect common dairy-derived ingredients like casein, whey, lactose, and more. Essential for strict vegans and lactose intolerants.</p>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">{t('home.dairyTitle', 'Dairy and Lactose')}</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">{t('home.dairyDesc', 'Instantly detect common dairy-derived ingredients like casein, whey, lactose, and more. Essential for strict vegans and lactose intolerants.')}</p>
         </div>
       </div>
 
@@ -247,8 +247,8 @@ if (latestPosts.length === 0) {
       <div class="bg-white p-6 md:p-8 rounded-[2rem] flex items-start gap-5 shadow-sm hover:shadow-xl transition-all border-2 border-[#f1faee]">
         <div class="text-4xl md:text-5xl drop-shadow-sm">✅</div>
         <div>
-          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Ingredient Checking</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Decode complex, deceptive ingredient labels in seconds with easy-to-understand alerts. Know exactly what you're putting into your body.</p>
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">{t('home.ingredientTitle', 'Ingredient Checking')}</h3>
+          <p class="text-slate-600 font-medium leading-relaxed">{t('home.ingredientDesc', "Decode complex, deceptive ingredient labels in seconds with easy-to-understand alerts. Know exactly what you're putting into your body.")}</p>
         </div>
       </div>
     </div>
@@ -262,9 +262,9 @@ if (latestPosts.length === 0) {
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       </div>
-      <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-4">Backed by Science & Verified Data</h2>
+      <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-4">{t('home.backedByScience', 'Backed by Science & Verified Data')}</h2>
       <p class="text-base md:text-lg text-slate-600 font-medium leading-relaxed">
-        Our analysis engine is built on robust scientific research, cross-referencing ingredient data with leading medical guidelines and global health organizations to provide you with accurate, trustworthy information about hidden toxins and allergens.
+        {t('home.backedByScienceDesc', 'Our analysis engine is built on robust scientific research, cross-referencing ingredient data with leading medical guidelines and global health organizations to provide you with accurate, trustworthy information about hidden toxins and allergens.')}
       </p>
     </div>
   </section>
@@ -272,7 +272,7 @@ if (latestPosts.length === 0) {
   <!-- Reviews Section -->
   <section class="py-12 md:py-24 bg-white relative">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
-      <h2 class="text-2xl md:text-4xl font-black text-center text-slate-800 mb-10 md:mb-16 leading-tight">See why people rely on <br class="md:hidden" /><span class="text-[#17C37B]">Klar</span></h2>
+      <h2 class="text-2xl md:text-4xl font-black text-center text-slate-800 mb-10 md:mb-16 leading-tight">{t('home.whyPeopleRely', 'See why people rely on Klar')}</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
@@ -286,7 +286,7 @@ if (latestPosts.length === 0) {
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             </div>
-            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">"Changed my life! I finally know exactly what triggers my PCOS. The AI labels read are mind-blowing. It truly adapts to YOUR health."</p>
+            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">{t('home.review1Text', '"Changed my life! I finally know exactly what triggers my PCOS. The AI labels read are mind-blowing. It truly adapts to YOUR health."')}</p>
           </div>
           <div class="mt-4 md:mt-6">
             <span class="font-bold text-slate-800 text-sm md:text-base">— Sarah M.</span>
@@ -306,7 +306,7 @@ if (latestPosts.length === 0) {
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             </div>
-            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">"Scanning is addictive! I found out my favorite cereal was full of carcinogens. I love that I don't have to manually type unknown products."</p>
+            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">{t('home.review2Text', '"Scanning is addictive! I found out my favorite cereal was full of carcinogens. I love that I don\'t have to manually type unknown products."')}</p>
           </div>
           <div class="mt-4 md:mt-6 relative z-10">
             <span class="font-bold text-slate-800 text-sm md:text-base">— Emily R.</span>
@@ -323,7 +323,7 @@ if (latestPosts.length === 0) {
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             </div>
-            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">"The only scanner that ACTUALLY reads the label when a product isn't in their database. Absolute game-changer."</p>
+            <p class="text-base md:text-lg text-slate-700 italic font-medium leading-relaxed">{t('home.review3Text', '"The only scanner that ACTUALLY reads the label when a product isn\'t in their database. Absolute game-changer."')}</p>
           </div>
           <div class="mt-4 md:mt-6 relative z-10">
             <span class="font-bold text-slate-800 text-sm md:text-base">— Jessica T.</span>
@@ -338,46 +338,46 @@ if (latestPosts.length === 0) {
   <section class="py-12 md:py-24 bg-white">
     <div class="max-w-5xl mx-auto px-4 md:px-6">
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 md:mb-6 leading-tight">Why Klar is the <br class="md:hidden" />Most Advanced</h2>
+        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 md:mb-6 leading-tight">{t('home.whyMostAdvanced', 'Why Klar is the Most Advanced')}</h2>
       </div>
 
       <div class="overflow-x-auto border-4 border-slate-100 rounded-[1.5rem] md:rounded-[2rem] shadow-xl p-1 bg-white">
         <table class="w-full text-left border-collapse min-w-[650px]">
           <thead>
             <tr>
-              <th class="p-4 md:p-8 bg-slate-50 border-b-4 border-slate-100 text-lg md:text-2xl font-black text-slate-600 w-1/3 rounded-tl-[1rem] md:rounded-tl-[1.5rem]">Feature</th>
+              <th class="p-4 md:p-8 bg-slate-50 border-b-4 border-slate-100 text-lg md:text-2xl font-black text-slate-600 w-1/3 rounded-tl-[1rem] md:rounded-tl-[1.5rem]">{t('home.tableFeature', 'Feature')}</th>
               <th class="p-4 md:p-8 bg-[#17C37B] border-b-4 border-[#16b572] text-lg md:text-2xl font-black text-white w-1/3 text-center shadow-inner pt-6 md:pt-10">Klar</th>
-              <th class="p-4 md:p-8 bg-slate-50 border-b-4 border-slate-100 text-lg md:text-2xl font-black text-slate-500 w-1/3 text-center rounded-tr-[1rem] md:rounded-tr-[1.5rem]">Other Scanners</th>
+              <th class="p-4 md:p-8 bg-slate-50 border-b-4 border-slate-100 text-lg md:text-2xl font-black text-slate-500 w-1/3 text-center rounded-tr-[1rem] md:rounded-tr-[1.5rem]">{t('home.tableOthers', 'Other Scanners')}</th>
             </tr>
           </thead>
           <tbody class="text-sm md:text-lg text-slate-700 font-medium">
             <tr>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Analysis Type</td>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Personalized to YOU</td>
-              <td class="p-4 md:p-6 bg-white text-center text-slate-400">General only</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">{t('home.tableRow1Title', 'Analysis Type')}</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">{t('home.tableRow1Klar', 'Personalized to YOU')}</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">{t('home.tableRow1Others', 'General only')}</td>
             </tr>
             <tr>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Health Adaptability</td>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Adaptable to Conditions</td>
-              <td class="p-4 md:p-6 bg-white text-center text-slate-400">Standard grading</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">{t('home.tableRow2Title', 'Health Adaptability')}</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">{t('home.tableRow2Klar', 'Adaptable to Conditions')}</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">{t('home.tableRow2Others', 'Standard grading')}</td>
             </tr>
             <tr>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Product Database</td>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Massive - No typing</td>
-              <td class="p-4 md:p-6 bg-white text-center text-slate-400">Manual entry needed</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">{t('home.tableRow3Title', 'Product Database')}</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">{t('home.tableRow3Klar', 'Massive - No typing')}</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">{t('home.tableRow3Others', 'Manual entry needed')}</td>
             </tr>
             <tr>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Unrecognized Items</td>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">Reads labels via AI</td>
-              <td class="p-4 md:p-6 bg-white text-center text-slate-400">Scan fails</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">{t('home.tableRow4Title', 'Unrecognized Items')}</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">{t('home.tableRow4Klar', 'Reads labels via AI')}</td>
+              <td class="p-4 md:p-6 bg-white text-center text-slate-400">{t('home.tableRow4Others', 'Scan fails')}</td>
             </tr>
             <tr>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">Language Support</td>
-              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">ALL World Languages</td>
-              <td class="p-4 md:p-6 border-b-2 border-slate-100 bg-white text-center text-slate-400">Limited languages</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-white font-bold text-slate-800">{t('home.tableRow5Title', 'Language Support')}</td>
+              <td class="p-4 md:p-6 md:px-8 border-b-2 border-r-2 border-slate-100 bg-green-50/50 text-center font-bold text-[#17C37B] text-base md:text-xl">{t('home.tableRow5Klar', 'ALL World Languages')}</td>
+              <td class="p-4 md:p-6 border-b-2 border-slate-100 bg-white text-center text-slate-400">{t('home.tableRow5Others', 'Limited languages')}</td>
             </tr>
             <tr>
-              <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-white rounded-bl-[1rem] md:rounded-bl-[1.5rem] font-bold text-slate-800">The Experience</td>
+              <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-white rounded-bl-[1rem] md:rounded-bl-[1.5rem] font-bold text-slate-800">{t('home.tableRow6Title', 'The Experience')}</td>
               <td class="p-4 md:p-6 md:px-8 border-r-2 border-slate-100 bg-green-50/50 text-center">
                 <Image src={mascotHappy} alt="Happy Experience" format="webp" loading="lazy" class="inline-block w-[60px] md:w-[90px] drop-shadow-md animate-bounce" style="animation-duration: 2.5s" />
               </td>
@@ -395,8 +395,8 @@ if (latestPosts.length === 0) {
   <section class="py-12 md:py-24 bg-slate-50 border-t border-slate-100">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 leading-tight">Latest <span class="text-[#17C37B]">Insights</span></h2>
-        <p class="text-slate-600 font-medium">Expert analysis on ingredients, toxins, and healthy living.</p>
+        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-4 leading-tight">{t('home.latestInsights', 'Latest Insights')}</h2>
+        <p class="text-slate-600 font-medium">{t('home.latestInsightsSubtitle', 'Expert analysis on ingredients, toxins, and healthy living.')}</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -418,7 +418,7 @@ if (latestPosts.length === 0) {
                 {post.data.description}
               </p>
               <div class="mt-auto font-bold text-[#17C37B] text-sm flex items-center gap-1 group-hover:gap-2 transition-all pt-4">
-                Read Article <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                {t('home.readArticle', 'Read Article')} <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </div>
             </div>
           </a>
@@ -461,7 +461,7 @@ if (latestPosts.length === 0) {
         <SignOutButton client:load />
       </p>
       <p class="text-slate-400 font-medium pb-4 text-xs flex flex-wrap justify-center items-center gap-y-2">
-        <span class="font-semibold text-slate-500 mr-2">Compare:</span>
+        <span class="font-semibold text-slate-500 mr-2">{t('home.compareLabel', 'Compare:')}</span>
         <a href="/alternatives/yuka" class="hover:text-[#17C37B] transition-colors">Klar vs Yuka</a>
         <span class="mx-2">•</span>
         <a href="/alternatives/ewg" class="hover:text-[#17C37B] transition-colors">Klar vs EWG</a>

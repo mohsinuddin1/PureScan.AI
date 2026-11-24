@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Voedingsmiddelen)",
     "para1": "De Nutri-Score wordt berekend met behulp van een gestandaardiseerd, wetenschappelijk algoritme dat de algehele voedingswaarde van een voedingsmiddel per 100g of 100ml beoordeelt. Het balanceert negatieve voedingsstoffen om te beperken met positieve voedingsstoffen om aan te moedigen, wat resulteert in een cijfer van A (beste) tot E (slechtste).",
-    "para2": "PureScan AI berekent dit automatisch aan de hand van de gegevens die zijn ingevoerd vanaf de verpakking van het product:",
+    "para2": "Klar berekent dit automatisch aan de hand van de gegevens die zijn ingevoerd vanaf de verpakking van het product:",
     "negPoints": {
       "title": "Negatieve punten (Verhogen de score / verslechteren het cijfer):",
       "desc": "Punten worden toegevoegd op basis van de hoeveelheid energie (calorieën), verzadigd vet, suikers en natrium (zout)."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Het eindcijfer:",
-      "desc": "De positieve punten worden afgetrokken van de negatieve punten om een uiteindelijke numerieke score te krijgen. Dit getal wordt vervolgens gekoppeld aan de A-E-kleurenschaal. PureScan AI gebruikt de exacte voedingswaarden uit de voedingstabel en de ingrediëntenlijst van het product om deze score voor miljoenen producten te bereken."
+      "desc": "De positieve punten worden afgetrokken van de negatieve punten om een uiteindelijke numerieke score te krijgen. Dit getal wordt vervolgens gekoppeld aan de A-E-kleurenschaal. Klar gebruikt de exacte voedingswaarden uit de voedingstabel en de ingrediëntenlijst van het product om deze score voor miljoenen producten te bereken."
     },
     "grades": {
       "a": "Grade A (Donkergroen):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA-classificatie (Voedingsmiddelen)",
-    "para1": "In tegenstelling tot de wiskundige formule van de Nutri-Score, is de NOVA-score een classificatiesysteem dat voedsel categoriseert op basis van de mate waarin het industrieel is bewerkt. PureScan AI gebruikt een geautomatiseerd algoritme om de ingrediëntenlijst van het product te analyseren en het in een van de vier groepen in te delen:",
+    "para1": "In tegenstelling tot de wiskundige formule van de Nutri-Score, is de NOVA-score een classificatiesysteem dat voedsel categoriseert op basis van de mate waarin het industrieel is bewerkt. Klar gebruikt een geautomatiseerd algoritme om de ingrediëntenlijst van het product te analyseren en het in een van de vier groepen in te delen:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Onbewerkt / Minimaal bewerkt)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Hoe PureScan AI NOVA berekent:",
-      "desc": "PureScan AI gebruikt een algoritme dat de ingrediëntenlijst scant om te zoeken naar specifieke \"markers\" van ultrabewerking. Als het algoritme industriële additieven, kunstmatige smaakstoffen of sterk bewerkte ingrediënten detecteert, markeert het het product automatisch als NOVA 4."
+      "title": "Hoe Klar NOVA berekent:",
+      "desc": "Klar gebruikt een algoritme dat de ingrediëntenlijst scant om te zoeken naar specifieke \"markers\" van ultrabewerking. Als het algoritme industriële additieven, kunstmatige smaakstoffen of sterk bewerkte ingrediënten detecteert, markeert het het product automatisch als NOVA 4."
     },
     "important": {
       "title": "Belangrijk onderscheid:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI Veiligheidsscoresysteem",
-    "para1": "Terwijl Nutri-Score en NOVA basislijnen bieden, berekent PureScan AI een gepersonaliseerd veiligheidscijfer (variërend van A tot E). Ons beoordelingssysteem werkt als een \"risicoscore\": hoe meer risicopunten worden verzameld, hoe lager de uiteindelijke letterbeoordeling (dichter bij E).",
+    "title": "3. Klar Veiligheidsscoresysteem",
+    "para1": "Terwijl Nutri-Score en NOVA basislijnen bieden, berekent Klar een gepersonaliseerd veiligheidscijfer (variërend van A tot E). Ons beoordelingssysteem werkt als een \"risicoscore\": hoe meer risicopunten worden verzameld, hoe lager de uiteindelijke letterbeoordeling (dichter bij E).",
     "penalties": {
       "title": "Hoe straffen en aftrekkingen werken:",
       "desc": "Een product begint met een perfecte \"A\"-beoordeling en krijgt straffen (risicopunten) op basis van verschillende detecties:"
@@ -104,7 +104,7 @@
     "privacy": "Privacybeleid",
     "terms": "Servicevoorwaarden",
     "support": "Ondersteuning",
-    "copyright": "© {{year}} PureScan AI. De meest geavanceerde voedsel- en cosmeticascanner.",
+    "copyright": "© {{year}} Klar (voorheen PureScan AI). De meest geavanceerde voedsel- en cosmeticascanner.",
     "blog": "Blog"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Deskundige artikelen over verborgen gifstoffen, allergenen en hormoonverstoorders in voeding en cosmetica. Onderbouwd met PubMed-studies.",
     "brandBlog": "Klar Blog",
     "hubTitle": "Het Gezondheidscentrum",
-    "hubSubtitle": "Uw betrouwbare gids voor het ontcijferen van voedseletiketten, cosmetica-ingrediënten en het maken van gezondere keuzes op basis van wetenschap."
+    "hubSubtitle": "Uw betrouwbare gids voor het ontcijferen van voedseletiketten, cosmetica-ingrediënten en het maken van gezondere keuzes op basis van wetenschap.",
+    "backToAll": "Terug naar alle artikelen",
+    "minRead": "min leestijd",
+    "ctaBannerTitle": "Wilt u uw eigen producten nu meteen controleren?",
+    "ctaBannerDesc": "Scan elke barcode of elk etiket in seconden met Klar — gratis op iOS & Android.",
+    "ctaCardTitle": "Scan uw producten nu met Klar",
+    "ctaCardDesc": "Download Klar (voorheen PureScan AI) gratis en ontdek direct verborgen gifstoffen, allergenen en schadelijke toevoegingen.",
+    "relatedArticles": "Gerelateerde artikelen"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — Het Beste Alternatief",
@@ -190,6 +197,60 @@
     "backedByScience": "Ondersteund door Wetenschap & Geverifieerde Data",
     "whyPeopleRely": "Ontdek waarom duizenden gebruikers kiezen voor Klar",
     "whyMostAdvanced": "Waarom Klar de meest geavanceerde keuze is",
-    "latestInsights": "Nieuwste Inzichten"
+    "latestInsights": "Nieuwste Inzichten",
+    "aboutText": "Klar (voorheen PureScan AI) is een mobiele app voor iOS en Android die kunstmatige intelligentie gebruikt om voedsel- en cosmetica-etiketten te scannen en verborgen gifstoffen, allergenen, hormoonverstoorders en ultrabewerkte additieven direct op te sporen. Het biedt gepersonaliseerde risicobeoordelingen op basis van uw gezondheid, allergieën en dieet.",
+    "linkIngredientScanner": "Ingrediëntenscanner →",
+    "linkFoodScanner": "Voedselscanner →",
+    "linkCosmeticChecker": "Cosmeticachecker →",
+    "linkAllergyScanner": "Allergiescanner →",
+    "problemDesc": "Meer dan 80% van de dagelijkse boodschappen en cosmetica bevat additieven die gelinkt zijn aan hormonale disbalans, PCOS en chronische ontstekingen. Neem vandaag de controle terug.",
+    "trustedBy": "Vertrouwd door 100.000+ gebruikers",
+    "scanLabelsHeading1": "Scan de etiketten van uw",
+    "scanLabelsHeading2": "voedings- en cosmetica-",
+    "scanLabelsHeading3": "producten",
+    "foodAnalysisTitle": "Voedselanalyse",
+    "foodAnalysisDesc": "Houdt rekening met aandoeningen en allergieën voor persoonlijke resultaten in plaats van algemene antwoorden.",
+    "cosmeticAnalysisTitle": "Cosmetica-analyse",
+    "cosmeticAnalysisDesc": "Spoor hormoonverstoorders, kankerverwekkende stoffen en allergenen in uw verzorgingsproducten direct op met één scan.",
+    "aiReaderTitle": "AI-camera Etiketlezer",
+    "aiReaderDesc": "Als een product onbekend is, leest onze geavanceerde AI-camera het etiket direct voor u – in alle talen wereldwijd!",
+    "healthRulesBadge": "Uw gezondheid, uw regels",
+    "designedForPrefix": "Ontworpen voor",
+    "designedForHighlight": "Veganistische, Glutenvrije & Allergievriendelijke",
+    "designedForSuffix": "leefstijlen",
+    "designedForSubtitle": "Winkel met volledige gemoedsrust. Klar vertaalt ingewikkelde etiketten direct naar duidelijke waarschuwingen.",
+    "allergyTitle": "Allergieën scannen",
+    "allergyDesc": "Scan boodschappen en zelfs fleswater om verborgen ingrediënten te ontdekken die allergische reacties kunnen veroorzaken.",
+    "glutenTitle": "Glutenvrij scannen",
+    "glutenDesc": "Tarwe, gerst, rogge of verborgen derivaten: de scanner signaleert genadeloos alle glutenbronnen om uw darmen te beschermen.",
+    "dairyTitle": "Zuivel en lactose",
+    "dairyDesc": "Herken direct caseïne, wei, lactose en melkderivaten. Onmisbaar voor veganisten en mensen met lactose-intolerantie.",
+    "ingredientTitle": "Ingrediëntencontrole",
+    "ingredientDesc": "Ontcijfer ingewikkelde ingrediëntenlijsten binnen enkele seconden met heldere meldingen.",
+    "backedByScienceDesc": "Onze analyse-engine is gebaseerd op wetenschappelijk onderzoek en toetst ingrediënten aan medische richtlijnen en wereldwijde gezondheidsorganisaties.",
+    "review1Text": "\"Heeft mijn leven veranderd! Eindelijk weet ik wat mijn PCOS triggert. De AI-etiketlezer is geweldig en past zich echt aan JOUW gezondheid aan.\"",
+    "review2Text": "\"Scannen werkt verslavend! Ik ontdekte dat mijn favoriete ontbijtgranen vol schadelijke stoffen zaten. Heerlijk dat je niets handmatig hoeft in te voeren.\"",
+    "review3Text": "\"De enige scanner die ECHT het etiket leest als een product niet in de database staat. Een absolute gamechanger.\"",
+    "tableFeature": "Functie",
+    "tableOthers": "Andere scanners",
+    "tableRow1Title": "Analysetype",
+    "tableRow1Klar": "Gepersonaliseerd voor JOU",
+    "tableRow1Others": "Alleen algemeen",
+    "tableRow2Title": "Gezondheidsaanpassing",
+    "tableRow2Klar": "Aanpasbaar aan aandoeningen",
+    "tableRow2Others": "Standaardbeoordeling",
+    "tableRow3Title": "Productdatabase",
+    "tableRow3Klar": "Enorm – Niet typen",
+    "tableRow3Others": "Handmatige invoer nodig",
+    "tableRow4Title": "Onbekende producten",
+    "tableRow4Klar": "Leest etiketten via AI",
+    "tableRow4Others": "Scan mislukt",
+    "tableRow5Title": "Taalondersteuning",
+    "tableRow5Klar": "ALLE wereldtalen",
+    "tableRow5Others": "Beperkte talen",
+    "tableRow6Title": "De ervaring",
+    "latestInsightsSubtitle": "Deskundige analyses over ingrediënten, gifstoffen en gezond leven.",
+    "readArticle": "Lees artikel",
+    "compareLabel": "Vergelijk:"
   }
 }

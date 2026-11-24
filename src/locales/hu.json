@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Élelmiszerek)",
     "para1": "A Nutri-Score kiszámítása egy szabványosított, tudományos algoritmus segítségével történik, amely 100g-ra vagy 100ml-re vonatkozóan értékeli az élelmiszerek általános tápértékét. Egyensúlyozza a korlátozandó negatív tápanyagokat az ösztönzendő pozitív tápanyagokkal, ami A-tól (legjobb) E-ig (legrosszabb) terjedő besorolást eredményez.",
-    "para2": "A PureScan AI ezt automatikusan kiszámítja a termék csomagolásán található adatok alapján:",
+    "para2": "A Klar ezt automatikusan kiszámítja a termék csomagolásán található adatok alapján:",
     "negPoints": {
       "title": "Negatív pontok (Növelik a pontszámot / rontják a besorolást):",
       "desc": "A rendszer az energia (kalória), a telített zsírok, a cukrok és a nátrium (só) mennyisége alapján ad hozzá pontokat."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "A végső besorolás:",
-      "desc": "A pozitív pontokat levonjuk a negatív pontokból, így megkapjuk a végső számértéket. Ezt a számot az A-E színskálához rendeljük hozzá. A PureScan AI a termék tápérték-táblázatából és összetevőlistájából származó pontos tápanyagértékeket használja a pontszám kiszámításához millió termék esetében."
+      "desc": "A pozitív pontokat levonjuk a negatív pontokból, így megkapjuk a végső számértéket. Ezt a számot az A-E színskálához rendeljük hozzá. A Klar a termék tápérték-táblázatából és összetevőlistájából származó pontos tápanyagértékeket használja a pontszám kiszámításához millió termék esetében."
     },
     "grades": {
       "a": "A Besorolás (Sötétzöld):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA Osztályozás (Élelmiszerek)",
-    "para1": "A Nutri-Score matematikai képletével ellentétben a NOVA pontszám egy osztályozási rendszer, amely aszerint kategorizálja az élelmiszereket, hogy mennyire iparilag feldolgozottak. A PureScan AI egy automatizált algoritmussal elemzi a termék összetevőlistáját, és négy csoport egyikébe sorolja be:",
+    "para1": "A Nutri-Score matematikai képletével ellentétben a NOVA pontszám egy osztályozási rendszer, amely aszerint kategorizálja az élelmiszereket, hogy mennyire iparilag feldolgozottak. A Klar egy automatizált algoritmussal elemzi a termék összetevőlistáját, és négy csoport egyikébe sorolja be:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Feldolgozatlan / Minimálisan feldolgozott)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Hogyan számítja ki a PureScan AI a NOVA-t:",
-      "desc": "A PureScan AI algoritmusa átvizsgálja az összetevők listáját, hogy specifikus „markereket” keressen az ultrafeldolgozásra. Ha az algoritmus ipari adalékanyagokat, mesterséges aromákat vagy erősen feldolgozott összetevőket talál, automatikusan NOVA 4-es kategóriába sorolja a terméket."
+      "title": "Hogyan számítja ki a Klar a NOVA-t:",
+      "desc": "A Klar algoritmusa átvizsgálja az összetevők listáját, hogy specifikus „markereket” keressen az ultrafeldolgozásra. Ha az algoritmus ipari adalékanyagokat, mesterséges aromákat vagy erősen feldolgozott összetevőket talál, automatikusan NOVA 4-es kategóriába sorolja a terméket."
     },
     "important": {
       "title": "Fontos Megkülönböztetés:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI Biztonsági Értékelési Rendszer",
-    "para1": "Míg a Nutri-Score és a NOVA alapértékeket ad, a PureScan AI kiszámít egy személyre szabott Biztonsági Osztályzatot (A-tól E-ig). Rendszerünk úgy működik, mint egy „kockázati pontszám” – minél több kockázati pont gyűlik össze, annál alacsonyabb a végső besorolás (közelebb az E-hez).",
+    "title": "3. Klar Biztonsági Értékelési Rendszer",
+    "para1": "Míg a Nutri-Score és a NOVA alapértékeket ad, a Klar kiszámít egy személyre szabott Biztonsági Osztályzatot (A-tól E-ig). Rendszerünk úgy működik, mint egy „kockázati pontszám” – minél több kockázati pont gyűlik össze, annál alacsonyabb a végső besorolás (közelebb az E-hez).",
     "penalties": {
       "title": "Hogyan működnek a büntetések és a pontlevonások:",
       "desc": "Egy termék tökéletes „A” besorolással indul, és a különböző találatok alapján kap büntetéseket (kockázati pontokat):"
@@ -103,7 +103,9 @@
     "grading": "Minősítési Rendszer",
     "privacy": "Adatvédelmi Tájékoztató",
     "terms": "Felhasználási Feltételek",
-    "blog": "Blog"
+    "blog": "Blog",
+    "copyright": "© {{year}} Klar (korábban PureScan AI). A legfejlettebb élelmiszer- és kozmetikai szkenner.",
+    "support": "Támogatás"
   },
   "common": {
     "back": "Vissza",
@@ -119,7 +121,14 @@
     "metaDescription": "Szakértői cikkek a rejtett méreganyagokról, allergénekről és hormonkárosító vegyületekről. PubMed kutatásokkal alátámasztva.",
     "brandBlog": "Klar Blog",
     "hubTitle": "Egészségközpont",
-    "hubSubtitle": "Az Ön megbízható útmutatója az élelmiszercímkék és kozmetikai összetevők megfejtéséhez, valamint a tudományosan megalapozott egészséges döntésekhez."
+    "hubSubtitle": "Az Ön megbízható útmutatója az élelmiszercímkék és kozmetikai összetevők megfejtéséhez, valamint a tudományosan megalapozott egészséges döntésekhez.",
+    "backToAll": "Vissza az összes cikkhez",
+    "minRead": "perc olvasás",
+    "ctaBannerTitle": "Szeretné most ellenőrizni a saját termékeit?",
+    "ctaBannerDesc": "Szkenneljen be bármilyen vonalkódot vagy címkét másodpercek alatt a Klarral — ingyen iOS-en és Androidon.",
+    "ctaCardTitle": "Szkennelje termékeit most a Klarral",
+    "ctaCardDesc": "Töltse le ingyen a Klart (korábban PureScan AI), és azonnal ismerje fel a rejtett toxinokat, allergéneket és káros adalékanyagokat.",
+    "relatedArticles": "Kapcsolódó cikkek"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — A Legjobb Alternatíva",
@@ -188,6 +197,60 @@
     "backedByScience": "Tudományos Eredményekre és Hitelesített Adatokra Építve",
     "whyPeopleRely": "Nézze meg, miért bíznak ezrek a Klarban",
     "whyMostAdvanced": "Miért a Klar a legfejlettebb választás",
-    "latestInsights": "Legfrissebb Cikkek"
+    "latestInsights": "Legfrissebb Cikkek",
+    "aboutText": "A Klar (korábban PureScan AI) egy iOS és Android mobilalkalmazás, amely mesterséges intelligenciával olvassa be az élelmiszerek és kozmetikumok címkéit, azonnal felismerve a rejtett toxinokat, allergéneket, hormonkárosító anyagokat és ultrafeldolgozott adalékokat. Személyre szabott egészségügyi kockázatértékelést ad az Ön betegségei, allergiái és étrendje alapján.",
+    "linkIngredientScanner": "Összetevő-szkenner →",
+    "linkFoodScanner": "Élelmiszer-szkenner →",
+    "linkCosmeticChecker": "Kozmetikum-ellenőrző →",
+    "linkAllergyScanner": "Allergiaszkenner →",
+    "problemDesc": "A mindennapi élelmiszerek és kozmetikumok több mint 80%-a olyan adalékanyagokat tartalmaz, amelyek hormonális egyensúlyzavarhoz, PCOS-hez és krónikus gyulladáshoz kapcsolódnak. Vegye vissza az irányítást még ma!",
+    "trustedBy": "Több mint 100 000 felhasználó bizalmával",
+    "scanLabelsHeading1": "Szkennelje be",
+    "scanLabelsHeading2": "élelmiszerei és kozmetikumai",
+    "scanLabelsHeading3": "címkéit",
+    "foodAnalysisTitle": "Élelmiszer-elemzés",
+    "foodAnalysisDesc": "Figyelembe veszi betegségeit és allergiáit, így általános válaszok helyett személyre szabott eredményt ad.",
+    "cosmeticAnalysisTitle": "Kozmetikum-elemzés",
+    "cosmeticAnalysisDesc": "Egyetlen szkenneléssel azonnal felismeri a hormonkárosító anyagokat, rákkeltő összetevőket és allergéneket.",
+    "aiReaderTitle": "AI kamera címkeolvasó",
+    "aiReaderDesc": "Ha egy termék nincs az adatbázisban, fejlett AI kameránk közvetlenül leolvassa az összetevőlistát – a világ minden nyelvén!",
+    "healthRulesBadge": "Az Ön egészsége, az Ön szabályai",
+    "designedForPrefix": "Tervezve",
+    "designedForHighlight": "Vegán, Gluténmentes és Allergiabarát",
+    "designedForSuffix": "életmódhoz",
+    "designedForSubtitle": "Vásároljon teljes nyugalommal. A Klar másodpercek alatt érthető figyelmeztetésekké alakítja a bonyolult címkéket.",
+    "allergyTitle": "Allergiaszkennelés",
+    "allergyDesc": "Szkennelje be az élelmiszereket és akár a palackozott vizet is, hogy feltárja az allergiás reakciót kiváltó rejtett összetevőket.",
+    "glutenTitle": "Gluténmentes szkennelés",
+    "glutenDesc": "Búza, árpa, rozs vagy rejtett származékok – a szkenner azonnal megjelöli a gluténtartalmú összetevőket.",
+    "dairyTitle": "Tejtermék és laktóz",
+    "dairyDesc": "Azonnal felismeri a kazeint, tejsavót, laktózt és tejszármazékokat. Nélkülözhetetlen vegánoknak és laktózérzékenyeknek.",
+    "ingredientTitle": "Összetevő-ellenőrzés",
+    "ingredientDesc": "Fejtse meg a félrevezető összetevőlistákat pillanatok alatt közérthető figyelmeztetésekkel.",
+    "backedByScienceDesc": "Elemzőmotorunk szilárd tudományos kutatásokra épül, és az összetevőket vezető orvosi irányelvekkel valamint globális egészségügyi szervezetekkel veti össze.",
+    "review1Text": "\"Megváltoztatta az életemet! Végre pontosan tudom, mi váltja ki a PCOS-emet. Az AI címkeolvasás lenyűgöző, és tényleg az ÖN egészségéhez igazodik.\"",
+    "review2Text": "\"A szkennelés függőséget okoz! Kiderült, hogy a kedvenc müzlim tele volt káros anyagokkal. Imádom, hogy nem kell kézzel begépelni az ismeretlen termékeket.\"",
+    "review3Text": "\"Az egyetlen szkenner, amely VALÓBAN elolvassa a címkét, ha egy termék nincs az adatbázisban. Igazi áttörés.\"",
+    "tableFeature": "Funkció",
+    "tableOthers": "Más szkennerek",
+    "tableRow1Title": "Elemzés típusa",
+    "tableRow1Klar": "Személyre szabva ÖNNEK",
+    "tableRow1Others": "Csak általános",
+    "tableRow2Title": "Egészségügyi alkalmazkodás",
+    "tableRow2Klar": "Állapotokhoz igazítható",
+    "tableRow2Others": "Szabványos értékelés",
+    "tableRow3Title": "Termékadatbázis",
+    "tableRow3Klar": "Hatalmas – Gépelés nélkül",
+    "tableRow3Others": "Kézi bevitel szükséges",
+    "tableRow4Title": "Ismeretlen termékek",
+    "tableRow4Klar": "Címkét olvas AI-val",
+    "tableRow4Others": "Sikertelen szkennelés",
+    "tableRow5Title": "Nyelvi támogatás",
+    "tableRow5Klar": "MINDEN világnyelv",
+    "tableRow5Others": "Korlátozott nyelvek",
+    "tableRow6Title": "Az élmény",
+    "latestInsightsSubtitle": "Szakértői elemzések az összetevőkről, toxinokról és az egészséges életmódról.",
+    "readArticle": "Cikk elolvasása",
+    "compareLabel": "Összehasonlítás:"
   }
 }

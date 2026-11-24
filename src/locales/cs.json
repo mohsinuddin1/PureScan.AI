@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Potravinářské Výrobky)",
     "para1": "Nutri-Score se vypočítává pomocí standardizovaného vědeckého algoritmu, který posuzuje celkovou nutriční hodnotu potravinářského výrobku na 100g nebo 100ml. Vyvažuje negativní živiny, které je třeba omezit, s pozitivními živinami, které je třeba podporovat, což vede ke známce od A (nejlepší) po E (nejhorší).",
-    "para2": "PureScan AI to vypočítá automaticky pomocí dat zadaných z obalu produktu:",
+    "para2": "Klar to vypočítá automaticky pomocí dat zadaných z obalu produktu:",
     "negPoints": {
       "title": "Negativní Body (Zvyšují skóre / zhoršují známku):",
       "desc": "Body se přičítají na základě množství energie (kalorií), nasycených tuků, cukrů a sodíku (soli)."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Konečná Známka:",
-      "desc": "Pozitivní body se odečítají od negativních bodů, aby se získalo konečné číselné skóre. Toto číslo je pak namapováno na barevnou škálu A-E. PureScan AI používá přesné hodnoty živin z tabulky nutričních hodnot a seznamu složek k výpočtu tohoto skóre pro miliony produktů."
+      "desc": "Pozitivní body se odečítají od negativních bodů, aby se získalo konečné číselné skóre. Toto číslo je pak namapováno na barevnou škálu A-E. Klar používá přesné hodnoty živin z tabulky nutričních hodnot a seznamu složek k výpočtu tohoto skóre pro miliony produktů."
     },
     "grades": {
       "a": "Známka A (Tmavě Zelená):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. Klasifikace NOVA (Potravinářské Výrobky)",
-    "para1": "Na rozdíl od matematického vzorce Nutri-Score je skóre NOVA klasifikační systém, který rozděluje potraviny na základě toho, jak moc byly průmyslově zpracovány. PureScan AI používá automatický algoritmus k analýze seznamu složek produktu a jeho zařazení do jedné ze čtyř skupin:",
+    "para1": "Na rozdíl od matematického vzorce Nutri-Score je skóre NOVA klasifikační systém, který rozděluje potraviny na základě toho, jak moc byly průmyslově zpracovány. Klar používá automatický algoritmus k analýze seznamu složek produktu a jeho zařazení do jedné ze čtyř skupin:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Nezpracované / Minimálně zpracované)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Jak PureScan AI počítá NOVA:",
-      "desc": "PureScan AI používá algoritmus, který prohledává seznam složek a hledá specifické „markery“ ultra-zpracování. Pokud algoritmus detekuje průmyslové přísady, umělá aromata nebo vysoce zpracované složky, automaticky označí produkt jako NOVA 4."
+      "title": "Jak Klar počítá NOVA:",
+      "desc": "Klar používá algoritmus, který prohledává seznam složek a hledá specifické „markery“ ultra-zpracování. Pokud algoritmus detekuje průmyslové přísady, umělá aromata nebo vysoce zpracované složky, automaticky označí produkt jako NOVA 4."
     },
     "important": {
       "title": "Důležitý Rozdíl:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. Systém Hodnocení Bezpečnosti PureScan AI",
-    "para1": "Zatímco Nutri-Score a NOVA poskytují základ, PureScan AI vypočítá personalizovanou známku bezpečnosti (od A do E). Náš systém hodnocení funguje jako „skóre rizika“ – čím více rizikových bodů se nahromadí, tím nižší je konečná známka (blíže k E).",
+    "title": "3. Systém Hodnocení Bezpečnosti Klar",
+    "para1": "Zatímco Nutri-Score a NOVA poskytují základ, Klar vypočítá personalizovanou známku bezpečnosti (od A do E). Náš systém hodnocení funguje jako „skóre rizika“ – čím více rizikových bodů se nahromadí, tím nižší je konečná známka (blíže k E).",
     "penalties": {
       "title": "Jak Fungují Sankce a Srážky:",
       "desc": "Produkt začíná na perfektní známce „A“ a dostává sankce (rizikové body) na základě různých zjištění:"
@@ -104,7 +104,7 @@
     "privacy": "Zásady Ochrany Osobních Údajů",
     "terms": "Podmínky Služby",
     "support": "Podpora",
-    "copyright": "© {{year}} PureScan AI. Nejpokročilejší Skener Potravin a Kosmetiky.",
+    "copyright": "© {{year}} Klar (dříve PureScan AI). Nejpokročilejší skener potravin a kosmetiky.",
     "blog": "Blog"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Odborné články o skrytých toxinech, alergenech a endokrinních disruptorech v každodenních produktech. Podloženo vědeckými studiemi z PubMed.",
     "brandBlog": "Blog Klar",
     "hubTitle": "Centrum Zdraví",
-    "hubSubtitle": "Váš spolehlivý průvodce porozuměním etiketám potravin, rozborem kosmetiky a zdravějším rozhodováním na základě vědeckých dat."
+    "hubSubtitle": "Váš spolehlivý průvodce porozuměním etiketám potravin, rozborem kosmetiky a zdravějším rozhodováním na základě vědeckých dat.",
+    "backToAll": "Zpět na všechny články",
+    "minRead": "min čtení",
+    "ctaBannerTitle": "Chcete své produkty zkontrolovat právě teď?",
+    "ctaBannerDesc": "Naskenujte jakýkoli čárový kód nebo etiketu během sekund s Klar — zdarma pro iOS a Android.",
+    "ctaCardTitle": "Naskenujte své produkty nyní s Klar",
+    "ctaCardDesc": "Stáhněte si Klar (dříve PureScan AI) zdarma a okamžitě odhalte skryté toxiny, alergeny a škodlivé přísady.",
+    "relatedArticles": "Související články"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — Nejlepší Alternativa",
@@ -190,6 +197,60 @@
     "backedByScience": "Založeno na Vědeckých Poznatcích a Ověřených Datech",
     "whyPeopleRely": "Zjistěte, proč tisíce uživatelů důvěřují aplikaci Klar",
     "whyMostAdvanced": "Proč je Klar nejpokročilejší volbou",
-    "latestInsights": "Nejnovější Články"
+    "latestInsights": "Nejnovější Články",
+    "aboutText": "Klar (dříve PureScan AI) je mobilní aplikace pro iOS a Android, která pomocí umělé inteligence skenuje etikety potravin a kosmetiky a okamžitě odhaluje skryté toxiny, alergeny, endokrinní disruptory a vysoce průmyslově zpracovaná aditiva. Nabízí personalizované hodnocení podle vašich zdravotních potíží, alergií a diety.",
+    "linkIngredientScanner": "Skener složení →",
+    "linkFoodScanner": "Skener potravin →",
+    "linkCosmeticChecker": "Kontrola kosmetiky →",
+    "linkAllergyScanner": "Skener alergenů →",
+    "problemDesc": "Více než 80 % běžných potravin a kosmetiky obsahuje přísady spojené s hormonální nerovnováhou, PCOS a chronickým zánětem. Převezměte kontrolu ještě dnes.",
+    "trustedBy": "Důvěřuje nám přes 100 000 uživatelů",
+    "scanLabelsHeading1": "Naskenujte etikety svých",
+    "scanLabelsHeading2": "potravin a kosmetických",
+    "scanLabelsHeading3": "produktů",
+    "foodAnalysisTitle": "Analýza potravin",
+    "foodAnalysisDesc": "Zohledňuje onemocnění a alergie a poskytuje osobní výsledky pro každého uživatele namísto obecných odpovědí.",
+    "cosmeticAnalysisTitle": "Analýza kosmetiky",
+    "cosmeticAnalysisDesc": "Okamžitě odhalte endokrinní disruptory, karcinogeny a alergeny ve své kosmetice jedním rychlým skenem.",
+    "aiReaderTitle": "AI čtečka etiket z kamery",
+    "aiReaderDesc": "Pokud produkt chybí v databázi, naše pokročilá AI kamera přečte složení přímo z obalu – ve všech světových jazycích!",
+    "healthRulesBadge": "Vaše zdraví, vaše pravidla",
+    "designedForPrefix": "Navrženo pro",
+    "designedForHighlight": "veganský, bezlepkový a alergický",
+    "designedForSuffix": "životní styl",
+    "designedForSubtitle": "Nakupujte s naprostým klidem. Klar během sekundy přeloží složité etikety na jasná varování.",
+    "allergyTitle": "Skenování alergií",
+    "allergyDesc": "Skenujte potraviny i balenou vodu a odhalte skryté složky, které by mohly vyvolat alergickou reakci.",
+    "glutenTitle": "Bezlepkové skenování",
+    "glutenDesc": "Pšenice, ječmen, žito i skryté deriváty – skener spolehlivě označí všechny zdroje lepku na ochranu vašeho trávení.",
+    "dairyTitle": "Mléko a laktóza",
+    "dairyDesc": "Okamžitě rozpozná kasein, syrovátku, laktózu a mléčné deriváty. Nezbytné pro vegany a osoby s intolerancí laktózy.",
+    "ingredientTitle": "Kontrola složení",
+    "ingredientDesc": "Rozluštěte složité a zavádějící seznamy složek během sekund díky srozumitelným upozorněním.",
+    "backedByScienceDesc": "Náš analytický systém vychází z vědeckého výzkumu a porovnává složení s předními lékařskými směrnicemi a světovými zdravotnickými organizacemi.",
+    "review1Text": "\"Změnilo mi to život! Konečně přesně vím, co spouští mé PCOS. Čtení etiket pomocí AI je ohromující a opravdu se přizpůsobí VAŠEMU zdraví.\"",
+    "review2Text": "\"Skenování je návykové! Zjistila jsem, že moje oblíbené cereálie jsou plné škodlivých látek. Skvělé, že nemusím neznámé produkty přepisovat ručně.\"",
+    "review3Text": "\"Jediný skener, který OPRAVDU přečte etiketu, když produkt není v databázi. Naprostý převrat.\"",
+    "tableFeature": "Funkce",
+    "tableOthers": "Ostatní skenery",
+    "tableRow1Title": "Typ analýzy",
+    "tableRow1Klar": "Personalizovaná pro VÁS",
+    "tableRow1Others": "Pouze obecná",
+    "tableRow2Title": "Přizpůsobení zdraví",
+    "tableRow2Klar": "Přizpůsobitelná potížím",
+    "tableRow2Others": "Standardní hodnocení",
+    "tableRow3Title": "Databáze produktů",
+    "tableRow3Klar": "Obrovská – Bez psaní",
+    "tableRow3Others": "Nutné ruční zadání",
+    "tableRow4Title": "Neznámé položky",
+    "tableRow4Klar": "Čte etikety pomocí AI",
+    "tableRow4Others": "Skenování selže",
+    "tableRow5Title": "Podpora jazyků",
+    "tableRow5Klar": "VŠECHNY světové jazyky",
+    "tableRow5Others": "Omezené jazyky",
+    "tableRow6Title": "Zážitek",
+    "latestInsightsSubtitle": "Odborné články o složení, toxinech a zdravém životním stylu.",
+    "readArticle": "Přečíst článek",
+    "compareLabel": "Porovnat:"
   }
 }

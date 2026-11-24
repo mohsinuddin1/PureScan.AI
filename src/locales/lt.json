@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Maisto Produktai)",
     "para1": "„Nutri-Score“ apskaičiuojamas naudojant standartizuotą, mokslinį algoritmą, kuris įvertina bendrą maisto produkto maistinę vertę 100g arba 100ml. Jis subalansuoja neigiamas maistines medžiagas, kurias reikia riboti, su teigiamomis maistinėmis medžiagomis, kurias reikia skatinti, ir gaunamas įvertinimas nuo A (geriausias) iki E (blogiausias).",
-    "para2": "„PureScan AI“ apskaičiuoja tai automatiškai naudodama duomenis, įvestus iš produkto pakuotės:",
+    "para2": "„Klar“ apskaičiuoja tai automatiškai naudodama duomenis, įvestus iš produkto pakuotės:",
     "negPoints": {
       "title": "Neigiami Taškai (Padidina balą / pablogina įvertinimą):",
       "desc": "Taškai pridedami atsižvelgiant į energijos (kalorijų), sočiųjų riebalų, cukraus ir natrio (druskos) kiekį."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Galutinis Įvertinimas:",
-      "desc": "Teigiami taškai atimami iš neigiamų taškų, kad būtų gautas galutinis skaitmeninis balas. Tada šis skaičius susiejamas su A-E spalvų skale. „PureScan AI“ naudoja tikslias maistinių medžiagų vertes iš produkto mitybos lentelės ir ingredientų sąrašo, kad apskaičiuotų šį balą milijonams produktų."
+      "desc": "Teigiami taškai atimami iš neigiamų taškų, kad būtų gautas galutinis skaitmeninis balas. Tada šis skaičius susiejamas su A-E spalvų skale. „Klar“ naudoja tikslias maistinių medžiagų vertes iš produkto mitybos lentelės ir ingredientų sąrašo, kad apskaičiuotų šį balą milijonams produktų."
     },
     "grades": {
       "a": "Grade A (Tamsiai Žalia):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA Klasifikacija (Maisto Produktai)",
-    "para1": "Skirtingai nuo matematinės „Nutri-Score“ formulės, NOVA balas yra klasifikavimo sistema, pagal kurią maistas skirstomas į kategorijas, atsižvelgiant į tai, kiek jis buvo pramoniniu būdu perdirbtas. „PureScan AI“ naudoja automatizuotą algoritmą, kuris analizuoja produkto ingredientų sąrašą ir priskiria jį vienai iš keturių grupių:",
+    "para1": "Skirtingai nuo matematinės „Nutri-Score“ formulės, NOVA balas yra klasifikavimo sistema, pagal kurią maistas skirstomas į kategorijas, atsižvelgiant į tai, kiek jis buvo pramoniniu būdu perdirbtas. „Klar“ naudoja automatizuotą algoritmą, kuris analizuoja produkto ingredientų sąrašą ir priskiria jį vienai iš keturių grupių:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Neperdirbti / Minimaliai perdirbti)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Kaip „PureScan AI“ apskaičiuoja NOVA:",
-      "desc": "„PureScan AI“ naudoja algoritmą, kuris nuskaito ingredientų sąrašą ir ieško specifinių itin perdirbto maisto „žymeklių“. Jei algoritmas aptinka pramoninių priedų, dirbtinių skonių ar stipriai perdirbtų ingredientų, jis automatiškai pažymi produktą kaip NOVA 4."
+      "title": "Kaip „Klar“ apskaičiuoja NOVA:",
+      "desc": "„Klar“ naudoja algoritmą, kuris nuskaito ingredientų sąrašą ir ieško specifinių itin perdirbto maisto „žymeklių“. Jei algoritmas aptinka pramoninių priedų, dirbtinių skonių ar stipriai perdirbtų ingredientų, jis automatiškai pažymi produktą kaip NOVA 4."
     },
     "important": {
       "title": "Svarbus Skirtumas:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. „PureScan AI“ Saugos Vertinimo Sistema",
-    "para1": "Nors „Nutri-Score“ ir NOVA suteikia pagrindines linijas, „PureScan AI“ apskaičiuoja asmeninį saugumo įvertinimą (nuo A iki E). Mūsų vertinimo sistema veikia kaip „rizikos balas“ – kuo daugiau rizikos taškų sukaupiama, tuo žemesnis galutinis raidinis įvertinimas (arčiau E).",
+    "title": "3. „Klar“ Saugos Vertinimo Sistema",
+    "para1": "Nors „Nutri-Score“ ir NOVA suteikia pagrindines linijas, „Klar“ apskaičiuoja asmeninį saugumo įvertinimą (nuo A iki E). Mūsų vertinimo sistema veikia kaip „rizikos balas“ – kuo daugiau rizikos taškų sukaupiama, tuo žemesnis galutinis raidinis įvertinimas (arčiau E).",
     "penalties": {
       "title": "Kaip veikia baudos ir atskaitymai:",
       "desc": "Produktas pradedamas vertinti tobulu „A“ balu ir gauna baudas (rizikos taškus) remiantis įvairiais aptikimais:"
@@ -104,7 +104,7 @@
     "privacy": "Privatumo Politika",
     "terms": "Paslaugų Teikimo Sąlygos",
     "support": "Palaikymas",
-    "copyright": "© {{year}} PureScan AI. Pažangiausias Maisto ir Kosmetikos Skaitytuvas.",
+    "copyright": "© {{year}} Klar (anksčiau PureScan AI). Pažangiausias maisto ir kosmetikos skaitytuvas.",
     "blog": "Tinklaraštis"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Ekspertų straipsniai apie paslėptus toksinus, alergenus ir endokrininę sistemą ardančias medžiagas maiste bei kosmetikoje. Pagrįsta PubMed tyrimais.",
     "brandBlog": "„Klar“ Tinklaraštis",
     "hubTitle": "Sveikatos Informacijos Centras",
-    "hubSubtitle": "Jūsų patikimas vadovas, padedantis suprasti produktų etiketes, iššifruoti kosmetikos sudėtį ir priimti moksliškai pagrįstus sprendimus."
+    "hubSubtitle": "Jūsų patikimas vadovas, padedantis suprasti produktų etiketes, iššifruoti kosmetikos sudėtį ir priimti moksliškai pagrįstus sprendimus.",
+    "backToAll": "Grįžti į visus straipsnius",
+    "minRead": "min. skaitymo",
+    "ctaBannerTitle": "Norite patikrinti savo produktus jau dabar?",
+    "ctaBannerDesc": "Nuskaitykite bet kokį brūkšninį kodą ar etiketę per kelias sekundes su „Klar“ — nemokamai „iOS“ ir „Android“.",
+    "ctaCardTitle": "Nuskaitykite savo produktus dabar su „Klar“",
+    "ctaCardDesc": "Atsisiųskite „Klar“ (anksčiau „PureScan AI“) nemokamai ir akimirksniu aptikite paslėptus toksinus, alergenus bei žalingus priedus.",
+    "relatedArticles": "Susiję straipsniai"
   },
   "alternatives": {
     "pageMetaTitle": "„Klar“ prieš {name} — Geriausia Alternatyva",
@@ -190,6 +197,60 @@
     "backedByScience": "Pagrįsta Mokslo Žiniomis ir Patikrintais Duomenimis",
     "whyPeopleRely": "Sužinokite, kodėl tūkstančiai vartotojų pasitiki „Klar“",
     "whyMostAdvanced": "Kodėl „Klar“ yra pats pažangiausias pasirinkimas",
-    "latestInsights": "Naujausi Straipsniai"
+    "latestInsights": "Naujausi Straipsniai",
+    "aboutText": "„Klar“ (anksčiau „PureScan AI“) yra „iOS“ ir „Android“ skirta mobilioji programėlė, kuri dirbtinio intelekto pagalba nuskaito maisto ir kosmetikos etiketes, akimirksniu aptikdama paslėptus toksinus, alergenus, endokrininę sistemą ardančias medžiagas ir itin perdirbtus priedus. Ji pateikia asmeninį sveikatos rizikos vertinimą pagal jūsų būklę, alergijas ir mitybą.",
+    "linkIngredientScanner": "Sudėties skaitytuvas →",
+    "linkFoodScanner": "Maisto skaitytuvas →",
+    "linkCosmeticChecker": "Kosmetikos patikra →",
+    "linkAllergyScanner": "Alergijų skaitytuvas →",
+    "problemDesc": "Daugiau nei 80 % kasdienių maisto produktų ir kosmetikos turi priedų, siejamų su hormonų disbalansu, PCOS ir lėtiniu uždegimu. Susigrąžinkite kontrolę šiandien.",
+    "trustedBy": "Pasitiki daugiau nei 100 000 naudotojų",
+    "scanLabelsHeading1": "Nuskaitykite savo",
+    "scanLabelsHeading2": "maisto ir kosmetikos",
+    "scanLabelsHeading3": "gaminių etiketes",
+    "foodAnalysisTitle": "Maisto analizė",
+    "foodAnalysisDesc": "Atsižvelgia į ligas ir alergijas, pateikdama asmeninius rezultatus kiekvienam žmogui, o ne bendrus atsakymus.",
+    "cosmeticAnalysisTitle": "Kosmetikos analizė",
+    "cosmeticAnalysisDesc": "Vienu nuskaitymu akimirksniu aptikite endokrininę sistemą ardančias medžiagas, kancerogenus ir alergenus.",
+    "aiReaderTitle": "DI kameros etikečių skaitytuvas",
+    "aiReaderDesc": "Jei produkto nėra duomenų bazėje, mūsų DI kamera tiesiogiai nuskaito sudėties etiketę – visomis pasaulio kalbomis!",
+    "healthRulesBadge": "Jūsų sveikata, jūsų taisyklės",
+    "designedForPrefix": "Sukurta",
+    "designedForHighlight": "veganiškam, be glitimo ir alergiškam",
+    "designedForSuffix": "gyvenimo būdui",
+    "designedForSubtitle": "Apsipirkite visiškai ramiai. „Klar“ per kelias sekundes iššifruoja sudėtingas etiketes į aiškius įspėjimus.",
+    "allergyTitle": "Alergijų skenavimas",
+    "allergyDesc": "Nuskaitykite maisto produktus ir net vandenį buteliuose, kad atskleistumėte paslėptus alergenus.",
+    "glutenTitle": "Patikra be glitimo",
+    "glutenDesc": "Kviečiai, miežiai, rugiai ar paslėpti dariniai — skaitytuvas pažymi visus glitimo šaltinius jūsų žarnyno apsaugai.",
+    "dairyTitle": "Pieno produktai ir laktozė",
+    "dairyDesc": "Akimirksniu aptikite kazeiną, išrūgas, laktozę ir pieno darinius. Būtina veganams ir netoleruojantiems laktozės.",
+    "ingredientTitle": "Sudėties tikrinimas",
+    "ingredientDesc": "Per kelias sekundes iššifruokite sudėtingus ir klaidinančius ingredientų sąrašus su aiškiais įspėjimais.",
+    "backedByScienceDesc": "Mūsų analizės variklis remiasi moksliniais tyrimais ir tikrina ingredientus pagal medicinines gaires bei pasaulines sveikatos organizacijas.",
+    "review1Text": "\"Pakeitė mano gyvenimą! Pagaliau tiksliai žinau, kas sukelia mano PCOS. DI etikečių skaitymas yra nuostabus ir tikrai prisitaiko prie JŪSŲ sveikatos.\"",
+    "review2Text": "\"Skenavimas įtraukia! Sužinojau, kad mano mėgstami dribsniai buvo pilni žalingų medžiagų. Puiku, kad nereikia ranka vesti nežinomų prekių.\"",
+    "review3Text": "\"Vienintelis skaitytuvas, kuris IŠ TIKRŲJŲ perskaito etiketę, kai produkto nėra duomenų bazėje. Tikras proveržis.\"",
+    "tableFeature": "Funkcija",
+    "tableOthers": "Kiti skaitytuvai",
+    "tableRow1Title": "Analizės tipas",
+    "tableRow1Klar": "Pritaikyta JUMS",
+    "tableRow1Others": "Tik bendra",
+    "tableRow2Title": "Prisitaikymas prie sveikatos",
+    "tableRow2Klar": "Pritaikoma pagal būkles",
+    "tableRow2Others": "Standartinis įvertinimas",
+    "tableRow3Title": "Produktų bazė",
+    "tableRow3Klar": "Milžiniška – Be rašymo",
+    "tableRow3Others": "Reikia įvesti ranka",
+    "tableRow4Title": "Nežinomos prekės",
+    "tableRow4Klar": "Skaito etiketes su DI",
+    "tableRow4Others": "Nuskaitymas nepavyksta",
+    "tableRow5Title": "Kalbų palaikymas",
+    "tableRow5Klar": "VISOS pasaulio kalbos",
+    "tableRow5Others": "Ribotos kalbos",
+    "tableRow6Title": "Patirtis",
+    "latestInsightsSubtitle": "Ekspertų įžvalgos apie ingredientus, toksinus ir sveiką gyvenseną.",
+    "readArticle": "Skaityti straipsnį",
+    "compareLabel": "Palyginti:"
   }
 }

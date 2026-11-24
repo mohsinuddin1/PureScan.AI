@@ -101,7 +101,9 @@ function generateShortTitle(fullTitle) {
     return `${questionMatch[1]} | Klar`;
   }
   if (unquoted.length > 48) {
-    const truncated = unquoted.substring(0, 48).replace(/\s+\S*$/, '').replace(/[,;:\-\s&]+$/, '');
+    let truncated = unquoted.substring(0, 48).replace(/\s+\S*$/, '');
+    truncated = truncated.replace(/\b(and|or|with|the|in|for|to|of|by|at|on|from|into|over|after|before|between|under|ve|veya|y|de|et|und|e|oder|con|per|por|para|na|w|i|a|för|och|att|med|som|på|av|für|mit|von|auf|voor|van|het|een|til|og|في|من|على|إلى|عن|مع)\b$/i, '');
+    truncated = truncated.replace(/[,;:\-\—\s&]+$/, '').trim();
     return `${truncated} | Klar`;
   }
   return `${unquoted} | Klar`;

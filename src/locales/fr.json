@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Produits Alimentaires)",
     "para1": "Le Nutri-Score est calculé à l'aide d'un algorithme scientifique standardisé qui évalue la valeur nutritionnelle globale d'un produit alimentaire pour 100g ou 100ml. Il équilibre les nutriments négatifs à limiter par rapport aux nutriments positifs à encourager, ce qui donne une note de A (meilleur) à E (pire).",
-    "para2": "PureScan AI calcule cela automatiquement en utilisant les données saisies à partir de l'emballage du produit :",
+    "para2": "Klar calcule cela automatiquement en utilisant les données saisies à partir de l'emballage du produit :",
     "negPoints": {
       "title": "Points négatifs (Augmentent le score / détériorent la note) :",
       "desc": "Des points sont ajoutés en fonction de la quantité d'énergie (calories), de graisses saturées, de sucres et de sodium (sel)."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "La note finale :",
-      "desc": "Les points positifs sont soustraits des points négatifs pour obtenir un score numérique final. Ce nombre est ensuite mappé sur l'échelle de couleurs A-E. PureScan AI utilise les valeurs nutritionnelles exactes du tableau nutritionnel et de la liste des ingrédients du produit pour calculer ce score pour des millions de produits."
+      "desc": "Les points positifs sont soustraits des points négatifs pour obtenir un score numérique final. Ce nombre est ensuite mappé sur l'échelle de couleurs A-E. Klar utilise les valeurs nutritionnelles exactes du tableau nutritionnel et de la liste des ingrédients du produit pour calculer ce score pour des millions de produits."
     },
     "grades": {
       "a": "Grade A (Vert Foncé) :",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. Classification NOVA (Produits Alimentaires)",
-    "para1": "Contrairement à la formule mathématique du Nutri-Score, le score NOVA est un système de classification qui catégorise les aliments en fonction de leur degré de transformation industrielle. PureScan AI utilise un algorithme automatisé pour analyser la liste des ingrédients du produit et le classer dans l'un des quatre groupes :",
+    "para1": "Contrairement à la formule mathématique du Nutri-Score, le score NOVA est un système de classification qui catégorise les aliments en fonction de leur degré de transformation industrielle. Klar utilise un algorithme automatisé pour analyser la liste des ingrédients du produit et le classer dans l'un des quatre groupes :",
     "groups": {
       "1": {
         "title": "NOVA 1 (Aliments non transformés ou minimalement transformés)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Comment PureScan AI calcule NOVA :",
-      "desc": "PureScan AI utilise un algorithme qui scanne la liste des ingrédients pour rechercher des \"marqueurs\" spécifiques de l'ultra-transformation. Si l'algorithme détecte des additifs industriels, des arômes artificiels ou des ingrédients hautement transformés, il signale automatiquement le produit comme NOVA 4."
+      "title": "Comment Klar calcule NOVA :",
+      "desc": "Klar utilise un algorithme qui scanne la liste des ingrédients pour rechercher des \"marqueurs\" spécifiques de l'ultra-transformation. Si l'algorithme détecte des additifs industriels, des arômes artificiels ou des ingrédients hautement transformés, il signale automatiquement le produit comme NOVA 4."
     },
     "important": {
       "title": "Distinction importante :",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. Système de notation de sécurité PureScan AI",
-    "para1": "Alors que le Nutri-Score et NOVA fournissent des bases, PureScan AI calcule une note de sécurité personnalisée (allant de A à E). Notre système de notation agit comme un \"score de risque\" — plus les points de risque accumulés sont élevés, plus la lettre finale est basse (proche de E).",
+    "title": "3. Système de notation de sécurité Klar",
+    "para1": "Alors que le Nutri-Score et NOVA fournissent des bases, Klar calcule une note de sécurité personnalisée (allant de A à E). Notre système de notation agit comme un \"score de risque\" — plus les points de risque accumulés sont élevés, plus la lettre finale est basse (proche de E).",
     "penalties": {
       "title": "Comment fonctionnent les pénalités et les déductions :",
       "desc": "Un produit commence avec une note parfaite de \"A\" et reçoit des pénalités (points de risque) en fonction de diverses détections :"
@@ -104,7 +104,7 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "support": "Assistance",
-    "copyright": "© {{year}} PureScan AI. Le scanner alimentaire et cosmétique le plus avancé.",
+    "copyright": "© {{year}} Klar (anciennement PureScan AI). Le scanner alimentaire et cosmétique le plus avancé.",
     "blog": "Blog"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Articles d'experts sur les toxines cachées, les allergènes et les perturbateurs endocriniens dans l'alimentation et les soins quotidiens. Fondé sur PubMed.",
     "brandBlog": "Blog Klar",
     "hubTitle": "Le Pôle Santé & Nutrition",
-    "hubSubtitle": "Votre guide de référence pour décrypter les étiquettes alimentaires, analyser les cosmétiques et faire des choix plus sains appuyés par la science."
+    "hubSubtitle": "Votre guide de référence pour décrypter les étiquettes alimentaires, analyser les cosmétiques et faire des choix plus sains appuyés par la science.",
+    "backToAll": "Retour à tous les articles",
+    "minRead": "min de lecture",
+    "ctaBannerTitle": "Envie de vérifier vos propres produits maintenant ?",
+    "ctaBannerDesc": "Scannez tout code-barres ou étiquette en quelques secondes avec Klar — gratuit sur iOS et Android.",
+    "ctaCardTitle": "Scannez vos produits maintenant avec Klar",
+    "ctaCardDesc": "Téléchargez Klar (anciennement PureScan AI) gratuitement et détectez immédiatement toxines cachées, allergènes et additifs nocifs.",
+    "relatedArticles": "Articles similaires"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — La Meilleure Alternative",
@@ -190,6 +197,60 @@
     "backedByScience": "Validé par la Science & les Données de Recherche",
     "whyPeopleRely": "Pourquoi les utilisateurs choisissent Klar",
     "whyMostAdvanced": "Pourquoi Klar est le plus avancé",
-    "latestInsights": "Derniers Articles"
+    "latestInsights": "Derniers Articles",
+    "aboutText": "Klar (anciennement PureScan AI) est une application mobile pour iOS et Android qui utilise l'intelligence artificielle pour scanner les étiquettes alimentaires et cosmétiques, détectant instantanément les toxines cachées, allergènes, perturbateurs endocriniens et additifs ultra-transformés. Elle fournit une évaluation personnalisée selon votre profil de santé, vos allergies et votre régime.",
+    "linkIngredientScanner": "Scanner d'ingrédients →",
+    "linkFoodScanner": "Scanner alimentaire →",
+    "linkCosmeticChecker": "Analyse cosmétique →",
+    "linkAllergyScanner": "Scanner d'allergies →",
+    "problemDesc": "Plus de 80 % des produits alimentaires et cosmétiques du quotidien contiennent des additifs liés aux déséquilibres hormonaux, au SOPK et à l'inflammation chronique. Reprenez le contrôle dès aujourd'hui.",
+    "trustedBy": "Approuvé par plus de 100 000 utilisateurs",
+    "scanLabelsHeading1": "Scannez les étiquettes de vos",
+    "scanLabelsHeading2": "produits alimentaires et",
+    "scanLabelsHeading3": "cosmétiques",
+    "foodAnalysisTitle": "Analyse alimentaire",
+    "foodAnalysisDesc": "Prend en compte vos maladies et allergies pour offrir des résultats personnalisés, et non des réponses génériques. Chaque scan est adapté à votre profil.",
+    "cosmeticAnalysisTitle": "Analyse cosmétique",
+    "cosmeticAnalysisDesc": "Détectez instantanément les perturbateurs endocriniens, cancérigènes et allergènes dans vos soins personnels d'un simple scan.",
+    "aiReaderTitle": "Lecteur d'étiquettes IA",
+    "aiReaderDesc": "Même si un produit est inconnu, notre caméra IA lit directement la liste des ingrédients. Compatible avec toutes les langues du monde !",
+    "healthRulesBadge": "Votre santé, vos règles",
+    "designedForPrefix": "Conçu pour les modes de vie",
+    "designedForHighlight": "Végan, Sans Gluten & Allergiques",
+    "designedForSuffix": "",
+    "designedForSubtitle": "Faites vos courses l'esprit tranquille. Klar décode instantanément les étiquettes complexes en alertes claires et vitales.",
+    "allergyTitle": "Détection d'allergies",
+    "allergyDesc": "Scannez vos courses et même l'eau en bouteille pour révéler les ingrédients cachés susceptibles de déclencher une allergie.",
+    "glutenTitle": "Scan Sans Gluten",
+    "glutenDesc": "Blé, orge, seigle ou dérivés cachés : le scanner repère sans relâche tout ingrédient contenant du gluten pour protéger votre intestin.",
+    "dairyTitle": "Produits laitiers & Lactose",
+    "dairyDesc": "Détectez immédiatement la caséine, le lactosérum, le lactose et les dérivés laitiers. Essentiel pour les végans et intolérants au lactose.",
+    "ingredientTitle": "Vérification des ingrédients",
+    "ingredientDesc": "Décodez les listes d'ingrédients complexes en quelques secondes grâce à des alertes simples et compréhensibles.",
+    "backedByScienceDesc": "Notre moteur d'analyse repose sur des recherches scientifiques solides et croise les ingrédients avec les recommandations médicales et organismes de santé mondiaux.",
+    "review1Text": "\"Ça a changé ma vie ! Je sais enfin ce qui déclenche mon SOPK. La lecture d'étiquettes par IA est bluffante et s'adapte vraiment à MA santé.\"",
+    "review2Text": "\"Scanner devient addictif ! J'ai découvert que mes céréales préférées contenaient des substances à risque. Plus besoin de saisir les produits inconnus.\"",
+    "review3Text": "\"Le seul scanner qui lit VRAIMENT l'étiquette quand un produit manque dans la base de données. Une révolution.\"",
+    "tableFeature": "Fonctionnalité",
+    "tableOthers": "Autres scanners",
+    "tableRow1Title": "Type d'analyse",
+    "tableRow1Klar": "Personnalisée pour VOUS",
+    "tableRow1Others": "Générique uniquement",
+    "tableRow2Title": "Adaptation santé",
+    "tableRow2Klar": "Adaptée aux pathologies",
+    "tableRow2Others": "Notation standard",
+    "tableRow3Title": "Base de produits",
+    "tableRow3Klar": "Massive - Sans saisie",
+    "tableRow3Others": "Saisie manuelle requise",
+    "tableRow4Title": "Produits inconnus",
+    "tableRow4Klar": "Lecture d'étiquette par IA",
+    "tableRow4Others": "Échec du scan",
+    "tableRow5Title": "Langues supportées",
+    "tableRow5Klar": "TOUTES les langues",
+    "tableRow5Others": "Langues limitées",
+    "tableRow6Title": "L'expérience",
+    "latestInsightsSubtitle": "Analyses d'experts sur les ingrédients, les toxines et une vie saine.",
+    "readArticle": "Lire l'article",
+    "compareLabel": "Comparer :"
   }
 }

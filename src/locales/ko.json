@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (식품)",
     "para1": "Nutri-Score는 100g 또는 100ml당 식품의 전반적인 영양가를 평가하는 표준화된 과학적 알고리즘을 사용하여 계산됩니다. 섭취를 제한해야 하는 부정적인 영양소와 권장해야 하는 긍정적인 영양소의 균형을 맞추어 A(최고)에서 E(최악)까지의 등급을 매깁니다.",
-    "para2": "PureScan AI는 제품 패키지에 입력된 데이터를 사용하여 이를 자동으로 계산합니다:",
+    "para2": "Klar는 제품 패키지에 입력된 데이터를 사용하여 이를 자동으로 계산합니다:",
     "negPoints": {
       "title": "감점 요인 (점수 증가 / 등급 하락):",
       "desc": "에너지(칼로리), 포화 지방, 당류 및 나트륨(염분)의 양에 따라 점수가 추가됩니다."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "최종 등급:",
-      "desc": "감점 요인에서 가점 요인을 빼서 최종 수치 점수를 얻습니다. 이 숫자는 A-E 색상 척도에 매핑됩니다. PureScan AI는 수백만 개의 제품에 대해 제품의 영양 성분표와 성분 목록에서 정확한 값을 사용하여 이 점수를 계산합니다."
+      "desc": "감점 요인에서 가점 요인을 빼서 최종 수치 점수를 얻습니다. 이 숫자는 A-E 색상 척도에 매핑됩니다. Klar는 수백만 개의 제품에 대해 제품의 영양 성분표와 성분 목록에서 정확한 값을 사용하여 이 점수를 계산합니다."
     },
     "grades": {
       "a": "등급 A (진한 녹색):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA 분류 (식품)",
-    "para1": "Nutri-Score의 수학적 공식과 달리, NOVA 점수는 식품이 산업적으로 얼마나 가공되었는지를 기준으로 분류하는 시스템입니다. PureScan AI는 자동화된 알고리즘을 사용하여 제품의 성분 목록을 분석하고 4개의 그룹 중 하나로 분류합니다:",
+    "para1": "Nutri-Score의 수학적 공식과 달리, NOVA 점수는 식품이 산업적으로 얼마나 가공되었는지를 기준으로 분류하는 시스템입니다. Klar는 자동화된 알고리즘을 사용하여 제품의 성분 목록을 분석하고 4개의 그룹 중 하나로 분류합니다:",
     "groups": {
       "1": {
         "title": "NOVA 1 (미가공 / 최소 가공)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "PureScan AI의 NOVA 계산 방식:",
-      "desc": "PureScan AI는 알고리즘을 사용하여 성분 목록을 스캔하고 초가공의 특정 \"마커\"를 검색합니다. 산업용 첨가물, 인공 향료 또는 고도로 가공된 성분을 감지하면 자동으로 제품을 NOVA 4로 플래그 지정합니다."
+      "title": "Klar의 NOVA 계산 방식:",
+      "desc": "Klar는 알고리즘을 사용하여 성분 목록을 스캔하고 초가공의 특정 \"마커\"를 검색합니다. 산업용 첨가물, 인공 향료 또는 고도로 가공된 성분을 감지하면 자동으로 제품을 NOVA 4로 플래그 지정합니다."
     },
     "important": {
       "title": "중요한 차이점:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI 안전 등급 시스템",
-    "para1": "Nutri-Score와 NOVA가 기준선을 제공하는 반면, PureScan AI는 맞춤형 안전 등급(A에서 E까지)을 계산합니다. 당사의 등급 시스템은 \"위험 점수\"처럼 작동합니다. 누적된 위험 점수가 높을수록 최종 알파벳 등급이 낮아집니다(E에 가까워짐).",
+    "title": "3. Klar 안전 등급 시스템",
+    "para1": "Nutri-Score와 NOVA가 기준선을 제공하는 반면, Klar는 맞춤형 안전 등급(A에서 E까지)을 계산합니다. 당사의 등급 시스템은 \"위험 점수\"처럼 작동합니다. 누적된 위험 점수가 높을수록 최종 알파벳 등급이 낮아집니다(E에 가까워짐).",
     "penalties": {
       "title": "감점 및 페널티의 작동 방식:",
       "desc": "제품은 완벽한 \"A\" 등급에서 시작하여 다양한 감지 항목에 따라 페널티(위험 점수)를 받습니다:"
@@ -104,7 +104,7 @@
     "privacy": "개인정보 처리방침",
     "terms": "이용약관",
     "support": "고객 지원",
-    "copyright": "© {{year}} PureScan AI. 가장 앞선 식품 및 화장품 스캐너.",
+    "copyright": "© {{year}} Klar(구 PureScan AI). 가장 앞선 식품 및 화장품 스캐너.",
     "blog": "블로그"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "일상 식품 및 화장품 속 숨겨진 독소, 알레르기 유발 물질, 내분비계 교란물질(환경호르몬)에 대한 전문가 가이드. PubMed 논문 기반.",
     "brandBlog": "Klar 블로그",
     "hubTitle": "건강 정보 허브",
-    "hubSubtitle": "식품 원재료명 라벨과 화장품 전성분을 정확히 이해하고, 과학적 근거를 바탕으로 더 건강한 선택을 내릴 수 있도록 돕는 신뢰할 수 있는 가이드."
+    "hubSubtitle": "식품 원재료명 라벨과 화장품 전성분을 정확히 이해하고, 과학적 근거를 바탕으로 더 건강한 선택을 내릴 수 있도록 돕는 신뢰할 수 있는 가이드.",
+    "backToAll": "모든 글로 돌아가기",
+    "minRead": "분 소요",
+    "ctaBannerTitle": "지금 내 제품을 바로 확인해 보시겠어요?",
+    "ctaBannerDesc": "Klar로 바코드나 성분표를 몇 초 만에 스캔하세요 — iOS 및 Android 무료.",
+    "ctaCardTitle": "지금 Klar로 내 제품을 스캔하세요",
+    "ctaCardDesc": "Klar(구 PureScan AI)를 무료로 다운로드하고 식품과 화장품 속 숨겨진 독소, 알레르기 성분, 유해 첨가물을 즉시 찾아내세요.",
+    "relatedArticles": "관련 글"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — 최고의 대체 앱 완벽 비교",
@@ -190,6 +197,60 @@
     "backedByScience": "세계적인 과학 연구 논문과 검증된 데이터 기반",
     "whyPeopleRely": "수많은 사용자들이 Klar를 신뢰하는 이유",
     "whyMostAdvanced": "Klar가 가장 진보된 스캐너인 이유",
-    "latestInsights": "최신 건강 분석 리포트"
+    "latestInsights": "최신 건강 분석 리포트",
+    "aboutText": "Klar(구 PureScan AI)는 인공지능을 사용해 식품 및 화장품 성분표를 스캔하여 숨겨진 독소, 알레르기 유발 물질, 내분비계 교란물질, 초가공 첨가물을 즉시 탐지하는 iOS 및 Android 모바일 앱입니다. 개인의 건강 상태, 알레르기, 식단에 맞춘 맞춤형 위험도 평가를 제공합니다.",
+    "linkIngredientScanner": "성분 스캐너 →",
+    "linkFoodScanner": "식품 스캐너 →",
+    "linkCosmeticChecker": "화장품 체커 →",
+    "linkAllergyScanner": "알레르기 스캐너 →",
+    "problemDesc": "일상 식료품과 화장품의 80% 이상에는 호르몬 불균형, 다낭성 난소 증후군(PCOS), 만성 염증과 관련된 첨가물이 들어 있습니다. 오늘 바로 건강의 주도권을 되찾으세요.",
+    "trustedBy": "100,000명 이상의 사용자가 신뢰합니다",
+    "scanLabelsHeading1": "매일 쓰는 식품과",
+    "scanLabelsHeading2": "화장품의 성분표를",
+    "scanLabelsHeading3": "스캔해 보세요",
+    "foodAnalysisTitle": "식품 정밀 분석",
+    "foodAnalysisDesc": "단순한 일반 점수가 아니라 사용자의 질환과 알레르기를 반영해 개인별 맞춤 결과를 제공합니다.",
+    "cosmeticAnalysisTitle": "화장품 성분 분석",
+    "cosmeticAnalysisDesc": "간단한 스캔 한 번으로 스킨케어 및 생활용품 속 내분비계 교란물질, 발암 물질, 알레르기 성분을 즉시 찾아냅니다.",
+    "aiReaderTitle": "AI 카메라 라벨 리더",
+    "aiReaderDesc": "데이터베이스에 없는 제품이라도 최첨단 AI 카메라가 포장지의 성분표를 직접 읽어냅니다. 전 세계 모든 언어를 지원합니다!",
+    "healthRulesBadge": "내 건강, 내 기준대로",
+    "designedForPrefix": "맞춤 설계:",
+    "designedForHighlight": "비건 · 글루텐 프리 · 알레르기",
+    "designedForSuffix": "라이프스타일",
+    "designedForSubtitle": "마음 놓고 장을 보세요. Klar가 복잡한 성분표를 명확하고 중요한 안전 알림으로 즉시 바꿔줍니다.",
+    "allergyTitle": "알레르기 스캔",
+    "allergyDesc": "식료품은 물론 생수까지 스캔해 알레르기 반응을 일으킬 수 있는 숨겨진 성분을 확인하세요.",
+    "glutenTitle": "글루텐 프리 스캔",
+    "glutenDesc": "밀, 보리, 호밀 및 숨겨진 유도체까지 모든 글루텐 성분을 빠짐없이 찾아내 장 건강을 지킵니다.",
+    "dairyTitle": "유제품 및 유당 감지",
+    "dairyDesc": "카제인, 유청, 유당 등 우유 유래 성분을 즉시 판별합니다. 엄격한 비건과 유당불내증 사용자에게 필수입니다.",
+    "ingredientTitle": "성분 정밀 확인",
+    "ingredientDesc": "복잡하고 모호한 성분 목록을 몇 초 만에 해독해 내 몸에 들어가는 성분을 정확히 파악하세요.",
+    "backedByScienceDesc": "Klar 분석 엔진은 탄탄한 과학적 연구를 바탕으로 하며, 주요 의학 지침 및 글로벌 보건 기구 데이터와 대조합니다.",
+    "review1Text": "\"제 삶을 바꿨어요! 드디어 제 PCOS를 악화시키는 원인을 정확히 알게 됐습니다. AI 라벨 인식이 정말 놀랍고 진짜 내 건강에 맞춰주네요.\"",
+    "review2Text": "\"스캔하는 재미에 빠졌어요! 즐겨 먹던 시리얼에 유해 성분이 가득하다는 걸 알게 됐습니다. 모르는 제품을 일일이 입력하지 않아도 돼서 최고예요.\"",
+    "review3Text": "\"데이터베이스에 없는 제품도 실제로 라벨을 읽어주는 유일한 스캐너입니다. 완전한 게임 체인저예요.\"",
+    "tableFeature": "기능",
+    "tableOthers": "타사 스캐너",
+    "tableRow1Title": "분석 방식",
+    "tableRow1Klar": "나에게 맞춘 개인화",
+    "tableRow1Others": "일반 점수만 제공",
+    "tableRow2Title": "건강 상태 반영",
+    "tableRow2Klar": "질환·체질별 맞춤",
+    "tableRow2Others": "표준 일괄 등급",
+    "tableRow3Title": "제품 데이터베이스",
+    "tableRow3Klar": "방대함 – 입력 불필요",
+    "tableRow3Others": "수동 입력 필요",
+    "tableRow4Title": "미등록 제품",
+    "tableRow4Klar": "AI가 직접 라벨 판독",
+    "tableRow4Others": "스캔 실패",
+    "tableRow5Title": "언어 지원",
+    "tableRow5Klar": "전 세계 모든 언어",
+    "tableRow5Others": "제한된 언어만 지원",
+    "tableRow6Title": "사용자 경험",
+    "latestInsightsSubtitle": "성분, 독소, 건강한 삶에 대한 전문가 인사이트.",
+    "readArticle": "글 읽기",
+    "compareLabel": "비교:"
   }
 }

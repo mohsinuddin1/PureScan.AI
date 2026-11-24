@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Pārtikas Produkti)",
     "para1": "Nutri-Score aprēķina, izmantojot standartizētu, zinātnisku algoritmu, kas novērtē pārtikas produkta vispārējo uzturvērtību uz 100g vai 100ml. Tas līdzsvaro negatīvās uzturvielas, kas jāierobežo, pret pozitīvajām uzturvielām, ko veicināt, tādējādi iegūstot atzīmi no A (labākais) līdz E (sliktākais).",
-    "para2": "PureScan AI to aprēķina automātiski, izmantojot datus, kas ievadīti no produkta iepakojuma:",
+    "para2": "Klar to aprēķina automātiski, izmantojot datus, kas ievadīti no produkta iepakojuma:",
     "negPoints": {
       "title": "Negatīvie Punkti (Palielina rezultātu / pasliktina atzīmi):",
       "desc": "Punkti tiek pievienoti, pamatojoties uz enerģijas (kaloriju), piesātināto tauku, cukuru un nātrija (sāls) daudzumu."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Galīgā Atzīme:",
-      "desc": "Pozitīvie punkti tiek atņemti no negatīvajiem punktiem, lai iegūtu galīgo ciparu rezultātu. Šis numurs pēc tam tiek kartēts uz A-E krāsu skalu. PureScan AI izmanto precīzas uzturvielu vērtības no produkta uzturvērtības tabulas un sastāvdaļu saraksta, lai aprēķinātu šo rezultātu miljoniem produktu."
+      "desc": "Pozitīvie punkti tiek atņemti no negatīvajiem punktiem, lai iegūtu galīgo ciparu rezultātu. Šis numurs pēc tam tiek kartēts uz A-E krāsu skalu. Klar izmanto precīzas uzturvielu vērtības no produkta uzturvērtības tabulas un sastāvdaļu saraksta, lai aprēķinātu šo rezultātu miljoniem produktu."
     },
     "grades": {
       "a": "Atzīme A (Tumši Zaļa):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA Klasifikācija (Pārtikas Produkti)",
-    "para1": "Atšķirībā no Nutri-Score matemātiskās formulas, NOVA rezultāts ir klasifikācijas sistēma, kas iedala pārtiku kategorijās, pamatojoties uz to, cik daudz tā ir rūpnieciski pārstrādāta. PureScan AI izmanto automatizētu algoritmu, lai analizētu produkta sastāvdaļu sarakstu un iedalītu to vienā no četrām grupām:",
+    "para1": "Atšķirībā no Nutri-Score matemātiskās formulas, NOVA rezultāts ir klasifikācijas sistēma, kas iedala pārtiku kategorijās, pamatojoties uz to, cik daudz tā ir rūpnieciski pārstrādāta. Klar izmanto automatizētu algoritmu, lai analizētu produkta sastāvdaļu sarakstu un iedalītu to vienā no četrām grupām:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Nepārstrādāti / Minimāli pārstrādāti)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Kā PureScan AI aprēķina NOVA:",
-      "desc": "PureScan AI izmanto algoritmu, kas skenē sastāvdaļu sarakstu, lai meklētu īpašus ultra-pārstrādes \"marķierus\". Ja algoritms atklāj rūpnieciskas piedevas, mākslīgos aromatizētājus vai ļoti apstrādātas sastāvdaļas, tas automātiski atzīmē produktu kā NOVA 4."
+      "title": "Kā Klar aprēķina NOVA:",
+      "desc": "Klar izmanto algoritmu, kas skenē sastāvdaļu sarakstu, lai meklētu īpašus ultra-pārstrādes \"marķierus\". Ja algoritms atklāj rūpnieciskas piedevas, mākslīgos aromatizētājus vai ļoti apstrādātas sastāvdaļas, tas automātiski atzīmē produktu kā NOVA 4."
     },
     "important": {
       "title": "Svarīga Atšķirība:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI Drošības Novērtēšanas Sistēma",
-    "para1": "Lai gan Nutri-Score un NOVA nodrošina bāzes līniju, PureScan AI aprēķina personalizētu drošības pakāpi (no A līdz E). Mūsu vērtēšanas sistēma darbojas kā \"riska rādītājs\" — jo vairāk riska punktu uzkrāts, jo zemāka pēdējā burtu atzīme (tuvāk E).",
+    "title": "3. Klar Drošības Novērtēšanas Sistēma",
+    "para1": "Lai gan Nutri-Score un NOVA nodrošina bāzes līniju, Klar aprēķina personalizētu drošības pakāpi (no A līdz E). Mūsu vērtēšanas sistēma darbojas kā \"riska rādītājs\" — jo vairāk riska punktu uzkrāts, jo zemāka pēdējā burtu atzīme (tuvāk E).",
     "penalties": {
       "title": "Kā Darbojas Sodi un Atskaitījumi:",
       "desc": "Produkts sākas ar perfektu \"A\" atzīmi un saņem sodus (riska punktus), pamatojoties uz dažādiem atklājumiem:"
@@ -104,7 +104,7 @@
     "privacy": "Privātuma Politika",
     "terms": "Pakalpojumu Noteikumi",
     "support": "Atbalsts",
-    "copyright": "© {{year}} PureScan AI. Visprogresīvākais Pārtikas un Kosmētikas Skeneris.",
+    "copyright": "© {{year}} Klar (iepriekš PureScan AI). Visprogresīvākais pārtikas un kosmētikas skeneris.",
     "blog": "Blogs"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Ekspertu raksti par slēptajiem toksīniem, alergēniem un endokrīnās sistēmas bojātājiem ikdienas produktos. Pamatots ar PubMed pētījumiem.",
     "brandBlog": "Klar Blogs",
     "hubTitle": "Veselības Ceļvedis",
-    "hubSubtitle": "Jūsu uzticamais ceļvedis produktu etiķešu lasīšanā, kosmētikas sastāva analīzē un veselīgāku lēmumu pieņemšanā, balstoties zinātnē."
+    "hubSubtitle": "Jūsu uzticamais ceļvedis produktu etiķešu lasīšanā, kosmētikas sastāva analīzē un veselīgāku lēmumu pieņemšanā, balstoties zinātnē.",
+    "backToAll": "Atpakaļ uz visiem rakstiem",
+    "minRead": "min lasīšana",
+    "ctaBannerTitle": "Vai vēlaties pārbaudīt savus produktus jau tagad?",
+    "ctaBannerDesc": "Skenējiet jebkuru svītrkodu vai etiķeti dažās sekundēs ar Klar — bez maksas iOS un Android.",
+    "ctaCardTitle": "Skenējiet savus produktus tagad ar Klar",
+    "ctaCardDesc": "Lejupielādējiet Klar (iepriekš PureScan AI) bez maksas un uzreiz atklājiet slēptos toksīnus, alergēnus un kaitīgās piedevas.",
+    "relatedArticles": "Saistītie raksti"
   },
   "alternatives": {
     "pageMetaTitle": "Klar pret {name} — Labākā Alternatīva",
@@ -190,6 +197,60 @@
     "backedByScience": "Balstīts Zinātnē un Pārbaudītos Datos",
     "whyPeopleRely": "Uzziniet, kāpēc tūkstošiem lietotāju uzticas Klar",
     "whyMostAdvanced": "Kāpēc Klar ir vismodernākā izvēle",
-    "latestInsights": "Jaunākie Raksti"
+    "latestInsights": "Jaunākie Raksti",
+    "aboutText": "Klar (iepriekš PureScan AI) ir mobilā lietotne iOS un Android ierīcēm, kas ar mākslīgo intelektu skenē pārtikas un kosmētikas etiķetes, uzreiz atklājot slēptos toksīnus, alergēnus, endokrīnās sistēmas traucētājus un īpaši pārstrādātas piedevas. Tā sniedz personalizētu riska novērtējumu atbilstoši jūsu veselības stāvoklim, alerģijām un uzturam.",
+    "linkIngredientScanner": "Sastāvdaļu skeneris →",
+    "linkFoodScanner": "Pārtikas skeneris →",
+    "linkCosmeticChecker": "Kosmētikas pārbaude →",
+    "linkAllergyScanner": "Alerģiju skeneris →",
+    "problemDesc": "Vairāk nekā 80% ikdienas pārtikas un kosmētikas satur piedevas, kas saistītas ar hormonālo disbalansu, PCOS un hronisku iekaisumu. Atgūstiet kontroli jau šodien.",
+    "trustedBy": "Uzticas vairāk nekā 100 000 lietotāju",
+    "scanLabelsHeading1": "Noskenējiet savu",
+    "scanLabelsHeading2": "pārtikas un kosmētikas",
+    "scanLabelsHeading3": "produktu etiķetes",
+    "foodAnalysisTitle": "Pārtikas analīze",
+    "foodAnalysisDesc": "Ņem vērā saslimšanas un alerģijas, sniedzot katram lietotājam pielāgotus rezultātus, nevis vispārīgas atbildes.",
+    "cosmeticAnalysisTitle": "Kosmētikas analīze",
+    "cosmeticAnalysisDesc": "Ar vienu skenēšanu uzreiz atklājiet endokrīnos traucētājus, kancerogēnus un alergēnus savos kopšanas līdzekļos.",
+    "aiReaderTitle": "MI kameras etiķešu lasītājs",
+    "aiReaderDesc": "Ja produkta nav datubāzē, mūsu MI kamera nolasa sastāvdaļu sarakstu tieši no iepakojuma – visās pasaules valodās!",
+    "healthRulesBadge": "Jūsu veselība, jūsu noteikumi",
+    "designedForPrefix": "Radīts",
+    "designedForHighlight": "vegāniskam, bezglutēna un alerģiju draudzīgam",
+    "designedForSuffix": "dzīvesveidam",
+    "designedForSubtitle": "Iepērcieties ar pilnīgu sirdsmieru. Klar acumirklī pārvērš sarežģītas etiķetes skaidros brīdinājumos.",
+    "allergyTitle": "Alerģiju skenēšana",
+    "allergyDesc": "Skenējiet pārtikas preces un pat pudelēs pildītu ūdeni, lai atklātu slēptās sastāvdaļas, kas var izraisīt alerģisku reakciju.",
+    "glutenTitle": "Bezglutēna skenēšana",
+    "glutenDesc": "Kvieši, mieži, rudzi vai slēpti atvasinājumi — skeneris nekļūdīgi atzīmē visas glutēnu saturošās sastāvdaļas.",
+    "dairyTitle": "Piena produkti un laktoze",
+    "dairyDesc": "Uzreiz nosakiet kazeīnu, sūkalas, laktozi un piena atvasinājumus. Neaizstājami vegāniem un pie laktozes nepanesības.",
+    "ingredientTitle": "Sastāvdaļu pārbaude",
+    "ingredientDesc": "Atšifrējiet sarežģītus un maldinošus sastāvdaļu sarakstus dažu sekunžu laikā ar skaidriem brīdinājumiem.",
+    "backedByScienceDesc": "Mūsu analīzes sistēma balstās uz zinātniskiem pētījumiem un salīdzina sastāvdaļas ar medicīnas vadlīnijām un starptautiskām veselības organizācijām.",
+    "review1Text": "\"Mainīja manu dzīvi! Beidzot precīzi zinu, kas izraisa manu PCOS. MI etiķešu lasīšana ir pārsteidzoša un patiesi pielāgojas JŪSU veselībai.\"",
+    "review2Text": "\"Skenēšana aizrauj! Atklāju, ka manas iecienītās pārslas bija pilnas ar kaitīgām vielām. Lieliski, ka nezināmus produktus nav jāievada manuāli.\"",
+    "review3Text": "\"Vienīgais skeneris, kas TIEŠĀM izlasa etiķeti, kad produkts nav datubāzē. Īsts pavērsiens.\"",
+    "tableFeature": "Funkcija",
+    "tableOthers": "Citi skeneri",
+    "tableRow1Title": "Analīzes veids",
+    "tableRow1Klar": "Personalizēta JUMS",
+    "tableRow1Others": "Tikai vispārīga",
+    "tableRow2Title": "Pielāgošana veselībai",
+    "tableRow2Klar": "Pielāgojama saslimšanām",
+    "tableRow2Others": "Standarta vērtējums",
+    "tableRow3Title": "Produktu datubāze",
+    "tableRow3Klar": "Milzīga – Bez rakstīšanas",
+    "tableRow3Others": "Nepieciešama manuāla ievade",
+    "tableRow4Title": "Nezināmi produkti",
+    "tableRow4Klar": "Lasa etiķetes ar MI",
+    "tableRow4Others": "Skenēšana neizdodas",
+    "tableRow5Title": "Valodu atbalsts",
+    "tableRow5Klar": "VISAS pasaules valodas",
+    "tableRow5Others": "Ierobežotas valodas",
+    "tableRow6Title": "Pieredze",
+    "latestInsightsSubtitle": "Ekspertu analīze par sastāvdaļām, toksīniem un veselīgu dzīvesveidu.",
+    "readArticle": "Lasīt rakstu",
+    "compareLabel": "Salīdzināt:"
   }
 }

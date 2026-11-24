@@ -23,9 +23,8 @@ export default function Alternative({ competitor }) {
     const downloadAndroid = t('alternatives.downloadAndroid', 'Download for Android');
 
     useEffect(() => {
-        document.title = pageTitle;
         window.scrollTo(0, 0);
-    }, [pageTitle]);
+    }, [competitor]);
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200">
@@ -223,11 +222,9 @@ export default function Alternative({ competitor }) {
                                             </span>
                                             <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-600' : ''}`} />
                                         </button>
-                                        {isOpen && (
-                                            <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-slate-600 text-sm sm:text-base leading-relaxed pt-0 border-t border-slate-100">
-                                                <p className="mt-3">{faq.answer}</p>
-                                            </div>
-                                        )}
+                                        <div className={`${isOpen ? 'block' : 'hidden'} px-5 pb-6 sm:px-6 sm:pb-6 text-slate-600 text-sm sm:text-base leading-relaxed pt-0 border-t border-slate-100`}>
+                                            <p className="mt-3">{faq.answer}</p>
+                                        </div>
                                     </div>
                                 );
                             })}
@@ -236,7 +233,7 @@ export default function Alternative({ competitor }) {
                 )}
 
                 {/* CTA Box */}
-                <div className="text-center bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 sm:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                <div className="text-center bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 sm:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden mb-16">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
                     <span className="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 border border-emerald-500/30">
                         Free AI Scanner
@@ -256,6 +253,31 @@ export default function Alternative({ competitor }) {
                         </a>
                     </div>
                 </div>
+
+                {/* Internal Cross-Links for Comparison & Scanner Pages */}
+                <section className="border-t border-slate-200 pt-10 text-center space-y-6">
+                    <div>
+                        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Compare Klar With Other Scanners</h3>
+                        <div className="flex flex-wrap justify-center gap-2.5 text-sm font-medium">
+                            <a href="/alternatives/yuka" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs Yuka</a>
+                            <a href="/alternatives/ewg" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs EWG</a>
+                            <a href="/alternatives/think-dirty" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs Think Dirty</a>
+                            <a href="/alternatives/bobby-approved" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs Bobby Approved</a>
+                            <a href="/alternatives/clearya" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs Clearya</a>
+                            <a href="/alternatives/incibeauty" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs INCI Beauty</a>
+                            <a href="/alternatives/trash-panda" className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">Klar vs Trash Panda</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Explore Klar Scanners</h3>
+                        <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold text-emerald-700">
+                            <a href="/ingredient-scanner" className="hover:underline">Ingredient Scanner</a>
+                            <a href="/food-scanner-app" className="hover:underline">Food Scanner App</a>
+                            <a href="/cosmetic-safety-checker" className="hover:underline">Cosmetic Safety Checker</a>
+                            <a href="/allergy-scanner" className="hover:underline">Allergy Scanner</a>
+                        </div>
+                    </div>
+                </section>
             </main>
         </div>
     );

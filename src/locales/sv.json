@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Livsmedel)",
     "para1": "Nutri-Score beräknas med en standardiserad, vetenskaplig algoritm som bedömer det totala näringsvärdet av ett livsmedel per 100g eller 100ml. Den balanserar negativa näringsämnen som bör begränsas mot positiva näringsämnen som bör uppmuntras, vilket resulterar i ett betyg från A (bäst) till E (sämst).",
-    "para2": "PureScan AI beräknar detta automatiskt med hjälp av de uppgifter som anges från produktens förpackning:",
+    "para2": "Klar beräknar detta automatiskt med hjälp av de uppgifter som anges från produktens förpackning:",
     "negPoints": {
       "title": "Negativa poäng (Ökar poängen / försämrar betyget):",
       "desc": "Poäng läggs till baserat på mängden energi (kalorier), mättat fett, socker och natrium (salt)."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Det slutgiltiga betyget:",
-      "desc": "De positiva poängen dras från de negativa poängen för att få en slutgiltig numerisk poäng. Detta nummer mappas sedan till färgskalan A-E. PureScan AI använder de exakta näringsvärdena från produktens näringstabell och ingredienslista för att beräkna denna poäng för miljontals produkter."
+      "desc": "De positiva poängen dras från de negativa poängen för att få en slutgiltig numerisk poäng. Detta nummer mappas sedan till färgskalan A-E. Klar använder de exakta näringsvärdena från produktens näringstabell och ingredienslista för att beräkna denna poäng för miljontals produkter."
     },
     "grades": {
       "a": "Grade A (Mörkgrön):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA-Klassificering (Livsmedel)",
-    "para1": "Till skillnad från den matematiska formeln för Nutri-Score är NOVA-poängen ett klassificeringssystem som kategoriserar livsmedel baserat på hur mycket det har bearbetats industriellt. PureScan AI använder en automatiserad algoritm för att analysera produktens ingredienslista och kategorisera den i en av fyra grupper:",
+    "para1": "Till skillnad från den matematiska formeln för Nutri-Score är NOVA-poängen ett klassificeringssystem som kategoriserar livsmedel baserat på hur mycket det har bearbetats industriellt. Klar använder en automatiserad algoritm för att analysera produktens ingredienslista och kategorisera den i en av fyra grupper:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Obearbetad / Minimalt bearbetad)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Hur PureScan AI beräknar NOVA:",
-      "desc": "PureScan AI använder en algoritm som skannar ingredienslistan för att söka efter specifika \"markörer\" för ultrabearbetning. Om algoritmen upptäcker industriella tillsatser, konstgjorda smaker eller kraftigt bearbetade ingredienser flaggas produkten automatiskt som NOVA 4."
+      "title": "Hur Klar beräknar NOVA:",
+      "desc": "Klar använder en algoritm som skannar ingredienslistan för att söka efter specifika \"markörer\" för ultrabearbetning. Om algoritmen upptäcker industriella tillsatser, konstgjorda smaker eller kraftigt bearbetade ingredienser flaggas produkten automatiskt som NOVA 4."
     },
     "important": {
       "title": "Viktig skillnad:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI Säkerhetsbedömningssystem",
-    "para1": "Medan Nutri-Score och NOVA ger baslinjer, beräknar PureScan AI ett personligt säkerhetsbetyg (från A till E). Vårt betygssystem fungerar som en \"riskpoäng\" – ju fler riskpoäng som samlas, desto lägre blir slutbetyget (närmare E).",
+    "title": "3. Klar Säkerhetsbedömningssystem",
+    "para1": "Medan Nutri-Score och NOVA ger baslinjer, beräknar Klar ett personligt säkerhetsbetyg (från A till E). Vårt betygssystem fungerar som en \"riskpoäng\" – ju fler riskpoäng som samlas, desto lägre blir slutbetyget (närmare E).",
     "penalties": {
       "title": "Hur straff och avdrag fungerar:",
       "desc": "En produkt börjar med ett perfekt \"A\"-betyg och får straff (riskpoäng) baserat på olika upptäckter:"
@@ -104,7 +104,7 @@
     "privacy": "Integritetspolicy",
     "terms": "Användarvillkor",
     "support": "Support",
-    "copyright": "© {{year}} PureScan AI. Den mest avancerade livsmedels- och kosmetikaskannern.",
+    "copyright": "© {{year}} Klar (tidigare PureScan AI). Den mest avancerade livsmedels- och kosmetikaskannern.",
     "blog": "Blogg"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Expertartiklar om dolda gifter, allergener och hormonstörande ämnen i vardagliga produkter. Bekräftat av vetenskapliga studier från PubMed.",
     "brandBlog": "Klar Blogg",
     "hubTitle": "Hälsoportalen",
-    "hubSubtitle": "Din pålitliga guide för att tyda innehållsförteckningar, granska kosmetika och fatta hälsosammare beslut grundade i vetenskap."
+    "hubSubtitle": "Din pålitliga guide för att tyda innehållsförteckningar, granska kosmetika och fatta hälsosammare beslut grundade i vetenskap.",
+    "backToAll": "Tillbaka till alla artiklar",
+    "minRead": "min läsning",
+    "ctaBannerTitle": "Vill du kontrollera dina egna produkter just nu?",
+    "ctaBannerDesc": "Skanna valfri streckkod eller etikett på några sekunder med Klar — gratis på iOS & Android.",
+    "ctaCardTitle": "Skanna dina produkter nu med Klar",
+    "ctaCardDesc": "Ladda ner Klar (tidigare PureScan AI) gratis och upptäck genast dolda gifter, allergener och skadliga tillsatser.",
+    "relatedArticles": "Relaterade artiklar"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — Det Bästa Alternativet",
@@ -190,6 +197,60 @@
     "backedByScience": "Baserat på Vetenskap & Verifierad Forskning",
     "whyPeopleRely": "Se varför tusentals användare litar på Klar",
     "whyMostAdvanced": "Varför Klar är det mest avancerade valet",
-    "latestInsights": "Senaste Artiklarna"
+    "latestInsights": "Senaste Artiklarna",
+    "aboutText": "Klar (tidigare PureScan AI) är en mobilapp för iOS och Android som använder artificiell intelligens för att skanna etiketter på mat och kosmetika, och omedelbart upptäcka dolda gifter, allergener, hormonstörande ämnen och ultraprocessade tillsatser. Appen ger personliga riskbedömningar utifrån dina unika hälsotillstånd, allergier och kostval.",
+    "linkIngredientScanner": "Ingrediensskanner →",
+    "linkFoodScanner": "Matskanner →",
+    "linkCosmeticChecker": "Kosmetikakoll →",
+    "linkAllergyScanner": "Allergiskanner →",
+    "problemDesc": "Över 80 % av vardagliga livsmedel och kosmetika innehåller tillsatser kopplade till hormonell obalans, PCOS och kronisk inflammation. Ta tillbaka kontrollen idag.",
+    "trustedBy": "Betrodd av 100 000+ användare",
+    "scanLabelsHeading1": "Skanna etiketterna på dina",
+    "scanLabelsHeading2": "livsmedel och kosmetika-",
+    "scanLabelsHeading3": "produkter",
+    "foodAnalysisTitle": "Livsmedelsanalys",
+    "foodAnalysisDesc": "Tar hänsyn till sjukdomar och allergier för att ge personliga resultat i stället för generella svar.",
+    "cosmeticAnalysisTitle": "Kosmetikaanalys",
+    "cosmeticAnalysisDesc": "Upptäck hormonstörande ämnen, cancerframkallande kemikalier och allergener i dina hudvårdsprodukter med en snabb skanning.",
+    "aiReaderTitle": "AI-kamera Etikettläsare",
+    "aiReaderDesc": "Om en produkt saknas i databasen läser vår avancerade AI-kamera innehållsförteckningen direkt – på alla världens språk!",
+    "healthRulesBadge": "Din hälsa, dina regler",
+    "designedForPrefix": "Utformad för",
+    "designedForHighlight": "Vegansk, Glutenfri & Allergivänlig",
+    "designedForSuffix": "livsstil",
+    "designedForSubtitle": "Handla med fullständig sinnesro. Klar avkodar komplexa etiketter till tydliga, livsviktiga varningar på sekunder.",
+    "allergyTitle": "Allergiskanning",
+    "allergyDesc": "Skanna matvaror och till och med flaskvatten för att avslöja dolda ingredienser som kan utlösa allergiska reaktioner.",
+    "glutenTitle": "Glutenfri skanning",
+    "glutenDesc": "Vete, korn, råg eller dolda derivat – skannern flaggar obönhörligen alla glutenkällor för att skydda din mage.",
+    "dairyTitle": "Mejeri och laktos",
+    "dairyDesc": "Upptäck genast kasein, vassle, laktos och mjölkderivat. Oumbärligt för veganer och laktosintoleranta.",
+    "ingredientTitle": "Ingredienskontroll",
+    "ingredientDesc": "Avkoda krångliga och vilseledande ingredienslistor på några sekunder med lättförståeliga varningar.",
+    "backedByScienceDesc": "Vår analysmotor bygger på gedigen vetenskaplig forskning och korsrefererar ingredienser mot ledande medicinska riktlinjer och globala hälsoorganisationer.",
+    "review1Text": "\"Förändrade mitt liv! Äntligen vet jag exakt vad som triggar min PCOS. AI-läsningen av etiketter är fantastisk och anpassas verkligen till MIN hälsa.\"",
+    "review2Text": "\"Skanning är beroendeframkallande! Jag upptäckte att min favoritflingor var full av skadliga ämnen. Älskar att man slipper skriva in okända produkter manuellt.\"",
+    "review3Text": "\"Den enda skannern som FAKTISKT läser etiketten när en produkt saknas i databasen. Helt avgörande.\"",
+    "tableFeature": "Funktion",
+    "tableOthers": "Andra skannrar",
+    "tableRow1Title": "Analystyp",
+    "tableRow1Klar": "Personlig för DIG",
+    "tableRow1Others": "Endast generell",
+    "tableRow2Title": "Hälsoanpassning",
+    "tableRow2Klar": "Anpassad efter tillstånd",
+    "tableRow2Others": "Standardbetyg",
+    "tableRow3Title": "Produktdatabas",
+    "tableRow3Klar": "Enorm – Ingen inmatning",
+    "tableRow3Others": "Manuell inmatning krävs",
+    "tableRow4Title": "Okända produkter",
+    "tableRow4Klar": "Läser etiketter med AI",
+    "tableRow4Others": "Skanning misslyckas",
+    "tableRow5Title": "Språkstöd",
+    "tableRow5Klar": "ALLA världens språk",
+    "tableRow5Others": "Begränsade språk",
+    "tableRow6Title": "Upplevelsen",
+    "latestInsightsSubtitle": "Expertanalyser om ingredienser, gifter och hälsosamt liv.",
+    "readArticle": "Läs artikeln",
+    "compareLabel": "Jämför:"
   }
 }

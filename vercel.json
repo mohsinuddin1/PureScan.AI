@@ -114,6 +114,8 @@
     { "source": "/no/blog/49-what-are-ultra-processed-foods", "destination": "/no/blog/49-hva-er-ultraprosessert-mat-og-nova-klassifiseringen", "permanent": true },
     { "source": "/nb", "destination": "/no", "permanent": true },
     { "source": "/nb/(.*)", "destination": "/no/$1", "permanent": true },
+    { "source": "/compare/klar-vs-(.*)", "destination": "/alternatives/$1", "permanent": true },
+    { "source": "/compare/(.*)", "destination": "/alternatives/$1", "permanent": true },
     { "source": "/([a-z]{2}(?:-[a-zA-Z]{2})?)/alternatives/(.*)", "destination": "/alternatives/$2", "permanent": true },
     { "source": "/([a-z]{2}(?:-[a-zA-Z]{2})?)/terms", "destination": "/terms", "permanent": true },
     { "source": "/([a-z]{2}(?:-[a-zA-Z]{2})?)/privacy", "destination": "/privacy", "permanent": true },

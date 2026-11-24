@@ -188,8 +188,8 @@ if (basePath === '/') {
   basePath = '';
 }
 
-// Check if this page is a known multi-language page (exclude root '' while localized homepages are noindex)
-const multiLangPrefixes = ['/blog', '/grading', '/support'];
+// Check if this page is a known multi-language page
+const multiLangPrefixes = ['', '/blog', '/grading', '/support'];
 const isMultiLang = multiLangPrefixes.includes(basePath);
 
 // Generate alternate URLs for each locale
@@ -291,6 +291,10 @@ if (Astro.response && Astro.response.headers) {
             "@type": "ImageObject",
             "url": "https://scaningredients.com/logo.png"
           },
+          "sameAs": [
+            "https://apps.apple.com/app/pure-ai/id6762176490",
+            "https://play.google.com/store/apps/details?id=com.pureai.com"
+          ],
           "description": "AI-powered application for scanning food and cosmetic products to detect harmful ingredients, allergens, and ultra-processed elements.",
           "contactPoint": {
             "@type": "ContactPoint",
@@ -305,6 +309,11 @@ if (Astro.response && Astro.response.headers) {
           "alternateName": ["PureScan AI", "PureScan", "Klar"],
           "applicationCategory": "HealthApplication",
           "operatingSystem": "iOS, Android",
+          "url": "https://scaningredients.com/",
+          "sameAs": [
+            "https://apps.apple.com/app/pure-ai/id6762176490",
+            "https://play.google.com/store/apps/details?id=com.pureai.com"
+          ],
           "description": "AI-powered food and cosmetic ingredient scanner. Detect harmful chemicals, allergens, Nutri-Score, NOVA processing levels, and personalized health risks instantly.",
           "offers": {
             "@type": "Offer",

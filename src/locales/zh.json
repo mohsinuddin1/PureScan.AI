@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score（食品营养标签）",
     "para1": "Nutri-Score 使用标准化的科学算法来评估每100克或100毫升食品的整体营养价值。它权衡了应限制的负面营养素和应鼓励的正面营养素，从而得出从A（最佳）到E（最差）的评级。",
-    "para2": "PureScan AI 会根据产品包装上输入的数据自动计算此分数：",
+    "para2": "Klar 会根据产品包装上输入的数据自动计算此分数：",
     "negPoints": {
       "title": "负面分数（增加分数 / 降低评级）：",
       "desc": "根据能量（卡路里）、饱和脂肪、糖和钠（盐）的含量添加分数。"
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "最终评级：",
-      "desc": "从负面分数中减去正面分数，得出最终数字得分。然后将该数字映射到A-E的颜色刻度上。PureScan AI 使用产品营养表和成分表中的确切数值来为数百万种产品计算此分数。"
+      "desc": "从负面分数中减去正面分数，得出最终数字得分。然后将该数字映射到A-E的颜色刻度上。Klar 使用产品营养表和成分表中的确切数值来为数百万种产品计算此分数。"
     },
     "grades": {
       "a": "评级 A (深绿色):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA 分类（食品）",
-    "para1": "与 Nutri-Score 的数学公式不同，NOVA 评分是一种根据工业加工程度对食品进行分类的系统。PureScan AI 采用自动算法分析产品的成分表，将其归为以下四组之一：",
+    "para1": "与 Nutri-Score 的数学公式不同，NOVA 评分是一种根据工业加工程度对食品进行分类的系统。Klar 采用自动算法分析产品的成分表，将其归为以下四组之一：",
     "groups": {
       "1": {
         "title": "NOVA 1（未加工 / 最低限度加工）",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "PureScan AI 如何计算 NOVA：",
-      "desc": "PureScan AI 使用一种算法扫描成分表，寻找超加工的特定“标记物”。如果算法检测到工业添加剂、人造香料或高度加工的成分，它会自动将该产品标记为 NOVA 4。"
+      "title": "Klar 如何计算 NOVA：",
+      "desc": "Klar 使用一种算法扫描成分表，寻找超加工的特定“标记物”。如果算法检测到工业添加剂、人造香料或高度加工的成分，它会自动将该产品标记为 NOVA 4。"
     },
     "important": {
       "title": "重要区别：",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI 安全评分系统",
-    "para1": "虽然 Nutri-Score 和 NOVA 提供了基准，但 PureScan AI 计算的是个性化的安全评级（范围从A到E）。我们的评分系统就像一个“风险评分”——累积的风险点数越高，最终的字母评级就越低（越接近E）。",
+    "title": "3. Klar 安全评分系统",
+    "para1": "虽然 Nutri-Score 和 NOVA 提供了基准，但 Klar 计算的是个性化的安全评级（范围从A到E）。我们的评分系统就像一个“风险评分”——累积的风险点数越高，最终的字母评级就越低（越接近E）。",
     "penalties": {
       "title": "扣分机制如何运作：",
       "desc": "产品以完美的“A”评级开始，并根据各种检测结果获得扣分（风险点）："
@@ -104,7 +104,7 @@
     "privacy": "隐私政策",
     "terms": "服务条款",
     "support": "支持",
-    "copyright": "© {{year}} PureScan AI. 最先进的食品与化妆品扫描仪。",
+    "copyright": "© {{year}} Klar（原 PureScan AI）。最先进的食品与化妆品扫描仪。",
     "blog": "博客"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "权威科普日常食品与化妆品中潜藏的有害化学物质、过敏原和内分泌干扰物。基于 PubMed 医学文献研究。",
     "brandBlog": "Klar 博客",
     "hubTitle": "健康与营养资讯中心",
-    "hubSubtitle": "解读食品配料表、解析化妆品全成分的权威指南，助您基于前沿科学数据做出更安全、更明智的健康选择。"
+    "hubSubtitle": "解读食品配料表、解析化妆品全成分的权威指南，助您基于前沿科学数据做出更安全、更明智的健康选择。",
+    "backToAll": "返回全部文章",
+    "minRead": "分钟阅读",
+    "ctaBannerTitle": "想立即检查您手边的产品吗？",
+    "ctaBannerDesc": "使用 Klar 在几秒内扫描任意条形码或成分表 — iOS 与 Android 免费下载。",
+    "ctaCardTitle": "立即用 Klar 扫描您的产品",
+    "ctaCardDesc": "免费下载 Klar（原 PureScan AI），即时识别食品和化妆品中的隐藏毒素、致敏原与有害添加剂。",
+    "relatedArticles": "相关文章"
   },
   "alternatives": {
     "pageMetaTitle": "Klar 对比 {name} — 最佳全方位替代应用",
@@ -190,6 +197,60 @@
     "backedByScience": "依托前沿医学期刊文献与国际权威标准",
     "whyPeopleRely": "了解为何数以万计的用户信赖 Klar",
     "whyMostAdvanced": "为什么 Klar 是最先进的成分分析工具",
-    "latestInsights": "最新健康科普资讯"
+    "latestInsights": "最新健康科普资讯",
+    "aboutText": "Klar（原 PureScan AI）是一款适用于 iOS 和 Android 的人工智能应用，可即时扫描食品与化妆品成分标签，精准识别隐藏毒素、致敏原、内分泌干扰物和超加工添加剂，并根据您的个人健康状况、过敏史与饮食偏好提供专属安全风险评估。",
+    "linkIngredientScanner": "成分扫描器 →",
+    "linkFoodScanner": "食品扫描器 →",
+    "linkCosmeticChecker": "化妆品安全检测 →",
+    "linkAllergyScanner": "过敏原扫描器 →",
+    "problemDesc": "超过 80% 的日常食品和化妆品含有与激素失衡、多囊卵巢综合征（PCOS）和慢性炎症相关的添加剂。从今天起重新掌控您的健康。",
+    "trustedBy": "深受超过 100,000 名用户信赖",
+    "scanLabelsHeading1": "扫描您的",
+    "scanLabelsHeading2": "食品与化妆品",
+    "scanLabelsHeading3": "成分标签",
+    "foodAnalysisTitle": "食品深度分析",
+    "foodAnalysisDesc": "结合个人疾病与过敏情况给出专属结果，而非千篇一律的通用答案。每次扫描均围绕您的健康档案评估。",
+    "cosmeticAnalysisTitle": "化妆品成分分析",
+    "cosmeticAnalysisDesc": "轻轻一扫，立即识别护肤品与个护用品中的内分泌干扰物、致癌物及致敏原。",
+    "aiReaderTitle": "AI 相机标签识别",
+    "aiReaderDesc": "即使数据库中尚未收录该产品，先进的 AI 相机也能直接读取包装成分表——全面支持全球所有语言！",
+    "healthRulesBadge": "您的健康，由您做主",
+    "designedForPrefix": "专为",
+    "designedForHighlight": "纯素、无麸质与易敏人群",
+    "designedForSuffix": "生活方式打造",
+    "designedForSubtitle": "安心选购每一件商品。Klar 在数秒内将晦涩的成分表转化为清晰、守护健康的重要提示。",
+    "allergyTitle": "过敏原扫描",
+    "allergyDesc": "扫描日常食品甚至瓶装水，及时发现可能引发过敏反应的隐藏成分。",
+    "glutenTitle": "无麸质扫描",
+    "glutenDesc": "无论是小麦、大麦、黑麦还是隐藏衍生物，扫描器都会精准标出所有含麸质成分，呵护肠道健康。",
+    "dairyTitle": "乳制品与乳糖检测",
+    "dairyDesc": "即时识别酪蛋白、乳清、乳糖等乳源成分，是纯素食者与乳糖不耐受人群的必备工具。",
+    "ingredientTitle": "成分精准核查",
+    "ingredientDesc": "数秒内读懂复杂且易误导的成分表，让您清楚了解入口与涂抹的每一种物质。",
+    "backedByScienceDesc": "我们的分析引擎以严谨的科学研究为支撑，将成分数据与权威医学指南及全球卫生组织标准交叉比对。",
+    "review1Text": "“彻底改变了我的生活！我终于搞清了到底是什么诱发了我的 PCOS。AI 识读标签非常惊艳，真正做到因人而异。”",
+    "review2Text": "“扫描会上瘾！我发现自己最爱的麦片里居然满是有害添加剂。不用手动输入未知商品真是太省心了。”",
+    "review3Text": "“唯一一款在数据库查不到商品时真的能直接看懂成分标签的扫描应用，绝对是颠覆性的工具。”",
+    "tableFeature": "功能",
+    "tableOthers": "其他扫描应用",
+    "tableRow1Title": "分析方式",
+    "tableRow1Klar": "为您量身定制",
+    "tableRow1Others": "仅提供通用评分",
+    "tableRow2Title": "健康状况适配",
+    "tableRow2Klar": "适配特定健康需求",
+    "tableRow2Others": "统一标准评级",
+    "tableRow3Title": "产品数据库",
+    "tableRow3Klar": "海量覆盖 · 无需输入",
+    "tableRow3Others": "需手动填写",
+    "tableRow4Title": "未收录商品",
+    "tableRow4Klar": "AI 直接读取标签",
+    "tableRow4Others": "扫描失败",
+    "tableRow5Title": "语言支持",
+    "tableRow5Klar": "支持全球所有语言",
+    "tableRow5Others": "语言有限",
+    "tableRow6Title": "使用体验",
+    "latestInsightsSubtitle": "关于成分安全、隐藏毒素与健康生活的深度专家解析。",
+    "readArticle": "阅读全文",
+    "compareLabel": "对比："
   }
 }

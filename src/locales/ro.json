@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Produse Alimentare)",
     "para1": "Nutri-Score este calculat folosind un algoritm științific standardizat care evaluează valoarea nutrițională generală a unui produs alimentar la 100g sau 100ml. Echilibrează nutrienții negativi care trebuie limitați cu nutrienții pozitivi care trebuie încurajați, rezultând o notă de la A (cel mai bun) la E (cel mai rău).",
-    "para2": "PureScan AI calculează acest lucru automat folosind datele introduse de pe ambalajul produsului:",
+    "para2": "Klar calculează acest lucru automat folosind datele introduse de pe ambalajul produsului:",
     "negPoints": {
       "title": "Puncte Negative (Cresc scorul / înrăutățesc nota):",
       "desc": "Punctele sunt adăugate în funcție de cantitatea de energie (calorii), grăsimi saturate, zaharuri și sodiu (sare)."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Nota Finală:",
-      "desc": "Punctele pozitive sunt scăzute din punctele negative pentru a obține un scor numeric final. Acest număr este apoi mapat pe scara de culori A-E. PureScan AI folosește valorile exacte ale nutrienților din tabelul nutrițional și lista de ingrediente a produsului pentru a calcula acest scor pentru milioane de produse."
+      "desc": "Punctele pozitive sunt scăzute din punctele negative pentru a obține un scor numeric final. Acest număr este apoi mapat pe scara de culori A-E. Klar folosește valorile exacte ale nutrienților din tabelul nutrițional și lista de ingrediente a produsului pentru a calcula acest scor pentru milioane de produse."
     },
     "grades": {
       "a": "Grade A (Verde Închis):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. Clasificarea NOVA (Produse Alimentare)",
-    "para1": "Spre deosebire de formula matematică a Nutri-Score, scorul NOVA este un sistem de clasificare care categorizează alimentele în funcție de gradul de procesare industrială. PureScan AI folosește un algoritm automatizat pentru a analiza lista de ingrediente a produsului și pentru a-l categoriza într-unul dintre cele patru grupuri:",
+    "para1": "Spre deosebire de formula matematică a Nutri-Score, scorul NOVA este un sistem de clasificare care categorizează alimentele în funcție de gradul de procesare industrială. Klar folosește un algoritm automatizat pentru a analiza lista de ingrediente a produsului și pentru a-l categoriza într-unul dintre cele patru grupuri:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Neprocesate / Minim procesate)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Cum calculează PureScan AI NOVA:",
-      "desc": "PureScan AI folosește un algoritm care scanează lista de ingrediente pentru a căuta „markeri” specifici ai ultraprocesării. Dacă algoritmul detectează aditivi industriali, arome artificiale sau ingrediente extrem de procesate, semnalează automat produsul ca NOVA 4."
+      "title": "Cum calculează Klar NOVA:",
+      "desc": "Klar folosește un algoritm care scanează lista de ingrediente pentru a căuta „markeri” specifici ai ultraprocesării. Dacă algoritmul detectează aditivi industriali, arome artificiale sau ingrediente extrem de procesate, semnalează automat produsul ca NOVA 4."
     },
     "important": {
       "title": "Distincție Importantă:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. Sistemul de Evaluare a Siguranței PureScan AI",
-    "para1": "În timp ce Nutri-Score și NOVA oferă linii de bază, PureScan AI calculează o Notă de Siguranță personalizată (de la A la E). Sistemul nostru de notare acționează ca un „scor de risc” — cu cât sunt acumulate mai multe puncte de risc, cu atât litera finală este mai mică (mai aproape de E).",
+    "title": "3. Sistemul de Evaluare a Siguranței Klar",
+    "para1": "În timp ce Nutri-Score și NOVA oferă linii de bază, Klar calculează o Notă de Siguranță personalizată (de la A la E). Sistemul nostru de notare acționează ca un „scor de risc” — cu cât sunt acumulate mai multe puncte de risc, cu atât litera finală este mai mică (mai aproape de E).",
     "penalties": {
       "title": "Cum funcționează penalitățile și deducerile:",
       "desc": "Un produs începe cu o notă perfectă „A” și primește penalități (puncte de risc) pe baza diverselor detectări:"
@@ -104,7 +104,7 @@
     "privacy": "Politica de Confidențialitate",
     "terms": "Termeni de Utilizare",
     "support": "Asistență",
-    "copyright": "© {{year}} PureScan AI. Cel Mai Avansat Scanner pentru Alimente și Cosmetice.",
+    "copyright": "© {{year}} Klar (fostul PureScan AI). Cel mai avansat scanner pentru alimente și cosmetice.",
     "blog": "Blog"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Articole medicale și științifice despre toxine ascunse, alergeni și perturbatori endocrini în alimente și cosmetice. Susținut de studii PubMed.",
     "brandBlog": "Blog Klar",
     "hubTitle": "Ghidul pentru o Viață Sănătoasă",
-    "hubSubtitle": "Sursa ta de încredere pentru descifrarea etichetelor alimentelor, analizarea cosmeticelor și luarea celor mai sigure decizii validate științific."
+    "hubSubtitle": "Sursa ta de încredere pentru descifrarea etichetelor alimentelor, analizarea cosmeticelor și luarea celor mai sigure decizii validate științific.",
+    "backToAll": "Înapoi la toate articolele",
+    "minRead": "min de citit",
+    "ctaBannerTitle": "Vrei să verifici propriile produse chiar acum?",
+    "ctaBannerDesc": "Scanează orice cod de bare sau etichetă în câteva secunde cu Klar — gratuit pe iOS și Android.",
+    "ctaCardTitle": "Scanează-ți produsele acum cu Klar",
+    "ctaCardDesc": "Descarcă Klar (fostul PureScan AI) gratuit și detectează instant toxinele ascunse, alergenii și aditivii nocivi.",
+    "relatedArticles": "Articole similare"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — Cea Mai Bună Alternativă",
@@ -190,6 +197,60 @@
     "backedByScience": "Validat de Știință și Date Verificate",
     "whyPeopleRely": "Află de ce mii de oameni aleg Klar",
     "whyMostAdvanced": "De ce este Klar cel mai avansat scanner",
-    "latestInsights": "Ultimele Articole"
+    "latestInsights": "Ultimele Articole",
+    "aboutText": "Klar (fostul PureScan AI) este o aplicație mobilă pentru iOS și Android care utilizează inteligența artificială pentru a scana etichetele alimentelor și cosmeticelor, detectând instantaneu toxinele ascunse, alergenii, perturbatorii endocrini și aditivii ultraprocesați. Oferă evaluări personalizate în funcție de afecțiunile, alergiile și dieta ta.",
+    "linkIngredientScanner": "Scanner de ingrediente →",
+    "linkFoodScanner": "Scanner alimentar →",
+    "linkCosmeticChecker": "Verificare cosmetice →",
+    "linkAllergyScanner": "Scanner de alergii →",
+    "problemDesc": "Peste 80% dintre produsele alimentare și cosmetice zilnice conțin aditivi asociați cu dezechilibre hormonale, SOP și inflamație cronică. Preia controlul astăzi.",
+    "trustedBy": "Apreciat de peste 100.000 de utilizatori",
+    "scanLabelsHeading1": "Scanează etichetele",
+    "scanLabelsHeading2": "alimentelor și produselor",
+    "scanLabelsHeading3": "cosmetice",
+    "foodAnalysisTitle": "Analiză alimentară",
+    "foodAnalysisDesc": "Ține cont de afecțiuni și alergii pentru a oferi rezultate personalizate, nu răspunsuri generale. Fiecare scanare este adaptată profilului tău.",
+    "cosmeticAnalysisTitle": "Analiză cosmetică",
+    "cosmeticAnalysisDesc": "Detectează instantaneu perturbatorii endocrini, substanțele cancerigene și alergenii din produsele de îngrijire printr-o simplă scanare.",
+    "aiReaderTitle": "Cititor de etichete cu cameră AI",
+    "aiReaderDesc": "Dacă un produs lipsește din baza de date, camera noastră AI citește direct lista de ingrediente – în orice limbă din lume!",
+    "healthRulesBadge": "Sănătatea ta, regulile tale",
+    "designedForPrefix": "Conceput pentru stiluri de viață",
+    "designedForHighlight": "Vegan, Fără Gluten și cu Alergii",
+    "designedForSuffix": "",
+    "designedForSubtitle": "Cumpără cu liniște deplină. Klar transformă instant etichetele complexe în alerte clare și esențiale.",
+    "allergyTitle": "Scanare alergii",
+    "allergyDesc": "Scanează alimente și chiar apă îmbuteliată pentru a descoperi ingrediente ascunse ce pot declanșa reacții alergice.",
+    "glutenTitle": "Scanare fără gluten",
+    "glutenDesc": "Grâu, orz, secară sau derivate ascunse — scannerul semnalează orice sursă de gluten pentru a-ți proteja digestia.",
+    "dairyTitle": "Lactate și lactoză",
+    "dairyDesc": "Detectează instant cazeina, zerul, lactoza și derivatele lactate. Esențial pentru vegani și persoanele cu intoleranță la lactoză.",
+    "ingredientTitle": "Verificarea ingredientelor",
+    "ingredientDesc": "Descifrează liste de ingrediente complicate în câteva secunde cu alerte ușor de înțeles.",
+    "backedByScienceDesc": "Motorul nostru de analiză se bazează pe cercetări științifice solide și compară ingredientele cu ghidurile medicale și organizațiile internaționale de sănătate.",
+    "review1Text": "\"Mi-a schimbat viața! În sfârșit știu exact ce îmi declanșează SOP. Citirea etichetelor cu AI este uimitoare și se adaptează cu adevărat sănătății TALE.\"",
+    "review2Text": "\"Scanarea dă dependență! Am descoperit că cerealele mele preferate erau pline de substanțe nocive. Ador că nu trebuie să introduc manual produsele necunoscute.\"",
+    "review3Text": "\"Singurul scanner care citește CU ADEVĂRAT eticheta când produsul nu este în baza de date. O schimbare totală.\"",
+    "tableFeature": "Funcție",
+    "tableOthers": "Alte scannere",
+    "tableRow1Title": "Tip de analiză",
+    "tableRow1Klar": "Personalizată pentru TINE",
+    "tableRow1Others": "Doar generală",
+    "tableRow2Title": "Adaptabilitate la sănătate",
+    "tableRow2Klar": "Adaptabilă la afecțiuni",
+    "tableRow2Others": "Evaluare standard",
+    "tableRow3Title": "Bază de produse",
+    "tableRow3Klar": "Masivă – Fără tastare",
+    "tableRow3Others": "Necesită introducere manuală",
+    "tableRow4Title": "Produse necunoscute",
+    "tableRow4Klar": "Citește etichetele cu AI",
+    "tableRow4Others": "Scanarea eșuează",
+    "tableRow5Title": "Suport lingvistic",
+    "tableRow5Klar": "TOATE limbile lumii",
+    "tableRow5Others": "Limbi limitate",
+    "tableRow6Title": "Experiența",
+    "latestInsightsSubtitle": "Analize de specialitate despre ingrediente, toxine și un stil de viață sănătos.",
+    "readArticle": "Citește articolul",
+    "compareLabel": "Compară:"
   }
 }

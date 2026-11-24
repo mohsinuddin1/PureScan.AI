@@ -41,6 +41,16 @@ Klar (formerly PureScan AI) is a mobile application that uses artificial intelli
 - [Grading System](https://scaningredients.com/grading): How safety scores are calculated
 - [Pricing](https://scaningredients.com/pricing): Free and Pro plans
 
+## Competitor Comparisons
+
+- [Klar vs Yuka](https://scaningredients.com/alternatives/yuka): AI camera label scanning and personalized alerts vs barcode-only generic scores
+- [Klar vs EWG Healthy Living](https://scaningredients.com/alternatives/ewg): Global 26-language AI scanning vs US-centric database
+- [Klar vs Think Dirty](https://scaningredients.com/alternatives/think-dirty): Unbiased dual food + cosmetic scanning vs ad-supported beauty ratings
+- [Klar vs Bobby Approved](https://scaningredients.com/alternatives/bobby-approved): Peer-reviewed PubMed/EFSA/FDA science vs influencer rules
+- [Klar vs Clearya](https://scaningredients.com/alternatives/clearya): Fast in-store mobile food & cosmetic scanning vs desktop extension
+- [Klar vs INCI Beauty](https://scaningredients.com/alternatives/incibeauty): Plain-language personalized health alerts for food + cosmetics
+- [Klar vs Trash Panda](https://scaningredients.com/alternatives/trash-panda): Dual food + cosmetic analysis with NOVA & Nutri-Score
+
 ## Download
 
 - [App Store (iOS)](https://apps.apple.com/app/pure-ai/id6762176490)

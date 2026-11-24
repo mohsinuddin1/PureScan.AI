@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Gıda Ürünleri)",
     "para1": "Nutri-Score, bir gıda ürününün 100g veya 100ml başına genel besin değerini değerlendiren standartlaştırılmış, bilimsel bir algoritma kullanılarak hesaplanır. Sınırlandırılması gereken negatif besinleri, teşvik edilmesi gereken pozitif besinlerle dengeler ve sonuçta A (en iyi) ile E (en kötü) arasında bir derece verir.",
-    "para2": "PureScan AI, ürünün ambalajından girilen verileri kullanarak bunu otomatik olarak hesaplar:",
+    "para2": "Klar, ürünün ambalajından girilen verileri kullanarak bunu otomatik olarak hesaplar:",
     "negPoints": {
       "title": "Negatif Puanlar (Puanı artırır / dereceyi kötüleştirir):",
       "desc": "Enerji (kalori), doymuş yağ, şeker ve sodyum (tuz) miktarına göre puanlar eklenir."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Nihai Derece:",
-      "desc": "Nihai sayısal puanı elde etmek için pozitif puanlar negatif puanlardan çıkarılır. Bu sayı daha sonra A-E renk skalasıyla eşleştirilir. PureScan AI, milyonlarca ürün için bu puanı hesaplamak üzere ürünün beslenme tablosundan ve içerik listesinden elde edilen kesin besin değerlerini kullanır."
+      "desc": "Nihai sayısal puanı elde etmek için pozitif puanlar negatif puanlardan çıkarılır. Bu sayı daha sonra A-E renk skalasıyla eşleştirilir. Klar, milyonlarca ürün için bu puanı hesaplamak üzere ürünün beslenme tablosundan ve içerik listesinden elde edilen kesin besin değerlerini kullanır."
     },
     "grades": {
       "a": "Grade A (Koyu Yeşil):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA Sınıflandırması (Gıda Ürünleri)",
-    "para1": "Nutri-Score'un matematiksel formülünün aksine NOVA puanı, yiyecekleri ne kadar endüstriyel olarak işlendiğine göre kategorize eden bir sınıflandırma sistemidir. PureScan AI, ürünün içerik listesini analiz etmek ve onu dört gruptan birine kategorize etmek için otomatik bir algoritma kullanır:",
+    "para1": "Nutri-Score'un matematiksel formülünün aksine NOVA puanı, yiyecekleri ne kadar endüstriyel olarak işlendiğine göre kategorize eden bir sınıflandırma sistemidir. Klar, ürünün içerik listesini analiz etmek ve onu dört gruptan birine kategorize etmek için otomatik bir algoritma kullanır:",
     "groups": {
       "1": {
         "title": "NOVA 1 (İşlenmemiş / Minimal işlenmiş)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "PureScan AI NOVA'yı nasıl hesaplar:",
-      "desc": "PureScan AI, belirli ultra işlem \"işaretçilerini\" aramak için içerik listesini tarayan bir algoritma kullanır. Algoritma endüstriyel katkı maddeleri, yapay tatlar veya ağır işlenmiş bileşenler algılarsa, ürünü otomatik olarak NOVA 4 olarak işaretler."
+      "title": "Klar NOVA'yı nasıl hesaplar:",
+      "desc": "Klar, belirli ultra işlem \"işaretçilerini\" aramak için içerik listesini tarayan bir algoritma kullanır. Algoritma endüstriyel katkı maddeleri, yapay tatlar veya ağır işlenmiş bileşenler algılarsa, ürünü otomatik olarak NOVA 4 olarak işaretler."
     },
     "important": {
       "title": "Önemli Ayrım:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI Güvenlik Puanlama Sistemi",
-    "para1": "Nutri-Score ve NOVA temel çizgiler sağlarken, PureScan AI kişiselleştirilmiş bir Güvenlik Derecesi (A'dan E'ye kadar) hesaplar. Not sistemimiz bir \"risk puanı\" gibi işler; biriken risk puanları ne kadar yüksek olursa, nihai harf notu o kadar düşük olur (E'ye daha yakın).",
+    "title": "3. Klar Güvenlik Puanlama Sistemi",
+    "para1": "Nutri-Score ve NOVA temel çizgiler sağlarken, Klar kişiselleştirilmiş bir Güvenlik Derecesi (A'dan E'ye kadar) hesaplar. Not sistemimiz bir \"risk puanı\" gibi işler; biriken risk puanları ne kadar yüksek olursa, nihai harf notu o kadar düşük olur (E'ye daha yakın).",
     "penalties": {
       "title": "Cezalar ve Kesintiler Nasıl Çalışır:",
       "desc": "Bir ürün mükemmel bir \"A\" derecesi ile başlar ve çeşitli tespitlere dayalı olarak cezalar (risk puanları) alır:"
@@ -104,7 +104,7 @@
     "privacy": "Gizlilik Politikası",
     "terms": "Hizmet Şartları",
     "support": "Destek",
-    "copyright": "© {{year}} PureScan AI. En Gelişmiş Gıda ve Kozmetik Tarayıcısı.",
+    "copyright": "© {{year}} Klar (eski adıyla PureScan AI). En gelişmiş gıda ve kozmetik tarayıcısı.",
     "blog": "Blog"
   },
   "common": {
@@ -121,7 +121,14 @@
     "metaDescription": "Günlük gıda ve kozmetik ürünlerindeki gizli toksinler, alerjenler ve endokrin bozucu kimyasallar hakkında uzman makaleleri. PubMed araştırmalarıyla desteklenmiştir.",
     "brandBlog": "Klar Blog",
     "hubTitle": "Sağlık ve Beslenme Merkezi",
-    "hubSubtitle": "Gıda etiketlerini anlamak, kozmetik içeriklerini çözmek ve bilimsel verilere dayanarak daha sağlıklı kararlar almak için güvenilir rehberiniz."
+    "hubSubtitle": "Gıda etiketlerini anlamak, kozmetik içeriklerini çözmek ve bilimsel verilere dayanarak daha sağlıklı kararlar almak için güvenilir rehberiniz.",
+    "backToAll": "Tüm makalelere dön",
+    "minRead": "dk okuma",
+    "ctaBannerTitle": "Kendi ürünlerinizi hemen kontrol etmek ister misiniz?",
+    "ctaBannerDesc": "Klar ile herhangi bir barkodu veya etiketi saniyeler içinde tarayın — iOS ve Android'de ücretsiz.",
+    "ctaCardTitle": "Ürünlerinizi Şimdi Klar ile Tarayın",
+    "ctaCardDesc": "Klar'ı (eski adıyla PureScan AI) ücretsiz indirin; gıda ve kozmetiklerdeki gizli toksinleri, alerjenleri ve zararlı katkıları anında tespit edin.",
+    "relatedArticles": "İlgili Makaleler"
   },
   "alternatives": {
     "pageMetaTitle": "Klar ve {name} Karşılaştırması — En İyi Alternatif",
@@ -190,6 +197,60 @@
     "backedByScience": "Bilimsel Bulgulara ve Doğrulanmış Verilere Dayalı",
     "whyPeopleRely": "Binlerce kullanıcının neden Klar’a güvendiğini keşfedin",
     "whyMostAdvanced": "Klar neden en gelişmiş seçenektir",
-    "latestInsights": "En Son Makaleler"
+    "latestInsights": "En Son Makaleler",
+    "aboutText": "Klar (eski adıyla PureScan AI), yapay zeka kullanarak gıda ve kozmetik ürün etiketlerini tarayan, gizli toksinleri, alerjenleri, endokrin bozucuları ve ultra işlenmiş katkı maddelerini anında tespit eden iOS ve Android uygulamasıdır. Sağlık durumlarınıza, alerjilerinize ve diyetinize özel kişisel risk analizi sunar.",
+    "linkIngredientScanner": "İçerik Tarayıcı →",
+    "linkFoodScanner": "Gıda Tarayıcı →",
+    "linkCosmeticChecker": "Kozmetik Kontrolü →",
+    "linkAllergyScanner": "Alerji Tarayıcı →",
+    "problemDesc": "Günlük market ve kozmetik ürünlerinin %80'inden fazlası hormonal dengesizlik, PKOS ve kronik inflamasyonla bağlantılı katkı maddeleri içerir. Kontrolü bugün geri alın.",
+    "trustedBy": "100.000+ kullanıcı tarafından güveniliyor",
+    "scanLabelsHeading1": "Gıda ve kozmetik",
+    "scanLabelsHeading2": "ürünlerinizin etiketlerini",
+    "scanLabelsHeading3": "tarayın",
+    "foodAnalysisTitle": "Gıda analizi",
+    "foodAnalysisDesc": "Genel yanıtlar yerine hastalık ve alerjilerinizi dikkate alarak kişiye özel sonuçlar sunar. Her tarama sağlık profilinize göre değerlendirilir.",
+    "cosmeticAnalysisTitle": "Kozmetik analizi",
+    "cosmeticAnalysisDesc": "Kişisel bakım ürünlerinizdeki endokrin bozucuları, kanserojenleri ve alerjenleri tek bir taramayla anında tespit edin.",
+    "aiReaderTitle": "Yapay Zeka Etiket Okuyucu",
+    "aiReaderDesc": "Ürün veritabanında bulunmasa bile gelişmiş yapay zeka kameramız içindekiler listesini dünya üzerindeki tüm dillerde okur!",
+    "healthRulesBadge": "Sizin Sağlığınız, Sizin Kurallarınız",
+    "designedForPrefix": "Şunlar için tasarlandı:",
+    "designedForHighlight": "Vegan, Glutensiz ve Alerjik",
+    "designedForSuffix": "Yaşam Tarzları",
+    "designedForSubtitle": "Tam bir gönül rahatlığıyla alışveriş yapın. Klar karmaşık etiketleri saniyeler içinde anlaşılır uyarılara dönüştürür.",
+    "allergyTitle": "Alerji Taraması",
+    "allergyDesc": "Alerjik reaksiyonu tetikleyebilecek gizli içerikleri ortaya çıkarmak için market ürünlerini ve hatta şişe suları tarayın.",
+    "glutenTitle": "Glutensiz Tarama",
+    "glutenDesc": "Buğday, arpa, çavdar veya gizli türevler — tarayıcı bağırsaklarınızı korumak için tüm gluten kaynaklarını anında işaretler.",
+    "dairyTitle": "Süt Ürünleri ve Laktoz",
+    "dairyDesc": "Kazein, peynir altı suyu, laktoz ve süt türevlerini anında tespit edin. Veganlar ve laktoz intoleransı olanlar için vazgeçilmezdir.",
+    "ingredientTitle": "İçerik Kontrolü",
+    "ingredientDesc": "Karmaşık ve yanıltıcı içerik listelerini anlaşılır uyarılarla saniyeler içinde çözün.",
+    "backedByScienceDesc": "Analiz motorumuz güçlü bilimsel araştırmalara dayanır ve içerikleri önde gelen tıbbi kılavuzlar ile küresel sağlık kuruluşlarıyla karşılaştırır.",
+    "review1Text": "\"Hayatımı değiştirdi! Sonunda PKOS'umu neyin tetiklediğini tam olarak biliyorum. Yapay zeka etiket okuma muhteşem ve gerçekten SİZİN sağlığınıza uyum sağlıyor.\"",
+    "review2Text": "\"Tarama yapmak bağımlılık yapıyor! En sevdiğim gevreğin zararlı maddelerle dolu olduğunu öğrendim. Bilinmeyen ürünleri elle yazmamak harika.\"",
+    "review3Text": "\"Bir ürün veritabanında olmadığında etiketi GERÇEKTEN okuyan tek tarayıcı. Kesinlikle ezber bozan bir uygulama.\"",
+    "tableFeature": "Özellik",
+    "tableOthers": "Diğer Tarayıcılar",
+    "tableRow1Title": "Analiz Türü",
+    "tableRow1Klar": "SİZE Özel Kişiselleştirilmiş",
+    "tableRow1Others": "Yalnızca genel",
+    "tableRow2Title": "Sağlık Uyumu",
+    "tableRow2Klar": "Rahatsızlıklara Uyarlanır",
+    "tableRow2Others": "Standart puanlama",
+    "tableRow3Title": "Ürün Veritabanı",
+    "tableRow3Klar": "Devasa – Yazma yok",
+    "tableRow3Others": "Manuel giriş gerekir",
+    "tableRow4Title": "Bilinmeyen Ürünler",
+    "tableRow4Klar": "Yapay zeka ile etiket okur",
+    "tableRow4Others": "Tarama başarısız olur",
+    "tableRow5Title": "Dil Desteği",
+    "tableRow5Klar": "TÜM Dünya Dilleri",
+    "tableRow5Others": "Sınırlı diller",
+    "tableRow6Title": "Deneyim",
+    "latestInsightsSubtitle": "İçerikler, toksinler ve sağlıklı yaşam hakkında uzman analizleri.",
+    "readArticle": "Makaleyi Oku",
+    "compareLabel": "Karşılaştır:"
   }
 }

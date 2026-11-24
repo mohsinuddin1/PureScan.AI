@@ -122,9 +122,6 @@ export default defineConfig({
       // Exclude utility and auth-wall pages
       if (pathname.endsWith('/delete-account') || pathname === '/pro') return false;
 
-      // Exclude noindex localized homepages until full homepage body copy is translated
-      if (pathname.match(/^\/[a-z]{2}(?:-[a-zA-Z]{2})?$/)) return false;
-
       return true;
     },
     serialize: (item) => {

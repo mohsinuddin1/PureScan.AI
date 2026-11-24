@@ -5,7 +5,7 @@
   "nutriScore": {
     "title": "1. Nutri-Score (Elintarvikkeet)",
     "para1": "Nutri-Score lasketaan käyttämällä standardoitua, tieteellistä algoritmia, joka arvioi elintarvikkeen yleisen ravintoarvon 100 grammaa tai 100 millilitraa kohden. Se tasapainottaa vältettävät negatiiviset ravintoaineet suositeltavien positiivisten ravintoaineiden kanssa, jolloin tuloksena on arvosana A:sta (paras) E:hen (huonoin).",
-    "para2": "PureScan AI laskee tämän automaattisesti tuotteen pakkauksesta saatujen tietojen perusteella:",
+    "para2": "Klar laskee tämän automaattisesti tuotteen pakkauksesta saatujen tietojen perusteella:",
     "negPoints": {
       "title": "Miinuspisteet (Lisäävät pistemäärää / huonontavat arvosanaa):",
       "desc": "Pisteitä lisätään energian (kalorit), tyydyttyneiden rasvojen, sokereiden ja natriumin (suola) määrän perusteella."
@@ -16,7 +16,7 @@
     },
     "finalGrade": {
       "title": "Lopullinen arvosana:",
-      "desc": "Pluspisteet vähennetään miinuspisteistä lopullisen numeroarvon saamiseksi. Tämä numero muunnetaan sitten A-E -väriasteikoksi. PureScan AI käyttää tuotteen ravintosisältötaulukon ja ainesosaluettelon tarkkoja ravintoarvoja tämän pistemäärän laskemiseen miljoonille tuotteille."
+      "desc": "Pluspisteet vähennetään miinuspisteistä lopullisen numeroarvon saamiseksi. Tämä numero muunnetaan sitten A-E -väriasteikoksi. Klar käyttää tuotteen ravintosisältötaulukon ja ainesosaluettelon tarkkoja ravintoarvoja tämän pistemäärän laskemiseen miljoonille tuotteille."
     },
     "grades": {
       "a": "Arvosana A (Tummanvihreä):",
@@ -33,7 +33,7 @@
   },
   "nova": {
     "title": "2. NOVA-luokitus (Elintarvikkeet)",
-    "para1": "Toisin kuin Nutri-Scoren matemaattinen kaava, NOVA-pisteytys on luokitusjärjestelmä, joka jaottelee ruoat sen perusteella, kuinka paljon niitä on teollisesti prosessoitu. PureScan AI käyttää automatisoitua algoritmia tuotteen ainesosaluettelon analysointiin ja luokittelee sen yhteen neljästä ryhmästä:",
+    "para1": "Toisin kuin Nutri-Scoren matemaattinen kaava, NOVA-pisteytys on luokitusjärjestelmä, joka jaottelee ruoat sen perusteella, kuinka paljon niitä on teollisesti prosessoitu. Klar käyttää automatisoitua algoritmia tuotteen ainesosaluettelon analysointiin ja luokittelee sen yhteen neljästä ryhmästä:",
     "groups": {
       "1": {
         "title": "NOVA 1 (Käsittelemättömät / Minimaalisesti prosessoidut)",
@@ -53,8 +53,8 @@
       }
     },
     "howItWorks": {
-      "title": "Miten PureScan AI laskee NOVA:n:",
-      "desc": "PureScan AI käyttää algoritmia, joka skannaa ainesosaluettelon etsien tiettyjä teollisen prosessoinnin merkkejä. Jos algoritmi havaitsee teollisia lisäaineita, keinotekoisia aromeja tai voimakkaasti prosessoituja ainesosia, se merkitsee tuotteen automaattisesti luokkaan NOVA 4."
+      "title": "Miten Klar laskee NOVA:n:",
+      "desc": "Klar käyttää algoritmia, joka skannaa ainesosaluettelon etsien tiettyjä teollisen prosessoinnin merkkejä. Jos algoritmi havaitsee teollisia lisäaineita, keinotekoisia aromeja tai voimakkaasti prosessoituja ainesosia, se merkitsee tuotteen automaattisesti luokkaan NOVA 4."
     },
     "important": {
       "title": "Tärkeä ero:",
@@ -62,8 +62,8 @@
     }
   },
   "safety": {
-    "title": "3. PureScan AI - Turvallisuuden Pisteytysjärjestelmä",
-    "para1": "Vaikka Nutri-Score ja NOVA tarjoavat perustason, PureScan AI laskee henkilökohtaisen Turvallisuusarvosanan (A:sta E:hen). Arviointijärjestelmämme toimii kuin \"riskipisteet\" – mitä enemmän riskipisteitä kertyy, sitä huonompi lopullinen arvosana on (lähempänä E:tä).",
+    "title": "3. Klar - Turvallisuuden Pisteytysjärjestelmä",
+    "para1": "Vaikka Nutri-Score ja NOVA tarjoavat perustason, Klar laskee henkilökohtaisen Turvallisuusarvosanan (A:sta E:hen). Arviointijärjestelmämme toimii kuin \"riskipisteet\" – mitä enemmän riskipisteitä kertyy, sitä huonompi lopullinen arvosana on (lähempänä E:tä).",
     "penalties": {
       "title": "Kuinka rangaistukset ja vähennykset toimivat:",
       "desc": "Tuote aloittaa täydellisellä A-arvosanalla ja saa rangaistuksia (riskipisteitä) erilaisten havaintojen perusteella:"
@@ -103,7 +103,9 @@
     "grading": "Arviointijärjestelmä",
     "privacy": "Tietosuojaseloste",
     "terms": "Käyttöehdot",
-    "blog": "Blogi"
+    "blog": "Blogi",
+    "copyright": "© {{year}} Klar (entinen PureScan AI). Edistynein elintarvike- ja kosmetiikkaskanneri.",
+    "support": "Tuki"
   },
   "common": {
     "back": "Takaisin",
@@ -119,7 +121,14 @@
     "metaDescription": "Asiantuntija-artikkeleita piilevistä myrkyistä, allergeeneista ja hormonitoimintaa häiritsevistä aineista. Perustuu PubMed-tutkimuksiin.",
     "brandBlog": "Klar-blogi",
     "hubTitle": "Terveys- ja Ravintokeskus",
-    "hubSubtitle": "Luotettava oppaasi tuoteselosteiden ymmärtämiseen, kosmetiikan ainesosien avaamiseen ja tieteeseen pohjautuvien terveellisempien valintojen tekemiseen."
+    "hubSubtitle": "Luotettava oppaasi tuoteselosteiden ymmärtämiseen, kosmetiikan ainesosien avaamiseen ja tieteeseen pohjautuvien terveellisempien valintojen tekemiseen.",
+    "backToAll": "Takaisin kaikkiin artikkeleihin",
+    "minRead": "min lukuaika",
+    "ctaBannerTitle": "Haluatko tarkistaa omat tuotteesi heti?",
+    "ctaBannerDesc": "Skannaa mikä tahansa viivakoodi tai etiketti sekunneissa Klarilla — ilmainen iOS:lle ja Androidille.",
+    "ctaCardTitle": "Skannaa tuotteesi nyt Klarilla",
+    "ctaCardDesc": "Lataa Klar (entinen PureScan AI) ilmaiseksi ja tunnista piilevät myrkyt, allergeenit ja haitalliset lisäaineet heti.",
+    "relatedArticles": "Aiheeseen liittyvät artikkelit"
   },
   "alternatives": {
     "pageMetaTitle": "Klar vs {name} — Paras Vaihtoehto",
@@ -188,6 +197,60 @@
     "backedByScience": "Perustuu Tieteen ja Varmistettujen Tietojen Voimaan",
     "whyPeopleRely": "Katso miksi tuhannet luottavat Klariin",
     "whyMostAdvanced": "Miksi Klar on markkinoiden edistynein valinta",
-    "latestInsights": "Uusimmat Artikkelit"
+    "latestInsights": "Uusimmat Artikkelit",
+    "aboutText": "Klar (entinen PureScan AI) on iOS- ja Android-mobiilisovellus, joka skannaa tekoälyn avulla elintarvikkeiden ja kosmetiikan tuoteselosteet sekä tunnistaa piilevät myrkyt, allergeenit, hormonihäiriköt ja ultraprosessoidut lisäaineet välittömästi. Saat yksilöllisen terveysarvioinnin oman terveydentilasi, allergioidesi ja ruokavaliosi mukaan.",
+    "linkIngredientScanner": "Ainesosaskanneri →",
+    "linkFoodScanner": "Ruokaskanneri →",
+    "linkCosmeticChecker": "Kosmetiikkatarkistus →",
+    "linkAllergyScanner": "Allergiaskanneri →",
+    "problemDesc": "Yli 80 % päivittäisistä elintarvikkeista ja kosmetiikasta sisältää lisäaineita, jotka yhdistetään hormonihäiriöihin, PCOS:ään ja krooniseen tulehdukseen. Ota hallinta takaisin tänään.",
+    "trustedBy": "Yli 100 000 käyttäjän luottama",
+    "scanLabelsHeading1": "Skannaa tuotteidesi",
+    "scanLabelsHeading2": "elintarvike- ja kosmetiikka-",
+    "scanLabelsHeading3": "selosteet",
+    "foodAnalysisTitle": "Ruoka-analyysi",
+    "foodAnalysisDesc": "Huomioi sairaudet ja allergiat antaen yksilölliset tulokset jokaiselle käyttäjälle yleisten vastausten sijaan.",
+    "cosmeticAnalysisTitle": "Kosmetiikka-analyysi",
+    "cosmeticAnalysisDesc": "Tunnista hormonihäiriköt, karsinogeenit ja allergeenit hygieniatuotteistasi yhdellä helpolla skannauksella.",
+    "aiReaderTitle": "Tekoälykameran etikettilukija",
+    "aiReaderDesc": "Jos tuotetta ei löydy tietokannasta, kehittynyt tekoälykameramme lukee ainesosaluettelon suoraan – kaikilla maailman kielillä!",
+    "healthRulesBadge": "Sinun terveytesi, sinun sääntösi",
+    "designedForPrefix": "Suunniteltu",
+    "designedForHighlight": "vegaaniseen, gluteenittomaan & allergisen",
+    "designedForSuffix": "elämäntapaan",
+    "designedForSubtitle": "Osta täysin huoletta. Klar purkaa monimutkaiset tuoteselosteet selkeiksi, tärkeiksi varoituksiksi sekunneissa.",
+    "allergyTitle": "Allergiaskannaus",
+    "allergyDesc": "Skannaa ruokaostokset ja jopa pullovesi paljastaaksesi piilevät ainesosat, jotka voivat aiheuttaa allergisen reaktion.",
+    "glutenTitle": "Gluteeniton skannaus",
+    "glutenDesc": "Vehnä, ohra, ruis tai piilevät johdannaiset – skanneri merkitsee armotta kaikki gluteenipitoiset ainesosat.",
+    "dairyTitle": "Maito ja laktoosi",
+    "dairyDesc": "Tunnista heti kaseiini, hera, laktoosi ja muut maitojohdannaiset. Välttämätön vegaaneille ja laktoosi-intoleranteille.",
+    "ingredientTitle": "Ainesosien tarkistus",
+    "ingredientDesc": "Selvitä monimutkaiset ja harhaanjohtavat tuoteselosteet sekunneissa ymmärrettävillä varoituksilla.",
+    "backedByScienceDesc": "Analyysimoottorimme perustuu vankkaan tieteelliseen tutkimukseen ja vertaa tietoja johtaviin lääketieteellisiin suosituksiin ja terveysjärjestöihin.",
+    "review1Text": "\"Muutti elämäni! Tiedän vihdoin tarkalleen, mikä laukaisee PCOS-oireeni. Tekoälyn etikettiluku on uskomaton ja mukautuu todella MINUN terveyteeni.\"",
+    "review2Text": "\"Skannaaminen on koukuttavaa! Huomasin, että lempimuroni oli täynnä haitallisia aineita. Ihanaa, ettei tuntemattomia tuotteita tarvitse kirjoittaa käsin.\"",
+    "review3Text": "\"Ainoa skanneri, joka OIKEASTI lukee etiketin, kun tuotetta ei ole tietokannassa. Täydellinen pelinmuuttaja.\"",
+    "tableFeature": "Ominaisuus",
+    "tableOthers": "Muut skannerit",
+    "tableRow1Title": "Analyysin tyyppi",
+    "tableRow1Klar": "Personoitu SINULLE",
+    "tableRow1Others": "Vain yleinen",
+    "tableRow2Title": "Terveysmuokattavuus",
+    "tableRow2Klar": "Mukautuu sairauksiin",
+    "tableRow2Others": "Vakioarviointi",
+    "tableRow3Title": "Tuotetietokanta",
+    "tableRow3Klar": "Valtava – Ei kirjoittamista",
+    "tableRow3Others": "Vaatii käsin syöttöä",
+    "tableRow4Title": "Tuntemattomat tuotteet",
+    "tableRow4Klar": "Lukee etiketit tekoälyllä",
+    "tableRow4Others": "Skannaus epäonnistuu",
+    "tableRow5Title": "Kielituki",
+    "tableRow5Klar": "KAIKKI maailman kielet",
+    "tableRow5Others": "Rajatut kielet",
+    "tableRow6Title": "Kokemus",
+    "latestInsightsSubtitle": "Asiantuntija-artikkeleita ainesosista, myrkyistä ja terveellisestä elämästä.",
+    "readArticle": "Lue artikkeli",
+    "compareLabel": "Vertaa:"
   }
 }

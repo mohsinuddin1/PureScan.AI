@@ -43,11 +43,16 @@ const schemaData = {
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "name": "Klar",
-      "alternateName": ["PureScan AI", "Klar AI"],
+      "@id": "https://scaningredients.com/#app",
+      "name": "Klar - Food & Cosmetic Scanner",
+      "alternateName": ["PureScan AI", "Klar AI", "Klar"],
       "applicationCategory": "HealthApplication",
       "operatingSystem": "iOS, Android",
       "url": "https://scaningredients.com/",
+      "sameAs": [
+        "https://apps.apple.com/app/pure-ai/id6762176490",
+        "https://play.google.com/store/apps/details?id=com.pureai.com"
+      ],
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -56,7 +61,7 @@ const schemaData = {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
-        "ratingCount": "1420",
+        "ratingCount": "500",
         "bestRating": "5",
         "worstRating": "1"
       },

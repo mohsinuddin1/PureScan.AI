@@ -89,13 +89,13 @@ The Klar blog publishes expert-written articles on hidden toxins in food and cos
 
 ## Competitor Comparison Pages
 
-- [PureScan AI vs Yuka](https://scaningredients.com/alternatives/yuka)
-- [PureScan AI vs EWG Healthy Living](https://scaningredients.com/alternatives/ewg)
-- [PureScan AI vs Think Dirty](https://scaningredients.com/alternatives/think-dirty)
-- [PureScan AI vs Bobby Approved](https://scaningredients.com/alternatives/bobby-approved)
-- [PureScan AI vs Clearya](https://scaningredients.com/alternatives/clearya)
-- [PureScan AI vs Trash Panda](https://scaningredients.com/alternatives/trash-panda)
-- [PureScan AI vs InciBeauty](https://scaningredients.com/alternatives/incibeauty)
+- [Klar vs Yuka](https://scaningredients.com/alternatives/yuka)
+- [Klar vs EWG Healthy Living](https://scaningredients.com/alternatives/ewg)
+- [Klar vs Think Dirty](https://scaningredients.com/alternatives/think-dirty)
+- [Klar vs Bobby Approved](https://scaningredients.com/alternatives/bobby-approved)
+- [Klar vs Clearya](https://scaningredients.com/alternatives/clearya)
+- [Klar vs Trash Panda](https://scaningredients.com/alternatives/trash-panda)
+- [Klar vs INCI Beauty](https://scaningredients.com/alternatives/incibeauty)
 
 ## Contact & Support
 
