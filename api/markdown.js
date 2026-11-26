@@ -23,7 +23,7 @@ export default function handler(req, res) {
   }
 
   if (!markdownContent) {
-    markdownContent = `# PureScan AI
+    markdownContent = `# Klar (formerly PureScan AI)
 
 > The smartest AI-powered food and cosmetic ingredient scanner app for iOS and Android.
 
@@ -35,12 +35,12 @@ Scan barcodes and ingredient lists to instantly detect harmful chemicals, endocr
 - **Personalized Risk Profiling**: Tailored safety alerts for PCOS, diabetes, pregnancy, and dietary preferences.
 
 ## Quick Links
-- **API Catalog**: https://purescan.droploop.in/.well-known/api-catalog
-- **AI Catalog / ARD**: https://purescan.droploop.in/.well-known/ai-catalog.json
-- **Agent Auth (Auth.md)**: https://purescan.droploop.in/auth.md
-- **MCP Server Card**: https://purescan.droploop.in/.well-known/mcp/server-card.json
-- **Grading Standards**: https://purescan.droploop.in/grading
-- **Pricing & Pro**: https://purescan.droploop.in/pricing
+- **API Catalog**: https://scaningredients.com/.well-known/api-catalog
+- **AI Catalog / ARD**: https://scaningredients.com/.well-known/ai-catalog.json
+- **Agent Auth (Auth.md)**: https://scaningredients.com/auth.md
+- **MCP Server Card**: https://scaningredients.com/.well-known/mcp/server-card.json
+- **Grading Standards**: https://scaningredients.com/grading
+- **Pricing & Pro**: https://scaningredients.com/pricing
 
 ## Apps
 - [iOS App Store](https://apps.apple.com/app/pure-ai/id6762176490)

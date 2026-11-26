@@ -1,142 +1,169 @@
-# Klar — Food & Cosmetic Scanner Blog Creation Rules & Topic Index
+# Klar (scaningredients.com) — SEO, AEO, GEO & Multilingual Blog Creation Rules
 
-This document defines the mandatory criteria for creating new blog posts on the Klar (formerly PureScan AI) website and maintains a master index of all previously covered topics to prevent duplication.
+This document defines the mandatory criteria for creating high-ranking, citation-worthy, cleanly indexed blog posts across all **26 active locales** of Klar (`https://scaningredients.com`), aligned with **Google Search Central**, **Bing Webmaster Guidelines (IndexNow & Copilot)**, and **LLM Answer Engines** (Google AI Overviews / AI Mode, ChatGPT Search, Perplexity, Claude, Microsoft Copilot), while preserving a master index of all previously covered topics.
 
 ---
 
-## 1. Universal Blog Creation Criteria
+## 1. Universal Blog Creation Criteria (SEO, AEO, GEO & Multilingual)
 
-### Frontmatter Requirements
-Every blog post MDX file **must** include the following YAML frontmatter fields, adhering to the Zod schema in `src/content.config.ts`:
+### 1.1 Frontmatter & Metadata Standards (Google + Bing SERP Optimization)
+Every blog post MDX file **must** adhere strictly to the Zod schema in `src/content.config.ts`:
 
 ```yaml
 ---
-id: <number>           # Sequential integer (next available number)
-title: "<string>"      # SEO-optimized title with primary keyword (MUST be < 65 characters)
-badge: "<string>"      # Short category badge (e.g., "Gut & Skin Health")
-description: "<string>" # Meta description for search engines (MUST be > 25 and < 165 characters)
-image: "<url>"         # Unique Unsplash image URL (must differ from ALL previous blogs)
-publishDate: "<string>" # ISO date string (e.g., "2025-10-31")
+id: <number>            # Sequential integer matching across all 26 locales for hreflang pairing
+title: "<string>"       # 40–55 chars (hard max < 60); NO straight/curly quotes (' or ")
+badge: "<string>"       # Concise localized category badge (e.g., "Gut & Skin Health")
+description: "<string>" # 110–144 chars (60–110 chars for ja/ko/zh); primary keyword + value
+image: "<url>"          # Unique Unsplash URL (must differ from ALL previous blogs)
+publishDate: "<string>" # Strict ISO YYYY-MM-DD (never omitted or future-dated)
 ---
 ```
 
-- **Strict Title Length Constraint (< 65 Characters)**:
-  - The `title` tag **MUST be strictly less than 65 characters (`< 65` chars)**.
-  - Search engines (Google, Bing) truncate titles exceeding 65–70 characters in SERP snippets. Keeping it under 65 ensures the full title displays cleanly without ellipses across desktop and mobile.
-  - Make each title unique, click-worthy, and focused on high-intent search queries.
+- **Title (`title`) — 40–55 Characters (Hard Max `< 60`)**:
+  - `src/pages/blog/[slug].astro` and `src/pages/[lang]/blog/[slug].astro` append ` | Klar` (7 chars) and truncate titles over 48 chars in `<title>`. Keeping `title` between **40 and 55 characters** ensures the full headline displays cleanly in Google and Bing SERPs without truncation or ellipses.
+  - **Do not use single (`'`) or double (`"`) quotes** inside `title` (prevents HTML entity expansion like `&#39;` and aligns with `generateShortTitle`).
+  - Front-load the primary native-language search keyword and match high-intent informational or comparison queries.
 
-- **Strict Meta Description Length Constraint (> 25 and < 165 Characters)**:
-  - The `description` **MUST be strictly greater than 25 characters and strictly less than 165 characters (`> 25` and `< 165` chars)**.
-  - Descriptions shorter than 25 characters are rejected by search engine crawlers, which replace them with arbitrary page text. Descriptions longer than 165 characters are truncated on SERPs. The ideal sweet spot is 120–145 characters.
-  - Summarize the core value proposition and include primary search keywords naturally.
+- **Meta Description (`description`) — 110–144 Characters (CJK: 60–110 Characters)**:
+  - `src/layouts/Layout.astro` automatically pads descriptions under 105 characters with generic boilerplate (which hurts CTR and creates duplicate meta descriptions across pages) and truncates anything over 144 characters.
+  - Write a crisp, self-contained **110–144 character** summary (or **60–110 characters** for `ja`, `ko`, `zh`) containing the primary local keyword and a clear clinical/practical takeaway.
 
-- **No Fabricated Author Bylines or Generic Teams**:
-  - Do NOT invent artificial author bylines or editorial personas (e.g., no `"MedGPT Editorial Team"`, `"MedGPT Clinical Informatics Team"`, `"Editor"`, or fake medical reviewers).
-  - Genuine authority and accountable authorship must stem strictly from authentic external research sources, study authors, and official institutions cited in the body.
+- **Publish Date (`publishDate`)**:
+  - Must be a valid `YYYY-MM-DD` date matching the actual publish date. `astro.config.mjs` reads `publishDate` directly to populate XML sitemap `<lastmod>` and `Article` JSON-LD `datePublished` / `dateModified`. Never leave it blank or future-dated.
 
-### Content Structure (MDX Body)
-All blog posts must follow this exact structural pattern:
+- **Splash Image (`image`)**:
+  - Must be a **unique**, high-resolution Unsplash URL not used in any prior blog in Section 2:
+    `https://images.unsplash.com/photo-XXXXX?q=80&w=1200&auto=format&fit=crop`
 
-1. **Lucide React Icon Imports**
-   ```jsx
-   import { ShieldAlert, Zap, SearchCheck, CheckCircle2 } from 'lucide-react';
-   ```
+- **No Fabricated Author Bylines**:
+  - Never invent artificial editorial personas or fake reviewers (e.g., no `"MedGPT Editorial Team"`, `"Clinical Informatics Team"`, or invented MDs). E-E-A-T authority must come strictly from real peer-reviewed studies, named study authors, and official regulatory agencies cited in the body.
 
-2. **Quick Answer Callout Box** — An amber (or emerald) highlighted box using `<ShieldAlert />` icon that gives readers the core answer immediately.
+---
 
-3. **3 Question-Based Sections** — Each `<h3>` must be phrased as a question that people commonly search on Google, ask ChatGPT, or ask Gemini. Each section must provide genuine educational value.
+### 1.2 Content Architecture & Anti-Slop Quality (Preventing "Crawled – Currently Not Indexed")
+Repetitive templates, filler intros, and identical boilerplate across 26 locales trigger Google's Helpful Content / Scaled Content filters and cause **"Crawled – currently not indexed"** exclusions in Google Search Console. Every article must deliver genuine **Information Gain**:
 
-4. **4-Step AI Scanning Methodology** — An ordered list explaining:
-   - Step 1: Scan Barcode or Ingredients
-   - Step 2: AI Database Matching
-   - Step 3: Detect Hidden Hazards
-   - Step 4: Receive Personalized Score
+- **Target Length & Formatting**: **800–1,300 words** of dense, verified, zero-fluff guidance. Use short paragraphs (2–4 sentences), clean spacing, and scannable bullet lists.
+- **Minimal Lucide Imports**: Only import icons actually rendered in the MDX file:
+  ```jsx
+  import { ShieldAlert } from 'lucide-react';
+  ```
+  *(Do NOT import unused icons like `Zap`, `SearchCheck`, or `CheckCircle2`.)*
+- **Strict Semantic Heading Hierarchy (`<h2>` → `<h3>`)**:
+  - The Astro blog layout already renders `<h1>` from frontmatter `title`.
+  - **NEVER skip `<h2>`** to jump straight to `<h3>`. Use `<h2>` for all primary sections and `<h3>` only for subsections nested under an `<h2>`.
+- **Required Flexible Article Structure**:
+  1. **Quick Answer Callout Box (`.quick-answer` for AEO & Speakable JSON-LD)**:
+     - Must include `quick-answer` in `className` so `[slug].astro`'s `SpeakableSpecification` selector (`.quick-answer`) matches the rendered DOM:
+       ```jsx
+       <div className="quick-answer bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900 rounded-xl p-6 my-8">
+         <div className="flex items-start gap-4">
+           <ShieldAlert className="w-8 h-8 text-amber-600 dark:text-amber-500 flex-shrink-0 mt-1" />
+           <div>
+             <p className="text-amber-900 dark:text-amber-400 font-semibold mb-2 mt-0">{Localized Quick Answer Title}</p>
+             <p className="text-amber-800 dark:text-amber-300/90 mb-0">{40–70 word direct, factual answer}</p>
+           </div>
+         </div>
+       </div>
+       ```
+     - Keep the Quick Answer **40–70 words**, direct, self-contained, and rich with exact entity names and conclusions.
+  2. **3–4 Intent-Driven `<h2>` Sections**:
+     - Phrase each `<h2>` around high-volume Google/Bing search queries or real LLM prompts in that locale.
+     - **Inverted Pyramid Opening**: Begin every `<h2>` with a **40–60 word direct-answer paragraph** that completely answers the heading question on its own (optimized for RAG passage extraction and Google AI Overviews), then expand with biological/chemical mechanisms, exact INCI names, E-numbers, and quantitative thresholds (`pH`, `%`, `ppm`, `mg/kg`).
+  3. **At Least 1 Structured Comparison / Reference Table**:
+     - Include at least one clean Markdown table per post (e.g., *Ingredient / Biological Mechanism / Risk Level / Safer Alternative*, or *EU vs. US / Local Regulatory Status*). Structured tables significantly boost Information Gain, featured snippets, and LLM citations.
+  4. **Natural, Topic-Specific Klar Takeaway (No Repetitive 4-Step Boilerplate)**:
+     - **Do NOT** paste a generic "4-Step AI Scanning Methodology" template into every post.
+     - Instead, write a concise, topic-specific practical takeaway (2–4 sentences or 3 tailored action bullets under a relevant `<h2>`) showing how readers can verify the exact ingredients, E-numbers, or allergens covered in the article using **Klar** (mentioning *formerly PureScan AI* only where contextually natural, never mechanically).
+  5. **Dedicated Sources & References Block (HTML `<a>` Required for Schema)**:
+     - End every post with a references container using HTML `<a>` tags for PubMed and DOI URLs (`[slug].astro` extracts `<a href="https://pubmed.ncbi.nlm.nih.gov/...">` and `<a href="https://doi.org/...">` via regex into `Article.citation` JSON-LD):
+       ```html
+       <div className="mt-12 pt-8 border-t border-slate-200">
+         <h2 className="text-lg font-bold text-slate-900 mb-4">{Localized Sources Heading}</h2>
+         <ol className="list-decimal pl-6 space-y-2 text-sm text-slate-600">
+           <li><a href="https://pubmed.ncbi.nlm.nih.gov/<PMID>/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">{Study Title — Author et al., Journal (Year)}</a></li>
+         </ol>
+       </div>
+       ```
 
-5. **Subtle App Promotion Section** — A final `<h3>` with a value-driven paragraph that naturally positions Klar (formerly PureScan AI) as the solution. **No aggressive sales pitch.** The tone should empower the reader.
+---
 
-6. **Dedicated Sources & References Block** — Every post **must** end with a dedicated references container:
-   ```html
-   <div className="mt-12 pt-8 border-t border-slate-200">
-     <h3 className="text-lg font-bold text-slate-900 mb-4">{Localized Heading}</h3>
-     <ol className="list-decimal pl-6 space-y-2 text-sm text-slate-600">
-       <li><a href="https://pubmed.ncbi.nlm.nih.gov/<PMID>/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-900 underline">{Study Title} — PubMed</a></li>
-     </ol>
-   </div>
-   ```
+### 1.3 Google Search Central, Bing Webmaster & IndexNow Indexing Rules
 
-### SEO, GEO & AEO Requirements
-- **Title Length**: Strictly `< 65` characters for maximum SERP visibility and click-through rate.
-- **Meta Description**: Strictly `> 25` and `< 165` characters (ideal: 120–145 characters) answering primary search intent.
-- **Question-based H3 headings**: Must target high-volume Google search queries and conversational prompts.
-- **Answer Engine Optimization (AEO)**: Direct, concise answers in the Quick Answer callout box and within the opening sentences of each H3 section for Google AI Overviews, Gemini, Perplexity, and ChatGPT search citations.
-- **Natural keyword integration**: Include terms people search for in Google, ChatGPT, and Gemini.
-- **Localized keywords**: Use region-specific phrasing and local-language search terms in each translation (not just literal translations of English keywords).
+- **Google Search Central Compliance**:
+  - **People-First Information Gain**: Never publish thin rewrites of existing posts. Each post must contribute unique mechanisms, clinical thresholds, regulatory distinctions, or comparison tables.
+  - **Visible Content = Structured Data**: `Article`, `citation`, `speakable`, and `BreadcrumbList` JSON-LD must match visible text. Keep all main prose, tables, and references directly rendered in static HTML/MDX (never hidden inside collapsed accordions or client-only JS tabs).
+  - **Canonical & Hreflang Integrity**: Generate all **26 locales** under the exact same numeric frontmatter `id` so `blogSlugMap` outputs complete, bidirectional `<link rel="alternate" hreflang="...">` + `x-default` annotations without orphan or fallback URLs.
+  - **Clean URLs**: The site enforces `trailingSlash: 'never'`. Never create incomplete slugs (`50-`, `50-vs`), redirect chains, or mismatched canonical paths.
 
-### E-E-A-T, Backlinks & Authoritative Scientific Sources
-To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness) and generative answer engines:
-1. **Legitimate Scientific Authors & Exact Study Links (No Generic Roots)**:
-   - Authority must be anchored directly in legitimate, peer-reviewed scientific literature and real researchers/institutions—**never** in fabricated editorial personas, fake reviewer teams, or arbitrary author tags.
-   - Every single blog post **MUST contain 2–3 exact scientific citations** from legitimate peer-reviewed medical and toxicological journals.
-   - **Permissible Sources**: Direct PubMed/NCBI study records (`https://pubmed.ncbi.nlm.nih.gov/<PMID>/`), scientific DOIs (`https://doi.org/...`), European Commission SCCS opinions, EFSA scientific opinions, or peer-reviewed journals (*The Lancet*, *BMJ*, *JAAD*, *JACI*, *Pediatrics*, *J Invest Dermatol*).
-   - Anchor text must explicitly credit the legitimate authors, study title, or official journal (e.g., `[When do nutri-score labels shift food choices? — PubMed](https://pubmed.ncbi.nlm.nih.gov/42475008/)`).
-2. **Strictly No Generic Homepage / Root Domain Links**:
-   - **Never link to generic website homepages, root domains, or search homepages** (e.g., strictly forbidden: `https://pubmed.ncbi.nlm.nih.gov/`, `https://who.int`, `https://www.fda.gov/`, `https://efsa.europa.eu/`, `https://cdc.gov`).
-   - Every single citation **must** point directly to the **exact, verified, deep URL** where the specific clinical findings, data points, or regulatory decisions are published.
-   - All links must be verified to return HTTP 200.
-3. **Contextual Internal Backlinks (Topic Clusters)**:
-   - Every blog post **must** contain 2–4 contextual internal links to relevant existing articles on the site (e.g., linking to skin barrier repair, chemical preservatives, food additive guides, or allergy diagnostics).
-   - Internal links build strong topical authority, improve crawl depth, and guide users to relevant solutions across the platform.
-4. **Fact-Checking & No Hallucination**:
-   - All physiological mechanisms, clinical metrics, pH values, and regulatory statuses must reflect verified scientific literature. Never invent studies or exaggerate toxicity risks beyond published dermatological and toxicological data.
+- **Bing Webmaster Guidelines & IndexNow**:
+  - **Exact-Match & Entity Clarity**: Place the primary native-language keyword naturally in `title`, `description`, the opening 100 words, and at least one `<h2>`. Bing weighs clear semantic entity matching and structured HTML tables heavily.
+  - **Automated IndexNow Submission**: `npm run build` runs `astro build && node submit_indexnow.js`, which reads all `dist/sitemap-*.xml` URLs and submits them immediately to `https://api.indexnow.org/IndexNow` (notifying Bing, Yandex, Naver, and Seznam). Ensure zero build errors, zero 404s, and zero redirect slugs before deploying so IndexNow only indexes live HTTP 200 canonical pages.
+  - **Copilot Grounding Eligibility**: Never add `noarchive` or `nocache` directives to blog posts so Microsoft Copilot and Bing AI answers can ground and cite full article passages.
 
-### Localization Requirements
-- Every blog post **must** be generated across **all 27 locales** supported by Klar:
-  `en`, `bg`, `ar`, `ar-MA`, `cs`, `da`, `de`, `el`, `es`, `fi`, `fr`, `hu`, `it`, `ja`, `ko`, `lt`, `lv`, `nb`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `tr`, `zh`
-- Use the verified localized headings for the Sources & References block:
-  - English (`en`): `Sources & References`
-  - Arabic (`ar`): `المصادر والمراجع العلمية المعتمدة`
-  - Moroccan Arabic (`ar-MA`): `المصادر والمراجع العلمية`
-  - Bulgarian (`bg`): `Източници и научни референции`
-  - Czech (`cs`): `Zdroje a vědecké reference`
-  - Danish (`da`): `Kilder og videnskabelige referencer`
-  - German (`de`): `Quellen & wissenschaftliche Referenzen`
-  - Greek (`el`): `Πηγές & Επιστημονικές Αναφορές`
-  - Spanish (`es`): `Fuentes y referencias científicas`
-  - Finnish (`fi`): `Lähteet ja tieteelliset tutkimukset`
-  - French (`fr`): `Sources et références scientifiques`
-  - Hungarian (`hu`): `Források és tudományos hivatkozások`
-  - Italian (`it`): `Fonti e riferimenti scientifici`
-  - Japanese (`ja`): `参考文献・科学的エビデンス`
-  - Korean (`ko`): `참고 문헌 및 과학적 근거`
-  - Lithuanian (`lt`): `Šaltiniai ir mokslinės nuorodos`
-  - Latvian (`lv`): `Avoti un zinātniskās atsauces`
-  - Norwegian Bokmål / Nynorsk (`nb`, `no`): `Kilder og vitenskapelige referanser`
-  - Dutch (`nl`): `Bronnen en wetenschappelijke referenties`
-  - Polish (`pl`): `Źródła i publikacje naukowe`
-  - Portuguese (`pt`): `Fontes e referências científicas`
-  - Romanian (`ro`): `Surse și referințe științifice`
-  - Russian (`ru`): `Источники и научные исследования`
-  - Swedish (`sv`): `Källor och vetenskapliga referenser`
-  - Turkish (`tr`): `Kaynaklar ve Bilimsel Referanslar`
-  - Chinese (`zh`): `参考文献与权威研究`
-- Translations must be **culturally adapted**, not word-for-word machine translations.
-- Do NOT use Google Translate API or any external translation services. All translations must be generated internally by the AI itself.
-- Arabic (`ar`, `ar-MA`) content should use natural Darija phrasing for Moroccan Arabic.
+---
 
-### Splash Image Requirements
-- Must use a **unique** high-resolution Unsplash image URL.
-- The image URL **must not** duplicate any image used in previous blog posts (see Topic Index below).
-- Recommended format: `https://images.unsplash.com/photo-XXXXX?q=80&w=1200&auto=format&fit=crop`
+### 1.4 AEO & GEO (LLM Citations: AI Overviews, ChatGPT Search, Perplexity, Claude, Copilot)
 
-### Promotion Style
-- Always **value-first**: educate the reader before mentioning Klar.
-- Position Klar as a tool that **empowers** the user, not as a sales pitch.
-- The promotional section should naturally flow from the educational content. Mention that Klar was formerly known as PureScan AI where contextually helpful.
+- **Passage-Level Citability**: Because RAG search systems and Google's "query fan-out" retrieve individual passages rather than whole articles, ensure the `.quick-answer` box and the **first 40–60 words after every `<h2>`** are crystal-clear, standalone factual answers.
+- **High Entity & Numeric Density**: Cite exact chemical names (INCI, E-numbers, CAS/regulatory codes), physiological metrics, concentration caps, and inline primary citations (`Author et al., Journal, Year`) instead of vague claims.
+- **E-E-A-T & Strict Deep-Link Citations**:
+  - Include **2–4 verified peer-reviewed or official regulatory citations** per post (`https://pubmed.ncbi.nlm.nih.gov/<PMID>/`, `https://doi.org/...`, EFSA scientific opinions, European Commission SCCS opinions, FDA/USDA, WHO/IARC, *The Lancet*, *BMJ*, *JAAD*, *JACI*, *J Invest Dermatol*, *Pediatrics*).
+  - **Strictly ZERO root/homepage links**: Never link to generic homepages or search roots (forbidden: `https://pubmed.ncbi.nlm.nih.gov/`, `https://who.int`, `https://www.fda.gov/`, `https://efsa.europa.eu/`, `https://aap.org`). Every external link must point to the exact deep document URL returning **HTTP 200**.
+  - **Zero Hallucination**: Never fabricate PMIDs, DOIs, author names, sample sizes, or legal bans.
+- **Contextual Same-Locale Internal Links (Topic Clusters)**:
+  - Include **2–4 contextual internal links** to relevant existing posts on `scaningredients.com`.
+  - **CRITICAL**: Non-English posts **must link ONLY to verified existing slugs in the same locale** (e.g., `fr` links to `/fr/blog/<french-slug>`, `de` links to `/de/blog/<german-slug>`). Never link from a non-English post to `/blog/<english-slug>`, as cross-locale links dilute topical language signals and confuse crawlers. English posts link to `/blog/<en-slug>`.
+- **AI Crawler & Discovery Hygiene**:
+  - `public/robots.txt` explicitly permits `Googlebot`, `Google-Extended`, `GPTBot`, `ChatGPT-User`, `OAI-SearchBot`, `PerplexityBot`, `ClaudeBot`, `Bingbot`, `Applebot`, and `Applebot-Extended`.
+  - `public/llms.txt` and `public/llms-full.txt` serve LLM-readable site summaries; update `public/llms.txt` whenever publishing major pillar guides or new core tools.
 
-### Technical Requirements
-- File naming and URL slugs: `<id>-<localized-slug>.mdx`. The URL link/slug **must** be translated into that specific local language (e.g., `50-pourquoi-mon-ventre-gonfle.mdx` for French). Do not use English slugs for non-English locales.
-- All files go in `src/content/blog/<lang>/`
-- Must pass `npm run build` with zero errors after generation.
+---
+
+### 1.5 Multilingual Top-5 Ranking Playbook (All 26 Active Locales)
+
+Every blog post **must** be published across **all 26 active locales** configured in `astro.config.mjs` and `src/components/LanguageSwitcher.jsx`:
+`en`, `ar`, `ar-MA`, `bg`, `cs`, `da`, `de`, `el`, `es`, `fi`, `fr`, `hu`, `it`, `ja`, `ko`, `lt`, `lv`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `tr`, `zh`.
+
+#### Mandatory Transcreation & Local SEO Rules
+1. **No External Translation APIs**: Never use Google Translate API or automated machine-translation scripts. Generate every locale natively with cultural and medical accuracy.
+2. **Localized Keyword Research & Transcreation**: Adapt terminology to how native speakers actually search in each market—not literal word-for-word English translations (e.g., use EU `E129` / `Allurarot AC` in `de`, `E129` / `Rouge Allura` in `fr`, `タール色素・赤色40号` in `ja`, `적색40호` in `ko`, `诱惑红` in `zh`, and natural Darija phrasing for `ar-MA`).
+3. **Localized URL Slugs (`<id>-<localized-slug>.mdx`)**:
+   - Save in `src/content/blog/<lang>/<id>-<localized-slug>.mdx`.
+   - Keep slugs short (**3–6 words**), lowercase, hyphenated, and containing the primary local keyword. Never reuse English slugs in non-English folders, and never create incomplete slugs.
+4. **Local Regulatory & Regional Context**: Reference local food/cosmetic authorities and store/product realities relevant to each market (table below) to outperform generic translated global sites and rank in the **Top 5** locally.
+
+#### 26-Locale Market, Search Engine, Regulatory & Reference Table
+
+| Locale | Target Markets / Countries | Primary Search & AI Engines | Local Regulatory & Cultural Context | Verified Localized "Sources & References" Heading |
+| :--- | :--- | :--- | :--- | :--- |
+| `en` | US, UK, Canada, Australia, Ireland | Google, Bing, ChatGPT, Perplexity | FDA, USDA, UK FSA, Health Canada, FSANZ; FD&C names | `Sources & References` |
+| `ar` | Saudi Arabia, UAE, Egypt, GCC, Levant | Google, Bing, ChatGPT | SFDA, GSO Halal/additive standards, GCC cosmetics regs | `المصادر والمراجع العلمية المعتمدة` |
+| `ar-MA` | Morocco | Google, Bing | ONSSA, DMP Morocco; natural Moroccan Darija phrasing | `المصادر والمراجع العلمية` |
+| `bg` | Bulgaria | Google, Bing | BFSA (БАБХ), EU EFSA / SCCS, E-numbers | `Източници и научни референции` |
+| `cs` | Czechia | Google, Seznam (IndexNow), Bing | SZPI, EU EFSA / SCCS, Czech INCI & E-numbers | `Zdroje a vědecké reference` |
+| `da` | Denmark | Google, Bing | Fødevarestyrelsen, Danish Consumer Council (Tænk), EFSA/SCCS | `Kilder og videnskabelige referencer` |
+| `de` | Germany, Austria, Switzerland | Google, Bing, Perplexity | BfR, BVL, ÖKO-TEST awareness, EU EFSA / SCCS | `Quellen & wissenschaftliche Referenzen` |
+| `el` | Greece, Cyprus | Google, Bing | EFET (ΕΦΕΤ), EOF, EU EFSA / SCCS | `Πηγές & Επιστημονικές Αναφορές` |
+| `es` | Spain, Mexico, LatAm, US Spanish | Google, Bing, ChatGPT | AESAN (EU), COFEPRIS (MX), ANMAT; regional additive names | `Fuentes y referencias científicas` |
+| `fi` | Finland | Google, Bing | Ruokavirasto, Tukes, EU EFSA / SCCS | `Lähteet ja tieteelliset tutkimukset` |
+| `fr` | France, Belgium, Switzerland, Canada | Google, Bing, ChatGPT | ANSES, ANSM, UFC-Que Choisir, Nutri-Score origin, EFSA | `Sources et références scientifiques` |
+| `hu` | Hungary | Google, Bing | NÉBIH, OGYÉI, EU EFSA / SCCS | `Források és tudományos hivatkozások` |
+| `it` | Italy | Google, Bing | Ministero della Salute, ISS, Altroconsumo, EU EFSA / SCCS | `Fonti e riferimenti scientifici` |
+| `ja` | Japan | Google, Yahoo! Japan, Bing | MHLW (厚生労働省), CAA (消費者庁), JSQI cosmetic standards | `参考文献・科学的エビデンス` |
+| `ko` | South Korea | Naver (IndexNow), Google, Bing | MFDS (식약처), Hwahae/Korean beauty ingredient culture | `참고 문헌 및 과학적 근거` |
+| `lt` | Lithuania | Google, Bing | VMVT, EU EFSA / SCCS | `Šaltiniai ir mokslinės nuorodos` |
+| `lv` | Latvia | Google, Bing | PVD, Veselības inspekcija, EU EFSA / SCCS | `Avoti un zinātniskās atsauces` |
+| `nl` | Netherlands, Belgium (Flanders) | Google, Bing | NVWA, Consumentenbond, EU EFSA / SCCS | `Bronnen en wetenschappelijke referenties` |
+| `no` | Norway | Google, Bing | Mattilsynet, Forbrukerrådet, EEA/EFSA/SCCS | `Kilder og vitenskapelige referanser` |
+| `pl` | Poland | Google, Bing | GIS, UOKiK, EU EFSA / SCCS | `Źródła i publikacje naukowe` |
+| `pt` | Portugal, Brazil | Google, Bing, ChatGPT | ASAE / INFARMED (PT), ANVISA (BR) | `Fontes e referências científicas` |
+| `ro` | Romania, Moldova | Google, Bing | ANSVSA, ANPC, EU EFSA / SCCS | `Surse și referințe științifice` |
+| `ru` | Russian-speaking markets | Google, Yandex (IndexNow), Bing | Rospotrebnadzor, TR CU / EAEU technical regulations | `Источники и научные исследования` |
+| `sv` | Sweden | Google, Bing | Livsmedelsverket, Läkemedelsverket, EU EFSA / SCCS | `Källor och vetenskapliga referenser` |
+| `tr` | Turkey | Google, Bing, Yandex | Tarım ve Orman Bakanlığı (TGK), TİTCK | `Kaynaklar ve Bilimsel Referanslar` |
+| `zh` | Taiwan, HK, Singapore, Global Chinese | Google, Bing, ChatGPT | TFDA, Singapore SFA, NMPA context (Traditional/Simplified alignment) | `参考文献与权威研究` |
 
 ---
 
@@ -476,18 +503,15 @@ To satisfy Google Search Quality Rater Guidelines (E-E-A-T: Experience, Expertis
 
 ---
 
-## 3. Checklist for Creating the Next Blog Post
+## 3. Pre-Publish & Post-Publish Checklist
 
-Before generating a new blog post, verify:
+Before generating and deploying a new blog post, verify every item:
 
-- [ ] **Topic uniqueness**: The chosen topic does NOT overlap with any blog in the Topic Index above.
-- [ ] **Splash image uniqueness**: The Unsplash image URL is NOT used by any previous blog.
-- [ ] **SEO keyword research**: Target queries are validated against Google Trends / common AI search queries.
-- [ ] **E-E-A-T & Authoritative Sources**: At least 2–4 verified peer-reviewed scientific studies (PubMed, JAAD, Lancet, AAP, SCCS, etc.) are cited with hyperlinks crediting the legitimate researchers/authors.
-- [ ] **Exact Deep Working URLs (No Generic Homepages)**: Every external source points to an exact, verified working article, clinical report, or regulation URL (strictly zero root domain homepage links like `aap.org` or `ansm.sante.fr`).
-- [ ] **No Fabricated Author Bylines**: No artificial editorial teams (e.g., strictly no "MedGPT Editorial Team", "MedGPT Clinical Informatics Team", or fake authors); authority is established purely through authentic scientific literature.
-- [ ] **Internal Backlinks**: At least 2–4 contextual links to existing related blogs on the site are included to support topical clusters.
-- [ ] **Content structure**: Follows the exact 5-section structure (Quick Answer → 3 Questions → 4-Step Method → Promotion).
-- [ ] **25-locale coverage**: All locales in `LanguageSwitcher.jsx` are generated.
-- [ ] **Build verification**: `npm run build` passes with zero errors after generation.
-- [ ] **Update this file**: Add the new blog entry to the Topic Index above after successful generation.
+- [ ] **Topic & Image Uniqueness**: Topic is distinct from all entries in Section 2; Unsplash URL (`?q=80&w=1200&auto=format&fit=crop`) is unused by any previous blog.
+- [ ] **Frontmatter Validation**: Valid `id`, `title` (40–55 chars, no quotes), `badge`, `description` (110–144 chars; 60–110 for `ja`/`ko`/`zh`), `image`, `publishDate` (`YYYY-MM-DD`).
+- [ ] **Semantic Structure & AEO/GEO**: Includes `.quick-answer` box (40–70 words), strict `<h2>` → `<h3>` hierarchy (no skipped `<h2>`), 40–60 word direct-answer opening per `<h2>`, at least 1 Markdown comparison/reference table, concise 800–1,300 words, zero repetitive 4-step boilerplate, and only used Lucide icons imported.
+- [ ] **E-E-A-T & Deep Citations**: 2–4 verified HTTP 200 deep links (`https://pubmed.ncbi.nlm.nih.gov/<PMID>/` or `https://doi.org/...` formatted as HTML `<a>` tags inside Sources & References for `Article.citation` JSON-LD extraction); zero generic root/homepage links; zero fabricated author bylines.
+- [ ] **Same-Locale Internal Links**: 2–4 contextual links pointing strictly to verified existing slugs in the *same* locale (`/<lang>/blog/<slug>` or `/blog/<slug>` for `en`).
+- [ ] **All 26 Active Locales Covered**: All 26 locales in `astro.config.mjs` generated natively via AI transcreation with localized URL slugs and matching numeric `id` for bidirectional `hreflang`.
+- [ ] **Build & IndexNow Verification**: `npm run build` passes with zero errors (automatically generating sitemap `<lastmod>` and pushing URLs via `submit_indexnow.js`).
+- [ ] **Update Master Index**: Add the new blog entry to Section 2 of `blog_rule.md` (and update `public/llms.txt` if it is a major pillar guide).

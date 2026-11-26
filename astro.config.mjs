@@ -141,7 +141,7 @@ export default defineConfig({
     server: {
       allowedHosts: true
     },
-    envPrefix: ['VITE_', 'PUBLIC_'],
+    envPrefix: ['VITE_', 'PUBLIC_', 'FIREBASE_'],
     plugins: [tailwindcss(), localApiDevPlugin()]
   }
 });

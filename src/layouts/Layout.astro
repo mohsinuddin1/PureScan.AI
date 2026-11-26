@@ -329,13 +329,39 @@ if (Astro.response && Astro.response.headers) {
         }
       ]
     })} />
+
+    <!-- Cookieless Consent Mode v2 & Microsoft Clarity -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied'
+      });
+
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "zjtvifwi0h");
+      window.clarity('consentv2', {
+        ad_Storage: 'denied',
+        analytics_Storage: 'denied'
+      });
+    </script>
   </head>
   <body class="bg-[#fffefb] text-slate-800 font-sans selection:bg-orange-200">
     <slot />
     <StickyAppBanner client:load />
     <script>
       import { inject } from '@vercel/analytics';
+      import { initSiteAnalytics } from '../lib/firebase.js';
       inject();
+      initSiteAnalytics();
     </script>
     <SpeedInsights />
 
