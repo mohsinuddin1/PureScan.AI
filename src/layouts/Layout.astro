@@ -10,6 +10,9 @@ interface Props {
   image?: string;
   alternateUrls?: Record<string, string>;
   noindex?: boolean;
+  ogType?: string;
+  publishedTime?: string;
+  includeAppSchema?: boolean;
 }
 
 const {
@@ -18,16 +21,48 @@ const {
   description = "Scan food & cosmetics with Klar to detect hidden toxins, allergens, and endocrine disruptors instantly. Free AI scanner app for iOS & Android.",
   image = "https://scaningredients.com/og-image.png",
   alternateUrls,
-  noindex = false
+  noindex = false,
+  ogType = "website",
+  publishedTime,
+  includeAppSchema = false
 } = Astro.props;
 
 const locales = ['en', 'bg', 'ar', 'ar-MA', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'it', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'];
+const ogLocaleMap: Record<string, string> = {
+  en: 'en_US',
+  ar: 'ar_AR',
+  'ar-MA': 'ar_MA',
+  bg: 'bg_BG',
+  cs: 'cs_CZ',
+  da: 'da_DK',
+  de: 'de_DE',
+  el: 'el_GR',
+  es: 'es_ES',
+  fi: 'fi_FI',
+  fr: 'fr_FR',
+  hu: 'hu_HU',
+  it: 'it_IT',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+  lt: 'lt_LT',
+  lv: 'lv_LV',
+  nl: 'nl_NL',
+  no: 'nb_NO',
+  pl: 'pl_PL',
+  pt: 'pt_PT',
+  ro: 'ro_RO',
+  ru: 'ru_RU',
+  sv: 'sv_SE',
+  tr: 'tr_TR',
+  zh: 'zh_CN',
+};
 const siteUrl = "https://scaningredients.com";
 const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, siteUrl).href;
 const segments = canonicalPath.split('/').filter(Boolean);
 const detectedPathLocale = segments.length > 0 ? locales.find(l => l.toLowerCase() === segments[0].toLowerCase()) : undefined;
 const lang = (Astro.params?.lang as string | undefined) || detectedPathLocale || Astro.currentLocale || "en";
+const ogLocale = ogLocaleMap[lang] || 'en_US';
 
 // Industry-standard SEO / AEO / GEO meta description normalizer (guarantees length strictly > 100 and < 145 chars, accounting for HTML entity expansion)
 function formatMetaDescription(desc: string | undefined, fallbackContext?: string, localeCode: string = 'en'): string {
@@ -235,13 +270,14 @@ if (Astro.response && Astro.response.headers) {
     <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={safeTitle} />
     <meta property="og:description" content={safeDescription} />
     <meta property="og:image" content={image} />
     <meta property="og:site_name" content="Klar" />
-    <meta property="og:locale" content={lang} />
+    <meta property="og:locale" content={ogLocale} />
+    {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -265,7 +301,7 @@ if (Astro.response && Astro.response.headers) {
       <link rel="alternate" hreflang="x-default" href={alternateUrls ? (alternateUrls['en'] || canonicalUrl) : isMultiLang ? getAlternateUrl('en') : canonicalUrl} />
     )}
 
-    <!-- JSON-LD Structured Data: WebSite + Organization + SoftwareApplication -->
+    <!-- JSON-LD Structured Data: WebSite + Organization (+ SoftwareApplication on app pages) -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [
@@ -302,7 +338,7 @@ if (Astro.response && Astro.response.headers) {
             "url": "https://scaningredients.com/support"
           }
         },
-        {
+        ...(includeAppSchema ? [{
           "@type": "SoftwareApplication",
           "@id": "https://scaningredients.com/#app",
           "name": "Klar - Food & Cosmetic Scanner",
@@ -326,7 +362,7 @@ if (Astro.response && Astro.response.headers) {
             "ratingCount": "500",
             "bestRating": "5"
           }
-        }
+        }] : [])
       ]
     })} />
 

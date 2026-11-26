@@ -161,7 +161,20 @@
     "title": "Wsparcie",
     "subtitle": "Masz pytania, uwagi lub problemy techniczne z aplikacją Klar (lub kontem PureScan AI)? Odpowiadamy w ciągu 24–48 godzin.",
     "emailButton": "Wyślij Wiadomość do Wsparcia",
-    "directEmailText": "Lub napisz do nas bezpośrednio na adres"
+    "directEmailText": "Lub napisz do nas bezpośrednio na adres",
+    "cards": {
+      "scanningTitle": "Skanowanie kodów kreskowych i etykiet AI",
+      "scanningDesc": "Skieruj aparat na kod kreskowy dowolnego produktu spożywczego lub kosmetyku, aby natychmiast uzyskać ocenę Nutri-Score, poziom NOVA i ocenę ryzyka. Jeśli produktu nie ma jeszcze w bazie danych, przełącz się na tryb etykiety AI i zrób zdjęcie listy składników w dowolnym języku, aby otrzymać natychmiastową analizę toksykologiczną.",
+      "proTitle": "Klar Pro i synchronizacja konta",
+      "proDescPrefix": "Twoja subskrypcja Klar Pro (w tym dotychczasowe konta PureScan AI Pro) pozostaje zsynchronizowana między systemami iOS, Android i portalem internetowym poprzez adres e-mail logowania. Aby zarządzać subskrypcją internetową lub ją anulować, odwiedź nasz",
+      "proLinkLabel": "Portal cen i subskrypcji",
+      "allergensTitle": "Alergeny i profile zdrowotne",
+      "allergensDesc": "Dostosuj swoje alergie, schorzenia skóry i preferencje żywieniowe w ustawieniach aplikacji. Klar automatycznie wyróżnia ukryte pochodne, takie jak kazeina, źródła glutenu, parabeny, ftalany i związki zaburzające gospodarkę hormonalną, dopasowane dokładnie do Twojego profilu.",
+      "privacyTitle": "Prywatność i usuwanie danych",
+      "privacyDescPrefix": "Nigdy nie sprzedajemy Twojej historii skanowania ani preferencji zdrowotnych. Możesz zapoznać się z naszą",
+      "privacyDescMid": "sprawdzić naszą",
+      "privacyDescSuffix": "lub trwale usunąć dane swojego konta w dowolnym momencie."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Usuwanie Konta - Klar (dawniej PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Doświadczenie",
     "latestInsightsSubtitle": "Eksperckie analizy o składnikach, toksynach i zdrowym stylu życia.",
     "readArticle": "Czytaj artykuł",
-    "compareLabel": "Porównaj:"
+    "compareLabel": "Porównaj:",
+    "faqTitle": "Najczęściej zadawane pytania",
+    "faqs": [
+      {
+        "question": "Czym jest Klar?",
+        "answer": "Klar (dawniej PureScan AI) to aplikacja mobilna na iOS i Androida, która wykorzystuje sztuczną inteligencję do skanowania etykiet żywności i kosmetyków, natychmiast wykrywając ukryte toksyny, alergeny, związki zaburzające gospodarkę hormonalną oraz dodatki ultraprzetworzone. Zapewnia spersonalizowaną ocenę ryzyka zdrowotnego na podstawie indywidualnych schorzeń, alergii i preferencji dietetycznych użytkownika."
+      },
+      {
+        "question": "Czy Klar to dawny PureScan AI?",
+        "answer": "Tak. Aplikacja Klar była wcześniej znana jako PureScan AI. Zmieniła nazwę na Klar — Skaner Żywności i Kosmetyków, zachowując tę samą zaawansowaną technologię skanowania AI, rozszerzone bazy naukowe oraz pełną ciągłość dla wszystkich istniejących kont użytkowników."
+      },
+      {
+        "question": "Jak Klar skanuje produkty spożywcze?",
+        "answer": "Klar wykorzystuje skanowanie kodów kreskowych do wyszukiwania produktów w ogromnej bazie danych. Jeśli produktu nie ma w bazie, kamera AI odczytuje listę składników w dowolnym języku, a następnie porównuje każdy składnik z naukowymi bazami toksykologicznymi, aby wykryć ukryte zagrożenia oraz podać klasyfikację Nutri-Score i NOVA."
+      },
+      {
+        "question": "Czy Klar jest darmowy?",
+        "answer": "Tak. Klar oferuje bezpłatną wersję z podstawowymi funkcjami skanowania, w tym skanowaniem kodów kreskowych, podstawową analizą składników i wykrywaniem alergenów. Subskrypcja Pro odblokowuje zaawansowaną analizę spersonalizowaną, nielimitowane skany i szczegółowe rozbicie składników."
+      },
+      {
+        "question": "Jakie toksyny potrafi wykryć Klar?",
+        "answer": "Klar wykrywa związki zaburzające gospodarkę hormonalną (parabeny, ftalany, BPA), kancerogeny (donory formaldehydu, BHA), składniki komedogenne, dodatki ultraprzetworzone, sztuczne barwniki (czerwień allura Red 40, tartrazyna Yellow 5), szkodliwe konserwanty (BHT, benzoesan sodu) oraz ponad 500 innych oznaczonych substancji."
+      },
+      {
+        "question": "Czy Klar działa z kosmetykami?",
+        "answer": "Tak. Klar skanuje zarówno żywność, jak i kosmetyki. W przypadku kosmetyków wykrywa związki zaburzające gospodarkę hormonalną, kancerogeny, składniki komedogenne (oceniane w skali 0–5), alergeny kontaktowe i oblicza ocenę zagrożenia na podstawie profilu toksyczności każdego składnika."
+      }
+    ]
   }
 }

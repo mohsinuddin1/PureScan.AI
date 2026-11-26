@@ -63,27 +63,32 @@ export default function Support() {
 
                 <div className="w-full mt-16 pt-12 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
                     <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                        <h2 className="text-base font-semibold text-slate-900 mb-2">Barcode &amp; AI Label Scanning</h2>
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">{t('support.cards.scanningTitle', 'Barcode & AI Label Scanning')}</h2>
                         <p className="text-sm text-slate-600 leading-relaxed">
-                            Point your camera at any food or cosmetic barcode for instant Nutri-Score, NOVA level, and hazard ratings. If an item is not in the database yet, switch to AI Label Mode to photograph the ingredient list in any language for an immediate toxicology breakdown.
+                            {t('support.cards.scanningDesc', 'Point your camera at any food or cosmetic barcode for instant Nutri-Score, NOVA level, and hazard ratings. If an item is not in the database yet, switch to AI Label Mode to photograph the ingredient list in any language for an immediate toxicology breakdown.')}
                         </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                        <h2 className="text-base font-semibold text-slate-900 mb-2">Klar Pro &amp; Account Sync</h2>
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">{t('support.cards.proTitle', 'Klar Pro & Account Sync')}</h2>
                         <p className="text-sm text-slate-600 leading-relaxed">
-                            Your Klar Pro subscription (including legacy PureScan AI Pro accounts) stays synced across iOS, Android, and the web portal via your sign-in email. To manage or cancel a web subscription, visit our <a href="/pricing" className="text-slate-900 font-medium underline">Pricing &amp; Subscription Portal</a>.
+                            {t('support.cards.proDescPrefix', 'Your Klar Pro subscription (including legacy PureScan AI Pro accounts) stays synced across iOS, Android, and the web portal via your sign-in email. To manage or cancel a web subscription, visit our')}{' '}
+                            <a href="/pricing" className="text-slate-900 font-medium underline">{t('support.cards.proLinkLabel', 'Pricing & Subscription Portal')}</a>.
                         </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                        <h2 className="text-base font-semibold text-slate-900 mb-2">Allergens &amp; Health Profiles</h2>
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">{t('support.cards.allergensTitle', 'Allergens & Health Profiles')}</h2>
                         <p className="text-sm text-slate-600 leading-relaxed">
-                            Customize your allergies, skin conditions, and dietary preferences inside the app settings. Klar automatically highlights hidden derivatives such as casein, gluten sources, parabens, phthalates, and endocrine disruptors tailored specifically to your profile.
+                            {t('support.cards.allergensDesc', 'Customize your allergies, skin conditions, and dietary preferences inside the app settings. Klar automatically highlights hidden derivatives such as casein, gluten sources, parabens, phthalates, and endocrine disruptors tailored specifically to your profile.')}
                         </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                        <h2 className="text-base font-semibold text-slate-900 mb-2">Privacy &amp; Data Deletion</h2>
+                        <h2 className="text-base font-semibold text-slate-900 mb-2">{t('support.cards.privacyTitle', 'Privacy & Data Deletion')}</h2>
                         <p className="text-sm text-slate-600 leading-relaxed">
-                            We never sell your scan history or health preferences. You can review our <a href="/privacy" className="text-slate-900 font-medium underline">Privacy Policy</a>, check our <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} className="text-slate-900 font-medium underline">Scientific Grading System</a>, or permanently erase your account data at any time.
+                            {t('support.cards.privacyDescPrefix', 'We never sell your scan history or health preferences. You can review our')}{' '}
+                            <a href="/privacy" className="text-slate-900 font-medium underline">{t('footer.privacy', 'Privacy Policy')}</a>,{' '}
+                            {t('support.cards.privacyDescMid', 'check our')}{' '}
+                            <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} className="text-slate-900 font-medium underline">{t('footer.grading', 'Grading System')}</a>,{' '}
+                            {t('support.cards.privacyDescSuffix', 'or permanently erase your account data at any time.')}
                         </p>
                     </div>
                 </div>
@@ -97,7 +102,7 @@ export default function Support() {
                     </div>
                     <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                         <a href={lang === 'en' ? '/grading' : `/${lang}/grading`} className="text-slate-500 hover:text-slate-900 transition-colors">{gradingText}</a>
-                        <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} className="text-slate-500 hover:text-slate-900 transition-colors">Blog</a>
+                        <a href={lang === 'en' ? '/blog' : `/${lang}/blog`} className="text-slate-500 hover:text-slate-900 transition-colors">{t('footer.blog', 'Blog')}</a>
                         <a href="/privacy" className="text-slate-500 hover:text-slate-900 transition-colors">{privacyText}</a>
                         <a href="/terms" className="text-slate-500 hover:text-slate-900 transition-colors">{termsText}</a>
                         <a href={lang === 'en' ? '/support' : `/${lang}/support`} className="text-slate-900 font-medium">{supportText}</a>

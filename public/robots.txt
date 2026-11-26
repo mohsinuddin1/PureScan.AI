@@ -8,54 +8,99 @@ Disallow: /api/
 # Google Search & Google AI (Gemini, AI Overviews / SGE)
 User-agent: Googlebot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # OpenAI & ChatGPT (ChatGPT Search, Browsing, Citations)
 User-agent: GPTBot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Perplexity AI Search
 User-agent: PerplexityBot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Anthropic & Claude
 User-agent: ClaudeBot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Microsoft Bing & Copilot
 User-agent: Bingbot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Apple Intelligence & Siri
 User-agent: Applebot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Other Leading AI Agents & Search Engines
 User-agent: YouBot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 User-agent: FacebookBot
 Allow: /
+Disallow: /download
+Disallow: /get
+Disallow: /api/
 
 # Sitemaps
 Sitemap: https://scaningredients.com/sitemap-index.xml

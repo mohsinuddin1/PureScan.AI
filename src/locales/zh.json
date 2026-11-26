@@ -161,7 +161,20 @@
     "title": "客户支持中心",
     "subtitle": "如果您对 Klar 应用（或原 PureScan AI 账户）有任何疑问、建议或技术故障反馈，欢迎与我们联系。我们会在 24 至 48 小时内为您回复。",
     "emailButton": "发送邮件至支持团队",
-    "directEmailText": "或直接发送邮件至官方支持邮箱："
+    "directEmailText": "或直接发送邮件至官方支持邮箱：",
+    "cards": {
+      "scanningTitle": "条形码与 AI 成分标签扫描",
+      "scanningDesc": "将手机摄像头对准任意食品或化妆品条形码，即可即时获取 Nutri-Score、NOVA 加工等级及风险评级。若数据库尚未收录该商品，可切换至 AI 标签识别模式，拍摄任意语言的成分表即可立即获得毒理学解析。",
+      "proTitle": "Klar Pro 与账号同步",
+      "proDescPrefix": "您的 Klar Pro 订阅（包括原 PureScan AI Pro 账号）会通过登录邮箱在 iOS、Android 和网页端自动保持同步。如需管理或取消网页端订阅，请访问我们的",
+      "proLinkLabel": "价格与订阅管理门户",
+      "allergensTitle": "过敏原与健康档案",
+      "allergensDesc": "在应用设置中自定义您的过敏原、皮肤状况和饮食偏好。Klar 会根据您的个人档案，自动高亮提示酪蛋白、麸质来源、对羟基苯甲酸酯（防腐剂）、邻苯二甲酸酯及内分泌干扰物等隐藏衍生物。",
+      "privacyTitle": "隐私保护与数据删除",
+      "privacyDescPrefix": "我们绝不出售您的扫描记录或健康偏好信息。您可以查阅我们的",
+      "privacyDescMid": "了解我们的",
+      "privacyDescSuffix": "或随时永久删除您的账号数据。"
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "账号注销指南 - Klar（原 PureScan AI）",
@@ -251,6 +264,33 @@
     "tableRow6Title": "使用体验",
     "latestInsightsSubtitle": "关于成分安全、隐藏毒素与健康生活的深度专家解析。",
     "readArticle": "阅读全文",
-    "compareLabel": "对比："
+    "compareLabel": "对比：",
+    "faqTitle": "常见问题解答",
+    "faqs": [
+      {
+        "question": "Klar 是什么？",
+        "answer": "Klar（原 PureScan AI）是一款适用于 iOS 和 Android 的人工智能移动应用，可即时扫描食品与化妆品标签，精准识别隐藏毒素、过敏原、内分泌干扰物和超加工添加剂，并根据每位用户独特的健康状况、过敏史和饮食偏好提供个性化健康风险评估。"
+      },
+      {
+        "question": "Klar 以前叫 PureScan AI 吗？",
+        "answer": "是的。Klar 原名为 PureScan AI，现已品牌升级为“Klar — 食品与化妆品扫描仪”，继续沿用同样先进的 AI 扫描技术、更丰富的权威科学数据库，并确保所有现有用户账号无缝衔接。"
+      },
+      {
+        "question": "Klar 是如何扫描食品的？",
+        "answer": "Klar 首先通过条形码扫描在庞大的数据库中检索产品。若未收录该产品，其 AI 摄像头可识别任意语言的配料表，并将每种成分与科学毒理学数据库交叉比对，从而发现潜在危害并提供 Nutri-Score 营养评分与 NOVA 加工分级。"
+      },
+      {
+        "question": "Klar 是免费的吗？",
+        "answer": "是的。Klar 提供免费版，包含条形码扫描、基础成分分析及过敏原检测等核心功能。升级 Pro 订阅后可解锁高级个性化分析、无限次扫描以及详尽的成分逐项解读。"
+      },
+      {
+        "question": "Klar 能检测哪些有害物质？",
+        "answer": "Klar 可识别内分泌干扰物（如对羟基苯甲酸酯、邻苯二甲酸酯、双酚 A）、致癌物（甲醛释放体、BHA）、致痘成分、超加工添加剂、人工色素（诱惑红 Red 40、柠檬黄 Yellow 5）、有害防腐剂（BHT、苯甲酸钠）以及超过 500 种其他风险物质。"
+      },
+      {
+        "question": "Klar 支持扫描化妆品吗？",
+        "answer": "支持。Klar 可同时扫描食品与化妆品。针对化妆品与护肤品，它能检测内分泌干扰物、致癌物、致粉刺/致痘成分（0–5 级评分）和接触性过敏原，并根据每种成分的毒理学特征提供整体安全评级。"
+      }
+    ]
   }
 }

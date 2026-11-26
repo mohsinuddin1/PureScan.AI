@@ -19,7 +19,7 @@ import logoImg from '../../assets/logo.png';
 import foodResultImg from '../../assets/food-result.jpg';
 import cosmeticResultImg from '../../assets/cosmetic-result.jpg';
 import historyScreenImg from '../../assets/history-screen.png';
-import { useTranslations } from '../../lib/i18n-utils';
+import { useTranslations, getTranslations } from '../../lib/i18n-utils';
 
 interface Props {
   lang?: string;
@@ -27,7 +27,67 @@ interface Props {
 
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
+const translations = getTranslations(lang);
 const isEn = lang === 'en';
+
+const defaultEnFaqs = [
+  {
+    question: "What is Klar?",
+    answer: "Klar (formerly PureScan AI) is a mobile application for iOS and Android that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences."
+  },
+  {
+    question: "Is Klar formerly PureScan AI?",
+    answer: "Yes. Klar was previously known as PureScan AI. The app has rebranded to Klar — Food & Cosmetic Scanner with the same advanced AI scanning technology, expanded scientific databases, and seamless continuity for all existing user accounts."
+  },
+  {
+    question: "How does Klar scan food products?",
+    answer: "Klar uses barcode scanning to look up products in a massive database. If a product isn't found, its AI camera reads the ingredient label in any language, then cross-references each ingredient against scientific toxicology databases to detect hidden hazards and provide Nutri-Score and NOVA classifications."
+  },
+  {
+    question: "Is Klar free?",
+    answer: "Yes. Klar offers a free tier with essential scanning features including barcode scanning, basic ingredient analysis, and allergen detection. A Pro subscription unlocks advanced personalized analysis, unlimited scans, and detailed ingredient breakdowns."
+  },
+  {
+    question: "What toxins can Klar detect?",
+    answer: "Klar detects endocrine disruptors (parabens, phthalates, BPA), carcinogens (formaldehyde releasers, BHA), comedogenic ingredients, ultra-processed additives, artificial dyes (Red 40, Yellow 5), harmful preservatives (BHT, sodium benzoate), and over 500 other flagged substances."
+  },
+  {
+    question: "Does Klar work with cosmetics?",
+    answer: "Yes. Klar scans both food and cosmetic products. For cosmetics, it detects endocrine disruptors, carcinogens, comedogenic ingredients (rated 0-5), contact allergens, and provides a hazard score based on the toxicity profile of every ingredient."
+  }
+];
+const faqs = (Array.isArray(translations?.home?.faqs) && translations.home.faqs.length > 0)
+  ? translations.home.faqs
+  : (isEn ? defaultEnFaqs : []);
+
+const languageLinks = [
+  { code: 'en', label: 'English' },
+  { code: 'ar', label: 'العربية' },
+  { code: 'ar-MA', label: 'الدارجة المغربية' },
+  { code: 'bg', label: 'Български' },
+  { code: 'cs', label: 'Čeština' },
+  { code: 'da', label: 'Dansk' },
+  { code: 'de', label: 'Deutsch' },
+  { code: 'el', label: 'Ελληνικά' },
+  { code: 'es', label: 'Español' },
+  { code: 'fi', label: 'Suomi' },
+  { code: 'fr', label: 'Français' },
+  { code: 'hu', label: 'Magyar' },
+  { code: 'it', label: 'Italiano' },
+  { code: 'ja', label: '日本語' },
+  { code: 'ko', label: '한국어' },
+  { code: 'lt', label: 'Lietuvių' },
+  { code: 'lv', label: 'Latviešu' },
+  { code: 'nl', label: 'Nederlands' },
+  { code: 'no', label: 'Norsk' },
+  { code: 'pl', label: 'Polski' },
+  { code: 'pt', label: 'Português' },
+  { code: 'ro', label: 'Română' },
+  { code: 'ru', label: 'Русский' },
+  { code: 'sv', label: 'Svenska' },
+  { code: 'tr', label: 'Türkçe' },
+  { code: 'zh', label: '中文' },
+];
 const gradingUrl = isEn ? '/grading' : `/${lang}/grading`;
 const blogUrl = isEn ? '/blog' : `/${lang}/blog`;
 const privacyUrl = isEn ? '/privacy' : `/${lang}/privacy`;
@@ -427,6 +487,28 @@ if (latestPosts.length === 0) {
     </div>
   </section>
 
+  <!-- Frequently Asked Questions (AEO + Rich Results) -->
+  {faqs.length > 0 && (
+    <section class="py-12 md:py-20 px-4 md:px-6 max-w-4xl mx-auto" id="faq">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-4xl font-black text-slate-800 mb-3 leading-tight">{t('home.faqTitle', 'Frequently Asked Questions')}</h2>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <summary class="p-5 md:p-6 cursor-pointer flex items-center justify-between gap-4 font-bold text-slate-800 text-base md:text-lg select-none">
+              <span>{faq.question}</span>
+              <svg class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-slate-600 font-medium leading-relaxed -mt-1 text-sm md:text-base">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+
   <!-- Footer -->
   <footer class="py-12 bg-white border-t-2 border-slate-100">
     <div class="max-w-7xl mx-auto px-6 text-center">
@@ -476,6 +558,17 @@ if (latestPosts.length === 0) {
         <span class="mx-2">•</span>
         <a href="/alternatives/trash-panda" class="hover:text-[#17C37B] transition-colors">Klar vs Trash Panda</a>
       </p>
+      <nav aria-label="Languages" class="flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5 pb-4 text-xs text-slate-400">
+        {languageLinks.map((item) => (
+          <a
+            href={item.code === 'en' ? '/' : `/${item.code}`}
+            hreflang={item.code}
+            class={`hover:text-[#17C37B] transition-colors ${item.code === lang ? 'font-bold text-slate-600' : ''}`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
       <p class="text-slate-400 font-medium text-xs">{(t('footer.copyright', '© {year} Klar (formerly PureScan AI). The Most Advanced Food & Cosmetic Scanner.')).replace(/\{\{year\}\}/g, new Date().getFullYear()).replace(/\{year\}/g, new Date().getFullYear())}</p>
     </div>
   </footer>

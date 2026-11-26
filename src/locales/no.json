@@ -161,7 +161,20 @@
     "title": "Kundestøtte",
     "subtitle": "Har du spørsmål, innspill eller tekniske problemer med Klar-appen (eller din PureScan AI-konto)? Vi svarer innen 24–48 timer.",
     "emailButton": "Send E-post til Kundestøtte",
-    "directEmailText": "Eller skriv direkte til oss på"
+    "directEmailText": "Eller skriv direkte til oss på",
+    "cards": {
+      "scanningTitle": "Strekkode- og AI-etikettskanning",
+      "scanningDesc": "Rett kameraet mot en hvilken som helst mat- eller kosmetikkstrekkode for å få umiddelbar Nutri-Score, NOVA-nivå og risikovurdering. Hvis et produkt ikke finnes i databasen ennå, kan du bytte til AI-etikettmodus og ta bilde av ingredienslisten på hvilket som helst språk for en øyeblikkelig toksikologisk gjennomgang.",
+      "proTitle": "Klar Pro og kontosynkronisering",
+      "proDescPrefix": "Klar Pro-abonnementet ditt (inkludert tidligere PureScan AI Pro-kontoer) holdes synkronisert på tvers av iOS, Android og nettportalen via e-postadressen du logger inn med. For å administrere eller si opp et nettabonnement kan du besøke vår",
+      "proLinkLabel": "Pris- og abonnementsportal",
+      "allergensTitle": "Allergener og helseprofiler",
+      "allergensDesc": "Tilpass allergier, hudtilstander og kostholdspreferanser i appinnstillingene. Klar fremhever automatisk skjulte derivater som kasein, glutenkilder, parabener, ftalater og hormonforstyrrende stoffer skreddersydd for din profil.",
+      "privacyTitle": "Personvern og sletting av data",
+      "privacyDescPrefix": "Vi selger aldri skannehistorikken eller helsepreferansene dine. Du kan lese vår",
+      "privacyDescMid": "se vår",
+      "privacyDescSuffix": "eller slette kontodataene dine permanent når som helst."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Slett Konto - Klar (tidligere PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Opplevelsen",
     "latestInsightsSubtitle": "Ekspertanalyser om ingredienser, giftstoffer og sunn livsstil.",
     "readArticle": "Les artikkel",
-    "compareLabel": "Sammenlign:"
+    "compareLabel": "Sammenlign:",
+    "faqTitle": "Ofte stilte spørsmål",
+    "faqs": [
+      {
+        "question": "Hva er Klar?",
+        "answer": "Klar (tidligere PureScan AI) er en mobilapp for iOS og Android som bruker kunstig intelligens til å skanne etiketter på mat og kosmetikk, og oppdager skjulte giftstoffer, allergener, hormonforstyrrende stoffer og ultraprosesserte tilsetningsstoffer umiddelbart. Den gir personlige helserisikovurderinger basert på hver enkelt brukers helsetilstand, allergier og kostholdspreferanser."
+      },
+      {
+        "question": "Var Klar tidligere PureScan AI?",
+        "answer": "Ja. Klar var tidligere kjent som PureScan AI. Appen har fått nytt navn til Klar – Skanner for Mat & Kosmetikk, med den samme avanserte AI-skanneteknologien, utvidede vitenskapelige databaser og sømløs videreføring for alle eksisterende brukerkontoer."
+      },
+      {
+        "question": "Hvordan skanner Klar matvarer?",
+        "answer": "Klar bruker strekkodeskanning for å slå opp produkter i en massiv database. Hvis et produkt ikke blir funnet, leser AI-kameraet ingredienslisten på alle språk og kryssjekker hver ingrediens mot vitenskapelige toksikologidatabaser for å avdekke skjulte farer og gi Nutri-Score- og NOVA-klassifiseringer."
+      },
+      {
+        "question": "Er Klar gratis?",
+        "answer": "Ja. Klar tilbyr en gratisversjon med viktige skannefunksjoner som strekkodeskanning, grunnleggende ingrediensanalyse og allergenoppdagelse. Et Pro-abonnement låser opp avansert personlig analyse, ubegrensede skanninger og detaljerte ingrediensgjennomganger."
+      },
+      {
+        "question": "Hvilke giftstoffer kan Klar oppdage?",
+        "answer": "Klar oppdager hormonforstyrrende stoffer (parabener, ftalater, BPA), kreftfremkallende stoffer (formaldehydfrigjørere, BHA), komedogene ingredienser, ultraprosesserte tilsetningsstoffer, kunstige fargestoffer (Red 40, Yellow 5), skadelige konserveringsmidler (BHT, natriumbenzoat) og over 500 andre flaggede stoffer."
+      },
+      {
+        "question": "Fungerer Klar med kosmetikk?",
+        "answer": "Ja. Klar skanner både matvarer og kosmetikkprodukter. For kosmetikk oppdager appen hormonforstyrrende stoffer, kreftfremkallende stoffer, komedogene ingredienser (rangert 0–5), kontaktallergener og gir en risikovurdering basert på toksisitetsprofilen til hver ingrediens."
+      }
+    ]
   }
 }

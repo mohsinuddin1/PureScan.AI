@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import mascotHappy from '../../../assets/mascot-happy.png';
 import logoImg from '../../../assets/logo.png';
 import { useTranslations } from '../../../lib/i18n-utils';
+import { isUntranslatedBody } from '../../../lib/seo-guard.js';
 
 export async function getStaticPaths() {
   const locales = ["ar","ar-MA","bg","cs","da","de","el","es","fi","fr","hu","it","ja","ko","lt","lv","nl","no","pl","pt","ro","ru","sv","tr","zh"];
@@ -62,14 +63,19 @@ const { Content } = await render(post);
 // Build the blog slug map for language switching
 // Uses the numeric id in frontmatter to find the equivalent blog in each language
 const blogId = post.data.id;
+const isUntranslated = isUntranslatedBody(lang, post.body || '');
 const allPosts = await getCollection('blog');
 const blogSlugMap = {};
+const translatedAlternateMap = {};
 for (const p of allPosts) {
   if (p.data.id === blogId) {
     const rawLang = p.id.split('/')[0];
     const pLang = rawLang.toLowerCase() === 'ar-ma' ? 'ar-MA' : rawLang;
     const pSlug = p.id.split('/')[1];
     blogSlugMap[pLang] = pSlug;
+    if (!isUntranslatedBody(pLang, p.body || '')) {
+      translatedAlternateMap[pLang] = pSlug;
+    }
   }
 }
 
@@ -144,9 +150,41 @@ const siteUrl = 'https://scaningredients.com';
 const canonicalPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, siteUrl).href;
 
-// Construct alternate URLs for each existing translation of this post
+// Extract Q&A pairs for AEO FAQPage schema
+const faqItems: Array<{ question: string; answer: string }> = [];
+const seenFaqQ = new Set<string>();
+const htmlQaRegex = /<h[23][^>]*>([\s\S]*?)<\/h[23]>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+for (const m of rawBody.matchAll(htmlQaRegex)) {
+  const q = m[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const a = m[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  if (
+    q.length >= 12 &&
+    /[?？؟]$/.test(q) &&
+    a.length >= 40 &&
+    !/^(quick answer|kort svar|résumé|kurzantwort|resumen|핵심 요약)/i.test(q) &&
+    !seenFaqQ.has(q.toLowerCase())
+  ) {
+    seenFaqQ.add(q.toLowerCase());
+    faqItems.push({ question: q, answer: a });
+    if (faqItems.length >= 5) break;
+  }
+}
+if (faqItems.length < 2) {
+  const mdQaRegex = /^#{2,3}\s+([^\n]+[?？؟])\s*\n+([^\n#<][^\n]+)/gm;
+  for (const m of rawBody.matchAll(mdQaRegex)) {
+    const q = m[1].replace(/\*\*/g, '').trim();
+    const a = m[2].replace(/<[^>]+>/g, ' ').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+    if (q.length >= 12 && a.length >= 40 && !seenFaqQ.has(q.toLowerCase())) {
+      seenFaqQ.add(q.toLowerCase());
+      faqItems.push({ question: q, answer: a });
+      if (faqItems.length >= 5) break;
+    }
+  }
+}
+
+// Construct alternate URLs for each genuinely translated version of this post
 const alternateUrls: Record<string, string> = {};
-for (const [l, s] of Object.entries(blogSlugMap)) {
+for (const [l, s] of Object.entries(translatedAlternateMap)) {
   if (l === 'en') {
     alternateUrls[l] = `${siteUrl}/blog/${s}`;
   } else {
@@ -155,7 +193,7 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
 }
 ---
 
-<Layout title={post.data.title} shortTitle={shortTitle} description={post.data.description} image={post.data.image} alternateUrls={alternateUrls}>
+<Layout title={post.data.title} shortTitle={shortTitle} description={post.data.description} image={post.data.image} alternateUrls={alternateUrls} noindex={isUntranslated} ogType="article" publishedTime={publishDate}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -215,7 +253,7 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://scaningredients.com/"
+            "item": `https://scaningredients.com/${lang}`
           },
           {
             "@type": "ListItem",
@@ -229,7 +267,18 @@ for (const [l, s] of Object.entries(blogSlugMap)) {
             "name": post.data.title
           }
         ]
-      }
+      },
+      ...(faqItems.length >= 2 ? [{
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
+      }] : [])
     ]
   })} />
   <div class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200" dir={lang === 'ar' || lang === 'ar-MA' ? 'rtl' : 'ltr'}>

@@ -161,7 +161,20 @@
     "title": "Asiakastuki",
     "subtitle": "Jos sinulla on kysyttävää, palautetta tai teknisiä ongelmia Klar-sovelluksen (tai aiemman PureScan AI -tilisi) kanssa, ota yhteyttä. Vastaamme 24–48 tunnin kuluessa.",
     "emailButton": "Lähetä Sähköpostia Tukitiimille",
-    "directEmailText": "Tai kirjoita suoraan osoitteeseen"
+    "directEmailText": "Tai kirjoita suoraan osoitteeseen",
+    "cards": {
+      "scanningTitle": "Viivakoodin ja AI-tuoteselosteen skannaus",
+      "scanningDesc": "Osoita kameralla minkä tahansa elintarvikkeen tai kosmetiikkatuotteen viivakoodia saadaksesi välittömästi Nutri-Score-arvosanan, NOVA-luokan ja riskiluokituksen. Jos tuotetta ei vielä löydy tietokannasta, siirry AI-etikettitilaan ja kuvaa ainesosaluettelo millä tahansa kielellä saadaksesi välittömän toksikologisen analyysin.",
+      "proTitle": "Klar Pro ja tilin synkronointi",
+      "proDescPrefix": "Klar Pro -tilauksesi (mukaan lukien aiemmat PureScan AI Pro -tilit) pysyy synkronoituna iOS-, Android- ja verkkoportaalin välillä kirjautumissähköpostisi kautta. Hallitaksesi tai peruuttaaksesi verkkotilauksen siirry sivulle",
+      "proLinkLabel": "Hinnoittelu- ja tilausportaali",
+      "allergensTitle": "Allergeenit ja terveysprofiilit",
+      "allergensDesc": "Määritä allergiasi, ihosairautesi ja ruokavaliotoiveesi sovelluksen asetuksissa. Klar korostaa automaattisesti piilevät johdannaiset, kuten kaseiinin, gluteenin lähteet, parabeenit, ftalaatit ja hormonihäiriköt juuri sinun profiilisi mukaan.",
+      "privacyTitle": "Tietosuoja ja tietojen poisto",
+      "privacyDescPrefix": "Emme koskaan myy skannaushistoriaasi tai terveystietojasi. Voit lukea asiakirjan",
+      "privacyDescMid": "tutustua osioon",
+      "privacyDescSuffix": "tai poistaa tilisi tiedot pysyvästi milloin tahansa."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Tilin Poistaminen - Klar (entinen PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Kokemus",
     "latestInsightsSubtitle": "Asiantuntija-artikkeleita ainesosista, myrkyistä ja terveellisestä elämästä.",
     "readArticle": "Lue artikkeli",
-    "compareLabel": "Vertaa:"
+    "compareLabel": "Vertaa:",
+    "faqTitle": "Usein kysytyt kysymykset",
+    "faqs": [
+      {
+        "question": "Mikä Klar on?",
+        "answer": "Klar (entinen PureScan AI) on iOS- ja Android-mobiilisovellus, joka skannaa tekoälyn avulla elintarvikkeiden ja kosmetiikan tuoteselosteet ja tunnistaa välittömästi piilevät myrkyt, allergeenit, hormonihäiriköt ja ultraprosessoidut lisäaineet. Se tarjoaa yksilöllisen terveysriskiarvion omien sairauksiesi, allergioidesi ja ruokavaliovalintojesi perusteella."
+      },
+      {
+        "question": "Oliko Klar aiemmin PureScan AI?",
+        "answer": "Kyllä. Klar tunnettiin aiemmin nimellä PureScan AI. Sovellus on brändätty uudelleen nimellä Klar — Ruoka- ja Kosmetiikkaskanneri, ja siinä on sama edistynyt tekoälyskannausteknologia, laajennetut tieteelliset tietokannat sekä saumaton jatkuvuus kaikille nykyisille käyttäjätileille."
+      },
+      {
+        "question": "Miten Klar skannaa elintarvikkeita?",
+        "answer": "Klar etsii tuotteita laajasta tietokannasta viivakoodiskannauksen avulla. Jos tuotetta ei löydy, tekoälykamera lukee ainesosaluettelon millä tahansa kielellä ja vertaa jokaista ainesosaa tieteellisiin toksikologiatietokantoihin paljastaakseen piilevät haitat sekä näyttääkseen Nutri-Score- ja NOVA-luokitukset."
+      },
+      {
+        "question": "Onko Klar ilmainen?",
+        "answer": "Kyllä. Klar tarjoaa ilmaistason keskeisillä skannaustoiminnoilla, kuten viivakoodiskannauksella, perusainesosa-analyysillä ja allergeenien tunnistuksella. Pro-tilaus avaa edistyneen yksilöllisen analyysin, rajattomat skannaukset ja tarkat ainesosaerittelyt."
+      },
+      {
+        "question": "Mitä myrkkyjä Klar voi tunnistaa?",
+        "answer": "Klar tunnistaa hormonihäiriköt (parabeenit, ftalaatit, BPA), karsinogeenit (formaldehydin vapauttajat, BHA), komedogeeniset ainesosat, ultraprosessoidut lisäaineet, keinotekoiset väriaineet (Red 40, Yellow 5), haitalliset säilöntäaineet (BHT, natriumbentsoaatti) ja yli 500 muuta merkittyä ainetta."
+      },
+      {
+        "question": "Toimiiko Klar myös kosmetiikan kanssa?",
+        "answer": "Kyllä. Klar skannaa sekä elintarvikkeita että kosmetiikkatuotteita. Kosmetiikasta se tunnistaa hormonihäiriköt, karsinogeenit, komedogeeniset ainesosat (asteikolla 0–5) ja kosketusallergeenit sekä laskee vaaraluokituksen jokaisen ainesosan toksisuusprofiilin perusteella."
+      }
+    ]
   }
 }

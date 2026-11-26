@@ -161,7 +161,20 @@
     "title": "Podpora",
     "subtitle": "Máte dotazy, zpětnou vazbu nebo technické potíže s aplikací Klar (nebo účtem PureScan AI)? Odpovídáme do 24–48 hodin.",
     "emailButton": "Napsat Týmu Podpory",
-    "directEmailText": "Nebo nám napište přímo na"
+    "directEmailText": "Nebo nám napište přímo na",
+    "cards": {
+      "scanningTitle": "Skenování čárových kódů a AI čtení etiket",
+      "scanningDesc": "Namiřte fotoaparát na čárový kód jakékoli potraviny nebo kosmetiky a okamžitě získáte Nutri-Score, stupeň NOVA a hodnocení rizik. Pokud položka ještě není v databázi, přepněte do režimu AI čtení etikety, vyfoťte seznam složek v jakémkoli jazyce a ihned obdržíte toxikologický rozbor.",
+      "proTitle": "Klar Pro a synchronizace účtu",
+      "proDescPrefix": "Vaše předplatné Klar Pro (včetně původních účtů PureScan AI Pro) zůstává synchronizované napříč iOS, Androidem a webovým portálem prostřednictvím vašeho přihlašovacího e-mailu. Pro správu nebo zrušení webového předplatného navštivte náš",
+      "proLinkLabel": "Portál cen a předplatného",
+      "allergensTitle": "Alergeny a zdravotní profily",
+      "allergensDesc": "Přizpůsobte si své alergie, kožní potíže a stravovací preference v nastavení aplikace. Klar automaticky zvýrazní skryté deriváty, jako je kasein, zdroje lepku, parabeny, ftaláty a endokrinní disruptory, přesně podle vašeho profilu.",
+      "privacyTitle": "Soukromí a smazání údajů",
+      "privacyDescPrefix": "Vaši historii skenování ani zdravotní preference nikdy neprodáváme. Můžete si přečíst naše",
+      "privacyDescMid": "zkontrolovat naše",
+      "privacyDescSuffix": "nebo kdykoli trvale smazat údaje svého účtu."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Smazání Účtu - Klar (dříve PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Zážitek",
     "latestInsightsSubtitle": "Odborné články o složení, toxinech a zdravém životním stylu.",
     "readArticle": "Přečíst článek",
-    "compareLabel": "Porovnat:"
+    "compareLabel": "Porovnat:",
+    "faqTitle": "Často kladené otázky",
+    "faqs": [
+      {
+        "question": "Co je Klar?",
+        "answer": "Klar (dříve PureScan AI) je mobilní aplikace pro iOS a Android, která pomocí umělé inteligence skenuje etikety potravin a kosmetiky a okamžitě odhaluje skryté toxiny, alergeny, endokrinní disruptory a vysoce průmyslově zpracovaná aditiva. Poskytuje personalizované hodnocení zdravotních rizik na základě individuálních zdravotních potíží, alergií a stravovacích preferencí každého uživatele."
+      },
+      {
+        "question": "Jmenoval se Klar dříve PureScan AI?",
+        "answer": "Ano. Aplikace Klar byla dříve známá jako PureScan AI. Byla přejmenována na Klar — Skener potravin a kosmetiky se stejnou pokročilou technologií AI skenování, rozšířenými vědeckými databázemi a plynulou návazností pro všechny stávající uživatelské účty."
+      },
+      {
+        "question": "Jak Klar skenuje potravinářské výrobky?",
+        "answer": "Klar využívá skenování čárových kódů k vyhledání produktů v rozsáhlé databázi. Pokud produkt není nalezen, jeho AI kamera přečte seznam složek v jakémkoli jazyce a následně každou složku porovná s vědeckými toxikologickými databázemi, aby odhalila skrytá rizika a poskytla klasifikaci Nutri-Score a NOVA."
+      },
+      {
+        "question": "Je Klar zdarma?",
+        "answer": "Ano. Klar nabízí bezplatnou verzi se základními funkcemi skenování včetně skenování čárových kódů, základní analýzy složení a detekce alergenů. Předplatné Pro odemyká pokročilou personalizovanou analýzu, neomezené skenování a podrobný rozbor jednotlivých složek."
+      },
+      {
+        "question": "Jaké toxiny dokáže Klar odhalit?",
+        "answer": "Klar detekuje endokrinní disruptory (parabeny, ftaláty, BPA), karcinogeny (látky uvolňující formaldehyd, BHA), komedogenní složky, vysoce zpracovaná aditiva, umělá barviva (Red 40, Yellow 5), škodlivé konzervanty (BHT, benzoan sodný) a více než 500 dalších rizikových látek."
+      },
+      {
+        "question": "Funguje Klar i s kosmetikou?",
+        "answer": "Ano. Klar skenuje jak potraviny, tak kosmetické přípravky. U kosmetiky odhaluje endokrinní disruptory, karcinogeny, komedogenní složky (hodnocené 0–5), kontaktní alergeny a poskytuje skóre rizika na základě toxikologického profilu každé složky."
+      }
+    ]
   }
 }

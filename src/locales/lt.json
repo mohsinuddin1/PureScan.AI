@@ -161,7 +161,20 @@
     "title": "Pagalba",
     "subtitle": "Jei turite klausimų, pastebėjimų ar techninių nesklandumų naudodamiesi „Klar“ (ar savo ankstesne „PureScan AI“ paskyra), parašykite mums. Atsakome per 24–48 val.",
     "emailButton": "Parašyti Pagalbos Komandai",
-    "directEmailText": "Arba parašykite tiesiogiai el. paštu"
+    "directEmailText": "Arba parašykite tiesiogiai el. paštu",
+    "cards": {
+      "scanningTitle": "Brūkšninių kodų ir DI etikečių skenavimas",
+      "scanningDesc": "Nukreipkite kamerą į bet kurį maisto ar kosmetikos brūkšninį kodą ir akimirksniu gaukite „Nutri-Score“, NOVA lygį bei pavojingumo įvertinimą. Jei prekės dar nėra duomenų bazėje, perjunkite į DI etikečių režimą ir nufotografuokite sudėtį bet kuria kalba, kad gautumėte skubią toksikologinę analizę.",
+      "proTitle": "„Klar Pro“ ir paskyros sinchronizavimas",
+      "proDescPrefix": "Jūsų „Klar Pro“ prenumerata (įskaitant ankstesnes „PureScan AI Pro“ paskyras) išlieka sinchronizuota „iOS“, „Android“ ir žiniatinklio portale per jūsų prisijungimo el. paštą. Norėdami tvarkyti arba atšaukti žiniatinklio prenumeratą, apsilankykite mūsų",
+      "proLinkLabel": "Kainodaros ir prenumeratos portale",
+      "allergensTitle": "Alergenai ir sveikatos profiliai",
+      "allergensDesc": "Programėlės nustatymuose pasirinkite savo alergijas, odos būkles ir mitybos įpročius. „Klar“ automatiškai paryškina paslėptus darinius, tokius kaip kazeinas, glitimo šaltiniai, parabenai, ftalatai ir endokrininę sistemą ardančios medžiagos, pritaikytas būtent jūsų profiliui.",
+      "privacyTitle": "Privatumas ir duomenų ištrynimas",
+      "privacyDescPrefix": "Mes niekada neparduodame jūsų skenavimo istorijos ar sveikatos nuostatų. Galite peržiūrėti mūsų",
+      "privacyDescMid": "susipažinti su mūsų",
+      "privacyDescSuffix": "arba bet kada visam laikui ištrinti savo paskyros duomenis."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Paskyros Ištrynimas - „Klar“ (buvusi „PureScan AI“)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Patirtis",
     "latestInsightsSubtitle": "Ekspertų įžvalgos apie ingredientus, toksinus ir sveiką gyvenseną.",
     "readArticle": "Skaityti straipsnį",
-    "compareLabel": "Palyginti:"
+    "compareLabel": "Palyginti:",
+    "faqTitle": "Dažniausiai užduodami klausimai",
+    "faqs": [
+      {
+        "question": "Kas yra „Klar“?",
+        "answer": "„Klar“ (anksčiau „PureScan AI“) yra „iOS“ ir „Android“ skirta mobilioji programėlė, kuri dirbtinio intelekto pagalba nuskaito maisto ir kosmetikos gaminių etiketes, akimirksniu aptikdama paslėptus toksinus, alergenus, endokrininę sistemą ardančias medžiagas ir itin perdirbtus priedus. Ji pateikia asmeninį sveikatos rizikos vertinimą pagal kiekvieno naudotojo sveikatos būklę, alergijas ir mitybos įpročius."
+      },
+      {
+        "question": "Ar „Klar“ anksčiau vadinosi „PureScan AI“?",
+        "answer": "Taip. Anksčiau „Klar“ buvo žinoma kaip „PureScan AI“. Programėlė pakeitė pavadinimą į „Klar“ — maisto ir kosmetikos skeneris, išsaugodama tą pačią pažangią DI skenavimo technologiją, išplėstas mokslines duomenų bazes ir sklandų visų esamų paskyrų tęstinumą."
+      },
+      {
+        "question": "Kaip „Klar“ nuskaito maisto produktus?",
+        "answer": "„Klar“ naudoja brūkšninių kodų skenavimą, kad surastų produktus didžiulėje duomenų bazėje. Jei prekės nėra, jos DI kamera perskaito sudėties etiketę bet kuria kalba, o tada kiekvieną ingredientą patikrina mokslinėse toksikologijos duomenų bazėse, kad aptiktų paslėptus pavojus ir pateiktų „Nutri-Score“ bei NOVA klasifikacijas."
+      },
+      {
+        "question": "Ar „Klar“ yra nemokama?",
+        "answer": "Taip. „Klar“ siūlo nemokamą planą su pagrindinėmis skenavimo funkcijomis, įskaitant brūkšninių kodų nuskaitymą, bazinę sudėties analizę ir alergenų aptikimą. „Pro“ prenumerata atrakina išsamią suasmenintą analizę, neribotus skenavimus ir detalią kiekvieno ingrediento apžvalgą."
+      },
+      {
+        "question": "Kokius toksinus gali aptikti „Klar“?",
+        "answer": "„Klar“ aptinka endokrininę sistemą ardančias medžiagas (parabenus, ftalatus, BPA), kancerogenus (formaldehidą išskiriančias medžiagas, BHA), komedogeninius ingredientus, itin perdirbtus priedus, dirbtinius dažiklius („Red 40“, „Yellow 5“), kenksmingus konservantus (BHT, natrio benzoatą) ir daugiau nei 500 kitų pažymėtų medžiagų."
+      },
+      {
+        "question": "Ar „Klar“ tinka kosmetikai?",
+        "answer": "Taip. „Klar“ nuskaito tiek maisto produktus, tiek kosmetiką. Kosmetikoje ji aptinka endokrininę sistemą ardančias medžiagas, kancerogenus, komedogeninius ingredientus (vertinamus 0–5 balais), kontaktinius alergenus ir pateikia bendrą pavojingumo balą pagal kiekvienos sudedamosios dalies toksiškumo profilį."
+      }
+    ]
   }
 }

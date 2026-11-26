@@ -6,14 +6,32 @@ export function getStaticPaths() {
 
 import Layout from '../../layouts/Layout.astro';
 import Homepage from '../../components/homepage/Homepage.astro';
-import { useTranslations } from '../../lib/i18n-utils';
+import { useTranslations, getTranslations } from '../../lib/i18n-utils';
 
 const lang = Astro.params.lang || Astro.currentLocale || 'en';
 const t = useTranslations(lang);
+const translations = getTranslations(lang);
 const metaTitle = t('home.metaTitle', 'Klar - Food & Cosmetic Scanner');
 const metaDescription = t('home.metaDescription', 'Scan food & cosmetic ingredients with Klar AI to detect hidden toxins, allergens, and ultra-processed additives instantly. Free on iOS & Android.');
+const localizedFaqs = (Array.isArray(translations?.home?.faqs) && translations.home.faqs.length > 0)
+  ? translations.home.faqs
+  : null;
 ---
 
-<Layout title={metaTitle} description={metaDescription}>
+<Layout title={metaTitle} description={metaDescription} includeAppSchema={true}>
+  {localizedFaqs && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": localizedFaqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.answer
+        }
+      }))
+    })} />
+  )}
   <Homepage lang={lang} />
 </Layout>

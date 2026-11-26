@@ -161,7 +161,20 @@
     "title": "Ügyfélszolgálat",
     "subtitle": "Kérdése, észrevétele vagy technikai problémája van a Klar alkalmazással (vagy korábbi PureScan AI fiókjával)? 24–48 órán belül válaszolunk.",
     "emailButton": "E-mail küldése az Ügyfélszolgálatnak",
-    "directEmailText": "Vagy írjon nekünk közvetlenül ide:"
+    "directEmailText": "Vagy írjon nekünk közvetlenül ide:",
+    "cards": {
+      "scanningTitle": "Vonalkód- és AI-címkeszkennelés",
+      "scanningDesc": "Irányítsa kameráját bármely élelmiszer vagy kozmetikum vonalkódjára az azonnali Nutri-Score, NOVA-szint és kockázati besorolás megtekintéséhez. Ha egy termék még nem szerepel az adatbázisban, váltson AI-címke módra, és fotózza le az összetevőlistát bármilyen nyelven az azonnali toxikológiai elemzéshez.",
+      "proTitle": "Klar Pro és fiókszinkronizálás",
+      "proDescPrefix": "Klar Pro előfizetése (beleértve a korábbi PureScan AI Pro fiókokat is) a bejelentkezési e-mail-címén keresztül szinkronban marad iOS, Android és a webes portál között. Webes előfizetés kezeléséhez vagy lemondásához nyissa meg a következőt:",
+      "proLinkLabel": "Árazási és Előfizetési Portál",
+      "allergensTitle": "Allergének és egészségügyi profilok",
+      "allergensDesc": "Testreszabhatja allergiáit, bőrproblémáit és étrendi preferenciáit az alkalmazás beállításaiban. A Klar automatikusan kiemeli az olyan rejtett származékokat, mint a kazein, gluténforrások, parabének, ftalátok és hormonkárosító anyagok, kifejezetten az Ön profiljára szabva.",
+      "privacyTitle": "Adatvédelem és adattörlés",
+      "privacyDescPrefix": "Soha nem adjuk el szkennelési előzményeit vagy egészségügyi preferenciáit. Elolvashatja a következőt:",
+      "privacyDescMid": "megtekintheti ezt is:",
+      "privacyDescSuffix": "vagy bármikor véglegesen törölheti fiókadatait."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Fiók Törlése - Klar (korábban PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Az élmény",
     "latestInsightsSubtitle": "Szakértői elemzések az összetevőkről, toxinokról és az egészséges életmódról.",
     "readArticle": "Cikk elolvasása",
-    "compareLabel": "Összehasonlítás:"
+    "compareLabel": "Összehasonlítás:",
+    "faqTitle": "Gyakran Ismételt Kérdések",
+    "faqs": [
+      {
+        "question": "Mi az a Klar?",
+        "answer": "A Klar (korábban PureScan AI) egy iOS-re és Androidra készült mobilalkalmazás, amely mesterséges intelligencia segítségével szkenneli az élelmiszerek és kozmetikumok címkéit, azonnal felismerve a rejtett toxinokat, allergéneket, hormonkárosító anyagokat és ultrafeldolgozott adalékokat. Személyre szabott egészségügyi kockázatértékelést ad az Ön egyéni betegségei, allergiái és étrendje alapján."
+      },
+      {
+        "question": "A Klar korábban PureScan AI volt?",
+        "answer": "Igen. A Klar korábban PureScan AI néven volt ismert. Az alkalmazás Klar — Élelmiszer- és Kozmetikai Szkenner névre váltott ugyanazzal a fejlett AI-szkennelési technológiával, bővített tudományos adatbázisokkal és zökkenőmentes folytonossággal minden meglévő felhasználói fiók számára."
+      },
+      {
+        "question": "Hogyan szkenneli a Klar az élelmiszereket?",
+        "answer": "A Klar vonalkód-beolvasással keresi ki a termékeket egy hatalmas adatbázisból. Ha egy termék nem található, az AI-kamera bármilyen nyelven beolvassa az összetevőlistát, majd minden összetevőt összevet tudományos toxikológiai adatbázisokkal a rejtett kockázatok felismeréséhez, valamint a Nutri-Score és NOVA besorolás megadásához."
+      },
+      {
+        "question": "Ingyenes a Klar?",
+        "answer": "Igen. A Klar kínál ingyenes csomagot az alapvető szkennelési funkciókkal, beleértve a vonalkód-beolvasást, az alapszintű összetevő-elemzést és az allergénészlelést. A Pro előfizetés feloldja a fejlett, személyre szabott elemzést, a korlátlan szkennelést és a részletes összetevő-lebontást."
+      },
+      {
+        "question": "Milyen toxinokat tud felismerni a Klar?",
+        "answer": "A Klar felismeri a hormonkárosító anyagokat (parabének, ftalátok, BPA), a rákkeltő anyagokat (formaldehid-felszabadítók, BHA), a komedogén összetevőket, az ultrafeldolgozott adalékokat, a mesterséges színezékeket (Red 40, Yellow 5), a káros tartósítószereket (BHT, nátrium-benzoát) és több mint 500 további jelölt anyagot."
+      },
+      {
+        "question": "Működik a Klar kozmetikumokkal is?",
+        "answer": "Igen. A Klar élelmiszereket és kozmetikai termékeket egyaránt szkennel. Kozmetikumoknál felismeri a hormonkárosító anyagokat, rákkeltőket, komedogén összetevőket (0–5-ös skálán) és kontaktallergéneket, valamint minden összetevő toxikológiai profilja alapján kockázati pontszámot ad."
+      }
+    ]
   }
 }

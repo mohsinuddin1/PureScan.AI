@@ -9,6 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import { isUntranslatedBody } from './src/lib/seo-guard.js';
 
 // Ensure environment variables from .env are available in process.env during dev and build
 const env = loadEnv('development', process.cwd(), '');
@@ -84,8 +85,9 @@ function localApiDevPlugin() {
   };
 }
 
-// Collect real per-page publish dates (or file mtimes) for accurate sitemap <lastmod>
+// Collect real per-page publish dates (or file mtimes) and untranslated posts for sitemap filtering
 const blogDateMap = new Map();
+const untranslatedBlogPaths = new Set();
 const blogRootDir = path.resolve(process.cwd(), 'src/content/blog');
 if (fs.existsSync(blogRootDir)) {
   for (const loc of fs.readdirSync(blogRootDir)) {
@@ -103,6 +105,13 @@ if (fs.existsSync(blogRootDir)) {
       const urlPath = loc === 'en' ? `/blog/${slug}` : `/${loc}/blog/${slug}`;
       blogDateMap.set(urlPath, isoDate);
       blogDateMap.set(urlPath.toLowerCase(), isoDate);
+
+      const fmEnd = raw.indexOf('---', raw.indexOf('---') + 3);
+      const body = fmEnd !== -1 ? raw.slice(fmEnd + 3) : raw;
+      if (isUntranslatedBody(loc, body)) {
+        untranslatedBlogPaths.add(urlPath);
+        untranslatedBlogPaths.add(urlPath.toLowerCase());
+      }
     }
   }
 }
@@ -121,6 +130,9 @@ export default defineConfig({
 
       // Exclude utility and auth-wall pages
       if (pathname.endsWith('/delete-account') || pathname === '/pro') return false;
+
+      // Exclude untranslated English-body non-EN blog posts from sitemap
+      if (untranslatedBlogPaths.has(pathname) || untranslatedBlogPaths.has(pathname.toLowerCase())) return false;
 
       return true;
     },

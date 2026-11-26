@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Homepage from '../components/homepage/Homepage.astro';
+import { getTranslations } from '../lib/i18n-utils';
 
-const homepageFaqs = [
+const defaultFaqs = [
   {
     question: "What is Klar?",
     answer: "Klar (formerly PureScan AI) is a mobile application for iOS and Android that uses artificial intelligence to scan food and cosmetic product labels, detecting hidden toxins, allergens, endocrine disruptors, and ultra-processed additives instantly. It provides personalized health risk assessments based on each user's unique health conditions, allergies, and dietary preferences."
@@ -28,12 +29,17 @@ const homepageFaqs = [
     answer: "Yes. Klar scans both food and cosmetic products. For cosmetics, it detects endocrine disruptors, carcinogens, comedogenic ingredients (rated 0-5), contact allergens, and provides a hazard score based on the toxicity profile of every ingredient."
   }
 ];
+const translations = getTranslations('en');
+const homepageFaqs = (Array.isArray(translations?.home?.faqs) && translations.home.faqs.length > 0)
+  ? translations.home.faqs
+  : defaultFaqs;
 ---
 
 <Layout
   title="Klar — AI Food & Cosmetic Ingredient Scanner App | Detect Hidden Toxins"
   shortTitle="Klar — Food & Cosmetic Scanner App"
   description="Scan food and cosmetic ingredients with Klar AI to detect hidden toxins, allergens, and ultra-processed additives. Free on iOS and Android."
+  includeAppSchema={true}
 >
   <!-- Homepage FAQ Schema for Rich Results -->
   <script type="application/ld+json" set:html={JSON.stringify({

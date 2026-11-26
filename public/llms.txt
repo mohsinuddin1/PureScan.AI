@@ -30,6 +30,14 @@ Klar (formerly PureScan AI) is a mobile application that uses artificial intelli
 - Pregnant and breastfeeding women avoiding teratogens and endocrine disruptors
 - Fitness enthusiasts auditing protein powders and supplements
 
+## Scientific Methodology & Sources
+
+Klar evaluates ingredients against peer-reviewed clinical toxicology, dermatology, and nutrition research from:
+- **PubMed / NIH**: Peer-reviewed clinical trials and toxicological monographs
+- **EFSA & SCCS**: European Food Safety Authority and Scientific Committee on Consumer Safety assessments
+- **FDA & Prop 65**: US regulatory additive, carcinogen, and reproductive toxin lists
+- **Nutri-Score (A–E) & NOVA (1–4)**: Standardized nutritional density and ultra-processed food classification
+
 ## Core Pages
 
 - [Home](https://scaningredients.com/): Main landing page
@@ -37,9 +45,21 @@ Klar (formerly PureScan AI) is a mobile application that uses artificial intelli
 - [Food Scanner App](https://scaningredients.com/food-scanner-app): Food barcode scanner with Nutri-Score and NOVA classification
 - [Cosmetic Safety Checker](https://scaningredients.com/cosmetic-safety-checker): Check cosmetics for endocrine disruptors, carcinogens, and allergens
 - [Allergy Scanner](https://scaningredients.com/allergy-scanner): Detect hidden food allergens — gluten, dairy, nuts, soy, and 14+ categories
-- [Blog](https://scaningredients.com/blog): 50+ expert articles on hidden toxins in food and cosmetics
+- [Blog](https://scaningredients.com/blog): 60+ expert articles on hidden toxins in food and cosmetics
 - [Grading System](https://scaningredients.com/grading): How safety scores are calculated
 - [Pricing](https://scaningredients.com/pricing): Free and Pro plans
+- [API & Agent Docs](https://scaningredients.com/docs/api): OpenAPI spec, MCP server card, and agent discovery endpoints
+
+## Top Ingredient Safety Guides
+
+- [Ultra-Processed Foods & NOVA Classification](https://scaningredients.com/blog/49-what-are-ultra-processed-foods-and-nova-classification-explained)
+- [Is Titanium Dioxide (E171) Safe in Food?](https://scaningredients.com/blog/48-is-titanium-dioxide-in-your-food-safe-why-europe-banned-e171-but-america-didnt)
+- [Why Red Dye 40 Is Being Banned](https://scaningredients.com/blog/47-why-is-red-dye-40-being-banned)
+- [SLS Toothpaste & Alcohol Mouthwash Canker Sores](https://scaningredients.com/blog/14-why-do-i-have-sensitive-teeth-and-canker-sores-sls-toothpaste-alcohol-mouthwash)
+- [Why Chemical Sunscreen Stings Eyes & Causes Breakouts](https://scaningredients.com/blog/16-why-does-sunscreen-sting-eyes-and-cause-breakouts-chemical-spf)
+- [Keratosis Pilaris & Harsh Body Washes](https://scaningredients.com/blog/18-why-do-i-have-red-bumps-on-arms-and-back-keratosis-pilaris)
+- [Are Seed Oils Really Inflammatory? Scientific Guide](https://scaningredients.com/blog/55-what-are-seed-oils-and-are-they-really-inflammatory-scientific-guide)
+- [Layering Retinol, Vitamin C, AHA & Niacinamide](https://scaningredients.com/blog/60-can-i-layer-retinol-vitamin-c-aha-niacinamide-skincare-routine)
 
 ## Competitor Comparisons
 

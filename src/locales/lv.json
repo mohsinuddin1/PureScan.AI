@@ -161,7 +161,20 @@
     "title": "Atbalsts",
     "subtitle": "Ja jums ir jautājumi, atsauksmes vai tehniski sarežģījumi lietotnē Klar (vai ar PureScan AI kontu), rakstiet mums. Atbildam 24–48 stundu laikā.",
     "emailButton": "Sūtīt E-pastu Atbalsta Komandai",
-    "directEmailText": "Vai rakstiet mums tieši uz"
+    "directEmailText": "Vai rakstiet mums tieši uz",
+    "cards": {
+      "scanningTitle": "Svītrkodu un MI etiķešu skenēšana",
+      "scanningDesc": "Pavērsiet kameru pret jebkuru pārtikas vai kosmētikas svītrkodu, lai uzreiz redzētu Nutri-Score, NOVA līmeni un bīstamības vērtējumu. Ja produkta vēl nav datubāzē, pārslēdzieties uz MI etiķešu režīmu un nofotografējiet sastāvdaļu sarakstu jebkurā valodā tūlītējai toksikoloģiskai analīzei.",
+      "proTitle": "Klar Pro un konta sinhronizācija",
+      "proDescPrefix": "Jūsu Klar Pro abonements (tostarp iepriekšējie PureScan AI Pro konti) paliek sinhronizēts iOS, Android un tīmekļa portālā, izmantojot jūsu pierakstīšanās e-pastu. Lai pārvaldītu vai atceltu tīmekļa abonementu, apmeklējiet mūsu",
+      "proLinkLabel": "Cenu un abonementu portālu",
+      "allergensTitle": "Alergēni un veselības profili",
+      "allergensDesc": "Lietotnes iestatījumos pielāgojiet savas alerģijas, ādas stāvokļus un uztura preferences. Klar automātiski izceļ slēptos atvasinājumus, piemēram, kazeīnu, glutēna avotus, parabēnus, ftalātus un endokrīnās sistēmas traucētājus, kas attiecas tieši uz jūsu profilu.",
+      "privacyTitle": "Privātums un datu dzēšana",
+      "privacyDescPrefix": "Mēs nekad nepārdodam jūsu skenēšanas vēsturi vai veselības iestatījumus. Jūs varat iepazīties ar mūsu",
+      "privacyDescMid": "pārbaudīt mūsu",
+      "privacyDescSuffix": "vai jebkurā brīdī neatgriezeniski dzēst savus konta datus."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Konta Dzēšana - Klar (agrāk PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Pieredze",
     "latestInsightsSubtitle": "Ekspertu analīze par sastāvdaļām, toksīniem un veselīgu dzīvesveidu.",
     "readArticle": "Lasīt rakstu",
-    "compareLabel": "Salīdzināt:"
+    "compareLabel": "Salīdzināt:",
+    "faqTitle": "Biežāk uzdotie jautājumi",
+    "faqs": [
+      {
+        "question": "Kas ir Klar?",
+        "answer": "Klar (iepriekš PureScan AI) ir mobilā lietotne iOS un Android ierīcēm, kas izmanto mākslīgo intelektu, lai skenētu pārtikas un kosmētikas produktu etiķetes un nekavējoties atklātu slēptos toksīnus, alergēnus, endokrīnās sistēmas traucētājus un īpaši pārstrādātas piedevas. Tā sniedz personalizētu veselības riska novērtējumu atbilstoši katra lietotāja veselības stāvoklim, alerģijām un uztura paradumiem."
+      },
+      {
+        "question": "Vai Klar iepriekš bija PureScan AI?",
+        "answer": "Jā. Klar iepriekš bija pazīstama kā PureScan AI. Lietotne ir mainījusi zīmolu uz Klar — pārtikas un kosmētikas skeneris, saglabājot to pašu progresīvo MI skenēšanas tehnoloģiju, paplašinātās zinātniskās datubāzes un pilnīgu nepārtrauktību visiem esošajiem lietotāju kontiem."
+      },
+      {
+        "question": "Kā Klar skenē pārtikas produktus?",
+        "answer": "Klar izmanto svītrkodu skenēšanu, lai meklētu produktus milzīgā datubāzē. Ja produkts netiek atrasts, tās MI kamera nolasa sastāvdaļu etiķeti jebkurā valodā un pēc tam salīdzina katru sastāvdaļu ar zinātniskajām toksikoloģijas datubāzēm, lai atklātu slēptos riskus un sniegtu Nutri-Score un NOVA klasifikāciju."
+      },
+      {
+        "question": "Vai Klar ir bezmaksas?",
+        "answer": "Jā. Klar piedāvā bezmaksas versiju ar galvenajām skenēšanas funkcijām, tostarp svītrkodu skenēšanu, pamata sastāvdaļu analīzi un alergēnu noteikšanu. Pro abonements atbloķē padziļinātu personalizēto analīzi, neierobežotus skenējumus un detalizētu sastāvdaļu sadalījumu."
+      },
+      {
+        "question": "Kādus toksīnus Klar spēj atklāt?",
+        "answer": "Klar atklāj endokrīnās sistēmas traucētājus (parabēnus, ftalātus, BPA), kancerogēnus (formaldehīdu atbrīvojošas vielas, BHA), komedogēnas sastāvdaļas, īpaši pārstrādātas piedevas, mākslīgās krāsvielas (Red 40, Yellow 5), kaitīgos konservantus (BHT, nātrija benzoātu) un vairāk nekā 500 citas riskantas vielas."
+      },
+      {
+        "question": "Vai Klar darbojas arī ar kosmētiku?",
+        "answer": "Jā. Klar skenē gan pārtikas, gan kosmētikas produktus. Kosmētikai tā nosaka endokrīnās sistēmas traucētājus, kancerogēnus, komedogēnas sastāvdaļas (novērtētas no 0 līdz 5), kontaktalergēnus un aprēķina bīstamības rādītāju, pamatojoties uz katras sastāvdaļas toksicitātes profilu."
+      }
+    ]
   }
 }

@@ -161,7 +161,20 @@
     "title": "Support",
     "subtitle": "Haben Sie Fragen, Feedback oder ein technisches Anliegen zur Klar App (oder Ihrem PureScan AI Konto)? Wir antworten verlässlich innerhalb von 24–48 Stunden.",
     "emailButton": "Support-Team per E-Mail kontaktieren",
-    "directEmailText": "Oder schreiben Sie uns direkt an"
+    "directEmailText": "Oder schreiben Sie uns direkt an",
+    "cards": {
+      "scanningTitle": "Barcode- & KI-Etiketten-Scan",
+      "scanningDesc": "Richten Sie Ihre Kamera auf einen beliebigen Lebensmittel- oder Kosmetik-Barcode, um sofort den Nutri-Score, die NOVA-Stufe und die Risikobewertung zu erhalten. Ist ein Produkt noch nicht in der Datenbank, wechseln Sie in den KI-Etikettenmodus und fotografieren Sie die Zutatenliste in jeder Sprache für eine sofortige toxikologische Analyse.",
+      "proTitle": "Klar Pro & Konto-Synchronisation",
+      "proDescPrefix": "Ihr Klar Pro-Abonnement (einschließlich früherer PureScan AI Pro-Konten) bleibt über Ihre Anmelde-E-Mail auf iOS, Android und im Webportal synchronisiert. Um ein Web-Abonnement zu verwalten oder zu kündigen, besuchen Sie unser",
+      "proLinkLabel": "Preis- und Abonnementportal",
+      "allergensTitle": "Allergene & Gesundheitsprofile",
+      "allergensDesc": "Passen Sie Ihre Allergien, Hauterkrankungen und Ernährungspräferenzen in den App-Einstellungen an. Klar hebt versteckte Derivate wie Kasein, Glutenquellen, Parabene, Phthalate und endokrine Disruptoren automatisch passend zu Ihrem Profil hervor.",
+      "privacyTitle": "Datenschutz & Datenlöschung",
+      "privacyDescPrefix": "Wir verkaufen niemals Ihren Scan-Verlauf oder Ihre Gesundheitspräferenzen. Lesen Sie unsere",
+      "privacyDescMid": "informieren Sie sich über unser",
+      "privacyDescSuffix": "oder löschen Sie Ihre Kontodaten jederzeit dauerhaft."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Konto löschen - Klar (ehemals PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Das Erlebnis",
     "latestInsightsSubtitle": "Expertenanalysen zu Inhaltsstoffen, Toxinen und gesundem Leben.",
     "readArticle": "Artikel lesen",
-    "compareLabel": "Vergleichen:"
+    "compareLabel": "Vergleichen:",
+    "faqTitle": "Häufig gestellte Fragen",
+    "faqs": [
+      {
+        "question": "Was ist Klar?",
+        "answer": "Klar (ehemals PureScan AI) ist eine mobile App für iOS und Android, die mithilfe künstlicher Intelligenz Etiketten von Lebensmitteln und Kosmetika scannt und versteckte Toxine, Allergene, endokrine Disruptoren sowie hochverarbeitete Zusatzstoffe sofort erkennt. Sie liefert personalisierte Gesundheitsrisikobewertungen auf Basis Ihrer individuellen Erkrankungen, Allergien und Ernährungsgewohnheiten."
+      },
+      {
+        "question": "Hieß Klar früher PureScan AI?",
+        "answer": "Ja. Klar war zuvor als PureScan AI bekannt. Die App wurde in Klar — Lebensmittel- & Kosmetik-Scanner umbenannt – mit derselben fortschrittlichen KI-Scantechnologie, erweiterten wissenschaftlichen Datenbanken und nahtloser Kontinuität für alle bestehenden Nutzerkonten."
+      },
+      {
+        "question": "Wie scannt Klar Lebensmittel?",
+        "answer": "Klar nutzt den Barcode-Scan, um Produkte in einer riesigen Datenbank nachzuschlagen. Wird ein Produkt nicht gefunden, liest die KI-Kamera die Zutatenliste in jeder Sprache aus und gleicht jede Zutat mit wissenschaftlichen Toxikologie-Datenbanken ab, um versteckte Risiken zu erkennen und Nutri-Score- sowie NOVA-Einstufungen zu liefern."
+      },
+      {
+        "question": "Ist Klar kostenlos?",
+        "answer": "Ja. Klar bietet eine kostenlose Basisversion mit wichtigen Scan-Funktionen wie Barcode-Scans, grundlegender Inhaltsstoffanalyse und Allergenerkennung. Ein Pro-Abonnement schaltet erweiterte personalisierte Analysen, unbegrenzte Scans und detaillierte Inhaltsstoffaufschlüsselungen frei."
+      },
+      {
+        "question": "Welche Schadstoffe kann Klar erkennen?",
+        "answer": "Klar erkennt endokrine Disruptoren (Parabene, Phthalate, BPA), Karzinogene (Formaldehydabspalter, BHA), komedogene Inhaltsstoffe, hochverarbeitete Zusatzstoffe, künstliche Farbstoffe (Red 40, Yellow 5), bedenkliche Konservierungsstoffe (BHT, Natriumbenzoat) und über 500 weitere markierte Substanzen."
+      },
+      {
+        "question": "Funktioniert Klar auch bei Kosmetik?",
+        "answer": "Ja. Klar scannt sowohl Lebensmittel als auch Kosmetikprodukte. Bei Kosmetika erkennt die App endokrine Disruptoren, Karzinogene, komedogene Inhaltsstoffe (bewertet von 0 bis 5) sowie Kontaktallergene und erstellt eine Risikobewertung basierend auf dem Toxizitätsprofil jedes Inhaltsstoffs."
+      }
+    ]
   }
 }

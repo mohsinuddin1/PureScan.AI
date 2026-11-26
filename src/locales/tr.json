@@ -161,7 +161,20 @@
     "title": "Destek",
     "subtitle": "Klar uygulaması (veya PureScan AI hesabınız) ile ilgili sorularınız, geri bildirimleriniz veya teknik sorunlarınız için bize yazın. 24–48 saat içinde yanıt veriyoruz.",
     "emailButton": "Destek Ekibine E-posta Gönder",
-    "directEmailText": "Veya bize doğrudan şu adresten yazın:"
+    "directEmailText": "Veya bize doğrudan şu adresten yazın:",
+    "cards": {
+      "scanningTitle": "Barkod ve Yapay Zekâ Etiket Tarama",
+      "scanningDesc": "Anında Nutri-Score, NOVA düzeyi ve tehlike puanı görmek için kameranızı herhangi bir gıda veya kozmetik barkoduna doğrultun. Ürün henüz veritabanında yoksa, herhangi bir dildeki içerik listesini fotoğraflayıp anında toksikoloji analizi almak için Yapay Zekâ Etiket Moduna geçin.",
+      "proTitle": "Klar Pro ve Hesap Senkronizasyonu",
+      "proDescPrefix": "Klar Pro aboneliğiniz (eski PureScan AI Pro hesapları dahil) giriş e-posta adresiniz üzerinden iOS, Android ve web portalı arasında senkronize kalır. Web aboneliğinizi yönetmek veya iptal etmek için ziyaret edin:",
+      "proLinkLabel": "Fiyatlandırma ve Abonelik Portalı",
+      "allergensTitle": "Alerjenler ve Sağlık Profilleri",
+      "allergensDesc": "Uygulama ayarlarından alerjilerinizi, cilt rahatsızlıklarınızı ve beslenme tercihlerinizi özelleştirin. Klar; kazein, glüten kaynakları, parabenler, ftalatlar ve endokrin bozucular gibi gizli türevleri profilinize özel olarak otomatik biçimde vurgular.",
+      "privacyTitle": "Gizlilik ve Veri Silme",
+      "privacyDescPrefix": "Tarama geçmişinizi veya sağlık tercihlerinizi asla satmayız. Şu sayfaları inceleyebilirsiniz:",
+      "privacyDescMid": "ayrıca",
+      "privacyDescSuffix": "bölümüne göz atabilir veya hesap verilerinizi istediğiniz zaman kalıcı olarak silebilirsiniz."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Hesap Silme - Klar (eski adıyla PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "Deneyim",
     "latestInsightsSubtitle": "İçerikler, toksinler ve sağlıklı yaşam hakkında uzman analizleri.",
     "readArticle": "Makaleyi Oku",
-    "compareLabel": "Karşılaştır:"
+    "compareLabel": "Karşılaştır:",
+    "faqTitle": "Sıkça Sorulan Sorular",
+    "faqs": [
+      {
+        "question": "Klar nedir?",
+        "answer": "Klar (eski adıyla PureScan AI), yapay zekâ kullanarak gıda ve kozmetik ürün etiketlerini tarayan; gizli toksinleri, alerjenleri, endokrin bozucuları ve ultra işlenmiş katkı maddelerini anında tespit eden iOS ve Android uygulamasıdır. Her kullanıcının sağlık durumuna, alerjilerine ve beslenme tercihlerine göre kişiselleştirilmiş sağlık riski değerlendirmeleri sunar."
+      },
+      {
+        "question": "Klar daha önce PureScan AI mıydı?",
+        "answer": "Evet. Klar daha önce PureScan AI adıyla biliniyordu. Uygulama, aynı gelişmiş yapay zekâ tarama teknolojisi, genişletilmiş bilimsel veritabanları ve tüm mevcut kullanıcı hesapları için kesintisiz devamlılıkla Klar — Gıda ve Kozmetik Tarayıcı olarak yeniden markalandı."
+      },
+      {
+        "question": "Klar gıda ürünlerini nasıl tarar?",
+        "answer": "Klar, ürünleri kapsamlı bir veritabanında aramak için barkod taraması kullanır. Ürün bulunamazsa yapay zekâ kamerası herhangi bir dildeki içerik listesini okur ve gizli tehlikeleri tespit edip Nutri-Score ile NOVA sınıflandırmalarını sunmak için her bileşeni bilimsel toksikoloji veritabanlarıyla karşılaştırır."
+      },
+      {
+        "question": "Klar ücretsiz mi?",
+        "answer": "Evet. Klar; barkod tarama, temel içerik analizi ve alerjen tespiti gibi temel özellikleri içeren ücretsiz bir sürüm sunar. Pro abonelik ise gelişmiş kişiselleştirilmiş analiz, sınırsız tarama ve ayrıntılı içerik dökümlerinin kilidini açar."
+      },
+      {
+        "question": "Klar hangi toksinleri tespit edebilir?",
+        "answer": "Klar; endokrin bozucuları (parabenler, ftalatlar, BPA), kanserojenleri (formaldehit salıcılar, BHA), komedojenik bileşenleri, ultra işlenmiş katkı maddelerini, yapay boyaları (Red 40, Yellow 5), zararlı koruyucuları (BHT, sodyum benzoat) ve işaretlenmiş 500'den fazla maddeyi tespit eder."
+      },
+      {
+        "question": "Klar kozmetik ürünlerde de çalışır mı?",
+        "answer": "Evet. Klar hem gıda hem de kozmetik ürünlerini tarar. Kozmetiklerde endokrin bozucuları, kanserojenleri, komedojenik içerikleri (0–5 arası derecelendirilmiş) ve temas alerjenlerini tespit eder; her bileşenin toksikoloji profiline göre bir tehlike puanı verir."
+      }
+    ]
   }
 }

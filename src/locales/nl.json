@@ -161,7 +161,20 @@
     "title": "Ondersteuning",
     "subtitle": "Heeft u vragen, feedback of technische problemen met de Klar-app (of uw PureScan AI account)? Wij reageren binnen 24–48 uur.",
     "emailButton": "Stuur een e-mail naar Ondersteuning",
-    "directEmailText": "Of mail ons rechtstreeks via"
+    "directEmailText": "Of mail ons rechtstreeks via",
+    "cards": {
+      "scanningTitle": "Barcode- & AI-etikettenscanner",
+      "scanningDesc": "Richt uw camera op een voedings- of cosmeticabarcode voor directe Nutri-Score, NOVA-niveau en risicobeoordelingen. Staat een product nog niet in de database, schakel dan over naar de AI-etikettenmodus om de ingrediëntenlijst in elke taal te fotograferen voor een directe toxicologische analyse.",
+      "proTitle": "Klar Pro & Accountsynchronisatie",
+      "proDescPrefix": "Uw Klar Pro-abonnement (inclusief eerdere PureScan AI Pro-accounts) blijft gesynchroniseerd op iOS, Android en het webportaal via uw aanmeldings-e-mailadres. Bezoek voor het beheren of opzeggen van een webabonnement ons",
+      "proLinkLabel": "Prijzen- & Abonnementsportaal",
+      "allergensTitle": "Allergenen & Gezondheidsprofielen",
+      "allergensDesc": "Stel uw allergieën, huidaandoeningen en dieetvoorkeuren in via de app-instellingen. Klar markeert automatisch verborgen derivaten zoals caseïne, glutenbronnen, parabenen, ftalaten en hormoonverstoorders, specifiek afgestemd op uw profiel.",
+      "privacyTitle": "Privacy & Gegevensverwijdering",
+      "privacyDescPrefix": "Wij verkopen nooit uw scangeschiedenis of gezondheidsvoorkeuren. U kunt ons",
+      "privacyDescMid": "bekijk ons",
+      "privacyDescSuffix": "of uw accountgegevens op elk gewenst moment definitief laten verwijderen."
+    }
   },
   "deleteAccount": {
     "pageMetaTitle": "Account Verwijderen - Klar (voorheen PureScan AI)",
@@ -251,6 +264,33 @@
     "tableRow6Title": "De ervaring",
     "latestInsightsSubtitle": "Deskundige analyses over ingrediënten, gifstoffen en gezond leven.",
     "readArticle": "Lees artikel",
-    "compareLabel": "Vergelijk:"
+    "compareLabel": "Vergelijk:",
+    "faqTitle": "Veelgestelde vragen",
+    "faqs": [
+      {
+        "question": "Wat is Klar?",
+        "answer": "Klar (voorheen PureScan AI) is een mobiele app voor iOS en Android die kunstmatige intelligentie gebruikt om voedsel- en cosmetica-etiketten te scannen en verborgen gifstoffen, allergenen, hormoonverstoorders en ultrabewerkte additieven direct op te sporen. De app biedt gepersonaliseerde gezondheidsrisicobeoordelingen op basis van de specifieke gezondheidstoestand, allergieën en dieetvoorkeuren van elke gebruiker."
+      },
+      {
+        "question": "Heette Klar voorheen PureScan AI?",
+        "answer": "Ja. Klar stond voorheen bekend als PureScan AI. De app is omgedoopt tot Klar — Voedsel- & Cosmeticascanner met dezelfde geavanceerde AI-scantechnologie, uitgebreide wetenschappelijke databases en naadloze continuïteit voor alle bestaande gebruikersaccounts."
+      },
+      {
+        "question": "Hoe scant Klar voedingsmiddelen?",
+        "answer": "Klar gebruikt barcodescans om producten op te zoeken in een omvangrijke database. Als een product niet wordt gevonden, leest de AI-camera het ingrediëntenetiket in elke taal en vergelijkt elk ingrediënt met wetenschappelijke toxicologiedatabases om verborgen gevaren op te sporen en Nutri-Score- en NOVA-classificaties te bieden."
+      },
+      {
+        "question": "Is Klar gratis?",
+        "answer": "Ja. Klar biedt een gratis versie met essentiële scanfuncties, waaronder barcodescans, basisingrediëntenanalyse en allergeendetectie. Een Pro-abonnement ontgrendelt geavanceerde gepersonaliseerde analyses, onbeperkt scannen en gedetailleerde ingrediëntenoverzichten."
+      },
+      {
+        "question": "Welke gifstoffen kan Klar detecteren?",
+        "answer": "Klar detecteert hormoonverstoorders (parabenen, ftalaten, BPA), kankerverwekkende stoffen (formaldehyde-afgevende stoffen, BHA), comedogene ingrediënten, ultrabewerkte additieven, kunstmatige kleurstoffen (Red 40, Yellow 5), schadelijke conserveermiddelen (BHT, natriumbenzoaat) en meer dan 500 andere gemarkeerde stoffen."
+      },
+      {
+        "question": "Werkt Klar ook voor cosmetica?",
+        "answer": "Ja. Klar scant zowel voedingsmiddelen als cosmeticaproducten. Bij cosmetica spoort het hormoonverstoorders, kankerverwekkende stoffen, comedogene ingrediënten (beoordeeld van 0–5) en contactallergenen op, en geeft het een risicoscore op basis van het toxiciteitsprofiel van elk ingrediënt."
+      }
+    ]
   }
 }
