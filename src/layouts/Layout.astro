@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import SpeedInsights from "@vercel/speed-insights/astro";
 import StickyAppBanner from '../components/StickyAppBanner.jsx';
+import StoreQrHover from '../components/StoreQrHover.astro';
 
 interface Props {
   title?: string;
@@ -393,6 +394,7 @@ if (Astro.response && Astro.response.headers) {
   <body class="bg-[#fffefb] text-slate-800 font-sans selection:bg-orange-200">
     <slot />
     <StickyAppBanner client:load />
+    <StoreQrHover />
     <script>
       import { inject } from '@vercel/analytics';
       import { initSiteAnalytics } from '../lib/firebase.js';

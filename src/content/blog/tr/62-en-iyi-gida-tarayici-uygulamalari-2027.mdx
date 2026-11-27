@@ -43,7 +43,7 @@ Rafine endüstriyel tohum yağları (kanola, soya, mısır, ayçiçek) kronik in
 
 <div className="space-y-8 my-10">
 
-  <div className="bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/50 rounded-3xl p-6 sm:p-9 border-2 border-emerald-500/30 shadow-lg relative overflow-hidden">
+  <div className="app-card bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/50 rounded-3xl p-6 sm:p-9 border-2 border-emerald-500/30 shadow-lg relative overflow-hidden">
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-emerald-100">
       <div className="flex items-center gap-4">
         <div className="relative flex-shrink-0">
@@ -52,71 +52,20 @@ Rafine endüstriyel tohum yağları (kanola, soya, mısır, ayçiçek) kronik in
             alt="Klar Scan App Logo" 
             className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl shadow-md border border-emerald-100 p-2 bg-white object-contain"
           />
-          <span className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-emerald-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white">
-            1
-          </span>
+          <span className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-emerald-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white leading-none">1</span>
         </div>
         <div>
           <div className="flex items-center gap-2">
             <h4 className="text-2xl sm:text-3xl font-black text-slate-900 m-0">Klar Scan</h4>
           </div>
-          <p className="text-xs sm:text-sm font-semibold text-emerald-700 m-0 mt-0.5">
-            Food & Cosmetic AI Safety Companion
-          </p>
+          <p className="app-subtitle text-xs sm:text-sm font-semibold text-emerald-700 m-0 mt-0.5">Food & Cosmetic AI Safety Companion</p>
         </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="badge-emerald inline-flex items-center gap-1 bg-emerald-600 text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-xs uppercase tracking-wider whitespace-nowrap" style={{ color: '#ffffff' }}>
-          #1 Top Pick
-        </span>
-        <span className="badge-slate inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap">
-          iOS & Android
-        </span>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-      <div className="relative p-5 rounded-2xl bg-white border-2 border-emerald-500 shadow-md flex flex-col justify-between overflow-hidden">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <div>
-            <span className="inline-block text-[10px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200/60 mb-1">
-              Annual Plan • Best Value
-            </span>
-            <div className="flex items-baseline gap-1.5 mt-1">
-              <span className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">$29.99</span>
-              <span className="text-sm font-semibold text-slate-500">/ year</span>
-            </div>
-          </div>
-          <span className="badge-emerald bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-xs shrink-0 whitespace-nowrap" style={{ color: '#ffffff' }}>
-            Save 72%
-          </span>
-        </div>
-        <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
-          <span className="text-emerald-700 font-bold">~$2.50 / month</span>
-          <span className="text-slate-400">Billed annually</span>
-        </div>
-      </div>
-
-      <div className="relative p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <div>
-            <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200 mb-1">
-              Monthly Plan
-            </span>
-            <div className="flex items-baseline gap-1.5 mt-1">
-              <span className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">$8.99</span>
-              <span className="text-sm font-semibold text-slate-500">/ month</span>
-            </div>
-          </div>
-          <span className="badge-slate bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full border border-slate-200 shrink-0 whitespace-nowrap">
-            Flexible
-          </span>
-        </div>
-        <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
-          <span className="text-slate-600">Cancel anytime</span>
-          <span className="text-slate-400">No commitment</span>
-        </div>
+        <span className="badge-emerald inline-flex items-center gap-1 bg-emerald-600 text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-xs uppercase tracking-wider whitespace-nowrap" style={{ color: '#ffffff' }}>#1 Top Pick</span>
+        <span className="badge-slate inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap">iOS & Android</span>
+        <span className="badge-price bg-emerald-50 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full border border-emerald-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5"><span className="whitespace-nowrap">Free / $8.99/mo or $29.99/yr</span></span>
       </div>
     </div>
 
@@ -166,9 +115,15 @@ Rafine endüstriyel tohum yağları (kanola, soya, mısır, ayçiçek) kronik in
     </div>
   </div>
 
-  <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
+  <div className="app-card bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-      <h4 className="text-xl font-bold text-slate-900 m-0">2. Yuka</h4>
+      <div className="flex items-center gap-3">
+        <div className="relative flex-shrink-0">
+          <img src="/images/apps/yuka.jpg" alt="Yuka App Logo" className="w-9 h-9 rounded-xl shadow-xs border border-slate-200 bg-white object-cover" />
+          <span className="absolute -top-1.5 -left-1.5 w-5 h-5 rounded-full bg-slate-800 text-white font-extrabold flex items-center justify-center text-[11px] shadow-xs border-2 border-white leading-none">2</span>
+        </div>
+        <h4 className="text-xl font-bold text-slate-900 m-0">Yuka</h4>
+      </div>
       <span className="badge-price bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
         <span className="whitespace-nowrap">Free / $10–$20/yr</span>
       </span>
@@ -176,9 +131,15 @@ Rafine endüstriyel tohum yağları (kanola, soya, mısır, ayçiçek) kronik in
     <p className="text-slate-700 leading-relaxed mb-0">Avrupa'da popüler 0-100 puanlama sistemi. Sadece barkodla çalışır, etiket okuyamaz ve tohum yağlarını uyarmaz.</p>
   </div>
 
-  <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
+  <div className="app-card bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-      <h4 className="text-xl font-bold text-slate-900 m-0">3. EWG Healthy Living</h4>
+      <div className="flex items-center gap-3">
+        <div className="relative flex-shrink-0">
+          <img src="/images/apps/ewg.jpg" alt="EWG Healthy Living App Logo" className="w-9 h-9 rounded-xl shadow-xs border border-slate-200 bg-white object-cover" />
+          <span className="absolute -top-1.5 -left-1.5 w-5 h-5 rounded-full bg-slate-800 text-white font-extrabold flex items-center justify-center text-[11px] shadow-xs border-2 border-white leading-none">3</span>
+        </div>
+        <h4 className="text-xl font-bold text-slate-900 m-0">EWG Healthy Living</h4>
+      </div>
       <span className="badge-price bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
         <span className="whitespace-nowrap">Free / $19.99 IAP</span>
       </span>
@@ -186,9 +147,15 @@ Rafine endüstriyel tohum yağları (kanola, soya, mısır, ayçiçek) kronik in
     <p className="text-slate-700 leading-relaxed mb-0">ABD merkezli toksikoloji veritabanı. Gıda ve temizlik ürünlerini 1-10 arası puanlar, ancak uluslararası ürünlerde yetersizdir.</p>
   </div>
 
-  <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
+  <div className="app-card bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-      <h4 className="text-xl font-bold text-slate-900 m-0">4. Open Food Facts</h4>
+      <div className="flex items-center gap-3">
+        <div className="relative flex-shrink-0">
+          <img src="/images/apps/open-food-facts.jpg" alt="Open Food Facts App Logo" className="w-9 h-9 rounded-xl shadow-xs border border-slate-200 bg-white object-cover" />
+          <span className="absolute -top-1.5 -left-1.5 w-5 h-5 rounded-full bg-slate-800 text-white font-extrabold flex items-center justify-center text-[11px] shadow-xs border-2 border-white leading-none">4</span>
+        </div>
+        <h4 className="text-xl font-bold text-slate-900 m-0">Open Food Facts</h4>
+      </div>
       <span className="badge-price bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
         <span className="whitespace-nowrap">100% Free</span>
       </span>
@@ -196,9 +163,15 @@ Rafine endüstriyel tohum yağları (kanola, soya, mısır, ayçiçek) kronik in
     <p className="text-slate-700 leading-relaxed mb-0">Topluluk destekli açık kaynak veritabanı. Nutri-Score ve NOVA içerir ancak canlı etiket tarama kamerası yoktur.</p>
   </div>
 
-  <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
+  <div className="app-card bg-slate-50/80 rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm">
     <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-      <h4 className="text-xl font-bold text-slate-900 m-0">5. Fooducate</h4>
+      <div className="flex items-center gap-3">
+        <div className="relative flex-shrink-0">
+          <img src="/images/apps/fooducate.jpg" alt="Fooducate App Logo" className="w-9 h-9 rounded-xl shadow-xs border border-slate-200 bg-white object-cover" />
+          <span className="absolute -top-1.5 -left-1.5 w-5 h-5 rounded-full bg-slate-800 text-white font-extrabold flex items-center justify-center text-[11px] shadow-xs border-2 border-white leading-none">5</span>
+        </div>
+        <h4 className="text-xl font-bold text-slate-900 m-0">Fooducate</h4>
+      </div>
       <span className="badge-price bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
         <span className="whitespace-nowrap">Free / $35.99/yr</span>
       </span>

@@ -157,6 +157,25 @@ article a[class*="bg-slate-900"] * {
 }
 
 /* Crisp, Sleek Badges & Pills inside Article Content */
+article span p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  display: inline !important;
+}
+
+article .app-card h4 {
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+article .app-card .app-subtitle {
+  margin: 0.15rem 0 0 0 !important;
+  line-height: 1.35 !important;
+  color: #047857 !important;
+}
+
 article .badge-pill,
 article .badge-price,
 article .badge-emerald,
@@ -169,17 +188,27 @@ article .badge-slate {
   line-height: 1 !important;
   vertical-align: middle !important;
   flex-shrink: 0 !important;
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.7rem !important;
+  border-radius: 9999px !important;
 }
 
 article .badge-emerald {
   background-color: #059669 !important;
   color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+article .badge-slate {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  font-weight: 700 !important;
 }
 
 article .badge-price {
   font-size: 0.75rem !important;
   font-weight: 700 !important;
-  padding: 0.35rem 0.75rem !important;
+  padding: 0.3rem 0.7rem !important;
   border-radius: 9999px !important;
 }
 
